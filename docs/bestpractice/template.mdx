@@ -1,11 +1,13 @@
 ---
 sidebar_position: 0
 ---
-import Highlight from '@site/src/components/HomePageFeatures/Highlight.tsx';
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import TOCInline from '@theme/TOCInline';
 import myLogo from '@site/static/img/cloudstudio_logo.png';
+import Highlight from '../../src/components/HomepageFeatures/Highlight.tsx'
+
 
 # Template - 사이드바 타이틀에 적용
 <hr/>
@@ -213,7 +215,7 @@ Some **content** with _Markdown_ `syntax`. Check [this `api`](#).
 ### 이미지 삽입
 이미지 파일은 src > static > img에서 관리합니다.
 먼저 컴포넌트 경로를 불러온 후 컴포넌트를 작성합니다.
-import myLogo from '@site/static/img/cloudstudio_logo.png';
+
 <img width="450px" height="300px" src={myLogo} alt="Example img" />
 
 
