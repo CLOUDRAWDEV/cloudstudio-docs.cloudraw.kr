@@ -1,0 +1,239 @@
+---
+sidebar_position: 0
+---
+import Highlight from '@site/src/components/HomePageFeatures/Highlight.tsx';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import TOCInline from '@theme/TOCInline';
+import myLogo from '@site/static/img/cloudstudio_logo.png';
+
+# Template - 사이드바 타이틀에 적용
+<hr/>
+Docs에 관한 내용은 docs폴더에 작성합니다. best template에 대한 내용은 tutorial-extras폴더 안에 작성해줍니다. 사이드바에 메뉴를 추가하고 싶다면 폴더안 아무 mdx파일을 카피합니다. md는 단순히 텍스트를 쓸 수 있는 파일이고 mdx는 Markdown 파일 내에서 JSX를 작성하고 이를 React 구성 요소로 렌더링할 수 있습니다.
+
+**sidebar_position**은 사이드바에 나타날 **메뉴 순서**입니다. 지금은 sidebar_position이 1로 설정되어 있으니 사이드바에서 가장 상단에 나타나고 있습니다.
+
+템플릿은 지우지 마세요.
+
+## 마크다운 사용법 
+```jsx title="터미널에서"
+cd cloudstudio_docs
+npm run start
+```
+
+Notion에서 글을 쓴 후 md로 파일을 내보내서 글을 복붙시킵니다.
+
+### 컴포넌트 임포트 {#myid}
+컴포넌트를 import 하려면 마크다운 파일 sidebar_position 아래에 import 합니다.
+
+### 제목과 목차
+텍스트 사이즈는 아래와 같이 샵의 개수에 따라 크기를 변경할 수 있습니다.
+
+```js
+## 제목 2
+
+### 제목 3
+
+#### 제목 4
+
+본문은 샵없이 작성합니다.
+```
+
+
+각 제목에는 자동으로 생성되거나 명시적으로 지정될 수 있는 ID가 있습니다.
+표제 ID를 사용하면 Markdown 또는 JSX의 특정 문서 표제에 연결할 수 있습니다.
+특별한 Markdown 구문을 사용하면 명시적 제목 ID 를 설정할 수 있습니다 .
+
+```jsx title="명시적 아이디 생성하기"
+### Hello World {#my-explicit-id}
+```
+
+```jsx title="특정 문서 표제에 링크걸기"
+[link](#heading-id)
+<Link to="#heading-id">link</Link>
+```
+
+인라인 목차 표시하기. 페이지 오른쪽에 현재 페이지 목차를 나타내주고 있지만, 컴포넌트를 사용하여 페이지 내에 목차를 써줄 수 있습니다.
+```js
+import TOCInline from '@theme/TOCInline';
+
+<TOCInline toc={toc} />
+```
+<TOCInline toc={toc} />
+
+
+
+
+### 수평선
+수평선을 만드는 법은 다양합니다.
+
+<hr/>
+
+***
+
+*****
+
+- - -
+
+---------------------------------------
+
+
+
+### 링크 걸기 
+URL경로
+https://designsystem.line.me/LDSM/ux/share-ko
+
+[이렇게 해도 된다](https://designsystem.line.me/LDSM/ux/share-ko)
+
+문서 페이지를 링크할 때는 아래와 같이 합니다.
+[여기에요](/tutorial-basics/create-a-page.mdx) 
+
+특정 표제에 링크걸기
+[우왕](#myid)
+
+
+
+
+### 텍스트 스타일링
+*여기에 내용을 작성하세요. - 얇은 기울기* 
+
+***여기에 내용을 작성하세요. - 두꺼운 기울기***
+
+**여기에 내용을 작성하세요. - 강조** 
+
+
+
+
+### 단어 정의를 작성할 때 
+단어를 정의할 땐 드롭다운 박스를 사용합니다.
+<details>
+<summary>csp란?</summary>
+<h4 id="#heading-id">일반적으로 CSP란 공공 클라우드 인프라, 플랫폼 서비스를 제공하는 업체를 의미합니다.
+기업은 CSP와 계약함으로써 IT 시스템을 자유롭게 확장할 수 있으며, CSP가 제공하는 추가적인 서비스나 기능을 활용해 빠르게 비즈니스의 혁신을 추구하는 것이 가능해지게 됩니다.    
+</h4>
+</details>
+
+
+
+
+### 인용
+이메일에서 사용하는 > 블럭인용문자를 이용합니다.
+> This is a first blockqute.
+>> This is a second blockqute.
+>>> This is a third blockqute.
+
+
+
+
+### 텍스트 하이라이트
+텍스트 하이라이트를 사용하려면 **아래 순서**를 따라하세요.
+1. 컴포넌트 임포트
+sidebar_position 아래에 import Highlight from '@site/src/components/HomePageFeatures/Highlight.tsx'; 합니다.
+2. 컴포넌트 작성: 컬러와 텍스트를 입력합니다. 통일성을 위해 컬러는 아래 지정된 컬러로 사용해주세요.
+
+<Highlight color="#206FD6">Highlight Blue</Highlight>
+
+<Highlight color="#004BB7">Highlight Darkblue</Highlight>
+
+<Highlight color="#FF7272">Highlight Red</Highlight>
+
+<Highlight color="#FFB054">Highlight Orange</Highlight>
+
+<Highlight color="#FFE073">Highlight Yellow</Highlight>
+
+<Highlight color="#30E7B5">Highlight Green</Highlight>
+
+<Highlight color="#28DDF5">Highlight Sky</Highlight>
+
+<Highlight color="#8577FF">Highlight Purple</Highlight>
+
+<Highlight color="#C65AEC">Highlight Lilac</Highlight>
+
+<Highlight color="#FF8DB9">Highlight Pink</Highlight>
+
+<Highlight color="#D0D0D0">Highlight Gray</Highlight>
+
+<Highlight color="#868686">Highlight Dark gray</Highlight>
+
+
+
+
+### 코드블록 
+코드 블록은 3개의 백틱 문자열로 둘러싸인 텍스트 블록입니다. title 사이에 공백을 둡니다.
+
+**제목이 있는 경우**
+```jsx title="/src/components/HelloCodeTitle.js"
+function HelloCodeTitle(props) {
+  return <h1>Hello, {props.name}</h1>;
+}
+```
+
+**제목이 없는 경우**
+```js
+console.log('Every repo must come with a mascot.');
+```
+
+
+
+
+### Admonitions
+:::note
+
+Some **content** with _Markdown_ `syntax`. Check [this `api`](#).
+
+:::
+
+:::tip
+
+Some **content** with _Markdown_ `syntax`. Check [this `api`](#).
+
+:::
+
+:::info
+
+Some **content** with _Markdown_ `syntax`. Check [this `api`](#).
+
+:::
+
+:::caution
+
+Some **content** with _Markdown_ `syntax`. Check [this `api`](#).
+
+:::
+
+:::danger
+
+Some **content** with _Markdown_ `syntax`. Check [this `api`](#).
+
+:::
+
+
+
+
+### 이미지 삽입
+이미지 파일은 src > static > img에서 관리합니다.
+먼저 컴포넌트 경로를 불러온 후 컴포넌트를 작성합니다.
+import myLogo from '@site/static/img/cloudstudio_logo.png';
+<img width="450px" height="300px" src={myLogo} alt="Example img" />
+
+
+
+
+### 텝 사용하기
+탭 기능을 사용하려면 **아래 순서**를 따라하세요.
+1. 컴포넌트 임포트
+sidebar_position 아래에 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem'; 합니다.
+2. 컴포넌트 작성
+<Tabs>
+  <TabItem value="apple" label="Apple" default>
+    This is an apple 🍎
+  </TabItem>
+  <TabItem value="orange" label="Orange">
+    This is an orange 🍊
+  </TabItem>
+  <TabItem value="banana" label="Banana">
+    This is a banana 🍌
+  </TabItem>
+</Tabs>
