@@ -1,0 +1,51 @@
+---
+sidebar_position: 0
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import TOCInline from '@theme/TOCInline';
+import styles from '../../../src/scss/_textStyle.module.scss';
+import azureLandZone from '@site/static/img/azure_landing_zone_bp.png';
+import awsLandZone from '@site/static/img/aws_landing_zone_bp.png';
+import Highlight from '../../../src/components/HomepageFeatures/Highlight.tsx'
+
+# Overview
+##### 2022.07.06 / 읽는 데 5분 걸림(소요시간)
+
+*****
+
+## Landing Zone 이란?
+최근 몇 년간 클라우드 산업이 빠르게 성장하면서, 산업 전반적으로 클라우드 서비스가 확산되면서 어떻게 해야 더욱 안전하고 효율적으로 클라우드를 운영할 수 있을까에 대한 고민이 깊어지게 되었습니다. 이때 클라우드 산업에서 랜딩존의 개념이 등장하게 됩니다. <br/><br/>
+**랜딩존**이란 보안과 운영이 유기적인 움직임을 가져갈 수 있도록 도와주는 설계도라고할 수 있습니다. 랜딩존은 클라우드 환경에서 보안 로그 저장 위치, 관리 정책, 보안 취약성 관리법, API에 대한 보안 거버넌스 및 접근통제 방안 등, 시스템 운영을 위한 기본이 되는 요소들을 형식화해서 만든 도구입니다. 랜딩존을 구축한다는 것은 필요에 따라 변형이 가능한 기초 샘플을 만들어두는 것과 같으며, 기업 내, 외부의 환경에 맞는 최적의 시스템을 구축하는데 사용할 수 있습니다. <br/><br/>
+스타트업의 랜딩존과 대기업의 랜딩존은 처리 속도와 규모, 환경이 모두 다르고 보안정책도 다르기 때문에 같은 템플릿을 커스텀해서 사용하는데에 한계가 있습니다. 따라서, 클라우드 스튜디오에서는 중소기업을 위한 단일 계정의 Landing Zone Basic과 중견, 대기업을 위해서 멀티 계정으로 시스템 요소들을 관리하는 Landing Zone Enterprise 용 템플릿으로 구분되어 있습니다.<br/><br/>
+
+## Basic vs Enterprise
+
+
+## Azure Landing Zone
+엔터프라이즈 규모로 어플리케이션을 운영할 때 사용하는 Landing Zone Enterprise는 단일 계정으로 운영하지 않습니다. Azure의 경우 관리 정책, 보안 취약성 관리법, 보안 로그 저장 위치 등 각각의 요소별로 구독을 나눠서 운영합니다. 구독은 Azure의 비용이 청구되는 단위입니다. AWS의 IAM Account와 동일한 개념입니다. <br/><br/>
+
+<div className={styles.imgWrap}>
+    <img width="700px" height= "500px" src={azureLandZone} alt="Access Deny" />
+</div>
+[그림.1] Azure Landing Zone Enterprise - 출처: [Azure 랜딩존 - 랜딩 존이란?](https://docs.microsoft.com/ko-kr/azure/cloud-adoption-framework/ready/landing-zone/)
+
+## AWS Landing Zone
+AWS의 경우 관리 정책, 보안 취약성 관리법, 보안 로그 저장 위치 등 각각의 요소별로 IAM 계정 단위로 나눠서 구성합니다. 각 기능별로 IAM 계정이 생성되면서 확장성있고 안정적인 환경을 구성할 수 있습니다.
+
+<div className={styles.imgWrap}>
+    <img width="450px" height= "300px" src={awsLandZone} alt="Access Deny" />
+</div>
+![그림.2] AWS Landing Zone Enterprise - 출처: [AWS Landing Zone](https://aws.amazon.com/ko/solutions/implementations/aws-landing-zone/)
+
+## Ncloud Landing Zone
+
+*****
+
+## 참고 자료
+- [[하루 3분 IT] 랜딩존 (Landing Zone)](https://blog.naver.com/PostView.naver?blogId=pentamkt&logNo=222389825257&categoryNo=20&parentCategoryNo=0&viewDate=&currentPage=1&postListTopCurrentPage=1&from=postView)
+- [Azure 랜딩존 - 랜딩 존이란?](https://docs.microsoft.com/ko-kr/azure/cloud-adoption-framework/ready/landing-zone/)
+- [AWS Landing Zone](https://aws.amazon.com/ko/solutions/implementations/aws-landing-zone/)
+
+
