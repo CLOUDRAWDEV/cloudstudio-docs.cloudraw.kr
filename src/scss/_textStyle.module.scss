@@ -6,3 +6,14 @@
     align-items: center;
     justify-content: center;
 }
+
+.Caption {
+    padding-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.captionText {
+    color: #868686;
+}
