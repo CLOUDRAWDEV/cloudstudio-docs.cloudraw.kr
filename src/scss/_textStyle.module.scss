@@ -7,13 +7,44 @@
     justify-content: center;
 }
 
-.Caption {
+.caption {
     padding-bottom: 24px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    margin: 0px;
+
+    &_img{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }
 
 .captionText {
     color: #868686;
+}
+
+
+// 푸터 영역입니다
+.footerWrap {
+    background-color: #E5E9EE;
+    padding: 24px;
+    justify-content: space-between;
+
+    &_menu{
+        display: flex;
+        gap: 16px;
+
+        &_text {
+            color: #182639;
+            font-weight: 500;
+        }
+    }
+
+    &_address {
+        display: flex;
+        justify-content: space-between;
+
+        h4{
+            font-weight: 500;
+        }
+    }
 }

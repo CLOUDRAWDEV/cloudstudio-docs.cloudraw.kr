@@ -1,10 +1,5 @@
-/**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
- */
+@charset "utf-8";
 
-/* You can override the default Infima variables here. */
 :root {
   --ifm-color-primary: #206fd6;
   --ifm-color-primary-dark: #1d64c1;
@@ -18,12 +13,8 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }
 
-
-
-
-/* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #206fd6;
+  --ifm-color-primary: #2986FF;
   --ifm-color-primary-dark: #1d64c1;
   --ifm-color-primary-darker: #1b5eb6;
   --ifm-color-primary-darkest: #164e96;
@@ -33,7 +24,7 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
-// 헤더 영역입니다
+// header 영역입니다
 .btnTrial{
   background: #206FD6;
   color: white;
@@ -64,46 +55,19 @@
   border-image-slice: 1;
 }
 
-// 푸터 영역입니다
-.footer{
-  --ifm-footer-background-color: #e8e9eb ;
-  height: 140px;
-}
 
-
-.footer__copyright{
-  min-height: 20px;
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-
-  &::before{
-    content:  "(주)클라우드로 | 사업자등록번호 : 886-86-02497 | 대표이사 강혜경 | 서울시 강남구 테헤란로 151 (역삼하이츠빌딩) 305";
-  }
-
-  &::after{
-    content: "Copyright ⓒ 2021 Cloudraw. Inc.";
-  }
-}
-
-.footer__items{
-  display: flex;
-  gap: 16px;
-
-  a{
-    display: block;
-    min-width: 32px;
-    min-height: 32px;
-    border-radius: 4px;
-  }
-
-  svg{
-    display: none;
-  }
+.footer {
+  display: none;
 }
 
 
 .imgWrap{
   width: 100%;
   text-align: center;
+}
+
+
+.tabs-container{
+  margin-top: 24px;
+  margin-bottom: 24px;
 }
