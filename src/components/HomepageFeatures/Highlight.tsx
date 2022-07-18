@@ -11,5 +11,6 @@ export default function Highlight({children, color}) {
       }}>
       {children}
     </span>
+    
   );
 }

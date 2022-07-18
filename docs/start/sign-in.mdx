@@ -3,7 +3,10 @@ sidebar_position: 1
 ---
 
 import createAccount from '@site/static/img/create-account.png';
-import createAccountNaver from '@site/static/img/account-naver.png';
+import createAccountNaver from '@site/static/img/signin-naver.png';
+import createAccountKakao01 from '@site/static/img/signin-kakao-01.png';
+import createAccountKakao03 from '@site/static/img/signin-kakao-03.png';
+import createAccountGoogle from '@site/static/img/signin-google.png';
 import styles from '../../src/scss/_textStyle.module.scss';
 import login02 from '@site/static/img/login02.png';
 import Tabs from '@theme/Tabs';
@@ -12,7 +15,7 @@ import TabItem from '@theme/TabItem';
 # 회원가입
 <hr/>
 
-클라우드 스튜디오를 시작하기 위해서 회원가입을 진행해야 합니다. **아래의 링크**에 접속합니다.
+클라우드 스튜디오를 시작하기 위해서 회원가입을 진행해야 합니다. 아래의 링크에 접속합니다.
 
 [Start CloudStudio](https://cloudstudio.cloudraw.kr/signin)
 
@@ -52,50 +55,57 @@ import TabItem from '@theme/TabItem';
 
 ## **소셜 아이디로 계정 생성하기** {#creat-sns-account}
 
-로그인 화면에서 Naver, KaKao, Google 중 회원가입을 **원하는 SNS를 선택합니다.**
-
 <div className={styles.imgWrap}>
     <img src={login02} alt="login img" />
 </div>
 
+
 <Tabs>
 <TabItem value="naver-account" label="Naver 계정으로 회원가입">
-    1. 카카오 로그인 페이지가 뜨면 이메일과 비밀번호를 입력합니다.
+    1. 클라우드 스튜디오 로그인 페이지에서 네이버 아이콘을 클릭합니다.
     <BR/>
-    2. 로그인 버튼을 클릭합니다.
+    2. 회원가입 페이지가 나오면 사용할 네이버 이메일을 입력합니다.
+    <BR/>
+    3. 아이디를 입력한 후 중복검사를 클릭합니다.
+    <BR/>
+    4. 클라우드 스튜디오 이용약관과 개인정보 수집 및 이용 동의 내용을 꼼꼼하게 읽은 후 체크박스를 클릭하여 체크합니다.
+    <BR/>
+    5. 다음 버튼을 클릭하여 클라우드 스튜디오 네이버 계정 회원가입을 완료합니다.
+    <div className={styles.imgWrap}>
+        <img src={createAccountNaver} alt="네이버" />
+    </div>
 </TabItem>
 <TabItem value="kakao-account" label="KaKao 계정으로 회원가입">
-    1. 카카오 로그인 페이지가 뜨면 이메일과 비밀번호를 입력합니다.
+    1. 클라우드 스튜디오 로그인 페이지에서 카카오 아이콘을 클릭합니다.
     <BR/>
-    2. 로그인 버튼을 클릭합니다.
+    2. 개인정보제공에 동의하기를 클릭합니다.
+    <BR/>
+     <div className={styles.imgWrap}>
+        <img src={createAccountKakao01} alt="카카오" />
+    </div>
+    3. 회원가입 페이지가 나오면 사용할 카카오 이메일을 입력합니다.
+    <BR/>
+    3. 아이디를 입력한 후 중복검사를 클릭합니다.
+    <BR/>
+    4. 클라우드 스튜디오 이용약관과 개인정보 수집 및 이용 동의 내용을 꼼꼼하게 읽은 후 체크박스를 클릭하여 체크합니다.
+    <BR/>
+    5. 다음 버튼을 클릭하여 클라우드 스튜디오 카카오 계정 회원가입을 완료합니다.
+     <div className={styles.imgWrap}>
+        <img src={createAccountKakao03} alt="카카오" />
+    </div>
 </TabItem>
 <TabItem value="google-account" label="Google 계정으로 회원가입">
-    1. 구글 로그인 페이지가 뜨면 이메일과 비밀번호를 입력합니다.
+    1. 클라우드 스튜디오 로그인 페이지에서 구글 아이콘을 클릭합니다.
     <BR/>
-    2. 로그인 버튼을 클릭합니다.
+    2. 회원가입 페이지가 나오면 사용할 구글 이메일을 입력합니다.
+    <BR/>
+    3. 아이디를 입력한 후 중복검사를 클릭합니다.
+    <BR/>
+    4. 클라우드 스튜디오 이용약관과 개인정보 수집 및 이용 동의 내용을 꼼꼼하게 읽은 후 체크박스를 클릭하여 체크합니다.
+    <BR/>
+    5. 다음 버튼을 클릭하여 클라우드 스튜디오 구글 계정 회원가입을 완료합니다.
+    <div className={styles.imgWrap}>
+        <img src={createAccountGoogle} alt="구글" />
+    </div>
 </TabItem>
 </Tabs>
-
-
-### Naver 계정으로 회원가입
-
-1. 네이버 아이디와 비밀번호를 입력한 후 로그인을 클릭합니다.
-2. 
-
-<div className={styles.imgWrap}>
-    <img src={createAccountNaver} alt="네이버 계정생성" />
-</div>
-
-### kakao 계정으로 회원가입
-
-1. 카카오 이메일과 비밀번호를 입력합니다.
-2. 
-
-<div className={styles.imgWrap}>
-    <img src={createAccount} alt="계정생성" />
-</div>
-
-### Google 계정으로 회원가입
-
-1. 구글 이메일과 비밀번호를 입력합니다.
-2. 

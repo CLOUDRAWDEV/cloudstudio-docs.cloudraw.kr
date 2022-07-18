@@ -6,7 +6,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import TOCInline from '@theme/TOCInline';
 import myLogo from '@site/static/img/cloudstudio_logo.png';
-import Highlight from '../../../src/components/HomepageFeatures/Highlight.tsx'
+
 
 
 # Template - 사이드바 타이틀에 적용
@@ -27,6 +27,14 @@ Notion에서 글을 쓴 후 md로 파일을 내보내서 글을 복붙시킵니�
 
 ### 컴포넌트 임포트 {#myid}
 컴포넌트를 import 하려면 마크다운 파일 sidebar_position 아래에 import 합니다.
+
+
+### 전역 스코프
+- Highlight
+- caption
+- button
+은 별도의 import없이 전역으로 사용하실 수 있습니다.
+
 
 ### 제목과 목차
 텍스트 사이즈는 아래와 같이 샵의 개수에 따라 크기를 변경할 수 있습니다.
@@ -133,29 +141,29 @@ https://designsystem.line.me/LDSM/ux/share-ko
 sidebar_position 아래에 import Highlight from '@site/src/components/HomePageFeatures/Highlight.tsx'; 합니다.
 2. 컴포넌트 작성: 컬러와 텍스트를 입력합니다. 통일성을 위해 컬러는 아래 지정된 컬러로 사용해주세요.
 
-<Highlight color="#206FD6">Highlight Blue</Highlight>
+<highlight color="#206FD6">Highlight Blue</highlight>
 
-<Highlight color="#004BB7">Highlight Darkblue</Highlight>
+<highlight color="#004BB7">Highlight Darkblue</highlight>
 
-<Highlight color="#FF7272">Highlight Red</Highlight>
+<highlight color="#FF7272">Highlight Red</highlight>
 
-<Highlight color="#FFB054">Highlight Orange</Highlight>
+<highlight color="#FFB054">Highlight Orange</highlight>
 
-<Highlight color="#FFE073">Highlight Yellow</Highlight>
+<highlight color="#FFE073">Highlight Yellow</highlight>
 
-<Highlight color="#30E7B5">Highlight Green</Highlight>
+<highlight color="#30E7B5">Highlight Green</highlight>
 
-<Highlight color="#28DDF5">Highlight Sky</Highlight>
+<highlight color="#28DDF5">Highlight Sky</highlight>
 
-<Highlight color="#8577FF">Highlight Purple</Highlight>
+<highlight color="#8577FF">Highlight Purple</highlight>
 
-<Highlight color="#C65AEC">Highlight Lilac</Highlight>
+<highlight color="#C65AEC">Highlight Lilac</highlight>
 
-<Highlight color="#FF8DB9">Highlight Pink</Highlight>
+<highlight color="#FF8DB9">Highlight Pink</highlight>
 
-<Highlight color="#D0D0D0">Highlight Gray</Highlight>
+<highlight color="#D0D0D0">Highlight Gray</highlight>
 
-<Highlight color="#868686">Highlight Dark gray</Highlight>
+<highlight color="#868686">Highlight Dark gray</highlight>
 
 
 
@@ -239,3 +247,6 @@ import TabItem from '@theme/TabItem'; 합니다.
     This is a banana 🍌
   </TabItem>
 </Tabs>
+
+### 이미지 캡션
+<caption caption="여기에 글 써주세요." src="/img/login.png" />
