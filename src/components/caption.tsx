@@ -1,12 +1,14 @@
 import React from 'react'
 import useBaseUrl from '@docusaurus/useBaseUrl'
-import styles from '../../src/scss/_textStyle.module.scss';
+import styles from '../../src/scss/_textStyle.module.scss'
 
 export default function Figure({ src, caption }) {
     return (
-      <section className={styles.Caption}>
-        <img src={useBaseUrl(src)} alt={caption} />
-        <figcaption className={styles.captionText}>{`${caption}`}</figcaption>
-      </section>
+      <figure className={styles.caption}>
+        <div className={styles.caption_img}>
+          <img src={useBaseUrl(src)} alt={caption} />
+        </div>
+      <figcaption className={styles.captionText}>{`${caption}`}</figcaption>
+    </figure>
     )
   }

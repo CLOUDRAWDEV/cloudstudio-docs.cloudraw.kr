@@ -6,13 +6,13 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "My Site",
+  title: "Cloud Studio Docs",
   tagline: "Dinosaurs are cool",
   url: "https://your-docusaurus-test-site.com",
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
-  favicon: "img/favicon.ico",
+  favicon: "img/simbol.png",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -54,6 +54,22 @@ const config = {
     ],
   ],
 
+  themes: [
+    // ... Your other themes.
+    [
+      require.resolve("@easyops-cn/docusaurus-search-local"),
+      {
+        // ... Your options.
+        // `hashed` is recommended as long-term-cache of index file is possible.
+        hashed: true,
+        // For Docs using Chinese, The `language` is recommended to set to:
+        // ```
+        // language: ["en", "zh"],
+        // ```
+      },
+    ],
+  ],
+  
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
@@ -92,37 +108,6 @@ const config = {
         ],
       },
       footer: {
-        // style: 'dark',
-        links: [
-          {
-            // title: 'Docs',
-            items: [
-              {
-                label: "About",
-                href: "https://www.cloudraw.kr/",
-              },
-              {
-                label: "이용약관",
-                href: "https://cloudstudio.cloudraw.kr/support/policy",
-              },
-              // {
-              //   label: 'Slack community',
-              //   href: 'ㅇㅇ',
-              // },
-            ],
-          },
-          {
-            items: [
-              {
-                html: `
-                    <a href="https://www.netlify.com" target="_blank" rel="noreferrer noopener" aria-label="Deploys by Netlify">
-                      <img src="https://www.netlify.com/img/global/badges/netlify-color-accent.svg" alt="Deploys by Netlify" width="114" height="51" />
-                    </a>
-                  `,
-              },
-            ],
-          },
-        ],
       },
       prism: {
         theme: lightCodeTheme,
