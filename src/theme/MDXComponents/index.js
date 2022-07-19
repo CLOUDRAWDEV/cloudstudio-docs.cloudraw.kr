@@ -11,7 +11,7 @@ import Admonition from '@theme/Admonition';
 import Highlight from '@site/src/components/HomepageFeatures/Highlight';
 import Caption from '@site/src/components/caption';
 import Button from '@site/src/components/HomepageFeatures/Button';
-
+import Tabs from '@site/src/theme/Tabs';
 const MDXComponents = {
   head: MDXHead,
   code: MDXCode,
@@ -30,5 +30,6 @@ const MDXComponents = {
   highlight : Highlight,
   caption : Caption,
   button : Button,
+  Tabs : Tabs,
 };
 export default MDXComponents;

@@ -2,6 +2,80 @@
 sidebar_position: 8
 ---
 
-# 배포관리
+import styles from '../../src/scss/_textStyle.module.scss';
+import deploy01 from '@site/docs/start/img/deploy01.png';
+import deploy02 from '@site/docs/start/img/deploy02.png';
+import deploy03 from '@site/docs/start/img/deploy03.png';
+import deploy04 from '@site/docs/start/img/deploy04.png';
 
+# 배포관리
+<hr />
+
+클라우드 스튜디오는 단순히 시각적인 인프라 아키텍처를 제공하는 것을 넘어서, 캔버스에 그린 인프라를 ```실제 CSP사에 배포할 수 있는 기능```을 제공합니다. 이를 통해 사용자들은 쉽게 클라우드 인프라를 구축할 수 있습니다.
+
+## 배포테스트 {#deploy-test}
+
+IaC의 문법적 오류나 설정이 올바르게 되었는지 가상으로 검증하는 단계입니다. 실제 CSP에 배포되지 않습니다. 
+(`--dry-run` option과 같은 역할을 합니다.)
+
+
+1. 배포테스트를 진행하기 위해서 ```캔버스 > 배포테스트```를 클릭합니다.
+
+<div className={styles.imgWrap}>
+    <img src={ deploy03 } alt="배포이미지" />
+</div>
+
+2. ```배포할 환경```을 선택합니다. Cloud Studio를 통한 배포 환경은 ```DEV(개발) / TEST(테스트) / PROD(운영)``` 3가지 입니다.
+3. ```태그 메세지```를 입력합니다. 
+4. 배포테스트 버튼을 클릭합니다.
+
+<div className={styles.imgWrap}>
+    <img src={ deploy04 } alt="배포이미지" />
+</div>
+
+<Tabs>
+  <TabItem value="dev" label="DEV" default>
+    서비스의 개발 환경에 추천합니다. 개발자들이 사용할 수 있습니다.
+  </TabItem>
+  <TabItem value="test" label="TEST">
+    서비스의 테스트 환경에 추천합니다. QA들이 사용할 수 있습니다.
+  </TabItem>
+  <TabItem value="prod" label="PROD">
+    서비스의 운영 환경에 추천합니다. 모든 클라이언트가 사용할 수 있습니다.
+  </TabItem>
+</Tabs>
+
+:::info
+
+배포테스트를 진행하기 전 ```크레덴셜```을 ```필수적으로 등록```해야 합니다. 크레덴셜을 등록하는 방법은 여기를 참고해주세요.
+
+:::
+
+
+
+## 배포테스트 결과 {#test-result}
+```배포테스트 결과```를 확인할 수 있습니다. ```DEV(개발) / TEST(테스트) / PROD(운영)```중 원하는 환경을 선택하여 실제로 배포를 진행하고,
+배포가 완료된 환경은 ```각 CSP 페이지에서 확인```할 수 있습니다.
+
+1. 배포테스트 결과를 확인하기 위해서 ```캔버스 > 배포테스트 결과```를 클릭합니다. 
+
+<div className={styles.imgWrap}>
+    <img src={ deploy02 } alt="배포이미지" />
+</div>
+
+2. ```DEV(개발) / TEST(테스트) / PROD(운영)```중 원하는 환경을 선택합니다.
+3. 배포하기 버튼을 클릭합니다.
+
+
+
+## 배포 이력 {#tedeployst-history}
+배포이력은 ```실제 배포된 인프라에 대한 이력```을 보여줍니다. DEV(개발) / TEST(테스트) / PROD(운영) 각 탭마다의 최근 배포 이력을 확인할 수 있습니다.
+
+1. 배포 이력을 확인하기 위해서 ```캔버스 > 배포이력```을 클릭합니다.
+
+<div className={styles.imgWrap}>
+    <img src={ deploy01 } alt="배포이미지" />
+</div>
+
+2.  DEV(개발) / TEST(테스트) / PROD(운영) 중 확인하고 싶은 환경을 클릭하여 배포 이력을 확인합니다.
 
