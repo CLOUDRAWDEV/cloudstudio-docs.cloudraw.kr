@@ -1,5 +1,6 @@
 ---
 sidebar_position: 6
+tags: [캔버스, 툴박스, 리소스리스트, 오류, 캔버스 편집, 그리기]
 ---
 
 import styles from '../../src/scss/_textStyle.module.scss';
@@ -7,13 +8,24 @@ import dragDrop from '@site/static/img/gif/drag&drop.gif';
 import line from '@site/static/img/gif/line.gif';
 import error from '@site/static/img/gif/error.gif';
 import edit from '@site/static/img/gif/edit.gif';
-
+import undo from './img/undo.png';
+import redo from './img/redo.png';
+import list from './img/list.png';
+import font from './img/font.png';
+import thickness from './img/thickness.png';
+import slope from './img/slope.png';
+import underline from './img/underline.png';
+import color from './img/font-color.png';
+import connetLine from './img/line.png';
+import ratio from './img/ratio.png';
+import grid from './img/grid.png';
 
 # 캔버스 편집하기
 <hr />
  
 캔버스는 리소스를 Drag & Drop 하여 클라우드 인프라를 그리고 버전을 관리하고 배포까지 할 수 있는 <highlight color="#206FD6">클라우드 스튜디오의 핵심 서비스</highlight>입니다.
 캔버스로 구성한 인프라는 단순히 시각적 아키텍처로 사용할 수도 있고 원하는 CSP 사에 직접 배포까지 할 수 있습니다.
+
 
 ✂️ 자유롭게 캔버스를 편집해보세요! 
 
@@ -26,6 +38,7 @@ Drag & Drop은 캔버스를 구성할 수 있는 가장 단순한 기능입니�
     <img src={ dragDrop } alt="드래그앤드롭 이미지" />
 </div>
 
+<p>&nbsp;</p>
 
 ## 리소스 연결하기 {#resource-connect}
 캔버스에 Drag & Drop 한 리소스들을 연결 가능한 리소스들끼리 선으로 연결시켜줍니다.
@@ -38,10 +51,11 @@ Drag & Drop은 캔버스를 구성할 수 있는 가장 단순한 기능입니�
 
 리소스는 크게 아래의 ```세 가지``` 유형으로 나눠집니다. 아래의 리소스 목록을 참고하여 캔버스 리소스들을 연결시켜줍니다.
 
-> - 기본형 : 기본 리소스들을 보여줍니다.
+> - 기본형 : 그룹안에 속할 수 있는 리소스들을 보여줍니다.
 > - 연결형 : 해당 리소스에 연결될 수 있는 리소스 목록을 보여줍니다.
 > - 그룹형 : 해당 그룹에 속할 수 있는 리소스 목록을 보여줍니다.
 
+<p>&nbsp;</p>
 
 ## 리소스 옵션 편집 {#option-edit}
 리소스를 ```더블 클릭```하여 리소스 설정값을 변경할 수 있는 ```편집창```을 열어줍니다.
@@ -50,6 +64,8 @@ Drag & Drop은 캔버스를 구성할 수 있는 가장 단순한 기능입니�
 <div className={styles.imgWrap}>
     <img src={ edit } alt="옵션 편집 이미지" />
 </div>
+
+<p>&nbsp;</p>
 
 ## 오류 수정하기 {#error-correction}
 🔴 빨간 점은 해당 리소스에 오류가 있다는 표시입니다.  <highlight color="#FF7272">오류가 있으면 캔버스를 저장 및 배포할 수 없습니다.</highlight>
@@ -60,19 +76,22 @@ Drag & Drop은 캔버스를 구성할 수 있는 가장 단순한 기능입니�
     <img src={ error } alt="오류 수정 이미지" />
 </div>
 
+<p>&nbsp;</p>
+
 ## 툴 박스 사용법 {#toolbox}
 상단에 위치한 툴 박스는 캔버스를 꾸밀 수 있는 다양한 기능을 제공합니다.
 
-1.  실행 취소 : 한 칸 이전으로 되돌립니다.
-2.  다시 하기 : 한 칸 앞으로 돌아갑니다.
-3.  리소스 리스트 : 리소스 리스트를 껐다 켜는 버튼입니다.
-4.  폰트 설정 : 폰트의 종류와 사이즈를 설정할 수 있습니다.
-5.  굵기 : 폰트의 굵기를 조정합니다.
-6.  기울이기 : 폰트의 기울기를 조정합니다.
-7.  밑줄 : 폰트에 밑줄을 추가합니다.
-8.  색상 : 폰트의 색상을 조정합니다. 
-9.  연결선 : 리소스 연결선의 굵기와 종류를 조정합니다.
-10.  화면비율: 캔버스 화면비율을 조정합니다.
-11.  그리드 : 캔버스 그리드를 해제할 수 있습니다.
+| 이미지       | 동작           | 기능         |
+| ---------- | -------------- | ------------ |
+| <img width="40px" src={ undo } alt="실행 취소 이미지" />    | 실행 취소       | 한 칸 이전으로 되돌립니다.   |       
+| <img width="40px" src={ redo } alt="다시 하기 이미지" />  | 다시 하기       | 한 칸 앞으로 돌아갑니다.     |
+| <img width="40px" src={ list } alt="리소스 리스트  이미지" />   | 리소스 리스트        | 리소스 리스트를 껐다 켜는 버튼입니다.      |
+| <img width="250px" src={ font } alt="폰트 설정  이미지" />    | 폰트 설정       | 폰트의 종류와 사이즈를 설정할 수 있습니다.      |
+| <img width="40px" src={ thickness } alt="굵기 이미지" />    | 굵기        | 폰트의 굵기를 조정합니다.      |
+| <img width="40px" src={ slope } alt="기울이기 이미지" />    | 기울이기        | 폰트의 기울기를 조정합니다.      |
+| <img width="40px" src={ underline } alt="밑줄 이미지" />    | 밑줄        | 폰트에 밑줄을 추가합니다.      |
+| <img width="40px" src={ color } alt="색상 이미지" />    | 색상        | 폰트의 색상을 조정합니다.      |
+| <img width="200px" src={ connetLine } alt="연결선 이미지" />    | 연결선        | 리소스 연결선의 굵기와 종류를 조정합니다.      |
+| <img width="100px" src={ ratio } alt="화면 비율 이미지" />    | 화면 비율        | 캔버스 화면비율을 조정합니다      |
+| <img width="100px" src={ grid } alt="그리드 이미지" />    | 그리드       | 캔버스 그리드를 해제할 수 있습니다.      |
 
-나중에 표를 넣을까?

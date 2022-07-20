@@ -24,27 +24,82 @@
 
 
 // 푸터 영역입니다
-.footerWrap {
-    background-color: #E5E9EE;
-    padding: 24px;
-    justify-content: space-between;
+.footer{
+    background-color: #EDF4FE;
+    color: #206FD6;
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    padding: 32px 200px 32px 200px;
+  
+    ul {
+        list-style: none;
+        padding-left: 0px;
+    }
 
-    &_menu{
-        display: flex;
-        gap: 16px;
+    h1 {
+        text-align: right;
+        line-height: 34px;
+        position: relative;
 
-        &_text {
-            color: #182639;
-            font-weight: 500;
+        &:after {
+            content: "";
+            height: 4px;
+            background-color: #206FD6;
+            position: absolute;
+            bottom: 29px;
+            left: 0;
+            right: 0;           
         }
     }
 
-    &_address {
+    h4 {
+        margin-block-end: 8px;
+        font-weight: 600;
+    }
+
+    h5 {
+        font-weight: 500;
+    }
+
+    &__address {
+        display: flex;
+        justify-content: space-between;
+        gap: 130px;
+    }
+
+    &__nav {
         display: flex;
         justify-content: space-between;
 
-        h4{
-            font-weight: 500;
+        &__menu {
+            display: flex;
+            gap: 72px;
+        }
+    }
+}
+
+@media screen and (min-width: 501px) and (max-width: 997px) {
+    .footer{
+        padding: 32px;
+    }
+}
+
+// 모바일 사이즈
+@media screen and (min-width: 0px) and (max-width: 500px) {
+    .footer{
+        padding: 32px;
+
+        &__footer__address {
+            flex-direction: column;
+        }
+
+        &__footer__nav{
+            flex-direction: column;
+    
+            h1{
+                text-align: left;
+            }
         }
     }
 }

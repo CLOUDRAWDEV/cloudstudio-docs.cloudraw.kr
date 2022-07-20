@@ -1,0 +1,107 @@
+---
+sidebar_position: 6
+---
+
+import edit from '@site/static/img/gif/edit.gif';
+import styles from '../../src/scss/_textStyle.module.scss';
+
+# Template (대제목)
+<hr/>
+
+대제목에 대한 ```간락햔 설명```을 작성합니다. 대제목에 대한 <highlight color="#206FD6">간락햔 설명</highlight>을 작성합니다. 
+대제목에 대한 **간락햔 설명**을 작성합니다. Title에 대한 *간락햔 설명*을 작성합니다. 템플릿을 복사해 사용하세요.
+
+Title의 중제목에는 아래의 ```세 가지```가 있습니다.
+- [중제목 1](#title01)
+- [중제목 2](#title02)
+- [중제목 2](#title03)
+
+:::tip Use tabs in admonitions
+
+<Tabs >
+  <TabItem value="apple" label="Apple">This is an apple 🍎</TabItem>
+  <TabItem value="orange" label="Orange">This is an orange 🍊</TabItem>
+  <TabItem value="banana" label="Banana">This is a banana 🍌</TabItem>
+</Tabs>
+
+:::
+
+
+<p>&nbsp;</p>
+
+## 중제목 1 {#title01}
+***중제목 1***에 대한 설명을 작성합니다. 중제목 1에 대한 설명을 작성합니다. 중제목 1에 대한 설명을 작성합니다.
+
+<Tabs>
+  <TabItem value="azure" label="Azure" default>
+    내용을 작성하세요.
+  </TabItem>
+  <TabItem value="aws" label="AWS">
+    내용을 작성하세요.
+  </TabItem>
+  <TabItem value="ncloud" label="NCloud">
+    내용을 작성하세요.
+  </TabItem>
+</Tabs>
+
+
+
+<p>&nbsp;</p>
+
+## 중제목 2 {#title02}
+중제목 2에 대한 설명을 작성합니다. 중제목 2에 대한 설명을 작성합니다. 
+
+<caption caption="여기에 글 써주세요." src="/img/login.png" />
+
+:::caution
+
+주의사항을 작성합니다.
+
+:::
+
+<p>&nbsp;</p>
+
+## 중제목 3 {#title03}
+중제목 3에 대한 설명을 작성합니다. 중제목 3에 대한 설명을 작성합니다. 중제목 3에 대한 설명을 작성합니다.
+
+<div className={styles.imgWrap}>
+    <img src={ edit } alt="이미지" />
+</div>
+
+
+<p>&nbsp;</p>
+
+## 중제목 4 {#title04}
+중제목 4에 대한 설명을 작성합니다.
+
+| 구분       | 제목           | 제목         |
+| ---------- | -------------- | ------------ |
+| 테스트1    | 테스트2        | 테스트3      |
+| 테스트1    | 테스트2        | 테스트3      |
+| 테스트1    | 테스트2        | 테스트3      |
+
+<p>&nbsp;</p>
+
+중제목 4에 대한 설명을 작성합니다. 중제목 4에 대한 설명을 작성합니다.
+
+```jsx title="/src/components/HelloCodeTitle.js"
+function HelloCodeTitle(props) {
+  return <h1>Hello, {props.name}</h1>;
+}
+```
+
+```js
+console.log('Every repo must come with a mascot.');
+```
+
+<p>&nbsp;</p>
+
+## 중제목 5 {#title04}
+중제목 5에 대한 설명을 작성합니다.
+
+<details>
+<summary>csp란?</summary>
+<h5 id="#heading-id">일반적으로 CSP란 공공 클라우드 인프라, 플랫폼 서비스를 제공하는 업체를 의미합니다.
+기업은 CSP와 계약함으로써 IT 시스템을 자유롭게 확장할 수 있으며, CSP가 제공하는 추가적인 서비스나 기능을 활용해 빠르게 비즈니스의 혁신을 추구하는 것이 가능해지게 됩니다.    
+</h5>
+</details>

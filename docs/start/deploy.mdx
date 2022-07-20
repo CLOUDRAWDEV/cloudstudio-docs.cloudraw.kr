@@ -1,9 +1,10 @@
 ---
 sidebar_position: 8
+tags: [deploy, 배포테스트, 배포, 테스트결과, 크레덴셜, DEV, TEST, PROD]
 ---
 
 import styles from '../../src/scss/_textStyle.module.scss';
-import deploy01 from '@site/docs/start/img/deploy01.png';
+import deploy01 from './img/deploy01.png';
 import deploy02 from '@site/docs/start/img/deploy02.png';
 import deploy03 from '@site/docs/start/img/deploy03.png';
 import deploy04 from '@site/docs/start/img/deploy04.png';
@@ -25,6 +26,8 @@ IaC의 문법적 오류나 설정이 올바르게 되었는지 가상으로 검�
     <img src={ deploy03 } alt="배포이미지" />
 </div>
 
+<br />
+
 2. ```배포할 환경```을 선택합니다. Cloud Studio를 통한 배포 환경은 ```DEV(개발) / TEST(테스트) / PROD(운영)``` 3가지 입니다.
 3. ```태그 메세지```를 입력합니다. 
 4. 배포테스트 버튼을 클릭합니다.
@@ -32,6 +35,8 @@ IaC의 문법적 오류나 설정이 올바르게 되었는지 가상으로 검�
 <div className={styles.imgWrap}>
     <img src={ deploy04 } alt="배포이미지" />
 </div>
+
+<p>&nbsp;</p>
 
 <Tabs>
   <TabItem value="dev" label="DEV" default>
@@ -51,7 +56,7 @@ IaC의 문법적 오류나 설정이 올바르게 되었는지 가상으로 검�
 
 :::
 
-
+<p>&nbsp;</p>
 
 ## 배포테스트 결과 {#test-result}
 ```배포테스트 결과```를 확인할 수 있습니다. ```DEV(개발) / TEST(테스트) / PROD(운영)```중 원하는 환경을 선택하여 실제로 배포를 진행하고,
@@ -66,7 +71,7 @@ IaC의 문법적 오류나 설정이 올바르게 되었는지 가상으로 검�
 2. ```DEV(개발) / TEST(테스트) / PROD(운영)```중 원하는 환경을 선택합니다.
 3. 배포하기 버튼을 클릭합니다.
 
-
+<p>&nbsp;</p>
 
 ## 배포 이력 {#tedeployst-history}
 배포이력은 ```실제 배포된 인프라에 대한 이력```을 보여줍니다. DEV(개발) / TEST(테스트) / PROD(운영) 각 탭마다의 최근 배포 이력을 확인할 수 있습니다.
