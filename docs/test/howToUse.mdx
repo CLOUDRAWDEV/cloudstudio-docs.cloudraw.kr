@@ -5,12 +5,12 @@ tags: [hello, cloudraw]
 
 import myLogo from '@site/static/img/cloudstudio_logo.png';
 import edit from '@site/static/img/gif/edit.gif';
-import styles from '../../src/scss/_textStyle.module.scss';
+import styles from '../../src/scss/_markdown.module.scss';
 
 
 # How To Use
 <hr/>
-Docs에 관한 내용은 docs폴더에 작성합니다. 사이드바에 메뉴를 추가하고 싶다면 폴더안 아무 mdx파일을 카피합니다. md는 단순히 텍스트를 쓸 수 있는 파일이고 mdx는 Markdown 파일 내에서 JSX를 작성하고 이를 React 구성 요소로 렌더링할 수 있습니다.
+Docs에 관한 내용은 docs폴더에 작성합니다. 사이드바에 메뉴를 추가하고 싶다면 ```Template.mdx``` 파일을 카피합니다. md는 단순히 텍스트를 쓸 수 있는 파일이고 mdx는 Markdown 파일 내에서 JSX를 작성하고 이를 React 구성 요소로 렌더링할 수 있습니다.
 
 **sidebar_position**은 사이드바에 나타날 **메뉴 순서**입니다. 지금은 sidebar_position이 1로 설정되어 있으니 사이드바에서 가장 상단에 나타나고 있습니다.
 
@@ -67,8 +67,6 @@ Notion에서 글을 쓴 후 md로 파일을 내보내서 글을 복붙시킵니�
 
 인라인 목차 표시하기. 페이지 오른쪽에 현재 페이지 목차를 나타내주고 있지만, 컴포넌트를 사용하여 페이지 내에 목차를 써줄 수 있습니다.
 ```js
-import TOCInline from '@theme/TOCInline';
-
 <TOCInline toc={toc} />
 ```
 <TOCInline toc={toc} />
@@ -138,10 +136,8 @@ https://designsystem.line.me/LDSM/ux/share-ko
 
 
 ### 텍스트 하이라이트
-텍스트 하이라이트를 사용하려면 **아래 순서**를 따라하세요.
-1. 컴포넌트 임포트
-sidebar_position 아래에 import Highlight from '@site/src/components/HomePageFeatures/Highlight.tsx'; 합니다.
-2. 컴포넌트 작성: 컬러와 텍스트를 입력합니다. 통일성을 위해 컬러는 아래 지정된 컬러로 사용해주세요.
+
+통일성을 위해 컬러는 아래 지정된 컬러로 사용해주세요.
 
 <highlight color="#206FD6">Highlight Blue</highlight>
 

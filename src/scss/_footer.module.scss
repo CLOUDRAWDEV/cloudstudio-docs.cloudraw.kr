@@ -1,32 +1,8 @@
 @charset "utf-8";
 
-.imgWrap {
-    display: flex;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-}
-
-.caption {
-    padding-bottom: 24px;
-    margin: 0px;
-
-    &_img{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-}
-
-.captionText {
-    color: #868686;
-}
-
-
-// 푸터 영역입니다
 .footer{
-    background-color: #EDF4FE;
-    color: #206FD6;
+    color: var(--ifm-color-primary);
+    background-color: var(--footerBackgroundColor);  
     display: flex;
     flex-direction: column;
     gap: 80px;
@@ -66,6 +42,10 @@
         display: flex;
         justify-content: space-between;
         gap: 130px;
+
+        &__copy {
+            text-align: right;
+        }
     }
 
     &__nav {
@@ -85,7 +65,6 @@
     }
 }
 
-// 모바일 사이즈
 @media screen and (min-width: 0px) and (max-width: 500px) {
     .footer{
         padding: 32px;

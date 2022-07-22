@@ -1,6 +1,6 @@
 import React from 'react'
 import useBaseUrl from '@docusaurus/useBaseUrl'
-import styles from '../../src/scss/_textStyle.module.scss'
+import styles from '../../src/scss/_markdown.module.scss'
 
 export default function Figure({ src, caption }) {
     return (

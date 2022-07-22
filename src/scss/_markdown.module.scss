@@ -1,0 +1,33 @@
+@charset "utf-8";
+
+.imgWrap{
+    width: 100%;
+    text-align: center;
+  }
+  
+  .tabs-container{
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
+
+  .imgWrap {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.caption {
+    padding-bottom: 24px;
+    margin: 0px;
+
+    &_img{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.captionText {
+    color: #868686;
+}
