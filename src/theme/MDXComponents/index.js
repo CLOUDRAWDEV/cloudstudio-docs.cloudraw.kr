@@ -12,6 +12,10 @@ import Highlight from '@site/src/components/HomepageFeatures/Highlight';
 import Caption from '@site/src/components/caption';
 import Button from '@site/src/components/HomepageFeatures/Button';
 import Tabs from '@site/src/theme/Tabs';
+import Link from '@docusaurus/Link';
+import TOCInline from '@theme/TOCInline';
+import TabItem from '@theme/TabItem';
+
 const MDXComponents = {
   head: MDXHead,
   code: MDXCode,
@@ -29,7 +33,11 @@ const MDXComponents = {
   admonition: Admonition,
   highlight : Highlight,
   caption : Caption,
-  button : Button,
+  Button : Button,
   Tabs : Tabs,
+  Link : Link,
+  React : React, 
+  TOCInline : TOCInline,
+  TabItem : TabItem,
 };
 export default MDXComponents;

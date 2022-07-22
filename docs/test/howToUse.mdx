@@ -1,39 +1,41 @@
 ---
-sidebar_position: 0
+sidebar_position: 1
+tags: [hello, cloudraw]
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-import TOCInline from '@theme/TOCInline';
 import myLogo from '@site/static/img/cloudstudio_logo.png';
+import edit from '@site/static/img/gif/edit.gif';
+import styles from '../../src/scss/_markdown.module.scss';
 
 
-
-# Template - 사이드바 타이틀에 적용
+# How To Use
 <hr/>
-Docs에 관한 내용은 docs폴더에 작성합니다. best template에 대한 내용은 tutorial-extras폴더 안에 작성해줍니다. 사이드바에 메뉴를 추가하고 싶다면 폴더안 아무 mdx파일을 카피합니다. md는 단순히 텍스트를 쓸 수 있는 파일이고 mdx는 Markdown 파일 내에서 JSX를 작성하고 이를 React 구성 요소로 렌더링할 수 있습니다.
+Docs에 관한 내용은 docs폴더에 작성합니다. 사이드바에 메뉴를 추가하고 싶다면 ```Template.mdx``` 파일을 카피합니다. md는 단순히 텍스트를 쓸 수 있는 파일이고 mdx는 Markdown 파일 내에서 JSX를 작성하고 이를 React 구성 요소로 렌더링할 수 있습니다.
 
 **sidebar_position**은 사이드바에 나타날 **메뉴 순서**입니다. 지금은 sidebar_position이 1로 설정되어 있으니 사이드바에서 가장 상단에 나타나고 있습니다.
 
-템플릿은 지우지 마세요.
+
 
 ## 마크다운 사용법 
 ```jsx title="터미널에서"
-cd cloudstudio_docs
 npm run start
 ```
 
-Notion에서 글을 쓴 후 md로 파일을 내보내서 글을 복붙시킵니다.
+Notion에서 글을 쓴 후 md로 파일을 내보내서 글을 복붙시킵니다. 이미지 경로는 다시 작성해줘야 합니다.
 
 ### 컴포넌트 임포트 {#myid}
 컴포넌트를 import 하려면 마크다운 파일 sidebar_position 아래에 import 합니다.
 
 
 ### 전역 스코프
-- Highlight
+- highlight
 - caption
 - button
-은 별도의 import없이 전역으로 사용하실 수 있습니다.
+- link
+- Admonition
+- TOCInline
+
+은 별도의 import 없이 전역으로 사용할 수 있습니다.
 
 
 ### 제목과 목차
@@ -65,8 +67,6 @@ Notion에서 글을 쓴 후 md로 파일을 내보내서 글을 복붙시킵니�
 
 인라인 목차 표시하기. 페이지 오른쪽에 현재 페이지 목차를 나타내주고 있지만, 컴포넌트를 사용하여 페이지 내에 목차를 써줄 수 있습니다.
 ```js
-import TOCInline from '@theme/TOCInline';
-
 <TOCInline toc={toc} />
 ```
 <TOCInline toc={toc} />
@@ -136,10 +136,8 @@ https://designsystem.line.me/LDSM/ux/share-ko
 
 
 ### 텍스트 하이라이트
-텍스트 하이라이트를 사용하려면 **아래 순서**를 따라하세요.
-1. 컴포넌트 임포트
-sidebar_position 아래에 import Highlight from '@site/src/components/HomePageFeatures/Highlight.tsx'; 합니다.
-2. 컴포넌트 작성: 컬러와 텍스트를 입력합니다. 통일성을 위해 컬러는 아래 지정된 컬러로 사용해주세요.
+
+통일성을 위해 컬러는 아래 지정된 컬러로 사용해주세요.
 
 <highlight color="#206FD6">Highlight Blue</highlight>
 
@@ -217,25 +215,43 @@ Some **content** with _Markdown_ `syntax`. Check [this `api`](#).
 
 :::
 
+<admonition type="tip" icon="💡" title="Did you know...">
+  <p>
+    Use plugins to introduce shorter syntax for the most commonly used JSX
+    elements in your project.
+  </p>
+</admonition>
+
+**admonition안에서 MDX 사용하기**
+
+:::tip Use tabs in admonitions
+
+<Tabs >
+  <TabItem value="apple" label="Apple">This is an apple 🍎</TabItem>
+  <TabItem value="orange" label="Orange">This is an orange 🍊</TabItem>
+  <TabItem value="banana" label="Banana">This is a banana 🍌</TabItem>
+</Tabs>
+
+:::
+
 
 
 
 ### 이미지 삽입
-이미지 파일은 src > static > img에서 관리합니다.
-먼저 컴포넌트 경로를 불러온 후 컴포넌트를 작성합니다.
+이미지 파일은 ```src > static > img```에서 관리합니다.
+docs에 img 폴더를 만들어 메뉴별로 관리할 수도 있습니다. ```예) docs > start > img 폴더를 생성```
+먼저 컴포넌트 경로를 불러온 후 컴포넌트를 작성합니다. 이미지 동시에 불러오는 방법 아직은 없음.
 
-<img width="450px" height="300px" src={myLogo} alt="Example img" />
+<div className={styles.imgWrap}>
+    <img width="450px" height="300px" src={ edit } alt="이미지" />
+</div>
+
+**scss도 같이 import해와야 함** 
 
 
 
 
 ### 텝 사용하기
-탭 기능을 사용하려면 **아래 순서**를 따라하세요.
-1. 컴포넌트 임포트
-sidebar_position 아래에 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem'; 합니다.
-2. 컴포넌트 작성
 <Tabs>
   <TabItem value="apple" label="Apple" default>
     This is an apple 🍎
@@ -248,5 +264,45 @@ import TabItem from '@theme/TabItem'; 합니다.
   </TabItem>
 </Tabs>
 
+
+
+
 ### 이미지 캡션
 <caption caption="여기에 글 써주세요." src="/img/login.png" />
+
+
+
+### 표 사용하기
+Markdown table, mdx preview ```extension```을 설치합니다.
+
+| 구분       | 제목           | 제목         |
+| ---------- | -------------- | ------------ |
+| 테스트1    | 테스트2        | 테스트3      |
+| 테스트1    | 테스트2        | 테스트3      |
+| 테스트1    | 테스트2        | 테스트3      |
+
+
+
+### 줄 바꿈하기 (간격 넓히기)
+
+중제목 사이 간격은 ```nbsp```를 사용하여 띄어줍니다.
+<p>&nbsp;</p>
+중제목 사이 간격은 nbsp를 사용하여 띄어줍니다.
+<br />
+줄바꿈을 하고싶을 때는 br을 사용합니다.
+
+
+
+### Tag
+
+mdx파일 상단에 작성해줍니다.
+
+---
+sidebar_position: 1
+tags: [hello, cloudraw]
+---
+
+
+### Button
+
+<button onClick={() => alert('button clicked!')}>Click me!</button>

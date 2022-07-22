@@ -7,26 +7,32 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "Cloud Studio Docs",
-  tagline: "Dinosaurs are cool",
+  tagline: "",
   url: "https://your-docusaurus-test-site.com",
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/simbol.png",
-
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: "facebook", // Usually your GitHub org/user name.
-  projectName: "docusaurus", // Usually your repo name.
-
-  // Even if you don't use internalization, you can use this field to set useful
-  // metadata like html lang. For example, if your site is Chinese, you may want
-  // to replace "en" with "zh-Hans".
+  organizationName: "facebook", 
+  projectName: "docusaurus", 
   i18n: {
     defaultLocale: "en",
     locales: ["en"],
   },
-  plugins: ["docusaurus-plugin-sass"],
+
+
+plugins: [
+  'docusaurus-plugin-sass',
+  [
+    '@docusaurus/plugin-content-docs',
+    {
+      id: 'docs-faq',
+      path: 'docs-faq',
+      routeBasePath: 'docs-faq',
+      sidebarPath: require.resolve('./sidebars.js'),
+    },
+  ],
+],
 
   presets: [
     [
@@ -35,18 +41,12 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
+          routeBasePath: 'docs',
+          path: 'docs',
+          lastVersion: 'current',
+          onlyIncludeVersions: ['current'],
         },
-        blog: {
-          showReadingTime: true,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
-        },
+        blog: false, 
         theme: {
           customCss: require.resolve("./src/scss/_custom.scss"),
         },
@@ -59,13 +59,11 @@ const config = {
     [
       require.resolve("@easyops-cn/docusaurus-search-local"),
       {
-        // ... Your options.
-        // `hashed` is recommended as long-term-cache of index file is possible.
         hashed: true,
-        // For Docs using Chinese, The `language` is recommended to set to:
-        // ```
-        // language: ["en", "zh"],
-        // ```
+        language: ["en"],
+        searchBarShortcutHint: true,
+        searchResultContextMaxLength: 20,
+        highlightSearchTermsOnTargetPage: true,
       },
     ],
   ],
@@ -83,28 +81,29 @@ const config = {
         },
         items: [
           {
-            type: "doc",
-            docId: "intro",
-            position: "left",
-            label: "Documentation",
-          },
-          { to: "/blog", label: "Blog", position: "left" },
-          {
-            href: "https://cloudstudio.cloudraw.kr/support/faq  ",
-            label: "FAQ",
-            position: "left",
+            to: '/docs/Intro',    // ./docs/Intro.md
+            label: 'Docs',
+            position: 'left',
+            activeBaseRegex: `/docs/`,
           },
           {
-            href: "https://mdxjs.com/",
-            label: "Slack community",
+            to: '/docs-faq/Intro',    // ./docs/Intro.md
+            label: 'FAQ',
+            position: 'left',
+            activeBaseRegex: `/docs-faq/`,
+          },
+          {
+            href: "https://join.slack.com/t/w1658372636-gh4700456/shared_invite/zt-1d0rtffdt-TzJ_8YqxPX5mPgWDY5SbKA",
+            label: "Contact Slack",
             position: "left",
           },
           {
             href: "https://cloudstudio.cloudraw.kr/",
-            label: "Drawing Cloud Infra",
+            label: "Demo",
             position: "right",
             className: "btnTrial",
           },
+          // { to: "/blog", label: "Blog", position: "left" },
         ],
       },
       footer: {
