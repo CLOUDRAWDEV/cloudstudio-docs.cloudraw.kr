@@ -80,13 +80,13 @@ plugins: [
         },
         items: [
           {
-            to: '/docs/intro',    // ./docs/Intro.md
+            to: '/docs/category/시작하기',   
             label: 'Docs',
             position: 'left',
             activeBaseRegex: `/docs/`,
           },
           {
-            to: '/docs-faq/account',    // ./docs/Intro.md
+            to: '/docs-faq/category/계정-및-프로필',   
             label: 'FAQ',
             position: 'left',
             activeBaseRegex: `/docs-faq/`,
