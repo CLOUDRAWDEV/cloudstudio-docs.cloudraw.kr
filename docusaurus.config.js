@@ -20,20 +20,6 @@ const config = {
     locales: ["en"],
   },
 
-
-plugins: [
-  'docusaurus-plugin-sass',
-  [
-    '@docusaurus/plugin-content-docs',
-    {
-      id: 'docs-faq',
-      path: 'docs-faq',
-      routeBasePath: 'docs-faq',
-      sidebarPath: require.resolve('./sidebars.js'),
-    },
-  ],
-],
-
   presets: [
     [
       "classic",
@@ -53,6 +39,19 @@ plugins: [
       }),
     ],
   ],
+
+plugins: [
+  'docusaurus-plugin-sass',
+  [
+    '@docusaurus/plugin-content-docs',
+    {
+      id: 'docs-faq',
+      path: 'docs-faq',
+      routeBasePath: 'docs-faq',
+      sidebarPath: require.resolve('./sidebars.js'),
+    },
+  ],
+],
 
   themes: [
     // ... Your other themes.
@@ -81,13 +80,13 @@ plugins: [
         },
         items: [
           {
-            to: '/docs/Intro',    // ./docs/Intro.md
+            to: '/docs/intro',    // ./docs/Intro.md
             label: 'Docs',
             position: 'left',
             activeBaseRegex: `/docs/`,
           },
           {
-            to: '/docs-faq/Intro',    // ./docs/Intro.md
+            to: '/docs-faq/account',    // ./docs/Intro.md
             label: 'FAQ',
             position: 'left',
             activeBaseRegex: `/docs-faq/`,
