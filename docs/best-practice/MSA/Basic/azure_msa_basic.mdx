@@ -1,0 +1,91 @@
+---
+sidebar_position: 0
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import TOCInline from '@theme/TOCInline';
+import styles from '../../../../src/scss/_textStyle.module.scss';
+import azMSABasic1 from './img/azure-msa-basic/1.png';
+import azMSABasic2 from './img/azure-msa-basic/2.png';
+import azMSABasic3 from './img/azure-msa-basic/3.png';
+import azMSABasic4 from './img/azure-msa-basic/4.png';
+import azMSABasic5 from './img/azure-msa-basic/5.png';
+import azMSABasic6 from './img/azure-msa-basic/6.png';
+import azMSABasic7 from './img/azure-msa-basic/7.png';
+import azMSABasic8 from './img/azure-msa-basic/8.png';
+//import azMSABasic9 from './img/azure-msa-basic/9.png';
+//import azMSABasic10 from './img/azure-msa-basic/10.png';
+
+# Azure
+##### 2022.07.18 / 읽는 데 15분 걸림(소요시간)
+
+*****
+
+## 전제조건
+- **Azure 구독**
+- **Azure 서비스 주체 + 역할 할당**
+- **리소스를 배포하는 구독에 대해 기여자 이상의 권한**
+
+:::info
+서비스 주체를 사용하기 위해서는 생성한 서비스 주체는 구독의 IAM 엑세스 제어에 추가해야 합니다. 
+역할을 할당할 때는, Azure에서 제공하는 Buildin 규칙과 사용자가 필요한 권한을 추가하는 Custom 규칙이 있습니다.
+Cloud Studio를 안정적으로 사용하기 위해서는 구독의 소유자(Owner) 권한을 권장합니다. 하지만, 소유자 권한을 사용할 수 없다면
+최소 기여자(Contributor) 권한이 필요합니다. 기여자 권한은 관리자 바로 아래 권한으로 구독의 권한 할당을 제외한 모든 작업이 가능합니다.
+(Azure 역할 할당: https://docs.microsoft.com/ko-kr/azure/role-based-access-control/role-assignments-cli)
+:::
+
+## 구성 서비스
+- **Kubernetes Servic**: Azure가 제공하는 PaaS형 쿠버네티스 클러스터
+- **Container Registry**: 컨테이너 이미지를 저장하는 레지스트리
+- **Key Vault**: 암호를 안전하게 저장하고 액세스 하기 위한 클라우드 서비스
+- **Database for Mysql**: Azure가 제공하는 PaaS형 MySQL 데이터베이스
+- **Storage Account**: HTTP, HTTPS를 통해 Storage 데이터에 대한 고유한 네임스페이스를 제공하고 저장소를 지원하는 서비스
+- **Monitor Action Group**: Alert가 발생한 경우, Alert를 받을 사용자 그룹
+- **Monitor Activity Log Alert**: 리소스에서 발생하는 활동로그를 수집하고 Alert를 발생시키는 서비스
+- **Monitor Metric Alert**: 리소스의 메트릭을 수집하고 Alert를 발생시키는 서비스
+<br/>
+
+## Architecture
+<caption caption="[그림.1] Azure MSA Basic" src={azMSABasic8} />
+
+## 캔버스 실습
+### 구독 지정
+내용
+<caption caption="[그림.2] Azure MSA Basic 1" src={azMSABasic1} />
+
+### 리소스 그룹 생성
+내용
+<caption caption="[그림.3] Azure MSA Basic 2" src={azMSABasic2} />
+
+### 쿠버네티스 클러스터 생성
+내용
+<caption caption="[그림.4] Azure MSA Basic 3" src={azMSABasic3} />
+
+### 컨테이너 레지스트리 생성 
+내용
+<caption caption="[그림.5] Azure MSA Basic 4" src={azMSABasic4} />
+
+### Key Vault 생성
+내용
+<caption caption="[그림.6] Azure MSA Basic 5" src={azMSABasic5} />
+
+### Azure Database for Mysql 생성
+내용
+<caption caption="[그림.7] Azure MSA Basic 6" src={azMSABasic6} />
+
+### 스토리지 계정 생성
+내용
+<caption caption="[그림.8] Azure MSA Basic 7" src={azMSABasic7} />
+
+### Monitor Action Group 생성
+내용
+<caption caption="[그림.9] Azure MSA Basic 8" src={azMSABasic8} />
+
+### Monitor Activity Log Alert 설정
+내용
+<caption caption="[그림.10] Azure MSA Basic 9" src={azMSABasic8} />
+
+### Monitor Metric Alert 설정
+내용
+<caption caption="[그림.11] Azure MSA Basic 10" src={azMSABasic8} />
