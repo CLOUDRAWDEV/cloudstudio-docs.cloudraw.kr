@@ -24,6 +24,10 @@
   }
 
 // font-color
+@mixin white {
+    color: #ffffff;
+}
+
 @mixin black {
     color: #101113;
 }
@@ -44,7 +48,6 @@
 @mixin light-blue {
     background-color: #EDF4FE;
 }
-
 
 // font
 @mixin h1 {
@@ -75,3 +78,7 @@
     @include medium-gray()
 }
 
+// 들여쓰기
+@mixin indent {
+    margin-left: 24px;
+}

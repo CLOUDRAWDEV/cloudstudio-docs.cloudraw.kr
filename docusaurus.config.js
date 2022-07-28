@@ -12,7 +12,7 @@ const config = {
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
-  favicon: "img/simbol.png",
+  favicon: "img/simbol3.png",
   organizationName: "facebook", 
   projectName: "docusaurus", 
   i18n: {

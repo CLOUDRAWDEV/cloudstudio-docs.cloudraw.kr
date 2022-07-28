@@ -10,7 +10,7 @@
     max-width: 1920px;
 
     &__indent {
-        margin-left: 24px;
+        @include indent();
     }
 
     &__space {
