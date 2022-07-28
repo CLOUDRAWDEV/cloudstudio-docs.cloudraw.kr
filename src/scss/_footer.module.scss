@@ -1,4 +1,5 @@
 @charset "utf-8";
+@import "./mixin";
 
 .footer {
     color: var(--ifm-color-primary);
@@ -8,6 +9,14 @@
     gap: 40px;
     padding: 32px 200px 32px 200px;
   
+    &[data-theme='dark'] {
+        li {
+            h4 {
+                color: --ifm-color-primary;
+            }
+        }
+    }
+
     ul {
         list-style: none;
         padding-left: 0px;
@@ -41,7 +50,7 @@
     &__address {
         display: flex;
         justify-content: space-between;
-        gap: 130px;
+        gap: 48px;
 
         &__copy {
             text-align: right;
@@ -57,28 +66,41 @@
             gap: 72px;
         }
     }
-}
 
-@media screen and (min-width: 501px) and (max-width: 997px) {
-    .footer{
-        padding: 32px;
-    }
-}
-
-@media screen and (min-width: 0px) and (max-width: 500px) {
-    .footer{
+    @include tablet {
         padding: 32px;
 
-        &__footer__address {
+        &__nav {
             flex-direction: column;
+
+            h1:after {
+                content: "";
+                height: 4px;
+                background-color: #206FD6;
+                position: absolute;
+                bottom: 0px;
+                left: 0;
+                right: 0;
+            }
         }
+    }
 
-        &__footer__nav{
+    @include mobile {
+        padding: 32px;
+
+        &__nav {
             flex-direction: column;
-    
-            h1{
-                text-align: left;
+
+            h1:after {
+                content: "";
+                height: 4px;
+                background-color: #206FD6;
+                position: absolute;
+                bottom: 0px;
+                left: 0;
+                right: 0;
             }
         }
     }
 }
+

@@ -10,32 +10,29 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    title: '간편한 인프라 구축',
+    Svg: require('../HomepageFeatures/img/achi.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        보안 및 생산성 담보를 보장하는 CSP별 Standard Best-Practice Infrastructur Template을 제공하여 쉽게 클라우드 환경을 구축할 수 있습니다.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    title: '배포 효율을 높이는 버전관리',
+    Svg: require('../HomepageFeatures/img/version.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        캔버스로 구성한 리소스에 대한 버전을 관리할 수 있으며 원하는 시점으로 자유롭게 이동할 수 있어 리소스에 대한 형상관리가 가능합니다.
       </>
     ),
   },
   {
-    title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    title: 'IaC로 효과적인 인프라 관리',
+    Svg: require('../HomepageFeatures/img/code.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        캔버스에 그려진 리소스들은 테라폼 코드로 관리되어 효과적으로 관리할 수 있습니다. 코드는 자유롭게 수정 가능하고, CSP 환경에 배포할 수 있습니다.
       </>
     ),
   },
