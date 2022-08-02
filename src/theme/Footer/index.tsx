@@ -23,7 +23,6 @@ export default function Footer(props) {
             <h3>Community</h3>
             <ul>
               <li><Link to="https://join.slack.com/t/w1658372636-gh4700456/shared_invite/zt-1d0rtffdt-TzJ_8YqxPX5mPgWDY5SbKA"><h4>Slack</h4></Link></li>
-              <li><Link to="https://cloudstudio.cloudraw.kr/support/faq"><h4>FAQ</h4></Link></li>
               <li><Link to="https://www.youtube.com/channel/UCHoqm5luu1MvzPQRHVSwH9w"><h4>Youtube</h4></Link></li>
             </ul>
           </div>
