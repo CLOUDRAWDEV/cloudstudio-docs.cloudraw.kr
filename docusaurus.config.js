@@ -98,7 +98,7 @@ plugins: [
           },
           {
             href: "https://cloudstudio.cloudraw.kr/",
-            label: "Demo",
+            label: "무료체험하기",
             position: "right",
             className: "btnTrial",
           },
