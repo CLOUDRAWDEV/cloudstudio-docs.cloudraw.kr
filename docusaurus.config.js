@@ -32,7 +32,11 @@ const config = {
           lastVersion: 'current',
           onlyIncludeVersions: ['current'],
         },
-        blog: false, 
+        blog: {
+          blogSidebarTitle: 'All posts',
+          blogSidebarCount: 'ALL',
+          showReadingTime: false,
+        },
         theme: {
           customCss: require.resolve("./src/scss/_custom.scss"),
         },
@@ -91,6 +95,11 @@ plugins: [
             position: 'left',
             activeBaseRegex: `/docs-faq/`,
           },
+          { 
+            to: "/blog",
+            label: "Notice",
+            position: "left"
+          },
           {
             href: "https://join.slack.com/t/w1658372636-gh4700456/shared_invite/zt-1d0rtffdt-TzJ_8YqxPX5mPgWDY5SbKA",
             label: "Contact Slack",
@@ -102,7 +111,6 @@ plugins: [
             position: "right",
             className: "btnTrial",
           },
-          // { to: "/blog", label: "Blog", position: "left" },
         ],
       },
       footer: {
