@@ -1,0 +1,140 @@
+---
+sidebar_position: 0
+tags: [Template, 자주 사용하는 리소스, Sentinel, Azure]
+---
+
+import azure1 from './img/azure/1.png';
+import azure2 from './img/azure/2.png';
+import azure3 from './img/azure/3.png';
+import azure4 from './img/azure/4.png';
+import azure5 from './img/azure/5.png';
+import azure6 from './img/azure/6.png';
+import azure7 from './img/azure/7.png';
+import azure8 from './img/azure/8.png';
+import azure9 from './img/azure/9.png';
+import azure10 from './img/azure/10.png';
+
+# Azure Sentinel
+##### 2022.07.28 / 읽는 데 15분 걸림(소요시간)
+
+*****0
+<br/>
+Microsoft Sentinel은 스케일링 가능한 클라우드 네이티브, SIEM(보안 정보 및 이벤트 관리) 및 SOAR(보안 오케스트레이션, 자동화 및 응답) 솔루션입니다. 
+기업 전체에 지능형 보안 분석 및 위협 인텔리전스를 제공하여 공격 검색, 위협 표시 유형, 자동 관리 헌팅 및 위협 대응을 위한 단일 솔루션을 제공합니다.
+점점 더 정교해지는 공격, 늘어나는 경고의 양과 긴 해결 기간이라는 문제를 완화하기 위해 엔터프라이즈 전체를 폭넓은 시각으로 모니터링합니다.
+
+## 로그인
+- [Azure 체험 계정 생성](https://azure.microsoft.com/ko-kr/free/)
+- <Link to="/docs/start/sign-in">클라우드 스튜디오 회원가입 방법</Link>
+- [클라우드 스튜디오 회원가입 바로가기](https://cloudstudio.cloudraw.kr/signup)
+
+## 전제조건
+- **Azure 구독**
+- **Azure 서비스 주체 + 역할 할당**
+- **리소스를 배포하는 구독에 대해 기여자 이상의 권한**
+- **클라우드 스튜디오에 크레덴셜 값 등록**
+
+## 구성 서비스
+- **Log Analytics Workspace**
+- **Sentinel**
+- **Azure Storage Account**
+- **Security Center**
+
+## Azure Sentinel 아키텍처 만들기
+### 1. 구독 생성
+캔버스에서 구독 아이콘을 가져온 후 등록한 **크레덴셜**을 선택합니다.
+크레덴셜이 없는 경우 크레덴셜 등록 페이지를 확인해주세요.
+<caption caption="[그림.1] Azure Sentinel 1" src={azure1} />
+
+### 2. 리소스 그룹 생성
+**리소스 그룹** 아이콘을 가져옵니다.
+리소스 그룹은 동일한 Life Cycle을 가진 리소스들을 묶는 그룹을 말합니다.
+
+> - ```Service Name```: resourceGroup
+> - ```Location```: koreacentral
+
+<caption caption="[그림.2] Azure Sentinel 2" src={azure2} />
+
+### 3. Log Analytics Workspace 생성 
+**Log Analytics Workspace** 아이콘을 가져옵니다.
+Log Analytics Workspace는 Sentinel과 Security Center에서 사용할 로그를 저장합니다.
+
+> - ```Service Name```: sentinelworkspace
+> - ```Retention In Days```: 30
+> - ```Internet Query Enabled```: false
+> - ```Internet Ingestion Enabled```: false
+
+<caption caption="[그림.3] Azure Sentinel 3" src={azure3} />
+
+### 4. Sentinel 생성 
+**Sentinel** 아이콘을 가져옵니다.
+Sentinel은 Log Analytics Workspace에 로그를 저장하고 시각화하는 역할을 담당합니다.
+Sentinel에서 총 6개의 로그 Connector를 제공합니다.
+Log Analytics Workspace에 저장된 로그를 Azure에서 제공하는 규칙을 사용하거나 Custom해서 사용할 수 있습니다.
+
+> - ```Service Name```: cloudstudiosentinle
+> - ```Connect Security Cente```: true
+> - ```Connect Threat Intelligence```: true
+> - ```Connect Advanced Threat Protection```: true
+
+<caption caption="[그림.4] Azure Sentinel 4" src={azure4} />
+
+> - ```Connect Microsoft Defender```: true
+> - ```Connect Office 365```: true
+> - ```Connect Cloud App Security```: true
+> - ```Fusion Rule Rule Guid```: ["f71aba3d-28fb-450b-b192-4e76a83015c8"]
+> - ```Behavior Analytics Rule Guid```: ["737a2ce1-70a3-4968-9e90-3e6aca836abf"]
+
+<caption caption="[그림.5] Azure Sentinel 5" src={azure5} />
+
+> - ```Alert Rule Incident.Display Name```: incident rule2
+> - ```Alert Rule Incident.Product```: Azure Active Directory Identity Protection
+> - ```Alert Rule Incident.Severity```: ["High", "Low"]
+
+<caption caption="[그림.6] Azure Sentinel 6" src={azure6} />
+
+### 5. Storage Account 생성 
+**Storage Account** 아이콘을 가져옵니다.
+Security Center의 Advanced Threat Protection으로 보호할 Storage Account를 생성합니다.
+해당 Storage Account는 Security Center에 의해 보호받으며, Security Center의 Assessment Policy에 의해서 안전성을 평가받습니다. 
+
+> - ```Service Name```: cloudstudiosentinle
+> - ```Account Kind```: StorageV2
+> - ```Account Tier```: Standard
+> - ```Account Replication Type```: LRS
+> - ```Access Tier```: Hot 
+
+<caption caption="[그림.7] Azure Sentinel 7" src={azure7} />
+
+Network Rules은 모든 IP 주소를 허용했지만, 실제 배포를 할때는 현재 사용하고 있는 공인 IP 주소만 허용하는 것을 권장합니다.
+
+> - ```Min Tls Version```: TLS1_2
+> - ```Enable Https Traffic Only```: true
+> - ```Network Rules.Nmae```: defaultrule
+> - ```Network Rules.Default Action```: Allow
+> - ```Network Rules.Bypass```: [ "AzureServices" ]
+> - ```Network Rules.Ip Rules```: 0.0.0.0
+
+<caption caption="[그림.8] Azure Sentinel 8" src={azure8} />
+
+### 6. Security Center 생성
+**Security Center** 아이콘을 가져옵니다.
+Security Center는 수집한 로그를 Log Analytics Workspace에 저장합니다.
+Advanced Threat Protection에 지정한 리소스에서 로그를 수집하고 이에 대해 안전성 분석을 제공합니다.
+아래 입력하는 옵션을 제외한 나머지 옵션은 자동으로 설정됩니다.
+
+> - ```Service Name```: securitycenter
+> - ```Assessment Policy.Display Name```: Log Analytics Workspace Assessment Policy
+> - ```Assessment Policy.Severity```: Medium
+> - ```Assessment Policy.Description```: Assess Log Analytics Workspace Vulnerability
+> - ```Assessment.Status Code```: Healthy
+
+<caption caption="[그림.9] Azure Sentinel 9" src={azure9} />
+
+> - ```Linked Advanced Threat Protection.Enabled```: true
+
+<caption caption="[그림.10] Azure Sentinel 10" src={azure10} />
+
+## 출처
+- [Azure Sentinel](https://docs.microsoft.com/ko-kr/azure/sentinel/)
+- [Azure Security Center](https://docs.microsoft.com/ko-kr/azure/defender-for-cloud/)

@@ -1,6 +1,6 @@
 ---
 sidebar_position: 0
-tags: [Template, Best Practice, MSA, Basic, Azure]
+tags: [Template, Best Practice, MSA, Enterprise, Azure]
 ---
 
 import azure2 from './img/azure/2.png';
@@ -24,6 +24,12 @@ import azure19 from './img/azure/19.png';
 import azure20 from './img/azure/20.png';
 import azure21 from './img/azure/21.png';
 import azure22 from './img/azure/22.png';
+
+import azure24 from './img/azure/24.png';
+import azure25 from './img/azure/25.png';
+import azure26 from './img/azure/26.png';
+import azure27 from './img/azure/27.png';
+import azure28 from './img/azure/28.png';
 
 
 # Azure
@@ -58,6 +64,9 @@ MSA 아키텍처에서는 쿠버네티스 클러스터를 운영하기 위해 �
 - **Monitor Action Group**
 - **Monitor Activity Log Alert**
 - **Monitor Metric Alert**
+- **Linux App Service**
+- **Log Analytics Workspace**
+- **Application Insights**
 
 ## Azure MSA 아키텍처 만들기
 ### 1. 구독 생성
@@ -81,11 +90,11 @@ Vnet Address Space의 Prefix에서 8을 추가해서 Subnet에 적용합니다.
 Api Sever Authorized Ip Ranges는 쿠버네티스의 api server에 요청을 보낼 수 있는 IP 주소 범위를 입력합니다.
 사용자의 Public IP 대역을 확인 후 입력합니다.
 
->- ```Service Name```: default-aks
->- ```Vnet Address Space```: 10.0.0.0/8
->- ```Dns Prefix```: defaultAks
->- ```Sku Tier```: Free
->- ```Api Sever Authorized Ip Ranges```: [ 0.0.0.0 ]
+> - ```Service Name```: default-aks
+> - ```Vnet Address Space```: 10.0.0.0/8
+> - ```Dns Prefix```: defaultAks
+> - ```Sku Tier```: Free
+> - ```Api Sever Authorized Ip Ranges```: [ 0.0.0.0 ]
 
 <caption caption="[그림.3] Azure MSA Basic 3" src={azure4} />
 
@@ -106,34 +115,34 @@ Enable Node Public Ip를 true로 설정하면 노드에 Public IP가 할당됩�
 Aad Rbac Enabled는 현재 사용자의 Azure AD의 사용자를 쿠버네티스 내에서 사용할 수 있도록 만들어줍니다. Azure AD에 등록된 사용자를 쿠버네티스 RBAC에 사용할 수 있습니다.
 Network Policy와 Network Plugin은 쿠버네티스 네트워크 구성과 관련된 옵션입니다.
 
->- ```Enable Node Public Ip```: false
->- ```Aad Rbac Enabled```: true
->- ```Network Policy```: calico
->- ```Network Plugin```: kubenet
->- ```Load Balancer Sku```: standard
+> - ```Enable Node Public Ip```: false
+> - ```Aad Rbac Enabled```: true
+> - ```Network Policy```: calico
+> - ```Network Plugin```: kubenet
+> - ```Load Balancer Sku```: standard
 
 <caption caption="[그림.5] Azure MSA Basic 5" src={azure6} />
 
 Pod와 Service는 쿠버네티스에서 사용하는 오브젝트의 이름입니다. 각 오브젝트가 사용할 CIDR을 지정합니다.
 
->- ```Pod Cidr```: 10.244.0.0/16
->- ```Service Cidr```: 10.0.0.0/16
->- ```Dns Service Ip```: 10.0.0.4
->- ```Docker Brider Cidr```: 172.17.0.1/16
->- ```Outbound Type```: loadBalancer
+> - ```Pod Cidr```: 10.244.0.0/16
+> - ```Service Cidr```: 10.0.0.0/16
+> - ```Dns Service Ip```: 10.0.0.4
+> - ```Docker Brider Cidr```: 172.17.0.1/16
+> - ```Outbound Type```: loadBalancer
 
 <caption caption="[그림.6] Azure MSA Basic 6" src={azure7} />
 
 ### 4. 컨테이너 레지스트리 생성 
 **컨테이너 레지스트리** 아이콘을 가져옵니다.
-컨테이너 레지스트리는 Docker 이미지를 저장하는 저장소입니다. 
+컨테이너 레지스트리는 Docker 이미지를 저장하는 저장소입니다.
 컨테이너 레지스트리에 접근 제어를 하는 Network Rule Set은 Premium Sku에서만 사용가능합니다.
-이 가이드에서는 Standard Sku를 사용하기 때문에 Network Rule Set은 만들지 않습니다. 
+이 가이드에서는 Standard Sku를 사용하기 때문에 Network Rule Set은 만들지 않습니다.
 
->- ```Service Name```: default-acr
->- ```Sku```: Standard
->- ```Admin Enabled```: false
->- ```Public Network Access Enabled```: true
+> - ```Service Name```: default-acr
+> - ```Sku```: Standard
+> - ```Admin Enabled```: false
+> - ```Public Network Access Enabled```: true
 
 <caption caption="[그림.7] Azure MSA Basic 7" src={azure8} />
 
@@ -144,20 +153,20 @@ Key Vault는 Azure에서 제공하는 Key Management Service 입니다. Key Vaul
 Key Vault는 크레덴셜을 저장하기 때문에 사용자가 크레덴셜을 삭제해도 바로 삭제되지 않습니다.
 Soft Delete Retention Days에서 삭제한 크레덴셜을 얼마나 보관하고 있을지 설정합니다. Soft Delete된 크레덴셜은 복구가 가능합니다.
 
->- ```Service Name```: default-keyvault
->- ```Sku Name```: standard
->- ```Enabled For Disk Encryption```: true
->- ```Soft Delete Retention Days```: 7
->- ```Purge Protection Enabled```: false
+> - ```Service Name```: default-keyvault
+> - ```Sku Name```: standard
+> - ```Enabled For Disk Encryption```: true
+> - ```Soft Delete Retention Days```: 7
+> - ```Purge Protection Enabled```: false
 
 <caption caption="[그림.8] Azure MSA Basic 8" src={azure9} />
 
 Key Vault에 접근할 수 있는 Public IP 주소를 지정할 수 있습니다. 
 Key Vault에 사용자만 접근할 수 있도록, 사용자의 Public IP만 허용합니다.
 
->- ```Network Acl Bypass```: [ "AzureServices" ]
->- ```Network Acl Action```: Allow
->- ```Network Acl Ip Rules```: 20.194.25.110/32
+> - ```Network Acl Bypass```: [ "AzureServices" ]
+> - ```Network Acl Action```: Allow
+> - ```Network Acl Ip Rules```: 20.194.25.110/32
 
 <caption caption="[그림.9] Azure MSA Basic 9" src={azure10} />
 
@@ -165,16 +174,16 @@ Key Vault의 크레덴셜에 대해서 세부적인 접근 제어를 설정할 �
 Access Policy는 Key, Secrets, Certificate 각각 15개의 세분화된 권한을 할당할 수 있습니다.
 사용자는 SP나 Azure AD에 등록되 계정의 Object ID를 등록함으로써 Key Vault의 특정 크레덴셜에 대한 권한을 받을 수 있습니다.
 
->- ```Access Policies.Name```: default-access-policy
->- ```Access Policies.Object Id```: OBJECT_ID
->- ```Access Policies.Secret Permissions```: ["GET"]
+> - ```Access Policies.Name```: default-access-policy
+> - ```Access Policies.Object Id```: OBJECT_ID
+> - ```Access Policies.Secret Permissions```: ["GET"]
 
 <caption caption="[그림.10] Azure MSA Basic 10" src={azure11} />
 
 Key Vault의 Secret은 특정 값을 등록할 수 있습니다. Key Vault의 Secret은 생성되면서 Tenat ID를 크레덴셜로 등록합니다.
 
->- ```Key Vault Secret.Name```: defaultsecret
->- ```Key Vault Secret.Expiration Date```: EXPIRATION DATE
+> - ```Key Vault Secret.Name```: defaultsecret
+> - ```Key Vault Secret.Expiration Date```: EXPIRATION DATE
 
 <caption caption="[그림.11] Azure MSA Basic 11" src={azure12} />
 
@@ -185,10 +194,10 @@ Azure에서 제공하는 PaaS형 MySQL에는 단일 서버와 유연한 서버 2
 클라우드 스튜디오에서 제공하는 PaaS형 MySQL 서버는 모두 단일 서버입니다.
 Mysql의 Service Name은 서버의 DNS주소로 사용되기 때문에 사용자별 unique한 값을 입력해야 합니다.
 
->- ```Service Name```: cloudstudiomysql
->- ```Version```: 5.7
->- ```Sku Name```: GP_Gen5_4
->- ```Storage Mb```: 5120
+> - ```Service Name```: cloudstudiomysql
+> - ```Version```: 5.7
+> - ```Sku Name```: GP_Gen5_4
+> - ```Storage Mb```: 5120
 
 <caption caption="[그림.12] Azure MSA Basic 12" src={azure13} />
 
@@ -196,28 +205,28 @@ Public Network Access Enabled를 true로 설정하면, 관리자의 ID와 Passwo
 Public 접근을 허용한 경우에는 반드시 방화벽을 설정해 사용자 제외 나머지 Public IP는 차단해야합니다.
 Public Network Access Enabled이 false인 경우에는 인터넷을 통한 접속이 차단되므로 방화벽을 설정할 수 없습니다.
 
->- ```Admin Login```: admin
->- ```Admin Password```: ADMIN_PASSWORD
->- ```Public Network Access Enabled```: true
->- ```Ssl Enforcement Enabled```: true
->- ```Minimal Tls Version```: TLS1_2
->- ```Threat Detection Enabled```: false
+> - ```Admin Login```: admin
+> - ```Admin Password```: ADMIN_PASSWORD
+> - ```Public Network Access Enabled```: true
+> - ```Ssl Enforcement Enabled```: true
+> - ```Minimal Tls Version```: TLS1_2
+> - ```Threat Detection Enabled```: false
 
 <caption caption="[그림.13] Azure MSA Basic 13" src={azure14} />
 
 Mysql 서버에 데이터베이스를 추가합니다. 데이터베이스에서 사용할 Charset과 Collation을 지정합니다.
 
->- ```Database.Name```: defaultdatabase
->- ```Database.Charset```: utf8
->- ```Database.Collation```: utf8_unicode_ci
+> - ```Database.Name```: defaultdatabase
+> - ```Database.Charset```: utf8
+> - ```Database.Collation```: utf8_unicode_ci
 
 <caption caption="[그림.14] Azure MSA Basic 14" src={azure15} />
 
 Mysql 서버에 접속할 수 있는 IP를 설정합니다. 시작 IP와 마지막 IP를 모두 0.0.0.0으로 설정하면 모든 IP가 데이터베이스에 접속을 허용합니다.
 
->- ```Firewall.Name```: defaultfirewall
->- ```Firewall.Start Ip Address```: 0.0.0.0
->- ```Firewall.End Ip Address```: 0.0.0.0
+> - ```Firewall.Name```: defaultfirewall
+> - ```Firewall.Start Ip Address```: 0.0.0.0
+> - ```Firewall.End Ip Address```: 0.0.0.0
 
 <caption caption="[그림.15] Azure MSA Basic 15" src={azure16} />
 
@@ -227,31 +236,31 @@ Storage Account는 Azure에서 제공하는 Object 스토리지입니다.
 Storage Account는 Container, Queue, File, Table 4 종류의 스토리지를 지원합니다. 용도에 맞는 스토리지를 생성해서 사용할 수 있습니다.
 Storage Account Service Name은 서버의 DNS주소로 사용되기 때문에 사용자별 unique한 값을 입력해야 합니다.
 
->- ```Service Name```: cloudstudiodefault
->- ```Account Kind```: StorageV2
->- ```Account Tier```: Standard
->- ```Account Replication Type```: LRS
->- ```Access Tier```: Hot 
->- ```Min Tls Version```: TLS1_2
+> - ```Service Name```: cloudstudiodefault
+> - ```Account Kind```: StorageV2
+> - ```Account Tier```: Standard
+> - ```Account Replication Type```: LRS
+> - ```Access Tier```: Hot 
+> - ```Min Tls Version```: TLS1_2
 
 <caption caption="[그림.16] Azure MSA Basic 16" src={azure17} />
 
 Object 스토리지는 DNS 주소를 알면 누구나 Request를 보낼 수 있기 때문에 IP 주소로 접근 제어를 해야합니다.
 사용자의 Public IP만 접속이 가능하도록 Network Rule을 설정합니다.
 
->- ```Enable Https Traffic Only```: true
->- ```Network Rules.Nmae```: defaultrule
->- ```Network Rules.Default Action```: Allow
->- ```Network Rules.Bypass```: [ "AzureServices" ]
->- ```Network Rules.Ip Rules```: 20.194.25.110/32
+> - ```Enable Https Traffic Only```: true
+> - ```Network Rules.Nmae```: defaultrule
+> - ```Network Rules.Default Action```: Allow
+> - ```Network Rules.Bypass```: [ "AzureServices" ]
+> - ```Network Rules.Ip Rules```: 20.194.25.110/32
 
 <caption caption="[그림.17] Azure MSA Basic 17" src={azure18} />
 
 Storage Account는 4종류의 스토리지를 가지고 있지만, 이 가이드에서는 Storage Share만 사용합니다.
 Storage Share는 쿠버네티스의 스토리지로 사용할 수 있습니다. Storage Class를 통해서 쿠버네티스에 있는 데이터를 Storage Share에 저장할 수 있습니다.
 
->- ```Storage Share.Name```: defaultshare
->- ```Storage Share.Quota```: 5
+> - ```Storage Share.Name```: defaultshare
+> - ```Storage Share.Quota```: 5
 
 <caption caption="[그림.18] Azure MSA Basic 18" src={azure19} />
 
@@ -260,25 +269,25 @@ Storage Share는 쿠버네티스의 스토리지로 사용할 수 있습니다. 
 Azure Monitor는 Azure Resource들의 메트릭 및 로그를 수집하는 서비스 입니다.
 Azure Action Group은 Monitor가 데이터 수집 과정에서 사용자가 지정한 조건에 일치하는 데이터가 발생했을 때, 사용자에게 알림을 전달하는 서비스입니다.
 
->- ```Service Name```: defaultactiongroup
->- ```Short Name```: defaultactiongroup
->- ```Enabled```: true
+> - ```Service Name```: defaultactiongroup
+> - ```Short Name```: defaultactiongroup
+> - ```Enabled```: true
 
 <caption caption="[그림.19] Azure MSA Basic 19" src={azure20} />
 
 이메일을 받을 관리자의 Email 주소를 입력합니다.
 
->- ```Email.Name```: defaultemail
->- ```Email.Email Address```: EMAIL_ADDRESS
->- ```Email.Use Common Alert Schema```: true
+> - ```Email.Name```: defaultemail
+> - ```Email.Email Address```: EMAIL_ADDRESS
+> - ```Email.Use Common Alert Schema```: true
 
 <caption caption="[그림.20] Azure MSA Basic 20" src={azure21} />
 
 문자를 받을 관리자의 핸드폰 번호를 입력합니다.
 
->- ```Sms.Name```: defaultsms
->- ```Sms.Country Code```: 82
->- ```Sms.Phone Number```: PHONE_NUMBER
+> - ```Sms.Name```: defaultsms
+> - ```Sms.Country Code```: 82
+> - ```Sms.Phone Number```: PHONE_NUMBER
 
 <caption caption="[그림.21] Azure MSA Basic 21" src={azure22} />
 
@@ -286,8 +295,8 @@ Azure Action Group은 Monitor가 데이터 수집 과정에서 사용자가 지�
 **Monitor Activity Log Alert** 아이콘을 가져옵니다.
 Activity Log Alert는 Azure Monitor가 활동 로그를 수집할 때, 사용자가 지정한 로그 Level을 넘어가는 경우 알림을 전달합니다.
 
->- ```Service Name```: activitylogalert
->- ```Sms```: default
+> - ```Service Name```: activitylogalert
+> - ```Sms```: default
 
 <caption caption="[그림.22] Azure MSA Basic 22" src={azure22} />
 
@@ -295,11 +304,56 @@ Activity Log Alert는 Azure Monitor가 활동 로그를 수집할 때, 사용자
 **Monitor Metric Alert** 아이콘을 가져옵니다.
 Metric Alert는 Azure Monitor가 메트릭을 수집할 때, 사용자가 지정한 수치를 넘어가는 경우 알림을 전달합니다.
 
->- ```Service Name```: activitylogalert
->- ```Sms```: default
+> - ```Service Name```: activitylogalert
+> - ```Sms```: default
 
 <caption caption="[그림.23] Azure MSA Basic 23" src={azure22} />
 
+### 12. Linux App Service 생성
+**Linux App Service** 아이콘을 가져옵니다. 이 가이드에서는 Linux OS를 사용하는 App Service를 사용합니다. 
+App Service도 가격측정을 위한 SKU를 가집니다. App Service에 배포할 서비스에 성능에 맞는 SKU를 선택합니다.
+App Service에서 인증, 권한과 Error 메시지완 관련된 옵션을 설정합니다.
+
+> - ```Service Name```: defaultappservice
+> - ```Kind```: Linux
+> - ```Sku Tier```: B1
+
+<caption caption="[그림.24] Azure MSA Basic 24" src={azure24} />
+
+> - ```App Service.Client Cert Enabled```: true
+> - ```App Service.Auth Settings Enabled```: true
+> - ```App Service.Detailed Error Messages Enabled```: true
+> - ```App Service.Failed Request Tracing Enabled```: true
+> - ```App Service.Retention In Days```: 5
+> - ```App Service.Retention In Mb```: 25
+
+<caption caption="[그림.25] Azure MSA Basic 25" src={azure25} />
+
+> - ```App Service.Ftps State```: Disabled
+> - ```App Service.Http2 Enabled```: true
+
+<caption caption="[그림.26] Azure MSA Basic 26" src={azure26} />
+
+### 13. Log Analytics Workspace 생성
+**Log Analytics Workspace** 아이콘을 가져옵니다. Log Analytics Workspace는 로그를 저장하기 위한 저장 공간을 생성합니다.
+
+> - ```Service Name```: defaultloganalytics
+> - ```Retention In Days```: 30
+> - ```Internet Query Enabled```: false
+> - ```Internet Ingestion Enabled```: false
+
+<caption caption="[그림.27] Azure MSA Basic 27" src={azure27} />
+
+### 14. Application Insights 생성
+**Application Insights** 아이콘을 가져옵니다.
+Application Insights는 Application에서 발생하는 로그를 Log Analytics에 저장합니다.
+Application Insights로 로그를 전달하는 방법은 [Application Insights SDK](https://docs.microsoft.com/ko-kr/azure/azure-monitor/app/api-custom-events-metrics)를 참고하시기 바랍니다.
+
+> - ```Service Name```: activitylogalert
+> - ```Type```: web
+> - ```Retention In Days```: 30
+
+<caption caption="[그림.28] Azure MSA Basic 28" src={azure28} />
 
 *****
 ## 출처
@@ -315,3 +369,5 @@ Metric Alert는 Azure Monitor가 메트릭을 수집할 때, 사용자가 지정
 - [Azure Storage Account](https://docs.microsoft.com/ko-kr/azure/storage/blobs/)
 - [Azure Storage Account Terraform](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/storage_account)
 - [Azure Monitor](https://docs.microsoft.com/ko-kr/azure/azure-monitor/overview)
+- [Azure Application Insights](https://docs.microsoft.com/ko-kr/azure/azure-monitor/app/app-insights-overview)
+- [Azure Application Insights Terraform](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/application_insights)

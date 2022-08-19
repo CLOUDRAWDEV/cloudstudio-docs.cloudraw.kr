@@ -1,0 +1,136 @@
+---
+sidebar_position: 0
+tags: [Template, 자주 사용하는 리소스, Hub Vnet, Azure]
+---
+
+import azure1 from './img/azure/1.png';
+import azure2 from './img/azure/2.png';
+import azure3 from './img/azure/3.png';
+import azure4 from './img/azure/4.png';
+import azure5 from './img/azure/5.png';
+import azure6 from './img/azure/6.png';
+import azure7 from './img/azure/7.png';
+import azure8 from './img/azure/8.png';
+
+# Azure Hub Vnet
+##### 2022.07.28 / 읽는 데 15분 걸림(소요시간)
+
+*****
+<br/>
+Azure 아키텍처 센터는 Hub-Spoke 네트워크 토폴로지를 제공합니다.
+Spoke 가상 네트워크는 네트워크 내에서 워크로드를 격리하기 위해 사용합니다.
+여러개의 Spoke 가상 네트워크를 관리하기 위해서 Hub 가상 네트워크를 사용합니다.
+Hub 가상 네트워크는 Spoke 가상 네트워크에서 동작하는 워크로드를 관리하기 위해 사용할 수 있는 서비스를 호스트하는 장소입니다.
+Hub 가상 네트워크에 호스트되는 Firewall, VPN 또는 ExpressRoute Gateway, Bastion Host 등이 있습니다.
+
+
+## 로그인
+- [Azure 체험 계정 생성](https://azure.microsoft.com/ko-kr/free/)
+- <Link to="/docs/start/sign-in">클라우드 스튜디오 회원가입 방법</Link>
+- [클라우드 스튜디오 회원가입 바로가기](https://cloudstudio.cloudraw.kr/signup)
+
+## 전제조건
+- **Azure 구독**
+- **Azure 서비스 주체 + 역할 할당**
+- **리소스를 배포하는 구독에 대해 기여자 이상의 권한**
+- **클라우드 스튜디오에 크레덴셜 값 등록**
+
+## 구성 서비스
+- **Virtual Network**
+- **Firewall**
+- **Bastion Host**
+- **Virtual Network Gateway**
+
+## Azure Hub Vnet 아키텍처 만들기
+### 1. 구독 생성
+캔버스에서 구독 아이콘을 가져온 후 등록한 **크레덴셜**을 선택합니다.
+크레덴셜이 없는 경우 크레덴셜 등록 페이지를 확인해주세요.
+<caption caption="[그림.1] Azure Hub Vnet 1" src={azure1} />
+
+### 2. 리소스 그룹 생성
+**리소스 그룹** 아이콘을 가져옵니다.
+리소스 그룹은 동일한 Life Cycle을 가진 리소스들을 묶는 그룹을 말합니다.
+
+> - ```Service Name```: resourceGroup
+> - ```Location```: koreacentral
+
+<caption caption="[그림.2] Azure Hub Vnet 2" src={azure2} />
+
+### 3. Virtual Network 생성
+**Virtual Network** 아이콘을 가져옵니다.
+Hub 가상 네트워크를 배포하기 위한 가상 네트워크를 구성합니다.
+Spoke 가상 네트워크와 피어링을 할 경우 두 가상 네트워크의 Address Space가 중복되면 피어링에 실패합니다.
+
+> - ```Service Name```: hub_vnet
+> - ```Vnet Address Space```: 10.0.0.0/16
+> - ```Enable Ddos Protection```: false
+
+<caption caption="[그림.3] Azure Hub Vnet 3" src={azure3} />
+
+### 4. Firewall 생성
+**Firewall** 아이콘을 가져옵니다.
+Firewall이 배포될 Subnet은 AzureFirewallSubnet으로 고정된 이름을 가집니다. 
+Firewall을 생성할 떄 Subnet이 같이 배포되도록 구성되어 있습니다. 
+Address Prefixes는 AzureFirewallSubnet이 사용할 CIDR을 입력합니다.
+Included Vnet Name은 Firewall 아이콘을 Virtual Network에 넣으면 자동으로 입력됩니다.
+Firewall의 Network, Application, NAT Rules은 Default를 사용합니다.
+
+> - ```Service Name```: hubfirewall
+> - ```Sku Tier```: Standard
+> - ```Sku Name```: AZFW_VNet
+> - ```Ip Config Name```: hubfirewall_ip_config
+> - ```Address Prefixes```: 10.0.0.0/24
+
+<caption caption="[그림.4] Azure Hub Vnet 4" src={azure4} />
+
+### 5. VPN Gateway 생성
+**Virtual Network Gateway** 아이콘을 가져옵니다.
+Virtual Network Gateway는 VPN, ExpressRoute 2가지 Type으로 사용할 수 있습니다. 이 가이드에서는 VPN을 사용합니다.
+Virtual Network Gateway가 배포될 Subnet은 GatewaySubnet으로 고정된 이름을 가집니다. 
+Virtual Network Gateway를 생성할 떄 Subnet이 같이 배포되도록 구성되어 있습니다. 
+Address Prefixes는 GatewaySubnet이 사용할 CIDR을 입력합니다.
+Virtual Network Gateway를 정상적으로 배포하는데 30 ~ 40정도 소요됩니다.
+Virtual Network Gateway를 사용하기 위해서는 배포 후, On-premise의 VPN 디바이스와 연결해야 합니다.
+
+> - ```Service Name```: hubvpn
+> - ```Address Prefixes```: 10.0.1.0/24
+> - ```Type```: Vpn
+> - ```Vpn Type```: RouteBased
+
+<caption caption="[그림.5] Azure Hub Vnet 5" src={azure5} />
+
+> - ```Active Active```: false
+> - ```Enable Bgp```: false
+> - ```Sku```: VpnGw1AZ
+> - ```Generation```: None
+> - ```Ip Configuration.Public Ip Name```: hubvpn-pip
+
+<caption caption="[그림.6] Azure Hub Vnet 6" src={azure6} />
+
+> - ```Public Ip.Allocation Method```: Static
+> - ```Public Ip.Pip Sku```: Standard
+
+<caption caption="[그림.7] Azure Hub Vnet 7" src={azure7} />
+
+### 6. Bastion Host 생성
+**Bastion Host** 아이콘을 가져옵니다.
+Bastion Host가 배포될 Subnet은 AzureBastionSubnet으로 고정된 이름을 가집니다. 
+Bastion Host를 생성할 떄 Subnet이 같이 배포되도록 구성되어 있습니다. 
+Address Prefixes는 AzureBastionSubnet이 사용할 CIDR을 입력합니다.
+
+> - ```Service Name```: hubbastion
+> - ```Address Prefixes```: 10.0.2.0/24
+> - ```Sku```: Basic
+> - ```Ip Configuration Name```: hubbastion_ip_config
+
+<caption caption="[그림.8] Azure Hub Vnet 8" src={azure8} />
+
+## 출처
+- [Azure 허브-스포크 네트워크 토폴로지](https://docs.microsoft.com/ko-kr/azure/architecture/reference-architectures/hybrid-networking/hub-spoke?tabs=cli)
+- [Azure Firewall](https://docs.microsoft.com/ko-kr/azure/firewall/)
+- [Azure Firewall Rule](https://docs.microsoft.com/ko-kr/azure/firewall/policy-rule-sets)
+- [Azure Firewall Terraform](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/firewall)
+- [Azure Bastion Host](https://docs.microsoft.com/ko-kr/azure/bastion/)
+- [Azure Bastion Host Terraform](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/bastion_host)
+- [Azure Virtual Network Gateway](https://docs.microsoft.com/ko-kr/azure/vpn-gateway/)
+- [Azure Virtual Network Gateway Terraform](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/virtual_network_gateway)
