@@ -17,11 +17,12 @@ import azure10 from './img/azure/10.png';
 # Azure Sentinel
 ##### 2022.07.28 / 읽는 데 15분 걸림(소요시간)
 
-*****0
+*****
 <br/>
 Microsoft Sentinel은 스케일링 가능한 클라우드 네이티브, SIEM(보안 정보 및 이벤트 관리) 및 SOAR(보안 오케스트레이션, 자동화 및 응답) 솔루션입니다. 
 기업 전체에 지능형 보안 분석 및 위협 인텔리전스를 제공하여 공격 검색, 위협 표시 유형, 자동 관리 헌팅 및 위협 대응을 위한 단일 솔루션을 제공합니다.
 점점 더 정교해지는 공격, 늘어나는 경고의 양과 긴 해결 기간이라는 문제를 완화하기 위해 엔터프라이즈 전체를 폭넓은 시각으로 모니터링합니다.
+Microsoft Sentinel을 Azure에 배포하기 위한 가이드를 제공합니다.
 
 ## 로그인
 - [Azure 체험 계정 생성](https://azure.microsoft.com/ko-kr/free/)
@@ -43,7 +44,7 @@ Microsoft Sentinel은 스케일링 가능한 클라우드 네이티브, SIEM(보
 ## Azure Sentinel 아키텍처 만들기
 ### 1. 구독 생성
 캔버스에서 구독 아이콘을 가져온 후 등록한 **크레덴셜**을 선택합니다.
-크레덴셜이 없는 경우 크레덴셜 등록 페이지를 확인해주세요.
+크레덴셜이 없는 경우 크레덴셜 등록 페이지를 확인해주시기 바랍니다.
 <caption caption="[그림.1] Azure Sentinel 1" src={azure1} />
 
 ### 2. 리소스 그룹 생성
@@ -69,7 +70,7 @@ Log Analytics Workspace는 Sentinel과 Security Center에서 사용할 로그를
 ### 4. Sentinel 생성 
 **Sentinel** 아이콘을 가져옵니다.
 Sentinel은 Log Analytics Workspace에 로그를 저장하고 시각화하는 역할을 담당합니다.
-Sentinel에서 총 6개의 로그 Connector를 제공합니다.
+Cloud Studio에서는 총 6개의 로그 Connector를 제공합니다. 수집하고자 하는 로그 Source를 확인하고 필요한 Connector를 연결합니다.
 Log Analytics Workspace에 저장된 로그를 Azure에서 제공하는 규칙을 사용하거나 Custom해서 사용할 수 있습니다.
 
 > - ```Service Name```: cloudstudiosentinle
@@ -135,6 +136,7 @@ Advanced Threat Protection에 지정한 리소스에서 로그를 수집하고 �
 
 <caption caption="[그림.10] Azure Sentinel 10" src={azure10} />
 
-## 출처
+*****
+## 참고 자료
 - [Azure Sentinel](https://docs.microsoft.com/ko-kr/azure/sentinel/)
 - [Azure Security Center](https://docs.microsoft.com/ko-kr/azure/defender-for-cloud/)

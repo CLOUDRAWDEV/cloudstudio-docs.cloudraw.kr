@@ -16,11 +16,11 @@ import azure7 from './img/azure/7.png';
 
 *****
 <br/>
-클라우드 스튜디오를 통해 Azure CDN 아키텍처를 만들 수 있습니다. 클라우드 스튜디오는 캔버스를 통해서 아이콘과 Azure 서비스를 매핑합니다.
-Azure Storage Account는 정적 페이지를 호스팅할 수 있습니다.
-Azure CDN을 통해 호스팅된 정적 페이지를 Edge Location으로 캐싱할 수 있습니다.
-사용자 지정 도메인으로 주소를 변경하기 위해서 Azure DNS 서비스의 CNAME 레코드를 사용합니다.
-이 가이드에서는 클라우드 스튜디오를 사용해서 Azure CDN 아키텍처를 배포하는 방법을 보여줍니다.
+CDN(콘텐츠 배달 네트워크)은 사용자에게 웹 콘텐츠를 효율적으로 제공할 수 있는 서버의 분산 네트워크입니다.
+CDN은 최종 사용자와 가까운 POP(point-of-presence) 위치의 Edge 서버에 캐시된 콘텐츠를 저장하여 대기 시간을 최소화합니다.
+Azure Storage Account는 AWS의 S3와 마찬가지로 정적 웹 페이지를 호스팅할 수 있습니다.
+Azure Storage Account에 호스팅된 정적 웹 사이트를 CDN을 활용해 사용자에게 효율적으로 서비스를 제공할 수 있습니다.
+Azure CDN을 활용한 아키텍처를 Azure에 배포하기 위한 가이드를 제공합니다.
 
 ## 로그인
 - [Azure 체험 계정 생성](https://azure.microsoft.com/ko-kr/free/)
@@ -42,7 +42,7 @@ Azure CDN을 통해 호스팅된 정적 페이지를 Edge Location으로 캐싱�
 ## Azure CDN 아키텍처 만들기
 ### 1. 구독 생성
 캔버스에서 구독 아이콘을 가져온 후 등록한 **크레덴셜**을 선택합니다.
-크레덴셜이 없는 경우 크레덴셜 등록 페이지를 확인해주세요.
+크레덴셜이 없는 경우 크레덴셜 등록 페이지를 확인해주시기 바랍니다.
 <caption caption="[그림.1] Azure CDN 1" src={azure1} />
 
 ### 2. 리소스 그룹 생성
@@ -57,7 +57,7 @@ Azure CDN을 통해 호스팅된 정적 페이지를 Edge Location으로 캐싱�
 ### 3. Storage Account 생성 
 **Storage Account** 아이콘을 가져옵니다.
 이 가이드에서는 Storage Account를 정적 웹 사이트 호스팅에 사용합니다.
-Storage Account는 AWS의 S3와 마찬가지로 정적 웹 사이트를 호스팅할 수 있습니다.
+Storage Account를 배포한 후 $web 컨테이너에 사용자의 정젝 웹 페이지 파일을 업로드해야 합니다.
 
 > - ```Service Name```: cloudstudiodefault
 > - ```Account Kind```: StorageV2
@@ -101,13 +101,14 @@ CDN Profile은 CDN Endpoint를 여러개 가질 수 있습니다. CDN Endpoint�
 **DNS Zone** 아이콘을 가져옵니다.
 DNS Zone은 Storage Account에 CDN Endpoint를 연결 후, CDN Endpoint에 Custom Domain을 설정하기 위해 필요합니다.
 cafe24, hosting.kr과 같이 다른 호스팅 사이트의 DNS 서버를 사용하고 있는 경우 DNS Zone은 생성하지 않아도 됩니다.
-이 가이드에서는 Azure DNS Zone을 사용합니다.
+Custom Domain을 설정하기 위해서는 CDN Endpoint의 주소를 사용자의 호스팅 사이트에 CNAME Record로 추가합니다.
 
 > - ```Service Name```: DOMAIN_NAME
 
 <caption caption="[그림.7] Azure CDN 7" src={azure7} />
 
-## 출처
+*****
+## 참고 자료
 [Azure Storage Account 정적 웹 사이트 호스팅](https://docs.microsoft.com/ko-kr/azure/storage/blobs/storage-blob-static-website)<br/>
 [Azure CDN](https://docs.microsoft.com/ko-kr/azure/frontdoor/)<br/>
 [Azure CDN Terraform](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/cdn_profile)<br/>
