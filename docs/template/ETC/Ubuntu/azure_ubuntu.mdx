@@ -22,10 +22,10 @@ import azure10 from './img/azure/10.png';
 
 *****
 <br/>
-클라우드 스튜디오를 통해 Azure Ubuntu 아키텍처를 만들 수 있습니다.
-Ubuntu 아키텍처는 가상 머신을 사용하는 가장 기본적인 아키텍처입니다.
-Ubuntu 가상 머신을 사용하기 위해 필요한 네트워크 구성과 사용자 접근 통제를 위한 네트워크 보안 그룹을 같이 배포합니다.
-이 가이드에서는 클라우드 스튜디오를 사용해서 Azure Ubuntu 아키텍처를 배포하는 방법을 보여줍니다.
+Ubuntu 아키텍처는 Virtual Machine을 사용하는 가장 기본적인 아키텍처입니다.
+Azure의 Virtual Machine은 Virtual Machine을 실행하는 물리적 하드웨어를 구입하고 유지 관리할 필요 없이 가상화의 유연성을 제공합니다. 
+가상 시스템에서 실행되는 소프트웨어의 구성, 패치 및 설치와 같은 작업을 수행하여 가상 시스템을 유지 관리해야 합니다.
+Ubuntu Virtual Machine을 Azure에 배포하기 위한 가이드를 제공합니다.
 
 ## 로그인
 - [Azure 체험 계정 생성](https://azure.microsoft.com/ko-kr/free/)
@@ -59,9 +59,9 @@ Ubuntu 가상 머신을 사용하기 위해 필요한 네트워크 구성과 사
 
 <caption caption="[그림.2] Azure Ubuntu 2" src={azure2} />
 
-### 3. 가상 네트워크 생성
-**가상 네트워크** 아이콘을 가져옵니다.
-가상 네트워크는 가상 머신을 배포하기 위해 필요한 네트워크 환경을 제공합니다.
+### 3. Virtual Network 생성
+**Virtual Network** 아이콘을 가져옵니다.
+Virtual Network는 Virtual Machine을 배포하기 위해 필요한 네트워크 환경을 제공합니다.
 
 > - ```Service Name```: defaultvnet
 > - ```Vnet Address Space```: [ "10.0.0.0/16" ]
@@ -69,11 +69,9 @@ Ubuntu 가상 머신을 사용하기 위해 필요한 네트워크 구성과 사
 
 <caption caption="[그림.3] Azure Ubuntu 3" src={azure3} />
 
-### 4. 서브넷 생성
-**서브넷** 아이콘을 가져옵니다.
-서브넷은 가상 네트워크를 사용 용도에 맞게 구분한것을 말합니다.
-Address Prefixes는 가상 네트워크의 Vnet Address Space를 넘어가면 안됩니다.
-이 가이드에서는 Private Endpoint를 사용하지 않기 때문에 Private Linke Endpoint Enabled는 false로 설정합니다.
+### 4. Subnet 생성
+**Subnet** 아이콘을 가져옵니다.
+Virtual Network에 Virtual Machine을 배포하기 위한 Subnet을 구성합니다.
 
 > - ```Service Name```: defaultsubnet
 > - ```Address Prefixes```: 10.0.0.0/24
@@ -81,17 +79,16 @@ Address Prefixes는 가상 네트워크의 Vnet Address Space를 넘어가면 �
 
 <caption caption="[그림.4] Azure Ubuntu 4" src={azure4} />
 
-### 5. 네트워크 보안 그룹 생성
-**네트워크 보안 그룹** 아이콘을 가져옵니다. 
-네트워크 보안 그룹은 클라우드 환경에서 방화벽의 역할을 합니다. 가상 머신으로 들어오고 나가는 트래픽을 통제합니다.
-Security Rule은 Virtual Machine에 접속이 가능하도록 22번 포트를 허용합니다. Default Security Rule은 80, 443 포트를 허용하기 때문에 삭제합니다.
+### 5. Network Security Group 생성
+**Network Security Group** 아이콘을 가져옵니다. 
+Network Security Group은 Virtual Machine으로 들어오고 나가는 트래픽을 통제합니다.
 
 > - ```Service Name```: defaultsg
 
 <caption caption="[그림.5] Azure Ubuntu 5" src={azure5} />
 
-SSH를 통해서 가상 머신에 접속합니다. 가상 머신에 접속할 수 있도록 사용자의 Public IP와 22번 포트를 네트워크 보안 그룹에서 허용합니다.
-리눅스 가상 머신이 아닌 윈도우 가상 머신을 사용한다면 TCP 3389 포트를 허용합니다.
+SSH를 통해서 Virtual Machine에 접속합니다. 가상 머신에 접속할 수 있도록 사용자의 Public IP와 22번 포트를 Network Security Group에서 허용합니다.
+Linux Virtual Machine이 아닌 Windows Virtual Machine을 사용한다면 TCP 3389 포트를 허용합니다.
 
 > - ```Security Rules.Nmae```: ssh
 > - ```Security Rules.Priority```: 100
@@ -103,7 +100,7 @@ SSH를 통해서 가상 머신에 접속합니다. 가상 머신에 접속할 �
 <caption caption="[그림.6] Azure Ubuntu 6" src={azure6} />
 
 이 가이드에서는 0.0.0.0 어떤 IP든 SSH 접속이 가능하도록 설정했지만, 사용자의 IP만 허용하는 것을 권장합니다.
-네트워크 보안 그룹에는 규칙을 여러개 설정할 수 있기 때문에 각 규칙마다 구분할 수 있도록 설명을 입력합니다.
+Network Security Group에는 규칙을 여러개 설정할 수 있기 때문에 각 규칙마다 구분할 수 있도록 설명을 입력합니다.
 
 > - ```Security Rules.Destination Port Ranges```: 22
 > - ```Security Rules.Source Address Prefixes```: 0.0.0.0
@@ -112,11 +109,11 @@ SSH를 통해서 가상 머신에 접속합니다. 가상 머신에 접속할 �
 
 <caption caption="[그림.7] Azure Ubuntu 7" src={azure7} />
 
-### 6. 가상 머신 생성
-**우분투 가상 머신** 아이콘을 가져옵니다.
-가상 머신은 각 Cloud 서비스에서 제공하는 가장 기본적인 컴퓨팅 서비스입니다.
-가상 머신에 SSH 접속d을 할 때 SSH Private Key 또는 Admin ID, Password를 사용할 수 있습니다.
-이 가이드에서는 Admin ID, Password를 사용해서 가상 머신을 배포합니다.
+### 6. Virtual Machine 생성
+**Ubuntu Virtual Machine** 아이콘을 가져옵니다.
+Virtual Machine은 각 Azure에서 제공하는 가장 기본적인 컴퓨팅 서비스입니다.
+Virtual Machine에 SSH 접속d을 할 때 SSH Private Key 또는 Admin ID, Password를 사용할 수 있습니다.
+이 가이드에서는 Admin ID, Password를 사용해서 Virtual Machine을 배포합니다.
 
 > - ```Service Name```: ubuntuVm
 > - ```Size```: Standard_D2s_v3
@@ -127,7 +124,8 @@ SSH를 통해서 가상 머신에 접속합니다. 가상 머신에 접속할 �
 
 <caption caption="[그림.8] Azure Ubuntu 8" src={azure8} />
 
-가상 머신에 연결되는 OS Disk의 Type을 선택합니다. Azure는 HDD와 SSD를 지원하며, 이 가이드에서는 HDD(Standard_LRS)를 사용합니다.
+Virtual Machine에 연결되는 OS Disk의 Type을 선택합니다. 
+Azure는 HDD와 SSD를 지원하며, 이 가이드에서는 HDD(Standard_LRS)를 사용합니다.
 
 > - ```Os Disk Caching```: ReadWrite
 > - ```Storage Account Type```: Standard_LRS
@@ -137,11 +135,10 @@ SSH를 통해서 가상 머신에 접속합니다. 가상 머신에 접속할 �
 
 <caption caption="[그림.9] Azure Ubuntu 9" src={azure9} />
 
-가상 머신에 접속하기 위해서 Public IP를 네트워크 인터페이스에 할당합니다.
-Pip Enable을 false로 설정하면 Pip Sku,Pip Allocation에 상관없이 Public IP가 생성되지 않습니다.
-Private Ip Address는 가상 머신이 배포되는 서브넷의 IP 중 하나를 입력할 수 있습니다. 
-IP를 입력하면 Private IP가 Static 방식으로 할당됩니다. Private IP를 입력하지 않으면 IP를 Dynamic 방식으로 할당합니다.
-이 가이드에서는 Private IP를 Dynamic 방식으로 할당받습니다.
+Virtual Machine에 접속하기 위해서 Public IP를 Network Interface에 할당합니다.
+Virtual Machine의 Public IP는 Static Method로 할당 받습니다. Dynamic Method로 할당 받으면 Virtual Machine이 재시작될 때마다 Public IP가 변경됩니다.<br/>
+Private Ip Address는 Default 값 10.0.0.4를 사용합니다. 
+Virtual Network의 IP 대역을 다르게 설정한 경우, Private Ip Address를 입력하지 않으면 동적으로 Private IP가 할당됩니다.
 
 > - ```Included Subnet Name```: defaultsubnet
 > - ```Pip Enable```: true
@@ -150,8 +147,7 @@ IP를 입력하면 Private IP가 Static 방식으로 할당됩니다. Private IP
 
 <caption caption="[그림.10] Azure Ubuntu 10" src={azure10} />
 
-
 *****
-## 출처
+## 참고 자료
 - [Azure Virtual Machine](https://docs.microsoft.com/ko-kr/azure/virtual-machines/)
 - [Azure Linux Virtual Machine](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/linux_virtual_machine)

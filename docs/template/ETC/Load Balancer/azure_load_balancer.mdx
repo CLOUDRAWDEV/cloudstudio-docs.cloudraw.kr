@@ -28,12 +28,12 @@ import azure20 from './img/azure/20.png';
 ##### 2022.07.28 / 읽는 데 15분 걸림(소요시간)
 
 *****
-Azure Load Balancer를 사용하면 트래픽을 여러 Virtual Machine으로 분산하는 아키텍처를 구성할 수 있습니다.
-Azure Load Balancer의 Frontend IP Configuration에 Public IP가 연결되기 때문에 Virtual Machine은 Public IP없이 운영합니다.
-Virtual Machine에 Public IP가 없기 때문에, Virtual Machine에 접속하거나, 인터넷을 사용하기 위한 추가 설정이 필요합니다.
-Virtual Machine에 접속하기 위해서 Bastion Host를 사용해 ssh 접속을 합니다.
-Virtual Machine이 인터넷에 접속해야할 경우, NAT Gateway를 통해서 접속합니다.
-Azure Load Balancer의 Outbound 규칙을 통해 NAT Gateway 역할을 할 수 있지만, NAT Gateway를 사용하는 것을 권장합니다.
+<br/>
+Azure Load Balancer를 사용하면 트래픽을 Virtual Machine 여러 대로 분산하는 아키텍처를 구성할 수 있습니다.
+여러 대의 Virtual Machine으로 트래픽이 분산되기 때문에 서버를 안정적으로 운영할 수 있습니다.
+Azure Load Balancer를 사용하는 경우 Virtual Machine Scale Sets을 사용하여 
+트래픽의 양에 따라서 Virtual Machine을 Scale In/Out 시켜 아키텍처의 고가용성을 보장할 수 있습니다.
+Azure Load Balancer를 활용한 아키텍처를 Azure에 배포하기 위한 가이드를 제공합니다.
 
 ## 로그인
 - [Azure 체험 계정 생성](https://azure.microsoft.com/ko-kr/free/)
@@ -61,7 +61,7 @@ Azure Load Balancer의 Outbound 규칙을 통해 NAT Gateway 역할을 할 수 �
 ## Azure CDN 아키텍처 만들기
 ### 1. 구독 생성
 캔버스에서 구독 아이콘을 가져온 후 등록한 **크레덴셜**을 선택합니다.
-크레덴셜이 없는 경우 크레덴셜 등록 페이지를 확인해주세요.
+크레덴셜이 없는 경우 크레덴셜 등록 페이지를 확인해주시기 바랍니다.
 <caption caption="[그림.1] Azure Load Balancer 1" src={azure1} />
 
 ### 2. 리소스 그룹 생성
@@ -75,7 +75,7 @@ Azure Load Balancer의 Outbound 규칙을 통해 NAT Gateway 역할을 할 수 �
 
 ### 3. Virtual Network 생성
 **Virtual Network** 아이콘을 가져옵니다.
-어플리케이션이 동작할 Virtual Machine을 배포하기 위해 Virtual Network를 생성합니다.
+Virtual Network는 Virtual Machine을 배포하기 위해 필요한 네트워크 환경을 제공합니다.
 
 > - ```Service Name```: lb_vnet
 > - ```Vnet Address Space```: 10.0.0.0/16
@@ -84,7 +84,8 @@ Azure Load Balancer의 Outbound 규칙을 통해 NAT Gateway 역할을 할 수 �
 <caption caption="[그림.3] Azure Load Balancer 3" src={azure3} />
 
 ### 4. Subnet 생성
-**Subnet** 아이콘을 가져옵니다.
+**Subnet** 아이콘을 가져옵니다. 
+Virtual Network에 Virtual Machine을 배포하기 위한 Subnet을 구성합니다.
 
 > - ```Service Name```: lb_subnet
 > - ```Vnet Address Space```: 10.0.0.0/24
@@ -106,6 +107,7 @@ Virtual Machine에서 동작하는 어플리케이션이 다른 포트를 사용
 **NAT Gateway** 아이콘을 가져옵니다.
 Virtual Machine이 인터넷을 사용할 수 있도록 NAT Gateway를 생성합니다.
 NAT Gateway의 Public IP를 사용해 Virtual Machine은 인터넷을 사용합니다.
+Azure Load Balancer의 Outbound 규칙을 통해 NAT Gateway 역할을 할 수 있지만, NAT Gateway를 사용하는 것을 권장합니다.
 
 > - ```Service Name```: lb_nat_gw
 > - ```Idle Timeout In Minutes```: 4
@@ -114,9 +116,10 @@ NAT Gateway의 Public IP를 사용해 Virtual Machine은 인터넷을 사용합�
 
 ### 7. Virtual Machine 생성
 **Virtual Machine** 아이콘을 가져옵니다.
-Virtual Machine에서 어플리케이션을 동작시킵니다. 
-이 가이드에서 3대의 Virtual Machine을 사용하지만 사용자의 환경에 맞게 대수를 변경해도 상관없습니다.
-```Service Name```, ```Network Interface Name```,```Private Ip Address```의 값은 중복되면 안되기 때문에 이름 뒤의 숫자를 변경합니다.
+Virtual Machine에서 어플리케이션을 동작시킵니다.
+이 가이드에서 3대의 Virtual Machine을 사용하지만 사용자의 환경에 맞게 Virtual Machine의 수를 변경하거나 Virtual Machine Scale Sets을 사용해도됩니다.
+3대의 Virtual Machine의 설정에서 ```Service Name```, ```Network Interface Name```,```Private Ip Address```의 값은 중복되면 안되기 때문에 이름 뒤의 숫자를 변경합니다.
+위의 3개의 값을 제외하고 나머지 값은 동일하게 설정합니다.
 
 > - ```Service Name```: ubuntuVm1
 > - ```Size```: Standard_D2s_v3
@@ -135,15 +138,19 @@ Virtual Machine에서 어플리케이션을 동작시킵니다.
 
 <caption caption="[그림.8] Azure Load Balancer 8" src={azure8} />
 
-Private Ip Address는 Subnet의 CIDR 중 4번째 부터 사용가능합니다. (ex) Subnet의 CIDR이 10.0.0.0/24면, 10.0.0.4부터 사용가능합니다.)
-Private Ip Address를 입력하지 않으면, Dynamic Method로 Private Ip를 설정합니다.
-나머지 옵션은 동일하게 설정합니다.
+Azure Load Balancer에 Public IP를 할당할 것이기 때문에, Virtual Machine은 Public IP를 할당하지 않습니다.
+3대의 Virtual Mahcine은 같은 Subnet에 있기 때문에 Private Ip 겹치지 않도록 설정합니다.
+
+> - ```Pip Enable```: false
 > - ```Private Ip Address```: 10.0.0.4
 
 <caption caption="[그림.9] Azure Load Balancer 9" src={azure9} />
 
 ### 8. Mysql 생성
-**Mysql** 아이콘을 가져옵니다. 어플리케이션의 데이터를 저장하기 위한 Mysql 서버를 생성합니다.
+**Mysql** 아이콘을 가져옵니다. 
+어플리케이션의 데이터를 저장하기 위해서 Azure의 Mysql 서버를 생성합니다.
+해당 서비스는 PaaS로 관리형 서비스입니다. 사용자는 MySQL 서버에 Database를 생성해 바로 사용가능합니다.
+Mysql의 Service Name은 서버의 DNS주소로 사용되기 때문에 사용자별 unique한 값을 입력해야 합니다.
 
 > - ```Service Name```: cloudstudiolbdb
 > - ```Version```: 5.7
@@ -197,10 +204,8 @@ Network Rules은 모든 IP 주소를 허용했지만, 배포를 할때는 현재
 
 ### 10. Bastion Host 생성
 **Bastion Host** 아이콘을 가져옵니다.
-Private 환경에 있는 Virtual Machine에 접속하기 위해서 Bastion Host를 배포합니다.
-Bastion Host가 배포될 Subnet은 AzureBastionSubnet으로 고정된 이름을 가집니다. 
-Bastion Host를 생성할 떄 Subnet이 같이 배포되도록 구성되어 있습니다. 
-Address Prefixes는 AzureBastionSubnet이 사용할 CIDR을 입력합니다.
+Bastion Host는 Public IP가 없는 Virtual Machine에 접속하는 방법 중 하나로 사용할 수 있습니다.
+Bastion Host는 Azure Protal에서 Virtual Machine에 대한 안정적인 SSH 접근을 제공합니다. 
 
 > - ```Service Name```: lb_bastion
 > - ```Address Prefixes```: 10.0.1.0/24
@@ -222,7 +227,10 @@ Public Load Balancer의 Frontend IP Configuration에 연결되는 Public IP의 S
 
 <caption caption="[그림.16] Azure Load Balancer 16" src={azure16} />
 
-> - ```Backend Pool.Name```: backendpool1
+Bakendpool은 Public Load Balacner의 Frontend IP Configuration으로 들어온 트래픽을 받을 서버를 지정합니다.
+위에서 생성한 3대의 VM의 Service Name을 입력합니다.
+
+> - ```Backend Pool.Name```: backendpool
 > - ```Backend Pool.Backend Pool Name```: backendserver
 > - ```Backend Pool.Virtual Machine Names```: ["ubuntuVm1", "ubuntuVm2", "ubuntuVm3"]
 
@@ -255,7 +263,8 @@ cafe24, hosting.kr과 같이 다른 호스팅 사이트의 DNS 서버를 사용�
 
 <caption caption="[그림.20] Azure Load Balancer 20" src={azure20} />
 
-## 출처
+*****
+## 참고 자료
 - [Azure Load Balancer](https://docs.microsoft.com/ko-kr/azure/load-balancer/)
 - [Azure Load Balancer Terraform](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/lb)
 - [Azure NAT Gateway](https://docs.microsoft.com/ko-kr/azure/virtual-network/nat-gateway/)

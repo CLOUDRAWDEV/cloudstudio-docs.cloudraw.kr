@@ -37,12 +37,11 @@ import azure28 from './img/azure/28.png';
 
 *****
 <br/>
-클라우드 스튜디오를 통해 Azure MSA 아케텍처를 만들 수 있습니다.
-MSA는 현재 많은 회사에서 사용하고 있는 아키텍처 입니다. 
-API 서버 단위로 서비스를 나눠서 배포하는 것이 기본 개념이기 때문에,
-컨테이너 오케스트레이션 툴인 쿠버네티스를 아키텍처에 사용합니다.
-MSA 아키텍처에서는 쿠버네티스 클러스터를 운영하기 위해 필요한 서비스를 같이 배포하고 있습니다.
-이 가이드에서는 클라우드 스튜디오를 사용해서 Azure MSA 아케텍처를 배포하는 방법을 보여줍니다.
+MSA는 Kubernetes Cluster 내에서 API 서버들을 기능단위로 나눠서 사용하는 아키텍처를 말합니다.
+MSA 아케텍처는 Azure에서 제공하는 PaaS형 Kubernetes인 AKS를 사용합니다.
+MSA 아키텍처는 Kubernetes Cluster를 안정적으로 운영하기 위해 필요한 리소스들을 포함합니다.
+MSA Baisc보다 확장되어 Frontend App을 App Service로 배포하고 Application Insights로 로그를 수집하는 부분이 추가되었습니다.
+MSA Basic을 Azure에 배포하기 위한 가이드를 제공합니다.
 
 ## 로그인
 - [Azure 체험 계정 생성](https://azure.microsoft.com/ko-kr/free/)
@@ -84,11 +83,11 @@ MSA 아키텍처에서는 쿠버네티스 클러스터를 운영하기 위해 �
 
 ### 3. Kubernetes Cluster 생성
 **Kubernetes Cluster** 아이콘을 가져옵니다.
-Kubernetes Cluster는 컨테이너 오케스트레이션 툴 입니다. Azure에서 Kubernetes Cluster를 관리형 PaaS 서비스로 제공합니다.
-Vnet Address Space는 Kubernetes Cluster를 운영하기 위해 필요한 노드가 배포될 Virtual Network와 Subnet의 IP 대역을 입력하는 옵션입니다.
-Vnet Address Space의 Prefix에서 8을 추가해서 Subnet에 적용합니다.
-Api Sever Authorized Ip Ranges는 쿠버네티스의 api server에 요청을 보낼 수 있는 IP 주소 범위를 입력합니다.
-사용자의 Public IP 대역을 확인 후 입력합니다.
+Kubernetes Cluster는 Azure의 Virtual Machine Scale Sets 위에서 동작합니다. 
+Kubernetes Cluster를 배포하기 위해서는 Virtual Machine Scale Sets이 동작할 Subnet이 필요합니다.
+Vnet Address Space는 Virtual Machine Scale Sets이 동작할 Virtual Network와 Subnet의 IP 대역을 입력하는 옵션입니다.
+Vnet Address Space의 Prefix에서 8을 추가해서 Subnet에 적용됩니다.
+Api Sever Authorized Ip Ranges는 쿠버네티스의 api server에 요청을 보낼 수 있는 Public IP 주소 범위를 입력합니다.
 
 > - ```Service Name```: default-aks
 > - ```Vnet Address Space```: 10.0.0.0/8
@@ -98,9 +97,9 @@ Api Sever Authorized Ip Ranges는 쿠버네티스의 api server에 요청을 보
 
 <caption caption="[그림.3] Azure MSA Basic 3" src={azure4} />
 
-Kubernetes Cluster는 노드 위에서 동작합니다. 노드의 개수와 CPU, Memory등의 하드웨어 스펙을 지정합니다.
+Kubernetes Cluster를 운영하기 위한 Virtual Machine Scale Sets의 정보를 입력합니다. 
+서버 개수, CPU, Memory등을 지정합니다.
 Max Pods는 노드에서 최대 생성할 수 있는 Pod의 수를 지정합니다.
-Enable Auto Scailing은 노드의 상태를 모니터링하고 상황에 맞게 노드 수를 늘리고 줄일지를 지정합니다.
 
 > - ```Node Pool Name```: defaultn01
 > - ```Node Count```: 3
@@ -111,9 +110,8 @@ Enable Auto Scailing은 노드의 상태를 모니터링하고 상황에 맞게 
 
 <caption caption="[그림.4] Azure MSA Basic 4" src={azure5} />
 
-Enable Node Public Ip를 true로 설정하면 노드에 Public IP가 할당됩니다. 노드에 Public IP가 있는 경우, 외부에서 노드로 접근할 수 있으므로 할당하지 않는 것을 권장합니다.
-Aad Rbac Enabled는 현재 사용자의 Azure AD의 사용자를 쿠버네티스 내에서 사용할 수 있도록 만들어줍니다. Azure AD에 등록된 사용자를 쿠버네티스 RBAC에 사용할 수 있습니다.
-Network Policy와 Network Plugin은 쿠버네티스 네트워크 구성과 관련된 옵션입니다.
+Aad Rbac Enabled는 현재 사용자의 Azure AD의 사용자를 쿠버네티스 내에서 사용할 수 있도록 만들어줍니다. 
+Azure AD에 등록된 사용자를 쿠버네티스 RBAC에 사용할 수 있습니다.
 
 > - ```Enable Node Public Ip```: false
 > - ```Aad Rbac Enabled```: true
@@ -148,10 +146,9 @@ Pod와 Service는 쿠버네티스에서 사용하는 오브젝트의 이름입�
 
 ### 5. Key Vault 생성
 **Key Vault** 아이콘을 가져옵니다.
-Key Vault는 Azure에서 제공하는 Key Management Service 입니다. Key Vault는 Key, Secrets, Certificate 3종류의 크레덴셜을 등록할 수 있습니다.
-필요한 종류의 크레덴셜을 Key Vault에 저장하고 Azure의 다른 리소스에서 같은 크레덴셜을 사용할 수 있습니다.
-Key Vault는 크레덴셜을 저장하기 때문에 사용자가 크레덴셜을 삭제해도 바로 삭제되지 않습니다.
-Soft Delete Retention Days에서 삭제한 크레덴셜을 얼마나 보관하고 있을지 설정합니다. Soft Delete된 크레덴셜은 복구가 가능합니다.
+Key Vault는 Key, Secrets, Certificate 3종류의 크레덴셜을 등록할 수 있습니다.
+MSA 운영에 필요한 크레덴셜을 Key Vault에 저장하고 Azure의 다른 리소스에서 같은 크레덴셜을 사용할 수 있습니다.
+Key Vault는 크레덴셜을 저장하기 때문에 사용자가 크레덴셜이 즉시 삭제되지 않는 Soft Delete 옵션을 제공합니다.
 
 > - ```Service Name```: default-keyvault
 > - ```Sku Name```: standard
@@ -166,7 +163,7 @@ Key Vault에 사용자만 접근할 수 있도록, 사용자의 Public IP만 허
 
 > - ```Network Acl Bypass```: [ "AzureServices" ]
 > - ```Network Acl Action```: Allow
-> - ```Network Acl Ip Rules```: 20.194.25.110/32
+> - ```Network Acl Ip Rules```: 0.0.0.0
 
 <caption caption="[그림.9] Azure MSA Basic 9" src={azure10} />
 
@@ -180,7 +177,8 @@ Access Policy는 Key, Secrets, Certificate 각각 15개의 세분화된 권한�
 
 <caption caption="[그림.10] Azure MSA Basic 10" src={azure11} />
 
-Key Vault의 Secret은 특정 값을 등록할 수 있습니다. Key Vault의 Secret은 생성되면서 Tenat ID를 크레덴셜로 등록합니다.
+Key Vault의 Secret은 특정 값을 등록할 수 있습니다. 
+Key Vault의 Secret은 생성되면서 Tenat ID를 크레덴셜로 등록합니다.
 
 > - ```Key Vault Secret.Name```: defaultsecret
 > - ```Key Vault Secret.Expiration Date```: EXPIRATION DATE
@@ -189,9 +187,8 @@ Key Vault의 Secret은 특정 값을 등록할 수 있습니다. Key Vault의 Se
 
 ### 6. Mysql 생성
 **Mysql** 아이콘을 가져옵니다.
-Mysql은 Azure에서 제공하는 PaaS형 데이터베이스 서버입니다.
-Azure에서 제공하는 PaaS형 MySQL에는 단일 서버와 유연한 서버 2종류가 있습니다. 
-클라우드 스튜디오에서 제공하는 PaaS형 MySQL 서버는 모두 단일 서버입니다.
+어플리케이션의 데이터를 저장하기 위해서 Azure의 Mysql 서버를 생성합니다.
+해당 서비스는 PaaS로 관리형 서비스입니다. 사용자는 MySQL 서버에 Database를 생성해 바로 사용가능합니다.
 Mysql의 Service Name은 서버의 DNS주소로 사용되기 때문에 사용자별 unique한 값을 입력해야 합니다.
 
 > - ```Service Name```: cloudstudiomysql
@@ -201,9 +198,7 @@ Mysql의 Service Name은 서버의 DNS주소로 사용되기 때문에 사용자
 
 <caption caption="[그림.12] Azure MSA Basic 12" src={azure13} />
 
-Public Network Access Enabled를 true로 설정하면, 관리자의 ID와 Password를 알면 데이터베이스에 누구나 접속할 수 있습니다.
-Public 접근을 허용한 경우에는 반드시 방화벽을 설정해 사용자 제외 나머지 Public IP는 차단해야합니다.
-Public Network Access Enabled이 false인 경우에는 인터넷을 통한 접속이 차단되므로 방화벽을 설정할 수 없습니다.
+Mysql 서버의 ```Public Network Access Enabled```옵션을 true로 설정했기 때문에 누구나 Mysql 서버에 접속할 수 있습니다.
 
 > - ```Admin Login```: admin
 > - ```Admin Password```: ADMIN_PASSWORD
@@ -232,8 +227,8 @@ Mysql 서버에 접속할 수 있는 IP를 설정합니다. 시작 IP와 마지�
 
 ### 7. Storage Account 생성
 **Storage Account** 아이콘을 가져옵니다.
-Storage Account는 Azure에서 제공하는 Object 스토리지입니다.
-Storage Account는 Container, Queue, File, Table 4 종류의 스토리지를 지원합니다. 용도에 맞는 스토리지를 생성해서 사용할 수 있습니다.
+Storage Account는 Application에 필요한 이미지, 파일 등을 저장하고 있는 Object Storage로 사용합니다.
+데이터를 저장하는 용도 이외에도 Kubernetes Cluster에서 데이터를 백업하기 위한 PV로서 사용할 수 있습니다.
 Storage Account Service Name은 서버의 DNS주소로 사용되기 때문에 사용자별 unique한 값을 입력해야 합니다.
 
 > - ```Service Name```: cloudstudiodefault
@@ -252,7 +247,7 @@ Object 스토리지는 DNS 주소를 알면 누구나 Request를 보낼 수 있�
 > - ```Network Rules.Nmae```: defaultrule
 > - ```Network Rules.Default Action```: Allow
 > - ```Network Rules.Bypass```: [ "AzureServices" ]
-> - ```Network Rules.Ip Rules```: 20.194.25.110/32
+> - ```Network Rules.Ip Rules```: 0.0.0.0
 
 <caption caption="[그림.17] Azure MSA Basic 17" src={azure18} />
 
@@ -267,7 +262,8 @@ Storage Share는 쿠버네티스의 스토리지로 사용할 수 있습니다. 
 ### 8. Monitor Action Group 생성 
 **Monitor Action Group** 아이콘을 가져옵니다.
 Azure Monitor는 Azure Resource들의 메트릭 및 로그를 수집하는 서비스 입니다.
-Azure Action Group은 Monitor가 데이터 수집 과정에서 사용자가 지정한 조건에 일치하는 데이터가 발생했을 때, 사용자에게 알림을 전달하는 서비스입니다.
+Azure Action Group은 Monitor가 데이터 수집 과정에서 사용자가 지정한 조건에 일치하는 데이터가 발생했을 때, 
+사용자에게 알림을 전달하는 서비스입니다.
 
 > - ```Service Name```: defaultactiongroup
 > - ```Short Name```: defaultactiongroup
@@ -294,6 +290,7 @@ Azure Action Group은 Monitor가 데이터 수집 과정에서 사용자가 지�
 ### 10. Monitor Activity Log Alert 생성
 **Monitor Activity Log Alert** 아이콘을 가져옵니다.
 Activity Log Alert는 Azure Monitor가 활동 로그를 수집할 때, 사용자가 지정한 로그 Level을 넘어가는 경우 알림을 전달합니다.
+Kubernetes Cluster에서 발생하는 Activity Log를 모니터링합니다.
 
 > - ```Service Name```: activitylogalert
 > - ```Sms```: default
@@ -303,6 +300,7 @@ Activity Log Alert는 Azure Monitor가 활동 로그를 수집할 때, 사용자
 ### 11. Monitor Metric Alert 생성 
 **Monitor Metric Alert** 아이콘을 가져옵니다.
 Metric Alert는 Azure Monitor가 메트릭을 수집할 때, 사용자가 지정한 수치를 넘어가는 경우 알림을 전달합니다.
+Kubernetes Cluster의 Metric을 수집하고 Threshold를 넘어가면 알림이 발생합니다.
 
 > - ```Service Name```: activitylogalert
 > - ```Sms```: default
@@ -311,14 +309,15 @@ Metric Alert는 Azure Monitor가 메트릭을 수집할 때, 사용자가 지정
 
 ### 12. Linux App Service 생성
 **Linux App Service** 아이콘을 가져옵니다. 이 가이드에서는 Linux OS를 사용하는 App Service를 사용합니다. 
-App Service도 가격측정을 위한 SKU를 가집니다. App Service에 배포할 서비스에 성능에 맞는 SKU를 선택합니다.
-App Service에서 인증, 권한과 Error 메시지완 관련된 옵션을 설정합니다.
+Linux App Service에 Frontend Server를 배포합니다.
 
 > - ```Service Name```: defaultappservice
 > - ```Kind```: Linux
 > - ```Sku Tier```: B1
 
 <caption caption="[그림.24] Azure MSA Basic 24" src={azure24} />
+
+App Service에서 인증, 권한과 Error 메시지완 관련된 옵션을 설정합니다.
 
 > - ```App Service.Client Cert Enabled```: true
 > - ```App Service.Auth Settings Enabled```: true
@@ -336,6 +335,7 @@ App Service에서 인증, 권한과 Error 메시지완 관련된 옵션을 설�
 
 ### 13. Log Analytics Workspace 생성
 **Log Analytics Workspace** 아이콘을 가져옵니다. Log Analytics Workspace는 로그를 저장하기 위한 저장 공간을 생성합니다.
+Application Insights가 수집한 로그를 저장하는 역할을 합니다.
 
 > - ```Service Name```: defaultloganalytics
 > - ```Retention In Days```: 30
@@ -346,7 +346,7 @@ App Service에서 인증, 권한과 Error 메시지완 관련된 옵션을 설�
 
 ### 14. Application Insights 생성
 **Application Insights** 아이콘을 가져옵니다.
-Application Insights는 Application에서 발생하는 로그를 Log Analytics에 저장합니다.
+Application Insights는 Frontend Server에서 발생하는 로그를 Log Analytics에 저장합니다.
 Application Insights로 로그를 전달하는 방법은 [Application Insights SDK](https://docs.microsoft.com/ko-kr/azure/azure-monitor/app/api-custom-events-metrics)를 참고하시기 바랍니다.
 
 > - ```Service Name```: activitylogalert
@@ -356,7 +356,7 @@ Application Insights로 로그를 전달하는 방법은 [Application Insights S
 <caption caption="[그림.28] Azure MSA Basic 28" src={azure28} />
 
 *****
-## 출처
+## 참고 자료
 - [Azure Kubernetes Service의 마이크로 서비스 아키텍처](https://docs.microsoft.com/ko-kr/azure/architecture/reference-architectures/containers/aks-microservices/aks-microservices)
 - [Azure Kubernetes Service](https://docs.microsoft.com/ko-kr/azure/aks/)
 - [Azure Kubernetes Service Terraform](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/kubernetes_cluster)
