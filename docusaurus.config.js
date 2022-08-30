@@ -95,11 +95,11 @@ plugins: [
             position: 'left',
             activeBaseRegex: `/docs-faq/`,
           },
-          // { 
-          //   to: "/blog",
-          //   label: "Notice",
-          //   position: "left"
-          // },
+          { 
+            to: "/blog",
+            label: "Notice",
+            position: "left"
+          },
           {
             href: "https://join.slack.com/t/w1658372636-gh4700456/shared_invite/zt-1d0rtffdt-TzJ_8YqxPX5mPgWDY5SbKA",
             label: "Contact Slack",
