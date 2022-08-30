@@ -17,6 +17,9 @@
   --ifm-top-menu-color-02:  rgba(250, 250, 250, 0.95);
   --ifm-navbar-search-input-background-color: #ECEDEE;
   --footerBackgroundColor : #EDF4FE;
+  --ifm-font-family-base: "pretendard", -apple-system, BlinkMacSystemFont, "Segoe UI",
+  "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+  "Helvetica Neue", sans-serif;
 }
 
 [data-theme='dark'] {
@@ -180,4 +183,8 @@ a.navbar__item.navbar__link {
   svg {
     display: none;
   }
+}
+
+.navbar__logo {
+  height: 2.5rem;
 }
