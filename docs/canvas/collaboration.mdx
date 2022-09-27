@@ -5,6 +5,7 @@ tags: [collaboration, 협업, 권한, 제어권]
 
 import styles from '../../src/scss/_markdown.module.scss';
 import collaboration01 from '/docs/canvas/img/collaboration01.png';
+import collaboration02 from '/docs/canvas/img/collaboration02.gif';
 
 
 # 협업
@@ -13,17 +14,24 @@ import collaboration01 from '/docs/canvas/img/collaboration01.png';
 
 클라우드 스튜디오는 프로젝트별로 협업할 멤버를 추가하여 ```공동 작업```할 수 있는 기능을 제공합니다. 
 협업을 하기 위해선 먼저 프로젝트를 생성해야 합니다. 프로젝트 생성방법은 [여기](/docs/start/create-project.mdx)를 참고해주세요.
-프로젝트를 생성한 멤버는 프로젝트 master 권한을 갖게되며 초대한 멤버들과 작업 화면을 공유하며 프로젝트를 수정할 수 있습니다.
+프로젝트를 생성한 멤버는 프로젝트 ```master``` 권한을 갖게되며 초대한 멤버들과 작업 화면을 공유하며 프로젝트를 수정할 수 있습니다.
 
+<br />
 
 ## 협업을 위한 멤버 추가
 
-(영상)
+<div className={styles.imgWrap}>
+    <img src={ collaboration02 } alt="이미지" />
+</div>
+
+<br />
+
 1. 협업을 진행할 ```프로젝트를 클릭```합니다.
 2. ```사용자 아이콘```을 클릭합니다.
 3. 프로젝트 멤버 모달이 뜨면 프로젝트에 추가할 멤버의 ```아이디를 검색```합니다.
 4. 찾은 사용자에게 ```권한```을 부여한 후 ```리스트에 추가``` 버튼을 클릭합니다. (멤버는 여러명 추가할 수 있습니다.)
-5. 원하는 멤버를 모두 추가했다면 닫기를 클릭합니다. (프로젝트에 멤버를 추가하면 자동으로 멤버가 프로젝트에 초대됩니다.)
+5. 원하는 멤버를 모두 추가했다면 ```멤버추가``` 버튼을 클릭합니다.
+6. 닫기를 클릭합니다. (프로젝트에 멤버를 추가하면 자동으로 멤버가 프로젝트에 초대됩니다.)
 
 <br />
 
@@ -66,7 +74,7 @@ import collaboration01 from '/docs/canvas/img/collaboration01.png';
 <p />
 
 캔버스 제어권은 master가 프로젝트를 이탈할 시에 자동으로 남은 유저에게 전달되며
-이때는 ```master → admin → editor``` 순으로 제어권을 전달합니다. (viewer는 편집권한이 없으므로 제외)
+이때는 ```master → admin → editor``` 순으로 제어권을 전달합니다. (viewer는 편집권한이 없으므로 제외됩니다.)
 
 <br />
 
