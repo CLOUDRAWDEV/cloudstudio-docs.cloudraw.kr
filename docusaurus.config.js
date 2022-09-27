@@ -8,13 +8,14 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 const config = {
   title: "Cloud Studio",
   tagline: "",
-  url: "https://your-docusaurus-test-site.com",
+  // url: "https://cloudrawdev.github.io",
+  url: "https://docs.cloudraw.kr",
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/simbol3.png",
-  organizationName: "facebook", 
-  projectName: "docusaurus", 
+  organizationName: "cloudrawdev", 
+  projectName: "cloudstudio-docs", 
   i18n: {
     defaultLocale: "en",
     locales: ["en"],
