@@ -6,7 +6,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "Cloud Studio Docs",
+  title: "Cloud Studio",
   tagline: "",
   url: "https://your-docusaurus-test-site.com",
   baseUrl: "/",
@@ -101,7 +101,7 @@ plugins: [
             position: "left"
           },
           {
-            href: "https://join.slack.com/t/w1658372636-gh4700456/shared_invite/zt-1d0rtffdt-TzJ_8YqxPX5mPgWDY5SbKA",
+            href: "https://join.slack.com/t/cloudraw/shared_invite/zt-1gazpq5ky-lZQwzvjwmr25JazlrLgyhA",
             label: "Contact Slack",
             position: "left",
           },

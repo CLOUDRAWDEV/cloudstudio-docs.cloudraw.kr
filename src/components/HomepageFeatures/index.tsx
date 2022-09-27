@@ -14,7 +14,7 @@ const FeatureList: FeatureItem[] = [
     Svg: require('../HomepageFeatures/img/achi.svg').default,
     description: (
       <>
-        보안 및 생산성 담보를 보장하는 CSP별 Standard Best-Practice Infrastructur Template을 제공하여 쉽게 클라우드 환경을 구축할 수 있습니다.
+        보안 및 생산성 담보를 보장하는 CSP별 Standard Best-Practice Infrastructur Template을 제공하여 빠르고 쉽게 클라우드 환경을 구축할 수 있습니다.
       </>
     ),
   },
