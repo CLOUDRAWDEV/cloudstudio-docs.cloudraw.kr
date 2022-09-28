@@ -6,7 +6,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "Cloud Studio",
+  title: "Cloud Studio Documents",
   tagline: "",
   // url: "https://cloudrawdev.github.io",
   url: "https://docs.cloudraw.kr",
