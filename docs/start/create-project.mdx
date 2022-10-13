@@ -1,13 +1,15 @@
 ---
 sidebar_position: 5
-tags: [project, 프로젝트 생성 , 빈 프로젝트, 템플릿, 가져오기, import]
+tags: [project, 프로젝트 생성 , 빈 프로젝트, 템플릿, 가져오기, import, 시작하기]
 ---
 
 import styles from '../../src/scss/_markdown.module.scss';
-import createProject01 from '@site/static/img/create-project-01.png';
-import createProject02 from '@site/static/img/create-project-02.png';
-import createProject03 from '@site/static/img/create-project-03.png';
-import createProject04 from '@site/static/img/create-project-04.png';
+import createProject01 from '../start/img/create-project-01.png';
+import createProject02 from '../start/img/create-project-02.png';
+import createProject03 from '../start/img/create-project-03.png';
+import createProject04 from '../start/img/create-project-04.png';
+import createProject05 from '../start/img/create-project-05.png';
+import createProject06 from '../start/img/create-project-06.png';
 import import01 from '@site/static/img/import-01.png';
 import import02 from '@site/static/img/import-02.png';
 import import03 from '@site/static/img/import-03.png';
@@ -16,11 +18,12 @@ import import04 from '/docs/start/img/import.gif';
 # 새 프로젝트 생성하기
 <hr />
 <br />
-클라우드 스튜디오에서는 하나의 캔버스를 📄프로젝트라고 부릅니다. 
-프로젝트를 생성하려면 프로젝트를 관리할 수 있는 📁폴더가 먼저 생성되어 있어야 합니다.
+클라우드 스튜디오에서는 하나의 캔버스를 📄 프로젝트라고 부릅니다. 
+프로젝트를 생성하려면 프로젝트를 관리할 수 있는 📁 폴더가 먼저 생성되어 있어야 합니다.
 
 폴더를 생성하는 방법은 [여기](/docs/start/create-folder.mdx)를 참고해 주세요.
 
+<p>&nbsp;</p>
 
 ## 프로젝트를 생성하는 세 가지 방법
 
@@ -40,6 +43,13 @@ import import04 from '/docs/start/img/import.gif';
 ### 제공하는 템플릿으로 생성하기 {#create-template}
 
 1.  먼저 ```프로젝트 생성하기``` 버튼을 클릭하여 프로젝트 생성 팝업을 불러옵니다.
+
+<div className={styles.imgWrap}>
+    <img src={createProject05 } alt="이미지" />
+</div>
+
+<br />
+
 2.  ```프로젝트명```을 작성합니다. 프로젝트명은 다음 ```조건```을 만족해야 합니다. 
 
 >  - 영문, 한글, 숫자만 허용
@@ -50,17 +60,23 @@ import import04 from '/docs/start/img/import.gif';
     <img src={createProject01 } alt="프로젝트 팝업 이미지" />
 </div>
 
+<br />
+
 3. 프로젝트를 담을 ```폴더```를 선택합니다.
 
 <div className={styles.imgWrap}>
     <img src={createProject02 } alt="프로젝트 폴더 이미지" />
 </div>
 
+<br />
+
 4.  프로젝트에 대한 ```설명```을 입력합니다. 최대 100글자 까지 입력 가능합니다.
 
 <div className={styles.imgWrap}>
     <img src={createProject03 } alt="프로젝트 폴더 이미지" />   
 </div>
+
+<br />
 
 5.  ```CSP```와 ```카테고리```를 선택합니다.
 
@@ -77,7 +93,7 @@ import import04 from '/docs/start/img/import.gif';
 </h4>
 </details>
 
-<p>&nbsp;</p>
+<br />
 
 6.  ```프로젝트 생성하기``` 버튼을 클릭합니다.
 
@@ -88,28 +104,61 @@ import import04 from '/docs/start/img/import.gif';
 :::
 
 <p>&nbsp;</p>
+<p>&nbsp;</p>
 
 ### 빈 프로젝트 생성하기 {#create-empty}
 
 1.  먼저 ```프로젝트 생성하기``` 버튼을 클릭하여 프로젝트 생성 팝업을 불러옵니다.
-2.  ```프로젝트명```을 작성합니다. 프로젝트명은 다음 ```조건```을 만족해야합니다. 
+
+<div className={styles.imgWrap}>
+    <img src={createProject05 } alt="이미지" />
+</div>
+
+<br />
+
+2.  ```프로젝트명```을 작성합니다. 프로젝트명은 다음 ```조건```을 만족해야 합니다. 
 
 >  - 영문, 한글, 숫자만 허용
 >  - 공백 없이
 >  - 2 ~ 20 자리
 
-3.  프로젝트를 담을 ```폴더```를 선택합니다.
+<div className={styles.imgWrap}>
+    <img src={createProject01 } alt="프로젝트 팝업 이미지" />
+</div>
+
+<br />
+
+3. 프로젝트를 담을 ```폴더```를 선택합니다.
+
+<div className={styles.imgWrap}>
+    <img src={createProject02 } alt="프로젝트 폴더 이미지" />
+</div>
+
+<br />
+
 4.  프로젝트에 대한 ```설명```을 입력합니다. 최대 100글자 까지 입력 가능합니다.
-5.  ```빈 프로젝트 생성하기``` 버튼을 클릭합니다.
+
+<div className={styles.imgWrap}>
+    <img src={createProject03 } alt="프로젝트 폴더 이미지" />   
+</div>
+
+<br />
+
+5.  ```빈 프로젝트 생성``` 버튼을 클릭합니다.
+
+<div className={styles.imgWrap}>
+    <img src={createProject06 } alt="이미지" />
+</div>
 
 <p>&nbsp;</p>
 
 :::info
 
-빈 프로젝트를 생성할 때는 템플릿을 선택할 필요가 없습니다. 템플릿을 선택한다고 해도 빈 프로젝트 생성하기 버튼을 누르는 순간 선택한 템플릿 정보가 사라집니다.
+빈 프로젝트를 생성할 때는 ``템플릿을 선택할 필요가 없습니다.`` 템플릿을 선택한다고 해도 빈 프로젝트 생성하기 버튼을 누르는 순간 선택한 템플릿 정보가 사라집니다.
 
 :::
 
+<p>&nbsp;</p>
 <p>&nbsp;</p>
 
 ### 기존 인프라 가져오기(Import) {#create-import}
