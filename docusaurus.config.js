@@ -30,8 +30,6 @@ const config = {
           sidebarPath: require.resolve("./sidebars.js"),
           routeBasePath: 'docs',
           path: 'docs',
-          lastVersion: 'current',
-          onlyIncludeVersions: ['current'],
           showLastUpdateTime: true,
         },
         blog: {
