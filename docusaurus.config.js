@@ -32,6 +32,7 @@ const config = {
           path: 'docs',
           lastVersion: 'current',
           onlyIncludeVersions: ['current'],
+          showLastUpdateTime: true,
         },
         blog: {
           blogSidebarTitle: 'All posts',
