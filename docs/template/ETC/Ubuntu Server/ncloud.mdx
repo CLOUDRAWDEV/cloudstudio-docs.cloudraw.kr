@@ -47,6 +47,10 @@ Ncloud는 Server를 실행하기 위한 물리적 하드웨어를 구입 없이 
 - **Server**
 <br/>
 
+## 아키텍처
+
+<caption caption="" src={ncloud11} />
+
 ## Ncloud Ubuntu Server 아키텍처 만들기
 ### 1. 크레덴셜 선택
 캔버스에서 ```Base 아이콘```을 가져온 후 등록한 ```크레덴셜을 선택```합니다.
@@ -88,7 +92,7 @@ Ncloud는 Server를 실행하기 위한 물리적 하드웨어를 구입 없이 
 <caption caption="[그림.5] Ncloud Ubuntu Server 5" src={ncloud5} />
 
 Ncloud의 Server는 ID, PW를 통해서 SSH 접속을 하기 때문에 TCP 22번 포트만 허용하도록 구성합니다.
-IP Block의 경우 0.0.0.0/0 모든 사용자가 접속이 가능하도록 구성되어 있지만, 특정 공인 IP만 허용하는 것을 권장합니다.
+IP Block의 경우 0.0.0.0/0 모든 사용자가 접속이 가능하도록 구성되어 있지만, 특정 IP 대역만 허용하는 것을 권장합니다.
 
 > - ```Inbound Rule.Nmae```: ubuntu-inbound-rule
 > - ```Inbound Rule.Priority```: 0
@@ -108,7 +112,7 @@ IP Block의 경우 0.0.0.0/0 모든 사용자가 접속이 가능하도록 구�
 <caption caption="[그림.7] Ncloud Ubuntu Server 7" src={ncloud7} />
 
 Ncloud의 Server는 ID, PW를 통해서 SSH 접속을 하기 때문에 TCP 22번 포트만 허용하도록 구성합니다.
-IP Block의 경우 0.0.0.0/0 모든 사용자가 접속이 가능하도록 구성되어 있지만, 특정 공인 IP만 허용하는 것을 권장합니다.
+IP Block의 경우 0.0.0.0/0 모든 사용자가 접속이 가능하도록 구성되어 있지만, 특정 IP 대역만 허용하는 것을 권장합니다.
 
 > - ```Inbound Rule.Nmae```: ubuntu-inbound-rule
 > - ```Inbound Rule.Protocol```: TCP
@@ -120,7 +124,7 @@ IP Block의 경우 0.0.0.0/0 모든 사용자가 접속이 가능하도록 구�
 ### 7. Ubuntu Server 생성
 **Ubuntu Server** 아이콘을 가져옵니다. Server는 Ncloud에서 제공하는 컴퓨팅 서비스입니다.
 
-> - ```Service Name```: ubuntuVm
+> - ```Service Name```: ubuntuvm
 > - ```Server Image Product Code```: SW.VSVR.OS.LNX64.UBNTU.SVR2004.B050
 > - ```Server Product Code```: SVR.VSVR.HICPU.C002.M004.NET.SSD.B050.G002
 
@@ -128,6 +132,7 @@ IP Block의 경우 0.0.0.0/0 모든 사용자가 접속이 가능하도록 구�
 
 > - ```Network Interface.Name```: ubuntu-nic
 > - ```Network Interface.Nic Order```: 0
+> - ```Public Ip Enable```: true
 
 <caption caption="[그림.10] Ncloud Ubuntu Server 10" src={ncloud10} />
 
@@ -140,7 +145,7 @@ IP Block의 경우 0.0.0.0/0 모든 사용자가 접속이 가능하도록 구�
 
 *****
 ## 참고 자료
-- [Ncloud 서비스 소개](https://www.ncloud.com/product/compute/server)
+- [Ncloud Server 서비스 소개](https://www.ncloud.com/product/compute/server)
 - [ncloud Server Docs](https://guide.ncloud-docs.com/docs/compute-compute-1-1-v2)
 - [Network ACL 설정](https://guide.ncloud-docs.com/docs/vpc-nacl-vpc)
 - [Access Control Group 설정](https://guide.ncloud-docs.com/docs/compute-compute-2-3)
