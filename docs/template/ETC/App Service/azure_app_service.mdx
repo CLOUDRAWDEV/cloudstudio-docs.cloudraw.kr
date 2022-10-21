@@ -21,6 +21,7 @@ import azure12 from './img/azure/12.png';
 import azure13 from './img/azure/13.png';
 import azure14 from './img/azure/14.png';
 import azure15 from './img/azure/15.png';
+import azure16 from './img/azure/16.png';
 
 <span className="theme-doc-version-badge badge badge--secondary">
     Version: 1.0.0
@@ -52,6 +53,9 @@ App Service를 활용한 아키텍처를 Azure에 배포하기 위한 가이드�
 - **Network Security Group**
 - **Linux App Service**
 - **Mysql**
+
+## 아키텍처
+<caption caption="" src={azure15} />
 
 ## Azure App Service 아키텍처 만들기
 ### 1. 구독 생성
@@ -144,12 +148,16 @@ App Service를 연결한 **appservicesubnet**을 제외하고 Mysql 데이터베
 > - ```Security Rules.Direction```: Inbound
 > - ```Security Rules.Access```: Allow
 > - ```Security Rules.Protocol```: Tcp
+
+<caption caption="[그림.10] Azure App Service 10" src={azure10} />
+
 > - ```Security Rules.Source Port Ranges```: 3306
 > - ```Security Rules.Destination Port Ranges```: 3306
 > - ```Security Rules.Source Address Prefixes```: *
 > - ```Security Rules.Destination Address Prefixes```: *
+> - ```Security Rules.Description```: Allow Mysql
 
-<caption caption="[그림.10] Azure App Service 10" src={azure10} />
+<caption caption="[그림.11] Azure App Service 11" src={azure11} />
 
 ### 7. Mysql 생성
 **Mysql** 아이콘을 가져옵니다.
@@ -159,10 +167,10 @@ App Service에서 사용할 데이터를 저장하고 있는 Mysql 서버를 배
 > - ```Version```: 5.7
 > - ```Sku Name```: GP_Gen5_4
 > - ```Storage Mb```: 5120
-> - ```Admin Login```: admin
+> - ```Admin Login```: cloudstudio
 > - ```Admin Login Password```: ADMIN_PASSWORD
 
-<caption caption="[그림.11] Azure App Service 11" src={azure11} />
+<caption caption="[그림.12] Azure App Service 12" src={azure12} />
 
 Mysql 서버에 Private 접속만 가능하도록 만들기 위해서 ```Public Network Access Enabled```를 false로 설정합니다.
 ```Public Network Access Enabled``` 옵션이 false인 경우 Firewall을 설정할 수 없습니다.
@@ -172,7 +180,7 @@ Mysql 서버에 Private 접속만 가능하도록 만들기 위해서 ```Public 
 > - ```Minimal Tls Version```: TLS1_2
 > - ```Threat Detection Enabled```: true
 
-<caption caption="[그림.12] Azure App Service 12" src={azure12} />
+<caption caption="[그림.13] Azure App Service 12" src={azure13} />
 
 Database는 Mysql 서버를 생성하고 그 안에 Database를 생성하는 옵션입니다.
 데이터베이스를 생성하고 싶지 않은 경우, 해당 옵션을 삭제합니다.
@@ -180,7 +188,7 @@ Database는 Mysql 서버를 생성하고 그 안에 Database를 생성하는 옵
 > - ```Database.Charset```: utf8
 > - ```Database.Collation```: utf8_unicode_ci
 
-<caption caption="[그림.13] Azure App Service 13" src={azure13} />
+<caption caption="[그림.14] Azure App Service 14" src={azure14} />
 
 ### 8. Private Endpoint 생성
 **Private Endpoint** 아이콘을 가져옵니다.
@@ -189,13 +197,13 @@ Mysql은 Private 접근만 가능하기 때문에 Private Endpoint를 연결해�
 
 > - ```Service Name```: appdbendpoint
 
-<caption caption="[그림.14] Azure App Service 14" src={azure14} />
+<caption caption="[그림.15] Azure App Service 15" src={azure15} />
 
 > - ```Connection Name```: appdb-privateconnection
 > - ```Manual Connection```: false
 > - ```Subresource Names```: mysqlServer
 
-<caption caption="[그림.15] Azure App Service 15" src={azure15} />
+<caption caption="[그림.16] Azure App Service 16" src={azure16} />
 
 *****
 ## 참고 자료

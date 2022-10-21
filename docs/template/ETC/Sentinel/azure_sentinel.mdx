@@ -47,6 +47,10 @@ Microsoft Sentinel을 Azure에 배포하기 위한 가이드를 제공합니다.
 - **Azure Storage Account**
 - **Security Center**
 
+## 아키텍처
+<caption caption="" src={azure10} />
+
+
 ## Azure Sentinel 아키텍처 만들기
 ### 1. 구독 생성
 캔버스에서 구독 아이콘을 가져온 후 등록한 **크레덴셜**을 선택합니다.
@@ -105,7 +109,7 @@ Log Analytics Workspace에 저장된 로그를 Azure에서 제공하는 규칙�
 Security Center의 Advanced Threat Protection으로 보호할 Storage Account를 생성합니다.
 해당 Storage Account는 Security Center에 의해 보호받으며, Security Center의 Assessment Policy에 의해서 안전성을 평가받습니다. 
 
-> - ```Service Name```: cloudstudiosentinle
+> - ```Service Name```: cloudstudiosentinel
 > - ```Account Kind```: StorageV2
 > - ```Account Tier```: Standard
 > - ```Account Replication Type```: LRS

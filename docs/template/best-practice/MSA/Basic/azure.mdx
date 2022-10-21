@@ -2,10 +2,9 @@
 title: Azure
 sidebar_position: 0
 tags: [Template, Best Practice, MSA, Basic, Azure]
-last_update: 
-    date: 10/19/2022
 ---
 
+import azure1 from './img/azure/1.png';
 import azure2 from './img/azure/2.png';
 import azure3 from './img/azure/3.png';
 import azure4 from './img/azure/4.png';
@@ -27,12 +26,14 @@ import azure19 from './img/azure/19.png';
 import azure20 from './img/azure/20.png';
 import azure21 from './img/azure/21.png';
 import azure22 from './img/azure/22.png';
+import azure23 from './img/azure/23.png';
 
 
 <span className="theme-doc-version-badge badge badge--secondary">
     Version: 1.0.0
 </span>
 
+# Azure MSA
 ##### 2022.07.28 / 읽는 데 15분 걸림(소요시간)
 
 *****
@@ -63,10 +64,13 @@ MSA Basic을 Azure에 배포하기 위한 가이드를 제공합니다.
 - **Monitor Activity Log Alert**
 - **Monitor Metric Alert**
 
+##  아키텍처
+<caption caption="" src={azure23} />
+
 ## Azure MSA 아키텍처 만들기
 ### 1. 구독 생성
 캔버스에서 구독 아이콘을 가져온 후 등록한 크레덴셜을 선택합니다.
-<caption caption="[그림.1] Azure MSA Basic 1" src={azure2} />
+<caption caption="[그림.1] Azure MSA Basic 1" src={azure1} />
 
 ### 2. 리소스 그룹 생성
 **리소스 그룹** 아이콘을 가져옵니다.<br/>
@@ -75,7 +79,7 @@ MSA Basic을 Azure에 배포하기 위한 가이드를 제공합니다.
 > - ```Service Name```: resourceGroup
 > - ```Location```: koreacentral
 
-<caption caption="[그림.2] Azure MSA Basic 2" src={azure3} />
+<caption caption="[그림.2] Azure MSA Basic 2" src={azure2} />
 
 ### 3. Kubernetes Cluster 생성
 **Kubernetes Cluster** 아이콘을 가져옵니다.
@@ -89,9 +93,9 @@ Api Sever Authorized Ip Ranges는 쿠버네티스의 api server에 요청을 보
 >- ```Vnet Address Space```: 10.0.0.0/8
 >- ```Dns Prefix```: defaultAks
 >- ```Sku Tier```: Free
->- ```Api Sever Authorized Ip Ranges```: [ 0.0.0.0 ]
+>- ```Api Sever Authorized Ip Ranges```: [ 0.0.0.0/0 ]
 
-<caption caption="[그림.3] Azure MSA Basic 3" src={azure4} />
+<caption caption="[그림.3] Azure MSA Basic 3" src={azure3} />
 
 Kubernetes Cluster를 운영하기 위한 Virtual Machine Scale Sets의 정보를 입력합니다. 
 서버 개수, CPU, Memory등을 지정합니다.
@@ -104,7 +108,7 @@ Max Pods는 노드에서 최대 생성할 수 있는 Pod의 수를 지정합니�
 > - ```Max Pods```: 110
 > - ```Enable Auto Scailing```: false
 
-<caption caption="[그림.4] Azure MSA Basic 4" src={azure5} />
+<caption caption="[그림.4] Azure MSA Basic 4" src={azure4} />
 
 Aad Rbac Enabled는 현재 사용자의 Azure AD의 사용자를 쿠버네티스 내에서 사용할 수 있도록 만들어줍니다. 
 Azure AD에 등록된 사용자를 쿠버네티스 RBAC에 사용할 수 있습니다.
@@ -115,7 +119,7 @@ Azure AD에 등록된 사용자를 쿠버네티스 RBAC에 사용할 수 있습�
 >- ```Network Plugin```: kubenet
 >- ```Load Balancer Sku```: standard
 
-<caption caption="[그림.5] Azure MSA Basic 5" src={azure6} />
+<caption caption="[그림.5] Azure MSA Basic 5" src={azure5} />
 
 Pod와 Service는 쿠버네티스에서 사용하는 오브젝트의 이름입니다. 각 오브젝트가 사용할 CIDR을 지정합니다.
 
@@ -125,7 +129,7 @@ Pod와 Service는 쿠버네티스에서 사용하는 오브젝트의 이름입�
 >- ```Docker Brider Cidr```: 172.17.0.1/16
 >- ```Outbound Type```: loadBalancer
 
-<caption caption="[그림.6] Azure MSA Basic 6" src={azure7} />
+<caption caption="[그림.6] Azure MSA Basic 6" src={azure6} />
 
 ### 4. 컨테이너 레지스트리 생성 
 **컨테이너 레지스트리** 아이콘을 가져옵니다.
@@ -133,12 +137,12 @@ Pod와 Service는 쿠버네티스에서 사용하는 오브젝트의 이름입�
 컨테이너 레지스트리에 접근 제어를 하는 Network Rule Set은 Premium Sku에서만 사용가능합니다.
 이 가이드에서는 Standard Sku를 사용하기 때문에 Network Rule Set은 만들지 않습니다. 
 
->- ```Service Name```: default-acr
+>- ```Service Name```: cloudstudiocrs
 >- ```Sku```: Standard
 >- ```Admin Enabled```: false
 >- ```Public Network Access Enabled```: true
 
-<caption caption="[그림.7] Azure MSA Basic 7" src={azure8} />
+<caption caption="[그림.7] Azure MSA Basic 7" src={azure7} />
 
 ### 5. Mysql 생성
 **Mysql** 아이콘을 가져옵니다.
@@ -151,18 +155,18 @@ Mysql의 Service Name은 서버의 DNS주소로 사용되기 때문에 사용자
 >- ```Sku Name```: GP_Gen5_4
 >- ```Storage Mb```: 5120
 
-<caption caption="[그림.12] Azure MSA Basic 12" src={azure13} />
+<caption caption="[그림.8] Azure MSA Basic 8" src={azure8} />
 
 Mysql 서버의 ```Public Network Access Enabled```옵션을 true로 설정했기 때문에 누구나 Mysql 서버에 접속할 수 있습니다.
 
->- ```Admin Login```: admin
+>- ```Admin Login```: cloudraw
 >- ```Admin Password```: ADMIN_PASSWORD
 >- ```Public Network Access Enabled```: true
 >- ```Ssl Enforcement Enabled```: true
 >- ```Minimal Tls Version```: TLS1_2
 >- ```Threat Detection Enabled```: false
 
-<caption caption="[그림.13] Azure MSA Basic 13" src={azure14} />
+<caption caption="[그림.9] Azure MSA Basic 9" src={azure9} />
 
 Mysql 서버에 데이터베이스를 추가합니다. 데이터베이스에서 사용할 Charset과 Collation을 지정합니다.
 
@@ -170,7 +174,7 @@ Mysql 서버에 데이터베이스를 추가합니다. 데이터베이스에서 
 >- ```Database.Charset```: utf8
 >- ```Database.Collation```: utf8_unicode_ci
 
-<caption caption="[그림.14] Azure MSA Basic 14" src={azure15} />
+<caption caption="[그림.10] Azure MSA Basic 10" src={azure10} />
 
 Mysql 서버에 접속할 수 있는 IP를 설정합니다. 시작 IP와 마지막 IP를 모두 0.0.0.0으로 설정하면 모든 IP가 데이터베이스에 접속을 허용합니다.
 
@@ -178,7 +182,7 @@ Mysql 서버에 접속할 수 있는 IP를 설정합니다. 시작 IP와 마지�
 >- ```Firewall.Start Ip Address```: 0.0.0.0
 >- ```Firewall.End Ip Address```: 0.0.0.0
 
-<caption caption="[그림.15] Azure MSA Basic 15" src={azure16} />
+<caption caption="[그림.11] Azure MSA Basic 11" src={azure11} />
 
 ### 6. Storage Account 생성
 **Storage Account** 아이콘을 가져옵니다.
@@ -193,18 +197,18 @@ Storage Account Service Name은 서버의 DNS주소로 사용되기 때문에 �
 >- ```Access Tier```: Hot 
 >- ```Min Tls Version```: TLS1_2
 
-<caption caption="[그림.16] Azure MSA Basic 16" src={azure17} />
+<caption caption="[그림.12] Azure MSA Basic 12" src={azure12} />
 
 Object 스토리지는 DNS 주소를 알면 누구나 Request를 보낼 수 있기 때문에 IP 주소로 접근 제어를 해야합니다.
 사용자의 Public IP만 접속이 가능하도록 Network Rule을 설정합니다.
 
 >- ```Enable Https Traffic Only```: true
->- ```Network Rules.Nmae```: defaultrule
+>- ```Network Rules.Nmae```: default_rule
 >- ```Network Rules.Default Action```: Allow
 >- ```Network Rules.Bypass```: [ "AzureServices" ]
 >- ```Network Rules.Ip Rules```: 0.0.0.0
 
-<caption caption="[그림.17] Azure MSA Basic 17" src={azure18} />
+<caption caption="[그림.13] Azure MSA Basic 13" src={azure13} />
 
 Storage Account는 4종류의 스토리지를 가지고 있지만, 이 가이드에서는 Storage Share만 사용합니다.
 Storage Share는 쿠버네티스의 스토리지로 사용할 수 있습니다. Storage Class를 통해서 쿠버네티스에 있는 데이터를 Storage Share에 저장할 수 있습니다.
@@ -212,7 +216,7 @@ Storage Share는 쿠버네티스의 스토리지로 사용할 수 있습니다. 
 >- ```Storage Share.Name```: defaultshare
 >- ```Storage Share.Quota```: 5
 
-<caption caption="[그림.18] Azure MSA Basic 18" src={azure19} />
+<caption caption="[그림.14] Azure MSA Basic 14" src={azure14} />
 
 ### 7. Key Vault 생성
 **Key Vault** 아이콘을 가져옵니다.
@@ -226,7 +230,7 @@ Key Vault는 크레덴셜을 저장하기 때문에 사용자가 크레덴셜이
 >- ```Soft Delete Retention Days```: 7
 >- ```Purge Protection Enabled```: false
 
-<caption caption="[그림.8] Azure MSA Basic 8" src={azure9} />
+<caption caption="[그림.15] Azure MSA Basic 15" src={azure15} />
 
 Key Vault에 접근할 수 있는 Public IP 주소를 지정할 수 있습니다. 
 Key Vault에 사용자만 접근할 수 있도록, 사용자의 Public IP만 허용합니다.
@@ -235,7 +239,7 @@ Key Vault에 사용자만 접근할 수 있도록, 사용자의 Public IP만 허
 >- ```Network Acl Action```: Allow
 >- ```Network Acl Ip Rules```: 0.0.0.0
 
-<caption caption="[그림.9] Azure MSA Basic 9" src={azure10} />
+<caption caption="[그림.16] Azure MSA Basic 16" src={azure16} />
 
 Key Vault의 크레덴셜에 대해서 세부적인 접근 제어를 설정할 수 있습니다.
 Access Policy는 Key, Secrets, Certificate 각각 15개의 세분화된 권한을 할당할 수 있습니다.
@@ -245,7 +249,7 @@ Access Policy는 Key, Secrets, Certificate 각각 15개의 세분화된 권한�
 >- ```Access Policies.Object Id```: OBJECT_ID
 >- ```Access Policies.Secret Permissions```: ["Get", "Set", "Delete", "List", "Purge"]
 
-<caption caption="[그림.10] Azure MSA Basic 10" src={azure11} />
+<caption caption="[그림.17] Azure MSA Basic 17" src={azure17} />
 
 Key Vault의 Secret은 특정 값을 등록할 수 있습니다. 
 Key Vault의 Secret은 생성되면서 Tenat ID를 크레덴셜로 등록합니다.
@@ -253,7 +257,7 @@ Key Vault의 Secret은 생성되면서 Tenat ID를 크레덴셜로 등록합니�
 >- ```Key Vault Secret.Name```: defaultsecret
 >- ```Key Vault Secret.Expiration Date```: EXPIRATION DATE
 
-<caption caption="[그림.11] Azure MSA Basic 11" src={azure12} />
+<caption caption="[그림.18] Azure MSA Basic 18" src={azure18} />
 
 ### 8. Monitor Action Group 생성 
 **Monitor Action Group** 아이콘을 가져옵니다.
@@ -265,7 +269,7 @@ Azure Action Group은 Monitor가 데이터 수집 과정에서 사용자가 지�
 >- ```Short Name```: defaultactiongroup
 >- ```Enabled```: true
 
-<caption caption="[그림.19] Azure MSA Basic 19" src={azure20} />
+<caption caption="[그림.19] Azure MSA Basic 19" src={azure19} />
 
 이메일을 받을 관리자의 Email 주소를 입력합니다.
 
@@ -273,7 +277,7 @@ Azure Action Group은 Monitor가 데이터 수집 과정에서 사용자가 지�
 >- ```Email.Email Address```: EMAIL_ADDRESS
 >- ```Email.Use Common Alert Schema```: true
 
-<caption caption="[그림.20] Azure MSA Basic 20" src={azure21} />
+<caption caption="[그림.20] Azure MSA Basic 20" src={azure20} />
 
 문자를 받을 관리자의 핸드폰 번호를 입력합니다.
 
@@ -281,7 +285,7 @@ Azure Action Group은 Monitor가 데이터 수집 과정에서 사용자가 지�
 >- ```Sms.Country Code```: 82
 >- ```Sms.Phone Number```: PHONE_NUMBER
 
-<caption caption="[그림.21] Azure MSA Basic 21" src={azure22} />
+<caption caption="[그림.21] Azure MSA Basic 21" src={azure21} />
 
 ### 10. Monitor Activity Log Alert 생성
 **Monitor Activity Log Alert** 아이콘을 가져옵니다.
@@ -298,10 +302,10 @@ Kubernetes Cluster에서 발생하는 Activity Log를 모니터링합니다.
 Metric Alert는 Azure Monitor가 메트릭을 수집할 때, 사용자가 지정한 수치를 넘어가는 경우 알림을 전달합니다.
 Kubernetes Cluster의 Metric을 수집하고 Threshold를 넘어가면 알림이 발생합니다.
 
->- ```Service Name```: activitylogalert
+>- ```Service Name```: metricalert
 >- ```Sms```: default
 
-<caption caption="[그림.23] Azure MSA Basic 23" src={azure22} />
+<caption caption="[그림.23] Azure MSA Basic 23" src={azure23} />
 
 
 *****
