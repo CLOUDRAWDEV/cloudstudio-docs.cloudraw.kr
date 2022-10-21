@@ -57,6 +57,7 @@ import azure48 from './img/azure/48.png';
 import azure49 from './img/azure/49.png';
 import azure50 from './img/azure/50.png';
 import azure51 from './img/azure/51.png';
+import azure52 from './img/azure/52.png';
 
 <span className="theme-doc-version-badge badge badge--secondary">
     Version: 1.0.0
@@ -105,7 +106,7 @@ Landing Zone은 기업의 규모에 따라서 구성이 달라집니다. 이 가
 - **Policy Definition**
 
 ## 아키텍처
-<caption caption="" src={azure51} />
+<caption caption="" src={azure52} />
 
 ## Azure Landing Zone 아키텍처 만들기
 ### 1. 구독 생성
@@ -348,6 +349,7 @@ Application에 접속하기 위한 포트는 80, 443을 사용하는 경우 Defa
 > - ```Security Rules.Destination Port Ranges```: 22
 > - ```Security Rules.Source Address Prefixes```: *
 > - ```Security Rules.Destination Address Prefixes```: *
+<caption caption="[그림.23] Azure Landing Zone Basic 23" src={azure23} />
 
 **SpokeNSG**
 
@@ -357,7 +359,7 @@ Application에 접속하기 위한 포트는 80, 443을 사용하는 경우 Defa
 > - ```Security Rules.Direction```: Inbound
 > - ```Security Rules.Access```: Allow
 
-<caption caption="[그림.23] Azure Landing Zone Basic 23" src={azure23} />
+<caption caption="[그림.24] Azure Landing Zone Basic 24" src={azure24} />
 
 > - ```Security Rules.Protocol```: Tcp
 > - ```Security Rules.Source Port Ranges```: 22
@@ -365,7 +367,7 @@ Application에 접속하기 위한 포트는 80, 443을 사용하는 경우 Defa
 > - ```Security Rules.Source Address Prefixes```: *
 > - ```Security Rules.Destination Address Prefixes```: *
 
-<caption caption="[그림.24] Azure Landing Zone Basic 24" src={azure24} />
+<caption caption="[그림.25] Azure Landing Zone Basic 25" src={azure25} />
 
 
 ### 18. Mysql 생성
@@ -379,7 +381,7 @@ App Service에서 사용할 데이터를 저장할 Mysql 서버를 배포합니�
 > - ```Admin Login```: cloudraw
 > - ```Admin Login Password```: ADMIN_PASSWORD
 
-<caption caption="[그림.25] Azure Landing Zone Basic 25" src={azure25} />
+<caption caption="[그림.26] Azure Landing Zone Basic 26" src={azure26} />
 
 Mysql 서버에 Private 접속만 가능하도록 만들기 위해서 ```Public Network Access Enabled```를 false로 설정합니다.
 ```Public Network Access Enabled``` 옵션이 false인 경우 Firewall을 설정할 수 없습니다.
@@ -389,7 +391,7 @@ Mysql 서버에 Private 접속만 가능하도록 만들기 위해서 ```Public 
 > - ```Minimal Tls Version```: TLS1_2
 > - ```Threat Detection Enabled```: true
 
-<caption caption="[그림.26] Azure Landing Zone Basic 26" src={azure26} />
+<caption caption="[그림.27] Azure Landing Zone Basic 27" src={azure27} />
 
 Database는 Mysql 서버를 생성하고 그 안에 Database를 생성하는 옵션입니다. 
 데이터베이스를 생성하고 싶지 않은 경우, 해당 옵션을 삭제합니다.
@@ -397,7 +399,7 @@ Database는 Mysql 서버를 생성하고 그 안에 Database를 생성하는 옵
 > - ```Database.Charset```: utf8
 > - ```Database.Collation```: utf8_unicode_ci
 
-<caption caption="[그림.27] Azure Landing Zone Basic 27" src={azure27} />
+<caption caption="[그림.28] Azure Landing Zone Basic 28" src={azure28} />
 
 ### 19. Storage Account 생성
 **Storage Account** 아이콘을 가져옵니다.
@@ -411,7 +413,7 @@ Standard 스토리지는 Container, Queue, File, Table 4개 스토리지를 모�
 > - ```Access Tier```: Hot
 > - ```Min Tls Version```: TLS1_2
 
-<caption caption="[그림.28] Azure Landing Zone Basic 28" src={azure28} />
+<caption caption="[그림.29] Azure Landing Zone Basic 29" src={azure29} />
 
 Network Rules은 모든 IP 주소를 허용했지만, 배포를 할때는 현재 사용하고 있는 공인 IP 주소만 허용하는 것을 권장합니다.
 
@@ -421,7 +423,7 @@ Network Rules은 모든 IP 주소를 허용했지만, 배포를 할때는 현재
 > - ```Network Rules.Bypass```: [ "AzureServices" ]
 > - ```Network Rules.Ip Rules```: 0.0.0.0/0
 
-<caption caption="[그림.29] Azure Landing Zone Basic 29" src={azure29} />
+<caption caption="[그림.30] Azure Landing Zone Basic 30" src={azure30} />
 
 ### 20. Key Vault 생성
 **Key Vault** 아이콘을 가져옵니다.
@@ -434,7 +436,7 @@ Key Vault에 등록할 수 있는 Secret은 Key, Secrets, Certificate 3종류가
 >- ```Soft Delete Retention Days```: 7
 >- ```Purge Protection Enabled```: false
 >- ```Network Acl Bypass```: [ "AzureServices" ]
-<caption caption="[그림.30] Azure Landing Zone Basic 30" src={azure30} />
+<caption caption="[그림.31] Azure Landing Zone Basic 31" src={azure31} />
 
 Key Vault에 접근할 수 있는 Public IP 주소를 지정할 수 있습니다. 
 Key Vault에 사용자만 접근할 수 있도록, 사용자의 Public IP만 허용합니다.
@@ -450,8 +452,8 @@ Access Policy는 Key, Secrets, Certificate 각각 15개의 세분화된 권한�
 >- ```Access Policies.Secret Permissions```: ["Get", "Set", "Delete", "List", "Purge"]
 >- ```Access Policies.Certificate Permissions```: ["Get", "Create", "Delete", "List", "Purge"]
 
-<caption caption="[그림.31] Azure Landing Zone Basic 31" src={azure31} />
-
+<caption caption="[그림.32] Azure Landing Zone Basic 32" src={azure32} />
+<caption caption="[그림.33] Azure Landing Zone Basic 33" src={azure33} />
 ### 21. Private Endpoint 생성
 **Private Endpoint** 아이콘을 가져옵니다.
 Private Endpoint를 Mysql, Storage Account와 연결합니다. 
@@ -462,14 +464,14 @@ Mysql, Storage Account은 Private 접근만 가능하기 때문에 Private Endpo
 > - ```Manual Connection```: false
 > - ```Subresource Names```: ["mysqlServer"]
 
-<caption caption="[그림.33] Azure Landing Zone Basic 33" src={azure33} />
+<caption caption="[그림.34] Azure Landing Zone Basic 34" src={azure34} />
 
 > - ```Service Name```: appsaendpoint
 > - ```Connection Name```: appsa-privateconnection
 > - ```Manual Connection```: false
 > - ```Subresource Names```: ["blob", "file"]
 
-<caption caption="[그림.34] Azure Landing Zone Basic 34" src={azure34} />
+<caption caption="[그림.35] Azure Landing Zone Basic 35" src={azure35} />
 
 ### 22. Virtual Machine 생성
 **Ubuntu Virtual Machine** 아이콘을 가져옵니다.
@@ -484,7 +486,7 @@ Virtual Machine에 SSH 접속d을 할 때 SSH Private Key 또는 Admin ID, Passw
 > - ```Admin Username```: cloudraw
 > - ```Admin Password```: ADMIN_PASSWORD
 
-<caption caption="[그림.35] Azure Landing Zone Basic 35" src={azure35} />
+<caption caption="[그림.36] Azure Landing Zone Basic 36" src={azure36} />
 
 Virtual Machine에 연결되는 OS Disk의 Type을 선택합니다. 
 Azure는 HDD와 SSD를 지원하며, 이 가이드에서는 HDD(Standard_LRS)를 사용합니다.
@@ -494,7 +496,7 @@ Azure는 HDD와 SSD를 지원하며, 이 가이드에서는 HDD(Standard_LRS)를
 > - ```Disk Size Gb```: 128
 > - ```Image Sku```: 18.04-LTS
 
-<caption caption="[그림.36] Azure Landing Zone Basic 36" src={azure36} />
+<caption caption="[그림.37] Azure Landing Zone Basic 37" src={azure37} />
 
 Azure Load Balancer에 Public IP를 할당할 것이기 때문에, Virtual Machine은 Public IP를 할당하지 않습니다.
 Private Ip Address를 입력하지 않으면 Subnet에서 Private IP를 동적으로 할당합니다.
@@ -504,19 +506,20 @@ Private Ip Address를 동적으로 할당합니다.
 > - ```Included Subnet Name```: SpokeSubnet
 > - ```Pip Enable```: false
 
-<caption caption="[그림.37] Azure Landing Zone Basic 37" src={azure37} />
+<caption caption="[그림.38] Azure Landing Zone Basic 38" src={azure38} />
 
 ubuntuVm을 관리하기 위한 jumpboxVm을 생성합니다.
 ```Service Name```, ```Network Interface Name```, ```Included Subnet Name```을 제외한 옵션은 동일하게 구성합니다.
 
 > - ```Service Name```: jumpboxVm
 
-<caption caption="[그림.38] Azure Landing Zone Basic 38" src={azure38} />
+<caption caption="[그림.39] Azure Landing Zone Basic 39" src={azure39} />
 
 > - ```Network Interface Name```: jumpboxVm-nic
 > - ```Included Subnet Name```: JumpboxSubnet
 
 <caption caption="[그림.40] Azure Landing Zone Basic 40" src={azure40} />
+<caption caption="[그림.41] Azure Landing Zone Basic 41" src={azure41} />
 
 ### 23. Public Load Balancer 생성
 **Public Load Balancer** 아이콘을 가져옵니다.
@@ -529,7 +532,7 @@ Public Load Balancer의 Frontend IP Configuration에 연결되는 Public IP의 S
 > - ```Public Lb Frontend Ip Config.Pip Sku```: Standard
 > - ```Public Lb Frontend Ip Config.Pip Allocation Method```: Static
 
-<caption caption="[그림.41] Azure Landing Zone Basic 41" src={azure41} />
+<caption caption="[그림.42] Azure Landing Zone Basic 42" src={azure42} />
 
 Bakendpool은 Public Load Balacner의 Frontend IP Configuration으로 들어온 트래픽을 받을 서버를 지정합니다.
 위에서 생성한 3대의 VM의 Service Name을 입력합니다.
@@ -538,7 +541,7 @@ Bakendpool은 Public Load Balacner의 Frontend IP Configuration으로 들어온 
 > - ```Backend Pool.Backend Pool Name```: platformbackendpool
 > - ```Backend Pool.Virtual Machine Names```: ["ubuntuVm"]
 
-<caption caption="[그림.42] Azure Landing Zone Basic 42" src={azure42} />
+<caption caption="[그림.43] Azure Landing Zone Basic 43" src={azure43} />
 
 Rule은 Frontend IP Configuration과 Backend Pool을 연결하는 규칙입니다.
 Probe는 해당 포트로 전달되는 트래픽이 정상적으로 전달되는지 Health Check를 합니다.
@@ -550,7 +553,7 @@ Probe는 해당 포트로 전달되는 트래픽이 정상적으로 전달되는
 > - ```Rule.Disable Outbound Snat```: true
 > - ```Rule.Frontend Ip Config Name```: public_lb_lbipconfig
 > - ```Rule.Backend Pool Name```: platformbackendpoo42
-<caption caption="[그림.43] Azure Landing Zone Basic 43" src={azure43} />
+<caption caption="[그림.44] Azure Landing Zone Basic 44" src={azure44} />
 
 ### 24. DNS Zone 생성
 **DNS Zone** 아이콘을 가져옵니다.
@@ -560,7 +563,7 @@ cafe24, hosting.kr과 같이 다른 호스팅 사이트의 DNS 서버를 사용�
 
 > - ```Service Name```: domain.com
 
-<caption caption="[그림.44] Azure Landing Zone Basic 44" src={azure44} />
+<caption caption="[그림.45] Azure Landing Zone Basic 45" src={azure45} />
 
 ### 25. Log Analytics Workspace 생성
 **Log Analytics Workspace** 아이콘을 가져옵니다.
@@ -571,7 +574,7 @@ Security Center가 수집한 로그를 저장합니다.
 > - ```Internet Query Enabled```: true
 > - ```Internet Ingestion Enabled```: true
 
-<caption caption="[그림.45] Azure Landing Zone Basic 45" src={azure45} />
+<caption caption="[그림.46] Azure Landing Zone Basic 46" src={azure46} />
 
 ### 26. Security Center 생성
 **Security Center** 아이콘을 가져옵니다.
@@ -579,7 +582,7 @@ Security Center는 다른 리소스의 취약점을 진단하고 해당 로그�
 
 > - ```Service Name```: lzsecurity
 
-<caption caption="[그림.46] Azure Landing Zone Basic 46" src={azure46} />
+<caption caption="[그림.47] Azure Landing Zone Basic 47" src={azure47} />
 
 ### 27. Virtual Network Peering 생성
 **Virtual Network Peering** 아이콘을 가져옵니다.
@@ -589,7 +592,7 @@ Hub Vnet과 Spoke Vnet이 같은 IP 대역을 가지고 있으면 피어링에 �
 
 > - ```Service Name```: lzent_peering
 
-<caption caption="[그림.47] Azure Landing Zone Basic 47" src={azure47} />
+<caption caption="[그림.48] Azure Landing Zone Basic 48" src={azure48} />
 
 ### 28. Policy Definition 생성
 **Policy Definition** 아이콘을 가져옵니다.
@@ -601,7 +604,7 @@ Azure Policy Definition은 리소스 그룹 또는 리소스에 연결할 수 �
 > - ```Mode```: All
 > - ```Display Name```: lzonecustompolicy
 
-<caption caption="[그림.48] Azure Landing Zone Basic 48" src={azure48} />
+<caption caption="[그림.49] Azure Landing Zone Basic 49" src={azure49} />
 
 ### 29. Backup 생성
 **Backup** 아이콘을 가져옵니다. Virtual Netowrk의 데이터를 Backup 후 Virtual Machine을 특정 시점으로 되돌릴 수 있습니다.
@@ -611,7 +614,7 @@ Backup은 Virtual Machine과 File Share 두 종류가 가능합니다. 이 가�
 > - ```Sku```: Standard
 > - ```Soft Delete Enabled```: true
 
-<caption caption="[그림.49] Azure Landing Zone Basic 49" src={azure49} />
+<caption caption="[그림.50] Azure Landing Zone Basic 50" src={azure50} />
 
 > - ```Backup Policy Vm.Name```: defaultbackuppolicy
 > - ```Backup Policy Vm.Backup Frequency```: Weekly
@@ -619,7 +622,7 @@ Backup은 Virtual Machine과 File Share 두 종류가 가능합니다. 이 가�
 > - ```Backup Policy Vm.Backup Weekdays```: ["Sunday"]
 > - ```Backup Policy Vm.Retention Count```: 7
 
-<caption caption="[그림.50] Azure Landing Zone Basic 50" src={azure50} />
+<caption caption="[그림.51] Azure Landing Zone Basic 51" src={azure51} />
 
 
 *****
