@@ -1,6 +1,7 @@
 ---
+title: Ncloud
 sidebar_position: 0
-tags: [Template, 자주 사용하는 리소스, Server, Ncloud]
+tags: [Template, 자주 사용하는 리소스, Load Balancer, Ncloud]
 ---
 
 import Tabs from '@theme/Tabs';
@@ -23,18 +24,29 @@ import ncloud14 from './img/ncloud/14.png';
 import ncloud15 from './img/ncloud/15.png';
 import ncloud16 from './img/ncloud/16.png';
 import ncloud17 from './img/ncloud/17.png';
+import ncloud18 from './img/ncloud/18.png';
+import ncloud19 from './img/ncloud/19.png';
+import ncloud20 from './img/ncloud/20.png';
+import ncloud21 from './img/ncloud/21.png';
 
+<span className="theme-doc-version-badge badge badge--secondary">
+    Version: 1.0.0
+</span>
 
 # Ncloud Load Balancer
 ##### 2022.10.18 / 읽는 데 10분 걸림(소요시간)
 
 *****
 <br/>
-Azure Load Balancer를 사용하면 트래픽을 Virtual Machine 여러 대로 분산하는 아키텍처를 구성할 수 있습니다.
-여러 대의 Virtual Machine으로 트래픽이 분산되기 때문에 서버를 안정적으로 운영할 수 있습니다.
-Azure Load Balancer를 사용하는 경우 Virtual Machine Scale Sets을 사용하여 
-트래픽의 양에 따라서 Virtual Machine을 Scale In/Out 시켜 아키텍처의 고가용성을 보장할 수 있습니다.
-Azure Load Balancer를 활용한 아키텍처를 Azure에 배포하기 위한 가이드를 제공합니다.
+Ncloud Load Balancer를 사용하면 트래픽을 Server 여러 대로 분산하는 아키텍처를 구성할 수 있습니다.
+여러 대의 Server으로 트래픽이 분산되기 때문에 서버를 안정적으로 운영할 수 있습니다.
+Ncloud Load Balancer를 사용하는 경우 Server를 사용해 구성할 수 있으나,
+트래픽의 양에 따라서 Server를 Scale In/Out 할 수 있는 Auto Scailing을 사용해 고가용성을 보장할 수 있습니다.
+Ncloud Load Balancer를 활용한 아키텍처를 Ncloud 배포하기 위한 가이드를 제공합니다.
+
+:::info
+Load Balancer는 **Auto Scailing**과 **Server**에 모두 연결이 가능하지만, **Beta 테스트** 기간 동안에는 ```Server```만 연결이 가능합니다.
+:::
 
 ## 로그인
 - <Link to="/docs/credential/createCredential">Ncloud 크레덴셜 생성</Link>
@@ -53,9 +65,13 @@ Azure Load Balancer를 활용한 아키텍처를 Azure에 배포하기 위한 �
 - **Route Table**
 - **Network ACL**
 - **Access Control Group**
-- **Auto Scailing**
+- **Server**
 - **Load Balancer**
 <br/>
+
+## 아키텍처
+
+<caption caption="Ncloud Load Balancer" src={ncloud21} />
 
 ## Ncloud Load Balancer 아키텍처 만들기
 ### 1. 크레덴셜 선택
@@ -71,7 +87,7 @@ Azure Load Balancer를 활용한 아키텍처를 Azure에 배포하기 위한 �
 <caption caption="[그림.2] Ncloud Load Balancer 2" src={ncloud2} />
 
 ### 3. VPC 생성
-**VPC** 아이콘을 가져옵니다. VPC는 Ubuntu Server를 배포하기 위해 필요한 네트워크 환경을 제공합니다.
+**VPC** 아이콘을 가져옵니다. VPC는 를 배포하기 위해 필요한 네트워크 환경을 제공합니다.
 
 > - ```Service Name```: lbvpc
 > - ```Vnet Address Space```: 10.0.0.0/16
@@ -79,8 +95,8 @@ Azure Load Balancer를 활용한 아키텍처를 Azure에 배포하기 위한 �
 <caption caption="[그림.3] Ncloud Load Balancer 3" src={ncloud3} />
 
 ### 4. Subnet 생성
-**Subnet** 아이콘을 가져옵니다. Ubuntu Server 배포하기 위해 VPC 안에 Subnet을 구성합니다.
-클라이언트의 트래픽이 Server로 직접 들어오지 않고 Load Balancer를 통해 들어오게 하기 위해서 Private Subnet에 배포한다.
+**Subnet** 아이콘을 가져옵니다. Server를 배포하기 위해 VPC 안에 Subnet을 구성합니다.
+클라이언트의 트래픽이 Server로 직접 들어오지 않고 Load Balancer를 통해 들어오게 하기 위해서 Private Subnet에 배포합니다.
 
 > - ```Service Name```: targetsubnet
 > - ```Subnet Cidr```: 10.0.0.0/24
@@ -118,8 +134,7 @@ IP Block의 경우 0.0.0.0/0 모든 사용자가 접속이 가능하도록 구�
 
 <caption caption="[그림.7] Ncloud Load Balancer 7" src={ncloud7} />
 
-Ncloud의 Server는 ID, PW를 통해서 SSH 접속을 하기 때문에 TCP 22번 포트만 허용하도록 구성합니다.
-IP Block의 경우 0.0.0.0/0 모든 사용자가 접속이 가능하도록 구성되어 있지만, 특정 공인 IP만 허용하는 것을 권장합니다.
+Ncloud Server로 트래픽이 들어오도록 하기 위해서 80번 포트를 허용합니다. IP Block의 경우 0.0.0.0/0 모든 사용자가 접속이 가능하도록 구성되어 있지만, 특정 IP 대역만 허용하는 것을 권장합니다.
 
 > - ```Inbound Rule.Nmae```: http-inbound-rule
 > - ```Inbound Rule.Protocol```: TCP
@@ -127,6 +142,9 @@ IP Block의 경우 0.0.0.0/0 모든 사용자가 접속이 가능하도록 구�
 > - ```Inbound Rule.Source Port Ranges```: 80
 
 <caption caption="[그림.8] Ncloud Load Balancer 8" src={ncloud8} />
+
+Ncloud의 Server는 ID, PW를 통해서 SSH 접속을 하기 때문에 TCP 22번 포트만 허용하도록 구성합니다.
+IP Block의 경우 0.0.0.0/0 모든 사용자가 접속이 가능하도록 구성되어 있지만, 특정 IP 대역만 허용하는 것을 권장합니다.
 
 > - ```Inbound Rule.Nmae```: ssh-inbound-rule
 > - ```Inbound Rule.Protocol```: TCP
@@ -136,7 +154,8 @@ IP Block의 경우 0.0.0.0/0 모든 사용자가 접속이 가능하도록 구�
 <caption caption="[그림.9] Ncloud Load Balancer 9" src={ncloud9} />
 
 ### 7. NAT Gateway 생성
-**VPC** 아이콘을 가져옵니다. VPC는 Ubuntu Server를 배포하기 위해 필요한 네트워크 환경을 제공합니다.
+**NAT Gateway** 아이콘을 가져옵니다. NAT Gateway는 Private Subnet에 만들어진 Server의 Private IP 주소를 Public IP 주소로 변환해 외부 통신이 가능하게 만듭니다.
+NAT Gateway를 사용하면 외부로 부터 직접 접근을 차단하면서 외부 통신은 가능하게 구성할 수 있습니다.
 
 > - ```Service Name```: lbnatgw
 > - ```Zone```: KR-2
@@ -144,13 +163,15 @@ IP Block의 경우 0.0.0.0/0 모든 사용자가 접속이 가능하도록 구�
 <caption caption="[그림.10] Ncloud Load Balancer 10" src={ncloud10} />
 
 ### 8. Route Table 생성
-**Subnet** 아이콘을 가져옵니다. Ubuntu Server 배포하기 위해 VPC 안에 Subnet을 구성합니다.
+**Route Table** 아이콘을 가져옵니다. Route Table을 Private Subnet에 연결합니다.
 
 > - ```Service Name```: lbroutetable
 > - ```Supported Subnet Type```: PRIVATE
 > - ```Description```: Cloudstudio Load Balancer Demo
 
 <caption caption="[그림.11] Ncloud Load Balancer 11" src={ncloud11} />
+
+Private Subnet의 Outbound 트래픽이 NAT Gateway를 통해서 나가도록 Route Table을 구성합니다.
 
 > - ```Route.Name```: route-natgw
 > - ```Route.Target Type```: NATGW
@@ -159,49 +180,90 @@ IP Block의 경우 0.0.0.0/0 모든 사용자가 접속이 가능하도록 구�
 
 <caption caption="[그림.12] Ncloud Load Balancer 12" src={ncloud12} />
 
-### 9. Auto Scailing 생성
-**Ubuntu Server** 아이콘을 가져옵니다. Server는 Ncloud에서 제공하는 컴퓨팅 서비스입니다.
+### 9. Server 생성
+**Server** 아이콘을 가져옵니다. Server는 Ncloud에서 제공하는 컴퓨팅 서비스입니다.
+이 가이드에서는 Server를 하나만 사용하지만, 안정적인 서비스 운영을 위해서 여러 대의 Server를 사용하는 것을 권장합니다.
 
 > - ```Service Name```: lb-target-server
 > - ```Server Image Product Code```: SW.VSVR.OS.LNX64.UBNTU.SVR2004.B050
 > - ```Server Product Code```: SVR.VSVR.HICPU.C002.M004.NET.SSD.B050.G002
-> - ```Login Key Name```: lb-login-key
 
 <caption caption="[그림.13] Ncloud Load Balancer 13" src={ncloud13} />
+
+Server에서 실행할 NIC와 Init Script를 생성합니다.
+
+> - ```Network Interface.Name```: lb-nic
+> - ```Network Interface.Nic Order```: 0
+> - ```Public Ip Enable```: false
+
+<caption caption="[그림.14] Ncloud Load Balancer 14" src={ncloud14} />
 
 > - ```Init Script.Name```: lb-init-script
 > - ```Init Script.Content```: #!/bin/bash\napt-get update
 
-<caption caption="[그림.14] Ncloud Load Balancer 14" src={ncloud14} />
-
-> - ```Group.Name```: lb-autoscale-key
-> - ```Group.Min Size```: 1
-> - ```Group.Max Size```: 3
-
 <caption caption="[그림.15] Ncloud Load Balancer 15" src={ncloud15} />
 
-> - ```Policy.Name```: lb-autoscale-policy
-> - ```Policy.Adjustment Type Code```: CHANG
-> - ```Policy.Scailing Adjustment```: 1
-
-<caption caption="[그림.16] Ncloud Load Balancer 16" src={ncloud16} />
 
 ### 10. Load Balancer 생성
-**Ubuntu Server** 아이콘을 가져옵니다. Server는 Ncloud에서 제공하는 컴퓨팅 서비스입니다.
+**Load Balancer** 아이콘을 가져옵니다. Load Balancer는 Server의 성능과 부하량을 고려해 네트워크 트래픽을 다수의 서버로 분산해 주는 서비스입니다.
 
 > - ```Service Name```: demolb
 > - ```Network Type```: PUBLIC
-> - ```Type```: NETWORK
+> - ```Type```: APPLICATION
 > - ```Throughput Type```: SMALL
+
+<caption caption="[그림.16] Ncloud Load Balancer 16" src={ncloud16} />
+
+Load Balancer를 생성하기 위해서는 Load Balancer 전용 Subnet이 필요합니다. Subnet을 만들 때, Server와 같은 Zone을 지정합니다.
+Subnet으로 들어오는 트래픽을 제한하기 위해 Network ACL을 연결합니다.
+
+> - ```Subnet Config.Name```: lbsubnet
+> - ```Subnet Config.Cidr```: 10.0.1.0/24
+> - ```Subnet Config.Zone```: KR-2
 
 <caption caption="[그림.17] Ncloud Load Balancer 17" src={ncloud17} />
 
-> - ```Network Interface.Name```: ubuntu-nic
-> - ```Network Interface.Nic Order```: 0
+Load Balancer가 트래픽을 전달할 Target Group을 생성합니다. Load Balancer는 트래픽을 연결된 Target Group에 지정된 포트로 전달합니다.
+Load Balancer에서 Auto Scailing을 연결하면 자동으로 Target Group이 생성됩니다.
 
-<caption caption="[그림.18] Ncloud Load Balancer 18" src={ncloud17} />
+> - ```Target Group.Name```: targetsubnet-group
+> - ```Target Group.Protocol```: HTTP
+> - ```Target Group.Port```: 80
+> - ```Target Group.Algorithm Type```: RR
+> - ```Target Group.Health Check Protocol```: HTTP
+
+<caption caption="[그림.18] Ncloud Load Balancer 18" src={ncloud18} />
+
+Load Balancer가 Targe Group의 상태를 체크할 수 있도록 구성합니다.
+
+> - ```Target Group.Health Check HTTP Method```: HEAD
+> - ```Target Group.Health Check Port```: 80
+> - ```Target Group.Health Check Cycle```: 30
+> - ```Target Group.Health Check Up Threshold```: 2
+> - ```Target Group.Health Check Down Threshold```: 2
+
+<caption caption="[그림.19] Ncloud Load Balancer 19" src={ncloud19} />
+
+Load Balancer가 트래픽을 수신할 Listener를 생성합니다. Listener와 Target Group을 매핑해 Listener로 들어온 트래픽을 Target Group으로 전달합니다.
+
+> - ```Listener.Name```: targetsubnet-group-listener
+> - ```Listener.Target Group Name```: targetsubnet-group
+> - ```Listener.Protocol```: HTTP
+> - ```Listener.Port```: 80
+
+<caption caption="[그림.20] Ncloud Load Balancer 20" src={ncloud20} />
+
+마지막으로 Target Group에 포함시킬 Server를 지정합니다. Cloud Studio에서는 Targe Group을 지정하기 위해 Load Balancer에서 연결한 Server, Auto Scailing이
+자동으로 Target Group에 등록됩니다.
+> - ```Target Group Attachment.Name```: targetsubnet-group-attachment
+> - ```Listener.Target Group Name```: targetsubnet-group
+
+<caption caption="[그림.21] Ncloud Load Balancer 21" src={ncloud21} />
+
 
 *****
 ## 참고 자료
-- [ncloud Virtual Machine](https://docs.microsoft.com/ko-kr/ncloud/virtual-machines/)
-- [ncloud Linux Virtual Machine](https://registry.terraform.io/providers/hashicorp/ncloudrm/latest/docs/resources/linux_virtual_machine)
+- [Ncloud Load Balancer 서비스 소개](https://www.ncloud.com/product/networking/loadBalancer)
+- [Network ACL 설정](https://guide.ncloud-docs.com/docs/vpc-nacl-vpc)
+- [Access Control Group 설정](https://guide.ncloud-docs.com/docs/compute-compute-2-3)
+- [Ncloud Load Balancer 시나리오](https://guide.ncloud-docs.com/docs/loadbalancer-procedure)
