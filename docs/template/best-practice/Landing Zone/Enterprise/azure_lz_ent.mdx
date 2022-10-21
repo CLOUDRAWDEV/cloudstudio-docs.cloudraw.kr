@@ -453,7 +453,14 @@ Access Policy는 Key, Secrets, Certificate 각각 15개의 세분화된 권한�
 >- ```Access Policies.Certificate Permissions```: ["Get", "Create", "Delete", "List", "Purge"]
 
 <caption caption="[그림.32] Azure Landing Zone Basic 32" src={azure32} />
+
+Key Vault에 등록할 Secret 값을 입력합니다. Secret에는 Teanat ID가 등록됩니다.
+
+>- ```Key Vault Secret.Name```: tenat-id
+>- ```Key Vault Secret.Expiration Date```: EXPIRATION_DATE
+
 <caption caption="[그림.33] Azure Landing Zone Basic 33" src={azure33} />
+
 ### 21. Private Endpoint 생성
 **Private Endpoint** 아이콘을 가져옵니다.
 Private Endpoint를 Mysql, Storage Account와 연결합니다. 
@@ -516,9 +523,11 @@ ubuntuVm을 관리하기 위한 jumpboxVm을 생성합니다.
 <caption caption="[그림.39] Azure Landing Zone Basic 39" src={azure39} />
 
 > - ```Network Interface Name```: jumpboxVm-nic
-> - ```Included Subnet Name```: JumpboxSubnet
 
 <caption caption="[그림.40] Azure Landing Zone Basic 40" src={azure40} />
+
+> - ```Included Subnet Name```: JumpboxSubnet
+
 <caption caption="[그림.41] Azure Landing Zone Basic 41" src={azure41} />
 
 ### 23. Public Load Balancer 생성
@@ -553,6 +562,7 @@ Probe는 해당 포트로 전달되는 트래픽이 정상적으로 전달되는
 > - ```Rule.Disable Outbound Snat```: true
 > - ```Rule.Frontend Ip Config Name```: public_lb_lbipconfig
 > - ```Rule.Backend Pool Name```: platformbackendpoo42
+
 <caption caption="[그림.44] Azure Landing Zone Basic 44" src={azure44} />
 
 ### 24. DNS Zone 생성
