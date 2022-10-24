@@ -28,3 +28,9 @@
 .captionText {
     @include medium-gray();
 }
+
+.button {
+  :hover {
+    cursor: pointer;
+  }
+}
