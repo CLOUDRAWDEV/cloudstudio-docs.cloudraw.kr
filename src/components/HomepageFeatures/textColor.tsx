@@ -6,14 +6,14 @@ const TextColor = ({
     children,
 }) => {
     return(
-        <div
+        <span
             className = {styles.TextColor}
             style={{
                 color: color,
             }}
         >
             {children}
-        </div>
+        </span>
     )
 };
 

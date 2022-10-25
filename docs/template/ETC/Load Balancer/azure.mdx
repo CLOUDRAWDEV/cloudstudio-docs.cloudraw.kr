@@ -106,7 +106,6 @@ Virtual Network에 Virtual Machine을 배포하기 위한 Subnet을 구성합니
 Virtual Machine에서 동작하는 어플리케이션이 다른 포트를 사용한다면, Security Rules을 변경해야 합니다.
 
 > - ```Service Name```: lb_nsg
-> - ```Security Rules```: koreacentral
 
 <caption caption="[그림.5] Azure Load Balancer 5" src={azure5} />
 
@@ -133,7 +132,7 @@ Virtual Machine에서 어플리케이션을 동작시킵니다.
 > - ```Disable Password Authentication```: false
 > - ```Enable Ssh Key Authentication```: false
 > - ```Admin Username```: admin
-> - ```Admin Password```: ADMIN_PASSWORD
+> - ```Admin Password```: <TextColor color="#206FD6">ADMIN_PASSWORD</TextColor>
 
 <caption caption="[그림.7] Azure Load Balancer 7" src={azure7} />
 
@@ -164,7 +163,7 @@ Mysql의 Service Name은 서버의 DNS주소로 사용되기 때문에 사용자
 > - ```Sku Name```: GP_Gen5_4
 > - ```Storage Mb```: 5120
 > - ```Admin Login```: cloudstudio
-> - ```Admin Login Password```: ADMIN_PASSWORD
+> - ```Admin Login Password```: <TextColor color="#206FD6">ADMIN_PASSWORD</TextColor>
 
 <caption caption="[그림.10] Azure Load Balancer 10" src={azure10} />
 
@@ -205,7 +204,7 @@ Network Rules은 모든 IP 주소를 허용했지만, 배포를 할때는 현재
 > - ```Network Rules.Nmae```: defaultrule
 > - ```Network Rules.Default Action```: Allow
 > - ```Network Rules.Bypass```: [ "AzureServices" ]
-> - ```Network Rules.Ip Rules```: 0.0.0.0
+> - ```Network Rules.Ip Rules```: 0.0.0.0/0
 
 <caption caption="[그림.14] Azure Load Balancer 14" src={azure14} />
 

@@ -27,13 +27,14 @@ import azure20 from './img/azure/20.png';
 import azure21 from './img/azure/21.png';
 import azure22 from './img/azure/22.png';
 import azure23 from './img/azure/23.png';
+import azure24 from './img/azure/24.png';
 
 
 <span className="theme-doc-version-badge badge badge--secondary">
     last update: 2022.10.24
 </span>
 
-# Azure MSA
+# Azure MSA Basic
 ##### 읽는 데 15분 걸림(소요시간)
 
 *****
@@ -160,7 +161,7 @@ Mysql의 Service Name은 서버의 DNS주소로 사용되기 때문에 사용자
 Mysql 서버의 ```Public Network Access Enabled```옵션을 true로 설정했기 때문에 누구나 Mysql 서버에 접속할 수 있습니다.
 
 >- ```Admin Login```: cloudraw
->- ```Admin Password```: ADMIN_PASSWORD
+>- ```Admin Password```: <TextColor color="#206FD6">ADMIN_PASSWORD</TextColor>
 >- ```Public Network Access Enabled```: true
 >- ```Ssl Enforcement Enabled```: true
 >- ```Minimal Tls Version```: TLS1_2
@@ -206,7 +207,7 @@ Object 스토리지는 DNS 주소를 알면 누구나 Request를 보낼 수 있�
 >- ```Network Rules.Nmae```: default_rule
 >- ```Network Rules.Default Action```: Allow
 >- ```Network Rules.Bypass```: [ "AzureServices" ]
->- ```Network Rules.Ip Rules```: 0.0.0.0
+>- ```Network Rules.Ip Rules```: 0.0.0.0/0
 
 <caption caption="[그림.13] Azure MSA Basic 13" src={azure13} />
 
@@ -246,7 +247,7 @@ Access Policy는 Key, Secrets, Certificate 각각 15개의 세분화된 권한�
 사용자는 SP나 Azure AD에 등록되 계정의 Object ID를 등록함으로써 Key Vault의 특정 크레덴셜에 대한 권한을 받을 수 있습니다.
 
 >- ```Access Policies.Name```: default-access-policy
->- ```Access Policies.Object Id```: OBJECT_ID
+>- ```Access Policies.Object Id```: <TextColor color="#206FD6">OBJECT_ID</TextColor>
 >- ```Access Policies.Secret Permissions```: ["Get", "Set", "Delete", "List", "Purge"]
 
 <caption caption="[그림.17] Azure MSA Basic 17" src={azure17} />
@@ -255,7 +256,7 @@ Key Vault의 Secret은 특정 값을 등록할 수 있습니다.
 Key Vault의 Secret은 생성되면서 Tenat ID를 크레덴셜로 등록합니다.
 
 >- ```Key Vault Secret.Name```: defaultsecret
->- ```Key Vault Secret.Expiration Date```: EXPIRATION DATE
+>- ```Key Vault Secret.Expiration Date```: <TextColor color="#206FD6">EXPIRATION_DATE</TextColor>
 
 <caption caption="[그림.18] Azure MSA Basic 18" src={azure18} />
 
@@ -274,7 +275,7 @@ Azure Action Group은 Monitor가 데이터 수집 과정에서 사용자가 지�
 이메일을 받을 관리자의 Email 주소를 입력합니다.
 
 >- ```Email.Name```: defaultemail
->- ```Email.Email Address```: EMAIL_ADDRESS
+>- ```Email.Email Address```: <TextColor color="#206FD6">EMAIL_ADDRESS</TextColor>
 >- ```Email.Use Common Alert Schema```: true
 
 <caption caption="[그림.20] Azure MSA Basic 20" src={azure20} />
@@ -283,29 +284,43 @@ Azure Action Group은 Monitor가 데이터 수집 과정에서 사용자가 지�
 
 >- ```Sms.Name```: defaultsms
 >- ```Sms.Country Code```: 82
->- ```Sms.Phone Number```: PHONE_NUMBER
+>- ```Sms.Phone Number```: <TextColor color="#206FD6">PHONE_NUMBER</TextColor>
 
 <caption caption="[그림.21] Azure MSA Basic 21" src={azure21} />
 
-### 10. Monitor Activity Log Alert 생성
+### 9. Monitor Activity Log Alert 생성
 **Monitor Activity Log Alert** 아이콘을 가져옵니다.
 Activity Log Alert는 Azure Monitor가 활동 로그를 수집할 때, 사용자가 지정한 로그 Level을 넘어가는 경우 알림을 전달합니다.
 Kubernetes Cluster에서 발생하는 Activity Log를 모니터링합니다.
 
 >- ```Service Name```: activitylogalert
->- ```Sms```: default
+>- ```Criteria Category```: Administrative
+>- ```Criteria Level```: Informational
+>- ```Target Resource Name```: default-aks 
+>- ```Criteria Status```: Succeeded
 
 <caption caption="[그림.22] Azure MSA Basic 22" src={azure22} />
 
-### 11. Monitor Metric Alert 생성 
+### 10. Monitor Metric Alert 생성 
 **Monitor Metric Alert** 아이콘을 가져옵니다.
 Metric Alert는 Azure Monitor가 메트릭을 수집할 때, 사용자가 지정한 수치를 넘어가는 경우 알림을 전달합니다.
 Kubernetes Cluster의 Metric을 수집하고 Threshold를 넘어가면 알림이 발생합니다.
 
 >- ```Service Name```: metricalert
->- ```Sms```: default
+>- ```Target Resource Name```: default-aks 
+>- ```Severity```: Administrative
+>- ```Frequency```: Informational
+>- ```Auto Migrate```: Succeeded
 
 <caption caption="[그림.23] Azure MSA Basic 23" src={azure23} />
+
+>- ```Criteria.Name```: usage-node-cpu
+>- ```Criteria.Metric Name```: node_cpu_usage_percentage
+>- ```Criteria.Aggregation```: Average
+>- ```Criteria.Operator```: Equals
+>- ```Criteria.Threshold```: 60
+
+<caption caption="[그림.24] Azure MSA Basic 24" src={azure24} />
 
 
 *****

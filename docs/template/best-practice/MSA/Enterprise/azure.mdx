@@ -32,11 +32,14 @@ import azure25 from './img/azure/25.png';
 import azure26 from './img/azure/26.png';
 import azure27 from './img/azure/27.png';
 import azure28 from './img/azure/28.png';
+import azure29 from './img/azure/29.png';
+
 
 <span className="theme-doc-version-badge badge badge--secondary">
     last update: 2022.10.24
 </span>
 
+# Azure MSA Enterprise
 ##### 읽는 데 15분 걸림(소요시간)
 
 *****
@@ -179,7 +182,7 @@ Access Policy는 Key, Secrets, Certificate 각각 15개의 세분화된 권한�
 사용자는 SP나 Azure AD에 등록되 계정의 Object ID를 등록함으로써 Key Vault의 특정 크레덴셜에 대한 권한을 받을 수 있습니다.
 
 > - ```Access Policies.Name```: default-access-policy
-> - ```Access Policies.Object Id```: OBJECT_ID
+> - ```Access Policies.Object Id```: <TextColor color="#206FD6">OBJECT_ID</TextColor>
 > - ```Access Policies.Secret Permissions```: ["GET"]
 
 <caption caption="[그림.10] Azure MSA Enterprise 10" src={azure10} />
@@ -188,7 +191,7 @@ Key Vault의 Secret은 특정 값을 등록할 수 있습니다.
 Key Vault의 Secret은 생성되면서 Tenat ID를 크레덴셜로 등록합니다.
 
 > - ```Key Vault Secret.Name```: defaultsecret
-> - ```Key Vault Secret.Expiration Date```: EXPIRATION DATE
+> - ```Key Vault Secret.Expiration Date```: <TextColor color="#206FD6">EXPIRATION_DATE</TextColor>
 
 <caption caption="[그림.11] Azure MSA Enterprise 11" src={azure11} />
 
@@ -208,7 +211,7 @@ Mysql의 Service Name은 서버의 DNS주소로 사용되기 때문에 사용자
 Mysql 서버의 ```Public Network Access Enabled```옵션을 true로 설정했기 때문에 누구나 Mysql 서버에 접속할 수 있습니다.
 
 > - ```Admin Login```: cloudstudio
-> - ```Admin Password```: ADMIN_PASSWORD
+> - ```Admin Password```: <TextColor color="#206FD6">ADMIN_PASSWORD</TextColor>
 > - ```Public Network Access Enabled```: true
 > - ```Ssl Enforcement Enabled```: true
 > - ```Minimal Tls Version```: TLS1_2
@@ -254,7 +257,7 @@ Object 스토리지는 DNS 주소를 알면 누구나 Request를 보낼 수 있�
 > - ```Network Rules.Nmae```: defaultrule
 > - ```Network Rules.Default Action```: Allow
 > - ```Network Rules.Bypass```: [ "AzureServices" ]
-> - ```Network Rules.Ip Rules```: 0.0.0.0
+> - ```Network Rules.Ip Rules```: 0.0.0.0/0
 
 <caption caption="[그림.17] Azure MSA Enterprise 17" src={azure17} />
 
@@ -281,7 +284,7 @@ Azure Action Group은 Monitor가 데이터 수집 과정에서 사용자가 지�
 이메일을 받을 관리자의 Email 주소를 입력합니다.
 
 > - ```Email.Name```: defaultemail
-> - ```Email.Email Address```: EMAIL_ADDRESS
+> - ```Email.Email Address```: <TextColor color="#206FD6">EMAIL_ADDRESS</TextColor>
 > - ```Email.Use Common Alert Schema```: true
 
 <caption caption="[그림.20] Azure MSA Enterprise 20" src={azure20} />
@@ -290,31 +293,45 @@ Azure Action Group은 Monitor가 데이터 수집 과정에서 사용자가 지�
 
 > - ```Sms.Name```: defaultsms
 > - ```Sms.Country Code```: 82
-> - ```Sms.Phone Number```: PHONE_NUMBER
+> - ```Sms.Phone Number```: <TextColor color="#206FD6">PHONE_NUMBER</TextColor>
 
 <caption caption="[그림.21] Azure MSA Enterprise 21" src={azure21} />
 
-### 10. Monitor Activity Log Alert 생성
+### 9. Monitor Activity Log Alert 생성
 **Monitor Activity Log Alert** 아이콘을 가져옵니다.
 Activity Log Alert는 Azure Monitor가 활동 로그를 수집할 때, 사용자가 지정한 로그 Level을 넘어가는 경우 알림을 전달합니다.
 Kubernetes Cluster에서 발생하는 Activity Log를 모니터링합니다.
 
-> - ```Service Name```: activitylogalert
-> - ```Sms```: default
+>- ```Service Name```: activitylogalert
+>- ```Criteria Category```: Administrative
+>- ```Criteria Level```: Informational
+>- ```Target Resource Name```: default-aks 
+>- ```Criteria Status```: Succeeded
 
 <caption caption="[그림.22] Azure MSA Enterprise 22" src={azure22} />
 
-### 11. Monitor Metric Alert 생성 
+### 10. Monitor Metric Alert 생성 
 **Monitor Metric Alert** 아이콘을 가져옵니다.
 Metric Alert는 Azure Monitor가 메트릭을 수집할 때, 사용자가 지정한 수치를 넘어가는 경우 알림을 전달합니다.
 Kubernetes Cluster의 Metric을 수집하고 Threshold를 넘어가면 알림이 발생합니다.
 
-> - ```Service Name```: metricalert
-> - ```Sms```: default
+>- ```Service Name```: metricalert
+>- ```Target Resource Name```: default-aks 
+>- ```Severity```: Administrative
+>- ```Frequency```: Informational
+>- ```Auto Migrate```: Succeeded
 
 <caption caption="[그림.23] Azure MSA Enterprise 23" src={azure23} />
 
-### 12. Linux App Service 생성
+>- ```Criteria.Name```: usage-node-cpu
+>- ```Criteria.Metric Name```: node_cpu_usage_percentage
+>- ```Criteria.Aggregation```: Average
+>- ```Criteria.Operator```: Equals
+>- ```Criteria.Threshold```: 60
+
+<caption caption="[그림.24] Azure MSA Enterprise 24" src={azure24} />
+
+### 11. Linux App Service 생성
 **Linux App Service** 아이콘을 가져옵니다. 이 가이드에서는 Linux OS를 사용하는 App Service를 사용합니다. 
 Linux App Service에 Frontend Server를 배포합니다.
 
@@ -322,7 +339,7 @@ Linux App Service에 Frontend Server를 배포합니다.
 > - ```Kind```: Linux
 > - ```Sku Tier```: B1
 
-<caption caption="[그림.24] Azure MSA Enterprise 24" src={azure24} />
+<caption caption="[그림.25] Azure MSA Enterprise 25" src={azure25} />
 
 App Service에서 인증, 권한과 Error 메시지완 관련된 옵션을 설정합니다.
 
@@ -333,14 +350,14 @@ App Service에서 인증, 권한과 Error 메시지완 관련된 옵션을 설�
 > - ```App Service.Retention In Days```: 5
 > - ```App Service.Retention In Mb```: 25
 
-<caption caption="[그림.25] Azure MSA Enterprise 25" src={azure25} />
+<caption caption="[그림.26] Azure MSA Enterprise 26" src={azure26} />
 
 > - ```App Service.Ftps State```: Disabled
 > - ```App Service.Http2 Enabled```: true
 
-<caption caption="[그림.26] Azure MSA Enterprise 26" src={azure26} />
+<caption caption="[그림.27] Azure MSA Enterprise 27" src={azure27} />
 
-### 13. Log Analytics Workspace 생성
+### 12. Log Analytics Workspace 생성
 **Log Analytics Workspace** 아이콘을 가져옵니다. Log Analytics Workspace는 로그를 저장하기 위한 저장 공간을 생성합니다.
 Application Insights가 수집한 로그를 저장하는 역할을 합니다.
 
@@ -349,9 +366,9 @@ Application Insights가 수집한 로그를 저장하는 역할을 합니다.
 > - ```Internet Query Enabled```: false
 > - ```Internet Ingestion Enabled```: false
 
-<caption caption="[그림.27] Azure MSA Enterprise 27" src={azure27} />
+<caption caption="[그림.28] Azure MSA Enterprise 28" src={azure28} />
 
-### 14. Application Insights 생성
+### 13. Application Insights 생성
 **Application Insights** 아이콘을 가져옵니다.
 Application Insights는 Frontend Server에서 발생하는 로그를 Log Analytics에 저장합니다.
 Application Insights로 로그를 전달하는 방법은 [Application Insights SDK](https://docs.microsoft.com/ko-kr/azure/azure-monitor/app/api-custom-events-metrics)를 참고하시기 바랍니다.
@@ -360,7 +377,7 @@ Application Insights로 로그를 전달하는 방법은 [Application Insights S
 > - ```Type```: web
 > - ```Retention In Days```: 30
 
-<caption caption="[그림.28] Azure MSA Enterprise 28" src={azure28} />
+<caption caption="[그림.29] Azure MSA Enterprise 29" src={azure29} />
 
 *****
 ## 참고 자료
