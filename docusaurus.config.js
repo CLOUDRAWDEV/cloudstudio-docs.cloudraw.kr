@@ -30,12 +30,11 @@ const config = {
           sidebarPath: require.resolve("./sidebars.js"),
           routeBasePath: 'docs',
           path: 'docs',
-          showLastUpdateTime: true,
         },
         blog: {
           blogSidebarTitle: 'All posts',
           blogSidebarCount: 'ALL',
-          showReadingTime: false,
+          showReadingTime: true,
         },
         theme: {
           customCss: require.resolve("./src/scss/_custom.scss"),

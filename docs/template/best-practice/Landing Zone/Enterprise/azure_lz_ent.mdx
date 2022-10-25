@@ -2,8 +2,6 @@
 title: Azure
 sidebar_position: 0
 tags: [Template, Best Practice, Landing Zone, Enterprise, Azure]
-last_update: 
-    date: 10/19/2022
 ---
 
 import azure1 from './img/azure/1.png';
@@ -60,10 +58,11 @@ import azure51 from './img/azure/51.png';
 import azure52 from './img/azure/52.png';
 
 <span className="theme-doc-version-badge badge badge--secondary">
-    Version: 1.0.0
+    last update: 2022.10.24
 </span>
 
-##### 2022.07.28 / 읽는 데 15분 걸림(소요시간)
+## Azure Landing Zone Enterprise
+##### 읽는 데 15분 걸림(소요시간)
 
 *****
 <br/>
@@ -114,7 +113,7 @@ Landing Zone은 기업의 규모에 따라서 구성이 달라집니다. 이 가
 크레덴셜이 없는 경우 크레덴셜 등록 페이지를 확인해주시기 바랍니다.
 
 > - ```Service Name```: Landingzone
-> - ```Credential Id```: [Credential Id]
+> - ```Credential Id```: <TextColor color="#206FD6">Credential_Id_1</TextColor>
 
 <caption caption="[그림.1] Azure Landing Zone Basic 1" src={azure1} />
 
@@ -129,7 +128,7 @@ Landing Zone은 기업의 규모에 따라서 구성이 달라집니다. 이 가
 
 ### 3. Network Ddos Protection Plan* 생성
 **Network Ddos Protection Plan*** 아이콘을 가져옵니다.
-DDoS Protection Plan은 Azure에서 DDoS 공격을 막는 서비스입니다. 
+DDoS Protection Plan은 Azure에서 DDoS 공격을 막는 서비스입니다. Credential 1에 생성합니다.
 Virtual Network에 DDoS Protection을 설정하면 Virtual Network에 포함된 모든 리소스가 DDoS 공격으로부터 보호받습니다.
 
 > - ```Service Name```: lzddosprotection
@@ -235,8 +234,8 @@ Cost Management를 사용하기 위해서는 구독의 Resource Provider에 Micr
 
 > - ```Service Name```: lzcost
 > - ```Recurrence Type```: Monthly
-> - ```Recurrence Period Start Date```: START_DATE
-> - ```Recurrence Period End Date```: END_DATE
+> - ```Recurrence Period Start Date```: <TextColor color="#206FD6">START_DATE</TextColor>
+> - ```Recurrence Period End Date```: <TextColor color="#206FD6">END_DATE</TextColor>
 > - ```Root Folder Path```: /root/updated
 > - ```Export Type```: Usage
 
@@ -284,7 +283,7 @@ Security Center는 다른 리소스의 취약점을 진단하고 해당 로그�
 크레덴셜이 없는 경우 크레덴셜 등록 페이지를 확인해주시기 바랍니다.
 
 > - ```Service Name```: Platform
-> - ```Credential Id```: [Credential Id]
+> - ```Credential Id```: <TextColor color="#206FD6">Credential_Id_2</TextColor>
 
 <caption caption="[그림.17] Azure Landing Zone Basic 17" src={azure17} />
 
@@ -349,6 +348,7 @@ Application에 접속하기 위한 포트는 80, 443을 사용하는 경우 Defa
 > - ```Security Rules.Destination Port Ranges```: 22
 > - ```Security Rules.Source Address Prefixes```: *
 > - ```Security Rules.Destination Address Prefixes```: *
+
 <caption caption="[그림.23] Azure Landing Zone Basic 23" src={azure23} />
 
 **SpokeNSG**
@@ -379,7 +379,7 @@ App Service에서 사용할 데이터를 저장할 Mysql 서버를 배포합니�
 > - ```Sku Name```: GP_Gen5_4
 > - ```Storage Mb```: 5120
 > - ```Admin Login```: cloudraw
-> - ```Admin Login Password```: ADMIN_PASSWORD
+> - ```Admin Login Password```: <TextColor color="#206FD6">ADMIN_PASSWORD</TextColor>
 
 <caption caption="[그림.26] Azure Landing Zone Basic 26" src={azure26} />
 
@@ -436,6 +436,7 @@ Key Vault에 등록할 수 있는 Secret은 Key, Secrets, Certificate 3종류가
 >- ```Soft Delete Retention Days```: 7
 >- ```Purge Protection Enabled```: false
 >- ```Network Acl Bypass```: [ "AzureServices" ]
+
 <caption caption="[그림.31] Azure Landing Zone Basic 31" src={azure31} />
 
 Key Vault에 접근할 수 있는 Public IP 주소를 지정할 수 있습니다. 
@@ -456,8 +457,8 @@ Access Policy는 Key, Secrets, Certificate 각각 15개의 세분화된 권한�
 
 Key Vault에 등록할 Secret 값을 입력합니다. Secret에는 Teanat ID가 등록됩니다.
 
->- ```Key Vault Secret.Name```: tenat-id
->- ```Key Vault Secret.Expiration Date```: EXPIRATION_DATE
+>- ```Key Vault Secret.Name```: tenant-id
+>- ```Key Vault Secret.Expiration Date```: <TextColor color="#206FD6">EXPIRATION_DATE</TextColor>
 
 <caption caption="[그림.33] Azure Landing Zone Basic 33" src={azure33} />
 
@@ -491,7 +492,7 @@ Virtual Machine에 SSH 접속d을 할 때 SSH Private Key 또는 Admin ID, Passw
 > - ```Disable Password Authentication```: false
 > - ```Enable Ssh Key Authentication```: false
 > - ```Admin Username```: cloudraw
-> - ```Admin Password```: ADMIN_PASSWORD
+> - ```Admin Password```: <TextColor color="#206FD6">ADMIN_PASSWORD</TextColor>
 
 <caption caption="[그림.36] Azure Landing Zone Basic 36" src={azure36} />
 
@@ -561,7 +562,7 @@ Probe는 해당 포트로 전달되는 트래픽이 정상적으로 전달되는
 > - ```Rule.Backend Port```: 443
 > - ```Rule.Disable Outbound Snat```: true
 > - ```Rule.Frontend Ip Config Name```: public_lb_lbipconfig
-> - ```Rule.Backend Pool Name```: platformbackendpoo42
+> - ```Rule.Backend Pool Name```: platformbackendpool
 
 <caption caption="[그림.44] Azure Landing Zone Basic 44" src={azure44} />
 
@@ -628,12 +629,22 @@ Backup은 Virtual Machine과 File Share 두 종류가 가능합니다. 이 가�
 
 > - ```Backup Policy Vm.Name```: defaultbackuppolicy
 > - ```Backup Policy Vm.Backup Frequency```: Weekly
-> - ```Backup Policy Vm.Backup Time```: BACKUP_TIME
+> - ```Backup Policy Vm.Backup Time```: <TextColor color="#206FD6">BACKUP_TIME</TextColor>
 > - ```Backup Policy Vm.Backup Weekdays```: ["Sunday"]
 > - ```Backup Policy Vm.Retention Count```: 7
 
 <caption caption="[그림.51] Azure Landing Zone Basic 51" src={azure51} />
 
+### 30. Network Ddos Protection Plan 생성
+**Network Ddos Protection Plan*** 아이콘을 가져옵니다.
+DDoS Protection Plan은 Azure에서 DDoS 공격을 막는 서비스입니다. Credential 2에 생성합니다.
+Virtual Network에 DDoS Protection을 설정하면 Virtual Network에 포함된 모든 리소스가 DDoS 공격으로부터 보호받습니다.
+
+> - ```Service Name```: lzddosprotection2
+
+
+
+<br/>
 
 *****
 ## 참고 자료

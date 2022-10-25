@@ -13,6 +13,7 @@ const Button = ({
                 borderRadius: '4px',
                 color: '#fff',
                 padding: '0.6rem',
+                border: 'none',
             }}
         >
             {children}
