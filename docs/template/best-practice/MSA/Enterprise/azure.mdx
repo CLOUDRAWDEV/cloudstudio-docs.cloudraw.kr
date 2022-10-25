@@ -32,6 +32,8 @@ import azure25 from './img/azure/25.png';
 import azure26 from './img/azure/26.png';
 import azure27 from './img/azure/27.png';
 import azure28 from './img/azure/28.png';
+import azure29 from './img/azure/29.png';
+
 
 <span className="theme-doc-version-badge badge badge--secondary">
     last update: 2022.10.24
@@ -319,13 +321,15 @@ Kubernetes Cluster의 Metric을 수집하고 Threshold를 넘어가면 알림이
 >- ```Frequency```: Informational
 >- ```Auto Migrate```: Succeeded
 
+<caption caption="[그림.23] Azure MSA Enterprise 23" src={azure23} />
+
 >- ```Criteria.Name```: usage-node-cpu
 >- ```Criteria.Metric Name```: node_cpu_usage_percentage
 >- ```Criteria.Aggregation```: Average
 >- ```Criteria.Operator```: Equals
 >- ```Criteria.Threshold```: 60
 
-<caption caption="[그림.23] Azure MSA Enterprise 23" src={azure23} />
+<caption caption="[그림.24] Azure MSA Enterprise 24" src={azure24} />
 
 ### 11. Linux App Service 생성
 **Linux App Service** 아이콘을 가져옵니다. 이 가이드에서는 Linux OS를 사용하는 App Service를 사용합니다. 
@@ -335,7 +339,7 @@ Linux App Service에 Frontend Server를 배포합니다.
 > - ```Kind```: Linux
 > - ```Sku Tier```: B1
 
-<caption caption="[그림.24] Azure MSA Enterprise 24" src={azure24} />
+<caption caption="[그림.25] Azure MSA Enterprise 25" src={azure25} />
 
 App Service에서 인증, 권한과 Error 메시지완 관련된 옵션을 설정합니다.
 
@@ -346,12 +350,12 @@ App Service에서 인증, 권한과 Error 메시지완 관련된 옵션을 설�
 > - ```App Service.Retention In Days```: 5
 > - ```App Service.Retention In Mb```: 25
 
-<caption caption="[그림.25] Azure MSA Enterprise 25" src={azure25} />
+<caption caption="[그림.26] Azure MSA Enterprise 26" src={azure26} />
 
 > - ```App Service.Ftps State```: Disabled
 > - ```App Service.Http2 Enabled```: true
 
-<caption caption="[그림.26] Azure MSA Enterprise 26" src={azure26} />
+<caption caption="[그림.27] Azure MSA Enterprise 27" src={azure27} />
 
 ### 12. Log Analytics Workspace 생성
 **Log Analytics Workspace** 아이콘을 가져옵니다. Log Analytics Workspace는 로그를 저장하기 위한 저장 공간을 생성합니다.
@@ -362,7 +366,7 @@ Application Insights가 수집한 로그를 저장하는 역할을 합니다.
 > - ```Internet Query Enabled```: false
 > - ```Internet Ingestion Enabled```: false
 
-<caption caption="[그림.27] Azure MSA Enterprise 27" src={azure27} />
+<caption caption="[그림.28] Azure MSA Enterprise 28" src={azure28} />
 
 ### 13. Application Insights 생성
 **Application Insights** 아이콘을 가져옵니다.
@@ -373,7 +377,7 @@ Application Insights로 로그를 전달하는 방법은 [Application Insights S
 > - ```Type```: web
 > - ```Retention In Days```: 30
 
-<caption caption="[그림.28] Azure MSA Enterprise 28" src={azure28} />
+<caption caption="[그림.29] Azure MSA Enterprise 29" src={azure29} />
 
 *****
 ## 참고 자료
