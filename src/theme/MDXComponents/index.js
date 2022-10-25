@@ -15,6 +15,7 @@ import Tabs from '@site/src/theme/Tabs';
 import Link from '@docusaurus/Link';
 import TOCInline from '@theme/TOCInline';
 import TabItem from '@theme/TabItem';
+import TextColor from '@site/src/components/HomepageFeatures/textColor';
 
 const MDXComponents = {
   head: MDXHead,
@@ -39,5 +40,6 @@ const MDXComponents = {
   React : React, 
   TOCInline : TOCInline,
   TabItem : TabItem,
+  TextColor : TextColor,
 };
 export default MDXComponents;
