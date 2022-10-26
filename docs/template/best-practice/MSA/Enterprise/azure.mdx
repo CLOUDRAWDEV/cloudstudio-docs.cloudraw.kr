@@ -1,5 +1,5 @@
 ---
-title: Azure
+title: Azure MSA Enterprise
 sidebar_position: 0
 tags: [Template, Best Practice, MSA, Enterprise, Azure]
 ---
@@ -39,7 +39,6 @@ import azure29 from './img/azure/29.png';
     last update: 2022.10.24
 </span>
 
-# Azure MSA Enterprise
 ##### 읽는 데 15분 걸림(소요시간)
 
 *****
@@ -147,55 +146,14 @@ Pod와 Service는 쿠버네티스에서 사용하는 오브젝트의 이름입�
 컨테이너 레지스트리에 접근 제어를 하는 Network Rule Set은 Premium Sku에서만 사용가능합니다.
 이 가이드에서는 Standard Sku를 사용하기 때문에 Network Rule Set은 만들지 않습니다.
 
-> - ```Service Name```: defaultacr
+> - ```Service Name```: cloudstudiocrs
 > - ```Sku```: Standard
 > - ```Admin Enabled```: false
 > - ```Public Network Access Enabled```: true
 
 <caption caption="[그림.7] Azure MSA Enterprise 7" src={azure7} />
 
-### 5. Key Vault 생성
-**Key Vault** 아이콘을 가져옵니다.
-Key Vault는 Key, Secrets, Certificate 3종류의 크레덴셜을 등록할 수 있습니다.
-MSA 운영에 필요한 크레덴셜을 Key Vault에 저장하고 Azure의 다른 리소스에서 같은 크레덴셜을 사용할 수 있습니다.
-Key Vault는 크레덴셜을 저장하기 때문에 사용자가 크레덴셜이 즉시 삭제되지 않는 Soft Delete 옵션을 제공합니다.
-
-> - ```Service Name```: default-keyvault
-> - ```Sku Name```: standard
-> - ```Enabled For Disk Encryption```: true
-> - ```Soft Delete Retention Days```: 7
-> - ```Purge Protection Enabled```: false
-
-<caption caption="[그림.8] Azure MSA Enterprise 8" src={azure8} />
-
-Key Vault에 접근할 수 있는 Public IP 주소를 지정할 수 있습니다. 
-Key Vault에 사용자만 접근할 수 있도록, 사용자의 Public IP만 허용합니다.
-
-> - ```Network Acl Bypass```: [ "AzureServices" ]
-> - ```Network Acl Action```: Allow
-> - ```Network Acl Ip Rules```: 0.0.0.0
-
-<caption caption="[그림.9] Azure MSA Enterprise 9" src={azure9} />
-
-Key Vault의 크레덴셜에 대해서 세부적인 접근 제어를 설정할 수 있습니다.
-Access Policy는 Key, Secrets, Certificate 각각 15개의 세분화된 권한을 할당할 수 있습니다.
-사용자는 SP나 Azure AD에 등록되 계정의 Object ID를 등록함으로써 Key Vault의 특정 크레덴셜에 대한 권한을 받을 수 있습니다.
-
-> - ```Access Policies.Name```: default-access-policy
-> - ```Access Policies.Object Id```: <TextColor color="#206FD6">OBJECT_ID</TextColor>
-> - ```Access Policies.Secret Permissions```: ["GET"]
-
-<caption caption="[그림.10] Azure MSA Enterprise 10" src={azure10} />
-
-Key Vault의 Secret은 특정 값을 등록할 수 있습니다. 
-Key Vault의 Secret은 생성되면서 Tenat ID를 크레덴셜로 등록합니다.
-
-> - ```Key Vault Secret.Name```: defaultsecret
-> - ```Key Vault Secret.Expiration Date```: <TextColor color="#206FD6">EXPIRATION_DATE</TextColor>
-
-<caption caption="[그림.11] Azure MSA Enterprise 11" src={azure11} />
-
-### 6. Mysql 생성
+### 5. Mysql 생성
 **Mysql** 아이콘을 가져옵니다.
 어플리케이션의 데이터를 저장하기 위해서 Azure의 Mysql 서버를 생성합니다.
 해당 서비스는 PaaS로 관리형 서비스입니다. 사용자는 MySQL 서버에 Database를 생성해 바로 사용가능합니다.
@@ -206,7 +164,7 @@ Mysql의 Service Name은 서버의 DNS주소로 사용되기 때문에 사용자
 > - ```Sku Name```: GP_Gen5_4
 > - ```Storage Mb```: 5120
 
-<caption caption="[그림.12] Azure MSA Enterprise 12" src={azure12} />
+<caption caption="[그림.8] Azure MSA Enterprise 8" src={azure8} />
 
 Mysql 서버의 ```Public Network Access Enabled```옵션을 true로 설정했기 때문에 누구나 Mysql 서버에 접속할 수 있습니다.
 
@@ -217,7 +175,7 @@ Mysql 서버의 ```Public Network Access Enabled```옵션을 true로 설정했�
 > - ```Minimal Tls Version```: TLS1_2
 > - ```Threat Detection Enabled```: false
 
-<caption caption="[그림.13] Azure MSA Enterprise 13" src={azure13} />
+<caption caption="[그림.9] Azure MSA Enterprise 9" src={azure9} />
 
 Mysql 서버에 데이터베이스를 추가합니다. 데이터베이스에서 사용할 Charset과 Collation을 지정합니다.
 
@@ -225,7 +183,7 @@ Mysql 서버에 데이터베이스를 추가합니다. 데이터베이스에서 
 > - ```Database.Charset```: utf8
 > - ```Database.Collation```: utf8_unicode_ci
 
-<caption caption="[그림.14] Azure MSA Enterprise 14" src={azure14} />
+<caption caption="[그림.10] Azure MSA Enterprise 10" src={azure10} />
 
 Mysql 서버에 접속할 수 있는 IP를 설정합니다. 시작 IP와 마지막 IP를 모두 0.0.0.0으로 설정하면 모든 IP가 데이터베이스에 접속을 허용합니다.
 
@@ -233,9 +191,9 @@ Mysql 서버에 접속할 수 있는 IP를 설정합니다. 시작 IP와 마지�
 > - ```Firewall.Start Ip Address```: 0.0.0.0
 > - ```Firewall.End Ip Address```: 0.0.0.0
 
-<caption caption="[그림.15] Azure MSA Enterprise 15" src={azure15} />
+<caption caption="[그림.11] Azure MSA Enterprise 11" src={azure11} />
 
-### 7. Storage Account 생성
+### 6. Storage Account 생성
 **Storage Account** 아이콘을 가져옵니다.
 Storage Account는 Application에 필요한 이미지, 파일 등을 저장하고 있는 Object Storage로 사용합니다.
 데이터를 저장하는 용도 이외에도 Kubernetes Cluster에서 데이터를 백업하기 위한 PV로서 사용할 수 있습니다.
@@ -248,7 +206,7 @@ Storage Account Service Name은 서버의 DNS주소로 사용되기 때문에 �
 > - ```Access Tier```: Hot 
 > - ```Min Tls Version```: TLS1_2
 
-<caption caption="[그림.16] Azure MSA Enterprise 16" src={azure16} />
+<caption caption="[그림.12] Azure MSA Enterprise 12" src={azure12} />
 
 Object 스토리지는 DNS 주소를 알면 누구나 Request를 보낼 수 있기 때문에 IP 주소로 접근 제어를 해야합니다.
 사용자의 Public IP만 접속이 가능하도록 Network Rule을 설정합니다.
@@ -259,13 +217,54 @@ Object 스토리지는 DNS 주소를 알면 누구나 Request를 보낼 수 있�
 > - ```Network Rules.Bypass```: [ "AzureServices" ]
 > - ```Network Rules.Ip Rules```: 0.0.0.0/0
 
-<caption caption="[그림.17] Azure MSA Enterprise 17" src={azure17} />
+<caption caption="[그림.13] Azure MSA Enterprise 13" src={azure13} />
 
 Storage Account는 4종류의 스토리지를 가지고 있지만, 이 가이드에서는 Storage Share만 사용합니다.
 Storage Share는 쿠버네티스의 스토리지로 사용할 수 있습니다. Storage Class를 통해서 쿠버네티스에 있는 데이터를 Storage Share에 저장할 수 있습니다.
 
 > - ```Storage Share.Name```: default-share
 > - ```Storage Share.Quota```: 5
+
+<caption caption="[그림.14] Azure MSA Enterprise 14" src={azure14} />
+
+### 7. Key Vault 생성
+**Key Vault** 아이콘을 가져옵니다.
+Key Vault는 Key, Secrets, Certificate 3종류의 크레덴셜을 등록할 수 있습니다.
+MSA 운영에 필요한 크레덴셜을 Key Vault에 저장하고 Azure의 다른 리소스에서 같은 크레덴셜을 사용할 수 있습니다.
+Key Vault는 크레덴셜을 저장하기 때문에 사용자가 크레덴셜이 즉시 삭제되지 않는 Soft Delete 옵션을 제공합니다.
+
+> - ```Service Name```: default-keyvault
+> - ```Sku Name```: standard
+> - ```Enabled For Disk Encryption```: true
+> - ```Soft Delete Retention Days```: 7
+> - ```Purge Protection Enabled```: false
+
+<caption caption="[그림.15] Azure MSA Enterprise 15" src={azure15} />
+
+Key Vault에 접근할 수 있는 Public IP 주소를 지정할 수 있습니다. 
+Key Vault에 사용자만 접근할 수 있도록, 사용자의 Public IP만 허용합니다.
+
+> - ```Network Acl Bypass```: [ "AzureServices" ]
+> - ```Network Acl Action```: Allow
+> - ```Network Acl Ip Rules```: 0.0.0.0
+
+<caption caption="[그림.16] Azure MSA Enterprise 16" src={azure16} />
+
+Key Vault의 크레덴셜에 대해서 세부적인 접근 제어를 설정할 수 있습니다.
+Access Policy는 Key, Secrets, Certificate 각각 15개의 세분화된 권한을 할당할 수 있습니다.
+사용자는 SP나 Azure AD에 등록되 계정의 Object ID를 등록함으로써 Key Vault의 특정 크레덴셜에 대한 권한을 받을 수 있습니다.
+
+> - ```Access Policies.Name```: default-access-policy
+> - ```Access Policies.Object Id```: <TextColor color="#206FD6">OBJECT_ID</TextColor>
+> - ```Access Policies.Secret Permissions```: ["Get", "Set", "Delete", "List", "Purge"]
+
+<caption caption="[그림.17] Azure MSA Enterprise 17" src={azure17} />
+
+Key Vault의 Secret은 특정 값을 등록할 수 있습니다. 
+Key Vault의 Secret은 생성되면서 Tenat ID를 크레덴셜로 등록합니다.
+
+> - ```Key Vault Secret.Name```: defaultsecret
+> - ```Key Vault Secret.Expiration Date```: <TextColor color="#206FD6">EXPIRATION_DATE</TextColor>
 
 <caption caption="[그림.18] Azure MSA Enterprise 18" src={azure18} />
 
@@ -275,7 +274,7 @@ Azure Monitor는 Azure Resource들의 메트릭 및 로그를 수집하는 서�
 Azure Action Group은 Monitor가 데이터 수집 과정에서 사용자가 지정한 조건에 일치하는 데이터가 발생했을 때, 
 사용자에게 알림을 전달하는 서비스입니다.
 
-> - ```Service Name```: defaultactiongroup
+> - ```Service Name```: cloudstudio
 > - ```Short Name```: defaultactiongroup
 > - ```Enabled```: true
 
@@ -317,9 +316,9 @@ Kubernetes Cluster의 Metric을 수집하고 Threshold를 넘어가면 알림이
 
 >- ```Service Name```: metricalert
 >- ```Target Resource Name```: default-aks 
->- ```Severity```: Administrative
->- ```Frequency```: Informational
->- ```Auto Migrate```: Succeeded
+>- ```Severity```: 3
+>- ```Frequency```: PT1M
+>- ```Auto Migrate```: false
 
 <caption caption="[그림.23] Azure MSA Enterprise 23" src={azure23} />
 
@@ -343,6 +342,7 @@ Linux App Service에 Frontend Server를 배포합니다.
 
 App Service에서 인증, 권한과 Error 메시지완 관련된 옵션을 설정합니다.
 
+> - ```App Service.Service Name```: default-appservice
 > - ```App Service.Client Cert Enabled```: true
 > - ```App Service.Auth Settings Enabled```: true
 > - ```App Service.Detailed Error Messages Enabled```: true
