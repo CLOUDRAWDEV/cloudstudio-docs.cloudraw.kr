@@ -1,5 +1,5 @@
 ---
-title: Azure
+title: Azure MSA Basic
 sidebar_position: 0
 tags: [Template, Best Practice, MSA, Basic, Azure]
 ---
@@ -34,7 +34,6 @@ import azure24 from './img/azure/24.png';
     last update: 2022.10.24
 </span>
 
-# Azure MSA Basic
 ##### 읽는 데 15분 걸림(소요시간)
 
 *****
@@ -191,7 +190,7 @@ Storage Account는 Application에 필요한 이미지, 파일 등을 저장하�
 데이터를 저장하는 용도 이외에도 Kubernetes Cluster에서 데이터를 백업하기 위한 PV로서 사용할 수 있습니다.
 Storage Account Service Name은 서버의 DNS주소로 사용되기 때문에 사용자별 unique한 값을 입력해야 합니다.
 
->- ```Service Name```: cloudstudiodefault
+>- ```Service Name```: cloudstudiosa
 >- ```Account Kind```: StorageV2
 >- ```Account Tier```: Standard
 >- ```Account Replication Type```: LRS
@@ -266,7 +265,7 @@ Azure Monitor는 Azure Resource들의 메트릭 및 로그를 수집하는 서�
 Azure Action Group은 Monitor가 데이터 수집 과정에서 사용자가 지정한 조건에 일치하는 데이터가 발생했을 때, 
 사용자에게 알림을 전달합니다.
 
->- ```Service Name```: defaultactiongroup
+>- ```Service Name```: cloudstudio
 >- ```Short Name```: defaultactiongroup
 >- ```Enabled```: true
 
@@ -308,9 +307,9 @@ Kubernetes Cluster의 Metric을 수집하고 Threshold를 넘어가면 알림이
 
 >- ```Service Name```: metricalert
 >- ```Target Resource Name```: default-aks 
->- ```Severity```: Administrative
->- ```Frequency```: Informational
->- ```Auto Migrate```: Succeeded
+>- ```Severity```: 3
+>- ```Frequency```: PT1M
+>- ```Auto Migrate```: false
 
 <caption caption="[그림.23] Azure MSA Basic 23" src={azure23} />
 
