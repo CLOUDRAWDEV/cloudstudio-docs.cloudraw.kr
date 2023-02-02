@@ -19,28 +19,37 @@
 
     h1 {
         width: 100%;
-        @include h1()
+        @include h1();
     }
 
     h2 {
         width: 100%;
-        @include h2()
+        @include h2();
     }
 
     h3 {
         width: 100%;
-        @include h3()
+        @include h3();
     }
 
     h4 {
         width: 100%;
-        @include h4()
+        @include h4();
     }
 
-    @include desktop {}
+    @include desktop {
+    }
 
-    @include tablet {}
+    @include tablet {
+    }
 
-    @include mobile {}
+    @include mobile {
+    }
+
+    table {
+        tr,
+        td {
+            background-color: white;
+        }
+    }
 }
-
