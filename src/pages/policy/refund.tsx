@@ -85,7 +85,7 @@ export default function Refund() {
             <br />
             <h2>부칙</h2>
             <h4>
-            본 약관은 2022년 7월 1일부터 적용됩니다.
+            본 약관은 2023년 2월 1일부터 적용됩니다.
             </h4>
         </section>
         <br />

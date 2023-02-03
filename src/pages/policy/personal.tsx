@@ -9,7 +9,7 @@ export default function Personal() {
     return (
         <Layout title="Policy_Personal" description="Policy_Personal Page">
             <section className={policyStyles.policy}>
-                <h1>개인정보처리방침</h1>
+                <h1>개인정보 처리방침</h1>
                 <br />
                 <hr />
                 <br />
