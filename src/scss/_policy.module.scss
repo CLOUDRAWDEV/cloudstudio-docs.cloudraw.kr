@@ -2,73 +2,84 @@
 @import "../scss/mixin";
 
 .policy {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: auto;
+  width: 100%;
+  max-width: 1920px;
+
+  &__indent {
+    @include indent();
+  }
+
+  &__space {
+    margin: 40px 0px 40px 0px;
+  }
+
+  h1 {
+    width: 100%;
+    @include h1();
+  }
+
+  h2 {
+    width: 100%;
+    @include h2();
+  }
+
+  h3 {
+    width: 100%;
+    @include h3();
+  }
+
+  h4 {
+    width: 100%;
+    @include h4();
+  }
+
+  @include desktop {
+  }
+
+  @include tablet {
+  }
+
+  @include mobile {
+  }
+
+  table {
+    tr,
+    td {
+      background-color: white;
+    }
+  }
+
+  &__labeling {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    height: auto;
-    width: 100%;
-    max-width: 1920px;
+    background: #f8f8f8;
+    align-items: center;
+    padding: 24px;
 
-    &__indent {
-        @include indent();
+    &__wrap {
+      display: flex;
+      gap: 32px;
     }
+  }
 
-    &__space {
-        margin: 40px 0px 40px 0px;
-    }
+  &__labelingIcon {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 
-    h1 {
-        width: 100%;
-        @include h1();
-    }
+    ul {
+      li {
 
-    h2 {
-        width: 100%;
-        @include h2();
-    }
-
-    h3 {
-        width: 100%;
-        @include h3();
-    }
-
-    h4 {
-        width: 100%;
-        @include h4();
-    }
-
-    @include desktop {
-    }
-
-    @include tablet {
-    }
-
-    @include mobile {
-    }
-
-    table {
-        tr,
-        td {
-            background-color: white;
+        list-style-type: square;
+        h5 {
+          margin-bottom: 0;
         }
+      }
     }
+  }
 
-    &__labeling {
-        display: flex;
-        flex-direction: column;
-        background: #f8f8f8;
-        align-items: center;
-        padding: 24px;
-
-        &__wrap {
-            display: flex;
-            gap: 32px;
-        }
-    }
-
-    &__labelingIcon {
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-    }
 }

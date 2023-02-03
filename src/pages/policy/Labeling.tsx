@@ -1,5 +1,5 @@
 import { iLabeling } from "@site/src/models/labelingDetailBox"
-import React, { forwardRef, useEffect, useMemo, useState } from "react"
+import React, { forwardRef, useState } from "react"
 import styles from "../../scss/_labeling.module.scss"
 import LabelingDetailBox from "./LabelingDetailBox"
 
@@ -16,10 +16,6 @@ function Labeling(
             setIsLabelingOpen(false)
         }, 100)
     }
-
-    useEffect(() => {
-        console.log()
-    }, [])
 
     return (
         <article

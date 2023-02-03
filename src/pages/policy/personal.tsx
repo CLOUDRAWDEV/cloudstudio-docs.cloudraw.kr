@@ -3,6 +3,7 @@ import Layout from "@theme/Layout"
 import policyStyles from "../../scss/_policy.module.scss"
 import Labeling from "./Labeling"
 import RequiredPersonalInfo from "./RequiredPersonalInfo"
+import OptionalPersonalInfo from "./OptionalPersonalInfo"
 
 export default function Personal() {
     return (
@@ -47,26 +48,7 @@ export default function Personal() {
                             width={24}
                             height={24}
                             title={"선택 개인정보 수집"}
-                            contents={
-                                <section
-                                    className={
-                                        policyStyles.policy__labelingIcon
-                                    }
-                                >
-                                    <h5
-                                        style={{ fontWeight: "normal" }}
-                                    >{`신용카드 정보, AWS CSP 서비스 크레덴셜 정보, MS Azure CSP 서비스 크레덴셜 정보, N-Cloud CSP 서비스 크레덴셜 정보, 결제 기록 `}</h5>
-                                    <h5
-                                        style={{
-                                            color: "#868686",
-                                            fontWeight: "normal",
-                                        }}
-                                    >
-                                        *세부 항목은 개인정보 처리방침 본문에서
-                                        확인
-                                    </h5>
-                                </section>
-                            }
+                            contents={<OptionalPersonalInfo/>}
                         />
                         <Labeling
                             xmlns={"http://www.w3.org/2000/svg"}
@@ -77,9 +59,14 @@ export default function Personal() {
                             height={24}
                             title={"개인정보의 보유 기간"}
                             contents={
+                            <>
                                 <h5
                                     style={{ fontWeight: "normal" }}
-                                >{`회원 탈퇴 시 까지. 단, 관계법령에 정함이 있는 경우 해당 법률에서 정한 기간동안 보유 및 이용 가능`}</h5>
+                                >회원 탈퇴 시 까지</h5>
+                                <h5 style={{ fontWeight: "normal" }}>
+                                    단, 관계법령에 정함이 있는 경우 해당 법률에서 정한 기간동안 보유 및 이용 가능</h5>
+                            </>
+
                             }
                         />
                     </section>
@@ -137,14 +124,14 @@ export default function Personal() {
                             contents={
                                 <div>
                                     <h5 style={{ fontWeight: "normal" }}>
-                                        <strong>처리 위탁업체: </strong>부트페이
+                                        <strong>처리 위탁업체 : </strong>부트페이
                                     </h5>
                                     <h5 style={{ fontWeight: "normal" }}>
-                                        <strong>위탁업무 및 이용 목적: </strong>{" "}
+                                        <strong>위탁업무 및 이용 목적 : </strong>{" "}
                                         비용 결제 대행
                                     </h5>
-                                    <h5 style={{ fontWeight: "normal" }}>
-                                        <strong>보유 및 이용기간:</strong> 회원
+                                    <h5 style={{ fontWeight: "normal", lineHeight:"22px" }}>
+                                        <strong>보유 및 이용기간 :</strong> 회원
                                         탈퇴 시 혹은 위탁계약 종료 시 까지 단,
                                         관계법령에 정함이 있는 경우 해당
                                         법률에서 정한 기간동안 보유 및 이용 가능
@@ -164,13 +151,13 @@ export default function Personal() {
                                 <div>
                                     <h5 style={{ fontWeight: "normal" }}>
                                         <strong>
-                                            개인정보보호책임자(CPO):{" "}
+                                            개인정보보호책임자(CPO) :{" "}
                                         </strong>
-                                        박상규
+                                        박상규 부대표
                                     </h5>
                                     <h5 style={{ fontWeight: "normal" }}>
-                                        <strong>이메일:</strong>
-                                        skpark@cloudraw.kr{" "}
+                                        <strong>이메일 :</strong>
+                                        {" "}skpark@cloudraw.kr{" "}
                                     </h5>
                                     <h5
                                         style={{
@@ -238,13 +225,6 @@ export default function Personal() {
                         </tr>
                         <tr>
                             <td>
-                                AWS CSP 서비스 크레덴셜 정보(Access Key, Secret
-                                Key)
-                            </td>
-                            <td>API 연동을 통한 관리 서비스 제공</td>
-                        </tr>
-                        <tr>
-                            <td>
                                 MS Azure CSP 서비스 크레덴셜 정보 (Tenant ID,
                                 Subscription ID, Service Principal ID, Service
                                 Principal Key)
@@ -253,7 +233,14 @@ export default function Personal() {
                         </tr>
                         <tr>
                             <td>
-                                N-Cloud CSP 서비스 크레덴셜 정보 (Access Key,
+                                AWS CSP 서비스 크레덴셜 정보(Access Key, Secret
+                                Key)
+                            </td>
+                            <td>API 연동을 통한 관리 서비스 제공</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Naver Cloud CSP 서비스 크레덴셜 정보 (Access Key,
                                 Secret Key)
                             </td>
                             <td> API 연동을 통한 관리 서비스 제공</td>
