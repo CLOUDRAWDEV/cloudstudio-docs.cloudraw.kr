@@ -7,21 +7,23 @@
         padding: 24px;
         @content;
     }
-  }
-  
-  @mixin tablet {
+}
+
+@mixin tablet {
     @media (min-width: #{$breakpoint-tablet}) and (max-width: #{$breakpoint-desktop - 1px}) {
         padding: 40px 50px 40px 50px;
         @content;
     }
-  }
-  
-  @mixin desktop {
+}
+
+@mixin desktop {
     @media (min-width: #{$breakpoint-desktop}) {
-        padding: 40px 300px 40px 300px;
+        width: 50%;
+        margin: 0 auto;
+        padding-top: 40px;
         @content;
     }
-  }
+}
 
 // font-color
 @mixin white {
@@ -33,20 +35,20 @@
 }
 
 @mixin dark-gray {
-    color: #47484D;
+    color: #47484d;
 }
 
 @mixin medium-gray {
-    color: #5A5C5E;
+    color: #5a5c5e;
 }
 
 @mixin light-gray {
-    color: #8E9195;
+    color: #8e9195;
 }
 
 // color
 @mixin light-blue {
-    background-color: #EDF4FE;
+    background-color: #edf4fe;
 }
 
 // font
@@ -54,28 +56,28 @@
     font-weight: 700;
     font-size: 36px;
     line-height: 56px;
-    @include dark-gray()
+    @include dark-gray();
 }
 
 @mixin h2 {
     font-weight: 700;
     font-size: 24px;
     line-height: 36px;
-    @include dark-gray()
+    @include dark-gray();
 }
 
 @mixin h3 {
     font-weight: 700;
     font-size: 20px;
     line-height: 30px;
-    @include medium-gray()
+    @include medium-gray();
 }
 
 @mixin h4 {
     font-weight: 600;
     font-size: 16px;
     line-height: 28px;
-    @include medium-gray()
+    @include medium-gray();
 }
 
 // 들여쓰기
