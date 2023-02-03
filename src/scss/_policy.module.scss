@@ -52,4 +52,23 @@
             background-color: white;
         }
     }
+
+    &__labeling {
+        display: flex;
+        flex-direction: column;
+        background: #f8f8f8;
+        align-items: center;
+        padding: 24px;
+
+        &__wrap {
+            display: flex;
+            gap: 32px;
+        }
+    }
+
+    &__labelingIcon {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
 }

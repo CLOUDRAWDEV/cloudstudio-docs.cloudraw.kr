@@ -1,0 +1,45 @@
+@charset "utf-8";
+@import "../scss/mixin";
+
+$primary: #206fd6;
+$backgroundColor: rgba(32, 111, 214, 0.08);
+$boxShadow: 0px 4px 8px rgba(43, 43, 43, 0.1);
+$backdropFilter: blur(15px);
+
+.labeling {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    &__wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 100px;
+        width: 80px;
+        height: 80px;
+        background: $backgroundColor;
+        cursor: pointer;
+
+        svg {
+            fill: $primary;
+        }
+    }
+}
+
+.labelingDetailBox {
+    position: absolute;
+    border-radius: 12px;
+    padding: 16px;
+    min-width: 300px;
+    min-height: 150px;
+    box-shadow: $boxShadow;
+    backdrop-filter: $backdropFilter;
+    background: #ffffff;
+    top: 30%;
+    left: 0;
+    z-index: 100;
+}
