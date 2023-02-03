@@ -4,7 +4,7 @@ import policyStyles from '../../scss/_policy.module.scss';
 
 export default function Service() {
     return (
-      <Layout title="Policy_Service" description="Policy_Service Page">
+      <Layout title="Policy Service" description="Policy Service Page">
         <section className={policyStyles.policy}>
           <h1>서비스 이용약관</h1>
           <hr />

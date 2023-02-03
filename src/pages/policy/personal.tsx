@@ -7,7 +7,7 @@ import OptionalPersonalInfo from "./OptionalPersonalInfo"
 
 export default function Personal() {
     return (
-        <Layout title="Policy_Personal" description="Policy_Personal Page">
+        <Layout title="Policy Personal" description="Policy Personal Page">
             <section className={policyStyles.policy}>
                 <h1>개인정보 처리방침</h1>
                 <br />
