@@ -15,7 +15,7 @@ export default function Footer(props) {
               <li><Link to="https://www.cloudraw.kr/"><h4>About</h4></Link></li>
               {/*<li><Link to="https://cloudstudio.cloudraw.kr/payments"><h4>Pricing</h4></Link></li>*/}
               <li><Link to="/policy/service"><h4>서비스이용약관</h4></Link></li>
-              <li><Link to="/policy/personal"><h4>개인정보처리방침</h4></Link></li>
+              <li><Link to="/policy/personal"><h4 style={{fontWeight:"800"}}>개인정보처리방침</h4></Link></li>
               <li><Link to="/policy/refund"><h4>환불정책</h4></Link></li>
             </ul>
           </div>
