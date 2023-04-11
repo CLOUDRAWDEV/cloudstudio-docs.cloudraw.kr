@@ -1,0 +1,50 @@
+---
+title: Windows App Service
+sidebar_position: 1
+tags: [Template, 자주 사용하는 리소스, App Service, Azure]
+---
+
+import icon from "../../img/app_service-app_service.png"
+
+<span className="theme-doc-version-badge badge badge--secondary">
+    last update: 2023.05.01
+</span>
+
+##### 읽는 데 3분 걸림(소요시간)
+
+*****
+
+## 리소스 이미지
+<img src={icon} />
+
+## 리소스 개요
+Azure App Service는 인프라를 관리할 필요 없이 선택한 프로그래밍 언어로 웹앱, 모바일 백 엔드 및 RESTful API를 빌드하고 호스팅할 수 있는 PaaS 서비스입니다.
+App Service는 Auto Scailing 및 고가용성을 제공하고, 운영체제로 Windows 및 Linux를 모두 지원합니다.
+GitHub, Azure DevOps 또는 Git 리포지토리에서 자동으로 배포할 수 있습니다.
+
+## 연관 리소스
+### 상위 리소스
+- **Resource Group**
+- **Subent**
+### 연결 리소스
+- **Network Traffic Manager**
+
+## 리소스 설정 값
+- ```kind``` : App Service가 사용할 운영 체제- ```Windows```, ```WindowsContainer```
+- ```sku_tier``` : App Service 요금제의 가격 책정 계층
+- ```delegated_subnet_name``` : 가상 네트워크 위임을 위한 Subnet 이름
+- ```app_service``` : 앱서비스의 이름
+  -  ```client_cert_enabled``` : 클라이언트 인증서를 활성화 - ```true```, ```false```
+  -  ```auth_settings_enabled``` : App에서 발생하는 모든 통신이 인증이 될 수 있도록 Authentication을 활성화 - ```true```, ```false```
+  -  ```detailed_error_messages_enabled``` : HTTP 오류 발생 시, 오류 페이지에 자세한 오류 메시지를 포함 - ```true```, ```false```
+  -  ```failed_request_tracing_enabled``` : 실패한 요청에 대해 자세한 추적 정보 로킹을 활성화 - ```true```, ```false```
+  -  ```retention_in_days``` : HTTP 요청과 관련된 로그 기록 보관 일 수(일) - ```0```~```99999```
+  -  ```retention_in_mb``` : HTTP 요청과 관련된 로그 기록 보관 용량(MB) - ```25```~```100```
+  -  ```ftps_state``` : FTP를 사용하는 경우, 보안을 위해 FTP에 TLS/SSL을 적용 - ```Disabled```, ```FtpsOnly```, ```AllAllowed```
+  -  ```http2_enabled``` : 보안을 위해 최신 버전의 HTTP 프로토클을 사용 - ```true```, ```false```
+
+*****
+## 참고 자료
+- [Azure App Service(Microsoft)](https://learn.microsoft.com/ko-kr/azure/app-service/overview)
+- [Azurerm App Service 가격(Microsoft)](https://azure.microsoft.com/ko-kr/pricing/details/app-service/windows/)
+- [Azurerm App Service(Terraform)](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/app_service)
