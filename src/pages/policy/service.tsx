@@ -4,7 +4,7 @@ import policyStyles from '../../scss/_policy.module.scss';
 
 export default function Service() {
     return (
-      <Layout title="Policy_Service" description="Policy_Service Page">
+      <Layout title="Policy Service" description="Policy Service Page">
         <section className={policyStyles.policy}>
           <h1>서비스 이용약관</h1>
           <hr />
@@ -171,7 +171,7 @@ export default function Service() {
                 <br />
                 <h3>부칙</h3>
                 <h4>
-                  본 약관은 2022년 7월 1일부터 적용됩니다. 단, 본 약관의 공지 시점으로부터 적용일 전일까지 기간 동안에 가입한 신규사용자에 대해서는 사용자 가입시부터 본 약관이 적용됩니다.
+                  본 약관은 2023년 2월 1일부터 적용됩니다. 단, 본 약관의 공지 시점으로부터 적용일 전일까지 기간 동안에 가입한 신규사용자에 대해서는 사용자 가입시부터 본 약관이 적용됩니다.
                 </h4>
             </section>
             <br />

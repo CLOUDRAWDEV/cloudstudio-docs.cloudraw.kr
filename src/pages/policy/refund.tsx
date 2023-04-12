@@ -4,7 +4,7 @@ import policyStyles from '../../scss/_policy.module.scss';
 
 export default function Refund() {
     return (
-      <Layout title="Policy_Refund" description="Policy_Refund Page">
+      <Layout title="Policy Refund" description="Policy Refund Page">
         <section className={policyStyles.policy}>
           <h1>환불정책</h1>
             <hr />
@@ -85,7 +85,7 @@ export default function Refund() {
             <br />
             <h2>부칙</h2>
             <h4>
-            본 약관은 2022년 7월 1일부터 적용됩니다.
+            본 약관은 2023년 2월 1일부터 적용됩니다.
             </h4>
         </section>
         <br />

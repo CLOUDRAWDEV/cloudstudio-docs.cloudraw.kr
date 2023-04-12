@@ -13,9 +13,9 @@ export default function Footer(props) {
             <h3>Company</h3>
             <ul>
               <li><Link to="https://www.cloudraw.kr/"><h4>About</h4></Link></li>
-              <li><Link to="https://cloudstudio.cloudraw.kr/payments"><h4>Pricing</h4></Link></li>
+              {/*<li><Link to="https://cloudstudio.cloudraw.kr/payments"><h4>Pricing</h4></Link></li>*/}
               <li><Link to="/policy/service"><h4>서비스이용약관</h4></Link></li>
-              <li><Link to="/policy/personal"><h4>개인정보처리방침</h4></Link></li>
+              <li><Link to="/policy/personal"><h4 style={{fontWeight:"800"}}>개인정보처리방침</h4></Link></li>
               <li><Link to="/policy/refund"><h4>환불정책</h4></Link></li>
             </ul>
           </div>
@@ -27,10 +27,10 @@ export default function Footer(props) {
             </ul>
           </div>
         </section>
-        <h1>Drawing<p>Your Cloud Infra.</p></h1>
+        <h1>Draw<p>Your Cloud Infra.</p></h1>
       </section>
       <section className={footerStyles.footer__address}>
-        <h5>(주)클라우드로 | 사업자등록번호 : 886-86-02497 | 대표이사 강혜경 | 서울시 강남구 테헤란로 151 (역삼하이츠빌딩) 305</h5>
+        <h5>(주)클라우드로 | 사업자등록번호 : 886-86-02497 | 대표이사 박성갑 | 서울시 강남구 테헤란로 151 (역삼하이츠빌딩) 305</h5>
         <h5 className={footerStyles.footer__address__copy}>Copyright ⓒ 2021 Cloudraw. Inc.</h5>
       </section>
     </footer>
