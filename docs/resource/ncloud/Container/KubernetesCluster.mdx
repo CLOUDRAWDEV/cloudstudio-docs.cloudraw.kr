@@ -1,0 +1,54 @@
+---
+title: Kubernetes Cluster
+sidebar_position: 0
+tags: [Ncloud, 리소스, Container, KubernetesCluster]
+---
+
+import icon from "../img/container-kubernetes_cluster.png"
+
+<span className="theme-doc-version-badge badge badge--secondary">
+    last update: 2023.05.01
+</span>
+
+##### 읽는 데 3분 걸림(소요시간)
+
+---
+
+## 리소스 이미지
+
+<img src={icon} />
+
+## 리소스 개요
+
+애플리케이션 컨테이너화, 배포, 관리를 자동화하는 오픈 소스 플랫폼인 쿠버네티스 서비스입니다. 컨테이너 배포, 관리, 확장 등 컨테이너를 사용하는 데 필요한 작업을 자동화하여 업무 효율을 높여줍니다.
+
+## 연관 리소스
+
+### 상위 리소스
+
+-   [**Vpc**](https://docs.cstudio.app/docs/resource/ncloud/Network/Vpc)
+
+### 하위 리소스
+
+-   [**Subnet**](https://docs.cstudio.app/docs/resource/ncloud/Network/Subnet)
+-   [**LoadBalancer**](https://docs.cstudio.app/docs/resource/ncloud/Network/LoadBalancer)
+
+## 리소스 설정 값
+
+-   `version` : 클러스버 버전 - `1.21.9-nks.1`
+-   `cluster_type` : 클러스터의 최대 노드 수 설정, 10 혹은 50 - `SVR.VNKS.STAND.C002.M008.NET.SSD.B050.G002`, `SVR.VNKS.STAND.C004.M016.NET.SSD.B050.G002`
+-   `included_vpc_name` : 클러스터를 생성할 VPC 이름
+-   `included_subnet_names` : 클러스터를 구성할 서브넷 이름 목록, 최대 3개
+-   `included_lb_subnet_name` : 클러스터와 연동할 로드 밸런서가 위치하는 서브넷 이름
+-   `zone` : 클러스터를 생성할 물리적 지역 - `KR-1`, `KR-2`
+-   `node_pool`
+    -   `node_count` : 클러스터의 노드 수
+    -   `product_code` : 노드의 하드웨어 구성을 위한 코드 - `SVR.VSVR.STAND.C002.M008.NET.SSD.B050.G002`
+    -   `subnet_name` : 노드풀이 생성될 서브넷 이름
+
+---
+
+## 참고 자료
+
+-   [Kubernetes Service(Ncloud)](https://www.ncloud.com/product/containers/kubernetes)
+-   [ncloud_nks_cluster(Terraform)](https://registry.terraform.io/providers/NaverCloudPlatform/ncloud/latest/docs/resources/nks_cluster)

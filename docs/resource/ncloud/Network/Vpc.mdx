@@ -1,0 +1,51 @@
+---
+title: Vpc
+sidebar_position: 0
+tags: [Ncloud, 리소스, Network, Vpc]
+---
+
+import icon from "../img/network-vpc.png"
+
+<span className="theme-doc-version-badge badge badge--secondary">
+    last update: 2023.05.01
+</span>
+
+##### 읽는 데 3분 걸림(소요시간)
+
+---
+
+## 리소스 이미지
+
+<img src={icon} />
+
+## 리소스 개요
+
+IT 인프라 환경을 구현할 수 있는 격리된 네트워크 환경입니다. 퍼블릭 클라우드 상에서 제공되는 사용자 전용 사설 네트워크 공간입니다.
+
+## 연관 리소스
+
+### 상위 리소스
+
+-   [**Region**](https://docs.cstudio.app/docs/resource/ncloud/Base/Region)
+
+### 하위 리소스
+
+-   [**Kubernetes Cluster**](https://docs.cstudio.app/docs/resource/ncloud/Container/KubernetesCluster)
+-   [**Subnet**](https://docs.cstudio.app/docs/resource/ncloud/Network/Subnet)
+-   [**Network Acl**](https://docs.cstudio.app/docs/resource/ncloud/Network/NetworkAcl)
+-   [**Access Control Group**](https://docs.cstudio.app/docs/resource/ncloud/Network/AccessControlGroup)
+-   [**Nat Gateway**](https://docs.cstudio.app/docs/resource/ncloud/Network/NatGateway)
+-   [**Route Table**](https://docs.cstudio.app/docs/resource/ncloud/Network/RouteTable)
+-   [**Load Balancer**](https://docs.cstudio.app/docs/resource/ncloud/Network/LoadBalancer)
+
+## 리소스 설정 값
+
+-   `ipv4_cidr_block` : IP 주소 범위, private 대역(10.0.0.0/8,172.16.0.0/12,192.168.0.0/16) 내, /16 ~ /28 범위
+
+---
+
+## 참고 자료
+
+-   [VPC Management(Ncloud)](https://guide.ncloud-docs.com/docs/vpc-manage-vpc)
+-   [VPC (Virtual Private Cloud)(Ncloud)](https://www.ncloud.com/product/networking/vpc)
+-   [ncloud_vpc(Terraform)](https://registry.terraform.io/providers/NaverCloudPlatform/ncloud/latest/docs/resources/vpc)
