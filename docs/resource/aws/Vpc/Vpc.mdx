@@ -1,0 +1,53 @@
+---
+title: Vpc
+sidebar_position: 0
+tags: [AWS, 리소스, Vpc]
+---
+
+import icon from "../img/vpc-vpc.png"
+
+<span className="theme-doc-version-badge badge badge--secondary">
+    last update: 2023.05.01
+</span>
+
+##### 읽는 데 3분 걸림(소요시간)
+
+---
+
+## 리소스 이미지
+
+<img src={icon} />
+
+## 리소스 개요
+
+Amazon Virtual Private Cloud(Amazon VPC)를 사용하면 리소스 배치, 연결 및 보안을 포함하여 가상 네트워킹 환경을 완전히 제어할 수 있습니다. AWS 서비스 콘솔에서 VPC를 설정하여 시작하십시오. 그런 다음 Amazon Elastic Compute Cloud(EC2) 및 Amazon Relational Database Service(RDS) 인스턴스와 같은 리소스를 VPC에 추가합니다. 마지막으로 VPC가 계정, 가용 영역 또는 AWS 리전에서 서로 통신하는 방법을 정의합니다. 아래 예제에서 네트워크 트래픽은 각 리전 내 2개의 VPC 간에 공유됩니다.
+
+## 연관 리소스
+
+### 상위 리소스
+
+-   [**Region**](https://docs.cstudio.app/docs/resource/aws/Base/Region)
+
+### 하위 리소스
+
+-   [**Lb**](https://docs.cstudio.app/docs/resource/aws/Lb/)
+-   [**Ec2 Transit Gateway**](https://docs.cstudio.app/docs/resource/aws/Ec2/TransitGateway)
+-   [**Route53**](https://docs.cstudio.app/docs/resource/aws/Route53/)
+-   [**Vpc Security Group**](https://docs.cstudio.app/docs/resource/aws/Vpc/SecurityGroup)
+-   [**Vpc Subnet**](https://docs.cstudio.app/docs/resource/aws/Vpc/Subnet)
+-   [**Vpc Internet Gateway**](https://docs.cstudio.app/docs/resource/aws/Vpc/InternetGateway)
+-   [**Vpc Network Acl**](https://docs.cstudio.app/docs/resource/aws/Vpc/NetworkAcl)
+-   [**Vpc Route Table**](https://docs.cstudio.app/docs/resource/aws/Vpc/RouteTable)
+-   [**Vpc FlowLog**](https://docs.cstudio.app/docs/resource/aws/Vpc/FlowLog)
+
+## 리소스 설정 값
+
+-   `cidr_block` :VPC의 IP 대역(CIDR)
+
+---
+
+## 참고 자료
+
+-   [Amazon Virtual Private Cloud(Amazon VPC)(AWS)](https://aws.amazon.com/ko/vpc/?nc2=type_a)
+-   [Amazon VPC 요금(AWS)](https://aws.amazon.com/ko/vpc/pricing/?refid=ap_card)
+-   [aws_vpc(Terraform)](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/vpc)

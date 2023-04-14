@@ -1,0 +1,58 @@
+---
+title: Region
+sidebar_position: 0
+tags: [AWS, 리소스, Base]
+---
+
+import icon from "../img/base-region.png"
+
+<span className="theme-doc-version-badge badge badge--secondary">
+    last update: 2023.05.01
+</span>
+
+##### 읽는 데 3분 걸림(소요시간)
+
+---
+
+## 리소스 이미지
+
+<img src={icon} />
+
+## 리소스 개요
+
+접근할 AWS region을 저장하는 리소스입니다. Amazon EC2는 전 세계의 여러 곳에서 호스팅되고 있습니다.
+
+## 연관 리소스
+
+### 상위 리소스
+
+-   **base**
+
+### 하위 리소스
+
+-   **cloudtrail-cloudtrail**
+-   **cloudwatch-log**
+-   **cloudwatch-metric**
+-   **direct_connect-dx_connection**
+-   **dynamodb-dynamodb**
+-   **kms-kms_key**
+-   **lambda-lambda_function**
+-   **ecr-ecr_repository**
+-   **servicecatalog-servicecatalog_portfolio**
+-   **vpc-customer_gateway**
+-   **vpc-vpc**
+-   **vpc-vpn_gateway**
+-   **af-waf_ipset**
+-   **waf-waf_rule_group**
+-   **waf-waf_web_acl**
+
+## 리소스 설정 값
+
+-   `Region` : 접근할 AWS region
+
+---
+
+## 참고 자료
+
+-   [Amazon Region(AWS)](https://docs.aws.amazon.com/ko_kr/AWSEC2/latest/UserGuide/using-regions-availability-zones.html)
+-   [Amazon Region(Terraform)](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/region)

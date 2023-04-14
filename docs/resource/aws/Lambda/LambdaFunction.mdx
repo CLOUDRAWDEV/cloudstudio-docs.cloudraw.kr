@@ -1,0 +1,54 @@
+---
+title: Lambda Function
+sidebar_position: 0
+tags: [AWS, 리소스, Lambda, LambdaFunction]
+---
+
+import icon from "../img/lambda-lambda_function.png"
+
+<span className="theme-doc-version-badge badge badge--secondary">
+    last update: 2023.05.01
+</span>
+
+##### 읽는 데 3분 걸림(소요시간)
+
+---
+
+## 리소스 이미지
+
+<img src={icon} />
+
+## 리소스 개요
+
+AWS Lambda은 서버를 프로비저닝하거나 관리하지 않고도 코드를 실행할 수 있게 해주는 컴퓨팅 서비스입니다. Lambda는 고가용성 컴퓨팅 인프라에서 코드를 실행하고 서버와 운영 체제 유지 관리, 용량 프로비저닝 및 자동 조정, 코드 및 보안 패치 배포, 로깅 등 모든 컴퓨팅 리소스 관리를 수행합니다. Lambda를 사용하면 거의 모든 유형의 애플리케이션 또는 백엔드 서비스에 대한 코드를 실행할 수 있습니다. Lambda가 지원하는 언어 중 하나로 코드를 공급하기만 하면 됩니다.
+
+## 연관 리소스
+
+### 상위 리소스
+
+-   **Region**
+
+### 연결 리소스
+
+-   **Lambda Function**
+-   **Vpc Security Group**
+
+## 리소스 설정 값
+
+-   `architectures` : Lambda 함수에 대한 명령어 세트 아키텍처 - `x86_64`, `arm64`
+-   `runtime` : 람다 함수의 런타임 식별자 - `nodejs`, `nodejs4.3`, `nodejs6.10`, `nodejs8.10`, `nodejs10.x`, `nodejs12.x`, `nodejs14.x`, `java8`, `java8.al2`, `java11`, `python2.7`, `python3.6`, `python3.7`, `python3.8`, `python3.9`, `dotnetcore1.0`, `dotnetcore2.0`, `dotnetcore2.1`, `dotnetcore3.1`, `nodejs4.3-edge`, `go1.x`, `ruby2.5`, `ruby2.7`, `provided`, `provided.al2`
+-   `memory_size` : Lambda 함수가 런타임에 사용할 수 있는 메모리 양(MB), 128 ~ 10240(MB) - `128`, `512`, `1024`, `1536`, `2048`, `3072`, `4096`, `5120`, `6144`, `7168`, `8192`, `9216`, `10240`
+-   `handler` : 코드의 함수 Entrypoint
+-   `s3_bucket_name` : 함수의 배포 패키지를 보유한 S3 리소스 이름
+-   `file_directory` : S3 내에서 함수의 배포 패키지 경로 (zip 파일 형식)
+-   `included_subnet_names` : Lambda 함수와 연결된 서브넷 ID 목록, 최소 2개 이상
+-   `linked_security_group_names` : Lambda 함수와 연결된 보안 그룹 ID 목록
+-   `environment_variable` : Lambda 실행 중, Function에서 사용할 수 있는 환경 변수 설정
+
+---
+
+## 참고 자료
+
+-   [AWS Lambda(AWS)](https://docs.aws.amazon.com/ko_kr/lambda/latest/dg/welcome.html)
+-   [AWS Lambda 요금(AWS)](https://aws.amazon.com/ko/lambda/pricing/?nc2=type_a)
+-   [aws_lambda_function(Terraform)](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lambda_function)

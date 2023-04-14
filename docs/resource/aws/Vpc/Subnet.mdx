@@ -1,0 +1,59 @@
+---
+title: Subnet
+sidebar_position: 0
+tags: [AWS, 리소스, Vpc, Subnet]
+---
+
+import icon from "../img/vpc-subnet.png"
+
+<span className="theme-doc-version-badge badge badge--secondary">
+    last update: 2023.05.01
+</span>
+
+##### 읽는 데 3분 걸림(소요시간)
+
+---
+
+## 리소스 이미지
+
+<img src={icon} />
+
+## 리소스 개요
+
+서브넷은 VPC의 IP 주소 범위입니다. 특정 서브넷에서 EC2 인스턴스와 같은 AWS 리소스를 생성할 수 있습니다.
+
+## 연관 리소스
+
+### 상위 리소스
+
+-   [**Vpc**](https://docs.cstudio.app/docs/resource/aws/Vpc/)
+
+### 하위 리소스
+
+-   [**Directory Service**](https://docs.cstudio.app/docs/resource/aws/DirectoryService/)
+-   [**Ec2 Instance**](https://docs.cstudio.app/docs/resource/aws/Ec2/Instance)
+-   [**Ecs Cluster**](https://docs.cstudio.app/docs/resource/aws/Ecs/EcsCluster)
+-   [**Eks Cluster**](https://docs.cstudio.app/docs/resource/aws/Eks/EksCluster)
+-   [**Elasticache Cluster**](https://docs.cstudio.app/docs/resource/aws/Elasticache/ElasticacheCluster)
+-   [**Elasticache User**](https://docs.cstudio.app/docs/resource/aws/Elasticache/ElasticacheUser)
+-   [**Lambda Function**](https://docs.cstudio.app/docs/resource/aws/Lambda/LambdaFunction)
+-   [**Rds Aurora**](https://docs.cstudio.app/docs/resource/aws/Rds/Aurora)
+-   [**Rds Mariadb**](https://docs.cstudio.app/docs/resource/aws/Rds/Mariadb)
+-   [**Rds Mssql**](https://docs.cstudio.app/docs/resource/aws/Rds/Mssql)
+-   [**Rds Mysql**](https://docs.cstudio.app/docs/resource/aws/Rds/Mysql)
+-   [**Rds Oracle**](https://docs.cstudio.app/docs/resource/aws/Rds/Oracle)
+-   [**Rds Postgresql**](https://docs.cstudio.app/docs/resource/aws/Rds/Postgresql)
+-   [**Vpc Nat Gateway**](https://docs.cstudio.app/docs/resource/aws/Vpc/NatGateway)
+
+## 리소스 설정 값
+
+-   `included_vpc_name` : Subnet을 배포할 VPC의 이름
+-   `cidr_block` : Subnet의 IP 대역(CIDR)
+-   `availability_zone` : Subnet을 배포할 가용성 영역
+
+---
+
+## 참고 자료
+
+-   [VPC의 서브넷(AWS)](https://docs.aws.amazon.com/ko_kr/vpc/latest/userguide/configure-subnets.html)
+-   [aws_subnet(Terraform)](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/subnet)

@@ -1,0 +1,42 @@
+---
+title: Transit Gateway
+sidebar_position: 0
+tags: [AWS, 리소스, Ec2, TransitGateway]
+---
+
+import icon from "../img/ec2-transit_gateway.png"
+
+<span className="theme-doc-version-badge badge badge--secondary">
+    last update: 2023.05.01
+</span>
+
+##### 읽는 데 3분 걸림(소요시간)
+
+---
+
+## 리소스 이미지
+
+<img src={icon} />
+
+## 리소스 개요
+
+Transit Gateway는 가상 사설 클라우드(VPC)와 온프레미스 네트워크를 상호 연결하는 데 사용할 수 있는 네트워크 전송 허브입니다. 클라우드 인프라가 전 세계적으로 확장됨에 따라 리전 간 피어링은AWS 글로벌 인프라를 사용하여 Transit Gateway를 함께 연결합니다. 데이터는 자동으로 암호화되며 퍼블릭 인터넷을 통해 전송되지 않습니다.
+
+## 연관 리소스
+
+### 상위 리소스
+
+-   **VPC**
+
+## 리소스 설정 값
+
+-   `included_vpc_name` : Transit Gateway를 연결할 VPC 이름
+-   `subnet_names` : Transit Gateway를 연결할 Subnet 이름
+
+---
+
+## 참고 자료
+
+-   [AWS Transit Gateway(AWS)](https://docs.aws.amazon.com/ko_kr/vpc/latest/tgw/what-is-transit-gateway.html?nc2=type_a)
+-   [AWS Transit Gateway 가격(AWS)](https://aws.amazon.com/ko/transit-gateway/pricing/?nc2=type_a)
+-   [aws_ec2_transit_gateway(Terraform)](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ec2_transit_gateway)

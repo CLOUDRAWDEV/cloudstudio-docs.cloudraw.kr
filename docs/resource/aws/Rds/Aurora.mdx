@@ -1,0 +1,54 @@
+---
+title: Aurora
+sidebar_position: 0
+tags: [AWS, 리소스, Rds, Aurora]
+---
+
+import icon from "../img/rds-aurora.png"
+
+<span className="theme-doc-version-badge badge badge--secondary">
+    last update: 2023.05.01
+</span>
+
+##### 읽는 데 3분 걸림(소요시간)
+
+---
+
+## 리소스 이미지
+
+<img src={icon} />
+
+## 리소스 개요
+
+Amazon Aurora(Aurora)는 MySQL 및 PostgreSQL과 호환되는 완전 관리형 관계형 데이터베이스 엔진입니다. MySQL 및 PostgreSQL이 이 고급 상용 데이터베이스의 속도와 안정성을 오픈 소스 데이터베이스의 단순성 및 비용 효율성과 어떻게 결합하는지 이미 알고 계실 것입니다. 오늘날 기존 MySQL 및 PostgreSQL 데이터베이스에 사용되는 코드, 도구 및 애플리케이션 모두 Aurora에서도 사용할 수 있습니다. 일부 워크로드의 경우 Aurora은 기존 애플리케이션을 거의 변경하지 않고도 MySQL의 처리량을 최대 5배, PostgreSQL의 처리량을 최대 3배 제공할 수 있습니다.
+
+## 연관 리소스
+
+### 상위 리소스
+
+-   **Subnet**
+
+### 연결 리소스
+
+-   **Rds Aurora**
+
+## 리소스 설정 값
+
+-   `engine` : RDS에 사용할 Aurora Engine 종류 - `aurora`, `aurora-mysql`, `aurora-postgresql`
+-   `engine_version` : RDS에 사용할 Aurora Engine 버전
+-   `instance_class` : RDS DB의 가격 측정 계층
+-   `engine_mode` : `aurora`, `multimaster`, `parallelquery`, `serverless`
+-   `database_name`
+-   `master_password` : 마스터 사용자 비밀번호
+-   `backup_retention_period` : 백업 데이터를 보관할 기간
+-   `skip_final_snapshot` : `true`, `false`스
+-   `storage_encrypted` : DB 인스턴스의 암호화 여부를 지정 - `true`, `false`
+-   `included_subnet_names` : RDS Subnet 그룹에 연결할 Subnet 이름
+
+---
+
+## 참고 자료
+
+-   [Amazon Aurora(AWS)](https://docs.aws.amazon.com/ko_kr/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html)
+-   [Amazon Aurora 요금(AWS)](https://aws.amazon.com/ko/rds/aurora/pricing/?nc2=type_a)
+-   [rds-aurora(Terraform)](https://registry.terraform.io/modules/terraform-aws-modules/rds-aurora/aws/latest)
