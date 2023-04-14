@@ -1,0 +1,51 @@
+---
+title: PolicyDefinition
+sidebar_position: 0
+tags: [Azure, 리소스, Policy, PolicyDefinition]
+---
+
+import icon from "../img/policy-policy_definition.png"
+
+<span className="theme-doc-version-badge badge badge--secondary">
+    last update: 2023.05.01
+</span>
+
+##### 읽는 데 3분 걸림(소요시간)
+
+*****
+
+## 리소스 이미지
+<img src={icon} />
+
+## 리소스 개요
+Azure 정책 정의는 거버넌스 정책을 적용하고 감사하는 방법을 제공합니다. 정책 정의를 사용하여 리소스 속성, 태그 또는 리소스 그룹에 대한 규칙을 정의할 수 있습니다. 
+예를 들어 모든 가상 머신이 특정 태그를 갖도록 요구하거나 특정 지역에서 가상 머신 생성을 제한하는 정책 정의를 생성할 수 있습니다.
+정책 정의를 만든 후에는 리소스 그룹 또는 구독과 같은 Azure의 범위에 할당할 수 있습니다. 이렇게 하면 해당 범위 내의 모든 리소스에 정책이 적용되고 리소스가 거버넌스 정책을 준수하는지 확인하기 위해 규정 준수 보고서가 제공됩니다.
+
+## 연관 리소스
+### 상위 리소스
+- [**Subscription**](https://docs.cstudio.app/docs/resource/azure/Base/Subscription)
+
+### 연결 리소스
+- [**Resource Group**](https://docs.cstudio.app/docs/resource/azure/Base/ResourceGroup)
+
+
+
+## 리소스 설정 값
+- ```type``` : 정책을 새로 생성하거나 기존 항목 사용 - ```Custom```,```BuiltIn```,```NotSpecified```
+
+- ```mode``` : 정책 정의가 적용될 리소스 유형 지정
+
+- ```display_name``` : 정책 정의의 표시 이름
+
+- ```linked_resource_group_name``` : Policy를 적용할 Resource Group의 구독 ID와 이름
+
+
+
+
+*****
+## 참고 자료
+- [Azure PolicyDefinition(Microsoft)](https://learn.microsoft.com/en-us/azure/governance/policy/overview)
+- [Azure PolicyDefinition 가격](https://azure.microsoft.com/en-us/pricing/details/azure-policy/) 
+- [Azure PolicyDefinition(Terraform)](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/policy_definition)
+

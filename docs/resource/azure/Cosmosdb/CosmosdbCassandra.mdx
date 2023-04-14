@@ -1,0 +1,84 @@
+---
+title: CosmosdbCassandra
+sidebar_position: 0
+tags: [Azure, 리소스, Cosmosdb, CosmosdbCassandra]
+---
+
+import icon from "../img/cosmosdb-cosmosdb_cassandra.png"
+
+<span className="theme-doc-version-badge badge badge--secondary">
+    last update: 2023.05.01
+</span>
+
+##### 읽는 데 3분 걸림(소요시간)
+
+*****
+
+## 리소스 이미지
+<img src={icon} />
+
+## 리소스 개요
+Azure Cosmos DB for Apache Cassandra는 Apache Cassandra용으로 작성된 앱의 데이터 저장소로 사용할 수 있습니다. 
+이 호환성은 CQLv4를 준수하는 기존 Apache 드라이버를 사용하여 기존 Cassandra 애플리케이션이 Cassandra용 API와 통신할 수 있음을 의미합니다. 
+대부분의 경우 연결 문자열을 변경하여 Apache Cassandra 사용에서 Cassandra용 API 사용으로 전환할 수 있습니다. 
+Cassandra용 API를 사용하면 CQL(Cassandra 쿼리 언어), Cassandra 기반 도구(예: cqlsh) 및 이미 익숙한 Cassandra 클라이언트 드라이버를 사용하여 Azure Cosmos DB에 저장된 데이터와 상호 작용할 수 있습니다.
+
+
+
+
+
+
+## 리소스 설정 값
+- ```capabilities_list``` : 사용할 Cosmos DB의 API 목룍 - ```EnableServerless```, ```EnableAggregationPipeline```
+
+- ```enable_multiple_write_locations``` : 전 세계의 데이터베이스 및 컨테이너에 대해 프로비전된 처리량을 활용하기 위한 다중 영역 쓰기 활성화 - ```true```, ```false```
+
+- ```public_network_access_enabled``` : 공용 IP 주소 또는 서비스 엔드포인트를 통해 공개적으로 계정에 연결 활성화 - ```true```, ```false```
+
+- ```enable_automatic_failover``` : 자동 장애 조치 활성화 - ```true```, ```false```
+
+- ```virtual_network_filter_enabled``` : 가상 네트워크의 특정 Subnet만 계정에 접근하도록 필터 활성화 - ```true```, ```false```
+
+- ```network_acl_bypass_for_azure_services``` : Azure 서비스의 ACL bypass 활성화 - ```true```, ```false```
+
+
+- ```geo_location```   
+    +  ```failover_priority``` : 지역의 장애 처리 우선순위 - ```0```~ ```0```
+    +  ```zone_redundant``` : 오류에 대비하여 자동으로 zone 복제 허용 - ```true```~ ```false```
+
+
+- ```consistency_policy```   
+    +  ```consistency_level``` : 데이터베이스의 가용성과 성능 설정을 위한 Cassandra DB의 일관성 수준 - ```Eventual```, ```Session```, ```Strong```, ```ConsistentPrefix```, ```BoundedStaleness```
+    +  ```max_interval_in_seconds``` : 일관성 수준이 Bounded Staleness인 경우, 허용되는 Staleness 시간(초) - ```5```~ ```86400```    
+    +  ```max_staleness_prefix``` : 일관성 수준이 Bounded Staleness인 경우, 허용되는 최대 Stale Request 수 - ```10```~```2147483647```
+    
+
+- ```backup```   
+    +  ```type``` : 백업 정책 유형 - ```Continuous```, ```Periodic```
+    +  ```interval_in_minutes``` : 백업을 수행하는 분당 빈도, 60 ~ 1440의 범위 - ```60```~ ```1440```    
+    +  ```retention_in_hours``` : 백업을 저장하는 기간(시간), 8 ~ 720의 범위 - ```8```~```720```    
+
+
+- ```cassandra_keyspace```   
+    +  ```throughput``` : Cassandra 키스페이스의 처리량 - ```400```~ ```1000000```
+    +  ```enable_autoscale``` : Cassandra 키스페이스에 auto scaling을 적용할 것인지 - ```true```, ```false```    
+
+
+- ```cassandra_table```   
+    +  ```throughput``` : Cassandra 테이블의 처리량 - ```400```~ ```1000000```
+    +  ```column``` : Column의 이름과 타입의 목록, '이름:타입'의 형식 
+    +  ```partition_key``` : 파티션 키 이름
+    +  ```cluster_key_name``` : 생성할 클러스터 키 이름
+    +  ```cluster_key_order``` : 클러스터 키 나열 기준 - ```Asc``` , ```Desc```
+    +  ```enable_autoscale``` : Cassandra 키스페이스에 auto scaling을 적용할 것인지 - ```true```, ```false```
+    +  ```included_cosmosdb_keyspace_name``` : 테이블이 생성될 Cassandra 키스페이스 이름 
+
+
+
+
+
+*****
+## 참고 자료
+- [Azure CosmosdbCassandra(Microsoft)](https://learn.microsoft.com/ko-kr/azure/cosmos-db/introduction)
+- [Azure CosmosdbCassandra 가격](https://azure.microsoft.com/en-us/pricing/details/cosmos-db/autoscale-provisioned/) 
+- [Azure Cosmosdb(Terraform)](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/cosmosdb_account)
