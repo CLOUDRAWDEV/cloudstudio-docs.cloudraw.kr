@@ -10,7 +10,7 @@ const config = {
   tagline: "",
   // url: "https://cloudrawdev.github.io",
   url: "https://docs.cloudraw.kr",
-  baseUrl: "",
+  baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/simbol3.png",
