@@ -1,0 +1,86 @@
+@charset "utf-8";
+@import "./variables";
+
+// 반응형
+@mixin mobile {
+    @media (min-width: #{$breakpoint-mobile}) and (max-width: #{$breakpoint-tablet - 1px}) {
+        padding: 24px;
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: #{$breakpoint-tablet}) and (max-width: #{$breakpoint-desktop - 1px}) {
+        padding: 40px 50px 40px 50px;
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: #{$breakpoint-desktop}) {
+        width: 50%;
+        margin: 0 auto;
+        padding-top: 40px;
+        @content;
+    }
+}
+
+// font-color
+@mixin white {
+    color: #ffffff;
+}
+
+@mixin black {
+    color: #101113;
+}
+
+@mixin dark-gray {
+    color: #47484d;
+}
+
+@mixin medium-gray {
+    color: #5a5c5e;
+}
+
+@mixin light-gray {
+    color: #8e9195;
+}
+
+// color
+@mixin light-blue {
+    background-color: #edf4fe;
+}
+
+// font
+@mixin h1 {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 56px;
+    @include dark-gray();
+}
+
+@mixin h2 {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 36px;
+    @include dark-gray();
+}
+
+@mixin h3 {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 30px;
+    @include medium-gray();
+}
+
+@mixin h4 {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 28px;
+    @include medium-gray();
+}
+
+// 들여쓰기
+@mixin indent {
+    margin-left: 24px;
+}

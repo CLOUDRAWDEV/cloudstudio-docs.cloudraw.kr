@@ -1,0 +1,70 @@
+---
+title: Automation Account
+sidebar_position: 0
+tags: [Azure, 리소스, Automation ,AutomationAccount]
+---
+
+import icon from "../img/automation-automation_account.png"
+
+
+
+##### 읽는 데 3분 걸림(소요시간)
+
+*****
+
+## 리소스 이미지
+<img src={icon} />
+
+## 리소스 개요
+Azure Automation은 Azure 및 비 Azure 환경에서 일관된 관리를 지원하는 클라우드 기반 자동화, 운영 체제 업데이트 및 구성 서비스를 제공합니다.   
+프로세스 자동화, 구성 관리, 업데이트 관리, 공유 기능 및 이기종 기능을 포함합니다.
+
+## 연관 리소스
+### 상위 리소스
+- [**Resource Group**](https://docs.cstudio.app/docs/resource/azure/Base/ResourceGroup)
+
+
+## 리소스 설정 값
+- ```sku_name``` : Automation 가격 책정 계층
+
+
+- ```credential```
+    - ```username``` : 자격 증명의 사용자 이름
+    - ```password``` : 자격 증명의 사용자 암호
+
+
+- ```runbook```
+    - ```log_verbose``` : Verbose 로그 활성화 - ```true```, ```false```
+    - ```log_progress``` : Progress 로그 활성화 - ```true```, ```false```
+    - ```runbook_type``` : 생성할 Runbook의 유형 
+        + ```Script```, ```Graph```, ```GraphPowerShell```, ```GraphPowerShellWorkflow```, ```PowerShellWorkflow```, ```PowerShell```
+    - ```content``` : Runbook에 필요한 컨텐츠 
+    - ```uri``` : Runbook 컨텐츠의 uri
+    
+
+
+- ```schedule```
+    -  ```frequency``` : 일정을 되풀이하는 단위 - ```OneTime```, ```Day```, ```Hour```, ```Week```, ```Month```
+    -  ```interval``` : 일정을 되풀이 하는 간격 - ```1```~ ```100```
+    -  ```start_time``` : 일정의 시작 날짜와 시간 
+    -  ```week_days``` : 되풀이 단위가 Week인 경우 작업이 실행되는 요일 목록
+    -  ```runbook_name``` : 일정을 연결할 Runbook 이름 
+   
+
+- ```variables```
+    -  ```variable_type``` : 변수의 데이터 형식 - ```int```, ```string```, ```bool```, ```datetime```
+    -  ```value``` : 변수의 값 
+
+
+- ```configuration```
+    -  ```content_embedded``` : PowerShell DSC 구성 스크립트
+
+
+- ```nodeconfiguration```
+    -  ```content_embedded``` : PowerShell DSC 노드 구성
+
+*****
+## 참고 자료
+- [Azure Automation(Microsoft)](https://learn.microsoft.com/ko-kr/azure/automation/overview)
+- [Azure Automation 가격(Microsoft)](https://azure.microsoft.com/en-us/pricing/details/automation/)
+- [Azure Automation Service(Terraform)](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/automation_account)

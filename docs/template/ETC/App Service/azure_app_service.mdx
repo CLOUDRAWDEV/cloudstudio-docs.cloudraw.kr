@@ -1,0 +1,210 @@
+---
+title: Azure App Service
+sidebar_position: 0
+tags: [Template, 자주 사용하는 리소스, App Service, Azure]
+---
+
+import azure1 from './img/azure/1.png';
+import azure2 from './img/azure/2.png';
+import azure3 from './img/azure/3.png';
+import azure4 from './img/azure/4.png';
+import azure5 from './img/azure/5.png';
+import azure6 from './img/azure/6.png';
+import azure7 from './img/azure/7.png';
+import azure8 from './img/azure/8.png';
+import azure9 from './img/azure/9.png';
+import azure10 from './img/azure/10.png';
+import azure11 from './img/azure/11.png';
+import azure12 from './img/azure/12.png';
+import azure13 from './img/azure/13.png';
+import azure14 from './img/azure/14.png';
+import azure15 from './img/azure/15.png';
+import azure16 from './img/azure/16.png';
+
+
+
+##### 읽는 데 15분 걸림(소요시간)
+
+*****
+<br/>
+Azure App Service는 인프라를 관리할 필요 없이 선택한 프로그래밍 언어로 웹앱, 모바일 백 엔드 및 RESTful API를 빌드하고 호스팅할 수 있는 PaaS 서비스입니다.
+App Service는 Auto Scailing 및 고가용성을 제공하고, 운영체제로 Windows 및 Linux를 모두 지원합니다.
+GitHub, Azure DevOps 또는 Git 리포지토리에서 자동으로 배포할 수 있습니다.
+App Service를 활용한 아키텍처를 Azure에 배포하기 위한 가이드를 제공합니다.
+
+## 로그인
+- [Azure 체험 계정 생성](https://azure.microsoft.com/ko-kr/free/)
+- <Link to="/docs/start/sign-up">클라우드 스튜디오 회원가입 방법</Link>
+- [클라우드 스튜디오 회원가입 바로가기](https://cstudio.app/signup)
+
+## 전제조건
+- **Azure 구독**
+- **Azure 서비스 주체 + 역할 할당**
+- **리소스를 배포하는 구독에 대해 기여자 이상의 권한**
+- **클라우드 스튜디오에 크레덴셜 값 등록**
+
+## 구성 서비스
+- [**Virtual Network**](https://docs.cstudio.app/docs/resource/azure/Network/VirtualNetwork)
+- **Subnet**
+- **Network Security Group**
+- **Linux App Service**
+- **Mysql**
+
+## 아키텍처
+<caption caption="" src={azure15} />
+
+## Azure App Service 아키텍처 만들기
+### 1. 구독 생성
+캔버스에서 구독 아이콘을 가져온 후 등록한 **크레덴셜**을 선택합니다.
+크레덴셜이 없는 경우 크레덴셜 등록 페이지를 확인해주시기 바랍니다.
+<caption caption="[그림.1] Azure App Service 1" src={azure1} />
+
+### 2. 리소스 그룹 생성
+**리소스 그룹** 아이콘을 가져옵니다.<br/>
+리소스 그룹은 동일한 Life Cycle을 가진 리소스들을 묶는 그룹을 말합니다.
+
+> - ```Service Name```: resourceGroup
+> - ```Location```: koreacentral
+
+<caption caption="[그림.2] Azure App Service 2" src={azure2} />
+
+### 3. Linux App Service 생성
+**Linux App Service** 아이콘을 가져옵니다. 이 가이드에서는 Linux OS 기반 App Service를 사용합니다. 
+App Service도 가격측정을 위한 SKU를 가집니다. App Service에 배포할 서비스에 성능에 맞는 SKU를 선택합니다.
+
+> - ```Service Name```: defaultapp
+> - ```Kind```: Linux
+> - ```Sku Tier```: B1
+
+<caption caption="[그림.3] Azure App Service 3" src={azure3} />
+
+App Service에서 인증, 권한과 Error 메시지완 관련된 옵션을 설정합니다.
+
+> - ```App Service.Client Cert Enabled```: true
+> - ```App Service.Auth Settings Enabled```: true
+> - ```App Service.Detailed Error Messages Enabled```: true
+> - ```App Service.Failed Request Tracing Enabled```: true
+> - ```App Service.Retention In Days```: 5
+> - ```App Service.Retention In Mb```: 25
+
+<caption caption="[그림.4] Azure App Service 4" src={azure4} />
+
+> - ```App Service.Ftps State```: Disabled
+> - ```App Service.Http2 Enabled```: true
+
+<caption caption="[그림.5] Azure App Service 5" src={azure5} />
+
+### 4. Virtual Network 생성
+**Virtual Network** 아이콘을 가져옵니다. App Service를 연결할 Subnet을 배포하기 위해서 Virtual Network를 생성합니다.
+
+> - ```Service Name```: appservicevnet
+> - ```Vnet Address Space```: 10.0.0.0/16
+> - ```Enable Ddos Protection```: false
+
+<caption caption="[그림.6] Azure App Service 6" src={azure6} />
+
+### 5. Subnet 생성
+**Subnet** 아이콘을 가져옵니다. 
+App Service Private 환경에 있는 데이터를 사용하기 위해서는 App Service가 배포된 Subnet 정보가 필요합니다.
+App Service는 PaaS 서비스기 때문에 App Service 인스턴스의 네트워크 정보를 확인할 수 없습니다.
+Azure Subnet은 PaaS 서비스를 연결할 수 있는 Delegation 옵션을 제공합니다.
+캔버스에서 Linux Web App을 Subnet에 연결하면 Delegation 옵션이 활성화 됩니다. 사용자가 지정한 Subnet에 App Service를 배포할 수 있습니다.
+해당 옵션은 지정한 권한을 Azure에 위임하여 Azure가 해당 네트워크 요소들을 관리합니다.
+Azure App Service의 경우 Delegation이 설정된 Subnet만 연결이 가능합니다.
+
+> - ```Service Name```: appservicesubnet
+> - ```Address Prefixes```: 10.0.0.0/24
+> - ```Private Link Endpoint Enabled```: true
+> - ```Delegation.Service Name```: Microsoft.Web/serverFarms
+> - ```Delegation.Actions```: ["Microsoft.Network/virtualNetworks/subnets/action"]
+
+<caption caption="[그림.7] Azure App Service 7" src={azure7} />
+
+App Service를 연결한 **appservicesubnet**을 제외하고 Mysql 데이터베이스를 Private Endpoint로 연결하기 위한 Subnet을 추가로 생성합니다.
+
+> - ```Service Name```: dbsubnet
+> - ```Address Prefixes```: 10.0.1.0/24
+> - ```Private Link Endpoint Enabled```: true
+
+<caption caption="[그림.8] Azure App Service 8" src={azure8} />
+
+### 6. Network Security Group 생성
+**Network Security Group** 아이콘을 가져옵니다.
+**appservicesubnet**은 HTTP, HTTPS 요청을 받기 때문에 80, 443번 포트만 허용하는 Default Security Rules을 사용합니다.
+
+> - ```Service Name```: appnsg
+
+<caption caption="[그림.9] Azure App Service 9" src={azure9} />
+
+데이터베이스를 연결할 Subnet은 Mysql과 연결하기 위해 3306 포트를 허용하는 Security Rule을 추가합니다.
+
+> - ```Service Name```: dbnsg
+> - ```Security Rules.Name```: mysql
+> - ```Security Rules.Priority```: 100
+> - ```Security Rules.Direction```: Inbound
+> - ```Security Rules.Access```: Allow
+> - ```Security Rules.Protocol```: Tcp
+
+<caption caption="[그림.10] Azure App Service 10" src={azure10} />
+
+> - ```Security Rules.Source Port Ranges```: 3306
+> - ```Security Rules.Destination Port Ranges```: 3306
+> - ```Security Rules.Source Address Prefixes```: *
+> - ```Security Rules.Destination Address Prefixes```: *
+> - ```Security Rules.Description```: Allow Mysql
+
+<caption caption="[그림.11] Azure App Service 11" src={azure11} />
+
+### 7. Mysql 생성
+**Mysql** 아이콘을 가져옵니다.
+App Service에서 사용할 데이터를 저장하고 있는 Mysql 서버를 배포합니다.
+
+> - ```Service Name```: cloudstudioappdb
+> - ```Version```: 5.7
+> - ```Sku Name```: GP_Gen5_4
+> - ```Storage Mb```: 5120
+> - ```Admin Login```: cloudstudio
+> - ```Admin Login Password```: ADMIN_PASSWORD
+
+<caption caption="[그림.12] Azure App Service 12" src={azure12} />
+
+Mysql 서버에 Private 접속만 가능하도록 만들기 위해서 ```Public Network Access Enabled```를 false로 설정합니다.
+```Public Network Access Enabled``` 옵션이 false인 경우 Firewall을 설정할 수 없습니다.
+
+> - ```Public Network Access Enabled```: false
+> - ```Ssl Enforcement Enabled```: true
+> - ```Minimal Tls Version```: TLS1_2
+> - ```Threat Detection Enabled```: true
+
+<caption caption="[그림.13] Azure App Service 12" src={azure13} />
+
+Database는 Mysql 서버를 생성하고 그 안에 Database를 생성하는 옵션입니다.
+데이터베이스를 생성하고 싶지 않은 경우, 해당 옵션을 삭제합니다.
+
+> - ```Database.Charset```: utf8
+> - ```Database.Collation```: utf8_unicode_ci
+
+<caption caption="[그림.14] Azure App Service 14" src={azure14} />
+
+### 8. Private Endpoint 생성
+**Private Endpoint** 아이콘을 가져옵니다.
+Private Endpoint와 Mysql를 연결합니다. 
+Mysql은 Private 접근만 가능하기 때문에 Private Endpoint를 연결해야 데이터베이스의 주소를 정상적으로 찾을 수 있습니다.
+
+> - ```Service Name```: appdbendpoint
+
+<caption caption="[그림.15] Azure App Service 15" src={azure15} />
+
+> - ```Connection Name```: appdb-privateconnection
+> - ```Manual Connection```: false
+> - ```Subresource Names```: mysqlServer
+
+<caption caption="[그림.16] Azure App Service 16" src={azure16} />
+
+*****
+## 참고 자료
+- [Azure Subnet Delegation](https://docs.microsoft.com/ko-kr/azure/virtual-network/subnet-delegation-overview)
+- [Azure App Service](https://docs.microsoft.com/ko-kr/azure/app-service/)
+- [Azure App Service Terraform](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/linux_web_app)
+- [Azure Private Endpoint](https://docs.microsoft.com/ko-kr/azure/private-link/)
+- [Azure Private Endpoint Terraform](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/private_endpoint)

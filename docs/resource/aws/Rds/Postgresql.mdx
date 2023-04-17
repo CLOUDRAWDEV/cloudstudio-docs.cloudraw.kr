@@ -1,0 +1,54 @@
+---
+title: Postgresql
+sidebar_position: 0
+tags: [AWS, 리소스, Rds, Postgresql]
+---
+
+import icon from "../img/rds-postgresql.png"
+
+
+
+##### 읽는 데 3분 걸림(소요시간)
+
+---
+
+## 리소스 이미지
+
+<img src={icon} />
+
+## 리소스 개요
+
+AWS에서 PostgreSQL을 사용하여 RDS를 구축하면 데이터베이스 운영과 관리가 쉽고, 확장성이 높습니다. 또한 RDS는 데이터베이스 인스턴스에 대한 자동 백업 및 복원 기능을 제공하여 데이터 손실을 방지할 수 있으며, AWS에서 제공하는 보안 기능으로 데이터의 안전성을 보장할 수 있습니다.
+
+## 연관 리소스
+
+### 상위 리소스
+
+-   **Subnet**
+
+### 연결 리소스
+
+-   **PostgreSQL**
+
+## 리소스 설정 값
+
+-   `engine_version` : RDS에 사용할 PostgreSQL 버전
+-   `instance_class` : RDS DB의 가격 측정 계층
+-   `storage_type` : RDS 인스턴스의 Storage Type - `gp2`, `io1`, `standard`
+-   `allocated_storage` : RDS Insatance Storage의 용량 (Gigabytes)
+-   `max_allocated_storage` : Amazon RDS가 DB 인스턴스의 스토리지를 자동으로 확장할 수 있는 상한선
+-   `username` : RDS의 사용자 이름
+-   `password` : RDS의 사용자 패스워드
+-   `skip_final_snapshot` : DB 인스턴스가 삭제되기 전에 최종 DB 스냅샷을 생성할지 여부를 결정
+-   `included_subnet_names` : RDS Subnet 그룹에 연결할 Subnet 이름
+-   `backup_retention_period` : 백업 데이터를 보관할 기간
+-   `storage_encrypted` : DB 인스턴스의 암호화 여부를 지정 - `true`, `false`
+-   `publicly_accessible` : 인스턴스에 public access가 가능한지 여부 - `true`, `false`
+
+---
+
+## 참고 자료
+
+-   [Amazon RDS for PostgreSQL(Amazon RDS)(AWS)](https://aws.amazon.com/ko/rds/postgresql/)
+-   [What is PostgreSQL?(AWS)](https://aws.amazon.com/ko/rds/postgresql/what-is-postgresql/)
+-   [Amazon RDS for PostgreSQL 요금](https://aws.amazon.com/ko/rds/postgresql/pricing/)

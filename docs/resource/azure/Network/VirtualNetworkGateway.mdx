@@ -1,0 +1,61 @@
+---
+title: VirtualNetworkGateway
+sidebar_position: 12
+tags: [Azure, 리소스, Network, VirtualNetworkGateway]
+---
+
+import icon from "../img/network-virtual_network_gateway.png"
+
+
+
+##### 읽는 데 3분 걸림(소요시간)
+
+*****
+
+## 리소스 이미지
+<img src={icon} />
+
+## 리소스 개요
+Azure 가상 네트워크 게이트웨이는 Azure의 가상 네트워크와 온-프레미스 인프라 또는 기타 Azure 가상 네트워크 간에 안전한 크로스-프레미스 연결을 설정할 수 있도록 하는 Microsoft Azure에서 제공하는 서비스입니다. 
+온프레미스 인프라와 Azure 가상 네트워크 간의 다리 역할을 하여 데이터 센터를 클라우드로 확장하고 하이브리드 솔루션을 만들 수 있습니다.
+Azure 가상 네트워크 게이트웨이는 사이트 간 VPN 및 지점 간 VPN이라는 두 가지 유형의 VPN 연결을 제공합니다. 
+사이트 간 VPN은 온-프레미스 네트워크를 Azure 가상 네트워크에 연결하는 데 사용됩니다. 지점 및 사이트 간 VPN은 개별 컴퓨터를 Azure 가상 네트워크에 연결하는 데 사용됩니다.
+Azure Virtual Network Gateway는 BGP(Border Gateway Protocol), 정적 라우팅 및 동적 라우팅을 비롯한 다양한 라우팅 유형도 지원합니다. 또한 고가용성, 활성-활성 구성 및 여러 가상 네트워크 게이트웨이 지원과 같은 기능을 제공합니다.
+
+
+## 연관 리소스
+### 상위 리소스
+- [**Resource Group**](https://docs.cstudio.app/docs/resource/azure/Base/ResourceGroup)
+- [**Virtual Network**](https://docs.cstudio.app/docs/resource/azure/Network/VirtualNetwork)
+- [**Subnet**](https://docs.cstudio.app/docs/resource/azure/Network/Subnet)
+
+
+
+
+
+
+
+
+
+## 리소스 설정 값
+- ```included_subnet_name```  : Virtual Network Gateway를 통해 트래픽을 보내고 받을 가상 네트워크 이름
+- ```type```  : Virtual Network Gateway 유형 -```Vpn```, ```ExpressRoute```
+- ```vpn_type```  : VPN 연결 종류 설정을 위한 VPN 형식 -```RouteBased```, ```PolicyBased```
+- ```active_active``` : ```true```, ```false```
+- ```enable_bgp``` : 여러 네트워크 간에 전송 라우팅을 사용할 수 있도록 BGP 활성화 ```true```, ```false```
+- ```sku``` : Virtual Network Gateway 가격 책정 계층 
+- ```generation``` : Virtual Network Gateway의 세대 - ```Generation1```, ```Generation2```, ```None```
+- ```ip_configuration``` 
+    +  ```public_ip_name``` : 사용할 공용 IP 이름
+- ```public_ip``` 
+    +  ```allocation_method``` : 공용 IP 주소 할당 방법  -```Static```, ```Dynamic```
+    +  ```pip_sku``` : 공용 IP의 가격 책정 계층, Virtual Network Gateway의 SKU와 일치해야 함 -```Standard```, ```Basic```
+  
+
+
+*****
+## 참고 자료
+- [Azure VirtualNetworkGateway(Microsoft)](https://learn.microsoft.com/ko-kr/azure/vpn-gateway/vpn-gateway-about-vpngateways)
+- [Azure VirtualNetworkGateway 가격](https://azure.microsoft.com/en-us/pricing/details/vpn-gateway/) 
+- [Azure VirtualNetworkGateway(Terraform)](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/virtual_network_gateway)
+

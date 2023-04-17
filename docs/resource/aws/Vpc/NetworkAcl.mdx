@@ -1,0 +1,56 @@
+---
+title: Network Acl
+sidebar_position: 0
+tags: [AWS, 리소스, Vpc, NetworkAcl]
+---
+
+import icon from "../img/vpc-network_acl.png"
+
+
+
+##### 읽는 데 3분 걸림(소요시간)
+
+---
+
+## 리소스 이미지
+
+<img src={icon} />
+
+## 리소스 개요
+
+네트워크 액세스 제어 목록(ACL)은 서브넷 수준에서 특정 인바운드 또는 아웃바운드 트래픽을 허용하거나 거부합니다. VPC에 대한 기본 네트워크 ACL을 사용하거나 보안 그룹에 대한 규칙과 유사한 규칙을 사용하여 VPC에 대한 사용자 지정 네트워크 ACL을 생성하여 VPC에 보안 계층을 추가할 수 있습니다.
+네트워크 ACL을 사용해도 추가 요금이 부과되지 않습니다.
+
+## 연관 리소스
+
+### 상위 리소스
+
+-   [**Vpc**](https://docs.cstudio.app/docs/resource/aws/Vpc/)
+
+### 연결 리소스
+
+-   [**Vpc Subnet**](https://docs.cstudio.app/docs/resource/aws/Vpc/Subnet)
+
+## 리소스 설정 값
+
+-   `included_vpc_name` : Network ACL이 포함된 VPC의 이름
+-   `linked_subnet_names` : Network ACL을 적용할 Subnet 이름
+-   `ingress` : Network ACL의 Ingress 규칙 이름
+    -   `protocol` : Ingress 규칙의 Protocol - `tcp`, `udp`, `ssh`, `icmp`, `all`
+    -   `action` : Ingress 규칙의 Protocol에 적용할 Action - `allow`, `deny`
+    -   `cidr_block` : Ingress 규칙을 적용할 CIDR
+    -   `from_port` : Ingress 규칙으로 들어오는 포트 번호
+    -   `to_port` : Ingress 규칙을 통해 나가는 포트 번호
+-   `egress` : Network ACL의 Ingress 규칙 이름
+    -   `protocol` : Egress 규칙의 Protocol - `tcp`, `udp`, `ssh`, `icmp`, `all`
+    -   `action` : Egress 규칙의 Protocol에 적용할 Action - `allow`, `deny`
+    -   `cidr_block` : Egress 규칙을 적용할 CIDR
+    -   `from_port` : Egress 규칙으로 들어오는 포트 번호
+    -   `to_port` : Egress 규칙을 통해 나가는 포트 번호
+
+---
+
+## 참고 자료
+
+-   [네트워크 ACL을 사용하여 서브넷에 대한 트래픽 제어(AWS)](https://docs.aws.amazon.com/ko_kr/vpc/latest/userguide/vpc-network-acls.html)
+-   [aws_network_acl(Terraform)](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/network_acl)

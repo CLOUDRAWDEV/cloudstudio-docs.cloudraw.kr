@@ -1,0 +1,60 @@
+---
+title: Cdn
+sidebar_position: 0
+tags: [Azure, 리소스, Cdn]
+---
+
+import icon from "../img/cdn-cdn.png"
+
+
+
+##### 읽는 데 3분 걸림(소요시간)
+
+*****
+
+## 리소스 이미지
+<img src={icon} />
+
+## 리소스 개요
+CDN(콘텐츠 배달 네트워크)은 사용자에게 웹 콘텐츠를 효율적으로 제공할 수 있는 서버의 분산 네트워크입니다.    
+CDN은 대기 시간을 최소화하기 위해 최종 사용자와 가까운 POP(Point-of-Presence) 위치에 에지 서버에 캐시된 콘텐츠를 저장합니다.   
+
+Azure CDN은 전 세계에 전략적으로 배치된 물리적 노드에서 콘텐츠를 캐시하여 사용자에게 고대역폭 콘텐츠를 신속하게 전달할 수 있는 글로벌 솔루션을 개발자에게 제공합니다.    
+
+Azure CDN은 CDN POP를 사용하여 다양한 네트워크 최적화를 사용하여 캐시할 수 없는 동적 콘텐츠를 가속화할 수도 있습니다. 예를 들면 BGP(Border Gateway Protocol)를 우회하는 경로 최적화가 있습니다.   
+
+
+## 연관 리소스
+### 상위 리소스
+- [**Resource Group**](https://docs.cstudio.app/docs/resource/azure/Base/ResourceGroup)
+
+### 연결 리소스
+- [**Linux App Service**](https://docs.cstudio.app/docs/resource/azure/AppService/LinuxAppService)
+- [**Windows App Service**](https://docs.cstudio.app/docs/resource/azure/AppService/WindowsAppService)
+- [**Linux Function App**](https://docs.cstudio.app/docs/resource/azure/AppService/LinuxLinuxFunctionApp)
+- [**Windows Function App**](https://docs.cstudio.app/docs/resource/azure/AppService/WindowsFunctionApp)
+- [**Storage Account**](https://docs.cstudio.app/docs/resource/azure/Storage/StorageAccount)
+
+
+
+## 리소스 설정 값
+- ```sku``` : CDN 프로필의 가격 책정 계층
+
+
+- ```cdn_profile_location``` : CDN 엔드포인트 이름
+
+
+- ```cdn_endpoint``` : CDN을 활성화할 앱 서비스 또는 스토리지 계정
+    + ```cdn_endpoint_name``` : CDN을 활성화할 앱 서비스 또는 스토리지 계정
+    + ```is_http_allowed``` : CDN 엔드포인트에 HTTP 트래픽 허용 여부
+    + ```is_https_allowed``` : DN 엔드포인트에 HTTPS 트래픽을 허용 여부
+    + ```type``` : CDN 엔드포인트와 연결한 리소스 타입
+    + ```host_name``` : CDN 엔드포인트를 연결할 리소스의 도메인 이름
+    
+
+
+*****
+## 참고 자료
+- [Azure Cdn(Microsoft)](https://learn.microsoft.com/ko-kr/azure/cdn/cdn-overview)
+- [Azure Cdn 가격](https://azure.microsoft.com/en-us/pricing/details/cdn/) 
+- [Azure Cdn(Terraform)](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/cdn_endpoint)

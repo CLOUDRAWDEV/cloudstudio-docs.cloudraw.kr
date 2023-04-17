@@ -1,0 +1,75 @@
+---
+title: UbuntuVirtualMachineScaleSet
+sidebar_position: 7
+tags: [Azure, 리소스, Compute, UbuntuVirtualMachineScaleSet]
+---
+
+import icon from "../img/compute-ubuntu_virtual_machine_scale_set.png"
+
+
+
+##### 읽는 데 3분 걸림(소요시간)
+
+*****
+
+## 리소스 이미지
+<img src={icon} />
+
+## 리소스 개요
+Azure Ubuntu 가상 머신 확장 집합은 Ubuntu Linux 운영 체제를 실행하는 동일한 가상 머신 그룹으로, 필요에 따라 자동으로 확장 또는 축소할 수 있습니다.
+확장 집합의 VM 수를 수동으로 조정하거나 리소스 사용량(예: CPU, 메모리 요구량 또는 네트워크 트래픽)에 따라 자동으로 크기를 조정하는 규칙을 정의할 수 있습니다. 
+그러면 Azure 부하 분산 장치에서 확장 집합의 VM 인스턴스에 트래픽을 분산합니다
+
+
+
+## 연관 리소스
+### 상위 리소스
+- [**Resource Group**](https://docs.cstudio.app/docs/resource/azure/Base/ResourceGroup)
+- [**Subnet**](https://docs.cstudio.app/docs/resource/azure/Network/Subnet)
+
+
+
+## 리소스 설정 값
+- ```vmss_sku``` : Virtual Machine Scale Set의 가격 책정 계층
+
+
+- ```instances``` : Scale Set의 가상머신 수 ```1```~```1000```
+
+
+- ```enable_ssh_key_authentication``` : 관리자 계정을 인증하기 위해 SSH 키 사용 - ```true``` , ```false```
+
+
+- ```admin_username``` : VM에 대한 관리자 사용자 이름
+
+
+- ```admin_password``` : VM에 대한 관리자 암호
+
+
+- ```ssh_public_key``` : VM에 대한 관리자 SSH 공개키 
+
+
+- ```os_disk_caching``` : 내부 OS Disk 사용을 위한 Caching 유형 -  ```ReadWrite```, ```ReadOnly```, ```None```
+
+
+- ```storage_account_type``` : 내부 OS Disk를 백업하기 위한 스토리지 유형 -  ```Standard_LRS```, ```StandardSSD_LRS```, ```Premium_LRS```
+
+
+- ```disk_size_gb``` : 내부 OS Disk의 크기(GB) - ```1```~```11400```
+
+
+- ```network_interface_name``` : 네트워크 인터페이스 이름
+
+
+- ```primary_network_interface``` : 기본 IP Configuration으로 설정 - ```true```, ```false```
+
+
+- ```ip_configuration```
+    + ```primary_ip_configuration``` : 네트워크 인터페이스의 기본 IP Configuration으로 설정 - ```true```, ```false```
+    + ```included_subnet_name``` : IP Configuration이 연결될 Subnet 이름
+
+
+*****
+## 참고 자료
+- [Azure UbuntuVirtualMachineScaleSet(Microsoft)](https://learn.microsoft.com/ko-kr/azure/virtual-machine-scale-sets/overview)
+- [Azure UbuntuVirtualMachineScaleSet 가격](https://azure.microsoft.com/en-us/pricing/details/virtual-machine-scale-sets/linux/)
+- [Azure UbuntuVirtualMachineScaleSet(Terraform)](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/linux_virtual_machine_scale_set)

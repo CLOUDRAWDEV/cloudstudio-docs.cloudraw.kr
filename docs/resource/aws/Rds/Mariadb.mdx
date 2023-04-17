@@ -1,0 +1,55 @@
+---
+title: Mariadb
+sidebar_position: 0
+tags: [AWS, 리소스, Rds, Mariadb]
+---
+
+import icon from "../img/rds-mariadb.png"
+
+
+
+##### 읽는 데 3분 걸림(소요시간)
+
+---
+
+## 리소스 이미지
+
+<img src={icon} />
+
+## 리소스 개요
+
+MariaDB는 MySQL의 원래 개발자들이 만든 인기 있는 오픈 소스 관계형 데이터베이스입니다. Amazon RDS를 사용하면 클라우드에서 MariaDB 서버 배포를 손쉽게 설정, 운영 및 확장할 수 있습니다. Amazon RDS에서는 비용 효율적이며 크기 조정이 가능한 하드웨어 용량을 갖춘 확장 가능한 MariaDB 클라우드 데이터베이스를 몇 분 만에 배포할 수 있습니다.
+
+## 연관 리소스
+
+-   **MariaDB**
+
+### 상위 리소스
+
+-   **Subnet**
+
+### 연결 리소스
+
+-
+
+## 리소스 설정 값
+
+-   `engine_version` : RDS에 사용할 MariaDB 버전
+-   `instance_class` : RDS DB의 가격 측정 계층
+-   `storage_type` : RDS 인스턴스의 Storage Type
+-   `allocated_storage` : RDS Insatance Storage의 용량 (Gigabytes)
+-   `max_allocated_storage` : Amazon RDS가 DB 인스턴스의 스토리지를 자동으로 확장할 수 있는 상한선
+-   `username` : RDS의 사용자 이름
+-   `password` : RDS의 사용자 패스워드
+-   `skip_final_snapshot` : DB 인스턴스가 삭제되기 전에 최종 DB 스냅샷을 생성할지 여부를 결정 - `true`, `false`
+-   `included_subnet_names` : RDS Subnet 그룹에 연결할 Subnet 이름
+-   `backup_retention_period` : 백업 데이터를 보관할 기간
+-   `storage_encrypted` : DB 인스턴스의 암호화 여부를 지정 - `true`, `false`
+-   `publicly_accessible` : 인스턴스에 public access가 가능한지 여부 - `true`, `false`
+
+---
+
+## 참고 자료
+
+-   [Amazon Relational Database Service(Amazon RDS)(AWS)](https://docs.aws.amazon.com/ko_kr/AmazonRDS/latest/UserGuide/Welcome.html)
+-   [Amazon RDS for MariaDB 요금(AWS)](https://aws.amazon.com/ko/rds/mariadb/pricing/?nc=sn&loc=4)

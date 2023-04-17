@@ -1,0 +1,119 @@
+---
+title: Azure CDN
+sidebar_position: 0
+tags: [Template, 자주 사용하는 리소스, CDN, Azure]
+---
+
+import azure1 from './img/azure/1.png';
+import azure2 from './img/azure/2.png';
+import azure3 from './img/azure/3.png';
+import azure4 from './img/azure/4.png';
+import azure5 from './img/azure/5.png';
+import azure6 from './img/azure/6.png';
+import azure7 from './img/azure/7.png';
+
+
+
+##### 읽는 데 15분 걸림(소요시간)
+
+*****
+<br/>
+CDN(콘텐츠 배달 네트워크)은 사용자에게 웹 콘텐츠를 효율적으로 제공할 수 있는 서버의 분산 네트워크입니다.
+CDN은 최종 사용자와 가까운 POP(point-of-presence) 위치의 Edge 서버에 캐시된 콘텐츠를 저장하여 대기 시간을 최소화합니다.
+Azure Storage Account는 AWS의 S3와 마찬가지로 정적 웹 페이지를 호스팅할 수 있습니다.
+Azure Storage Account에 호스팅된 정적 웹 사이트를 CDN을 활용해 사용자에게 효율적으로 서비스를 제공할 수 있습니다.
+Azure CDN을 활용한 아키텍처를 Azure에 배포하기 위한 가이드를 제공합니다.
+
+## 로그인
+- [Azure 체험 계정 생성](https://azure.microsoft.com/ko-kr/free/)
+- <Link to="/docs/start/sign-up">클라우드 스튜디오 회원가입 방법</Link>
+- [클라우드 스튜디오 회원가입 바로가기](https://cstudio.app/signup)
+
+## 전제조건
+- **Azure 구독**
+- **Azure 서비스 주체 + 역할 할당**
+- **리소스를 배포하는 구독에 대해 기여자 이상의 권한**
+- **클라우드 스튜디오에 크레덴셜 값 등록**
+
+## 구성 서비스
+- **Azure Storage Account**
+- **Azure CDN**
+- **DNS Zone**
+<br/>
+
+## 아키텍처
+<caption caption="" src={azure7} />
+
+## Azure CDN 아키텍처 만들기
+### 1. 구독 생성
+캔버스에서 구독 아이콘을 가져온 후 등록한 **크레덴셜**을 선택합니다.
+크레덴셜이 없는 경우 크레덴셜 등록 페이지를 확인해주시기 바랍니다.
+<caption caption="[그림.1] Azure CDN 1" src={azure1} />
+
+### 2. 리소스 그룹 생성
+**리소스 그룹** 아이콘을 가져옵니다.
+리소스 그룹은 동일한 Life Cycle을 가진 리소스들을 묶는 그룹을 말합니다.
+
+> - ```Service Name```: resourceGroup
+> - ```Location```: koreacentral
+
+<caption caption="[그림.2] Azure CDN 2" src={azure2} />
+
+### 3. Storage Account 생성 
+**Storage Account** 아이콘을 가져옵니다.
+이 가이드에서는 Storage Account를 정적 웹 사이트 호스팅에 사용합니다.
+Storage Account를 배포한 후 $web 컨테이너에 사용자의 정젝 웹 페이지 파일을 업로드해야 합니다.
+
+> - ```Service Name```: cloudstudiodefault
+> - ```Account Kind```: StorageV2
+> - ```Account Tier```: Standard
+> - ```Account Replication Type```: LRS
+> - ```Access Tier```: Hot 
+
+<caption caption="[그림.3] Azure CDN 3" src={azure3} />
+
+Network Rules은 모든 IP 주소를 허용했지만, 배포를 할때는 현재 사용하고 있는 공인 IP 주소만 허용하는 것을 권장합니다.
+
+> - ```Min Tls Version```: TLS1_2
+> - ```Enable Https Traffic Only```: true
+> - ```Network Rules.Nmae```: defaultrule
+> - ```Network Rules.Default Action```: Allow
+> - ```Network Rules.Bypass```: [ "AzureServices" ]
+> - ```Network Rules.Ip Rules```: 0.0.0.0
+
+<caption caption="[그림.4] Azure CDN 4" src={azure4} />
+
+### 4. CDN 생성
+**CDN** 아이콘을 가져옵니다.
+CDN Profile은 글로벌 사용자의 Edge Server에 캐싱을 하기 위해서 리소스 그룹과 별개의 Location을 추가로 설정합니다.
+```Cdn Endpoint.Hostname```은 정적 페이지를 업로드할 Storage Account를 선택하면 자동으로 입력됩니다.
+
+> - ```Service Name```: cloudstudiocdn
+> - ```Sku```: Standard_Microsoft
+> - ```Cdn Profile Location```: global
+
+<caption caption="[그림.5] Azure CDN 5" src={azure5} />
+
+CDN Profile은 CDN Endpoint를 여러개 가질 수 있습니다. CDN Endpoint마다 각각 Origin을 연결해 컨텐츠를 전달할 수 있습니다.
+
+> - ```Cdn Endpoint.Name```: cloudstudio
+> - ```Cdn Endpoint.Is Http Allowed```: true
+> - ```Cdn Endpoint.Is Https Allowed```: true
+
+<caption caption="[그림.6] Azure CDN 6" src={azure6} />
+
+### 5. DNS Zone 생성 
+**DNS Zone** 아이콘을 가져옵니다.
+DNS Zone은 Storage Account에 CDN Endpoint를 연결 후, CDN Endpoint에 Custom Domain을 설정하기 위해 필요합니다.
+cafe24, hosting.kr과 같이 다른 호스팅 사이트의 DNS 서버를 사용하고 있는 경우 DNS Zone은 생성하지 않아도 됩니다.
+Custom Domain을 설정하기 위해서는 CDN Endpoint의 주소를 사용자의 호스팅 사이트에 CNAME Record로 추가합니다.
+
+> - ```Service Name```: DOMAIN_NAME
+
+<caption caption="[그림.7] Azure CDN 7" src={azure7} />
+
+*****
+## 참고 자료
+[Azure Storage Account 정적 웹 사이트 호스팅](https://docs.microsoft.com/ko-kr/azure/storage/blobs/storage-blob-static-website)<br/>
+[Azure CDN](https://docs.microsoft.com/ko-kr/azure/frontdoor/)<br/>
+[Azure CDN Terraform](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/cdn_profile)<br/>

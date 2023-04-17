@@ -1,0 +1,46 @@
+---
+title: Metric
+sidebar_position: 0
+tags: [AWS, 리소스, Cloudwatch, Metric]
+---
+
+import icon from "../img/cloudwatch-metric.png"
+
+
+
+##### 읽는 데 3분 걸림(소요시간)
+
+---
+
+## 리소스 이미지
+
+<img src={icon} />
+
+## 리소스 개요
+
+AWS CloudWatch Metric은 모니터링 대상 리소스에서 수집된 측정값을 나타내는 이름-값 쌍입니다. 예를 들어, EC2 인스턴스에서 CPU 사용률, 네트워크 입력 및 출력 등의 측정값을 수집할 수 있습니다. 이러한 측정값은 CloudWatch Metric으로 저장되며, 대시보드, 알림 및 분석에 사용됩니다. 또한, 사용자 정의 Metric을 생성하여 애플리케이션 및 서비스에서 수집된 데이터를 모니터링할 수도 있습니다. CloudWatch Metric은 AWS에서 제공하는 다양한 서비스와 통합되어 사용됩니다.
+
+## 연관 리소스
+
+### 상위 리소스
+
+-   **Group**
+
+## 리소스 설정 값
+
+-   `retention_in_days` : 로그 그룹에서 로그를 저장하고 있는 기간 - `0`,`1`,`3`,`5`,`7`,`14`,`30`,`60`,`90`,`120`,`150`,`180`,`365`,`400`,`545`,`731`,`1827`,`3653`
+-   `kms_key_name` : 로그 데이터를 암호화하기 위해 사용할 KMS Key의 이름
+-   `log_stream_name` : 로그 Stream의 이름
+-   `metric_filter` : 로그 그룹의 metric 필터의 이름, 최대 512자
+    -   `pattern` : 수집된 로그 이벤트에서 지표 데이터를 추출하기 위한 유효한 CloudWatch Logs 필터 패턴
+    -   `metric_name` : 모니터링되는 로그 정보를 게시해야 하는 CloudWatch 지표의 이름, 최대 255자로 지정, 콜론(:), 별표(\*), 달러 기호($) 및 공백( )을 제외한 모든 문자가 유효
+    -   `metric_namespace` : 수집된 로그 이벤트에서 지표 데이터를 추출하기 위한 유효한 CloudWatch Logs 필터 패턴
+    -   `metric_value` : 측정항목에 게시할 항목, 유효한 지표 값은 부동 소수점 수(1, 99.9 등), 숫자 필드 식별자(1 USD, 2 USD 등) 또는 명명된 필드 식별자(예: 기호로 구분된 필터 패턴의 $requestSize 또는 JSON 기반 필터 패턴의 $.status - 달러 기호($) 또는 달러 기호와 점($.) 뒤에 영숫자 및/또는 밑줄(\_) 문자)
+
+---
+
+## 참고 자료
+
+-   [Amazon CloudWatch(AWS)](https://docs.aws.amazon.com/ko_kr/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html)
+-   [Amazon CloudWatch 가격(AWS)](https://aws.amazon.com/ko/cloudwatch/pricing/?nc2=type_a)
+-   [Amazon CloudWatch Metric(Terraform)](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_metric_alarm)

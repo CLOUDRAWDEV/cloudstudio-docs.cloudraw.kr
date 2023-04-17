@@ -1,0 +1,53 @@
+---
+title: MonitorSmartDetectorAlertRule
+sidebar_position: 6
+tags: [Azure, 리소스, Monitor, MonitorSmartDetectorAlertRule]
+---
+
+import icon from "../img/monitor-monitor_smart_detector_alert_rule.png"
+
+
+
+##### 읽는 데 3분 걸림(소요시간)
+
+*****
+
+## 리소스 이미지
+<img src={icon} />
+
+## 리소스 개요
+스마트 탐지기 경고 규칙은 Azure 리소스의 문제를 자동으로 검색하고 잠재적인 문제를 알리는 경고를 보내는 Azure Monitor의 기능입니다.
+스마트 감지기 경고 규칙은 기계 학습 알고리즘을 사용하여 애플리케이션 로그 및 성능 메트릭과 같은 Azure 리소스의 원격 측정 데이터를 분석하고 애플리케이션 또는 서비스의 상태 또는 성능에 영향을 미칠 수 있는 문제를 자동으로 감지합니다.
+문제가 감지되면 스마트 감지기 경고 규칙이 이메일, SMS 또는 기타 통신 채널을 통해 알림을 보내도록 구성할 수 있는 경고를 트리거합니다.
+
+
+
+## 연관 리소스
+
+### 상위 리소스
+- [**Resource Group**](https://docs.cstudio.app/docs/resource/azure/Base/ResourceGroup)
+
+### 연결 리소스
+- [**Application Insights**](https://docs.cstudio.app/docs/resource/azure/ApplicationInsights/)
+
+
+
+## 리소스 설정 값
+- ```linked_application_insights_name``` : 경고 규칙을 적용할 Application Insights 이름
+
+- ```severity``` : 경고 규칙에 지정된 기준이 충족된 후 경고의 심각도 - ```Sev0```, ```Sev1````, ```Sev2````, ```Sev3````, ```Sev4```
+
+- ```frequency``` : 경고 규칙이 실행되는 빈도(분)  - ```1```, ```5````, ```15````, ```30````, ```60```
+
+- ```action_group_name``` : 경고 규칙을 적용할 작업 그룹 이름
+
+
+
+
+
+*****
+## 참고 자료
+- [Azure MonitorSmartDetectorAlertRule(Microsoft)](https://learn.microsoft.com/en-us/azure/azure-monitor/overview)
+- [Azure MonitorSmartDetectorAlertRule 가격](https://azure.microsoft.com/ko-kr/pricing/details/monitor/) 
+- [Azure MonitorSmartDetectorAlertRule(Terraform)](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/monitor_smart_detector_alert_rule)
+

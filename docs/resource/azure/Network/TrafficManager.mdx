@@ -1,0 +1,66 @@
+---
+title: TrafficManager
+sidebar_position: 10
+tags: [Azure, 리소스, Network, TrafficManager]
+---
+
+import icon from "../img/network-traffic_manager.png"
+
+
+
+##### 읽는 데 3분 걸림(소요시간)
+
+*****
+
+## 리소스 이미지
+<img src={icon} />
+
+## 리소스 개요
+Azure Traffic Manager는 Microsoft Azure에서 제공하는 클라우드 기반 트래픽 관리 서비스로,
+사용자가 Azure 가상 머신, 클라우드 서비스, 웹 앱, 심지어 온프레미스 엔드포인트와 같은 외부 리소스와 같은 여러 엔드포인트에서 들어오는 트래픽을 제어하고 배포할 수 있도록 합니다. 
+Traffic Manager를 사용하여 사용자는 우선 순위, 성능, 지리적 위치 또는 라운드 로빈과 같은 다양한 라우팅 방법을 기반으로 사용 가능한 최상의 엔드포인트로 트래픽을 자동으로 전달하여 애플리케이션의 가용성, 성능 및 복원력을 개선할 수 있습니다.
+
+## 연관 리소스
+### 상위 리소스
+- [**Resource Group**](https://docs.cstudio.app/docs/resource/azure/Base/ResourceGroup)
+
+
+
+### 연결 리소스
+- [**Network Traffic Manager**](https://docs.cstudio.app/docs/resource/azure/Network/TrafficManager)
+
+
+
+
+
+## 리소스 설정 값
+- ```traffic_routing_method``` 
+    +  ```description``` : 클라이언트 요청을 적절한 서비스 엔트포인트로 보내기 위한 라우팅 방법 -```Geographic```, ```MultiValue```, ```Performance```, ```Priority```, ```Subnet```, ```Weighted```
+
+
+- ```relative_name``` : Traffic Manager가 사용할 도메인 이름
+- ```ttl``` : 로컬 DNS 사용자들이 사용하는 프로필의 Time To Live 값 - ```0```~ ```2147483647```
+- ```protocol``` : 모니터링에 사용할 프로토콜 -```HTTP```, ```HTTPS```, ```TCP```
+- ```port```  : 모니터링에 사용할 포트 번호 - ```0```~ ```65535```
+- ```path```  : 프로토콜 HTTP 혹은 HTTPS인 경우 모니터링에 사용할 경로 
+
+
+- ```endpoint```  
+    + ```linked_resource_type```  : 엔드포인트의 유형
+    + ```linked_target_name```  : 엔드포인트를 연결할 target 리소스의 이름 - type에 따라서 리소스 이름 또는 도메인이 될 수 있음
+    + ```weight```  : 엔드포인트에 분산될 트래픽의 양 - ```1```~ ```1000```
+    + ```min_child_endpoints```  : 상위 프로필이 하위 프로필의 endpoint로 트래픽을 보내기 위해 online 상태로 있어야 하는 endpoint의 최소값
+
+
+
+- ```external_endpoint```  
+    + ```linked_target_name```  : 엔드포인트를 연결할 target 리소스의 이름 - type에 따라서 리소스 이름 또는 도메인이 될 수 있음
+    + ```weight```  : 엔드포인트에 분산될 트래픽의 양 - ```1```~ ```1000```
+
+
+*****
+## 참고 자료
+- [Azure TrafficManager(Microsoft)](https://learn.microsoft.com/ko-kr/azure/traffic-manager/traffic-manager-overview)
+- [Azure TrafficManager 가격](https://azure.microsoft.com/en-us/pricing/details/traffic-manager/) 
+- [Azure TrafficManager(Terraform)](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/traffic_manager_profile)
+

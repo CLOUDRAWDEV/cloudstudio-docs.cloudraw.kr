@@ -1,0 +1,52 @@
+---
+title: S3 Bucket
+sidebar_position: 0
+tags: [AWS, 리소스, S3, S3Bucket]
+---
+
+import icon from "../img/s3-s3_bucket.png"
+
+
+
+##### 읽는 데 3분 걸림(소요시간)
+
+---
+
+## 리소스 이미지
+
+<img src={icon} />
+
+## 리소스 개요
+
+Amazon Simple Storage Service(Amazon S3)는 업계 최고의 확장성, 데이터 가용성, 보안 및 성능을 제공하는 객체 스토리지 서비스입니다. 모든 규모와 업종의 고객은 Amazon S3를 사용하여 데이터 레이크, 웹 사이트, 모바일 애플리케이션, 백업 및 복원, 아카이브, 엔터프라이즈 애플리케이션, IoT 디바이스, 빅 데이터 분석 등 다양한 사용 사례에서 원하는 양의 데이터를 저장하고 보호할 수 있습니다. Amazon S3는 특정 비즈니스, 조직 및 규정 준수 요구 사항에 맞게 데이터에 대한 액세스를 최적화, 구조화 및 구성할 수 있는 관리 기능을 제공합니다.
+
+## 연관 리소스
+
+### 상위 리소스
+
+-   **Base**
+
+### 연결 리소스
+
+-   **Kms Key**
+
+## 리소스 설정 값
+
+-   `acl` : 미리 만들어둔 ACL을 버킷에 적용 - `private`, `public-read`, `public-read-write`, `aws-exec-read`, `authenticated-read`, `log-delivery-write`
+-   `versioning_status` : 버킷의 버전 관리 상태 - `Enabled`, `Suspended`
+-   `logging_target_prefix` : 모든 로그 개체 키에 대한 접두사
+-   `kms_key_name` : SSE-KMS 암호화에 사용되는 AWS KMS 마스터 키 이름
+-   `sse_algorithm` : 사용할 서버 측 암호화 알고리즘 - `aws:kms`, `AES256
+-   `public_access_block` : S3 Public Access Block 이름
+    -   `block_public_acls` : Amazon S3가 버킷에 대한 퍼블릭 ACL을 차단해야 하는지 여부 - `true`, `false`
+    -   `block_public_policy` : Amazon S3가 이 버킷에 대한 퍼블릭 버킷 정책을 차단해야 하는지 여부 - `true`, `false`
+    -   `ignore_public_acls` : Amazon S3가 이 버킷에 대한 퍼블릭 ACL을 무시해야 하는지 여부 - `true`, `false`
+    -   `restrict_public_buckets` : Amazon S3가 이 버킷에 대한 퍼블릭 버킷 정책을 제한해야 하는지 여부 - `true`, `false`
+
+---
+
+## 참고 자료
+
+-   [Amazon S3(AWS)](https://docs.aws.amazon.com/ko_kr/AmazonS3/latest/userguide/Welcome.html)
+-   [Amazon S3 요금(AWS)](https://aws.amazon.com/ko/s3/pricing/?nc2=type_a)
+-   [aws-s3-bucket(Terraform)](https://registry.terraform.io/modules/terraform-aws-modules/s3-bucket/aws/latest)

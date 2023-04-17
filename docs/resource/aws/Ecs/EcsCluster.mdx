@@ -1,0 +1,52 @@
+---
+title: Ecs Cluster
+sidebar_position: 0
+tags: [AWS, 리소스, Ecs, EcsCluster]
+---
+
+import icon from "../img/ecs-ecs_cluster.png"
+
+
+
+##### 읽는 데 3분 걸림(소요시간)
+
+---
+
+## 리소스 이미지
+
+<img src={icon} />
+
+## 리소스 개요
+
+Amazon Elastic Container Service(ECS)는 Amazon EC2 인스턴스 클러스터에서 Docker 컨테이너를 손쉽게 실행, 중단 및 관리할 수 있게 해주는 고도로 확장 가능하고 빠른 컨테이너 관리 서비스입니다.
+
+## 연관 리소스
+
+### 상위 리소스
+
+-   **Subnet**
+
+## 리소스 설정 값
+
+-   `set_container_insights` : Container Insights를 클러스터에 할당할지 설정 - `enabled`, `disabled`
+-   `kms_key_name` : 로컬 클라이언트와 컨테이너 간의 데이터를 암호화하기 위한 AWS Key Management Service 키 이름
+-   `logging` : 실행 명령 결과에 대한 로그 리디렉션에 사용할 로그 설정 - `OVERRIDE`, `NONE`, `DEFAULT`
+-   `cloud_watch_encryption_enabled` : CloudWatch 로그에서 암호화 활성화 여부 - `true`, `false`
+-   `cloud_watch_log_group_name` : 로그를 보낼 CloudWatch 로그 그룹의 이름
+-   `task_definition` : Task Definition 이름, 최대 255자의 영 대소문자, 숫자, 하이픈(-), 밑줄(\_) 허용
+    -   `container_image` : Task Definition을 연결할 Cloud Watch Log Group의 이름
+    -   `container_cpu` : ECS Cluster에서 동작하는 Container의 CPU 용량
+    -   `container_memory` : ECS Cluster에서 동작하는 Container의 Memory 용량
+    -   `essential` : Container가 동작을 멈춘 경우, container 관련 다른 오브젝트도 같이 동작을 멈출지 정상적으로 동작할지 설정 - `true`, `false`
+    -   `containerPort` : Container가 Host Container Instance에 트래픽을 보내거나 받을 때 사용할 포트 번호
+    -   `hostPort` : Host Container Instance가 트래픽을 받을때 사용할 포트 번호
+    -   `volume_name` : Task Definition에 연결할 Volume 이름
+    -   `host_path` : 컨테이너에 제공되는 호스트 컨테이너 인스턴스의 경로
+
+---
+
+## 참고 자료
+
+-   [Amazon Elastic Container Service(AWS)](https://docs.aws.amazon.com/ko_kr/AmazonECS/latest/developerguide/Welcome.html)
+-   [Amazon Elastic Container Service 요금(AWS)](https://aws.amazon.com/ko/ecs/pricing/?nc2=type_a)
+-   [aws_ecs_service(Terraform)](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ecs_service)

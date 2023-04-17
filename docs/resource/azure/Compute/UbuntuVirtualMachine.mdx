@@ -1,0 +1,73 @@
+---
+title: UbuntuVirtualMachine
+sidebar_position: 6
+tags: [Azure, 리소스, Compute, UbuntuVirtualMachine]
+---
+
+
+import icon from "../img/compute-ubuntu_virtual_machine.png"
+
+
+
+##### 읽는 데 3분 걸림(소요시간)
+
+*****
+
+## 리소스 이미지
+<img src={icon} />
+
+## 리소스 개요
+Azure Ubuntu Virtual Machine은 Microsoft의 Azure 클라우드 컴퓨팅 플랫폼에서 Redhat 운영 체제를 실행하는 가상 머신(VM)입니다.
+Azure에서 Ubuntu 가상 머신을 실행함으로써 사용자는 선호하는 Linux 배포를 사용하면서 Microsoft 클라우드 플랫폼의 확장성, 안정성 및 글로벌 범위를 활용할 수 있습니다.
+ 
+
+
+
+## 연관 리소스
+### 상위 리소스
+- [**Resource Group**](https://docs.cstudio.app/docs/resource/azure/Base/ResourceGroup)
+- [**Subnet**](https://docs.cstudio.app/docs/resource/azure/Network/Subnet)
+
+### 연결 리소스
+- [**Backup**](https://docs.cstudio.app/docs/resource/azure/RecoveryServices/Backup)
+
+
+## 리소스 설정 값
+- ```size``` : 워크로드 실행을 위한 Virtual Machine의 크기 설정
+
+- ```enable_ssh_key_authentication``` : 관리자 계정을 인증하기 위해 SSH 키 사용 - ```true```, ```false```
+
+- ```admin_username``` : VM에 대한 관리자 사용자 이름
+
+- ```admin_password``` : VM에 대한 관리자 암호
+
+- ```ssh_public_key``` : VM에 대한 관리자 SSH 공개키
+
+- ```os_disk_caching``` : 내부 OS Disk 사용을 위한 Caching 유형 - ```ReadWrite```, ```ReadOnly```, ```None```
+
+- ```storage_account_type``` : 내부 OS Disk를 백업하기 위한 스토리지 유형 -  ```Standard_LRS```, ```StandardSSD_LRS```, ```Premium_LRS```
+
+- ```disk_size_gb``` : 내부 OS Disk의 크기(GB) -  ```1``` ~ ```32767```
+
+- ```network_interface_name``` : Virtual Machine이 연결된 Network Interface 이름 
+
+- ```network_interface_ip_config_name``` : Virtual Machine이 연결된 Network Interface의 Ip Config 이름
+
+- ```included_subnet_name``` : Virtual Machine이 포함된 Subnet 이름
+
+- ```pip_enable``` : Virtual Machine의 NIC에 Public IP을 연결할지 말지 - ```true```, ```false```
+
+- ```pip_name``` : 생성할 Public Ip 이름
+
+- ```pip_sku``` : Public IP의 SKU - ```Basic```, ```Standard```
+
+- ```pip_allocation_method``` : Public IP 주소 할당 방법 - ```Static```, ```Dynamic```
+
+- ```private_ip_address``` : Virtual Machine의 NIC에 할당할 Private IP 주소 - 10.0.0.4 부터 사용 가능
+
+
+*****
+## 참고 자료
+- [Azure UbuntuVirtualMachine(Microsoft)](https://learn.microsoft.com/ko-kr/azure/virtual-machines/overview)
+- [Azure UbuntuVirtualMachine 가격](https://azure.microsoft.com/en-us/pricing/details/virtual-machines/linux/)
+- [Azure UbuntuVirtualMachine(Terraform)](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/linux_virtual_machine)

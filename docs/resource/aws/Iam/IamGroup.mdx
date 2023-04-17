@@ -1,0 +1,45 @@
+---
+title: Iam Group
+sidebar_position: 0
+tags: [AWS, 리소스, Iam, IamGroup]
+---
+
+import icon from "../img/iam-iam_group.png"
+
+
+
+##### 읽는 데 3분 걸림(소요시간)
+
+---
+
+## 리소스 이미지
+
+<img src={icon} />
+
+## 리소스 개요
+
+AWS의 IAM (Identity and Access Management) 리소스 중 하나인 IAM 그룹은 여러 사용자를 묶어서 권한 관리를 효율적으로 할 수 있도록 도와줍니다. IAM 그룹을 생성하고 그룹에 IAM 사용자를 추가하면 해당 그룹의 권한을 부여받게 됩니다. IAM 그룹은 사용자에 대한 권한을 관리하기 쉽고 중앙 집중적으로 관리할 수 있어 보안성이 높아집니다. 또한 IAM 정책을 그룹에 연결하여 그룹 전체에 권한을 일괄 적용할 수 있습니다.
+
+## 연관 리소스
+
+### 상위 리소스
+
+-   **Base**
+
+### 하위 리소스
+
+-   **Iam User**
+
+## 리소스 설정 값
+
+-   `path` : IAM Group가 생성되는 경로
+-   `group_policy_action` : 접근 가능한 리소스에 가능한 동작을 설정 - `ec2:Describe*`
+-   `group_policy_effect` : IAM 의 Action을 허가할지 거부할지 설정 - `Allow`, `Deny`
+-   `group_policy_resource` : IAM Group가 접근 가능한 리소스
+
+---
+
+## 참고 자료
+
+-   [AWS Identity and Access Management(IAM)(AWS)](https://docs.aws.amazon.com/ko_kr/IAM/latest/UserGuide/introduction.html)
+-   [aws_iam_group(Terraform)](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_group)

@@ -1,0 +1,156 @@
+---
+title: Azure Ubuntu Server
+sidebar_position: 0
+tags: [Template, 자주 사용하는 리소스, Virtual Machine, Azure]
+---
+
+import azure1 from './img/azure/1.png';
+import azure2 from './img/azure/2.png';
+import azure3 from './img/azure/3.png';
+import azure4 from './img/azure/4.png';
+import azure5 from './img/azure/5.png';
+import azure6 from './img/azure/6.png';
+import azure7 from './img/azure/7.png';
+import azure8 from './img/azure/8.png';
+import azure9 from './img/azure/9.png';
+import azure10 from './img/azure/10.png';
+
+
+
+##### 읽는 데 15분 걸림(소요시간)
+
+*****
+<br/>
+Ubuntu 아키텍처는 Virtual Machine을 사용하는 가장 기본적인 아키텍처입니다.
+Azure의 Virtual Machine은 Virtual Machine을 실행하는 물리적 하드웨어를 구입하고 유지 관리할 필요 없이 가상화의 유연성을 제공합니다. 
+가상 시스템에서 실행되는 소프트웨어의 구성, 패치 및 설치와 같은 작업을 수행하여 가상 시스템을 유지 관리해야 합니다.
+Ubuntu Virtual Machine을 Azure에 배포하기 위한 가이드를 제공합니다.
+
+## 로그인
+- [Azure 체험 계정 생성](https://azure.microsoft.com/ko-kr/free/)
+- <Link to="/docs/start/sign-up">클라우드 스튜디오 회원가입 방법</Link>
+- [클라우드 스튜디오 회원가입 바로가기](https://cstudio.app/signup)
+
+## 전제조건
+- **Azure 구독**
+- **Azure 서비스 주체 + 역할 할당**
+- **구독에 대해 기여자 이상의 권한**
+- **클라우드 스튜디오에 크레덴셜 값 등록**
+
+## 구성 서비스
+- [**Virtual Network**](https://docs.cstudio.app/docs/resource/azure/Network/VirtualNetwork)
+- **Subnet**
+- **Network Security Group**
+- **Ubuntu Virtual Machine**
+<br/>
+
+## 아키텍처
+<caption caption="" src={azure10} />
+
+
+## Azure Ubuntu 아키텍처 만들기
+### 1. 구독 선택
+캔버스에서 ```구독 아이콘```을 가져온 후 등록한 ```크레덴셜을 선택```합니다.
+<caption caption="[그림.1] Azure Ubuntu 1" src={azure1} />
+
+### 2. 리소스 그룹 생성
+**리소스 그룹** 아이콘을 가져옵니다.
+리소스 그룹은 동일한 Life Cycle을 가진 리소스들을 묶는 그룹을 말합니다.
+
+> - ```Service Name```: resourceGroup
+> - ```Location```: koreacentral
+
+<caption caption="[그림.2] Azure Ubuntu 2" src={azure2} />
+
+### 3. Virtual Network 생성
+**Virtual Network** 아이콘을 가져옵니다.
+Virtual Network는 Virtual Machine을 배포하기 위해 필요한 네트워크 환경을 제공합니다.
+
+> - ```Service Name```: defaultvnet
+> - ```Vnet Address Space```: [ "10.0.0.0/16" ]
+> - ```Enable Ddos Protection```: false
+
+<caption caption="[그림.3] Azure Ubuntu 3" src={azure3} />
+
+### 4. Subnet 생성
+**Subnet** 아이콘을 가져옵니다.
+Virtual Network에 Virtual Machine을 배포하기 위한 Subnet을 구성합니다.
+
+> - ```Service Name```: defaultsubnet
+> - ```Address Prefixes```: 10.0.0.0/24
+> - ```Private Linke Endpoint Enabled```: true
+
+<caption caption="[그림.4] Azure Ubuntu 4" src={azure4} />
+
+### 5. Network Security Group 생성
+**Network Security Group** 아이콘을 가져옵니다. 
+Network Security Group은 Virtual Machine으로 들어오고 나가는 트래픽을 통제합니다.
+
+> - ```Service Name```: defaultsg
+
+<caption caption="[그림.5] Azure Ubuntu 5" src={azure5} />
+
+SSH를 통해서 Virtual Machine에 접속합니다. 가상 머신에 접속할 수 있도록 사용자의 Public IP와 22번 포트를 Network Security Group에서 허용합니다.
+Linux Virtual Machine이 아닌 Windows Virtual Machine을 사용한다면 TCP 3389 포트를 허용합니다.
+
+> - ```Security Rules.Nmae```: ssh
+> - ```Security Rules.Priority```: 100
+> - ```Security Rules.Direction:``` inbound
+> - ```Security Rules.Access```: Allow
+> - ```Security Rules.Protocol```: Tcp
+> - ```Security Rules.Source Port Ranges```: 22
+
+<caption caption="[그림.6] Azure Ubuntu 6" src={azure6} />
+
+이 가이드에서는 0.0.0.0 어떤 IP든 SSH 접속이 가능하도록 설정했지만, 사용자의 IP만 허용하는 것을 권장합니다.
+Network Security Group에는 규칙을 여러개 설정할 수 있기 때문에 각 규칙마다 구분할 수 있도록 설명을 입력합니다.
+
+> - ```Security Rules.Destination Port Ranges```: 22
+> - ```Security Rules.Source Address Prefixes```: 0.0.0.0
+> - ```Security Rules.Destination Address Prefixes```: 0.0.0.0
+> - ```Security Rules.Description```: Connect SSH
+
+<caption caption="[그림.7] Azure Ubuntu 7" src={azure7} />
+
+### 6. Virtual Machine 생성
+**Ubuntu Virtual Machine** 아이콘을 가져옵니다.
+Virtual Machine은 각 Azure에서 제공하는 가장 기본적인 컴퓨팅 서비스입니다.
+Virtual Machine에 SSH 접속d을 할 때 SSH Private Key 또는 Admin ID, Password를 사용할 수 있습니다.
+이 가이드에서는 Admin ID, Password를 사용해서 Virtual Machine을 배포합니다.
+
+> - ```Service Name```: ubuntuVm
+> - ```Size```: Standard_D2s_v3
+> - ```Disable Password Authentication```: false
+> - ```Enable Ssh Key Authentication```: false
+> - ```Admin Username```: cloudraw
+> - ```Admin Password```: ADMIN_PASSWORD
+
+<caption caption="[그림.8] Azure Ubuntu 8" src={azure8} />
+
+Virtual Machine에 연결되는 OS Disk의 Type을 선택합니다. 
+Azure는 HDD와 SSD를 지원하며, 이 가이드에서는 HDD(Standard_LRS)를 사용합니다.
+
+> - ```Os Disk Caching```: ReadWrite
+> - ```Storage Account Type```: Standard_LRS
+> - ```Disk Size Gb```: 128
+> - ```Image Sku```: 18.04-LTS
+> - ```Network Interface Name```: ubuntuVm-nic
+
+<caption caption="[그림.9] Azure Ubuntu 9" src={azure9} />
+
+Virtual Machine에 접속하기 위해서 Public IP를 Network Interface에 할당합니다.
+Virtual Machine의 Public IP는 Static Method로 할당 받습니다. Dynamic Method로 할당 받으면 Virtual Machine이 재시작될 때마다 Public IP가 변경됩니다.<br/>
+Private Ip Address는 Default 값 10.0.0.4를 사용합니다. 
+Virtual Network의 IP 대역을 다르게 설정한 경우, Private Ip Address를 입력하지 않으면 동적으로 Private IP가 할당됩니다.
+
+> - ```Included Subnet Name```: defaultsubnet
+> - ```Pip Enable```: true
+> - ```Pip Sku```: Basic
+> - ```Pip Allocation Method```: Static
+
+<caption caption="[그림.10] Azure Ubuntu 10" src={azure10} />
+
+*****
+## 참고 자료
+- [Azure Virtual Machine](https://docs.microsoft.com/ko-kr/azure/virtual-machines/)
+- [Azure Linux Virtual Machine](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/linux_virtual_machine)

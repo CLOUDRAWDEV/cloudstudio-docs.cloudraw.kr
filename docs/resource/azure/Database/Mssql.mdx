@@ -1,0 +1,94 @@
+---
+title: Mssql
+sidebar_position: 0
+tags: [Azure, 리소스, Database, Mssql]
+---
+
+import icon from "../img/database-mssql.png"
+
+
+
+##### 읽는 데 3분 걸림(소요시간)
+
+*****
+
+## 리소스 이미지
+<img src={icon} />
+
+## 리소스 개요
+Azure SQL Database는 널리 사용되는 Microsoft SQL Server 엔진을 기반으로 하는 Microsoft Azure에서 제공하는 완전히 관리되는 관계형 데이터베이스 서비스입니다. 
+하드웨어 또는 소프트웨어 인프라를 관리할 필요 없이 클라우드에서 SQL Server 데이터베이스를 만들고 관리할 수 있습니다.
+Azure SQL 데이터베이스를 사용하면 자동 패치, 백업, 고가용성 및 재해 복구와 같은 기능을 활용할 수 있습니다. 
+또한 지능형 성능 모니터링, 자동 조정, 고급 보안 기능과 같은 기능을 제공하여 데이터베이스 성능을 최적화하고 중요한 데이터를 보호할 수 있습니다.
+
+
+## 연관 리소스
+### 상위 리소스
+- [**Resource Group**](https://docs.cstudio.app/docs/resource/azure/Base/ResourceGroup)
+
+### 연결 리소스
+- [**Log Analytics Workspace**](https://docs.cstudio.app/docs/resource/azure/LogAnalytics/LogAnalyticsWorkspace)
+- [**Storage Account**](https://docs.cstudio.app/docs/resource/azure/Storage/StorageAccount)
+
+
+
+## 리소스 설정 값
+- ```version``` : 사용할 Microsoft SQL 서버 버전 - ```2.0```, ```12.0```
+
+- ```admin_username``` : 서버의 관리자 사용자 이름
+
+- ```admin_password``` : 서버의 관리자 로그인 암호
+
+- ```minimum_tls_version``` : 서버에 지원되는 최소 TLS 버전 - ```1.0```, ```1.1```, ```1.2```
+
+- ```public_network_access_enabled``` : 서버에 퍼블릭 네트워크 접근 허용 - ```true```, ```false```
+
+- ```linked_storage_account_name``` : Storage 계정 이름
+
+- ```linked_log_analytics_workspace_name``` : Log analytics workspace 이름
+
+
+- ```security_alert_policy```
+  + ```alert_policy_state``` : 적용할 정책의 활성화 상태
+  + ```disabled_alerts``` : 비활성화할 보안 경고 목록 - ```Sql_Injection```, ```Sql_Injection_Vulnerability```, ```Access_Anomaly```, ```Data_Exfiltration```, ```Unsafe_Action```
+  + ```alert_retention_days``` : 위협 탐지 감사 로그의 보관일 수 - ```0``` ~ ```3265```
+  + ```alert_email_account_admins``` : 이메일에 보안 경고 전송 활성화 - ```true``` , ```false```
+  + ```alert_email_addresses``` : 보안 경고를 받을 이메일 주소 목록 
+
+
+- ```server_auditing_policy```
+  + ```enable_storage_destination``` : Storage 계정 활성화 여부 - ```true``` , ```false```
+  + ```storage_access_key_is_second``` : 감사 대상에 사용하는 액세스 키를 보조키로 활성화 - ```true``` , ```false```
+  + ```alert_retention_days``` : Storage 계정에 로그 보관일 수 - ```0``` ~ ```3265```
+  + ```enable_log_analytics_destination``` : Log analytics 활성화 여부 - ```true``` , ```false```
+  + ```log_analytics_diagnostic_setting_name``` : Log analytics workspace에 생성할 감사 정책 이름
+
+
+- ```database```
+  + ```sku_name``` : Microsoft SQL 데이터베이스의 가격 책정 계층 - ```azureMssqlSku``` 
+  + ```max_size_gb``` : 데이터베이스의 최대 용량(GB) - ```1``` ~ ```1024```
+  + ```collation``` : Microsoft SQL 데이터베이스의 데이터 정렬 방식 - ```azureMssqlCol```
+  + ```license_type``` : 데이터베이스에 적용할 라이센스 유형 - ```LicenseIncluded``` , ```BasePrice```
+  + ```read_scale``` : 읽기 전용 복제본 중 하나의 컴퓨팅 용량을 사용하여 읽기 전용 워크로드를 오프로드하기 위한 기능 활성화 - ```true``` , ```false```
+  + ```zone_redundant``` : 데이터베이스 유지 관리 작업을 위한 영역 중복성 활성화 - ```true``` , ```false```
+
+
+- ```database_auditing_policy``` : 보안 경고를 받을 이메일 주소 목록
+  + ```database_name``` : 감사 정책을 적용할 database 이름 
+  + ```enable_storage_destination``` : Storage 계정 활성화 여부 - ```true``` ~ ```false```
+  + ```storage_access_key_is_second``` : 감사 대상에 사용하는 액세스 키를 보조키로 활성화 - ```true```, ```false```
+  + ```storage_retention_days``` : Storage 계정에 로그 보관일 수 - ```0``` ~ ```3265```
+  + ```enable_log_analytics_destination``` : Log analytics 활성화 여부 - ```true``` , ```false```
+  + ```log_analytics_diagnostic_setting_name``` : Log analytics workspace에 생성할 감사 정책 이름 
+
+
+- ```firewall_rule```
+  + ```start_ip_address``` : 방화벽 Rule에 연결된 시작 IP 주소
+  + ```end_ip_address``` : 방화벽 Rule에 연결된 종료 IP 주소
+ 
+
+*****
+## 참고 자료
+- [Azure Mssql(Microsoft)](https://learn.microsoft.com/ko-kr/azure/azure-sql/database/sql-database-paas-overview?view=azuresql)
+- [Azure Mssql 가격](https://azure.microsoft.com/ko-kr/pricing/details/azure-sql-database/single/) 
+- [Azure Mssql(Terraform)](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/mssql_server)

@@ -1,0 +1,48 @@
+---
+title: Waf Rule Group
+sidebar_position: 0
+tags: [AWS, 리소스, Waf, WafRuleGroup]
+---
+
+import icon from "../img/waf-waf_rule_group.png"
+
+
+
+##### 읽는 데 3분 걸림(소요시간)
+
+---
+
+## 리소스 이미지
+
+<img src={icon} />
+
+## 리소스 개요
+
+AWS WAF Rule Group은 Web Application Firewall에서 사용하는 규칙 모음입니다. Rule Group을 사용하여 여러 규칙을 묶어 웹 애플리케이션에 적용하고, 재사용성과 관리 효율성을 높일 수 있습니다. 규칙 그룹은 웹 애플리케이션 보안에 대한 중요한 측면을 제어하고, 요청을 허용, 차단 또는 카운트하는 기능을 수행합니다.
+
+## 연관 리소스
+
+### 상위 리소스
+
+-   [**Region**](https://docs.cstudio.app/docs/resource/aws/Base/)
+-   [**Region**](https://docs.cstudio.app/docs/resource/aws/Base/Region)
+
+### 연결 리소스
+
+-   [**Cloudwatch Metric**](https://docs.cstudio.app/docs/resource/aws/Cloudwatch/Metric)
+
+## 리소스 설정 값
+
+-   `scope` : AWS CloudFront 배포용인지 아니면 리전 애플리케이션용인지 지정 - `REGIONAL`, `CLOUDFRONT`
+-   `capacity` : 규칙 그룹에 필요한 웹 ACL 용량 단위(WCU)
+-   `cloudwatch_metrics_enabled` : 연결된 리소스가 CloudWatch에 지표를 보낼지 여부 설정 - `true`, `false`
+-   `linked_metric_name` : CloudWatch metric의 이름, 영대소문자, 하이픈(-), 밑줄(\_)만 포함할 수 있으며 길이는 1-128자
+-   `sampled_requests_enabled` : AWS WAF가 규칙과 일치하는 웹 요청의 샘플링을 저장해야 하는지 여부를 설정 - `true`, `false`
+
+---
+
+## 참고 자료
+
+-   [AWS WAF 기능(AWS)](https://aws.amazon.com/ko/waf/features/)
+-   [AWS WAF 요금(AWS)](https://aws.amazon.com/ko/waf/pricing/?nc2=type_a)
+-   [aws_waf_rule_group(Terraform)](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/waf_rule_group)

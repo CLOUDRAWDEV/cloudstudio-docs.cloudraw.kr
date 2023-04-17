@@ -1,0 +1,57 @@
+---
+title: Security Group
+sidebar_position: 0
+tags: [AWS, 리소스, Vpc, SecurityGroup]
+---
+
+import icon from "../img/vpc-security_group.png"
+
+
+
+##### 읽는 데 3분 걸림(소요시간)
+
+---
+
+## 리소스 이미지
+
+<img src={icon} />
+
+## 리소스 개요
+
+보안 그룹은 연결된 리소스에 도달하고 나갈 수 있는 트래픽을 제어합니다. 예를 들어 보안 그룹을 EC2 인스턴스와 연결하면 인스턴스에 대한 인바운드 및 아웃바운드 트래픽을 제어합니다. 보안 그룹은 해당 보안 그룹이 생성된 VPC의 리소스에만 연결할 수 있습니다.
+VPC를 생성할 경우 VPC는 기본 보안 그룹과 함께 제공됩니다. 각 VPC 대해 추가 보안 그룹을 생성할 수 있습니다.
+보안 그룹을 사용해도 추가 요금이 부과되지 않습니다.
+
+## 연관 리소스
+
+### 상위 리소스
+
+-   [**Vpc**](https://docs.cstudio.app/docs/resource/aws/Vpc/)
+
+### 연결 리소스
+
+-
+
+## 리소스 설정 값
+
+-   `description` : Security Group에 대한 설명
+-   `included_vpc_name` : Security Group이 포함된 VPC의 이름
+-   `ingress` : Security Group의 Ingress 규칙 이름
+    -   `description` : Ingress 규칙의 설명
+    -   `from_port` : Ingress 규칙으로 들어오는 포트 번호
+    -   `to_port` : Ingress 규칙을 통해 나가는 포트 번호
+    -   `protocol` : Ingress 규칙의 Protocol - `tcp`, `udp`, `icmp`, `all`
+    -   `cidr_blocks` : Ingress 규칙을 적용할 CIDRS
+-   `egress` : Security Group의 Egress 규칙 이름
+    -   `description` : Egress 규칙의 설명
+    -   `from_port` : Egress 규칙으로 들어오는 포트 번호
+    -   `to_port` : Egress 규칙을 통해 나가는 포트 번호
+    -   `protocol` : Egress 규칙의 Protocol - `tcp`, `udp`, `icmp`, `all`
+    -   `cidr_blocks` : Egress 규칙을 적용할 CIDRS
+
+---
+
+## 참고 자료
+
+-   [보안 그룹을 사용하여 리소스에 대한 트래픽 제어(AWS)](https://docs.aws.amazon.com/ko_kr/vpc/latest/userguide/vpc-security-groups.html)
+-   [aws_security_group(Terraform)](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group)
