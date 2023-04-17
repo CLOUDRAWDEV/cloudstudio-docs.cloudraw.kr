@@ -1,0 +1,52 @@
+---
+title: Server
+sidebar_position: 0
+tags: [Ncloud, 리소스, Compute, Server]
+---
+
+import icon from "../img/compute-server.png"
+
+<span className="theme-doc-version-badge badge badge--secondary">
+    last update: 2023.05.01
+</span>
+
+##### 읽는 데 3분 걸림(소요시간)
+
+---
+
+## 리소스 이미지
+
+<img src={icon} />
+
+## 리소스 개요
+
+실제 하드웨어를 관리하지 않아도 가상화의 유연성을 제공하는 컴퓨팅 리소스입니다. 클라우드 환경에 서버를 생성하여 시간과 비용 측면에서 효율적이며 인프라 운영이 부담되거나 일시적으로 많은 서버 자원이 필요한 경우에 적합합니다.
+
+## 연관 리소스
+
+### 상위 리소스
+
+-   [**Subnet**](https://docs.cstudio.app/docs/resource/ncloud/Network/Subnet)
+
+### 연결 리소스
+
+-   [**Access Control Group**](https://docs.cstudio.app/docs/resource/ncloud/Network/AccessControlGroup)
+
+## 리소스 설정 값
+
+-   `included_subnet_name` : 서버가 위치하는 Subnet 이름
+-   `server_image_product_code` : 사용할 운영체제 이미지 코드(CNTOS:CentOS, UBNTU:Ubuntu, WND:Windows / MYSQL,MARIA:Database / SVR:Server, EN:English Edition)
+-   `server_product_code` : 서버의 하드웨어 구성을 위한 코드(HICPU:High CPU, STAND:Standard, HIMEM:High Memory / C 코어수,M 메모리(GB))
+-   `network_interface`
+    -   `linked_acg_names` : 네트워크 인터페이스를 적용할 ACG 이름 목록
+    -   `nic_order` : 서버에 할당하는 네트워크 인터페이스의 순서
+-   `public_ip_enable` - `true`, `false`
+-   `init_script`
+    -   `content` : 서버가 생성될 때 자동으로 실행할 스크립트 내용
+
+---
+
+## 참고 자료
+
+-   [Server(Ncloud)](https://www.ncloud.com/product/compute/server)
+-   [ncloud_server(Terraform)](https://registry.terraform.io/providers/NaverCloudPlatform/ncloud/latest/docs/resources/server)
