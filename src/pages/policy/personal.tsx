@@ -48,7 +48,7 @@ export default function Personal() {
                             width={24}
                             height={24}
                             title={"선택 개인정보 수집"}
-                            contents={<OptionalPersonalInfo/>}
+                            contents={<OptionalPersonalInfo />}
                         />
                         <Labeling
                             xmlns={"http://www.w3.org/2000/svg"}
@@ -59,14 +59,15 @@ export default function Personal() {
                             height={24}
                             title={"개인정보의 보유 기간"}
                             contents={
-                            <>
-                                <h5
-                                    style={{ fontWeight: "normal" }}
-                                >회원 탈퇴 시 까지</h5>
-                                <h5 style={{ fontWeight: "normal" }}>
-                                    단, 관계법령에 정함이 있는 경우 해당 법률에서 정한 기간동안 보유 및 이용 가능</h5>
-                            </>
-
+                                <>
+                                    <h5 style={{ fontWeight: "normal" }}>
+                                        회원 탈퇴 시 까지
+                                    </h5>
+                                    <h5 style={{ fontWeight: "normal" }}>
+                                        단, 관계법령에 정함이 있는 경우 해당
+                                        법률에서 정한 기간동안 보유 및 이용 가능
+                                    </h5>
+                                </>
                             }
                         />
                     </section>
@@ -124,13 +125,19 @@ export default function Personal() {
                             contents={
                                 <div>
                                     <h5 style={{ fontWeight: "normal" }}>
-                                        <strong>처리 위탁업체 : </strong>부트페이
+                                        <strong>처리 위탁업체 : </strong>
+                                        부트페이
                                     </h5>
                                     <h5 style={{ fontWeight: "normal" }}>
-                                        <strong>위탁업무 및 이용 목적 : </strong>{" "}
+                                        <strong>위탁업무 및 이용 목적: </strong>
                                         비용 결제 대행
                                     </h5>
-                                    <h5 style={{ fontWeight: "normal", lineHeight:"22px" }}>
+                                    <h5
+                                        style={{
+                                            fontWeight: "normal",
+                                            lineHeight: "22px",
+                                        }}
+                                    >
                                         <strong>보유 및 이용기간 :</strong> 회원
                                         탈퇴 시 혹은 위탁계약 종료 시 까지 단,
                                         관계법령에 정함이 있는 경우 해당
@@ -151,13 +158,13 @@ export default function Personal() {
                                 <div>
                                     <h5 style={{ fontWeight: "normal" }}>
                                         <strong>
-                                            개인정보보호책임자(CPO) :{" "}
+                                            개인정보보호책임자(CPO):
                                         </strong>
                                         박상규 부대표
                                     </h5>
                                     <h5 style={{ fontWeight: "normal" }}>
-                                        <strong>이메일 :</strong>
-                                        {" "}skpark@cloudraw.kr{" "}
+                                        <strong>이메일:</strong>
+                                        skpark@cloudraw.kr
                                     </h5>
                                     <h5
                                         style={{
@@ -240,8 +247,8 @@ export default function Personal() {
                         </tr>
                         <tr>
                             <td>
-                                Naver Cloud CSP 서비스 크레덴셜 정보 (Access Key,
-                                Secret Key)
+                                Naver Cloud CSP 서비스 크레덴셜 정보 (Access
+                                Key, Secret Key)
                             </td>
                             <td> API 연동을 통한 관리 서비스 제공</td>
                         </tr>
