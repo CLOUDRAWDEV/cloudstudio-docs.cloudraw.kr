@@ -60,26 +60,16 @@ MSA Basic을 Azure에 배포하기 위한 가이드를 제공합니다.
 -   **클라우드 스튜디오에 크레덴셜 값 등록**
 
 ## 구성 서비스
-<<<<<<< HEAD
-=======
-- **Kubernetes Cluster**
-- **Container Registry**
-- **Key Vault**
-- **Mysql**
-- [**Storage Account**](https://docs.cstudio.app/docs/resource/azure/Storage/StorageAccount)
-- **Monitor Action Group**
-- **Monitor Activity Log Alert**
-- **Monitor Metric Alert**
->>>>>>> cf89082e039c41d09581f47faa17521403e57693
 
--   **Kubernetes Cluster**
--   **Container Registry**
--   **Key Vault**
--   **Mysql**
--   **Storage Account**
--   **Monitor Action Group**
--   **Monitor Activity Log Alert**
--   **Monitor Metric Alert**
+- [**Kubernetes Cluster**](https://docs.cstudio.app/docs/resource/azure/Container/KubernetesCluster)
+- [**Container Registry**](https://docs.cstudio.app/docs/resource/azure/Container/ContainerRegistry)
+- [**Key Vault**](https://docs.cstudio.app/docs/resource/azure/KeyVault)
+- [**Mysql**](https://docs.cstudio.app/docs/resource/azure/Database/Mysql)
+- [**Storage Account**](https://docs.cstudio.app/docs/resource/azure/Storage/StorageAccount)
+- [**Action Group**](https://docs.cstudio.app/docs/resource/azure/Monitor/ActionGroup)
+- [**Monitor Activity Log Alert**](https://docs.cstudio.app/docs/resource/azure/Monitor/MonitorActivityLogAlert)
+- [**Monitor Metric Alert**](https://docs.cstudio.app/docs/resource/azure/Monitor/MonitorMetricAlert)
+
 
 ## 아키텍처
 
@@ -269,7 +259,7 @@ Access Policy는 Key, Secrets, Certificate 각각 15개의 세분화된 권한�
 사용자는 SP나 Azure AD에 등록되 계정의 Object ID를 등록함으로써 Key Vault의 특정 크레덴셜에 대한 권한을 받을 수 있습니다.
 
 > -   `Access Policies.Name`: default-access-policy
-> -   `Access Policies.Object Id`: 00000000-0000-0000-0000-000000000000 <TextColor color="#206FD6">**(Object Id는 사용자의 고유한 ID입니다. azure portal에서 Object Id를 확인한 후 값을 입략해줍니다.)**</TextColor>
+> -   `Access Policies.Object Id`: 00000000-0000-0000-0000-000000000000 <TextColor color="#206FD6">**(Object Id는 사용자의 고유한 ID입니다. azure portal에서 Object Id를 확인한 후 값을 입력해줍니다.)**</TextColor>
 > -   `Access Policies.Key Permissions`: ["Create", "Get"]
 > -   `Access Policies.Secret Permissions`: ["Get", "Set", "Delete", "List", "Purge"]
 > -   `Access Policies.Certificate Permissions`: ["Create", "Get"]
