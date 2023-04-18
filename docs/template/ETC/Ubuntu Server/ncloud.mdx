@@ -19,7 +19,9 @@ import ncloud9 from './img/ncloud/9.png';
 import ncloud10 from './img/ncloud/10.png';
 import ncloud11 from './img/ncloud/11.png';
 
-
+<span className="theme-doc-version-badge badge badge--secondary">
+    last update: 2023.02.01
+</span>
 
 ##### 읽는 데 5분 걸림(소요시간)
 
@@ -34,7 +36,7 @@ Ncloud는 Server를 실행하기 위한 물리적 하드웨어를 구입 없이 
 ## 로그인
 - <Link to="/docs/credential/createCredential">Ncloud 크레덴셜 생성</Link>
 - <Link to="/docs/start/sign-up">클라우드 스튜디오 회원가입 방법</Link>
-- [클라우드 스튜디오 회원가입 바로가기](https://cstudio.app/signup)
+- [클라우드 스튜디오 회원가입 바로가기](https://cloudstudio.cloudraw.kr/signup)
 
 ## 전제조건
 - **Ncloud 계정**
@@ -43,7 +45,7 @@ Ncloud는 Server를 실행하기 위한 물리적 하드웨어를 구입 없이 
 
 ## 구성 서비스
 - **VPC**
-- **Subnet**
+- - [**Subnet**](https://docs.cstudio.app/docs/resource/azure/Network/Subnet)
 - **Network ACL**
 - **Access Control Group**
 - **Server**
@@ -75,7 +77,7 @@ Ncloud는 Server를 실행하기 위한 물리적 하드웨어를 구입 없이 
 <caption caption="[그림.3] Ncloud Ubuntu Server 3" src={ncloud3} />
 
 ### 4. Subnet 생성
-**Subnet** 아이콘을 가져옵니다. Ubuntu Server 배포하기 위해 VPC 안에 Subnet을 구성합니다.
+- [**Subnet**](https://docs.cstudio.app/docs/resource/azure/Network/Subnet) 아이콘을 가져옵니다. Ubuntu Server 배포하기 위해 VPC 안에 Subnet을 구성합니다.
 
 > - ```Service Name```: ubuntusubnet 
 > - ```Subnet Cidr```: 10.0.0.0/24

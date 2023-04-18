@@ -29,7 +29,9 @@ import ncloud19 from './img/ncloud/19.png';
 import ncloud20 from './img/ncloud/20.png';
 import ncloud21 from './img/ncloud/21.png';
 
-
+<span className="theme-doc-version-badge badge badge--secondary">
+    last update: 2023.02.01
+</span>
 
 ##### 읽는 데 10분 걸림(소요시간)
 
@@ -48,7 +50,7 @@ Load Balancer는 **Auto Scailing**과 **Server**에 모두 연결이 가능하�
 ## 로그인
 - <Link to="/docs/credential/createCredential">Ncloud 크레덴셜 생성</Link>
 - <Link to="/docs/start/sign-up">클라우드 스튜디오 회원가입 방법</Link>
-- [클라우드 스튜디오 회원가입 바로가기](https://cstudio.app/signup)
+- [클라우드 스튜디오 회원가입 바로가기](https://cloudstudio.cloudraw.kr/signup)
 
 ## 전제조건
 - **Ncloud 계정**
@@ -57,8 +59,8 @@ Load Balancer는 **Auto Scailing**과 **Server**에 모두 연결이 가능하�
 
 ## 구성 서비스
 - **VPC**
-- **Subnet**
-- **Nat Gateway**
+- - [**Subnet**](https://docs.cstudio.app/docs/resource/azure/Network/Subnet)
+- [**NAT Gateway**](https://docs.cstudio.app/docs/resource/azureNetwork/NatGateway)
 - **Route Table**
 - **Network ACL**
 - **Access Control Group**
@@ -92,7 +94,7 @@ Load Balancer는 **Auto Scailing**과 **Server**에 모두 연결이 가능하�
 <caption caption="[그림.3] Ncloud Load Balancer 3" src={ncloud3} />
 
 ### 4. Subnet 생성
-**Subnet** 아이콘을 가져옵니다. Server를 배포하기 위해 VPC 안에 Subnet을 구성합니다.
+- [**Subnet**](https://docs.cstudio.app/docs/resource/azure/Network/Subnet) 아이콘을 가져옵니다. Server를 배포하기 위해 VPC 안에 Subnet을 구성합니다.
 클라이언트의 트래픽이 Server로 직접 들어오지 않고 Load Balancer를 통해 들어오게 하기 위해서 Private Subnet에 배포합니다.
 
 > - ```Service Name```: targetsubnet
