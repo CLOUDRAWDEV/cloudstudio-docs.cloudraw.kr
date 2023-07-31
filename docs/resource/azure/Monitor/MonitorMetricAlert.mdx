@@ -4,64 +4,66 @@ sidebar_position: 4
 tags: [Azure, 리소스, Monitor, MonitorMetricAlert]
 ---
 
-import icon from "../img/monitor-monitor_metric_alert.png"
-
 <span className="theme-doc-version-badge badge badge--secondary">
     last update: 2023.05.01
 </span>
 
 ##### 읽는 데 3분 걸림(소요시간)
 
-*****
+---
 
 ## 리소스 이미지
-<img src={icon} />
+
+<img
+    src={
+        "https://cloudstudioblob.blob.core.windows.net/cloudstudio/azureImg/monitor-monitor_metric_alert.png"
+    }
+/>
 
 ## 리소스 개요
-Azure Monitor 메트릭 경고는 사용자가 클라우드의 리소스에 대한 메트릭을 기반으로 경고를 설정할 수 있도록 하는 Microsoft Azure의 기능입니다. 
+
+Azure Monitor 메트릭 경고는 사용자가 클라우드의 리소스에 대한 메트릭을 기반으로 경고를 설정할 수 있도록 하는 Microsoft Azure의 기능입니다.
 Azure Monitor는 온-프레미스 환경 및 기타 클라우드 공급자를 포함하여 Azure 리소스 및 기타 소스에서 원격 분석을 수집, 분석 및 작동하기 위한 플랫폼을 제공합니다.
-메트릭 경고를 사용하면 사용자는 Azure 리소스에 대한 메트릭을 모니터링하고 메트릭이 특정 임계값을 초과하거나 활동이 갑자기 급증하는 경우와 같은 특정 조건이 충족될 때 알림을 받을 수 있습니다. 
+메트릭 경고를 사용하면 사용자는 Azure 리소스에 대한 메트릭을 모니터링하고 메트릭이 특정 임계값을 초과하거나 활동이 갑자기 급증하는 경우와 같은 특정 조건이 충족될 때 알림을 받을 수 있습니다.
 메트릭 경고는 가상 머신, 데이터베이스, 저장소 계정 등을 비롯한 다양한 Azure 리소스에 대해 구성할 수 있습니다.
-
-
 
 ## 연관 리소스
 
 ### 상위 리소스
-- [**Resource Group**](https://docs.cstudio.app/docs/resource/azure/Base/ResourceGroup)
+
+-   [**Resource Group**](https://docs.cstudio.app/docs/resource/azure/Base/ResourceGroup)
 
 ### 연결 리소스
-- [**Action Group**](https://docs.cstudio.app/docs/resource/azure/Monitor/ActionGroup)
 
-
+-   [**Action Group**](https://docs.cstudio.app/docs/resource/azure/Monitor/ActionGroup)
 
 ## 리소스 설정 값
-- ```target_resource_name``` : 메트릭 기준을 적용할 리소스 이름 -
 
-- ```severity``` : 메트릭 경고의 심각도 - ```0```, ```1````, ```2````, ```3````, ```4```
+-   `target_resource_name` : 메트릭 기준을 적용할 리소스 이름
 
-- ```frequency``` : 메트릭 경고의 평가 빈도 
+-   `severity` : 메트릭 경고의 심각도 - `0`, ` 1````,  `2` , ```3 `, `4`
 
-- ```auto_mitigate``` : 메트릭 경고에 나타난 경고 자동 해결 활성화 - ```true```, ```false````
+-   `frequency` : 메트릭 경고의 평가 빈도
 
-- ```linked_action_group_name``` : 경고 규칙을 적용할 작업 그룹 이름
+-   `auto_mitigate` : 메트릭 경고에 나타난 경고 자동 해결 활성화 - `true`, ```false````
 
-- ```metric_namespace``` : 모니터될 메트릭 네임스페이스
+-   `linked_action_group_name` : 경고 규칙을 적용할 작업 그룹 이름
 
-- ```criteria```
-    + ```metric_name``` : 모니터될 메트릭 이름
-    + ```aggregation``` : 메트릭 값을 집계하는 방식 - ```Average```, ```Count````, ```Total````, ```Minimum````, ```Maximum```
-    + ```operator``` : 메트릭 값과 임계 값을 비교하기 위해 사용하는 연산자 - ```Equals```, ```NotEquals````, ```GreaterThan````, ```GreaterThanOrEqual````, ```LessThan```, ```LessThanOrEqual```
-    + ```threshold``` : 경고를 활성화하는 기준 임계값
+-   `metric_namespace` : 모니터될 메트릭 네임스페이스
 
+-   `criteria`
 
+    -   `metric_name` : 모니터될 메트릭 이름
+    -   `aggregation` : 메트릭 값을 집계하는 방식 - `Average`, ` Count````,  `Total` , ```Minimum `, `Maximum`
+    -   `operator` : 메트릭 값과 임계 값을 비교하기 위해 사용하는 연산자 - `Equals`, ` NotEquals````,  `GreaterThan` , ```GreaterThanOrEqual `, `LessThan`, `LessThanOrEqual`
+    -   `threshold` : 경고를 활성화하는 기준 임계값
 
+-   `tag` : 리소스를 카테고리로 분류하기 위한 태그 - 최대 512자, `key`:`value`
 
+---
 
-
-*****
 ## 참고 자료
-- [Azure MonitorMetricAlert(Microsoft)](https://learn.microsoft.com/en-us/azure/azure-monitor/overview)
-- [Azure MonitorMetricAlert 가격](https://azure.microsoft.com/ko-kr/pricing/details/monitor/) 
-- [Azure MonitorMetricAlert(Terraform)](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/monitor_metric_alert)
 
+-   [Azure MonitorMetricAlert(Microsoft)](https://learn.microsoft.com/en-us/azure/azure-monitor/overview)
+-   [Azure MonitorMetricAlert 가격](https://azure.microsoft.com/ko-kr/pricing/details/monitor/)
+-   [Azure MonitorMetricAlert(Terraform)](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/monitor_metric_alert)

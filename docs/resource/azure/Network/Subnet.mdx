@@ -1,10 +1,8 @@
 ---
 title: Subnet
-sidebar_position: 9
+sidebar_position: 12
 tags: [Azure, 리소스, Network, Subnet]
 ---
-
-import icon from "../img/network-subnet.png"
 
 <span className="theme-doc-version-badge badge badge--secondary">
     last update: 2023.05.01
@@ -12,41 +10,41 @@ import icon from "../img/network-subnet.png"
 
 ##### 읽는 데 3분 걸림(소요시간)
 
-*****
+---
 
 ## 리소스 이미지
-<img src={icon} />
+
+<img
+    src={
+        "https://cloudstudioblob.blob.core.windows.net/cloudstudio/azureImg/network-subnet.png"
+    }
+/>
 
 ## 리소스 개요
+
 Microsoft Azure에서 서브넷은 VNet(가상 네트워크)의 IP 주소 범위입니다. 네트워크 트래픽을 분할하고 네트워크 리소스를 관리할 수 있는 IP 네트워크의 논리적 구분입니다.
-서브넷은 더 큰 네트워크 내의 더 작은 네트워크이며 가상 네트워크의 서로 다른 부분 간에 트래픽을 격리하는 데 사용됩니다. 
+서브넷은 더 큰 네트워크 내의 더 작은 네트워크이며 가상 네트워크의 서로 다른 부분 간에 트래픽을 격리하는 데 사용됩니다.
 Azure의 각 서브넷에는 자체 NSG(네트워크 보안 그룹)가 있을 수 있으므로 해당 서브넷의 리소스에 대한 보안 경계를 만들 수 있습니다
 
 ## 연관 리소스
+
 ### 상위 리소스
-- [**Resource Group**](https://docs.cstudio.app/docs/resource/azure/Base/ResourceGroup)
-- [**Virtual Network**](https://docs.cstudio.app/docs/resource/azure/Network/VirtualNetwork)
 
-
-
-
-
-
-
+-   [**Resource Group**](https://docs.cstudio.app/docs/resource/azure/Base/ResourceGroup)
+-   [**Virtual Network**](https://docs.cstudio.app/docs/resource/azure/Network/VirtualNetwork)
 
 ## 리소스 설정 값
-- ```included_vnet_name``` : Subnet이 포함된 Virtual Network 이름
-- ```address_prefixes``` : Subtnet 사용을 위한 IP 주소 범위, Virtual Network의 주소 공간 내에 CIDR 형식으로 지정된 고유한 주소 범위
-- ```private_link_endpoint_enabled``` : Subnet에 Private Endpoint를 연결할 것인지 설정 - ```true```, ```false```
-- ```delegation``` 
-    +  ```service_name``` : 위임할 서비스의 이름
-    +  ```actions``` : 위임할 액션 목록
 
+-   `included_vnet_name` : Subnet이 포함된 Virtual Network 이름
+-   `address_prefixes` : Subtnet 사용을 위한 IP 주소 범위, Virtual Network의 주소 공간 내에 CIDR 형식으로 지정된 고유한 주소 범위
+-   `private_link_endpoint_enabled` : Subnet에 Private Endpoint를 연결할 것인지 설정 - `true`, `false`
+-   `delegation`
+    -   `service_name` : 위임할 서비스의 이름
+    -   `actions` : 위임할 액션 목록
 
+---
 
-
-*****
 ## 참고 자료
-- [Azure Subnet(Microsoft)](https://learn.microsoft.com/ko-kr/azure/virtual-network/virtual-network-manage-subnet?tabs=azure-portal)
-- [Azure Subnet(Terraform)](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/subnet)
 
+-   [Azure Subnet(Microsoft)](https://learn.microsoft.com/ko-kr/azure/virtual-network/virtual-network-manage-subnet?tabs=azure-portal)
+-   [Azure Subnet(Terraform)](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/subnet)

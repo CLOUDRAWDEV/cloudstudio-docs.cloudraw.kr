@@ -1,7 +1,7 @@
 ---
-title: WindowsserverVirtualMachine
-sidebar_position: 4
-tags: [Azure, 리소스, Compute, WindowsserverVirtualMachine]
+title: LinuxVirtualMachine
+sidebar_position: 2
+tags: [Azure, 리소스, Compute, LinuxVirtualMachine]
 ---
 
 <span className="theme-doc-version-badge badge badge--secondary">
@@ -16,14 +16,14 @@ tags: [Azure, 리소스, Compute, WindowsserverVirtualMachine]
 
 <img
     src={
-        "https://cloudstudioblob.blob.core.windows.net/cloudstudio/azureImg/compute-windowsserver_virtual_machine.png"
+        "https://cloudstudioblob.blob.core.windows.net/cloudstudio/azureImg/compute-linux_virtual_machine.png"
     }
 />
 
 ## 리소스 개요
 
-Azure WindowsServer Virtual Machine은 Microsoft의 Azure 클라우드 컴퓨팅 플랫폼에서 WindowsServer 운영 체제를 실행하는 가상 머신(VM)입니다.
-Azure에서 WindowsServer 가상 머신을 실행함으로써 사용자는 선호하는 Linux 배포를 사용하면서 Microsoft 클라우드 플랫폼의 확장성, 안정성 및 글로벌 범위를 활용할 수 있습니다.
+Azure Linux Virtual Machine은 Microsoft의 Azure 클라우드 컴퓨팅 플랫폼에서 Linux 운영 체제를 실행하는 가상 머신(VM)입니다.
+Azure에서 Linux 가상 머신을 실행함으로써 사용자는 선호하는 Linux 배포를 사용하면서 Microsoft 클라우드 플랫폼의 확장성, 안정성 및 글로벌 범위를 활용할 수 있습니다.
 
 ## 연관 리소스
 
@@ -45,7 +45,7 @@ Azure에서 WindowsServer 가상 머신을 실행함으로써 사용자는 선�
     -   `publisher` : VM 생성을 위해 사용하는 이미지의 공급자
     -   `Offer` : VM 생성을 위해 사용하는 이미지의 ID
     -   `sku` : VM 생성을 위해 사용하는 이미지의 가격 책정 계층
--   `computer_name` : Virtual Machine의 host_name
+-   `enable_ssh_key_authentication` : 관리자 계정을 인증하기 위해 ssh 키 사용
 -   `admin_username` : VM에 대한 관리자 사용자 이름
 -   `admin_password` : VM에 대한 관리자 암호
 -   `on_disk_caching` : 내부 OS Disk 사용을 위한 caching 유형
@@ -60,6 +60,6 @@ Azure에서 WindowsServer 가상 머신을 실행함으로써 사용자는 선�
 
 ## 참고 자료
 
--   [Azure WindowsserverVirtualMachine(Microsoft)](https://learn.microsoft.com/ko-kr/azure/virtual-machines/overview)
--   [Azure WindowsserverVirtualMachine 가격](https://azure.microsoft.com/en-us/pricing/details/virtual-machines/windows/)
--   [Azure WindowsserverVirtualMachine(Terraform)](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/windows_virtual_machine)
+-   [Azure LinuxVirtualMachine(Microsoft)](https://learn.microsoft.com/ko-kr/azure/virtual-machines/overview)
+-   [Azure LinuxVirtualMachine 가격](https://azure.microsoft.com/en-us/pricing/details/virtual-machines/linux/)
+-   [Azure LinuxVirtualMachine(Terraform)](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/linux_virtual_machine)

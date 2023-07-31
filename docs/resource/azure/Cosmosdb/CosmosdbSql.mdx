@@ -4,81 +4,87 @@ sidebar_position: 3
 tags: [Azure, 리소스, Cosmosdb, CosmodbSql]
 ---
 
-import icon from "../img/cosmosdb-cosmosdb_sql.png"
-
 <span className="theme-doc-version-badge badge badge--secondary">
     last update: 2023.05.01
 </span>
 
 ##### 읽는 데 3분 걸림(소요시간)
 
-*****
+---
 
 ## 리소스 이미지
-<img src={icon} />
+
+<img
+    src={
+        "https://cloudstudioblob.blob.core.windows.net/cloudstudio/azureImg/cosmosdb-cosmosdb_sql.png"
+    }
+/>
 
 ## 리소스 개요
+
 Cosmos DB SQL(Structured Query Language)은 Microsoft에서 제공하는 전 세계적으로 분산된 다중 모델 데이터베이스 서비스인 Azure Cosmos DB에서 사용되는 쿼리 언어입니다.
-Cosmos DB SQL을 사용하면 Cosmos DB 컨테이너의 JSON 문서에 대해 SQL 쿼리를 수행할 수 있습니다. 
+Cosmos DB SQL을 사용하면 Cosmos DB 컨테이너의 JSON 문서에 대해 SQL 쿼리를 수행할 수 있습니다.
 친숙한 SQL 함수 및 식을 사용하여 CRUD(만들기, 읽기, 업데이트 및 삭제) 작업을 수행하고, 데이터를 필터링 및 정렬하고, 데이터를 집계할 수 있습니다.
 또한 Cosmos DB SQL은 쿼리 동작을 사용자 지정하고 데이터에 대해 복잡한 작업을 수행할 수 있는 저장 프로시저, 트리거 및 사용자 정의 함수와 같은 여러 고급 기능을 지원합니다.
 
+### 상위 리소스
 
-
-
-
-
+-   [**Resource Group**](https://docs.cstudio.app/docs/resource/azure/Base/ResourceGroup)
 
 ## 리소스 설정 값
-- ```capabilities_list``` : 사용할 Cosmos DB의 API 목룍 - ```EnableServerless```, ```EnableAggregationPipeline```
 
-- ```enable_multiple_write_locations``` : 전 세계의 데이터베이스 및 컨테이너에 대해 프로비전된 처리량을 활용하기 위한 다중 영역 쓰기 활성화 - ```true```, ```false```
+-   `capabilities_list` : 사용할 Cosmos DB의 API 목룍 - `EnableServerless`, `EnableAggregationPipeline`
 
-- ```public_network_access_enabled``` : 공용 IP 주소 또는 서비스 엔드포인트를 통해 공개적으로 계정에 연결 활성화 - ```true```, ```false```
+-   `enable_multiple_write_locations` : 전 세계의 데이터베이스 및 컨테이너에 대해 프로비전된 처리량을 활용하기 위한 다중 영역 쓰기 활성화 - `true`, `false`
 
-- ```enable_automatic_failover``` : 자동 장애 조치 활성화 - ```true```, ```false```
+-   `public_network_access_enabled` : 공용 IP 주소 또는 서비스 엔드포인트를 통해 공개적으로 계정에 연결 활성화 - `true`, `false`
 
-- ```virtual_network_filter_enabled``` : 가상 네트워크의 특정 Subnet만 계정에 접근하도록 필터 활성화 - ```true```, ```false```
+-   `enable_automatic_failover` : 자동 장애 조치 활성화 - `true`, `false`
 
-- ```network_acl_bypass_for_azure_services``` : Azure 서비스의 ACL bypass 활성화 - ```true```, ```false```
+-   `virtual_network_filter_enabled` : 가상 네트워크의 특정 Subnet만 계정에 접근하도록 필터 활성화 - `true`, `false`
 
+-   `network_acl_bypass_for_azure_services` : Azure 서비스의 ACL bypass 활성화 - `true`, `false`
 
-- ```geo_location```   
-    +  ```failover_priority``` : 지역의 장애 처리 우선순위 - ```0```~ ```0```
-    +  ```zone_redundant``` : 오류에 대비하여 자동으로 zone 복제 허용 - ```true```~ ```false```
+-   `geo_location`
 
+    -   `failover_priority` : 지역의 장애 처리 우선순위 - `0`~ `0`
+    -   `zone_redundant` : 오류에 대비하여 자동으로 zone 복제 허용 - `true`~ `false`
 
-- ```consistency_policy```   
-    +  ```consistency_level``` : 데이터베이스의 가용성과 성능 설정을 위한 Cassandra DB의 일관성 수준 - ```Eventual```, ```Session```, ```Strong```, ```ConsistentPrefix```, ```BoundedStaleness```
-    +  ```max_interval_in_seconds``` : 일관성 수준이 Bounded Staleness인 경우, 허용되는 Staleness 시간(초) - ```5```~ ```86400```    
-    +  ```max_staleness_prefix``` : 일관성 수준이 Bounded Staleness인 경우, 허용되는 최대 Stale Request 수 - ```10```~```2147483647```
-    
+-   `consistency_policy`
 
-- ```backup```   
-    +  ```type``` : 백업 정책 유형 - ```Continuous```, ```Periodic```
-    +  ```interval_in_minutes``` : 백업을 수행하는 분당 빈도, 60 ~ 1440의 범위 - ```60```~ ```1440```    
-    +  ```retention_in_hours``` : 백업을 저장하는 기간(시간), 8 ~ 720의 범위 - ```8```~```720```    
+    -   `consistency_level` : 데이터베이스의 가용성과 성능 설정을 위한 Cassandra DB의 일관성 수준 - `Eventual`, `Session`, `Strong`, `ConsistentPrefix`, `BoundedStaleness`
+    -   `max_interval_in_seconds` : 일관성 수준이 Bounded Staleness인 경우, 허용되는 Staleness 시간(초) - `5`~ `86400`
+    -   `max_staleness_prefix` : 일관성 수준이 Bounded Staleness인 경우, 허용되는 최대 Stale Request 수 - `10`~`2147483647`
 
+-   `backup`
 
-- ```sql_database```   
-    +  ```throughput``` : Cosmos DB SQL 데이터베이스의 처리량 - ```400```~ ```1000000```
-    +  ```enable_autoscale``` : Cassandra 키스페이스에 auto scaling을 적용할 것인지 - ```true```, ```false```    
+    -   `type` : 백업 정책 유형 - `Continuous`, `Periodic`
+    -   `interval_in_minutes` : 백업을 수행하는 분당 빈도, 60 ~ 1440의 범위 - `60`~ `1440`
+    -   `retention_in_hours` : 백업을 저장하는 기간(시간), 8 ~ 720의 범위 - `8`~`720`
 
+-   `sql_database`
 
-- ```sql_container```   
-    +  ```partition_key_version``` : 파티션 키 버전 1과 2중 지정 - ```1```, ```2```
-    +  ```partition_key_path``` : SQL 컨테이너에서 사용할 partition key를 정의
-    +  ```throughput``` : MongoDB Collection의 처리량 - ```400```~ ```100000```
-    +  ```indexing_mode``` : 인덱싱 유형 설정 - ```consistent```, ```none```
-    +  ```included_path``` : 인덱싱에 포함 경로 목록
-    +  ```excluded_path``` : 인덱싱에서 제외된 경로 목록
-    +  ```unique_key_path``` : 데이터 무결성 계층 추가를 위한 고유 키 경로 값 목록
-    +  ```enable_autoscale``` : Cassandra 키스페이스에 auto scaling을 적용할 것인지 - ```true```, ```false```    
-    +  ```included_sql_database_name``` : SQL 컨테이너가 생성될 SQL 데이터베이스 이름
+    -   `throughput` : Cosmos DB SQL 데이터베이스의 처리량 - `400`~ `1000000`
+    -   `enable_autoscale` : Cassandra 키스페이스에 auto scaling을 적용할 것인지 - `true`, `false`
 
+-   `sql_container`
 
-*****
+    -   `partition_key_version` : 파티션 키 버전 1과 2중 지정 - `1`, `2`
+    -   `partition_key_path` : SQL 컨테이너에서 사용할 partition key를 정의
+    -   `throughput` : MongoDB Collection의 처리량 - `400`~ `100000`
+    -   `indexing_mode` : 인덱싱 유형 설정 - `consistent`, `none`
+    -   `included_path` : 인덱싱에 포함 경로 목록
+    -   `excluded_path` : 인덱싱에서 제외된 경로 목록
+    -   `unique_key_path` : 데이터 무결성 계층 추가를 위한 고유 키 경로 값 목록
+    -   `enable_autoscale` : Cassandra 키스페이스에 auto scaling을 적용할 것인지 - `true`, `false`
+    -   `included_sql_database_name` : SQL 컨테이너가 생성될 SQL 데이터베이스 이름
+
+-   `tag` : 리소스를 카테고리로 분류하기 위한 태그 - 최대 512자, `key`:`value`
+
+---
+
 ## 참고 자료
-- [Azure Cosmosdb(Microsoft)](https://learn.microsoft.com/ko-kr/azure/cosmos-db/introduction)
-- [Azure Cosmosdb 가격](https://azure.microsoft.com/en-us/pricing/details/cosmos-db/autoscale-provisioned/) 
-- [Azure Cosmosdb(Terraform)](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/cosmosdb_account)
+
+-   [Azure Cosmosdb(Microsoft)](https://learn.microsoft.com/ko-kr/azure/cosmos-db/introduction)
+-   [Azure Cosmosdb 가격](https://azure.microsoft.com/en-us/pricing/details/cosmos-db/autoscale-provisioned/)
+-   [Azure Cosmosdb(Terraform)](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/cosmosdb_account)

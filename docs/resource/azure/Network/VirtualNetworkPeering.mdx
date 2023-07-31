@@ -1,10 +1,8 @@
 ---
 title: VirtualNetworkPeering
-sidebar_position: 13
+sidebar_position: 16
 tags: [Azure, 리소스, Network, VirtualNetworkPeering]
 ---
-
-import icon from "../img/network-virtual_network_peering.png"
 
 <span className="theme-doc-version-badge badge badge--secondary">
     last update: 2023.05.01
@@ -12,53 +10,51 @@ import icon from "../img/network-virtual_network_peering.png"
 
 ##### 읽는 데 3분 걸림(소요시간)
 
-*****
+---
 
 ## 리소스 이미지
-<img src={icon} />
+
+<img
+    src={
+        "https://cloudstudioblob.blob.core.windows.net/cloudstudio/azureImg/network-virtual_network_peering.png"
+    }
+/>
 
 ## 리소스 개요
-Azure 가상 네트워크 피어링은 동일한 Azure 지역에 있는지 여부에 관계없이 두 개의 가상 네트워크를 함께 연결할 수 있는 Microsoft Azure의 기능입니다. 
+
+Azure 가상 네트워크 피어링은 동일한 Azure 지역에 있는지 여부에 관계없이 두 개의 가상 네트워크를 함께 연결할 수 있는 Microsoft Azure의 기능입니다.
 가상 네트워크 피어링은 두 개의 가상 네트워크가 동일한 네트워크에 있는 것처럼 트래픽을 라우팅할 수 있는 네트워크 간 연결입니다.
-가상 네트워크 피어링 사용의 주요 이점 중 하나는 새 가상 네트워크를 만들 필요 없이 네트워크 인프라를 확장할 수 있다는 것입니다. 
+가상 네트워크 피어링 사용의 주요 이점 중 하나는 새 가상 네트워크를 만들 필요 없이 네트워크 인프라를 확장할 수 있다는 것입니다.
 이는 서로 통신해야 하는 서로 다른 워크로드가 있거나 서로 다른 지역에서 리소스를 공유하려는 경우에 특히 유용할 수 있습니다.
 또한 가상 네트워크 피어링은 구성 및 관리가 쉽고 네트워크 아키텍처를 단순화하고 네트워킹 환경의 복잡성을 줄이는 데 도움이 될 수 있습니다.
 
 ## 연관 리소스
+
 ### 연결 리소스
-- [**Virtual Network**](https://docs.cstudio.app/docs/resource/azure/Network/VirtualNetwork)
 
-
-
-
-
-
-
-
-
+-   [**Virtual Network**](https://docs.cstudio.app/docs/resource/azure/Network/VirtualNetwork)
 
 ## 리소스 설정 값
-- ```peering1``` 
-    +  ```name``` : 피어링 이름 
-    +  ```linked_vnet_name``` : 피어링 할 가상네트워크의 이름 
-    +  ```traffic_to_remote_vnet``` : 원격 가상 네트워크의 VM이 로컬 가상 네트워크의 VM에 액세스할 수 있는지 여부를 제어 -  ```true```, ```false```
-    +  ```traffic_forwarded_from_remote_vnet``` : 원격 가상 네트워크의 VM에서 전달된 트래픽이 허용되는지 여부를 제어 -  ```true```, ```false```
-  
-- ```peering2``` 
-    +  ```name``` : 피어링 이름
-    +  ```linked_vnet_name``` : 피어링 할 가상네트워크의 이름
-    +  ```traffic_to_remote_vnet``` : 원격 가상 네트워크의 VM이 로컬 가상 네트워크의 VM에 액세스할 수 있는지 여부를 제어 -  ```true```, ```false```
-    +  ```traffic_forwarded_from_remote_vnet``` : 원격 가상 네트워크의 VM에서 전달된 트래픽이 허용되는지 여부를 제어 -  ```true```, ```false```
-  
-- ```allow_gateway_transit``` : Virtual network에 대한 원격 가상 네트워크의 링크를 사용할 수 있습니다
-    +  ```사용안함``` : 0
-    +  ```첫번째 가상네트워크``` : 1
-    +  ```두번째 가상네트워크``` : 2
-    
-  
-*****
-## 참고 자료
-- [Azure VirtualNetworkPeering(Microsoft)](https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview)
-- [Azure VirtualNetworkPeering 가격](https://azure.microsoft.com/ko-kr/pricing/details/virtual-network/) 
-- [Azure VirtualNetworkPeering(Terraform)](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/virtual_network_peering)
 
+-   `peering1`
+    -   `name` : 피어링 이름
+    -   `linked_vnet_name` : 피어링 할 가상네트워크의 이름
+    -   `traffic_to_remote_vnet` : 원격 가상 네트워크의 VM이 로컬 가상 네트워크의 VM에 액세스할 수 있는지 여부를 제어 - `true`, `false`
+    -   `traffic_forwarded_from_remote_vnet` : 원격 가상 네트워크의 VM에서 전달된 트래픽이 허용되는지 여부를 제어 - `true`, `false`
+-   `peering2`
+    -   `name` : 피어링 이름
+    -   `linked_vnet_name` : 피어링 할 가상네트워크의 이름
+    -   `traffic_to_remote_vnet` : 원격 가상 네트워크의 VM이 로컬 가상 네트워크의 VM에 액세스할 수 있는지 여부를 제어 - `true`, `false`
+    -   `traffic_forwarded_from_remote_vnet` : 원격 가상 네트워크의 VM에서 전달된 트래픽이 허용되는지 여부를 제어 - `true`, `false`
+-   `allow_gateway_transit` : Virtual network에 대한 원격 가상 네트워크의 링크를 사용할 수 있습니다
+    -   `사용안함` : 0
+    -   `첫번째 가상네트워크` : 1
+    -   `두번째 가상네트워크` : 2
+
+---
+
+## 참고 자료
+
+-   [Azure VirtualNetworkPeering(Microsoft)](https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview)
+-   [Azure VirtualNetworkPeering 가격](https://azure.microsoft.com/ko-kr/pricing/details/virtual-network/)
+-   [Azure VirtualNetworkPeering(Terraform)](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/virtual_network_peering)

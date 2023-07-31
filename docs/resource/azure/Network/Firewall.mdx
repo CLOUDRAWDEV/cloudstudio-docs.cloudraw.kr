@@ -4,78 +4,95 @@ sidebar_position: 3
 tags: [Azure, 리소스, Network, Firewall]
 ---
 
-import icon from "../img/network-firewall.png"
-
 <span className="theme-doc-version-badge badge badge--secondary">
     last update: 2023.05.01
 </span>
 
 ##### 읽는 데 3분 걸림(소요시간)
 
-*****
+---
 
 ## 리소스 이미지
-<img src={icon} />
+
+<img
+    src={
+        "https://cloudstudioblob.blob.core.windows.net/cloudstudio/azureImg/network-firewall.png"
+    }
+/>
 
 ## 리소스 개요
-Azure Firewall은 Azure에서 실행되는 클라우드 워크로드에 대해 최상의 위협 보호를 제공하는 클라우드 네이티브 및 지능형 네트워크 방화벽 보안 서비스입니다. 
+
+Azure Firewall은 Azure에서 실행되는 클라우드 워크로드에 대해 최상의 위협 보호를 제공하는 클라우드 네이티브 및 지능형 네트워크 방화벽 보안 서비스입니다.
 고가용성 및 무제한 클라우드 확장성이 기본 제공되는 서비스 형태의 완전한 상태 저장 방화벽입니다.
 
 ## 연관 리소스
-### 상위 리소스
-- [**Resource Group**](https://docs.cstudio.app/docs/resource/azure/Base/ResourceGroup)
-- [**Virtual Network**](https://docs.cstudio.app/docs/resource/azure/Network/VirtualNetwork)
-- [- [**Subnet**](https://docs.cstudio.app/docs/resource/azure/Network/Subnet)](https://docs.cstudio.app/docs/resource/azure/Network/Subnet)
 
+### 상위 리소스
+
+-   [**Resource Group**](https://docs.cstudio.app/docs/resource/azure/Base/ResourceGroup)
+-   [**Virtual Network**](https://docs.cstudio.app/docs/resource/azure/Network/VirtualNetwork)
+-   [- [**Subnet**](https://docs.cstudio.app/docs/resource/azure/Network/Subnet)](https://docs.cstudio.app/docs/resource/azure/Network/Subnet)
+
+### 연결 리소스
+
+-   [**Network Interface**](https://docs.cstudio.app/docs/resource/azure/Network/NetworkInterface)
+-   [**Public Ip**](https://docs.cstudio.app/docs/resource/azure/Network/PublicIp)
 
 ## 리소스 설정 값
-- ```included_subnet_name``` : Firewall을 연결할 Virtual Network 이름
 
-- ```sku_tier``` : Firewall의 가격 책정 계층  - ```Basic```,  ```Standard```,  ```Premium```
+-   `included_subnet_name` : Firewall이 위치할 subnet 이름
 
+-   `sku_tier` : Firewall의 가격 책정 계층 - `Basic`, `Standard`, `Premium`
 
-- ```sku_name``` : Firewall의 가격 책정 계층 이름 -```AZFW_VNet```,  ```AZFW_Hub```
+-   `sku_name` : Firewall의 가격 책정 계층 이름 -`AZFW_VNet`, `AZFW_Hub`
 
-- ```pip_name``` : 공용 IP의 이름 
+-   `linked_public_ip_name` : Firewall에 연결할 public ip 이름
 
-- ```ip_config_name``` : IP Configuration 이름
+-   `ip_config_name` : IP Configuration 이름
 
-- ```network_rule_collection``` 
-    + ```priority``` : Rule Collection의 우선순위, 100 ~ 65000의 범위 - ```100```~  ```65000```
-    + ```action``` : 일치하는 트래픽에 Rule을 적용할 동작 - ```Allow```,```Deny```
+-   `network_rule_collection`
 
-- ```network_rules``` 
-    + ```source_addresses``` : 원본 IP 주소 혹은 범위의 목록
-    + ```destination_ports``` : 목적 Port의 목록
-    + ```protocols``` : Rule을 구성하는 프로토콜 목록 - ```TCP```,```UDP```,```ICMP```,```Any```
+    -   `priority` : Rule Collection의 우선순위, 100 ~ 65000의 범위 - `100`~ `65000`
+    -   `action` : 일치하는 트래픽에 Rule을 적용할 동작 - `Allow`,`Deny`
 
-- ```application_rule_collection``` 
-    + ```priority``` : Rule Collection의 우선순위, 100 ~ 65000의 범위 - ```100``` ~ ```65000```
-    + ```action``` : 일치하는 트래픽에 Rule을 적용할 동작 - ```Allow```,```Deny```
-    
+-   `network_rules`
 
-- ```application_rules``` 
-    + ```source_addresses``` : 원본 IP 주소 혹은 범위의 목록
-    + ```target_fqdns``` : 임의의 TCP/UDP 프로토콜을 사용하여 아웃바운드 트래픽을 필터링하기 위한 FQDN 리스트
-    + ```protocol_port``` : 프로토콜 연결을 위한 Port - ```1``` ~ ```65502```
-    + ```protocol_type``` : 프로토콜 연결 타입 - ```Http```,  ```Https```,  ```Mssql```
+    -   `source_addresses` : 원본 IP 주소 혹은 범위의 목록
+    -   `destination_ports` : 목적 Port의 목록
+    -   `destination_address` : 목적 IP 주소 혹은 범위의 목록
+    -   `protocols` : Rule을 구성하는 프로토콜 목록 - `TCP`,`UDP`,`ICMP`,`Any`
 
-- ```nat_rule_collection``` 
-    + ```priority``` : Rule Collection의 우선순위, 100 ~ 65000의 범위 - ```100``` ~ ```65000```
-    + ```action``` : 일치하는 트래픽에 Rule을 적용할 동작 - ```Dnat```,  ```Snat```
+-   `application_rule_collection`
 
+    -   `priority` : Rule Collection의 우선순위, 100 ~ 65000의 범위 - `100` ~ `65000`
+    -   `action` : 일치하는 트래픽에 Rule을 적용할 동작 - `Allow`,`Deny`
 
-- ```nat_rules``` 
-    + ```source_addresses``` : 원본 IP 주소 혹은 범위의 목록
-    + ```destination_ports``` : 목적 Port의 목록
-    + ```translated_port``` : Firewall을 사용할 서비스의 변환 Port
-    + ```translated_address``` : Firewall을 사용할 서비스의 변환 주소
-    + ```protocols``` : Rule을 구성하는 프로토콜 목록  - ```TCP```,  ```UDP```,  ```ICMP```,  ```Any```
+-   `application_rules`
 
+    -   `source_addresses` : 원본 IP 주소 혹은 범위의 목록
+    -   `target_fqdns` : 임의의 TCP/UDP 프로토콜을 사용하여 아웃바운드 트래픽을 필터링하기 위한 FQDN 리스트
+    -   `protocol_port` : 프로토콜 연결을 위한 Port - `1` ~ `65502`
+    -   `protocol_type` : 프로토콜 연결 타입 - `Http`, `Https`, `Mssql`
 
-*****
+-   `nat_rule_collection`
+
+    -   `priority` : Rule Collection의 우선순위, 100 ~ 65000의 범위 - `100` ~ `65000`
+    -   `action` : 일치하는 트래픽에 Rule을 적용할 동작 - `Dnat`, `Snat`
+
+-   `nat_rules`
+
+    -   `source_addresses` : 원본 IP 주소 혹은 범위의 목록
+    -   `destination_ports` : 목적 Port의 목록
+    -   `translated_port` : Firewall을 사용할 서비스의 변환 Port
+    -   `translated_address` : Firewall을 사용할 서비스의 변환 주소
+    -   `protocols` : Rule을 구성하는 프로토콜 목록 - `TCP`, `UDP`, `ICMP`, `Any`
+
+-   `tag` : 리소스를 카테고리로 분류하기 위한 태그 - 최대 512자, `key`:`value`
+
+---
+
 ## 참고 자료
-- [Azure Firewall(Microsoft)](https://learn.microsoft.com/ko-kr/azure/firewall/overview)
-- [Azure Firewall 가격](https://azure.microsoft.com/en-us/pricing/details/azure-firewall/) 
-- [Azure Firewall(Terraform)](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/firewall)
 
+-   [Azure Firewall(Microsoft)](https://learn.microsoft.com/ko-kr/azure/firewall/overview)
+-   [Azure Firewall 가격](https://azure.microsoft.com/en-us/pricing/details/azure-firewall/)
+-   [Azure Firewall(Terraform)](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/firewall)
