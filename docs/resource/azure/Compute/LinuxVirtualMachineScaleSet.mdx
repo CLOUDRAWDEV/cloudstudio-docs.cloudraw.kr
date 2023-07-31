@@ -1,7 +1,7 @@
 ---
-title: WindowsserverVirtualMachineScaleSet
-sidebar_position: 5
-tags: [Azure, 리소스, Compute, WindowsserverVirtualMachineScaleSet]
+title: LinuxVirtualMachineScaleSet
+sidebar_position: 3
+tags: [Azure, 리소스, Compute, LinuxVirtualMachineScaleSet]
 ---
 
 <span className="theme-doc-version-badge badge badge--secondary">
@@ -16,13 +16,13 @@ tags: [Azure, 리소스, Compute, WindowsserverVirtualMachineScaleSet]
 
 <img
     src={
-        "https://cloudstudioblob.blob.core.windows.net/cloudstudio/azureImg/compute-windowsserver_virtual_machine_scale_set.png"
+        "https://cloudstudioblob.blob.core.windows.net/cloudstudio/azureImg/compute-linux_virtual_machine_scale_set.png"
     }
 />
 
 ## 리소스 개요
 
-Azure Windowsserver 가상 머신 확장 집합은 Windows 운영 체제를 실행하는 동일한 가상 머신 그룹으로, 필요에 따라 자동으로 확장 또는 축소할 수 있습니다.
+Azure Linux 가상 머신 확장 집합은 Linux 운영 체제를 실행하는 동일한 가상 머신 그룹으로, 필요에 따라 자동으로 확장 또는 축소할 수 있습니다.
 확장 집합의 VM 수를 수동으로 조정하거나 리소스 사용량(예: CPU, 메모리 요구량 또는 네트워크 트래픽)에 따라 자동으로 크기를 조정하는 규칙을 정의할 수 있습니다.
 그러면 Azure 부하 분산 장치에서 확장 집합의 VM 인스턴스에 트래픽을 분산합니다
 
@@ -45,19 +45,19 @@ Azure Windowsserver 가상 머신 확장 집합은 Windows 운영 체제를 실�
     -   `publisher` : VM 생성을 위해 사용하는 이미지의 공급자
     -   `Offer` : VM 생성을 위해 사용하는 이미지의 ID
     -   `sku` : VM 생성을 위해 사용하는 이미지의 가격 책정 계층
--   `computer_name_prefix` : Virtual Machines의 이름으로 사용할 Prefix
+-   `enable_ssh_key_authentication` : 관리자 계정을 인증하기 위해 ssh 키 사용
 -   `admin_username` : VM에 대한 관리자 사용자 이름
 -   `admin_password` : VM에 대한 관리자 암호
 -   `os_disk_caching` : 내부 OS Disk 사용을 위한 Caching 유형 - `ReadWrite`, `ReadOnly`, `None`
 -   `storage_account_type` : 내부 OS Disk를 백업하기 위한 스토리지 유형 - `Standard_LRS`, `StandardSSD_LRS`, `Premium_LRS`
--   `disk_size_gb` : 내부 OS Disk의 크기(GB) - `1`~`11400`
--   `network_interface` : 네트워크 인터페이스 이름
+-   `disk_size_gb` : 내부 OS Disk의 크기(GB) - `1` ~ `11400`
+-   `network_interface` : Virtual Machine이 연결된 Network Interface 이름
 -   `tag` : 리소스를 카테고리로 분류하기 위한 태그 - 최대 512자, `key`:`value`
 
 ---
 
 ## 참고 자료
 
--   [Azure WindowsserverVirtualMachineScaleSet(Microsoft)](https://learn.microsoft.com/ko-kr/azure/virtual-machine-scale-sets/overview)
--   [Azure WindowsserverVirtualMachineScaleSet 가격](https://azure.microsoft.com/en-us/pricing/details/virtual-machine-scale-sets/windows/)
--   [Azure WindowsserverVirtualMachineScaleSet(Terraform)](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/windows_virtual_machine_scale_set)
+-   [Azure LinuxVirtualMachine(Microsoft)](https://learn.microsoft.com/ko-kr/azure/virtual-machines/overview)
+-   [Azure LinuxVirtualMachine 가격](https://azure.microsoft.com/en-us/pricing/details/virtual-machines/linux/)
+-   [Azure LinuxVirtualMachine(Terraform)](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/linux_virtual_machine)

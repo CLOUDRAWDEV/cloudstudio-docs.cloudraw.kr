@@ -1,10 +1,8 @@
 ---
 title: FrontDoor
 sidebar_position: 1
-tags: [Azure, 리소스, Cdn ,FrontDoor]
+tags: [Azure, 리소스, Cdn, FrontDoor]
 ---
-
-import icon from "../img/cdn-frontdoor.png"
 
 <span className="theme-doc-version-badge badge badge--secondary">
     last update: 2023.05.01
@@ -12,69 +10,69 @@ import icon from "../img/cdn-frontdoor.png"
 
 ##### 읽는 데 3분 걸림(소요시간)
 
-*****
+---
 
 ## 리소스 이미지
-<img src={icon} />
 
+<img
+    src={
+        "https://cloudstudioblob.blob.core.windows.net/cloudstudio/azureImg/cdn-frontdoor.png"
+    }
+/>
 
 ## 리소스 개요
-Azure Front Door는 전 세계 사용자와 애플리케이션의 정적 및 동적 웹 콘텐츠 간에 빠르고 안정적이며 안전한 액세스를 제공하는 Microsoft의 최신 클라우드 CDN(Content Delivery Network)입니다. 
+
+Azure Front Door는 전 세계 사용자와 애플리케이션의 정적 및 동적 웹 콘텐츠 간에 빠르고 안정적이며 안전한 액세스를 제공하는 Microsoft의 최신 클라우드 CDN(Content Delivery Network)입니다.
 Azure Front Door는 엔터프라이즈 및 소비자 최종 사용자 모두에 가까운 전 세계에 배포된 수백 개의 글로벌 및 로컬 POP(지점) 가 있는 Microsoft의 글로벌 에지 네트워크를 사용하여 콘텐츠를 제공합니다.
 
-
-
 ## 연관 리소스
+
 ### 상위 리소스
-- [**Resource Group**](https://docs.cstudio.app/docs/resource/azure/Base/ResourceGroup)
 
-
-
+-   [**Resource Group**](https://docs.cstudio.app/docs/resource/azure/Base/ResourceGroup)
 
 ## 리소스 설정 값
-- ```sku``` : Front Door 프로필에 대한 SKU를 지정 - ```Standard_AzureFrontDoor``` , ```Premium_AzureFrontDoor```
 
+-   `sku` : Front Door 프로필에 대한 SKU를 지정 - `Standard_AzureFrontDoor` , `Premium_AzureFrontDoor`
 
-- ```endpoint_names``` : 사용할 엔드포인트의 이름 목록
+-   `endpoint_names` : 사용할 엔드포인트의 이름 목록
 
+-   `origin_group`
 
-- ```origin_group```
-    + ```restore_traffic_time_in_minutes``` : 엔드포인트가 비정상이 되거나 새 엔드포인트가 추가될 때 다른 엔드포인트로 트래픽을 이동하기 전에 경과해야 하는 시간을 지정합니다.  ```0``` ~ ```50```
-    + ```session_affinity_enabled``` : 호스트에서 세션 선호도를 활성화해야 하는지 여부를 지정.  -  ```true``` , ```false```
-    + ```health_probe_path``` : 상태를 체크하는 상대경로를 지정
-    + ```health_probe_protocol``` : 상태 프로브에 사용할 프로토콜을 지정 - ```Http``` , ```Https```
-    + ```health_probe_method``` : 상태 프로브 요청의 유형을 지정 - ```HEAD``` , ```GET```
-    + ```health_probe_interval_in_seconds``` : 상태 프로브 간격(초)을 지정합니다  ```5``` ~ ```31536000```
-    + ```load_balancing_latency_in_milliseconds``` : 가장 낮은 지연 시간 버킷에 포함될 수 있는 추가 지연 시간을 밀리초 단위로 지정 -   ```0``` ~ ```1000```
-    + ```load_balancing_sample_size``` : 로드 밸런싱 샘플 수를 지정 - ```0``` ~ ```255```
-    + ```load_balancing_sample_required``` : 기간 내에서 성공해야 하는 샘플 수를 지정 - ```0``` ~ ```255```
+    -   `restore_traffic_time_in_minutes` : 엔드포인트가 비정상이 되거나 새 엔드포인트가 추가될 때 다른 엔드포인트로 트래픽을 이동하기 전에 경과해야 하는 시간을 지정합니다. `0` ~ `50`
+    -   `session_affinity_enabled` : 호스트에서 세션 선호도를 활성화해야 하는지 여부를 지정. - `true` , `false`
+    -   `health_probe_path` : 상태를 체크하는 상대경로를 지정
+    -   `health_probe_protocol` : 상태 프로브에 사용할 프로토콜을 지정 - `Http` , `Https`
+    -   `health_probe_method` : 상태 프로브 요청의 유형을 지정 - `HEAD` , `GET`
+    -   `health_probe_interval_in_seconds` : 상태 프로브 간격(초)을 지정합니다 `5` ~ `31536000`
+    -   `load_balancing_latency_in_milliseconds` : 가장 낮은 지연 시간 버킷에 포함될 수 있는 추가 지연 시간을 밀리초 단위로 지정 - `0` ~ `1000`
+    -   `load_balancing_sample_size` : 로드 밸런싱 샘플 수를 지정 - `0` ~ `255`
+    -   `load_balancing_sample_required` : 기간 내에서 성공해야 하는 샘플 수를 지정 - `0` ~ `255`
 
+-   `origin`
 
-- ```origin```
-    + ```origin_group_name``` : 오리진이 포함되는 그룹의 이름 
-    + ```host_name``` : 오리진의 호스트 이름 (IPv4 주소, IPv6 주소 또는 도메인 이름) 
-    + ```origin_host_header``` : 각 요청과 함께 오리진으로 전송되는 호스트 헤더 값 (IPv4 주소, IPv6 주소 또는 도메인 이름)
-    + ```certificate_name_check_enabled``` : 인증서 적용 여부를 지정 - ```true``` , ```false```
-    + ```enabled``` : 오리진 활성화 여부 - ```true``` , ```false```
-    + ```priority``` : 로드 밸런싱을 위해 지정된 오리진 그룹의 오리진 우선 순위,  낮은 우선 순위 오리진이 정상인 경우 높은 우선 순위는 로드 밸런싱에 사용되지 않음 - ```1``` ~ ```5```
-    + ```weight``` : 로드 밸런싱을 위해 지정된 오리진 그룹의 오리진 가중치 - ```1``` ~ ```1000```
-    + ```http_port``` : Http 포트 값 - ```1``` ~ ```65535```
+    -   `origin_group_name` : 오리진이 포함되는 그룹의 이름
+    -   `host_name` : 오리진의 호스트 이름 (IPv4 주소, IPv6 주소 또는 도메인 이름)
+    -   `origin_host_header` : 각 요청과 함께 오리진으로 전송되는 호스트 헤더 값 (IPv4 주소, IPv6 주소 또는 도메인 이름)
+    -   `certificate_name_check_enabled` : 인증서 적용 여부를 지정 - `true` , `false`
+    -   `enabled` : 오리진 활성화 여부 - `true` , `false`
+    -   `priority` : 로드 밸런싱을 위해 지정된 오리진 그룹의 오리진 우선 순위, 낮은 우선 순위 오리진이 정상인 경우 높은 우선 순위는 로드 밸런싱에 사용되지 않음 - `1` ~ `5`
+    -   `weight` : 로드 밸런싱을 위해 지정된 오리진 그룹의 오리진 가중치 - `1` ~ `1000`
+    -   `http_port` : Http 포트 값 - `1` ~ `65535`
 
+-   `route`
+    -   `endpoint_name` : 지정할 프론트도어 엔드포인트 이름
+    -   `origin_group_name` : 오리진이 포함되는 그룹의 이름
+    -   `origin_names` : 지정할 오리진들의 이름 값
+    -   `patterns_to_match` : 라우팅 경로 패턴
+    -   `supported_protocols` : 프론트도어에서 지정할 프로토콜 - `Http` , `Https`
+    -   `forwarding_protocol` : 트래픽을 백엔드로 전달할 때 사용할 프로토콜 - `HttpOnly`, `HttpsOnly`, `MatchRequest`
+-   `tag` : 리소스를 카테고리로 분류하기 위한 태그 - 최대 512자, `key`:`value`
 
-- ```route```
-    + ```endpoint_name``` : 지정할 프론트도어 엔드포인트 이름
-    + ```origin_group_name``` : 오리진이 포함되는 그룹의 이름
-    + ```origin_names``` : 지정할 오리진들의 이름 값
-    + ```patterns_to_match``` : 라우팅 경로 패턴 
-    + ```supported_protocols``` : 프론트도어에서 지정할 프로토콜 - ```Http``` , ```Https```
-    + ```forwarding_protocol``` : 트래픽을 백엔드로 전달할 때 사용할 프로토콜 - ```HttpOnly```, ```HttpsOnly```, ```MatchRequest```
-    
+---
 
-
-
-
-*****
 ## 참고 자료
-- [Azure FrontDoor(Microsoft)](https://learn.microsoft.com/ko-kr/azure/frontdoor/front-door-overview)
-- [Azure FrontDoor 가격](https://azure.microsoft.com/en-us/pricing/details/frontdoor/) 
-- [Azure FrontDoor(Terraform)](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/cdn_frontdoor_endpoint)
+
+-   [Azure FrontDoor(Microsoft)](https://learn.microsoft.com/ko-kr/azure/frontdoor/front-door-overview)
+-   [Azure FrontDoor 가격](https://azure.microsoft.com/en-us/pricing/details/frontdoor/)
+-   [Azure FrontDoor(Terraform)](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/cdn_frontdoor_endpoint)

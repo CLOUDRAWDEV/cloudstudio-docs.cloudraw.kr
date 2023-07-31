@@ -4,85 +4,79 @@ sidebar_position: 1
 tags: [Azure, 리소스, Container, KubernetesCluster]
 ---
 
-import icon from "../img/container-kubernetes_cluster.png"
-
 <span className="theme-doc-version-badge badge badge--secondary">
     last update: 2023.05.01
 </span>
 
 ##### 읽는 데 3분 걸림(소요시간)
 
-*****
+---
 
 ## 리소스 이미지
-<img src={icon} />
+
+<img
+    src={
+        "https://cloudstudioblob.blob.core.windows.net/cloudstudio/azureImg/container-kubernetes_cluster.png"
+    }
+/>
 
 ## 리소스 개요
+
 AKS(Azure Kubernetes Service)는 클러스터를 빠르게 배포하고 관리할 수 있는 관리형 Kubernetes 서비스입니다. 이 빠른 시작에서는 다음을 수행합니다.
 
-
-
-
 ## 리소스 설정 값
-- ```dns_prefix``` : 호스트된 Kubernetes API 서버 FQDN과 함께 사용할 DNS 접두사 
 
-- ```sku_tier``` : 쿠버네티스 클러스터 사용을 위한 가격 책정 계층 - ```Free```, ```Paid```
+-   `dns_prefix` : 호스트된 Kubernetes API 서버 FQDN과 함께 사용할 DNS 접두사
 
-- ```api_server_authorized_ip_ranges``` : API 서버에 대한 접근을 보호하기 위한 권한 있는 IP 주소 범위
-   
-- ```default_node_pool```
-    + ```node_pool_name``` : 쿠버네티스 클러스터에 생성할 Node Pool 이름
-    + ```enable_auto_scaling``` : 클러스터가 적절한 노드 수로 실행하도록 클러스터에 대한 자동 크기 조정 활성화
-    + ```node_count``` : Node Pool의 노드 수 - ```1```~ ```1000```
-    + ```min_node_count``` : Node Pool의 최소 노드 수 - ```1```~ ```1000```
-    + ```max_node_count``` : Node Pool의 최대 노드 수 - ```1```~ ```1000```
-    + ```vm_size``` : Node Pool에서 노드를 형성할 가상머신의 크기
-    + ```os_disk_size_gb``` : 가상머신의 OS 디스크 크기(GB) - ```0```~ ```114000```
-    + ```max_pods``` : 노드에서 실행할 수 있는 Pod의 최대 수 - ```10```~ ```250```
-    + ```enable_node_public_ip``` : 노드당 공용 IP 주소 사용 활성화 - ```true```, ```false```
+-   `sku_tier` : 쿠버네티스 클러스터 사용을 위한 가격 책정 계층 - `Free`, `Paid`
 
+-   `enable_public_network_access` : - `true`, `false`
 
-- ```aad_rbac_enabled``` : 클러스터 리소스에 대한 액세스를 제한하기 위해 역할 기반 액세스 제어 활성화 - ```true```, ```false```
+-   `api_server_authorized_ip_ranges` : API 서버에 대한 접근을 보호하기 위한 권한 있는 IP 주소 범위
+-   `default_node_pool`
 
-- ```network_policy``` : 특정 Pod에 대한 접근 제한을 위한 네트워크 정책 - ```calico```, ```azure```
+    -   `node_pool_name` : 쿠버네티스 클러스터에 생성할 Node Pool 이름
+    -   `enable_auto_scaling` : 클러스터가 적절한 노드 수로 실행하도록 클러스터에 대한 자동 크기 조정 활성화
+    -   `node_count` : Node Pool의 노드 수 - `1`~ `1000`
+    -   `vm_size` : Node Pool에서 노드를 형성할 가상머신의 크기
+    -   `os_disk_size_gb` : 가상머신의 OS 디스크 크기(GB) - `0`~ `114000`
+    -   `max_pods` : 노드에서 실행할 수 있는 Pod의 최대 수 - `10`~ `250`
+    -   `enable_node_public_ip` : 노드당 공용 IP 주소 사용 활성화 - `true`, `false`
 
-- ```network_plugin``` : 기본 가상 네트워크를 kubenet 혹은 Azure CNI로 네트워크 구성 - ```kubenet```, ```azure```
+-   `authentication_authorization` : 클러스터 리소스에 대한 액세스를 제한하기 위해 역할 기반 액세스 제어 활성화 - `local_accounts`, `azure_rbac`, `kubernetes_rbac`
 
-- ```included_subnet_name``` : Kubernetes Cluster가 배포될 Subnet 이름
+-   `network_policy` : 특정 Pod에 대한 접근 제한을 위한 네트워크 정책 - `calico`, `azure`
 
-- ```load_balancer_sku``` : Load Balancer의 가격 책정 계층  - ```standard```, ```basic```
+-   `network_plugin` : 기본 가상 네트워크를 kubenet 혹은 Azure CNI로 네트워크 구성 - `kubenet`, `azure`
 
-- ```pod_cidr``` : Pod IP 주소를 사용하기 위한 CIDR
+-   `included_subnet_name` : Kubernetes Cluster가 배포될 Subnet 이름
 
-- ```service_cidr``` : 서비스 클러스터 IP를 할당하는 CIDR 범위
+-   `load_balancer_sku` : Load Balancer의 가격 책정 계층 - `standard`, `basic`
 
-- ```dns_service_ip``` : Kubernetes DNS 서비스에 할당된 IP 주소
+-   `pod_cidr` : Pod IP 주소를 사용하기 위한 CIDR
 
-- ```docker_bridge_cidr``` : Docker 브리지에 할당된 IP 주소와 네트워크 마스크
+-   `outbound_type` : 아웃바운드 라우팅 타입 - `loadBalancer`, `userDefinedRouting`
 
-- ```outbound_type``` : 아웃바운드 라우팅 타입 - ```loadBalancer```, ```userDefinedRouting```
+-   `cluster_node_pool`
 
-- ```cluster_node_pool``` 
-    + ```node_mode``` : Node Pool에 대한 시스템 혹은 사용자 모드 - ```User```, ```System```
-    + ```node_os_type``` : Node Pool에서 VM의 OS 유형  - ```Linux```, ```Windows```
-    + ```enable_auto_scaling``` : 클러스터가 적절한 노드 수로 실행하도록 클러스터에 대한 자동 크기 조정 활성화  - ```true```, ```false```
-    + ```node_count``` : Node Pool의 노드 수, 사용자 모드  - ```1```~ ```1000```
-    + ```max_node_count``` : Node Pool의 최대 노드 수  - ```0```~ ```1000```
-    + ```min_node_count``` : Node Pool의 최소 노드 수  - ```0```~ ```1000```
-    + ```vm_size``` : Node Pool에서 노드를 형성할 가상머신의 크기
-    + ```os_disk_size_gb``` : 가상머신의 OS 디스크 크기(GB) - ```4```~ ```11400```
-    + ```max_pods``` : 노드에서 실행할 수 있는 Pod의 최대 수
-    + ```vm_size``` : Node Pool에서 노드를 형성할 가상머신의 크기 [Azure CNI - 10 ~ 250의 범위, Kubenet - 10 ~ 110의 범위] - ```10```~ ```250```
-    + ```enable_node_public_ip``` : 노드당 공용 IP 주소 사용 활성화 - ```true```, ```false``` 
+    -   `node_mode` : Node Pool에 대한 시스템 혹은 사용자 모드 - `User`, `System`
+    -   `node_os_type` : Node Pool에서 VM의 OS 유형 - `Linux`, `Windows`
+    -   `enable_auto_scaling` : 클러스터가 적절한 노드 수로 실행하도록 클러스터에 대한 자동 크기 조정 활성화 - `true`, `false`
+    -   `node_count` : Node Pool의 노드 수, 사용자 모드 - `1`~ `1000`
+    -   `max_node_count` : Node Pool의 최대 노드 수 - `0`~ `1000`
+    -   `min_node_count` : Node Pool의 최소 노드 수 - `0`~ `1000`
+    -   `vm_size` : Node Pool에서 노드를 형성할 가상머신의 크기
+    -   `os_disk_size_gb` : 가상머신의 OS 디스크 크기(GB) - `4`~ `11400`
+    -   `max_pods` : 노드에서 실행할 수 있는 Pod의 최대 수
+    -   `enable_node_public_ip` : 노드당 공용 IP 주소 사용 활성화 - `true`, `false`
+    -   `public_ip_prefix_name`
 
+-   `tag` : 리소스를 카테고리로 분류하기 위한 태그 - 최대 512자, `key`:`value`
 
+---
 
-
-
-
-
-*****
 ## 참고 자료
-- [Azure KubernetesCluster(Microsoft)](https://learn.microsoft.com/ko-kr/azure/aks/intro-kubernetes)
-- [Azure KubernetesCluster 가격](https://azure.microsoft.com/en-us/pricing/details/kubernetes-service/) 
-- [Azure KubernetesCluster(Terraform)](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/kubernetes_cluster)
+
+-   [Azure KubernetesCluster(Microsoft)](https://learn.microsoft.com/ko-kr/azure/aks/intro-kubernetes)
+-   [Azure KubernetesCluster 가격](https://azure.microsoft.com/en-us/pricing/details/kubernetes-service/)
+-   [Azure KubernetesCluster(Terraform)](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/kubernetes_cluster)
