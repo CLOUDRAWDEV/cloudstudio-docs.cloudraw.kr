@@ -4,87 +4,89 @@ sidebar_position: 0
 tags: [Azure, 리소스, Network, ApplicationGateway]
 ---
 
-import icon from "../img/network-application_gateway.png"
-
-
-
-
-
 <hr />
 <br />
 
 ## 리소스 아이콘
-<img src={icon} />
+
+<img
+    src={
+        "https://cloudstudioblob.blob.core.windows.net/cloudstudio/azureImg/network-application_gateway.png"
+    }
+/>
 
 ## 리소스 개요
-Azure Application Gateway는 웹 애플리케이션에 대한 트래픽을 관리할 수 있도록 하는 웹 트래픽 부하 분산 장치입니다. 
+
+Azure Application Gateway는 웹 애플리케이션에 대한 트래픽을 관리할 수 있도록 하는 웹 트래픽 부하 분산 장치입니다.
 기존 부하 분산 장치는 전송 계층(OSI 계층 4 - TCP 및 UDP)에서 작동하고 원본 IP 주소와 포트를 기반으로 대상 IP 주소와 포트에 트래픽을 라우팅합니다.
-Application Gateway는 URI 경로 또는 호스트 헤더와 같은 HTTP 요청의 추가 특성을 기반으로 라우팅 결정을 내릴 수 있습니다. 예를 들어 들어오는 URL을 기반으로 하는 트래픽을 라우팅할 수 있습니다. 
+Application Gateway는 URI 경로 또는 호스트 헤더와 같은 HTTP 요청의 추가 특성을 기반으로 라우팅 결정을 내릴 수 있습니다. 예를 들어 들어오는 URL을 기반으로 하는 트래픽을 라우팅할 수 있습니다.
 따라서 /images가 들어오는 URL에 있는 경우 이미지에 대해 구성된 서버(풀 라고도 함)의 특정 집합에 트래픽을 라우팅할 수 있습니다. /video가 URL에 있는 경우 해당 트래픽은 비디오에 최적화된 다른 풀로 라우팅됩니다.
 
-
 ## 연관 리소스
-### 상위 리소스
-- [**Resource Group**](https://docs.cstudio.app/docs/resource/azure/Base/ResourceGroup)
-- [**Virtual Network**](https://docs.cstudio.app/docs/resource/azure/Network/VirtualNetwork)
-- [**Subnet**](https://docs.cstudio.app/docs/resource/azure/Network/Subnet)
 
+### 상위 리소스
+
+-   [**Resource Group**](https://docs.cstudio.app/docs/resource/azure/Base/ResourceGroup)
+-   [**Virtual Network**](https://docs.cstudio.app/docs/resource/azure/Network/VirtualNetwork)
+-   [- [**Subnet**](https://docs.cstudio.app/docs/resource/azure/Network/Subnet)](https://docs.cstudio.app/docs/resource/azure/Network/Subnet)
+
+### 연결 리소스
+
+-   [**Public Ip**](https://docs.cstudio.app/docs/resource/azure/Network/PublicIp)
 
 ## 리소스 설정 값
-- ```included_subnet_name``` : Application Gateway를 배포할 Vnet의 이름
 
-- ```linked_waf_policy_name``` : 연결할 Web Application Firewall Policy 이름
+-   `included_subnet_name` : Application Gateway를 배포할 Vnet의 이름
 
-- ```sku_tier``` : Application Gateway 사용을 위한 가격 책정 계층
+-   `linked_waf_policy_name` : 연결할 Web Application Firewall Policy 이름
 
-- ```sku_name``` : Application Gateway 사용을 위한 가격 책정 계층 이름
+-   `sku_tier` : Application Gateway 사용을 위한 가격 책정 계층
 
-- ```sku_capacity``` : Application Gateway 사용을 위한 가격 책정 계층 이름 - ```1``` ~ ```32```
+-   `sku_name` : Application Gateway 사용을 위한 가격 책정 계층 이름
 
-- ```gateway_ip_config_name``` : Gateway IP의 구성 이름 
+-   `sku_capacity` : Application Gateway 사용을 위한 가격 책정 계층 이름 - `1` ~ `32`
 
-- ```frontend_ip_address_type``` : 공용 IP 주소 할당 방법  - ```Both```,  ```Private```,  ```Public```
+-   `gateway_ip_config_name` : Gateway IP의 구성 이름
 
-- ```public_frontend_ip_configuration```
-    +  ```ip_config_name``` : Public Ip Config의 이름
-    +  ```pip_name``` : 공용 IP의 이름
+-   `frontend_ip_address_type` : 공용 IP 주소 할당 방법 - `Both`, `Private`, `Public`
 
-- ```private_frontend_ip_configuration```
-    +  ```ip_config_name``` : Private Ip Config의 이름
-    +  ```private_ip_address_allocation``` : Private Ip의 주소 할당 법칙 - ```Static```,  ```Dynamic```
-    +  ```private_ip_address``` : Private Ip의 주소
+-   `public_frontend_ip_configuration`
 
-- ```backend_pool_names``` : Application Gateway와 연결할 Backend Address Pool 이름의 목록
+    -   `ip_config_name` : Frontend Ip 구성 이름
+    -   `linked_public_ip_name` : 연결할 public ip 이름
 
-- ```http_listener```
-    +  ```frontend_ip_config``` : 사용할 Frontend IP 구성의 종류 - ```Public```,  ```Private```
-    +  ```frontend_port_name``` : 사용할 Frontend Port 이름
-    +  ```frontend_port``` : Frontend Port의 포트 번호 - ```1```~  ```65502```
-    +  ```protocol``` : 클라이언트와 Application Gateway 간의 프로토콜 - ```Http```, ```Https```
-    +  ```cert_name``` : Protocol Https 사용 시 사용할 SSL 인증서 이름 
-    +  ```pfx_cert_data``` : PFX 인증서 내용
-    +  ```password``` : PFX 인증서 비밀번호
-    
-- ```backend_http_settings```
-    +  ```protocol``` : 요청을 Backend Server로 라우팅할 때 사용할 프로토콜 - ```Http```, ```Https```
-    +  ```port``` : 사용할 Frontend Port 이름  - ```1```~  ```65535```
-    +  ```cookie_based_affinity``` : 후속 트래픽 처리를 위한 쿠키 기반의 선호도 활성화 - ```Enabled```, ```Disabled```
-    +  ```request_timeout``` : 요청 시간 초과 설정(초) - ```1```~ ```86400```
+-   `private_frontend_ip_configuration`
 
-    
-- ```request_routing_rule```
-    +  ```protocol``` : 요청이 전달될 Backend Server Pool을 정의하기 위한 라우팅 규칙 유형 - ```Basic```, ```PathBasedRouting```
-    +  ```http_listener_name``` : 규칙과 연결할 HTTP 리스너 이름
-    +  ```backend_address_pool_name``` : 규칙과 연결할 Backend Address Pool 이름
-    +  ```backend_http_settings_name``` : 규칙과 연결할 Backend HTTP settings 이름
-    +  ```priority``` : Routing Rule의 우선 순위
+    -   `ip_config_name` : Private Ip Config의 이름
+    -   `private_ip_address_allocation` : Private Ip의 주소 할당 법칙 - `Static`, `Dynamic`
+    -   `private_ip_address` : Private Ip의 주소
 
+-   `backend_pool_names` : Application Gateway와 연결할 Backend Address Pool 이름의 목록
 
+-   `http_listener`
+    -   `frontend_ip_config` : 사용할 Frontend IP 구성의 종류 - `Public`, `Private`
+    -   `frontend_port_name` : 사용할 Frontend Port 이름
+    -   `frontend_port` : Frontend Port의 포트 번호 - `1`~ `65502`
+    -   `protocol` : 클라이언트와 Application Gateway 간의 프로토콜 - `Http`, `Https`
+-   `backend_http_settings`
+    -   `protocol` : 요청을 Backend Server로 라우팅할 때 사용할 프로토콜 - `Http`, `Https`
+    -   `port` : 사용할 Frontend Port 이름 - `1`~ `65535`
+    -   `cookie_based_affinity` : 후속 트래픽 처리를 위한 쿠키 기반의 선호도 활성화 - `Enabled`, `Disabled`
+    -   `request_timeout` : 요청 시간 초과 설정(초) - `1`~ `86400`
+-   `request_routing_rule`
 
-<hr />
+    -   `rule_type` : 요청이 전달될 Backend Server Pool을 정의하기 위한 라우팅 규칙 유형 - `Basic`, `PathBasedRouting`
+    -   `http_listener_name` : 규칙과 연결할 HTTP 리스너 이름
+    -   `backend_address_pool_name` : 규칙과 연결할 Backend Address Pool 이름
+    -   `backend_http_settings_name` : 규칙과 연결할 Backend HTTP settings 이름
+    -   `priority` : Routing Rule의 우선 순위
+
+-   `tag` : 리소스를 카테고리로 분류하기 위한 태그 - 최대 512자, `key`:`value`
+
+---
 
 ## 참고 자료
-- [Azure ApplicationGateway(Microsoft)](https://learn.microsoft.com/ko-kr/azure/application-gateway/overview)
-- [Azure ApplicationGateway 가격](https://azure.microsoft.com/en-us/pricing/details/application-gateway/) 
-- [Azure ApplicationGateway(Terraform)](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/application_gateway)
 
+-   [Azure ApplicationGateway(Microsoft)](https://learn.microsoft.com/ko-kr/azure/application-gateway/overview)
+-   [Azure ApplicationGateway 가격](https://azure.microsoft.com/en-us/pricing/details/application-gateway/)
+-   [Azure ApplicationGateway(Terraform)](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/application_gateway)

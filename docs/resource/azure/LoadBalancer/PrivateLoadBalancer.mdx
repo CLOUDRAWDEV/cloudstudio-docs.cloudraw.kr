@@ -4,87 +4,76 @@ sidebar_position: 0
 tags: [Azure, 리소스, LoadBalancer, PrivateLoadBalancer]
 ---
 
-import icon from "../img/load_balancer-private_load_balancer.png"
-
-
-
-
-
 <hr />
 <br />
 
 ## 리소스 아이콘
-<img src={icon} />
+
+<img
+    src={
+        "https://cloudstudioblob.blob.core.windows.net/cloudstudio/azureImg/load_balancer-private_load_balancer.png"
+    }
+/>
 
 ## 리소스 개요
+
 LoadBalancer는 백 엔드 리소스 또는 서버의 그룹에서 로드(들어오는 네트워크 트래픽)를 효율적으로 분산하는 것을 의미합니다.
-Azure Load Balancer는 OSI(Open Systems Interconnect) 모델의 계층 4에서 작동합니다. 클라이언트의 단일 연락 지점입니다. 
-Laod Balancer는 Load Balancer의 프런트 엔드에 도착하는 인바운드 흐름을 백 엔드 풀 인스턴스에 분산합니다. 
-이러한 흐름은 구성된 부하 분산 규칙 및 상태 프로브에 따라 진행됩니다. 
+Azure Load Balancer는 OSI(Open Systems Interconnect) 모델의 계층 4에서 작동합니다. 클라이언트의 단일 연락 지점입니다.
+Laod Balancer는 Load Balancer의 프런트 엔드에 도착하는 인바운드 흐름을 백 엔드 풀 인스턴스에 분산합니다.
+이러한 흐름은 구성된 부하 분산 규칙 및 상태 프로브에 따라 진행됩니다.
 백 엔드 풀 인스턴스는 Azure Virtual Machines 또는 Virtual Machine Scale Set의 인스턴스일 수 있습니다.
-Private Load Balancer 는 사설 IP가 프런트 엔드에서만 필요한 경우에 사용됩니다. Private Load Balancer 는 트래픽 부하를 가상 네트워크 내에 분산하는 데 사용됩니다. 
+Private Load Balancer 는 사설 IP가 프런트 엔드에서만 필요한 경우에 사용됩니다. Private Load Balancer 는 트래픽 부하를 가상 네트워크 내에 분산하는 데 사용됩니다.
 하이브리드 시나리오의 온-프레미스 네트워크에서 Load Balancer 프런트 엔드에 액세스할 수 있습니다.
 
 ## 연관 리소스
-### 상위 리소스
-- [**Resource Group**](https://docs.cstudio.app/docs/resource/azure/Base/ResourceGroup)
 
-### 연결 리소스
-- [**Ubuntu Virtual Machine**](https://docs.cstudio.app/docs/resource/azure/Compute/UbuntuVirtualMachine)
-- [**Windowsserver Virtual Machine**](https://docs.cstudio.app/docs/resource/azure/Compute/WindowsserverVirtualMachine)
-- [**Redhat Virtual Machine**](https://docs.cstudio.app/docs/resource/azure/Compute/RedhatVirtualMachine)
-- [**Debian Virtual Machine**](https://docs.cstudio.app/docs/resource/azure/Compute/DebianVirtualMachine)
-- [**Centos Virtual Machine**](https://docs.cstudio.app/docs/resource/azure/Compute/CentosVirtualMachine)
+### 상위 리소스
+
+-   [**Resource Group**](https://docs.cstudio.app/docs/resource/azure/Base/ResourceGroup)
 
 ## 리소스 설정 값
-- ```sku``` : Azure Load Balancer의 규모 및 기능 선택을 위한 가격 책정 계층 - ```standard```, ```Basic```
 
-- ```private_lb_frontend_ip_config``` 
-  + ```subnet_name``` : IP Configuration과 연동할 Subnet 이름
+-   `sku` : Azure Load Balancer의 규모 및 기능 선택을 위한 가격 책정 계층 - `standard`, `Basic`
 
+-   `private_lb_frontend_ip_config`
 
-- ```backend_pool``` : Load Balancer의 Backend Pool 이름
-  + ```backend_address_names``` : Backend Pool에 추가할 Backend Address 이름 목록
+    -   `subnet_name` : IP Configuration과 연동할 Subnet 이름
 
+-   `virtual_network_name` : Load Balancer가 트래픽을 전달할 Virtual Network 이름
 
-- ```backend_address``` : Load Balancer가 백엔드로 트래픽을 전달을 위해 생성할 Address 이름
-  + ```virtual_network_name``` : Load Balancer가 트래픽을 전달할 Virtual Network 이름
-  + ```linked_virtual_machine_name``` : Load Balancer가 트래픽을 전달할 Virtual Machine 이름
+-   `backend_pool` : Load Balancer의 Backend Pool 이름
 
+    -   `linked_virtual_machine_names` : Load Balancer가 트래픽을 전달할 Virtual Machine 이름
 
-- ```health_probe``` 
-  + ```protocol``` : 상태 프로브가 사용하는 백엔드 엔드포인트의 프로토콜 타입 - ```Http```, ```Https```, ```Tcp```
-  + ```port``` : 상태 프로브가 백엔드 엔드포인트를 확인하는 포트 - ```0``` ~ ```65535```
-  + ```request_path``` : Http(s) 프로브를 사용할 때 GET에 사용할 경로 
-  + ```interval_in_seconds``` : 상태 프로브가 백엔드 풀 인스턴스의 응답을 확인하는 간격 (초) - ```5``` ~ ```2147483646```
+-   `health_probe`
 
+    -   `protocol` : 상태 프로브가 사용하는 백엔드 엔드포인트의 프로토콜 타입 - `Http`, `Https`, `Tcp`
+    -   `port` : 상태 프로브가 백엔드 엔드포인트를 확인하는 포트 - `0` ~ `65535`
+    -   `request_path` : Http(s) 프로브를 사용할 때 GET에 사용할 경로
+    -   `interval_in_seconds` : 상태 프로브가 백엔드 풀 인스턴스의 응답을 확인하는 간격 (초) - `5` ~ `2147483646`
 
-- ```rule``` 
-  + ```protocol``` : 외부 Endpoint를 위한 전송 Protocol - ```Tcp```, ```Udp```, ```All```
-  + ```frontend_port``` : 외부 Endpoint의 Port, 0 ~ 65534의 범위 - ```0``` ~ ```65534```
-  + ```backend_port``` : 내부 Connection에 사용할 Port, 0 ~ 65535의 범위 - ```0``` ~ ```65535```
-  + ```disable_outbound_snat``` : 아웃바운드 연결을 위해 Rule에 대한 SNAT 활성화 - ```true```, ```false```
-  + ```frontend_ip_configuration_name``` : Rule이 연동될 Frontend IP Configuration 이름 
-  + ```backend_pool_name``` : Load Balancer가 트래픽을 전달할 Backend Address Pool의 이름
+-   `rule`
 
+    -   `protocol` : 외부 Endpoint를 위한 전송 Protocol - `Tcp`, `Udp`, `All`
+    -   `frontend_port` : 외부 Endpoint의 Port, 0 ~ 65534의 범위 - `0` ~ `65534`
+    -   `backend_port` : 내부 Connection에 사용할 Port, 0 ~ 65535의 범위 - `0` ~ `65535`
+    -   `disable_outbound_snat` : 아웃바운드 연결을 위해 Rule에 대한 SNAT 활성화 - `true`, `false`
+    -   `frontend_ip_configuration_name` : Rule이 연동될 Frontend IP Configuration 이름
+    -   `backend_pool_name` : Load Balancer가 트래픽을 전달할 Backend Address Pool의 이름
 
-- ```nat_rule``` 
-  + ```protocol``` : 외부 Endpoint를 위한 전송 Protocol - ```Tcp```, ```Udp```, ```All```
-  + ```frontend_port``` : 외부 Endpoint의 Port, 0 ~ 65534의 범위 - ```0``` ~ ```65534```
-  + ```backend_port``` : 내부 Connection에 사용할 Port, 0 ~ 65535의 범위 - ```0``` ~ ```65535```
-  + ```frontend_ip_configuration_name``` : Nat Rule이 연동될 Frontend IP Configuration 이름
+-   `nat_rule`
 
+    -   `protocol` : 외부 Endpoint를 위한 전송 Protocol - `Tcp`, `Udp`, `All`
+    -   `frontend_port` : 외부 Endpoint의 Port, 0 ~ 65534의 범위 - `0` ~ `65534`
+    -   `backend_port` : 내부 Connection에 사용할 Port, 0 ~ 65535의 범위 - `0` ~ `65535`
+    -   `frontend_ip_configuration_name` : Nat Rule이 연동될 Frontend IP Configuration 이름
 
+-   `tag` : 리소스를 카테고리로 분류하기 위한 태그 - 최대 512자, `key`:`value`
 
-
-
-
-
-
-<hr />
+---
 
 ## 참고 자료
-- [Azure PrivateLoadBalancer(Microsoft)](https://learn.microsoft.com/ko-kr/azure/load-balancer/load-balancer-overview)
-- [Azure PrivateLoadBalancer 가격](https://azure.microsoft.com/en-us/pricing/details/load-balancer/) 
-- [Azure PrivateLoadBalancer(Terraform)](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/lb)
 
+-   [Azure PrivateLoadBalancer(Microsoft)](https://learn.microsoft.com/ko-kr/azure/load-balancer/load-balancer-overview)
+-   [Azure PrivateLoadBalancer 가격](https://azure.microsoft.com/en-us/pricing/details/load-balancer/)
+-   [Azure PrivateLoadBalancer(Terraform)](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/lb)

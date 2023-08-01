@@ -4,64 +4,65 @@ sidebar_position: 0
 tags: [Azure, 리소스, RecoveryServices, Backup]
 ---
 
-import icon from "../img/recovery_services-backup.png"
-
-
-
-
-
 <hr />
 <br />
 
 ## 리소스 아이콘
-<img src={icon} />
+
+<img
+    src={
+        "https://cloudstudioblob.blob.core.windows.net/cloudstudio/azureImg/recovery_services-backup.png"
+    }
+/>
 
 ## 리소스 개요
-Azure Backup은 클라우드에서 데이터와 애플리케이션을 백업하고 보호할 수 있는 Microsoft의 클라우드 기반 백업 솔루션입니다. 
+
+Azure Backup은 클라우드에서 데이터와 애플리케이션을 백업하고 보호할 수 있는 Microsoft의 클라우드 기반 백업 솔루션입니다.
 Azure Backup을 사용하면 온-프레미스 서버, Azure에서 실행되는 가상 머신 및 기타 클라우드 서비스에서 데이터를 백업할 수 있습니다.
-Azure Backup은 유연한 백업 일정 및 보존 정책을 제공하므로 백업을 보존할 빈도와 기간을 사용자 지정할 수 있습니다. 
+Azure Backup은 유연한 백업 일정 및 보존 정책을 제공하므로 백업을 보존할 빈도와 기간을 사용자 지정할 수 있습니다.
 또한 증분 백업, 암호화 및 데이터 압축과 같은 기능을 제공하여 백업 저장소 사용을 최적화하고 백업 시간을 줄입니다.
 
 ## 연관 리소스
+
 ### 상위 리소스
-- [**Resource Group**](https://docs.cstudio.app/docs/resource/azure/Base/ResourceGroup)
 
-
+-   [**Resource Group**](https://docs.cstudio.app/docs/resource/azure/Base/ResourceGroup)
 
 ## 리소스 설정 값
-- ```sku``` : Recovery Services Vault 사용을 위한 가격 책정 계층 - ```Standard```,```RS0```
 
-- ```soft_delete_enabled``` : Vault의 Soft delete 활성화 - ```true```,```false```
+-   `sku` : Recovery Services Vault 사용을 위한 가격 책정 계층 - `Standard`,`RS0`
 
-- ```backup_policy_vm```
-    + ```backup_frequency``` : 항목이 백업되는 빈도 - ```Daily```,```Weekly```
-    + ```backup_time``` : 항목이 백업되는 시간 
-    + ```backup_weekdays``` : 항목이 백업되는 요일 목록
-    + ```retention_count``` : 일일 백업 보존 수 - ```7```~```9999```
+-   `soft_delete_enabled` : Vault의 Soft delete 활성화 - `true`,`false`
 
-- ```backup_protected_vm```
-    + ```backup_policy_name``` : 백업에 적용할 백업 정책 이름
-    + ```source_vm_name``` : 백업할 가상머신 이름
-   
-- ```backup_policy_share``` 
-    + ```backup_frequency``` : 항목이 백업되는 빈도  - ```Daily```,```Weekly```
-    + ```backup_time``` : 항목이 백업되는 시간
-    + ```backup_weekdays``` : 항목이 백업되는 요일 목록
-    + ```retention_count``` : 일일 백업 보존 수
+-   `vm_backup_policy`
 
-- ```protected_share``` 
-    + ```source_storage_account_name``` : 백업할 파일 공유의 Storage 계정 이름
-    + ```source_share_name``` : 백업할 파일 공유 이름
-    + ```backup_policy_name``` : 백업에 적용할 백업 정책 이름
+    -   `backup_frequency` : 항목이 백업되는 빈도 - `Daily`,`Weekly`
+    -   `backup_time` : 항목이 백업되는 시간
+    -   `timezone` : 백업 시간의 시간대
+    -   `retention_count` : 일일 백업 보존 수 - `7`~`9999`
 
+-   `protected_vm`
 
+-   `share_backup_policy`
 
+    -   `backup_frequency` : 항목이 백업되는 빈도 - `Daily`,`Weekly`
+    -   `backup_time` : 항목이 백업되는 시간
+    -   `timezone` : 백업 시간의 시간대
+    -   `daily_retention_count` : 일일 백업 보존 수 - `1`~`200`
+    -   `enabled_weekly_backup` : 주간 백업 활성화
 
+-   `protected_share`
 
-<hr />
+    -   `source_storage_account_name` : 백업할 파일 공유의 Storage 계정 이름
+    -   `source_share_name` : 백업할 파일 공유 이름
+    -   `backup_policy_name` : 백업에 적용할 백업 정책 이름
+
+-   `tag` : 리소스를 카테고리로 분류하기 위한 태그 - 최대 512자, `key`:`value`
+
+---
 
 ## 참고 자료
-- [Azure Backup(Microsoft)](https://learn.microsoft.com/en-us/azure/backup/backup-overview)
-- [Azure Backup 가격](https://azure.microsoft.com/en-us/pricing/details/backup/) 
-- [Azure Backup(Terraform)](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/recovery_services_vault)
 
+-   [Azure Backup(Microsoft)](https://learn.microsoft.com/en-us/azure/backup/backup-overview)
+-   [Azure Backup 가격](https://azure.microsoft.com/en-us/pricing/details/backup/)
+-   [Azure Backup(Terraform)](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/recovery_services_vault)
