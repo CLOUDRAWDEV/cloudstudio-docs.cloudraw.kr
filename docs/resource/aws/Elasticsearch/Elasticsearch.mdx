@@ -4,47 +4,63 @@ sidebar_position: 0
 tags: [AWS, 리소스, Elasticsearch]
 ---
 
-import icon from "../img/elasticsearch-elasticsearch.png"
-
-
-
 <hr />
 <br />
 
 ## 리소스 아이콘
 
-<img src={icon} />
+<img
+    src={
+        "https://cloudstudioblob.blob.core.windows.net/cloudstudio/awsImg/elasticsearch-elasticsearch.png"
+    }
+/>
 
 ## 리소스 개요
 
 AWS ElasticSearch는 분산 검색 및 분석 엔진으로, 빠른 검색 및 데이터 분석을 위해 구축된 검색 서비스입니다. ElasticSearch는 Apache Lucene 검색 엔진 위에 구축되어 있으며, 빠르고 확장 가능한 오픈 소스 솔루션입니다. ElasticSearch는 데이터 수집, 로그 분석, 모니터링 등의 다양한 용도로 사용됩니다. ElasticSearch는 Amazon VPC 내에서 실행될 수 있으며, AWS Lambda, Kinesis 등과 통합하여 사용될 수 있습니다. ElasticSearch는 AWS에서 제공하는 보안 및 액세스 제어 기능을 제공하며, Amazon CloudWatch와 통합하여 모니터링 및 로깅 기능을 제공합니다.
 
+## 연관 리소스
+
+### 상위 리소스
+
+-   [**Region**](https://docs.cstudio.app/docs/resource/aws/Base/Region)
+-   [**Subnet**](https://docs.cstudio.app/docs/resource/aws/Vpc/Subnet)
+
+### 연결 리소스
+
+-   [**Elastic Search**](https://docs.cstudio.app/docs/resource/aws/Elasticsearch/Elasticsearch)
+
+
 ## 리소스 설정 값
 
 -   `elasticsearch_version` : Elasticsearch Domain 버전
--   `dedicated_master_count` : 클러스터의 전용 메인 노드 수 - `3`, `5`
--   `dedicated_master_type` : 클러스터에 있는 전용 기본 노드의 인스턴스 유형 - `r5.large.search`
--   `instance_count` : 클러스터의 인스턴스 수
--   `instance_type` : 클러스터에 있는 데이터 노드의 인스턴스 유형 - `r4.large.elasticsearch`
--   `vpc_options` : VPC Options의 이름
-    -   `included_subnet_name` : 생성할 Elasticsearch 도메인 엔드포인트의 VPC 서브넷 ID 목록
-    -   `included_sg_name` : Elasticsearch 도메인 엔드포인트에 적용할 VPC 보안 그룹 ID 목록
--   `ebs_enabled` : EBS 볼륨이 도메인의 데이터 노드에 연결되어 있는지 여부 - `true`, `false`
--   `ebs_volume_type` : 데이터 노드에 연결된 EBS 볼륨 유형 - `standard`, `gp2`, `io1`
--   `ebs_volume_size` : 데이터 노드에 연결된 EBS 볼륨의 크기(GiB)
--   `node2node_encryption_enabled` : 노드 간 암호화 활성화 여부 - `true`, `false`
--   `encrypt_enabled` : 저장 데이터 암호화 활성화 여부 - `true`, `false`
--   `endpoint_enforce_https` : HTTPS 요구 여부 - `true`, `false`
--   `endpoint_tls_security_policy` : HTTPS 끝점에 적용해야 하는 TLS 보안 정책의 이름 - `Policy-Min-TLS-1-2-2019-07`, `Policy-Min-TLS-1-0-2019-07`
--   `log_publishing_options` : Log Publishing Options의 이름
-    -   `log_enabled` : 주어진 로그 게시 옵션이 활성화되었는지 여부 - `true`, `false`
-    -   `cloudwatch_log_group_name` : 로그를 게시해야 하는 Cloudwatch 로그 그룹의 이름
-    -   `log_type` : Elasticsearch 로그 유형 - `AUDIT_LOGS`, `INDEX_SLOW_LOGS`, `SEARCH_SLOW_LOGS`, `ES_APPLICATION_LOGS`
--   `advanced_security_enabled` : 고급 보안 활성화 여부 - `true`, `false`
--   `internal_user_database_enabled` : 내부 사용자 데이터베이스 활성화 여부 - `true`, `false`
--   `master_user_arn` : 기본 사용자용 ARN
--   `master_user_name` : Amazon Elasticsearch Service 도메인의 내부 데이터베이스에 저장된 기본 사용자의 사용자 이름
--   `master_user_password` : Amazon Elasticsearch Service 도메인의 내부 데이터베이스에 저장된 기본 사용자의 비밀번호
+-   `availability_zone_count` : 가용 영역 개수 - `2`,`3`
+-   `tls_security_policy` : HTTPS 끝점에 적용해야 하는 TLS 보안 정책의 이름 - `Policy-Min-TLS-1-2-2019-07`, `Policy-Min-TLS-1-0-2019-07`
+-   `data_node`
+    -   `instance_type` : 클러스터에 있는 데이터 노드의 인스턴스 유형
+    -   `instance_count` : 클러스터의 인스턴스 수 - `1`~`80`
+    -   `ebs_enabled` : EBS 볼륨이 도메인의 데이터 노드에 연결되어 있는지 여부 - `true`, `false`
+    -   `ebs_volume_type` : 데이터 노드에 연결된 EBS 볼륨 유형 - `standard`, `gp2`, `io1`
+    -   `ebs_volume_size` : 데이터 노드에 연결된 EBS 볼륨의 크기(GiB) - `1`~`16384`
+-   `master_node`
+    -   `master_node_enabled` : 클러스터의 전용 메인 노드 활성화 - `true`, `false`
+    -   `master_instance_type` : 클러스터에 있는 전용 기본 노드의 인스턴스 유형 - `r5.large.search`
+    -   `master_node_count ` : 클러스터의 전용 메인 노드 수 - `3`, `5`
+-   `custom_endpoint`
+    -   `custom_endpoint_enabled` : 사용자 지정 엔드포인트 활성화 - `true`, `false`
+-   `network`
+    -   `network_type` : 네트워크 엑세스 타입 - `vpc_access`, `public_access`
+    -   `included_subnet_names` : 생성할 Elasticsearch 도메인 엔드포인트의 VPC 서브넷 ID 목록
+    -   `security_group_names` : Elasticsearch 도메인 엔드포인트에 적용할 VPC 보안 그룹 ID 목록
+-   `fine_grained_access`
+    -   `fine_grained_access_enabled` : 세분화된 접근 제어 활성화 - `true`, `false`
+    -   `master_user_type` : 마스터 사용자 타입 - `iam_arn`, `master_user`
+    -   `iam_arn` : 기본 사용자용 IAM ARN
+-   `encryption`
+    -   `enforce_https` : HTTPS 요구 여부 - `true`, `false`
+    -   `node_to_node_encryption_enabled` : 노드 간 암호화 활성화 여부 - `true`, `false`
+    -   `data_at_rest_encryption_enabled` : 저장 데이터 암호화 활성화 여부 - `true`, `false`
+-   `kms_key_name` : 데이터 암호화에 사용할 kms 키 이름
 
 ---
 

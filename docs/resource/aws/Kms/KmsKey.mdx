@@ -4,16 +4,16 @@ sidebar_position: 0
 tags: [AWS, 리소스, Kms, KmsKey]
 ---
 
-import icon from "../img/kms-kms_key.png"
-
-
-
 <hr />
 <br />
 
 ## 리소스 아이콘
 
-<img src={icon} />
+<img
+    src={
+        "https://cloudstudioblob.blob.core.windows.net/cloudstudio/awsImg/kms-kms_key.png"
+    }
+/>
 
 ## 리소스 개요
 
@@ -23,7 +23,7 @@ AWS Key Management Service(AWS KMS)는 클라우드에 맞게 조정된 암호�
 
 ### 상위 리소스
 
--   **Region**
+-   [**Region**](https://docs.cstudio.app/docs/resource/aws/Base/Region)
 
 ## 리소스 설정 값
 
@@ -33,7 +33,7 @@ AWS Key Management Service(AWS KMS)는 클라우드에 맞게 조정된 암호�
 -   `deletion_window_in_days` : KMS Keys의 유효 기간
 -   `enable_key_rotation` : 키 회전 활성화 여부를 지정 - `true`, `false`
 -   `grant_list` : KMS Grant의 이름
-    -   `value` : KMS Key에 허용된 동작 - `Decrypt`, `Encrypt`, `GenerateDataKey`, `GenerateDataKeyWithoutPlaintext`, `ReEncryptFrom`, `ReEncryptTo`, `Sign`, `Verify`, `CreateGrant`, `RetireGrant`, `DescribeKey`
+    -   `operations` : KMS Key에 허용된 동작 - `Decrypt`, `Encrypt`, `GenerateDataKey`, `GenerateDataKeyWithoutPlaintext`, `ReEncryptFrom`, `ReEncryptTo`, `Sign`, `Verify`, `CreateGrant`, `RetireGrant`, `DescribeKey`
 
 ---
 

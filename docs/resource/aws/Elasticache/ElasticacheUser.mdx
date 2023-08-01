@@ -4,16 +4,16 @@ sidebar_position: 0
 tags: [AWS, 리소스, Elasticache, ElasticacheUser]
 ---
 
-import icon from "../img/elasticache-elasticache_user.png"
-
-
-
 <hr />
 <br />
 
 ## 리소스 아이콘
 
-<img src={icon} />
+<img
+    src={
+        "https://cloudstudioblob.blob.core.windows.net/cloudstudio/awsImg/elasticache-elasticache_user.png"
+    }
+/>
 
 ## 리소스 개요
 
@@ -23,13 +23,13 @@ AWS Elasticache User는 Elasticache 클러스터를 사용하기 위해 필요�
 
 ### 상위 리소스
 
--   **Subnet**
+-   [**Region**](https://docs.cstudio.app/docs/resource/aws/Base/Region)
 
 ## 리소스 설정 값
 
 -   `user_id` : 사용자의 ID, 영문자, 하이픈(-) 사용 가능, 문자로 시작, 하이픈으로 끝나거나 하이픈을 두 개 연속으로 포함할 수 없음, 최대 40자
 -   `access_string` : 사용자에게 적용할 권한을 입력한 string
--   `passwords` : 사용자의 PW, 최대 2개까지 설정 가능, 16자 이상 최대 128자까지, 입력 가능한 문자 제한 없음
+-   `authentication_type` : 사용자가 클러스터에 접근하기 위한 인증 방식
 
 ---
 
