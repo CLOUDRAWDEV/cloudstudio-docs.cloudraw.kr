@@ -4,18 +4,16 @@ sidebar_position: 0
 tags: [AWS, 리소스, Vpc, Subnet]
 ---
 
-import icon from "../img/vpc-subnet.png"
-
-
-
-
-
 <hr />
 <br />
 
 ## 리소스 아이콘
 
-<img src={icon} />
+<img
+    src={
+        "https://cloudstudioblob.blob.core.windows.net/cloudstudio/awsImg/vpc-subnet.png"
+    }
+/>
 
 ## 리소스 개요
 
@@ -25,7 +23,7 @@ import icon from "../img/vpc-subnet.png"
 
 ### 상위 리소스
 
--   [**Vpc**](https://docs.cstudio.app/docs/resource/aws/Vpc/)
+-   [**Vpc**](https://docs.cstudio.app/docs/resource/aws/Vpc/Vpc)
 
 ### 하위 리소스
 
@@ -34,7 +32,7 @@ import icon from "../img/vpc-subnet.png"
 -   [**Ecs Cluster**](https://docs.cstudio.app/docs/resource/aws/Ecs/EcsCluster)
 -   [**Eks Cluster**](https://docs.cstudio.app/docs/resource/aws/Eks/EksCluster)
 -   [**Elasticache Cluster**](https://docs.cstudio.app/docs/resource/aws/Elasticache/ElasticacheCluster)
--   [**Elasticache User**](https://docs.cstudio.app/docs/resource/aws/Elasticache/ElasticacheUser)
+-   [**Elasticsearch**](https://docs.cstudio.app/docs/resource/aws/Elasticsearch/Elasticsearch)
 -   [**Lambda Function**](https://docs.cstudio.app/docs/resource/aws/Lambda/LambdaFunction)
 -   [**Rds Aurora**](https://docs.cstudio.app/docs/resource/aws/Rds/Aurora)
 -   [**Rds Mariadb**](https://docs.cstudio.app/docs/resource/aws/Rds/Mariadb)
@@ -49,6 +47,8 @@ import icon from "../img/vpc-subnet.png"
 -   `included_vpc_name` : Subnet을 배포할 VPC의 이름
 -   `cidr_block` : Subnet의 IP 대역(CIDR)
 -   `availability_zone` : Subnet을 배포할 가용성 영역
+-   `pip_enable` : 퍼블릭 IP 할당
+
 
 ---
 

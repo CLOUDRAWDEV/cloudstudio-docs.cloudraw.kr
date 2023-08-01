@@ -4,16 +4,16 @@ sidebar_position: 0
 tags: [AWS, 리소스, Dynamodb]
 ---
 
-import icon from "../img/dynamodb-dynamodb.png"
-
-
-
 <hr />
 <br />
 
 ## 리소스 아이콘
 
-<img src={icon} />
+<img
+    src={
+        "https://cloudstudioblob.blob.core.windows.net/cloudstudio/awsImg/dynamodb-dynamodb.png"
+    }
+/>
 
 ## 리소스 개요
 
@@ -23,7 +23,7 @@ Amazon DynamoDB는 완벽하게 관리되는 NoSQL 데이터베이스 서비스�
 
 ### 상위 리소스
 
--   **Region**
+-   [**Region**](https://docs.cstudio.app/docs/resource/aws/Base/Region)
 
 ## 리소스 설정 값
 
@@ -37,7 +37,6 @@ Amazon DynamoDB는 완벽하게 관리되는 NoSQL 데이터베이스 서비스�
 -   `point_in_time_recovery_enabled` : 특정 시점 복구 옵션 활성화 - `true`, `false`
 -   `server_side_encryption` : Server Side Encryption 이름
     -   `encryption_enabled` : AWS 관리형 KMS 고객 마스터 키를 사용하여 저장 데이터 암호화 활성화 여부 - `true`, `false`
-    -   `kms_key_name` : AWS KMS 암호화에 사용해야 하는 CMK의 이름
 
 ---
 

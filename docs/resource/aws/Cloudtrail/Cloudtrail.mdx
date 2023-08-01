@@ -4,16 +4,16 @@ sidebar_position: 0
 tags: [AWS, 리소스, CloudTrail]
 ---
 
-import icon from "../img/cloudtrail-cloudtrail.png"
-
-
-
 <hr />
 <br />
 
 ## 리소스 아이콘
 
-<img src={icon} />
+<img
+    src={
+        "https://cloudstudioblob.blob.core.windows.net/cloudstudio/awsImg/cloudtrail-cloudtrail.png"
+    }
+/>
 
 ## 리소스 개요
 
@@ -23,18 +23,18 @@ AWS CloudTrail을 사용하면 AWS Management Console, AWS SDK, 명령줄 도구
 
 ### 상위 리소스
 
--**base**
+-   [**Region**](https://docs.cstudio.app/docs/resource/aws/Base/Region)
 
 ### 연결 리소스
 
--**s3-s3_bucket**
+-   [**S3 Bucket**](https://docs.cstudio.app/docs/resource/aws/S3/S3Bucket)
 
 ## 리소스 설정 값
 
 -   `linked_s3_bucket_name` : 로그 파일 publish용으로 지정된 S3 버킷의 이름
 -   `s3_key_prefix` : 로그 파일 전송을 위해 지정한 버킷 이름 뒤에 오는 S3 키 접두사
+-   `multi_region_enabled` : 다중 리전 추적 활성화
 -   `global_service_events` : Cloudtrail이 IAM과 같은 글로벌 서비스의 이벤트를 로그 파일에 게시하는지 여부 - `true`, `false`
--   `account_id` : 계정 ID, AWS 콘솔 우측 상단에서 확인 가능
 
 ---
 

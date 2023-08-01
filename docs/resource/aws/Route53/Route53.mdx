@@ -4,32 +4,32 @@ sidebar_position: 0
 tags: [AWS, 리소스, Route53]
 ---
 
-import icon from "../img/route53-route53.png"
-
-
-
-
-
 <hr />
 <br />
 
 ## 리소스 아이콘
 
-<img src={icon} />
+<img
+    src={
+        "https://cloudstudioblob.blob.core.windows.net/cloudstudio/awsImg/route53-route53.png"
+    }
+/>
 
 ## 리소스 개요
 
 Amazon Route 53은 가용성과 확장성이 우수한 도메인 이름 시스템(DNS) 웹 서비스입니다.
 
-## 연관 리소스
-
 ### 상위 리소스
 
--   **Vpc**
+-   [**Base**](https://docs.cstudio.app/docs/resource/aws/Base/)
+
+### 연결 리소스
+
+-   [**Vpc**](https://docs.cstudio.app/docs/resource/aws/Vpc/Vpc)
 
 ## 리소스 설정 값
 
--   `included_vpc_name` : Route53 Zone을 연결할 VPC 이름
+-   `linked_vpc_names` : Route53 Zone을 연결할 VPC 이름
 -   `record` : Route53 Zone에 생성할 Record의 이름
     -   `type` : Record의 type - `A`, `CAA`, `CNAME`, `DS`, `NAPTR`, `NS`, `PTR`, `SOA`, `SPF`, `SRV`, `TXT`
     -   `ttl` : Record의 ttl

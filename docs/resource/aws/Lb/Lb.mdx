@@ -4,16 +4,16 @@ sidebar_position: 0
 tags: [AWS, 리소스, Lb]
 ---
 
-import icon from "../img/lb-lb.png"
-
-
-
 <hr />
 <br />
 
 ## 리소스 아이콘
 
-<img src={icon} />
+<img
+    src={
+        "https://cloudstudioblob.blob.core.windows.net/cloudstudio/awsImg/lb-lb.png"
+    }
+/>
 
 ## 리소스 개요
 
@@ -23,33 +23,35 @@ Elastic Load Balancing은 수신되는 애플리케이션 트래픽을 EC2 인�
 
 ### 상위 리소스
 
--   **Vpc**
+-   [**Vpc**](https://docs.cstudio.app/docs/resource/aws/Vpc/Vpc)
 
 ### 연결 리소스
 
--   **Ec2 Instance**
--   **Vpc Subnet**
--   **Vpc Security Group**
+-   [**Ec2 Instance**](https://docs.cstudio.app/docs/resource/aws/Ec2/Instance)
+-   [**Vpc Subnet**](https://docs.cstudio.app/docs/resource/aws/Vpc/Subnet)
+-   [**Vpc Security Group**](https://docs.cstudio.app/docs/resource/aws/Vpc/SecurityGroup)
 
 ## 리소스 설정 값
 
 -   `load_balancer_type` : ELB 유형 - `application`, `network`, `gateway`
 -   `internal` : ELB를 Internet facing으로 배포할지 Internal로 배포할지 설정 - `true`, `false`
+-   `included_vpc_name` : 대상 그룹을 생성할 VPC의 이름
+
 -   `linked_subnet_names` : LB에 연결할 서브넷 Name 목록
--   `linked_security_group_names` : LB에 할당할 보안 그룹 이름 목록, 애플리케이션 유형의 로드 밸런서에만 유효
+-   `security_group_names` : LB에 할당할 보안 그룹 이름 목록, 애플리케이션 유형의 로드 밸런서에만 유효
+
 -   `drop_invalid_header` : 헤더 필드가 유효하지 않은 HTTP 헤더가 로드 밸런서에 의해 제거되는지(true) 아니면 대상으로 라우팅되는지(false) 설정 - `true`, `false`
 -   `target_group` : 대상 그룹 이름, 하이픈(-)을 포함하여 최대 32자의 영숫자 문자가 허용되지만 이름은 하이픈으로 시작하거나 끝날 수 없음
+
     -   `protocol` : 트래픽을 대상으로 라우팅하는 데 사용할 프로토콜 - `HTTP`, `HTTPS`, `TCP`, `TCP_UDP`, `TLS`, `UDP`
     -   `port` : 트래픽을 수신하는 포트
-    -   `included_vpc_name` : 대상 그룹을 생성할 VPC의 이름
-    -   `linked_instance_names` : Target Instance의 이름 목록
+    -   `instance_names` : Target Instance의 이름 목록
+
 -   `listener` : ELB Listener의 이름
     -   `protocol` : 트래픽을 대상으로 라우팅하는 데 사용할 프로토콜 - `HTTP`, `HTTPS`, `TCP`, `TCP_UDP`, `TLS`, `UDP`
     -   `port` : 트래픽을 수신하는 포트
     -   `default_action_type` : 라우팅 작업 유형 - `forward`, `redirect`, `fixed-response`
     -   `target_group_name` : 트래픽을 라우팅할 대상 그룹의 이름
-    -   `certificate_arn` : 기본 SSL 서버 인증서의 이름
-    -   `ssl_policy` : 리스너에 대한 SSL 정책의 이름
 
 ---
 

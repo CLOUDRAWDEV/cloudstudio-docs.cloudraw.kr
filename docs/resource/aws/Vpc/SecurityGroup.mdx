@@ -4,18 +4,16 @@ sidebar_position: 0
 tags: [AWS, 리소스, Vpc, SecurityGroup]
 ---
 
-import icon from "../img/vpc-security_group.png"
-
-
-
-
-
 <hr />
 <br />
 
 ## 리소스 아이콘
 
-<img src={icon} />
+<img
+    src={
+        "https://cloudstudioblob.blob.core.windows.net/cloudstudio/awsImg/vpc-security_group.png"
+    }
+/>
 
 ## 리소스 개요
 
@@ -38,17 +36,19 @@ VPC를 생성할 경우 VPC는 기본 보안 그룹과 함께 제공됩니다. �
 -   `description` : Security Group에 대한 설명
 -   `included_vpc_name` : Security Group이 포함된 VPC의 이름
 -   `ingress` : Security Group의 Ingress 규칙 이름
+    -   `rule_name` : Security Group의 Ingress 규칙 이름
     -   `description` : Ingress 규칙의 설명
     -   `from_port` : Ingress 규칙으로 들어오는 포트 번호
     -   `to_port` : Ingress 규칙을 통해 나가는 포트 번호
     -   `protocol` : Ingress 규칙의 Protocol - `tcp`, `udp`, `icmp`, `all`
-    -   `cidr_blocks` : Ingress 규칙을 적용할 CIDRS
+    -   `cidr_block` : Ingress 규칙을 적용할 CIDR
 -   `egress` : Security Group의 Egress 규칙 이름
+    -   `rule_name` : Security Group의 Ingress 규칙 이름
     -   `description` : Egress 규칙의 설명
     -   `from_port` : Egress 규칙으로 들어오는 포트 번호
     -   `to_port` : Egress 규칙을 통해 나가는 포트 번호
     -   `protocol` : Egress 규칙의 Protocol - `tcp`, `udp`, `icmp`, `all`
-    -   `cidr_blocks` : Egress 규칙을 적용할 CIDRS
+    -   `cidr_block` : Egress 규칙을 적용할 CIDR
 
 ---
 
