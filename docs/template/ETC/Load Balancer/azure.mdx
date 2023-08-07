@@ -30,7 +30,13 @@ import azure23 from './img/azure/23.png';
 import azure24 from './img/azure/24.png';
 import azure25 from './img/azure/25.png';
 import azure26 from './img/azure/26.png';
-
+import azure27 from './img/azure/27.png';
+import azure28 from './img/azure/28.png';
+import azure29 from './img/azure/29.png';
+import azure30 from './img/azure/30.png';
+import azure31 from './img/azure/31.png';
+import azure32 from './img/azure/32.png';
+import azure33 from './img/azure/33.png';
 
 <hr />
 <br/>
@@ -65,7 +71,7 @@ Azure Load Balancer를 활용한 아키텍처를 Azure에 배포하기 위한 �
 - [**Bastion Host**](https://docs.cstudio.app/docs/resource/azure/Network/BastionHost)
 
 ## 아키텍처
-<caption caption="" src={azure26} />
+<caption caption="" src={azure33} />
 
 ## Azure LoadBalancer 아키텍처 만들기
 ### 1. 구독 생성
@@ -86,7 +92,7 @@ Azure Load Balancer를 활용한 아키텍처를 Azure에 배포하기 위한 �
 **Virtual Network** 아이콘을 가져옵니다.
 Virtual Network는 Virtual Machine을 배포하기 위해 필요한 네트워크 환경을 제공합니다.
 
-> - ```Service Name```: etclbvn
+> - ```Service Name```: vnet
 > - ```Vnet Address Space```: 10.0.0.0/16
 > - ```Enable Ddos Protection```: false
 
@@ -97,11 +103,11 @@ Virtual Network는 Virtual Machine을 배포하기 위해 필요한 네트워크
 Azure Bastion과 Virtual Machine을 배포하기 위한 Subnet을 구성합니다.
 
 > - ```Service Name```: AzureBastionSubnet
-> - ```Vnet Address Space```: 10.0.1.0/24
+> - ```Vnet Address Space```: 10.0.0.0/24
 > - ```Private Link Endpoint Enabled```: true
 
-> - ```Service Name```: lb_subnet
-> - ```Vnet Address Space```: 10.0.0.0/24
+> - ```Service Name```: AzureVmSubnet
+> - ```Vnet Address Space```: 10.0.1.0/24
 > - ```Private Link Endpoint Enabled```: true
 
 <caption caption="[그림.4] Azure Load Balancer 4" src={azure4} />
@@ -133,61 +139,75 @@ Virtual Machine에서 동작하는 어플리케이션이 다른 포트를 사용
 > - ```Security Rules.Priority```: 201
 > - ```Security Rules.Direction```: Inbound
 > - ```Security Rules.Access```: Allow
-> - ```Security Rules.Protocol```: Tcp
+
 
 <caption caption="[그림.7] Azure Load Balancer 7" src={azure7} />
 
-
+> - ```Security Rules.Protocol```: Tcp
 > - ```Security Rules.Source Port Ranges```: *
 > - ```Security Rules.Destination Port Ranges```: 443
 > - ```Security Rules.Source Address Prefixes```: *
 > - ```Security Rules.Destination Address Prefixes```: *
 
-> - ```Linked Subnet Names```: etclbvn:lb_subnet
-
-
-
 <caption caption="[그림.8] Azure Load Balancer 8" src={azure8} />
 
+### 6. Network Interface 생성
+**Network Interface** 아이콘을 가져옵니다.
+Azure Network Interface는 가상 머신(VM) 또는 가상 머신 스케일 세트(VMSS)와 Azure Virtual Network 간의 네트워크 연결을 담당하는 리소스입니다. 
+네트워크 인터페이스는 VM이나 VMSS를 가상 네트워크에 연결하고, IP 주소 할당 및 보안 그룹과 같은 네트워크 설정을 관리하는 역할을 합니다.
+
+> - ```Included Subnet Name```: vnet:AzureVmSubnet
+> - ```IpConfiguration.name```: ipconfig1
+> - ```IpConfiguration.IsPrimary```: true
+> - ```IpConfiguration.PrivateIPAddressAllocation```: Dynamic
+> - ```EmabledPublicIp```: false
+
+<caption caption="[그림.9] Azure Load Balancer 9" src={azure9} />
 
 
-### 6. Virtual Machine 생성
+### 7. Virtual Machine 생성
 **Virtual Machine** 아이콘을 가져옵니다.
 Virtual Machine에서 어플리케이션을 동작시킵니다.
 이 가이드에서 3대의 Virtual Machine을 사용하지만 사용자의 환경에 맞게 Virtual Machine의 수를 변경하거나 Virtual Machine Scale Sets을 사용해도됩니다.
-3대의 Virtual Machine의 설정에서 ```Service Name```, ```Network Interface Name```,```Private Ip Address```의 값은 중복되면 안되기 때문에 이름 뒤의 숫자를 변경합니다.
-위의 3개의 값을 제외하고 나머지 값은 동일하게 설정합니다.
+3대의 Virtual Machine의 설정에서 ```Service Name```의 값은 중복되면 안되기 때문에 이름 뒤의 숫자를 변경합니다.
+나머지 값은 동일하게 설정합니다.  
+3대의 VM을 위에서 만든 defaultNic에 선으로 모두 연결합니다.
 
-> - ```Service Name```: etclbvm1,2,3
+> - ```Service Name```: Linuxvm1,2,3
 > - ```Size```: Standard_D2s_v3
-
-> - ```Enable Ssh Key Authentication```: true
-> - ```Admin Username```: cloudraw
-> - ```Ssh Public key```: 본인이 생성한 ssh public key값을 넣는다
-<caption caption="[그림.9] Azure Load Balancer 9" src={azure9} />
-
-> - ```Os Disk Caching```: ReadWrite
-> - ```Storage Account Type```: Standard_LRS
-> - ```Disk Size Gb```: 128
-> - ```Image Sku```: 18.04-LTS
 
 <caption caption="[그림.10] Azure Load Balancer 10" src={azure10} />
 
-Azure Load Balancer에 Public IP를 할당할 것이기 때문에, Virtual Machine은 Public IP를 할당하지 않습니다.
-3대의 Virtual Mahcine은 같은 Subnet에 있기 때문에 Private Ip 겹치지 않도록 설정합니다.
 
-> - ```Network Interface Name```: ubuntuVm1-nic
-> - ```Network Interface Ip Config Name```: ubuntuVm-nic-ipconfig
-> - ```Included Subnet Name```: etclbvn:lb_subnet
-> - ```Pip Enable```: false
-
+> - ```Source Image.Enable Custom Image```:  사용자 이미지 ID 사용 유무 - ```false```
+> - ```Source Image.Publisher```: VM 생성을 위해 사용하는 이미지의 공급자 - ```사용자 선택```
+> - ```Source Image.Offer```: VM 생성을 위해 사용하는 이미지의 공급자 - ```사용자 선택```
+> - ```Source Image.Sku```: VM 생성을 위해 사용하는 이미지의 가격 책정 계층 - ```사용자 선택```
 
 <caption caption="[그림.11] Azure Load Balancer 11" src={azure11} />
 
-> - ```Pip Sku```: Basic
-> - ```Pip Allocation Method```: static
-> - ```Private Ip Address```: 10.0.0.4
+이 가이드에서는 SSH Public key를 사용하여 Virtual Machine을 배포합니다.
+
+로컬에서 생성한 ssh public key값을 여기에 넣어줍니다.
+
+> - ```Enable Ssh Key Authentication```: true
+> - ```Admin Username```: cloudraw
+> - ```Ssh public key```: 본인이 생성한 publickey 값
+
 <caption caption="[그림.12] Azure Load Balancer 12" src={azure12} />
+
+
+
+> - ```Source Image.Os Disk Caching```: ReadWrite
+> - ```Source Image.Storage Account Type```: Standard_LRS
+> - ```Source Image.Disk Size Gb```: 127
+
+<caption caption="[그림.13] Azure Load Balancer 13" src={azure13} />
+
+> - ```Linked Network Interface Names```: 위에서 생성한 nic와 선으로 연결하면 자동으로 설정됩니다.
+> - ```Primary Network Interface Name```: 위에서 생성한 Nic 선택
+
+<caption caption="[그림.14] Azure Load Balancer 14" src={azure14} />
 
 ### 8. Mysql 생성
 **Mysql** 아이콘을 가져옵니다. 
@@ -195,22 +215,32 @@ Azure Load Balancer에 Public IP를 할당할 것이기 때문에, Virtual Machi
 해당 서비스는 PaaS로 관리형 서비스입니다. 사용자는 MySQL 서버에 Database를 생성해 바로 사용가능합니다.
 Mysql의 Service Name은 서버의 DNS주소로 사용되기 때문에 사용자별 unique한 값을 입력해야 합니다.
 
-> - ```Service Name```: etclbmysql
+> - ```Service Name```: defaultdb
 > - ```Version```: 5.7
 > - ```Sku Name```: GP_Gen5_4
 > - ```Storage Mb```: 5120
+
+<caption caption="[그림.15] Azure Load Balancer 15" src={azure15} />
+
 > - ```Admin Login```: cloudraw
 > - ```Admin Login Password```: 임의지정
-
-<caption caption="[그림.13] Azure Load Balancer 13" src={azure13} />
-
-
 > - ```Public Network Access Enabled```: false
 > - ```Ssl Enforcement Enabled```: true
+
+<caption caption="[그림.16] Azure Load Balancer 16" src={azure16} />
+
 > - ```Minimal Tls Version```: TLS1_2
 > - ```Threat Detection Enabled```: true
 
-<caption caption="[그림.14] Azure Load Balancer 14" src={azure14} />
+<caption caption="[그림.17] Azure Load Balancer 17" src={azure17} />
+
+Database는 Mysql 서버를 생성하고 그 안에 Database를 생성하는 옵션입니다. 
+데이터베이스를 생성하고 싶지 않은 경우, 해당 옵션을 삭제합니다.
+
+> - ```Database.Charset```: utf8
+> - ```Database.Collation```: utf8_unicode_ci
+
+<caption caption="[그림.18] Azure Load Balancer 18" src={azure18} />
 
 Mysql 서버에 접속 가능한 네트워크를 설정하기 위해서 Firewall을 설정해야 합니다.
 이 가이드에서는 0.0.0.0으로 모든 사용자를 허용했지만, 배포를 할 때 사용자의 Public IP만 허용합니다. 
@@ -219,91 +249,107 @@ Mysql 서버에 접속 가능한 네트워크를 설정하기 위해서 Firewall
 > - ```Firewall Rule.Start Ip Address```: 0.0.0.0
 > - ```Firewall Rule.End Ip Address```: 0.0.0.0
 
-<caption caption="[그림.15] Azure Load Balancer 15" src={azure15} />
+<caption caption="[그림.19] Azure Load Balancer 19" src={azure19} />
 
 ### 9. Storage Account 생성
 **Storage Account** 아이콘을 가져옵니다. 어플리케이션의 데이터를 저장하기 위한 Storage Account를 생성합니다.
 
-> - ```Service Name```: etclbsa
+> - ```Service Name```: defaultsa
 > - ```Account Kind```: StorageV2
 > - ```Account Tier```: Standard
 > - ```Account Replication Type```: LRS
 > - ```Access Tier```: Hot 
 
-<caption caption="[그림.16] Azure Load Balancer 16" src={azure16} />
-
-Network Rules은 모든 IP 주소를 허용했지만, 배포를 할때는 현재 사용하고 있는 공인 IP 주소만 허용하는 것을 권장합니다.
+<caption caption="[그림.20] Azure Load Balancer 20" src={azure20} />
 
 > - ```Min Tls Version```: TLS1_2
 > - ```Enable Https Traffic Only```: true
-> - ```Network Rules.Name```: default_rule
-> - ```Network Rules.Default Action```: Deny
-> - ```Network Rules.Bypass```: [ "AzureServices" ]
-> - ```Network Rules.Ip Rules```: 0.0.0.0/0
 
-<caption caption="[그림.17] Azure Load Balancer 17" src={azure17} />
+<caption caption="[그림.21] Azure Load Balancer 21" src={azure21} />
+
+Network Rules은 모든 IP 주소를 허용했지만, 배포를 할때는 현재 사용하고 있는 공인 IP 주소만 허용하는 것을 권장합니다.
+
+> - ```Networking.Public Network Access```: All
+> - ```Networking.Ip Rules```: 0.0.0.0/0
+> - ```Networking.Bypass```: [ "AzureServices" ]
+
+<caption caption="[그림.22] Azure Load Balancer 22" src={azure22} />
 
 > - ```Storage Container.Name```: default_container
 > - ```Storage Container.Container Access Type```: private
 
-<caption caption="[그림.18] Azure Load Balancer 18" src={azure18} />
+<caption caption="[그림.23] Azure Load Balancer 23" src={azure23} />
 
-> - ```Storage Share```: default_share
-> - ```Storage Container.quota```: 5
+> - ```Storage Share.name```: default_share
+> - ```Storage Share.quota```: 5
 
-<caption caption="[그림.19] Azure Load Balancer 19" src={azure19} />
+<caption caption="[그림.24] Azure Load Balancer 24" src={azure24} />
 
-### 10. Bastion Host 생성
+### 10. Public Ip 생성
+**Public IP** 아이콘을 가져옵니다.
+Bastion Host용 Public Ip를 생성합니다.
+
+> - ```Service Name```: BastionIp
+> - ```Sku```: Standard
+> - ```Allocation Method```: Static
+
+<caption caption="[그림.25] Azure Load Balancer 25" src={azure25} />
+
+### 11. Bastion Host 생성
 **Bastion Host** 아이콘을 가져옵니다.
 Bastion Host는 Public IP가 없는 Virtual Machine에 접속하는 방법 중 하나로 사용할 수 있습니다.
 Bastion Host는 Azure Protal에서 Virtual Machine에 대한 안정적인 SSH 접근을 제공합니다. 
 
-> - ```Service Name```: lb_bh
-> - ```Included Subnet Name```: etclbvn:AzureBastionSubnet
+> - ```Service Name```: defaultBH
+> - ```Included Subnet Name```: vnet:AzureBastionSubnet
 > - ```Sku```: Basic
-> - ```Pip Name```: bastion-pip
+> - ```Linked Public Ip Name```: 위에서 생성한 PublicIP와 선으로 연결하면 자동으로 설정됩니다.
 > - ```Ip Configuration Name```: bastionIpConfig
 
-<caption caption="[그림.20] Azure Load Balancer 20" src={azure20} />
+<caption caption="[그림.26] Azure Load Balancer 26" src={azure26} />
 
-### 11. Public Load Balancer 생성
+### 12. Public Ip 생성
+**Public IP** 아이콘을 가져옵니다.
+LoadBalancer용 Public Ip를 생성합니다.
+
+> - ```Service Name```: LbIp
+> - ```Sku```: Standard
+> - ```Allocation Method```: Static
+
+<caption caption="[그림.27] Azure Load Balancer 27" src={azure27} />
+
+### 12. Public Load Balancer 생성
 **Public Load Balancer** 아이콘을 가져옵니다.
 Public Load Balancer가 Backend Pool을 사용하기 위해서는 Load Balancer의 SKU가 Standard여야 합니다.
 Public Load Balancer의 Frontend IP Configuration에 연결되는 Public IP의 SKU와 Load Balancer의 SKU는 서로 일치해야 합니다. 
 
-> - ```Service Name```: lbtemplate
+> - ```Service Name```: defaultlb
 > - ```Sku```: Standard
-> - ```Public Lb Frontend Ip Config.Name```: lbipconfig
-> - ```Public Lb Frontend Ip Config.Pip Name```: lbipconfig-pip
-> - ```Public Lb Frontend Ip Config.Pip Sku```: Standard
-> - ```Public Lb Frontend Ip Config.Pip Allocation Method```: Static
+> - ```Public Lb Frontend Ip Config.Name```: ip_config_001
+> - ```Public Lb Frontend Ip Config.Linked Public Ip Name```: 위에서 생성한 Public IP와 연결하면 자동 설정됩니다.
+> - ```Virtual Network Name```: rg:vnet
 
-<caption caption="[그림.21] Azure Load Balancer 21" src={azure21} />
+
+<caption caption="[그림.28] Azure Load Balancer 28" src={azure28} />
 
 Bakendpool은 Public Load Balacner의 Frontend IP Configuration으로 들어온 트래픽을 받을 서버를 지정합니다.
 위에서 생성한 3대의 VM의 Service Name을 입력합니다.
 
 
-> - ```Backendaddress1``` 
->   + ```Virtual Network Name``` : etclbvn
->   + ```Linked Virtual Machine Name``` : ubuntuVm-nic-ipconfig:etclbvm1
+> - ```BackendPool.name``` : defaultbackendpool
+> - ```BackendPool.Linked Virtual Machine Names``` : 위에서 생성한 3개 VM 모두 선택
 
-> - ```Backendaddress2``` 
->   + ```Virtual Network Name``` : etclbvn
->   + ```Linked Virtual Machine Name``` : ubuntuVm-nic-ipconfig:etclbvm2
+<caption caption="[그림.29] Azure Load Balancer 29" src={azure29} />
 
-> - ```Backendaddress3``` 
->   + ```Virtual Network Name``` : etclbvn
->   + ```Linked Virtual Machine Name``` : ubuntuVm-nic-ipconfig:etclbvm3
+### 12. Public Ip 생성
+**Public IP** 아이콘을 가져옵니다.
+NAT Gateway용 Public Ip를 생성합니다.
 
-<caption caption="[그림.22] Azure Load Balancer 22" src={azure22} />
+> - ```Service Name```: NatIp
+> - ```Sku```: Standard
+> - ```Allocation Method```: Static
 
-> - ```Backend Pool.Name```: backendpool
-> - ```Backend Pool.Backend Address Names```: Backendaddress1,Backendaddress2,Backendaddress3
-
-<caption caption="[그림.23] Azure Load Balancer 23" src={azure23} />
-
-
+<caption caption="[그림.30] Azure Load Balancer 30" src={azure30} />
 
 ### 12. NAT Gateway 생성  
 **NAT Gateway** 아이콘을 가져옵니다.
@@ -311,12 +357,15 @@ Virtual Machine이 인터넷을 사용할 수 있도록 NAT Gateway를 생성합
 NAT Gateway의 Public IP를 사용해 Virtual Machine은 인터넷을 사용합니다.
 Azure Load Balancer의 Outbound 규칙을 통해 NAT Gateway 역할을 할 수 있지만, NAT Gateway를 사용하는 것을 권장합니다.
 
-> - ```Service Name```: lb_ng
-> - ```Linked Subnet Name```: etclbvn:lb_subnet
-> - ```Pip Name```: ng-pip
+> - ```Service Name```: defaultnat
+> - ```Linked Subnet Names```: vnet:AzureVmSubnet
+> - ```Linked Public Ip Name```: natlp와 선으로 연결하면 자동설정 됩니다.
 > - ```Idle Timeout In Minutes```: 4
 
-<caption caption="[그림.24] Azure Load Balancer 24" src={azure24} />
+
+<caption caption="[그림.31] Azure Load Balancer 31" src={azure31} />
+
+
 
 
 ### 13. DNS Zone 생성
@@ -327,7 +376,7 @@ cafe24, hosting.kr과 같이 다른 호스팅 사이트의 DNS 서버를 사용�
 
 > - ```Service Name```: etclbdz.com
 
-<caption caption="[그림.25] Azure Load Balancer 20" src={azure25} />
+<caption caption="[그림.32] Azure Load Balancer 32" src={azure32} />
 
 <hr />
 

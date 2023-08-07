@@ -14,6 +14,9 @@ import azure7 from './img/azure/7.png';
 import azure8 from './img/azure/8.png';
 import azure9 from './img/azure/9.png';
 import azure10 from './img/azure/10.png';
+import azure11 from './img/azure/11.png';
+import azure12 from './img/azure/12.png';
+
 
 
 <hr />
@@ -37,13 +40,13 @@ Microsoft Sentinel을 Azure에 배포하기 위한 가이드를 제공합니다.
 
 ## 구성 서비스
 - [**Log Analytics Workspace**](https://docs.cstudio.app/docs/resource/azure/LogAnalytics/LogAnalyticsWorkspace)
-- [**Sentinel**](https://docs.cstudio.app/docs/resource/azure/Sentinel))
+- [**Sentinel**](https://docs.cstudio.app/docs/resource/azure/Sentinel)
 - [**Azure Storage Account**](https://docs.cstudio.app/docs/resource/azure/Storage/StorageAccount)
 - [**Security Center**](https://docs.cstudio.app/docs/resource/azure/azure/SecurityCenter)
 
 
 ## 아키텍처
-<caption caption="" src={azure10} />
+<caption caption="" src={azure12} />
 
 
 ## Azure Sentinel 아키텍처 만들기
@@ -65,7 +68,7 @@ Microsoft Sentinel을 Azure에 배포하기 위한 가이드를 제공합니다.
 **Log Analytics Workspace** 아이콘을 가져옵니다.
 Log Analytics Workspace는 Sentinel과 Security Center에서 사용할 로그를 저장합니다.
 
-> - ```Service Name```: sentinelworkspace
+> - ```Service Name```: defaultlaw
 > - ```Retention In Days```: 30
 > - ```Internet Query Enabled```: false
 > - ```Internet Ingestion Enabled```: false
@@ -78,7 +81,8 @@ Sentinel은 Log Analytics Workspace에 로그를 저장하고 시각화하는 �
 Cloud Studio에서는 총 6개의 로그 Connector를 제공합니다. 수집하고자 하는 로그 Source를 확인하고 필요한 Connector를 연결합니다.
 Log Analytics Workspace에 저장된 로그를 Azure에서 제공하는 규칙을 사용하거나 Custom해서 사용할 수 있습니다.
 
-> - ```Service Name```: cloudstudiosentinle
+> - ```Service Name```: defaultsent
+> - ```Linked Workspace Name``` - 위에서 생성한 log analytics를 선으로 연결하면 자동설정 됩니다.
 > - ```Connect Security Cente```: true
 > - ```Connect Threat Intelligence```: true
 > - ```Connect Advanced Threat Protection```: true
@@ -99,12 +103,13 @@ Log Analytics Workspace에 저장된 로그를 Azure에서 제공하는 규칙�
 
 <caption caption="[그림.6] Azure Sentinel 6" src={azure6} />
 
+
 ### 5. Storage Account 생성 
 **Storage Account** 아이콘을 가져옵니다.
 Security Center의 Advanced Threat Protection으로 보호할 Storage Account를 생성합니다.
 해당 Storage Account는 Security Center에 의해 보호받으며, Security Center의 Assessment Policy에 의해서 안전성을 평가받습니다. 
 
-> - ```Service Name```: cloudstudiosentinel
+> - ```Service Name```: defaultsa
 > - ```Account Kind```: StorageV2
 > - ```Account Tier```: Standard
 > - ```Account Replication Type```: LRS
@@ -112,16 +117,18 @@ Security Center의 Advanced Threat Protection으로 보호할 Storage Account를
 
 <caption caption="[그림.7] Azure Sentinel 7" src={azure7} />
 
-Network Rules은 모든 IP 주소를 허용했지만, 실제 배포를 할때는 현재 사용하고 있는 공인 IP 주소만 허용하는 것을 권장합니다.
-
 > - ```Min Tls Version```: TLS1_2
 > - ```Enable Https Traffic Only```: true
-> - ```Network Rules.Nmae```: defaultrule
-> - ```Network Rules.Default Action```: Allow
-> - ```Network Rules.Bypass```: [ "AzureServices" ]
-> - ```Network Rules.Ip Rules```: 0.0.0.0
 
 <caption caption="[그림.8] Azure Sentinel 8" src={azure8} />
+
+Networking은 모든 IP 주소를 허용했지만, 실제 배포를 할때는 현재 사용하고 있는 공인 IP 주소만 허용하는 것을 권장합니다.
+> - ```Networking.Name```: defaultrule
+> - ```Networking.Public Network Access```: All
+> - ```Networking.Bypass```: [ "AzureServices" ]
+> - ```Networking.Ip Rules```: 0.0.0.0/0
+
+<caption caption="[그림.9] Azure Sentinel 9" src={azure9} />
 
 ### 6. Security Center 생성
 **Security Center** 아이콘을 가져옵니다.
@@ -129,20 +136,28 @@ Security Center는 수집한 로그를 Log Analytics Workspace에 저장합니�
 Advanced Threat Protection에 지정한 리소스에서 로그를 수집하고 이에 대해 안전성 분석을 제공합니다.
 아래 입력하는 옵션을 제외한 나머지 옵션은 자동으로 설정됩니다.
 
-> - ```Service Name```: securitycenter
-> - ```Assessment Policy.Display Name```: Log Analytics Workspace Assessment Policy
-> - ```Assessment Policy.Severity```: Medium
-> - ```Assessment Policy.Description```: Assess Log Analytics Workspace Vulnerability
-> - ```Assessment.Status Code```: Healthy
-
-<caption caption="[그림.9] Azure Sentinel 9" src={azure9} />
-
-> - ```Linked Advanced Threat Protection.Enabled```: true
+> - ```Service Name``` : defaultsc
+> - ```Linked Log Analytics Workspace``` : 앞서 만든 log analytics와 선으로 연결하면 자동설정 됩니다.
+> - ```Assessment Policy.Display Name``` : Log Analytics Workspace Assessment Policy
+> - ```Assessment Policy.Severity``` : Medium
+> - ```Assessment Policy.Description``` : Assess Log Analytics Workspace Vulnerability
 
 <caption caption="[그림.10] Azure Sentinel 10" src={azure10} />
 
+<<<<<<< Updated upstream
 <hr />
 
+=======
+> - ```Assessment.Policy Name```: default_assessment_policy
+> - ```Assessment.Target Resource Name```: 앞서 만든 log analytics와 선으로 연결하면 자동설정 됩니다.
+> - ```Assessment.Status Code```: Healthy
+> - ```Linked Advanced Threat Protection.Enabled```: 앞서 만든 Serviceaccount와 연결하면 자동 설정됩니다.
+
+<caption caption="[그림.11] Azure Sentinel 11" src={azure11} />
+
+
+*****
+>>>>>>> Stashed changes
 ## 참고 자료
 - [Azure Sentinel](https://docs.microsoft.com/ko-kr/azure/sentinel/)
 - [Azure Security Center](https://docs.microsoft.com/ko-kr/azure/defender-for-cloud/)

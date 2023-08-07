@@ -23,6 +23,8 @@ import azure16 from './img/azure/16.png';
 import azure17 from './img/azure/17.png';
 import azure18 from './img/azure/18.png';
 import azure19 from './img/azure/19.png';
+import azure20 from './img/azure/20.png';
+import azure21 from './img/azure/21.png';
 
 <hr />
 <br/>
@@ -48,10 +50,15 @@ App Service를 활용한 아키텍처를 Azure에 배포하기 위한 가이드�
 - [**Subnet**](https://docs.cstudio.app/docs/resource/azure/Network/Subnet)
 - [**Network Security Group**](https://docs.cstudio.app/docs/resource/azure/Network/NetworkSecurityGroup)
 - [**Linux App Service**](https://docs.cstudio.app/docs/resource/azure/AppService/LinuxAppService)
+- [**Service Plan**](https://docs.cstudio.app/docs/resource/azure/AppService/ServicePlan)
 - [**Mysql**](https://docs.cstudio.app/docs/resource/azure/Database/Mysql)
+- [**Private DNS Zone**](https://docs.cstudio.app/docs/resource/azure/Dns/PrivateDnsZone)
+- [**Private Endpoint**](https://docs.cstudio.app/docs/resource/azure/Network/PrivateEndpoint)
+
+
 
 ## 아키텍처
-<caption caption="" src={azure19} />
+<caption caption="" src={azure21} />
 
 ## Azure App Service 아키텍처 만들기
 ### 1. 구독 생성
@@ -107,51 +114,62 @@ App Service를 연결한 **appservicesubnet**을 제외하고 Mysql 데이터베
 <caption caption="[그림.5] Azure App Service 5" src={azure5} />
 
 
-
-### 5. Linux App Service 생성
-**Linux App Service** 아이콘을 가져옵니다. 이 가이드에서는 Linux OS 기반 App Service를 사용합니다. 
+### 5. Service Plan 생성
+**Service Plan** 아이콘을 가져옵니다. Azure Service Plan은 앱 서비스를 실행하는 데 필요한 컴퓨팅 리소스(가상 머신, CPU, 메모리 등)와 가용성 옵션을 정의하는 것입니다. 
+서비스 계획을 생성하면 해당 계획의 규모에 따라 해당 리소스를 사용하여 앱을 호스팅할 수 있습니다.
+이 가이드에서는 Linux OS 기반 App Service를 사용합니다. 
 App Service도 가격측정을 위한 SKU를 가집니다. App Service에 배포할 서비스에 성능에 맞는 SKU를 선택합니다.
 
-> - ```Service Name```: etc-appservice
+> - ```Service Name```: serviceplan
 > - ```Kind```: Linux
-> - ```Sku Tier```: Basic B1
-> - ```Delegated Subnet Name```: etc_appservice_vn:etc_appservice_sn1
+> - ```Sku Tier```: app service의 가격 계층 
+
 
 <caption caption="[그림.6] Azure App Service 6" src={azure6} />
 
 App Service에서 인증, 권한과 Error 메시지완 관련된 옵션을 설정합니다.
 
-> - ```App Service.Client Cert Enabled```: true
-> - ```App Service.Auth Settings Enabled```: true
-> - ```App Service.Detailed Error Messages Enabled```: true
-> - ```App Service.Failed Request Tracing Enabled```: true
 
 
+
+### 6. Linux App Service 생성
+**Linux App Service** 아이콘을 가져옵니다. 
+
+> - ```Service Name```: appserviceLinux
+> - ```Linked Service Plan Name```: 사용할 serviceplan과 linux appservice를 연결합니다.
+> - ```Delegated Subnet Name```: etc_appservice_vn:etc_appservice_sn1
+
+App Service에서 인증, 권한과 Error 메시지완 관련된 옵션을 설정합니다.
+
+> - ```Client Cert Enabled```: 클라이언트 인증서를 활성화 합니다. - ```true```
+> - ```Auth Settings Enabled```: App에서 발생하는 모든 통신이 인증이 될 수 있도록 authentication을 활성화 - ```true```
+> - ```Detailed Error Messages Enabled```: HTTP 오류 발생 시, 오류 페이지에 자세한 오류 메시지를 포함 - ```true```
+> - ```Failed Request Tracing Enabled```: 실패한 요청에 대해 자세한 추적 정보 로킹을 활성화 - ```true```
+> - ```Retention In Days```: HTTP 요청과 관련된 로그 기록 보관 일 수(일) - ```5```
+> - ```Retention In Mb```: HTTP 요청과 관련된 로그 기록 보관 용량(MB) - ```25```
+> - ```Ftps State```: FTP를 사용하는 경우, 보안을 위해 FTP에 TLS/SSL을 적용 - ```Disabled```
+> - ```Http2 Enabled```: 보안을 위해 최신 버전의 HTTP 프로토클을 사용 - ```true```
+
+<caption caption="[그림.7] Azure App Service 7" src={azure7} />
 <caption caption="[그림.8] Azure App Service 8" src={azure8} />
 
-> - ```App Service.Retention In Days```: 5
-> - ```App Service.Retention In Mb```: 25
-> - ```App Service.Ftps State```: Disabled
-> - ```App Service.Http2 Enabled```: true
 
 
 
-
-
-### 6. Network Security Group 생성
+### 7. Network Security Group 생성
 **Network Security Group** 아이콘을 가져옵니다.
-**appservicesubnet**은 HTTP, HTTPS 요청을 받기 때문에 80, 443번 포트만 허용하는 Default Security Rules을 사용합니다.
+**appservice_nsg**은 HTTP, HTTPS 요청을 받기 때문에 80, 443번 포트만 허용하는 Default Security Rules을 사용합니다.
 
-> - ```Service Name```: etc_appservice_nsg1
+> - ```Service Name```: appservice_nsg
 > - ```Security Rules.Name```: http
 > - ```Security Rules.Priority```: 200
 > - ```Security Rules.Direction```: Inbound
 > - ```Security Rules.Access```: Allow
-
+> - ```Security Rules.Protocol```: Tcp
 
 <caption caption="[그림.9] Azure App Service 9" src={azure9} />
 
-> - ```Security Rules.Protocol```: Tcp
+
 > - ```Security Rules.Source Port Ranges```: *
 > - ```Security Rules.Destination Port Ranges```: 80
 > - ```Security Rules.Source Address Prefixes```: *
@@ -164,10 +182,10 @@ App Service에서 인증, 권한과 Error 메시지완 관련된 옵션을 설�
 > - ```Security Rules.Priority```: 201
 > - ```Security Rules.Direction```: Inbound
 > - ```Security Rules.Access```: Allow
+> - ```Security Rules.Protocol```: Tcp
 
 <caption caption="[그림.11] Azure App Service 11" src={azure11} />
 
-> - ```Security Rules.Protocol```: Tcp
 > - ```Security Rules.Source Port Ranges```: *
 > - ```Security Rules.Destination Port Ranges```: 443
 > - ```Security Rules.Source Address Prefixes```: *
@@ -179,16 +197,15 @@ App Service에서 인증, 권한과 Error 메시지완 관련된 옵션을 설�
 
 데이터베이스를 연결할 Subnet은 Mysql과 연결하기 위해 3306 포트를 허용하는 Security Rule을 추가합니다.
 
-> - ```Service Name```: etc_appservice_nsg2
+> - ```Service Name```: appservice_nsg2
 > - ```Security Rules.Name```: mysql
 > - ```Security Rules.Priority```: 100
 > - ```Security Rules.Direction```: Inbound
 > - ```Security Rules.Access```: Allow
-
+> - ```Security Rules.Protocol```: Tcp
 
 <caption caption="[그림.13] Azure App Service 13" src={azure13} />
 
-> - ```Security Rules.Protocol```: Tcp
 > - ```Security Rules.Source Port Ranges```: 3306
 > - ```Security Rules.Destination Port Ranges```: 3306
 > - ```Security Rules.Source Address Prefixes```: 10.0.0.0/16
@@ -203,7 +220,7 @@ App Service에서 인증, 권한과 Error 메시지완 관련된 옵션을 설�
 **Mysql** 아이콘을 가져옵니다.
 App Service에서 사용할 데이터를 저장하고 있는 Mysql 서버를 배포합니다.
 
-> - ```Service Name```: etc-appservice-mysql
+> - ```Service Name```: appservicemysql
 > - ```Version```: 5.7
 > - ```Sku Name```: GP_Gen5_4
 > - ```Storage Mb```: 5120
@@ -223,14 +240,26 @@ Mysql 서버에 Private 접속만 가능하도록 만들기 위해서 ```Public 
 
 <caption caption="[그림.16] Azure App Service 16" src={azure16} />
 
+> - ```Threat Detection Enabled```: true
+
 Database는 Mysql 서버를 생성하고 그 안에 Database를 생성하는 옵션입니다.
 데이터베이스를 생성하고 싶지 않은 경우, 해당 옵션을 삭제합니다.
-
-> - ```Threat Detection Enabled```: true
-> - ```Firewall Rule.StartIPAddress```: 0.0.0.0
-> - ```Firewall Rule.End Ip Address```: 0.0.0.0
+> - ```Charset```: MySQL Database의 문자 집합
+> - ```Collation```: MySQL Database의 데이터 정렬 방식
 
 <caption caption="[그림.17] Azure App Service 17" src={azure17} />
+
+### 8. Private DNS Zone 생성
+**Private DNS Zone** 아이콘을 가져옵니다.
+Private DnsZone은 Azure 클라우드 환경에서 가상 네트워크 내에서 도메인 이름을 해석하는데 사용되는 프라이빗 DNS 서비스입니다. 
+이것은 Azure Virtual Network (VNet) 내에서만 작동하며, VNet의 리소스들 간에 도메인 이름을 사용하여 통신할 수 있도록 해줍니다.
+
+> - ```Service Name```: cloudrawdb.com
+
+
+<caption caption="[그림.18] Azure App Service 18" src={azure18} />
+
+
 
 ### 8. Private Endpoint 생성
 **Private Endpoint** 아이콘을 가져옵니다.
@@ -239,11 +268,17 @@ Mysql은 Private 접근만 가능하기 때문에 Private Endpoint를 연결해�
 
 > - ```Service Name```: etc_appservice_pe
 > - ```Included Subnet Name```: etc_appservice_vn:etc_appservice_sn2
-> - ```Linked Connection Resource Name```: etc-appservice-mysql
+> - ```Linked Connection Resource Name```: appservicemysql
 > - ```Subresource Names```: mysqlServer
 
-<caption caption="[그림.18] Azure App Service 18" src={azure18} />
 
+<caption caption="[그림.19] Azure App Service 19" src={azure19} />
+
+> - ```Dns Zone Group names```: Private Endpoint와 연결할 Private DNS Zone의 그룹 이름 - ```cloudrawdb.com```
+> - ```Private Dns Zone Names```: 연결할 private Dns Zone 선택 - ```cloudrawdb.com```
+> - ```Connection Name```: Private Endpoint와 리소스의 연결 이름 - ```connect_cloudrawdb```
+> - ```Manual Connection```: 외부 리소스 소유자의 Manual Approval 필요 - ```false```
+<caption caption="[그림.20] Azure App Service 20" src={azure20} />
 
 
 <hr />
