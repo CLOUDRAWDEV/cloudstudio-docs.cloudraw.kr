@@ -268,7 +268,7 @@ Virtual Network Gateway를 정상적으로 배포하는데 30 ~ 40정도 소요�
 > - ```Included Subnet Name```: hub_vnet:GatewaySubnet
 > - ```Type```: Vpn
 > - ```Vpn Type```: RouteBased
-> - ```Sku```: VpnGw1AZ
+> - ```Sku```: 사용자 선택
 
 <caption caption="[그림.14] Azure Landing Zone Basic 14" src={azure14} />
 
@@ -541,8 +541,8 @@ Access Policy는 Key, Secrets, Certificate 각각 15개의 세분화된 권한�
 사용자는 SP나 Azure AD에 등록되 계정의 Object ID를 등록함으로써 Key Vault의 특정 크레덴셜에 대한 권한을 받을 수 있습니다.
 
 >- ```Network Acl Bypass```: [ "AzureServices" ]
->- ```Network Acl Action```: deny
->- ```Network Acl Ip Rules```: 0.0.0.0
+>- ```Network Acl Action```: Allow
+>- ```Network Acl Ip Rules```: 0.0.0.0/0
 
 <caption caption="[그림.42] Azure Landing Zone Basic 42" src={azure42} />
 
@@ -576,10 +576,10 @@ Azure Private DNS Zone을 Private Endpoint와 연결하면 해당 DNS Zone의 �
 
 이 가이드에서는 Private Endpoint를 두 개 사용하므로 Private DNS Zone도 두 개 생성합니다.
 
-> - ```Service Name```: platformdb.com
+> - ```Service Name```: 사용자도메인지정
 > - ```Vnet Link```:resourceGroup:Application_vnet
 
-> - ```Service Name```: platformsa.com
+> - ```Service Name```: 사용자도메인지정
 > - ```Vnet Link```:resourceGroup:Application_vnet
 
 <caption caption="[그림.46] Azure Landing Zone Basic 46" src={azure46} />

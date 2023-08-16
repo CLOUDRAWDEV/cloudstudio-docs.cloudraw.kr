@@ -18,10 +18,6 @@ import azure11 from './img/azure/11.png';
 import azure12 from './img/azure/12.png';
 import azure13 from './img/azure/13.png';
 import azure14 from './img/azure/14.png';
-import azure15 from './img/azure/15.png';
-import azure16 from './img/azure/16.png';
-
-
 
 <hr />
 <br/>
@@ -53,7 +49,7 @@ Ubuntu Virtual Machine을 Azure에 배포하기 위한 가이드를 제공합니
 <br/>
 
 ## 아키텍처
-<caption caption="" src={azure16} />
+<caption caption="" src={azure14} />
 
 
 ## Azure Ubuntu 아키텍처 만들기
@@ -65,7 +61,7 @@ Ubuntu Virtual Machine을 Azure에 배포하기 위한 가이드를 제공합니
 **리소스 그룹** 아이콘을 가져옵니다.
 리소스 그룹은 동일한 Life Cycle을 가진 리소스들을 묶는 그룹을 말합니다.
 
-> - ```Service Name```: rg
+> - ```Service Name```: VmResourceGroup
 > - ```Location```: koreacentral
 
 <caption caption="[그림.2] Azure Ubuntu 2" src={azure2} />
@@ -95,7 +91,7 @@ Virtual Network에 Virtual Machine을 배포하기 위한 Subnet을 구성합니
 **Network Security Group** 아이콘을 가져옵니다. 
 Network Security Group은 Virtual Machine으로 들어오고 나가는 트래픽을 통제합니다.
 
-> - ```Service Name```: defaultnsg
+> - ```Service Name```: defaultNsg
 > - ```Security Rules.Name```: http
 > - ```Security Rules.Priority```: 200
 > - ```Security Rules.Direction:``` inbound
@@ -123,10 +119,10 @@ Network Security Group에는 규칙을 여러개 설정할 수 있기 때문에 
 > - ```Security Rules.Priority```: 201
 > - ```Security Rules.Direction:``` inbound
 > - ```Security Rules.Access```: Allow
-> - ```Security Rules.Protocol```: Tcp
 
 <caption caption="[그림.7] Azure Ubuntu 7" src={azure7} />
 
+> - ```Security Rules.Protocol```: Tcp
 > - ```Security Rules.Source Port Ranges```: *
 > - ```Security Rules.Destination Port Ranges```: 443
 > - ```Security Rules.Source Address Prefixes```: *
@@ -140,6 +136,7 @@ Network Security Group에는 규칙을 여러개 설정할 수 있기 때문에 
 Azure Network Interface는 가상 머신(VM) 또는 가상 머신 스케일 세트(VMSS)와 Azure Virtual Network 간의 네트워크 연결을 담당하는 리소스입니다. 
 네트워크 인터페이스는 VM이나 VMSS를 가상 네트워크에 연결하고, IP 주소 할당 및 보안 그룹과 같은 네트워크 설정을 관리하는 역할을 합니다.
 
+> - ```Service Name```: vmNic
 > - ```Included Subnet Name```: vnet:UbuntuSubnet
 > - ```IpConfiguration.name```: ipconfig1
 > - ```IpConfiguration.IsPrimary```: true
@@ -155,7 +152,7 @@ Azure Public IP(공용 IP)는 인터넷에서 직접 액세스할 수 있는 고
 
 **VmIp**
 
-> - ```Service Name```: Firewall_Ip
+> - ```Service Name```: VmPip
 > - ```Sku```: standard
 > - ```Allocation Method```: static
 
@@ -170,23 +167,16 @@ Virtual Machine에 SSH 접속을 할 때 SSH Private Key 또는 Admin ID, Passwo
 > - ```Service Name```: LinuxVm
 > - ```Included Vnet Name```: vnet
 > - ```Size```: 사용자 선택
+> - ```Source Image.Type```:  사용자 이미지 ID 사용 유무 - ```recommended```
+> - ```Source Image.Image```: VM 생성을 위해 사용하는 이미지 - ```Ubuntu 이미지 선택```
 
 <caption caption="[그림.11] Azure Ubuntu 11" src={azure11} />
-
-> - ```Source Image.Enable Custom Image```:  사용자 이미지 ID 사용 유무 - ```false```
-> - ```Source Image.Publisher```: VM 생성을 위해 사용하는 이미지의 공급자 - ```사용자 선택```
-> - ```Source Image.Offer```: VM 생성을 위해 사용하는 이미지의 공급자 - ```사용자 선택```
-> - ```Source Image.Sku```: VM 생성을 위해 사용하는 이미지의 가격 책정 계층 - ```사용자 선택```
-
-<caption caption="[그림.12] Azure Ubuntu 12" src={azure12} />
 
 사용자의 ssh public key로 인증할 수있도록 설정해줍니다.
 
 > - ```Enable Ssh Key Authentication```: true
-> - ```Admin Username```: cloudraw
+> - ```Admin Username```: 사용자 선택 - `admin`은 예약어로 사용이 불가합니다.
 > - ```Ssh public key```: 본인이 생성한 ssh public key값을 입력
-
-<caption caption="[그림.13] Azure Ubuntu 13" src={azure13} />
 
 Virtual Machine에 연결되는 OS Disk의 Type을 선택합니다. 
 Azure는 HDD와 SSD를 지원하며, 이 가이드에서는 HDD(Standard_LRS)를 사용합니다.
@@ -195,11 +185,14 @@ Azure는 HDD와 SSD를 지원하며, 이 가이드에서는 HDD(Standard_LRS)를
 > - ```Storage Account Type```: Standard_LRS
 > - ```Disk Size Gb```: 127
 
-<caption caption="[그림.14] Azure Ubuntu 14" src={azure14} />
 
 위에서 만든 Network Interface와 VM을 연결해줍니다.
 
-<caption caption="[그림.15] Azure Ubuntu 15" src={azure15} />
+<caption caption="[그림.12] Azure Ubuntu 12" src={azure12} />
+<caption caption="[그림.13] Azure Ubuntu 13" src={azure13} />
+
+
+
 
 <hr />
 

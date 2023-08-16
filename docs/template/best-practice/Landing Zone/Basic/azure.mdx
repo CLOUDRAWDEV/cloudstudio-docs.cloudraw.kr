@@ -47,7 +47,8 @@ import azure40 from './img/azure/40.png';
 import azure41 from './img/azure/41.png';
 import azure42 from './img/azure/42.png';
 import azure43 from './img/azure/43.png';
-
+import azure44 from './img/azure/44.png';
+import azure45 from './img/azure/45.png';
 
 
 <hr />
@@ -86,7 +87,7 @@ Landing Zone은 기업의 규모에 따라서 구성이 달라집니다.
 - [**Public Load Balancer**](https://docs.cstudio.app/docs/resource/azure/LoadBalancer/PublicLoadBalancer)
 
 ## 아키텍처
-<caption caption="" src={azure43} />
+<caption caption="" src={azure45} />
 
 ## Azure Landing Zone 아키텍처 만들기
 ### 1. 구독 생성
@@ -325,8 +326,8 @@ Hub Vnet과 Spoke Vnet의 통신이 가능하도록 피어링으로 연결합니
 Hub Vnet과 Spoke Vnet이 같은 IP 대역을 가지고 있으면 피어링에 실패합니다. 
 서로 다른 IP 대역을 사용하고 있는지 확인해야 합니다.
 
-> - ```Service Name```: cloudraw_peering
-> - ```Peering1.Name```: 사용자 지정
+> - ```Service Name```: 사용자지정
+> - ```Peering1.Name```: 사용자지정
 > - ```Peering1.Linked Vnet Name```: cloudraw:resourceGroup:hub_vnet
 > - ```Peering1.Traffic To Remote Vnet```: true
 > - ```Peering1.Traffic Forwarded From Remote Vnet```: false
@@ -347,7 +348,7 @@ Hub Vnet과 Spoke Vnet이 같은 IP 대역을 가지고 있으면 피어링에 �
 해당 서비스는 PaaS로 관리형 서비스입니다. 사용자는 MySQL 서버에 Database를 생성해 바로 사용가능합니다.
 Mysql의 Service Name은 서버의 DNS주소로 사용되기 때문에 사용자별 unique한 값을 입력해야 합니다.
 
-> - ```Service Name```: cloudrawsql
+> - ```Service Name```: 사용자지정
 > - ```Version```: 5.7
 > - ```Sku Name```: GP_Gen5_4
 > - ```Storage Mb```: 5120
@@ -355,8 +356,8 @@ Mysql의 Service Name은 서버의 DNS주소로 사용되기 때문에 사용자
 
 <caption caption="[그림.17] Azure Landing Zone Basic 17" src={azure17} />
 
-> - ```Admin Login```: cloudraw
-> - ```Admin Login Password```: ADMIN_PASSWORD
+> - ```Admin Login```: 사용자지정 - `admin` 예약어는 사용 불가합니다.
+> - ```Admin Login Password```: 사용자지정
 > - ```Public Network Access Enabled```: false
 > - ```Ssl Enforcement Enabled```: true
 
@@ -370,56 +371,58 @@ Public 환경에서 접속할 수 없기 때문에 Firewall을 설정할 필요�
 
 <caption caption="[그림.19] Azure Landing Zone Basic 19" src={azure19} />
 
-
-
-
 Database는 Mysql 서버를 생성하고 그 안에 Database를 생성하는 옵션입니다. 
 데이터베이스를 생성하고 싶지 않은 경우, 해당 옵션을 삭제합니다.
 
 > - ```Database.Charset```: utf8
 > - ```Database.Collation```: utf8_unicode_ci
 
-
 <caption caption="[그림.20] Azure Landing Zone Basic 20" src={azure20} />
 
+Mysql 서버에 접속할 수 있는 IP를 설정합니다. 시작 IP와 마지막 IP를 모두 0.0.0.0으로 설정하면 모든 IP가 데이터베이스에 접속을 허용합니다.
+
+> -   `Firewall Rule.Name`: default
+> -   `Firewall Rule.Start Ip Address`: 0.0.0.0
+> -   `Firewall Rule.End Ip Address`: 0.0.0.0
+
+<caption caption="[그림.21] Azure Landing Zone Basic 21" src={azure21} />
 
 ### 12. Storage Account 생성
 **Storage Account** 아이콘을 가져옵니다.
 Storage Account는 Application에 필요한 이미지, 파일 등을 저장하고 있는 Object Storage로 사용합니다.
 Storage Account Service Name은 서버의 DNS주소로 사용되기 때문에 사용자별 unique한 값을 입력해야 합니다.
 
-> - ```Service Name```: cloudstudiosa
+> - ```Service Name```: 사용자지정
 > - ```Account Kind```: StorageV2
 > - ```Account Tier```: Standard
 > - ```Account Replication Type```: LRS
 > - ```Access Tier```: Hot
 
-<caption caption="[그림.21] Azure Landing Zone Basic 21" src={azure21} />
+<caption caption="[그림.22] Azure Landing Zone Basic 22" src={azure22} />
 
 > - ```Min Tls Version```: TLS1_2
 > - ```Enable Https Traffic Only```: true
 
-<caption caption="[그림.22] Azure Landing Zone Basic 22" src={azure22} />
+<caption caption="[그림.23] Azure Landing Zone Basic 23" src={azure23} />
 
 Object 스토리지는 DNS 주소를 알면 누구나 Request를 보낼 수 있기 때문에 IP 주소로 접근 제어를 해야합니다.
 사용자의 Public IP만 접속이 가능하도록 Network Rule을 설정합니다.
 
-> - ```Network Rules.Name```: default_rule
-> - ```Network Rules.Default Action```: Deny
-> - ```Network Rules.Bypass```: [ "AzureServices" ]
-> - ```Network Rules.IP_Rules```: [ "사용자 IP 설정" ]
+> - ```Networking.Public Network Access```: All
+> - ```Networking.IP_Rules```: [ "사용자 IP 설정" ]
+> - ```Networking.Bypass```: [ "AzureServices" ]
 
-<caption caption="[그림.23] Azure Landing Zone Basic 23" src={azure23} />
+<caption caption="[그림.24] Azure Landing Zone Basic 24" src={azure24} />
 
 > - ```Storage Container.name```: default-container
 > - ```Storage Container.Container Access Type```: private
 
-<caption caption="[그림.24] Azure Landing Zone Basic 24" src={azure24} />
+<caption caption="[그림.25] Azure Landing Zone Basic 25" src={azure25} />
 
 > - ```Storage Share.Name```: default-share
 > - ```Storage Share.Quota```: 5
 
-<caption caption="[그림.25] Azure Landing Zone Basic 25" src={azure25} />
+<caption caption="[그림.26] Azure Landing Zone Basic 26" src={azure26} />
 
 ### 13. Key Vault 생성
 **Key Vault** 아이콘을 가져옵니다.
@@ -427,40 +430,57 @@ Key Vault는 Key, Secrets, Certificate 3종류의 크레덴셜을 등록할 수 
 MSA 운영에 필요한 크레덴셜을 Key Vault에 저장하고 Azure의 다른 리소스에서 같은 크레덴셜을 사용할 수 있습니다.
 Key Vault는 크레덴셜을 저장하기 때문에 사용자가 크레덴셜이 즉시 삭제되지 않는 Soft Delete 옵션을 제공합니다.
 
->- ```Service Name```: AzureKeyVault
+>- ```Service Name```: 사용자지정
 >- ```Sku Name```: standard
 >- ```Enabled For Disk Encryption```: true
 >- ```Soft Delete Retention Days```: 7
 >- ```Purge Protection Enabled```: true
 
-<caption caption="[그림.26] Azure Landing Zone Basic 26" src={azure26} />
+<caption caption="[그림.27] Azure Landing Zone Basic 27" src={azure27} />
 
 Key Vault에 접근할 수 있는 Public IP 주소를 지정할 수 있습니다. 
 Key Vault에 사용자만 접근할 수 있도록, 사용자의 Public IP만 허용합니다.
 
 >- ```Network Acl Bypass```: [ "AzureServices" ]
->- ```Network Acl Action```: Deny
+>- ```Network Acl Action```: Allow
 >- ```Network Acl Ip Rules```: [ "사용자 IP 설정" ]
 
-<caption caption="[그림.27] Azure Landing Zone Basic 27" src={azure27} />
+<caption caption="[그림.28] Azure Landing Zone Basic 28" src={azure28} />
 
 Key Vault의 크레덴셜에 대해서 세부적인 접근 제어를 설정할 수 있습니다.
 Access Policy는 Key, Secrets, Certificate 각각 15개의 세분화된 권한을 할당할 수 있습니다.
 사용자는 SP나 Azure AD에 등록되 계정의 Object ID를 등록함으로써 Key Vault의 특정 크레덴셜에 대한 권한을 받을 수 있습니다.
 
->- ```Access Policies.Name```: default-access-policy
->- ```Access Policies.Object Id```: OBJECT_ID
->- ```Access Policies.Key Permissions```: ["Get", "Create", "List", "Delete", "Purge"]
->- ```Access Policies.Secret Permissions```: ["Get", "Set", "Delete", "List", "Purge"]
->- ```Access Policies.Certificate Permissions```: ["Get", "Create", "Delete", "List", "Purge"]
+> -   `Access Policies.Name`: default_access_policy
+> -   `Access Policies.Object Id`: 00000000-0000-0000-0000-000000000000 <TextColor color="#206FD6"> **(Object Id는 사용자의 고유한 ID입니다. azure portal에서 Object Id를 확인한 후 값을 입력해줍니다.)**</TextColor>
+> -   `Access Policies.Key Permissions`: ["Create", "Get","Delete", "GetRotationPolicy","List", "Purge","SetRotationPolicy","Update", "Verify"]
+> -   `Access Policies.Secret Permissions`: ["Get", "Set", "Delete", "List", "Purge"]
+> -   `Access Policies.Certificate Permissions`: ["Get", "Create", "Delete", "List", "Purge"]
 
-<caption caption="[그림.28] Azure Landing Zone Basic 28" src={azure28} />
-
->- ```Key Vault Secret.Name```: mySecret
->- ```Key Vault Secret.Activation Date```: 임의지정
->- ```Key Vault Secret.Expiration Date```: 임의지정
 
 <caption caption="[그림.29] Azure Landing Zone Basic 29" src={azure29} />
+
+> -   `Key Vault Secret.Name`: default
+> -   `Key Vault Secret.Secret Value`: 사용자지정
+
+Enable Activation Date와 Enable Expiration Date를 `true`로 설정하면 활성화/만료 날짜를 선택할 수 있습니다.
+
+> -   `Key Vault Secret.Activation Date`: <TextColor color="#206FD6">**원하는 활성화 날짜를 선택합니다.**</TextColor>
+> -   `Key Vault Secret.Expiration Date`: <TextColor color="#206FD6">**원하는 만료 날짜를 선택합니다.**</TextColor>
+
+<caption caption="[그림.30] Azure Landing Zone Basic 30" src={azure30} />
+
+> - ```Key Vault Key.Name```: default
+> -   `Key Vault Key.Type`: RSA
+> -   `Key Vault Key.Rsa Key Size`: 2048/Key Type RSA
+> -   `Key Vault Key.Permitted Operations`: ["decrypt","encrypt","sign","unwrapKey","verify","wrapKey"]
+
+Enable Activation Date와 Enable Expiration Date를 `true`로 설정하면 활성화/만료 날짜를 선택할 수 있습니다.
+
+> - ```Key Vault Key.Enabled Activation Date```: <TextColor color="#206FD6">ACTIVATION_DATE</TextColor>
+> - ```Key Vault Key.Enabled Expiration Date```: <TextColor color="#206FD6">EXPIRATION_DATE</TextColor>
+
+<caption caption="[그림.31] Azure Landing Zone Basic 31" src={azure31} />
 
 ### 14. Private DNS Zone 생성
 **Private DNS Zone** 아이콘을 가져옵니다.
@@ -470,65 +490,67 @@ Azure Private DNS Zone을 Private Endpoint와 연결하면 해당 DNS Zone의 �
 
 이 가이드에서는 Private Endpoint를 두 개 사용하므로 Private DNS Zone도 두 개 생성합니다.
 
-> - ```Service Name```: cloudrawsql.com
+> - ```Service Name```: yourdomain1
 > - ```Vnet Link```:resourceGroup:Application_vnet
 
-> - ```Service Name```: cloudrawsa.com
+> - ```Service Name```: yourdomain2
 > - ```Vnet Link```:resourceGroup:Application_vnet
 
-<caption caption="[그림.30] Azure Landing Zone Basic 30" src={azure30} />
+<caption caption="[그림.32] Azure Landing Zone Basic 32" src={azure32} />
 
 
 
-### 14. Private Endpoint 생성
+### 15. Private Endpoint 생성
 **Private Endpoint** 아이콘을 가져옵니다.
 Private Endpoint를 Mysql, Storage Account와 연결합니다. 
 Mysql, Storage Account은 Private 접근만 가능하기 때문에 Private Endpoint를 연결해야 주소를 정상적으로 찾을 수 있습니다.
 
 > - ```Service Name```: appdbendpoint
 > - ```Included Subnet Name```: Application_vnet:ApplicationSubnet
-> - ```Linked Connection Resource Name```: cloudrawmysql
+> - ```Linked Connection Resource Name```: mysql과 선으로 연결하면 자동설정됩니다.
 > - ```Subresource Names```: ["mysqlServer"]
-
-<caption caption="[그림.31] Azure Landing Zone Basic 31" src={azure31} />
-
-> - ```Dns Zone Group Name```: cloudrawsql.com
-> - ```Private Dns Zone Names```: cloudrawsql.com
-> - ```Connection Name```: connect_cloudrawsql
-> - ```Manual Connection```: ["false"]
-
-
-<caption caption="[그림.32] Azure Landing Zone Basic 32" src={azure32} />
-
-> - ```Service Name```: appsaendpoint
-> - ```Included Subnet Name```: Application_vnet:ApplicationSubnet
-> - ```Linked Connection Resource Name```: cloudrawsa
-> - ```Subresource Names```: ["blob"]
 
 <caption caption="[그림.33] Azure Landing Zone Basic 33" src={azure33} />
 
-> - ```Dns Zone Group Name```: cloudrawsa.com
-> - ```Private Dns Zone Names```: cloudrawsa.com
-> - ```Connection Name```: connect_cloudrawsql
+> - ```Connection Name```: 사용자지정
+> - ```Dns Zone Group Name```: dnszone이름 설정
+> - ```Private Dns Zone Names```: 사용할 dnszone 선택
 > - ```Manual Connection```: ["false"]
+
 
 <caption caption="[그림.34] Azure Landing Zone Basic 34" src={azure34} />
 
-### 15. Network Interface 생성
+> - ```Service Name```: appsaendpoint
+> - ```Included Subnet Name```: Application_vnet:ApplicationSubnet
+> - ```Linked Connection Resource Name```: serviceaccount와 선으로 연결하면 자동설정됩니다.
+> - ```Subresource Names```: ["blob"]
+
+<caption caption="[그림.35] Azure Landing Zone Basic 35" src={azure35} />
+
+> - ```Connection Name```: 사용자지정
+> - ```Dns Zone Group Name```: dnszone이름 설정
+> - ```Private Dns Zone Names```: 사용할 dnszone 선택
+
+> - ```Manual Connection```: ["false"]
+
+<caption caption="[그림.36] Azure Landing Zone Basic 36" src={azure36} />
+
+### 16. Network Interface 생성
 **Network Interface** 아이콘을 가져옵니다.
 Azure Network Interface는 가상 머신(VM) 또는 가상 머신 스케일 세트(VMSS)와 Azure Virtual Network 간의 네트워크 연결을 담당하는 리소스입니다. 
 네트워크 인터페이스는 VM이나 VMSS를 가상 네트워크에 연결하고, IP 주소 할당 및 보안 그룹과 같은 네트워크 설정을 관리하는 역할을 합니다.
 
+> - ```Service Name```: LinuxVmNic
 > - ```Included Subnet Name```: Application_vnet:ApplicationSubnet
 > - ```IpConfiguration.name```: ipconfig1
 > - ```IpConfiguration.IsPrimary```: true
 > - ```IpConfiguration.PrivateIPAddressAllocation```: Dynamic
-> - ```EmabledPublicIp```: false
+> - ```EnabledPublicIp```: false
 
-<caption caption="[그림.35] Azure Landing Zone Basic 35" src={azure35} />
+<caption caption="[그림.37] Azure Landing Zone Basic 37" src={azure37} />
 
 
-### 16. Virtual Machine 생성
+### 17. Virtual Machine 생성
 **Linux Virtual Machine** 아이콘을 가져옵니다.
 Virtual Machine은 각 Azure에서 제공하는 가장 기본적인 컴퓨팅 서비스입니다.
 Virtual Machine에 SSH 접속을 할 때 SSH Private Key 또는 Admin ID, Password를 사용할 수 있습니다.
@@ -538,22 +560,17 @@ Virtual Machine에 SSH 접속을 할 때 SSH Private Key 또는 Admin ID, Passwo
 
 > - ```Service Name```: LinuxVm
 > - ```Included Vnet Name```: Application_vnet
-> - ```Size```: Standard_D2s_v3
-
-<caption caption="[그림.36] Azure Landing Zone Basic 36" src={azure36} />
-
-> - ```SourceImage.Enabled Custom Image```: false
-> - ```SourceImage.Publisher```: 사용자 선택
-> - ```SourceImage.Offer```: UbuntuServer
-> - ```SourceImage.Sku```: 사용자 선택
-
-<caption caption="[그림.37] Azure Landing Zone Basic 37" src={azure37} />
-
-> - ```Enable Ssh Key Authentication```: true
-> - ```Admin Username```: cloudraw
-> - ```Ssh public key```: 본인이 생성한 publickey 값
+> - ```Size```: 사용자 선택
+> - ```SourceImage.Type```: recommended
+> - ```SourceImage.Image```: ubuntu 이미지 선택
 
 <caption caption="[그림.38] Azure Landing Zone Basic 38" src={azure38} />
+
+> - ```Enable Ssh Key Authentication```: true
+> - ```Admin Username```: 사용자지정
+> - ```Ssh public key```: 사용자가 생성한 publickey 
+
+<caption caption="[그림.39] Azure Landing Zone Basic 39" src={azure39} />
 
 Virtual Machine에 연결되는 OS Disk의 Type을 선택합니다. 
 Azure는 HDD와 SSD를 지원하며, 이 가이드에서는 HDD(Standard_LRS)를 사용합니다.
@@ -561,23 +578,26 @@ Azure는 HDD와 SSD를 지원하며, 이 가이드에서는 HDD(Standard_LRS)를
 > - ```Os Disk Caching```: ReadWrite
 > - ```Storage Account Type```: Standard_LRS
 > - ```Disk Size Gb```: 127
-> - ```Linked Network Interface Names```: 위에서 생성한 NIC와 연결
+
+<caption caption="[그림.40] Azure Landing Zone Basic 40" src={azure40} />
+
+> - ```Linked Network Interface Names```: 위에서 생성한 NIC와 선으로 연결하면 자동설정됩니다.
 > - ```Primary Network Interface Name```: 위에서 생성한 NIC 선택
 
-<caption caption="[그림.39] Azure Landing Zone Basic 39" src={azure39} />
+<caption caption="[그림.41] Azure Landing Zone Basic 41" src={azure41} />
 
-### 17. Public IP생성
+### 18. Public IP생성
 가상 머신에 대한 인터넷 트래픽을 보낼 수 있고, 인터넷에서 해당 리소스에 접근할 수 있게 됩니다.
 
 > - ```Service Name```: LinuxVmIp
 > - ```Sku```: Standard_LRS
 > - ```Allocation Method```: Static
 
-<caption caption="[그림.40] Azure Landing Zone Basic 40" src={azure40} />
+<caption caption="[그림.42] Azure Landing Zone Basic 42" src={azure42} />
 
 
 
-### 18. Public Load Balancer 생성
+### 19. Public Load Balancer 생성
 **Public Load Balancer** 아이콘을 가져옵니다.
 Public Load Balancer가 Backend Pool을 사용하기 위해서는 Load Balancer의 SKU가 Standard여야 합니다.
 Public Load Balancer의 Frontend IP Configuration에 연결되는 Public IP의 SKU와 Load Balancer의 SKU는 서로 일치해야 합니다.  
@@ -589,12 +609,12 @@ Public Load Balancer의 Frontend IP Configuration에 연결되는 Public IP의 S
 > - ```Virtual Network Name```: resourceGroup:Application_vnet
 
 
-<caption caption="[그림.41] Azure Landing Zone Basic 41" src={azure41} />
+<caption caption="[그림.43] Azure Landing Zone Basic 43" src={azure43} />
 
 > - ```Backend Pool.Name```: defaultBackendPool
-> - ```Backend Pool.Linux Virtual Machine Names```: LinuxVm:LInuxVmNic:ipconfig1
+> - ```Backend Pool.Linux Virtual Machine Names```: 생성한 vm과 선으로 연결하면 자동설정됩니다.
 
-<caption caption="[그림.42] Azure Landing Zone Basic 42" src={azure42} />
+<caption caption="[그림.44] Azure Landing Zone Basic 44" src={azure44} />
 
 
 
