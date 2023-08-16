@@ -21,9 +21,6 @@ import azure14 from './img/azure/14.png';
 import azure15 from './img/azure/15.png';
 import azure16 from './img/azure/16.png';
 
-<hr />
-<br/>
-
 Azure 아키텍처 센터는 Hub-Spoke 네트워크 토폴로지를 제공합니다.
 Spoke 가상 네트워크는 네트워크 내에서 워크로드를 격리하기 위해 사용합니다.
 여러개의 Spoke 가상 네트워크를 관리하기 위해서 Hub 가상 네트워크를 사용합니다.
@@ -81,7 +78,7 @@ Spoke 가상 네트워크와 피어링을 할 경우 두 가상 네트워크의 
 
 ### 4. Subnet 생성
 - [**Subnet**](https://docs.cstudio.app/docs/resource/azure/Network/Subnet) 아이콘을 가져옵니다. 
-
+각 서브넷의 prefix는 모두 다르게 설정해야 합니다.
 
 > - ```Service Name```: AzureFirewallSubnet
 > - ```Address Prefixes```: 10.0.0.0/24
@@ -128,7 +125,7 @@ Firewall은 클라우드 워크로드에 대해서 윕협 보호를 제공하는
 이 가이드에서 Standard Firewall을 사용하지만 Premium FIrewall을 사용하면 IDPS(침입 탐지) 기능도 제공합니다.
 Firewall의 Network, Application, NAT Rules은 Default를 사용합니다.
 
-> - ```Service Name```: AzureFirewall
+> - ```Service Name```: 사용자지정
 > - ```Included Subnet Name```: etchubvnet:AzureFirewallSubnet
 > - ```Sku Tier```: Standard
 > - ```Sku Name```: AZFW_VNet
@@ -170,6 +167,7 @@ Firewall의 Network, Application, NAT Rules은 Default를 사용합니다.
 > - ```Nat Rule Collection.Name```: default_nat_rule_collection
 > - ```Nat Rule Collection.Priority```: 200
 > - ```Nat Rule Collection.Action```: Dnat
+
 <caption caption="[그림.11] Azure Hub Vnet 11" src={azure11} />
 
 > - ```Nat Rules.Name```: default_nat_rules
@@ -178,7 +176,6 @@ Firewall의 Network, Application, NAT Rules은 Default를 사용합니다.
 > - ```Nat Rules.Translated Ports```: 53
 > - ```Nat Rules.Translated Address```: 8.8.8.8
 > - ```Nat Rules.Protocols```: TCP,UDP
-
 
 <caption caption="[그림.12] Azure Hub Vnet 12" src={azure12} />
 
@@ -189,11 +186,11 @@ VPN Gateway는 On-premise의 VPN 디바이스, 개인 디바이스와의 VPN 연
 VPN Gateway를 통해 사용자는 클라우드 환경에 허용된 사용자만 접속이 가능하도록 구성할 수 있습니다.
 Virtual Network Gateway를 정상적으로 배포하는데 30 ~ 40정도 소요됩니다.
 
-> - ```Service Name```: AzureGateway
+> - ```Service Name```: 사용자지정
 > - ```Included Subnet Name```: etchubvnet:GatewaySubnet
 > - ```Type```: Vpn
 > - ```Vpn Type```: RouteBased
-> - ```Sku```: VpnGw1AZ
+> - ```Sku```: 사용자 선택
 
 <caption caption="[그림.13] Azure Hub Vnet 13" src={azure13} />
 
@@ -202,11 +199,7 @@ Virtual Network Gateway를 정상적으로 배포하는데 30 ~ 40정도 소요�
 > - ```Enable  Configure Bgp```: false
 > - ```Ip Configuration.Linked Public Ip Name```: Gateway_ip
 
-
 <caption caption="[그림.14] Azure Hub Vnet 14" src={azure14} />
-
-
-
 
 ### 6. Bastion Host 생성
 **Bastion Host** 아이콘을 가져옵니다.
