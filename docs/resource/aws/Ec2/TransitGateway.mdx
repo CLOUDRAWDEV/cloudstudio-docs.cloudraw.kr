@@ -4,16 +4,16 @@ sidebar_position: 0
 tags: [AWS, 리소스, Ec2, TransitGateway]
 ---
 
-import icon from "../img/ec2-transit_gateway.png"
-
-
-
 <hr />
 <br />
 
 ## 리소스 아이콘
 
-<img src={icon} />
+<img
+    src={
+        "https://cloudstudioblob.blob.core.windows.net/cloudstudio/awsImg/ec2-transit_gateway.png"
+    }
+/>
 
 ## 리소스 개요
 
@@ -23,12 +23,21 @@ Transit Gateway는 가상 사설 클라우드(VPC)와 온프레미스 네트워�
 
 ### 상위 리소스
 
--   **VPC**
+-   [**Region**](https://docs.cstudio.app/docs/resource/aws/Base/Region)
+
+### 연결 리소스
+
+-   [**Vpc**](https://docs.cstudio.app/docs/resource/aws/Vpc/)
 
 ## 리소스 설정 값
 
--   `included_vpc_name` : Transit Gateway를 연결할 VPC 이름
--   `subnet_names` : Transit Gateway를 연결할 Subnet 이름
+-   `dns_support` : 연결된 VPC에 대해 도메인 이름 시스템 확인 확성화 - `enable`, `disable`
+-   `vpn_ecmp_support` : 연결된 VPN을 위한 ECMP(다중 경로) 라우팅 지원 - `enable`, `disable`
+-   `default_route_table_association` : Attachment를 기본 라우팅 테이블과 자동 연결 - `enable`, `disable`
+-   `default_route_table_propagation` : 기본 라우팅 테이블로 Attachment를 자동 전파 - `enable`, `disable`
+-   `multicast_support` : 멀티캐스트 도메인 생성 활성화 - `enable`, `disable`
+-   `transit_gateway_cidr_blocks` : Transit Gateway Cidr 블록
+-   `vpc_attachment`
 
 ---
 

@@ -4,18 +4,16 @@ sidebar_position: 0
 tags: [Ncloud, 리소스, Network, NetworkAcl]
 ---
 
-import icon from "../img/network-network_acl.png"
-
-
-
-
-
 <hr />
 <br />
 
 ## 리소스 아이콘
 
-<img src={icon} />
+<img
+    src={
+        "https://cloudstudioblob.blob.core.windows.net/cloudstudio/ncloudImg/network-network_acl.png"
+    }
+/>
 
 ## 리소스 개요
 
@@ -30,7 +28,7 @@ import icon from "../img/network-network_acl.png"
 ## 리소스 설정 값
 
 -   `included_vpc_name` : ACL을 생성할 VPC 이름
--   `acg_description` : ACL에 대한 설명
+-   `nacl_description` : ACL에 대한 설명
 -   `inbound_rule`
     -   `priority` : 인바운드 규칙 우선순위, 0 ~ 199
     -   `protocol` : 인바운드 트래픽의 프로토콜 - `TCP`, `UDP`, `ICMP`

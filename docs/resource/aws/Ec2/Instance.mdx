@@ -4,16 +4,16 @@ sidebar_position: 0
 tags: [AWS, 리소스, Ec2, Instance]
 ---
 
-import icon from "../img/ec2-instance.png"
-
-
-
 <hr />
 <br />
 
 ## 리소스 아이콘
 
-<img src={icon} />
+<img
+    src={
+        "https://cloudstudioblob.blob.core.windows.net/cloudstudio/awsImg/ec2-instance.png"
+    }
+/>
 
 ## 리소스 개요
 
@@ -23,7 +23,7 @@ Amazon Elastic Compute Cloud(Amazon EC2)는 Amazon Web Services(AWS) 클라우�
 
 ### 상위 리소스
 
--   **Region**
+-   [**Subnet**](https://docs.cstudio.app/docs/resource/aws/Vpc/Subnet)
 
 ## 리소스 설정 값
 
@@ -32,15 +32,14 @@ Amazon Elastic Compute Cloud(Amazon EC2)는 Amazon Web Services(AWS) 클라우�
 -   `included_subnet_name` : EC2 인스턴스를 배포할 Subnet의 이름
 -   `security_group_name` : EC2 인스턴스의 NIC에 지정할 Security Group의 이름
 -   `eip_enable` : EC2 인스턴스에 EIP를 사용할지 말지 설정 - `true`, `false`
--   `eip_in_vpc` : EIP를 VPC안에 포함시킬지 말지 설정 - `true`, `false`
+-   `eip_name` : EIP 이름
 -   `http_endpoint` : 메타데이터 서비스를 사용할 수 있는지 설정 - `enabled`, `disabled`
 -   `http_tokens` : 메타데이터 서비스에 세션 토큰이 필요한지 설정 - `required`, `optional`
--   `root_volume_size` : Root Volume의 Size (GiB)
 -   `root_volume_type` : Root Volume의 유형 - `gp2`, `gp3`, `io1`, `io2`, `sc1`, `st1`, `standard`
+-   `root_volume_size` : Root Volume의 Size (GiB)
 -   `ebs_block_device`
     -   `volume_size` : EBS Volume의 Size (GiB)
     -   `volume_type` : EBS Volume의 유형
-    -   `volume_size` : EBS Volume의 Size (GiB) - `gp2`, `gp3`, `io1`, `io2`, `sc1`, `st1`, `standard`
 
 ---
 

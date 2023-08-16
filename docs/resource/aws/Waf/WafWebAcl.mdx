@@ -4,18 +4,16 @@ sidebar_position: 0
 tags: [AWS, 리소스, Waf, WafWebAcl]
 ---
 
-import icon from "../img/waf-waf_web_acl.png"
-
-
-
-
-
 <hr />
 <br />
 
 ## 리소스 아이콘
 
-<img src={icon} />
+<img
+    src={
+        "https://cloudstudioblob.blob.core.windows.net/cloudstudio/awsImg/waf-waf_web_acl.png"
+    }
+/>
 
 ## 리소스 개요
 
@@ -25,18 +23,15 @@ AWS WAF Web ACL은 웹 애플리케이션에 적용되는 규칙 집합의 최�
 
 ### 상위 리소스
 
+-   [**Region**](https://docs.cstudio.app/docs/resource/aws/Base/)
 -   [**Base**](https://docs.cstudio.app/docs/resource/aws/Base/)
--   [**Region**](https://docs.cstudio.app/docs/resource/aws/Base/Region)
 
-### 연결 리소스
-
--   [**Cloudwatch Metric**](https://docs.cstudio.app/docs/resource/aws/Cloudwatch/Metric)
 
 ## 리소스 설정 값
 
 -   `scope` : AWS CloudFront 배포용인지 아니면 리전 애플리케이션용인지 지정 - `REGIONAL`, `CLOUDFRONT`
 -   `cloudwatch_metrics_enabled` : 연결된 리소스가 CloudWatch에 지표를 보낼지 여부 설정 - `true`, `false`
--   `linked_metric_name` : CloudWatch metric의 이름, 영대소문자, 하이픈(-), 밑줄(\_)만 포함할 수 있으며 길이는 1-128자
+-   `metric_name` : CloudWatch metric의 이름, 영대소문자, 하이픈(-), 밑줄(\_)만 포함할 수 있으며 길이는 1-128자
 -   `sampled_requests_enabled` : AWS WAF가 규칙과 일치하는 웹 요청의 샘플링을 저장해야 하는지 여부를 설정 - `true`, `false`
 
 ---

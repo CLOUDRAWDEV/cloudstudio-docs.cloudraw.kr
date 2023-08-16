@@ -4,18 +4,16 @@ sidebar_position: 0
 tags: [AWS, 리소스, Rds, Oracle]
 ---
 
-import icon from "../img/rds-oracle.png"
-
-
-
-
-
 <hr />
 <br />
 
 ## 리소스 아이콘
 
-<img src={icon} />
+<img
+    src={
+        "https://cloudstudioblob.blob.core.windows.net/cloudstudio/awsImg/rds-oracle.png"
+    }
+/>
 
 ## 리소스 개요
 
@@ -25,27 +23,38 @@ Amazon RDS for Oracle은 클라우드에서 Oracle 배포를 손쉽게 설정, �
 
 ### 상위 리소스
 
--   **Subnet**
+-   [**Subnet**](https://docs.cstudio.app/docs/resource/aws/Vpc/Subnet)
 
 ### 연결 리소스
 
--   **Oracle**
+-   [**Oracle**](https://docs.cstudio.app/docs/resource/aws/Rds/Oracle)
 
 ## 리소스 설정 값
 
+-   `database_name` : 초기 데이터베이스 이름
+-   `license`
 -   `engine` : RDS Instance의 Oracle Engine 종류 - `oracle-ee`, `oracle-se2`
 -   `engine_version` : RDS에 사용할 Oracle 버전
 -   `instance_class` : RDS DB의 가격 측정 계층
 -   `storage_type` : RDS 인스턴스의 Storage Type
 -   `allocated_storage` : RDS Insatance Storage의 용량 (Gigabytes)
--   `max_allocated_storage` : RDS에
+-   `max_allocated_storage` : Amazon RDS가 DB 인스턴스의 스토리지를 자동으로 확장할 수 있는 상한선
+-   `multi_az_enabled` : 다중 AZ 배포 활성화 - `true`, `false`
 -   `username` : RDS의 사용자 이름
 -   `password` : RDS의 사용자 패스워드
--   `skip_final_snapshot` : DB 인스턴스가 삭제되기 전에 최종 DB 스냅샷을 생성할지 여부를 결정 - `true`, `false`
 -   `included_subnet_names` : RDS Subnet 그룹에 연결할 Subnet 이름
--   `backup_retention_period` : 백업 데이터를 보관할 기간
--   `storage_encrypted` : DB 인스턴스의 암호화 여부를 지정 - `true`, `false`
+-   `subnet_group_name` : RDS에 사용할 Subnet 그룹 이름
 -   `publicly_accessible` : 인스턴스에 public access가 가능한지 여부 - `true`, `false`
+
+-   `monitoring`
+    -   `performance_insights_enabled` : 성능 인사이트 활성화
+-   `encryption`
+    -   `storage_encrypted` : DB 인스턴스의 암호화 여부를 지정 - `true`, `false`
+    -   `kms_key_name` : 암호화에 사용할 kms 키 이름
+-   `backup`
+    -   `backup_retention_period` : 백업 데이터를 보관할 기간 - `1`~`35`
+    -   `final_snapshot_enabled` : DB 인스턴스가 삭제되기 전, 최종 DB 스냅샷을 생성할지 여부 - `true`, `false`
+    -   `final_snapshot_name` : 최종 스냅샷 이름ess가 가능한지 여부 - `true`, `false`
 
 ---
 
