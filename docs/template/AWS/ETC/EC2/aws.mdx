@@ -1,0 +1,257 @@
+---
+title: AWS EC2 Instance
+sidebar_position: 0
+tags: [Template, 자주 사용하는 리소스, EC2 Instance, aws]
+---
+
+import aws1 from './img/aws/1.png';
+import aws2 from './img/aws/2.png';
+import aws3 from './img/aws/3.png';
+import aws4 from './img/aws/4.png';
+import aws5 from './img/aws/5.png';
+import aws6 from './img/aws/6.png';
+import aws7 from './img/aws/7.png';
+import aws8 from './img/aws/8.png';
+import aws9 from './img/aws/9.png';
+import aws10 from './img/aws/10.png';
+import aws11 from './img/aws/11.png';
+import aws12 from './img/aws/12.png';
+import aws13 from './img/aws/13.png';
+import aws14 from './img/aws/14.png';
+import aws15 from './img/aws/15.png';
+import aws16 from './img/aws/16.png';
+import aws17 from './img/aws/17.png';
+import aws18 from './img/aws/18.png';
+import aws19 from './img/aws/19.png';
+import aws20 from './img/aws/20.png';
+import aws21 from './img/aws/21.png';
+
+<hr />
+<br/>
+
+Ubuntu 아키텍처는 EC2 Instance를 사용하는 가장 기본적인 아키텍처입니다.
+Amazon EC2는 각 사용 사례에 맞게 최적화된 다양한 인스턴스 유형을 제공합니다. 
+인스턴스 유형은 CPU, 메모리, 스토리지 및 네트워킹 용량의 다양한 조합으로 구성되며, 애플리케이션에 따라 적합한 리소스 조합을 선택할 수 있는 유연성을 제공합니다.
+가상 시스템에서 실행되는 소프트웨어의 구성, 패치 및 설치와 같은 작업을 수행하여 가상 시스템을 유지 관리해야 합니다.
+Ubuntu Server을 AWS EC2 Instance에 배포하기 위한 가이드를 제공합니다.
+
+## 로그인
+- [AWS 체험 계정](https://aws.amazon.com/ko/free)
+- <Link to="/docs/start/sign-up">클라우드 스튜디오 회원가입 방법</Link>
+- [클라우드 스튜디오 회원가입 바로가기](https://cstudio.app/signup)
+
+## 전제조건
+- **AWS BASE**
+- **AWS 사용자 생성  + 역할 할당**
+- **Base에 대해 AdministratorAccess 이상의 권한**
+- **클라우드 스튜디오에 크레덴셜 값 등록**
+
+## 구성 서비스
+- [**VPC**](https://docs.cstudio.app/docs/resource/aws/Vpc/)
+- [**Subnet**](https://docs.cstudio.app/docs/resource/aws/Vpc/Subnet)
+- [**Security Group**](https://docs.cstudio.app/docs/resource/aws/Vpc/SecurityGroup)
+- [**Network Interface**]
+- [**Public Ip**]
+- [**EC2 Instance**](https://docs.cstudio.app/docs/resource/aws/Ec2/Instance)
+<br/>
+
+## 아키텍처
+<caption caption="" src={aws21} />
+
+
+## AWS Ubuntu 아키텍처 만들기
+### 1. Base 선택
+캔버스에서 ```Base 아이콘```을 가져온 후 등록한 ```크레덴셜을 선택```합니다.
+<caption caption="[그림.1] AWS Ubuntu 1" src={aws1} />
+
+### 2. Region 생성
+**리전** 아이콘을 가져옵니다.
+AWS 리전은 지리적으로 분산된 데이터 센터의 그룹입니다. 각 리전은 독립적으로 운영되며, 서로 다른 지역에 위치한 데이터 센터에서 클라우드 리소스를 제공하고 관리합니다.
+리전에 따라 AWS 서비스의 가용성이 다를 수 있고, 사용자 및 고객의 위치에 가장 가까운 리전을 선택하면 지연 시간을 줄이고 더 빠른 응답 시간을 제공할 수 있습니다.   
+
+```ap-northeast-2``` : Asia Pacific(Seoul) 
+> - ```Service Name```: 사용자지정
+> - ```region```: ap-northeast-2
+
+<caption caption="[그림.2] AWS Ubuntu 2" src={aws2} />
+
+### 3. VPC 생성
+**VPC** 아이콘을 가져옵니다.
+VPC는 EC2 instance를 배포하기 위해 필요한 네트워크 환경을 제공합니다.
+```Enable Dns Support``` 옵션은 VPC 내에서 도메인 이름을 IP 주소로 변환하고, 그 반대로 IP 주소를 도메인 이름으로 변환하는 기능을 제공합니다.
+```Enable Dns Hostnames```옵션은 VPC가 Public IP 주소가 있는 인스턴스에 Public DNS hostnames을 할당하도록 지원할 여부를 결정합니다.
+
+> - ```Service Name```: 사용자지정
+> - ```Vnet Address Space```: [ "10.0.0.0/16" ]
+> - ```Enable Dns Support```: true
+> - ```Enable Dns Hostnames```: true
+
+<caption caption="[그림.3] AWS Ubuntu 3" src={aws3} />
+
+### 4. Subnet 생성
+- [**Subnet**](https://docs.cstudio.app/docs/resource/aws/Vpc/Subnet) 아이콘을 가져옵니다.
+VPC에 Virtual Machine을 배포하기 위한 Subnet을 구성합니다.
+ ```Availability Zone```은 물리적으로 분리된 데이터 센터 그룹을 나타냅니다.
+
+> - ```Service Name```: 사용자지정
+> - ```Included Vnet Name```: vpc안에 넣으면 자동설정됩니다.
+> - ```Address Prefixes```: 10.0.0.0/24
+> - ```Availability Zone```: ap-northeast-2a
+
+<caption caption="[그림.4] AWS Ubuntu 4" src={aws4} />
+
+### 5. Internet Gateway 생성
+- [**Internet Gateway**](https://docs.cstudio.app/docs/resource/aws/Vpc/InternetGateway) 아이콘을 가져옵니다.  
+Internet Gatway는 VPC와 인터넷 간에 통신할 수 있게 해줍니다. 인터넷 게이트웨이를 사용하면 로컬 컴퓨터로 AWS의 EC2 인스턴스에 연결할 수 있습니다. 
+인터넷 게이트웨이는 VPC 라우팅 테이블에서 인터넷 라우팅 가능 트래픽에 대한 대상을 제공합니다. IPv4 통신의 경우 인터넷 게이트웨이는 Network Address Translation(NAT)도 수행합니다.
+
+> - ```Service Name```: 사용자지정
+> - ```Included Vnet Name```: vpc안에 넣으면 자동설정됩니다.
+
+<caption caption="[그림.5] AWS Ubuntu 5" src={aws5} />
+
+### 6. Route Table 생성
+**Route Table** 아이콘을 가져옵니다. 
+Route Table은 VPC 내의 서브넷에 대한 트래픽을 어떤 대상으로 전달할지 정의하는 AWS 리소스입니다.
+VPC 내의 모든 서브넷은 하나 이상의 라우팅 테이블에 연결되어 있으며, 라우팅 테이블은 인터넷 게이트웨이, NAT 게이트웨이, VPC 엔드포인트 또는 VPN 연결과 같은 대상에 대한 라우팅 규칙을 지정합니다  
+서브넷에서 생성된 모든 트래픽은 연결된 라우팅 테이블을 통해 대상으로 전달됩니다
+
+> - ```Service Name```: 사용자지정
+> - ```Included Vnet Name```: 자동설정
+> - ```Subnet Names```: 트래픽을 제어할 서브넷을 선택하여 설정합니다.
+
+<caption caption="[그림.6] AWS Ubuntu 6" src={aws6} />
+
+**라우팅테이블과 연결된 Subnet을 Public으로 사용하기 위해서는 `Linked Route.Cidr Block`을 `0.0.0.0/0`으로 설정하고 위에서 생성한 public용 subnet들과 연결해주어야 합니다**
+> - ```Linked Route.Protocol```: route1
+> - ```Linked Route.Cidr Block```: 0.0.0.0/0
+> - ```Linked Route.Resource Type```: 연결할 리소스타입을 선택합니다 - `internet_gateway`, `ec2_instance`, `nat_gateway`, `vpc_peering` 중 선택가능합니다.
+이 아키텍처에서는 `internet_gateway`를 선택합니다.
+> - ```Linked Route.Linked Resource Name```: Internet gateway에서 Route table을 선으로 연결한 후 옵션에서 해당 Internet Gateway선택합니다.
+
+<caption caption="[그림.7] AWS Ubuntu 7" src={aws7} />
+
+### 7. Security Group 생성
+**Security Group** 아이콘을 가져옵니다.
+Security Group는 연결된 리소스에 도달하고 나갈 수 있는 트래픽을 제어합니다. 
+예를 들어 보안 그룹을 EC2 인스턴스와 연결하면 인스턴스에 대한 인바운드 및 아웃바운드 트래픽을 제어합니다. 
+보안 그룹은 해당 보안 그룹이 생성된 VPC의 리소스에만 연결할 수 있습니다. VPC를 생성할 경우 VPC는 기본 보안 그룹과 함께 제공됩니다. 
+각 VPC 대해 추가 보안 그룹을 생성할 수 있습니다.
+
+> - ```Service Name```: 사용자지정
+> - ```Description```: Allow HTTP,HTTPS Traffic
+> - ```Included Vpc Name```: vpc안에 위치하면 자동설정됩니다.
+
+<caption caption="[그림.8] AWS Ubuntu 8" src={aws8} />
+
+> - ```Ingress.Name```: 사용자지정
+> - ```Ingress.Rule Name```: allow_80
+> - ```Ingress.Description```: http
+> - ```Ingress.From Port```: 80
+> - ```Ingress.To Port```: 80
+
+<caption caption="[그림.9] AWS Ubuntu 9" src={aws9} />
+
+> - ```Ingress.Protocol```: tcp
+> - ```Ingress.Cidr Block```: 10.0.0.0/16
+
+<caption caption="[그림.10] AWS Ubuntu 10" src={aws10} />
+
+> - ```Ingress.Name```: 사용자지정
+> - ```Ingress.Rule Name```: allow_443
+> - ```Description```: https
+> - ```From Port```: 443
+> - ```To Port```: 443
+
+<caption caption="[그림.11] AWS Ubuntu 11" src={aws11} />
+
+> - ```Ingress.Protocol```: tcp
+> - ```Ingress.Cidr Block```: 10.0.0.0/16
+
+<caption caption="[그림.12] aws Load Balancer 12" src={aws12} />
+
+외부 인터넷에 모든 포트에서 나갈 수 있도록 egress를 설정합니다.
+
+> - ```Egress.Name```: 사용자지정
+> - ```Egress.Rule Name```: allow_all
+> - ```Description```: https
+> - ```From Port```: 0
+> - ```To Port```: 0
+
+<caption caption="[그림.13] aws Load Balancer 13" src={aws13} />
+
+> - ```Ingress.Protocol```: all
+> - ```Ingress.Cidr Block```: 10.0.0.0/16
+
+<caption caption="[그림.14] aws Load Balancer 14" src={aws14} />
+
+### 8. EIP 생성
+**EIP** 아이콘을 가져옵니다.
+aws EIP는 EC2 Instance의 IP 주소가 변경되지 않도록 보장하고, 공용 인터넷에 대한 안정적인 연결을 유지하기 위해 사용됩니다.
+
+> - ```Service Name```: 사용자지정
+
+<caption caption="[그림.15] aws Load Balancer 15" src={aws15} />
+
+### 9. Network Interface 생성
+**Network Interface** 아이콘을 가져옵니다. 
+Network Interface는 가상 네트워크 장치로, 가상 서버 (Amazon EC2 인스턴스 등)와 가상 네트워크 간의 통신을 위한 네트워크 인터페이스입니다. 
+ENI를 통해 EC2 인스턴스에 추가적인 네트워크 인터페이스를 연결하거나, 보안 그룹 및 IP 주소와 연결하여 인스턴스의 네트워크 환경을 구성할 수 있습니다.
+
+> - ```Included Subnet Name```: Subnet안에 NIC를 넣으면 자동 설정됩니다.
+
+Private Ip는 EC2 인스턴스가 속한 VPC 내에서 사용되는 내부 ip주소입니다. 이 주소를 사용하여 같은 VPC 내의 다른 인스턴스와 통신하거나 VPC 내부의 다른 리소스에 접근 가능합니다.
+설정하지 않으면 자동으로 Private IP가 설정됩니다.
+
+> - ```Private Ips```: 미설정시 자동할당
+> - ```Linked Security Group Names```: Security Group과 선으로 연결하면 자동설정됩니다.
+> - ```Linked Eip Names```: EIP와 선으로 연결하면 자동설정됩니다.
+
+<caption caption="[그림.16] aws Load Balancer 16" src={aws16} />
+
+### 10. Key Pair 생성
+**Key Pair** 아이콘을 가져옵니다.
+Key Pair*은 EC2 인스턴스와 같은 컴퓨팅 리소스에 접근하기 위한 인증 및 보안 수단입니다
+사용자가 수동으로 생성한 ssh Public key를 형식에 맞게 입력해주면 EC2 Instance에 접속이 가능합니다.
+> - ```Service Name```: 사용자 지정
+> - ```Public Key```: 사용자 Public key 입력
+
+<caption caption="[그림.17] AWS Ubuntu 17" src={aws17} />
+
+### 11. EC2 Instance 생성
+**EC2 Instance** 아이콘을 가져옵니다.
+EC2를 사용하면 사용자는 필요에 따라 가상 서버(인스턴스)를 생성하고 구성하여 다양한 워크로드를 실행하고 관리할 수 있습니다.
+
+> - ```Service Name```: 사용자지정
+> - ```Ami```: Ubuntu , 버전은 사용자가 원하는 버전을 지정합니다.
+
+Instance Type은 다양한 CPU, 메모리, 스토리지 및 네트워크 리소스를 다른 비율로 조합한 가상 서버 유형을 나타냅니다. 
+각 인스턴스 유형은 특정 용도와 성능 요구 사항에 맞게 설계되었으며, 다양한 크기와 성능 옵션을 제공합니다. 
+사용자는 이 인스턴스 유형을 선택하여 EC2 인스턴스를 생성하고 워크로드를 실행하게 됩니다.
+> - ```Instance Type```: 사용자 지정
+> - ```Key Pair Name```: 사용할 Keypair service 이름을 선택합니다.
+> - ```Linked Network Interface Names```: 사용할 NIC에 선으로 연결하면 자동설정됩니다.
+
+<caption caption="[그림.18] AWS Ubuntu 18" src={aws18} />
+
+Amazon EC2 인스턴스는 인스턴스 메타데이터 서비스를 통해 자체에 대한 정보에 접근할 수 있는 HTTP 엔드포인트를 제공합니다.   
+이 메타데이터는 인스턴스의 구성 및 상태에 대한 정보를 제공하며, 특히 인스턴스가 실행 중인 AWS 환경에서 중요한 역할을 합니다.
+인스턴스 메타데이터 서비스에 액세스하기 위해서는 HTTP 요청 헤더에 특별한 토큰을 포함해야 합니다.이 토큰은 메타데이터 요청의 인증 및 보안을 위한 것으로, EC2 인스턴스 내부에서만 획득 가능합니다.
+
+
+> - ```Http Endpoint```: Enabled
+> - ```Http Tokens```: Required
+
+루트 볼륨(Root Volume)은 인스턴스의 운영 체제(OS)와 애플리케이션 등이 설치되는 기본적인 스토리지 볼륨을 의미합니다. 
+이 볼륨은 인스턴스가 시작될 때 자동으로 연결되며, 인스턴스에 필요한 모든 파일 시스템과 소프트웨어가 저장되는 곳입니다.
+
+> - ```Root Volume Type```: standard
+> - ```Root Volume Size```: 20
+
+<caption caption="[그림.19] AWS Ubuntu 19" src={aws19} />
+
+<hr />
+
+## 참고 자료
+- [aws EC2 Instance](https://docs.aws.amazon.com/ko_kr/AWSEC2/latest/UserGuide/concepts.html)
+- [aws Ubuntu EC2 Instance](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/instance)
