@@ -1,0 +1,48 @@
+---
+title: Overview
+sidebar_position: 1
+---
+
+import styles from '../../../../../src/scss/_markdown.module.scss';
+import azureLandZone from '@site/static/img/azure_landing_zone_bp.png';
+import awsLandZone from '@site/static/img/aws_landing_zone_bp.png';
+
+
+<hr />
+<br />
+
+### 랜딩존(Landing Zone)
+
+최근 몇 년간 클라우드 산업이 빠르게 성장하면서, 산업 전반적으로 클라우드 서비스가 확산되면서 더 안전하고 효율적으로 클라우드 환경을 운영할 수 있는 방법에 대한 관심이 높아졌습니다.
+```랜딩존```은 기업들의 요구사항에 맞춰서 기업의 클라우드 환경을 안전하고 효율적으로 관리할 수 있는 환경을 제공합니다.
+랜딩존을 구축한다는 것은 필요에 따라 변형이 가능한 기초 샘플을 만들어두는 것과 같으며, 기업 내, 외부의 환경에 맞는 최적의 시스템을 구축하는데 사용할 수 있습니다.
+
+<details>
+    <summary>랜딩존이란?</summary>
+    <h5>클라우드 환경에서 보안 로그 저장 위치, 관리 정책, 보안 취약성 관리법, API에 대한 보안 거버넌스 및 접근통제 방안 등, 시스템 운영을 위한 기본이 되는 요소들을 형식화해서 만든 도구입니다. </h5>
+</details>
+
+
+### 랜딩존 유형
+
+랜딩존은 플랫폼과 애플리케이션 2가지 유형으로 분류됩니다.
+
+- 플랫폼 랜딩존
+- 애플리케이션 랜딩존
+    - 중앙 관리
+    - 기술 플랫폼
+    - 워크 로드
+
+### 랜딩존 Basic vs Enterprise
+
+랜딩존은 여러 개의 계정을 사용해서 운영합니다. AWS는 Root 계정에서 IAM 계정을 추가해서 multi account로 랜딩존을 구성합니다. Azure의 경우 Tenant에서 구독을 여러개 만들어 랜딩존을 구성합니다. Ncloud는 Root 계정에서 Sub account로 랜딩존을 구성합니다. 랜딩존의 기업의 환경에 맞는 최적의 시스템을 구축하는 것이 목적이기 때문에, 최적이라는 목표는 기업마다 다를 수 있습니다. 스타트업의 랜딩존과 대기업의 랜딩존은 처리 속도와 규모, 환경이 모두 다르고 보안정책도 다르기 때문에 동일한 템플릿을 커스텀해서 모든 요구사항을 만족하는데 한계가 있습니다. 따라서, 중소기업을 위한 단일 계정으로 랜딩존의 기본적인 구성을 지원하는 랜딩존 Baisc과 실제 중견, 대기업에서 사용할 수 있는 multi account를 지원하는 랜딩존 Enterprise로 나눠집니다.
+
+<br/>
+
+<hr />
+### 참고 자료
+
+- [[하루 3분 IT] 랜딩존 (Landing Zone)](https://blog.naver.com/PostView.naver?blogId=pentamkt&logNo=222389825257&categoryNo=20&parentCategoryNo=0&viewDate=&currentPage=1&postListTopCurrentPage=1&from=postView)
+- [Azure 랜딩존 - 랜딩 존이란?](https://docs.microsoft.com/ko-kr/azure/cloud-adoption-framework/ready/landing-zone/)
+- [AWS Landing Zone](https://aws.amazon.com/ko/solutions/implementations/aws-landing-zone/)
+- [http://www.itdaily.kr/news/articleView.html?idxno=202962](http://www.itdaily.kr/news/articleView.html?idxno=202962)
