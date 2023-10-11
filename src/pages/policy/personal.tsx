@@ -153,11 +153,11 @@ export default function Personal() {
                                         <strong>
                                             개인정보보호책임자(CPO) :{" "}
                                         </strong>
-                                        박상규 부대표
+                                        문현배 본부장
                                     </h5>
                                     <h5 style={{ fontWeight: "normal" }}>
                                         <strong>이메일 :</strong>
-                                        {" "}skpark@cloudraw.kr{" "}
+                                        {" "}hbmoon@cloudraw.kr{" "}
                                     </h5>
                                     <h5
                                         style={{
