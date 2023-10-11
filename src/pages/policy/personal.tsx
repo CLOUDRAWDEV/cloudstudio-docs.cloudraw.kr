@@ -308,15 +308,15 @@ export default function Personal() {
                     <tbody>
                         <tr>
                             <td>이름</td>
-                            <td>박상규</td>
+                            <td>문현배</td>
                         </tr>
                         <tr>
                             <td>직책</td>
-                            <td>부대표</td>
+                            <td>본부장</td>
                         </tr>
                         <tr>
                             <td>이메일</td>
-                            <td>skpark@cloudraw.kr</td>
+                            <td>hbmoon@cloudraw.kr</td>
                         </tr>
                     </tbody>
                 </table>
