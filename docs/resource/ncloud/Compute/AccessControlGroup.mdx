@@ -38,9 +38,16 @@ tags: [Ncloud, 리소스, Compute, AccessControlGroup]
     -   `name` : inbound rule에 대한 이름
     -   `protocol` : 인바운드 트래픽의 프로토콜 - `TCP`, `UDP`, `ICMP`
     -   `rule_apply_method` : 인바운드 규칙 적용 방법 - `ip_block`, `source_name`
-    -   `source_access_control_group_name` : 인바운드 트래픽 목적지, CDIR 형식의 IP 대역
+    -   `ip_block` : 인바운드 트래픽 목적지, CDIR 형식의 IP 대역
     -   `port_range` : 인바운드 규칙을 적용할 포트 범위, 1 ~ 65535의 범위(범위 설정시: 100-200)
 
+-   `outbound_rule`
+    -   `name` : outbound rule에 대한 이름
+    -   `protocol` : 아웃바운드 트래픽의 프로토콜 - `TCP`, `UDP`, `ICMP`
+    -   `rule_apply_method` : 아웃바운드 규칙 적용 방법 - `ip_block`, `source_name`
+    -   `ip_block` : 인바운드 트래픽 목적지, CDIR 형식의 IP 대역
+    -   `port_range` : 인바운드 규칙을 적용할 포트 범위, 1 ~ 65535의 범위(범위 설정시: 100-200)
+    
 ---
 
 ## 참고 자료
