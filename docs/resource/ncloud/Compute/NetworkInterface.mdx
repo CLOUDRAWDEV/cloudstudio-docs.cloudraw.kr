@@ -1,0 +1,44 @@
+---
+title: NetworkInterface
+sidebar_position: 0
+tags: [Ncloud, 리소스, Compute, NetworkInterface]
+---
+
+<hr />
+<br />
+
+## 리소스 아이콘
+
+<img
+    src={
+        "https://cloudstudioblob.blob.core.windows.net/cloudstudio/ncloudImg/compute-network_interface.png"
+    }
+/>
+
+## 리소스 개요
+
+서버에 할당할 수 있는 네트워크 인터페이스를 생성하는 서비스입니다. 네트워크 인터페이스가 적용된 서버들은 Subnet을 사용하여 독립된 네트워크 통신이 가능합니다.
+
+## 연관 리소스
+
+### 상위 리소스
+
+-   [**Subnet**](https://docs.cstudio.app/docs/resource/ncloud/Network/Subnet)
+
+### 연결 리소스
+
+-   [**Access Control Group**](https://docs.cstudio.app/docs/resource/ncloud/Network/AccessControlGroup)
+-   [**Server**](https://docs.cstudio.app/docs/resource/ncloud/Compute/Server)
+
+## 리소스 설정 값
+
+-   `included_subnet_name` : Network Interface가 포함될 subnet 이름
+-   `linked_acg_names` : 네트워크 인터페이스를 적용할 ACG 이름 목록
+
+
+---
+
+## 참고 자료
+
+
+-   [ncloud_server(Terraform)](https://registry.terraform.io/providers/NaverCloudPlatform/ncloud/latest/docs/resources/network_interface)
