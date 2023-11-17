@@ -22,28 +22,27 @@ tags: [Ncloud, 리소스, Compute, Server]
 ## 연관 리소스
 
 ### 상위 리소스
-
 -   [**Subnet**](https://docs.cstudio.app/docs/resource/ncloud/Network/Subnet)
 
 ### 연결 리소스
 
--   [**Access Control Group**](https://docs.cstudio.app/docs/resource/ncloud/Network/AccessControlGroup)
+-   [**BlockStorage**](https://docs.cstudio.app/docs/resource/ncloud/Compute/BlockStorage)
+-   [**PublicIp**](https://docs.cstudio.app/docs/resource/ncloud/Compute/PublicIp)
+-   [**TargetGroup**](https://docs.cstudio.app/docs/resource/ncloud/Network/TargetGroup)
 
 ## 리소스 설정 값
 
--   `included_subnet_name` : 서버가 위치하는 Subnet 이름
--   `server_image_product_code` : 사용할 운영체제 이미지 코드(CNTOS:CentOS, UBNTU:Ubuntu, WND:Windows / MYSQL,MARIA:Database / SVR:Server, EN:English Edition)
--   `server_product_code` : 서버의 하드웨어 구성을 위한 코드(HICPU:High CPU, STAND:Standard, HIMEM:High Memory / C 코어수,M 메모리(GB))
--   `network_interface`
-    -   `linked_acg_names` : 네트워크 인터페이스를 적용할 ACG 이름 목록
-    -   `nic_order` : 서버에 할당하는 네트워크 인터페이스의 순서
--   `public_ip_enable` - `true`, `false`
--   `init_script`
-    -   `content` : 서버가 생성될 때 자동으로 실행할 스크립트 내용
+-   `includ_subnet_name` : 서버가 위치하는 Subnet 이름
+-   `server_image_product_code` : 사용할 운영체제 이미지 코드
+-   `server_product_code` : 서버의 하드웨어 구성을 위한 코드
+-   `login_key_name` : 사용할 login_key 이름
+-   `init_script` : 사용할 init_script 이름
+-   `is_encrypted_base_block_storage_volume` : 스토리지 암호화 여부
+-   `linked_network_interface_name` : 서버에 할당하는 네트워크 인터페이스
+
 
 ---
 
 ## 참고 자료
 
--   [Server(Ncloud)](https://www.ncloud.com/product/compute/server)
 -   [ncloud_server(Terraform)](https://registry.terraform.io/providers/NaverCloudPlatform/ncloud/latest/docs/resources/server)
