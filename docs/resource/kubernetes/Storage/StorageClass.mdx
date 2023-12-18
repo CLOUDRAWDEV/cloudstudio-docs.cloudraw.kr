@@ -1,0 +1,59 @@
+---
+title: StorageClass
+sidebar_position: 0
+tags: [Kubernetes, 리소스, Storage, StorageClass]
+---
+
+
+<hr />
+<br />
+
+
+## 리소스 아이콘
+
+<img
+    src={
+        "https://cloudstudioblob.blob.core.windows.net/cloudstudio/kubernetesImg/storage-storage_class.png"
+    }
+/>
+
+## 리소스 개요
+
+특정한 스토리지 프로비저너(Storage Provisioner)와 함께 동작하는 동적 스토리지 프로비저닝을 정의하는 쿠버네티스 리소스
+
+## 연관 리소스
+
+### 상위 리소스
+
+-   [**Cluster**](https://docs.cstudio.app/docs/resource/kubernetes/Base/Cluster)
+
+
+### 연결 리소스
+
+-   [**PersistentVolume**](https://docs.cstudio.app/docs/resource/kubernetes/Core/PersistentVolume)
+
+
+## 리소스 설정 값
+
+-   `service_name` : StorageClass 리소스 이름
+-   `annotations` : 쿠버네티스 시스템에서 필요한 정보들을 표시해 주기 위해서 사용하는 key-value
+-   `labels` : 객체를 구분하기 위해서 사용자가 임의로 원하는 값을 지정
+-   `storage_Provisioner` : 스토리지 제공자의 유형
+-   `reclaim_policy` : 사용할 회수 정책 - 지정하지 않으면 기본값은 Delete
+-   `volume_binding_mode` : 볼륨 바인딩 및 동적 프로비저닝이 발생해야 하는 시기 - `Immediate`, `WaitForFirstConsumer`
+-   `allow_volume_expansion` : 스토리지 클래스가 볼륨 확장을 허용하는지 여부 - `False`, `True`
+-   `parameters` : 스토리지 클래스의 볼륨을 생성해야 하는 프로비저너에 대한 매개변수 
+-   `mount_options` : 스토리지 클래스에 의해 동적으로 생성되는 영구 볼륨에는 마운트 옵션이 지정
+
+
+
+
+
+
+
+---
+
+## 참고 자료
+
+-   [StorageClass(kubernetes)](https://kubernetes.io/docs/concepts/storage/storage-classes/)
+-   [StorageClass(Terraform)](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/storage_class)
