@@ -19,7 +19,7 @@ tags: [Kubernetes, 리소스, AutoScaling, HorizontalPodAutoscaling]
 
 ## 리소스 개요
 
-관찰된 CPU 사용률을 기반으로 Deployment, ReplicaSet, StatefulSet의 포드 수를 자동으로 확장해주는 kubernetes 리소스입니다.
+관찰된 CPU 사용률을 기반으로 Deployment, ReplicaSet, StatefulSet의 파드(Pod) 수를 자동으로 확장해주는 kubernetes 리소스입니다.
 
 ## 연관 리소스
 
@@ -41,7 +41,7 @@ tags: [Kubernetes, 리소스, AutoScaling, HorizontalPodAutoscaling]
 -   `labels` : 객체를 구분하기 위해서 사용자가 임의로 원하는 값을 지정
 -   `min_replicas` : HPA에서 설정할 수 있는 Pod 수의 최솟값 - 기본값은 1개
 -   `max_replicas` : HPA에서 설정할 수 있는 Pod 수의 최댓값
--   `target_cpu_utilization_percentage` : Pod에 대한 목표 평균 CPU 사용률(요청된 CPU의 백분율로 표시)
+-   `target_cpu_utilization_percentage` : 파드(Pod) 대한 목표 평균 CPU 사용률(요청된 CPU의 백분율로 표시)
 -   `scale_target_ref` : 확장된 리소스에 대한 참조
     -   `name` : 참조할 리소스의 이름
     -   `kind` : 참조할 리소스의 종류 - `Deployment`, `StatefulSet`
