@@ -39,7 +39,7 @@ tags: [Kubernetes, 리소스, Batch, Job]
 -   `namespace` : Job 리소스가 배포될 네임스페이스
 -   `annotations` : 쿠버네티스 시스템에서 필요한 정보들을 표시해 주기 위해서 사용하는 key-value
 -   `labels` : 객체를 구분하기 위해서 사용자가 임의로 원하는 값을 지정
--   `selector` : Selector와 일치하는 레이블의 key-value를 사용하여 Pod를 제어
+-   `template_labels` : 노드별로 생성되는 파드(Pod) 설정될 Label
 -   `restart_policy` : Pod 내에서 실행되는 컨테이너가 실패하거나 작업이 완료된 후에 어떻게 처리할지를 지정
 -   `backoff_limit` : 작업을 실패로 표시하기 전의 재시도 횟수를 지정 - 기본값은 6
 -   `wait_for_completion` : 작업 상태가 완료 또는 실패 조건이 될 때까지 작업 생성 또는 업데이트를 차단 - 기본값은 True
@@ -48,7 +48,7 @@ tags: [Kubernetes, 리소스, Batch, Job]
     -   `create` : 새 작업을 생성하고 작업이 성공적으로 완료되기까지 기다리는 시간 - 기본값 1m    
     -   `update` : 기존 작업을 업데이트하고 성공적인 작업 완료를 기다리는 시간 - 기본값 1m
 
--   `containers` : 포드에 속한 컨테이너에 대한 템플릿을 정의 - 기본 설정값을 세팅하고 적용한 후에 세부 설정값을 세팅할 수 있습니다.
+-   `containers` : 파드(Pod)에 속한 컨테이너에 대한 템플릿을 정의 - 기본 설정값을 세팅하고 적용한 후에 세부 설정값을 세팅할 수 있습니다.
     -   `containers.name` : 컨테이너의 이름을 정의
         -   `image` : 사용할 Docker 이미지 이름
         -   `args` : 컨테이너 내에서 실행될 명령어
@@ -56,7 +56,7 @@ tags: [Kubernetes, 리소스, Batch, Job]
         -   `port` : 컨테이너에서 노출할 포트 목록 
 
         -   `resources` : 컨테이너의 컴퓨팅 리소스의 양을 지정  - 세부설정 
-            -   `resources.name` : 최소/최대 컴퓨팅 리소스 양 지정   - `Limits`, `requests`     
+            -   `resources.name` : 최소/최대 컴퓨팅 리소스 양 지정   - `limits`, `requests`     
             -   `resources.cpu` : cpu의 양을 지정    
             -   `resources.memory` : 메모리의 양을 지정
 
@@ -72,17 +72,17 @@ tags: [Kubernetes, 리소스, Batch, Job]
             -   `env.name` : env 변수 이름 설정
             -   `env.value` : env 변수로 설정할 값
 
-        -   `volume_mount` : 컨테이너의 파일 시스템에 마운트할 포드 볼륨 - 세부 설정
+        -   `volume_mount` : 컨테이너의 파일 시스템에 마운트할 파드(Pod) 볼륨 - 세부 설정
             -   `volume_mount.name` : 볼륨 마운트 이름 설정
             -   `volume_mount.path` 
                 -   `volume_mount.path.mount_path` : 볼륨을 마운트해야 하는 컨테이너 내의 경로
                 -   `volume_mount.path.sub_path` : 볼륨을 마운트해야 하는 컨테이너 내의 경로
             
--   `volume` : 포드에 속한 컨테이너가 탑재할 수 있는 볼륨 목록
+-   `volume` : 파드(Pod)에 속한 컨테이너가 탑재할 수 있는 볼륨 목록
     -   `volume.name` : 볼륨 이름
         -   `volume.type` : 마운트할 볼륨의 타입 - `EmptyDir`,`ConfigMap`,`PersistentVolumeClaim`
         -   `volume.target_name` : 영구 볼륨 클레임의 이름
-        -   `volume.default_mode` : 생성된 파일에 사용할 모드 - 0 ~ 0777 사이, 기본값은 0644
+        -   `volume.default_mode` : 생성된 파일에 사용할 모드 - 0 ~ 0777 사이, 기본값은 0644 
         -   `volume.read_only` : true인 경우 읽기 전용으로 마운트되고 그렇지 않은 경우 읽기/쓰기 가능
 
 -   `image_pull_secrets` : Container에서 사용하는 이미지를 가져오는 데 필요한 권한이 담긴 동일한 네임스페이스에 있는 Secret
