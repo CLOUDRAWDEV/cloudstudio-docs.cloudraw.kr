@@ -1,0 +1,29 @@
+---
+title: Overview
+sidebar_position: 0
+---
+
+
+<hr />
+<br />
+
+### MSA(Microservice Architecture) 란?
+```MSA```는 소프트웨어 개발 기법의 하나로 단일 애플리케이션을 작은 서비스 모음으로 개발하는 접근 방식입니다.
+각각의 서비스는 자체 프로세스에서 실행이 되고 느슨한 연결(Loosely-coupled) 구조로 만들어 HTTP 리소스인 REST와 같은 경량 메커니즘과 통신을 합니다.
+하나의 큰 애플리케이션을 운영하는 방식에서, 경량화되고 독립적인 여러 개의 서비스를 조합하여 애플리케이션을 구현하는 방삭으로 서비스마다 자체 데이터베이스를 가지고 동작하기 때문에 빌드, 배포까지 효율적으로 수행할 수 있습니다.
+MSA 아키텍처를 사용해 개발과 유지관리에 소요되는 시간과 비용을 줄일 수 있어 활용도가 높아지는 추세입니다.
+클라우드 스튜디오에서 제공하는 MSA Best Practice Template은 MSA 아키텍처를 구성하기 위해 필요한 기본적인 클라우드 인프라를 제공합니다.
+
+### MSA Basic vs Enterprise
+클라우드 스튜디오는 MSA Basic과 Enterprise 2 가지 템플릿을 제공합니다. 두 템플릿의 차이점은 App Service의 사용 유무입니다.
+App Service는 Application을 쉽게 배포할 수 있는 Azure의 PaaS 서비스 입니다. 
+App Service를 사용해 Frontend Server나 다른 API Server를 동작시켜 더 효율적인 MSA 아키텍처를 구성할 수 있습니다.
+
+<br/>
+
+<hr />
+### 참고 자료
+[SDS: 서비스 경량화를 위한 MSA 설계시 고려사항](https://www.samsungsds.com/kr/insights/1239180_4627.html)
+[SDS: MSA를 보완하는 아키텍처](https://www.samsungsds.com/kr/insights/msa_architecture_edm.html)
+[Azure MSA 아키텍처란](https://learn.microsoft.com/ko-kr/azure/architecture/reference-architectures/containers/aks-microservices/aks-microservices)
+[AWS MSA 아키텍처란](https://aws.amazon.com/ko/microservices/)
