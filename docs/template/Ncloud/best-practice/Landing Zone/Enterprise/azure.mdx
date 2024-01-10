@@ -1,0 +1,801 @@
+---
+title: Azure Landing Zone Enterprise
+sidebar_position: 0
+tags: [Template, Best Practice, Landing Zone, Enterprise, Azure]
+---
+
+import azure1 from './img/azure/1.png';
+import azure2 from './img/azure/2.png';
+import azure3 from './img/azure/3.png';
+import azure4 from './img/azure/4.png';
+import azure5 from './img/azure/5.png';
+import azure6 from './img/azure/6.png';
+import azure7 from './img/azure/7.png';
+import azure8 from './img/azure/8.png';
+import azure9 from './img/azure/9.png';
+import azure10 from './img/azure/10.png';
+import azure11 from './img/azure/11.png';
+import azure12 from './img/azure/12.png';
+import azure13 from './img/azure/13.png';
+import azure14 from './img/azure/14.png';
+import azure15 from './img/azure/15.png';
+import azure16 from './img/azure/16.png';
+import azure17 from './img/azure/17.png';
+import azure18 from './img/azure/18.png';
+import azure19 from './img/azure/19.png';
+import azure20 from './img/azure/20.png';
+import azure21 from './img/azure/21.png';
+import azure22 from './img/azure/22.png';
+import azure23 from './img/azure/23.png';
+import azure24 from './img/azure/24.png';
+import azure25 from './img/azure/25.png';
+import azure26 from './img/azure/26.png';
+import azure27 from './img/azure/27.png';
+import azure28 from './img/azure/28.png';
+import azure29 from './img/azure/29.png';
+import azure30 from './img/azure/30.png';
+import azure31 from './img/azure/31.png';
+import azure32 from './img/azure/32.png';
+import azure33 from './img/azure/33.png';
+import azure34 from './img/azure/34.png';
+import azure35 from './img/azure/35.png';
+import azure36 from './img/azure/36.png';
+import azure37 from './img/azure/37.png';
+import azure38 from './img/azure/38.png';
+import azure39 from './img/azure/39.png';
+import azure40 from './img/azure/40.png';
+import azure41 from './img/azure/41.png';
+import azure42 from './img/azure/42.png';
+import azure43 from './img/azure/43.png';
+import azure44 from './img/azure/44.png';
+import azure45 from './img/azure/45.png';
+import azure46 from './img/azure/46.png';
+import azure47 from './img/azure/47.png';
+import azure48 from './img/azure/48.png';
+import azure49 from './img/azure/49.png';
+import azure50 from './img/azure/50.png';
+import azure51 from './img/azure/51.png';
+import azure52 from './img/azure/52.png';
+import azure53 from './img/azure/53.png';
+import azure54 from './img/azure/54.png';
+import azure55 from './img/azure/55.png';
+import azure56 from './img/azure/56.png';
+import azure57 from './img/azure/57.png';
+import azure58 from './img/azure/58.png';
+import azure59 from './img/azure/59.png';
+import azure60 from './img/azure/60.png';
+import azure61 from './img/azure/61.png';
+import azure62 from './img/azure/62.png';
+import azure63 from './img/azure/63.png';
+import azure64 from './img/azure/64.png';
+import azure65 from './img/azure/65.png';
+
+<hr />
+<br/>
+
+Landing Zone은사용자가 요구사는 시스템을 운영하기 위한 기본적인 근간이 되는 요소들을 형상화해서 만든 도구를 의미합니니다.
+Landing Zone을 통해 보안 전략, 운영 거버넌스 전력을 포함한 전체 아키텍처가 만들어지고 그 위에 사용자의 워크로드가 동작합니다.
+Landing Zone은 기업의 규모에 따라서 구성이 달라집니다. 이 가이드에서는 구독 2개를 사용해 Landing Zone을 구성합니다.
+사용자의 환경에 따라서 구독을 늘려도 됩니다.
+중견기업, 대기업 등에 적합한 Landing Zone Enterprise를 Azure에 배포하기 위한 방법을 제공합니다.
+
+## 로그인
+- [Azure 체험 계정 생성](https://azure.microsoft.com/ko-kr/free/)
+- <Link to="/docs/start/sign-up">클라우드 스튜디오 회원가입 방법</Link>
+- [클라우드 스튜디오 회원가입 바로가기](https://cloudstudio.cloudraw.kr/signup)
+
+## 전제조건
+- **Azure 구독**
+- **Azure 서비스 주체 + 역할 할당**
+- **구독에 대해 기여자 이상의 권한**
+- **클라우드 스튜디오에 크레덴셜 값 등록**
+ 
+## 구성 서비스
+- [**Network Ddos Protection Plan**](https://docs.cstudio.app/docs/resource/azure/Network/NetworkDdosProtectionPlan)
+- [**Virtual Network**](https://docs.cstudio.app/docs/resource/azure/Network/VirtualNetwork)
+- [**Virtual Network Peering**](https://docs.cstudio.app/docs/resource/azure/Network/VirtualNetworkPeering)
+- [**Subnet**](https://docs.cstudio.app/docs/resource/azure/Network/Subnet)
+- [**Network Security Group**](https://docs.cstudio.app/docs/resource/azure/Network/NetworkSecurityGroup)
+
+- [**Firewall**](https://docs.cstudio.app/docs/resource/azure/Network/Firewall)
+- [**Virtual Machine**](https://docs.cstudio.app/docs/resource/azure/Compute/LinuxVirtualMachine)
+- [**Dns Zone**](https://docs.cstudio.app/docs/resource/azure/Dns/DnsZone)
+- [**Private Dns Zone**](https://docs.cstudio.app/docs/resource/azure/Dns/PrivateDnsZone)
+- [**Private Endpoint**](https://docs.cstudio.app/docs/resource/azure/Network/PrivateEndpoint)
+
+- [**Public Load Balancer**](https://docs.cstudio.app/docs/resource/azure/LoadBalancer/PublicLoadBalancer)
+- [**Key Vault**](https://docs.cstudio.app/docs/resource/azure/KeyVault)
+- [**Storage Account**](https://docs.cstudio.app/docs/resource/azure/Storage/StorageAccount)
+
+- [**Log Analytics Workspace**](https://docs.cstudio.app/docs/resource/azure/LogAnalytics/LogAnalyticsWorkspace)
+- [**Security Center**](https://docs.cstudio.app/docs/resource/azure/azure/SecurityCenter)
+- [**Policy Definition**](https://docs.cstudio.app/docs/resource/azure/Policy/PolicyDefinition)
+
+## 아키텍처
+<caption caption="" src={azure65} />
+
+## Azure Landing Zone 아키텍처 만들기
+### 1. 구독 생성
+캔버스에서 구독 아이콘을 가져온 후 등록한 **크레덴셜**을 선택합니다.
+크레덴셜이 없는 경우 크레덴셜 등록 페이지를 확인해주시기 바랍니다.
+
+> - ```Service Name```: cloudraw
+> - ```Credential Id```: <TextColor color="#206FD6">Credential_Id</TextColor>
+
+<caption caption="[그림.1] Azure Landing Zone Basic 1" src={azure1} />
+
+### 2. 리소스 그룹 생성
+**리소스 그룹** 아이콘을 가져옵니다.
+리소스 그룹은 동일한 Life Cycle을 가진 리소스들을 묶는 그룹을 말합니다.
+
+> - ```Service Name```: HubRG
+> - ```Location```: koreacentral
+
+<caption caption="[그림.2] Azure Landing Zone Basic 2" src={azure2} />
+
+### 3. Network Ddos Protection Plan 생성
+**Network Ddos Protection Plan*** 아이콘을 가져옵니다.
+DDoS Protection Plan은 Azure에서 DDoS 공격을 막는 서비스입니다. 구독 안에 생성합니다.
+Virtual Network에 DDoS Protection을 설정하면 Virtual Network에 포함된 모든 리소스가 DDoS 공격으로부터 보호받습니다.
+
+> - ```Service Name```: ddosprotection
+
+<caption caption="[그림.3] Azure Landing Zone Basic 3" src={azure3} />
+
+### 4. Virtual Network 생성
+**Virtual Network** 아이콘을 가져옵니다. 
+Landing Zone의 Hub Virtual Network를 Landingzone 구독에 생성합니다.
+Hub Virtual Network를 DDoS Protection을 사용할 것이기 떄문에 ```Enable Ddos Protection```옵션을 **true**로 설정합니다.
+
+> - ```Service Name```: hub_vnet
+> - ```Vnet Address Space```: 10.0.0.0/16
+> - ```Enable Ddos Protection```: true
+
+<caption caption="[그림.4] Azure Landing Zone Basic 4" src={azure4} />
+
+### 5. Subnet 생성
+**Subnet** 아이콘을 가져옵니다. 
+Firewall, VPN Gateway, Bastion을 배포할 Subnet을 각각 hub_vnet안에 생성합니다
+
+> - ```Service Name```: AzureFirewallSubnet
+> - ```Vnet Address Space```: 10.0.0.0/24
+> - ```Enable Ddos Protection```: true
+
+> - ```Service Name```: GatewaySubnet
+> - ```Vnet Address Space```: 10.0.1.0/24
+> - ```Enable Ddos Protection```: true
+
+> - ```Service Name```: AzureBastionSubnet
+> - ```Vnet Address Space```: 10.0.2.0/24
+> - ```Enable Ddos Protection```: true
+
+<caption caption="[그림.5] Azure Landing Zone Basic 5" src={azure5} />
+
+### 6. Public IP 생성
+**Public Ip** 아이콘을 가져옵니다. 
+Azure Public IP(공용 IP)는 인터넷에서 직접 액세스할 수 있는 고유한 IP 주소입니다.  
+Azure Firewall 과 Gateway, Bastion용 Public IP를 생성해야 합니다.
+
+**Firewall_Ip**
+
+> - ```Service Name```: Firewall_Ip
+> - ```Sku```: standard
+> - ```Allocation Method```: static
+
+
+**Gateway_Ip**
+
+> - ```Service Name```: Gateway_Ip
+> - ```Sku```: standard
+> - ```Allocation Method```: static
+
+**Bastion_Ip**
+
+> - ```Service Name```: Bastion_Ip
+> - ```Sku```: standard
+> - ```Allocation Method```: static
+
+<caption caption="[그림.6] Azure Landing Zone Basic 6" src={azure6} />
+
+### 7. Firewall 생성
+**Firewall** 아이콘을 가져옵니다. 
+Firewall은 클라우드 워크로드에 대해서 윕협 보호를 제공하는 네트워크 보안 서비스입니다.
+이 가이드에서 Standard Firewall을 사용하지만 Premium FIrewall을 사용하면 IDPS(침입 탐지) 기능도 제공합니다.
+Firewall의 Network, Application, NAT Rules은 Default를 사용합니다.
+
+> - ```Service Name```: Azure_firewall
+> - ```Included Subnet Name```: hub_vnet:AzureFirewallSubnet
+> - ```Sku Tier```: Standard
+> - ```Sku Name```: AZFW_VNet
+> - ```Linked Public IP Name```: Firewall-pip [Firewall_Ip와 선으로 연결시켜주어야 합니다]
+
+<caption caption="[그림.7] Azure Landing Zone Basic 7" src={azure7} />
+
+> - ```Ip Config Name```: default_firewall_ip_config
+> - ```Network Rule Collection.Name```: default_network_rule_collection
+> - ```Network Rule Collection.Priority```: 100
+> - ```Network Rule Collection.Action```: Allow
+
+<caption caption="[그림.8] Azure Landing Zone Basic 8" src={azure8} />
+
+> - ```Network Rules.Name```: default_network_rules
+> - ```Network Rules.Source Addresses```: 8.8.8.8
+> - ```Network Rules.Destination Ports```: 53 
+> - ```Network Rules.Destination Addresses```: 10.0.0.0/24
+> - ```Network Rules.Protocols```: TCP, UDP
+
+<caption caption="[그림.9] Azure Landing Zone Basic 9" src={azure9} />
+
+> - ```Application Rule Collection.Name```: default_app_rule_collection
+> - ```Application Rule Collection.Priority```: 200
+> - ```Application Rule Collection.Action```: Allow 
+
+<caption caption="[그림.10] Azure Landing Zone Basic 10" src={azure10} />
+
+> - ```Application Rules.Name```: default_app_rules
+> - ```Application Rules.Source Addresses```: *
+> - ```Application Rules.Target Fqdns```: *.com
+> - ```Application Rules.Protocol Port```: 80
+> - ```Application Rules.Protocol Type```: Http
+
+
+<caption caption="[그림.11] Azure Landing Zone Basic 11" src={azure11} />
+
+
+> - ```Nat Rule Collection.Name```: default_nat_rule_collection
+> - ```Nat Rule Collection.Priority```: 200
+> - ```Nat Rule Collection.Action```: Dnat
+
+<caption caption="[그림.12] Azure Landing Zone Basic 12" src={azure12} />
+
+> - ```Nat Rules.Name```: default_nat_rules
+> - ```Nat Rules.Source Addresses```: 10.0.0.0/16
+> - ```Nat Rules.Destination Ports```: 53
+> - ```Nat Rules.Translated Port```: 53
+> - ```Nat Rules.Translated Address```: 8.8.8.8
+> - ```Nat Rules.Protocols```: TCP, UDP
+
+<caption caption="[그림.13] Azure Landing Zone Basic 13" src={azure13} />
+
+### 8. VPN Gateway 생성
+**Virtual Network Gateway** 아이콘을 가져옵니다.
+Virtual Network Gateway는 VPN, ExpressRoute 2가지 Type으로 사용할 수 있습니다. 이 가이드에서는 VPN을 사용합니다.
+VPN Gateway는 On-premise의 VPN 디바이스, 개인 디바이스와의 VPN 연결을 제공합니다.
+VPN Gateway를 통해 사용자는 클라우드 환경에 허용된 사용자만 접속이 가능하도록 구성할 수 있습니다.
+Virtual Network Gateway를 정상적으로 배포하는데 30 ~ 40정도 소요됩니다.
+
+> - ```Service Name```: hubvngateway
+> - ```Included Subnet Name```: hub_vnet:GatewaySubnet
+> - ```Type```: Vpn
+> - ```Vpn Type```: RouteBased
+> - ```Sku```: 사용자 선택
+
+<caption caption="[그림.14] Azure Landing Zone Basic 14" src={azure14} />
+
+> - ```Generation```: None
+> - ```Enabled Active Active Mode```: false
+> - ```Enabled Configure Bgp```: false
+> - ```Ip Configuration.name```: ip_config_gateway_ip
+> - ```Ip Configuration.Linked Public Ip Name```: Gateway_Ip (Gateway_Ip를 선으로 연결시켜주어야 합니다)
+
+<caption caption="[그림.15] Azure Landing Zone Basic 15" src={azure15} />
+
+
+### 9. Bastion Host 생성
+**Bastion Host** 아이콘을 가져옵니다.
+Bastion Host는 Public IP가 없는 Virtual Machine에 접속하는 방법 중 하나로 사용할 수 있습니다.
+Bastion Host는 Azure Protal에서 Virtual Machine에 대한 안정적인 SSH 접근을 제공합니다. 
+
+> - ```Service Name```: hubbastion
+> - ```Included Subnet Name```: hub_vnet:AzureBastionSubnet
+> - ```Sku```: Basic
+> - ```Linked Public Ip Name```: Bastion-ip [Bastion_ip를 선으로 연결시켜주어야 합니다]
+> - ```Ip Config Name```: bastionIpConfig
+
+<caption caption="[그림.16] Azure Landing Zone Basic 16" src={azure16} />
+
+
+### 10. Storage Account 생성
+**Storage Account** 아이콘을 가져옵니다.
+Storage Account는 Application에 필요한 이미지, 파일 등을 저장하고 있는 Object Storage로 사용합니다. 
+Storage Account Service Name은 서버의 DNS주소로 사용되기 때문에 사용자별 unique한 값을 입력해야 합니다.
+
+> - ```Service Name```: hubsa
+> - ```Account Kind```: StorageV2
+> - ```Account Tier```: Standard
+> - ```Account Replication Type```: LRS
+> - ```Access Tier```: Hot
+
+
+<caption caption="[그림.17] Azure Landing Zone Basic 17" src={azure17} />
+
+
+
+> - ```Min Tls Version```: TLS1_2
+> - ```Enable Https Traffic Only```: true
+
+<caption caption="[그림.18] Azure Landing Zone Basic 18" src={azure18} />
+
+> - ```Networking.Public Network Access```: All
+> - ```Networking.Ip Rules```: 0.0.0.0
+> - ```Networking.Bypass```: AzureServices
+
+<caption caption="[그림.19] Azure Landing Zone Basic 19" src={azure19} />
+
+> - ```Storage Container.Name```: default-container
+> - ```Storage Container.Container Access Type```: private
+> - ```Storage Share.Name```: default-share
+> - ```Storage Share.Quota```: 5
+
+<caption caption="[그림.20] Azure Landing Zone Basic 20" src={azure20} />
+
+
+### 11. Log Analytics Workspace 생성
+**Log Analytics Workspace** 아이콘을 가져옵니다.
+Security Center가 수집한 로그를 저장합니다.
+
+> - ```Service Name```: hublaw
+> - ```Retention In Days```: 30
+> - ```Internet Query Enabled```: true
+> - ```Internet Ingestion Enabled```: true
+
+<caption caption="[그림.21] Azure Landing Zone Basic 21" src={azure21} />
+
+### 12. Security Center 생성
+**Security Center** 아이콘을 가져옵니다.
+Security Center는 다른 리소스의 취약점을 진단하고 해당 로그를 Log Analytics Workspace에 저장합니다. Assessment와 Threat Protection은 Default를 사용합니다.
+
+> - ```Service Name```: hubsc
+> - ```Linked Log Analytics Workspace```: HubRG:hublaw (위에서 생성한 Log analytics와 선으로 연결합니다.)
+> - ```Assessment Policy.Name```: default_assessment_policy
+> - ```Assessment Policy.Display Name```: Log Analytics Workspace Assessment Policy
+> - ```Assessment Policy.Severity```: Medium
+> - ```Assessment Policy.Description```: Assess Log Analytics Workspace Vulnerability
+
+
+<caption caption="[그림.22] Azure Landing Zone Basic 22" src={azure22} />
+
+> - ```Assessment.Name```: default_assessment
+> - ```Assessment.Policy Name```: default_assessment_policy
+> - ```Assessment.Target Resource Name```: HubRG:hublaw
+> - ```Assessment.Status Code```: Healthy
+> - ```Linked Advanced Threat Protection```: protection:hubsa (위에서 생성한 serviceaccount와 선으로 연결합니다.)
+
+<caption caption="[그림.23] Azure Landing Zone Basic 23" src={azure23} />
+
+### 13. 리소스 그룹 생성
+**리소스 그룹** 아이콘을 가져옵니다.
+리소스 그룹은 동일한 Life Cycle을 가진 리소스들을 묶는 그룹을 말합니다.
+
+> - ```Service Name```: PlatformRG
+> - ```Location```: koreacentral
+
+<caption caption="[그림.24] Azure Landing Zone Basic 24" src={azure24} />
+
+### 14. Virtual Network 생성
+**Virtual Network** 아이콘을 가져옵니다.
+Landing Zone의 Spoke Virtual Network를 Platform RG에 생성합니다.
+Spoke Virtual Network를 DDoS Protection을 사용할 것이기 떄문에 ```Enable Ddos Protection```옵션을 **true**로 설정합니다.
+
+> - ```Service Name```: platform_vnet
+> - ```Vnet Address Space```: 10.1.0.0/16
+> - ```Enable Ddos Protection```: true
+
+<caption caption="[그림.25] Azure Landing Zone Basic 25" src={azure25 } />
+
+### 15. Subnet 생성
+- [**Subnet**](https://docs.cstudio.app/docs/resource/azure/Network/Subnet) 아이콘을 가져옵니다.
+Spoke Virtual Network는 Application을 배포합니다. 
+Application이 동작하기 위한 SpokeSubnet Application을 관리하기 위한 JumpboxSubnet을 생성합니다.
+SpokeSubnet은 Private Endpoint를 연결해야되기 때문에 ```Private Link Endpoint Enabled```을 **true**로 설정합니다.
+
+> - ```Service Name```: ApplicationSubnet
+> - ```Included Vnet Name```: platform_vnet
+> - ```Address Prefixes```: 10.1.0.0/24
+> - ```Private Link Endpoint Enabled```: true
+
+<caption caption="[그림.26] Azure Landing Zone Basic 26" src={azure26} />
+
+> - ```Service Name```: JumpboxSubnet
+> - ```Included Vnet Name```: platform_vnet
+> - ```Address Prefixes```: 10.1.1.0/24
+> - ```Private Link Endpoint Enabled```: true
+
+<caption caption="[그림.27] Azure Landing Zone Basic 27" src={azure27} />
+
+### 16. Network Security Group 생성
+**Network Security Group** 아이콘을 가져옵니다.
+네트워크 보안 그룹은 IP, Protocol, Port 번호로 트래픽을 허용 또는 차단합니다.
+JumpboxSubnet은 Bastion Host에서 들어오는 트래픽만 SSH 접속을 허용합니다.
+SpokeSubnet은 JumpboxSubnet에 배포된 Virtual Machine에서 들어오는 SSH 접속을 허용합니다.
+Application에 접속하기 위한 포트는 80, 443을 사용하는 경우 Default Security Rule을 사용합니다.
+80, 443번 포트가 아닌 경우, Security Rule을 업데이트합니다.
+
+**JumpboxNSG**
+
+> - ```Service Name```: jumpboxnsg
+> - ```Security Rules.Name```: ssh
+> - ```Security Rules.Priority```: 100
+> - ```Security Rules.Direction```: Inbound
+> - ```Security Rules.Access```: Allow
+> - ```Security Rules.Protocol```: Tcp
+
+<caption caption="[그림.28] Azure Landing Zone Basic 28" src={azure28} />
+
+
+> - ```Security Rules.Source Port Ranges```: 22
+> - ```Security Rules.Destination Port Ranges```: 22
+> - ```Security Rules.Source Address Prefixes```: 10.1.0.0/16
+> - ```Security Rules.Destination Address Prefixes```: *
+
+<caption caption="[그림.29] Azure Landing Zone Basic 29" src={azure29} />
+
+**SpokeNSG**
+
+> - ```Service Name```: platformnsg
+> - ```Security Rules.Name```: ssh
+> - ```Security Rules.Priority```: 100
+> - ```Security Rules.Direction```: Inbound
+> - ```Security Rules.Access```: Allow
+
+<caption caption="[그림.30] Azure Landing Zone Basic 30" src={azure30} />
+
+> - ```Security Rules.Protocol```: Tcp
+> - ```Security Rules.Source Port Ranges```: 22
+> - ```Security Rules.Destination Port Ranges```: 22
+> - ```Security Rules.Source Address Prefixes```: 10.1.0.0/16
+> - ```Security Rules.Destination Address Prefixes```: *
+
+<caption caption="[그림.31] Azure Landing Zone Basic 31" src={azure31} />
+
+
+### 17. Mysql 생성
+**Mysql** 아이콘을 가져옵니다.
+App Service에서 사용할 데이터를 저장할 Mysql 서버를 배포합니다.
+
+> - ```Service Name```: platformdb
+> - ```Version```: 5.7
+> - ```Sku Name```: GP_Gen5_4
+> - ```Storage Mb```: 5120
+
+<caption caption="[그림.32] Azure Landing Zone Basic 32" src={azure32} />
+
+Mysql 서버에 Private 접속만 가능하도록 만들기 위해서 ```Public Network Access Enabled```를 false로 설정합니다.
+```Public Network Access Enabled``` 옵션이 false인 경우 Firewall을 설정할 수 없습니다.
+
+> - ```Admin Login```: cloudraw
+> - ```Admin Login Password```: 임의지정
+> - ```Public Network Access Enabled```: false
+> - ```Ssl Enforcement Enabled```: true
+
+
+<caption caption="[그림.33] Azure Landing Zone Basic 33" src={azure33} />
+
+> - ```Minimal Tls Version```: TLS1_2
+> - ```Threat Detection Enabled```: true
+
+<caption caption="[그림.34] Azure Landing Zone Basic 34" src={azure34} />
+
+> - ```Database.Name```: default
+> - ```Database.Charset```: utf8
+> - ```Database.Collation```: utf8_unicode_ci
+
+<caption caption="[그림.35] Azure Landing Zone Basic 35" src={azure35} />
+
+
+### 18. Storage Account 생성
+**Storage Account** 아이콘을 가져옵니다.
+Storage Account는 URL을 통해서 스토리지에 데이터를 저장하거나 불러올 때 사용할 수 있습니다.
+Standard 스토리지는 Container, Queue, File, Table 4개 스토리지를 모두 사용가능합니다.  
+**<TextColor color="#206FD6">storage account 생성 후 위에서 만든 security center와 선으로 연결시켜주어야 보안관리가 가능합니다.</TextColor>**
+
+> - ```Service Name```: platformsa
+> - ```Account Kind```: StorageV2
+> - ```Account Tier```: Standard
+> - ```Account Replication Type```: LRS
+> - ```Access Tier```: Hot
+
+
+<caption caption="[그림.36] Azure Landing Zone Basic 36" src={azure36} />
+
+> - ```Min Tls Version```: TLS1_2
+> - ```Enable Https Traffic Only```: false
+
+<caption caption="[그림.37] Azure Landing Zone Basic 37" src={azure37} />
+
+Networking은 모든 IP 주소를 허용했지만, 배포를 할때는 현재 사용하고 있는 공인 IP 주소만 허용하는 것을 권장합니다.
+> - ```Networking.Public Network Access```: All
+> - ```Networking.Ip Rules```: 0.0.0.0/0
+> - ```Networking.Bypass```: AzureServices
+
+<caption caption="[그림.38] Azure Landing Zone Basic 38" src={azure38} />
+
+> - ```Storage Container.Name```: default-container
+> - ```Storage Container.Container Access Type```: private
+
+<caption caption="[그림.39] Azure Landing Zone Basic 39" src={azure39} />
+
+> - ```Storage share.Name```: default-share
+> - ```Storage share.Quota```: 5
+
+<caption caption="[그림.40] Azure Landing Zone Basic 40" src={azure40} />
+
+### 19. Key Vault 생성
+**Key Vault** 아이콘을 가져옵니다.
+Key Vault는 사용자가 필요한 Secret을 저장 후 Azure의 다른 서비스에서 해당 Secret을 사용할 수 있습니다.
+Key Vault에 등록할 수 있는 Secret은 Key, Secrets, Certificate 3종류가 있습니다.
+
+>- ```Service Name```: AzureKeyvault
+>- ```Sku Name```: standard
+>- ```Enabled For Disk Encryption```: true
+>- ```Soft Delete Retention Days```: 7
+>- ```Purge Protection Enabled```: true
+
+
+<caption caption="[그림.41] Azure Landing Zone Basic 41" src={azure41} />
+
+Key Vault에 접근할 수 있는 Public IP 주소를 지정할 수 있습니다. 
+Key Vault에 사용자만 접근할 수 있도록, 사용자의 Public IP만 허용합니다.
+Key Vault의 크레덴셜에 대해서 세부적인 접근 제어를 설정할 수 있습니다.
+Access Policy는 Key, Secrets, Certificate 각각 15개의 세분화된 권한을 할당할 수 있습니다.
+사용자는 SP나 Azure AD에 등록되 계정의 Object ID를 등록함으로써 Key Vault의 특정 크레덴셜에 대한 권한을 받을 수 있습니다.
+
+>- ```Network Acl Bypass```: [ "AzureServices" ]
+>- ```Network Acl Action```: Allow
+>- ```Network Acl Ip Rules```: 0.0.0.0/0
+
+<caption caption="[그림.42] Azure Landing Zone Basic 42" src={azure42} />
+
+>- ```Access Policies.Name```: default-access-policy
+>- ```Access Policies.Object Id```: OBJECT_ID
+>- ```Access Policies.Key Permissions```: ["Get", "Create", "List", "Delete", "Purge"]
+>- ```Access Policies.Secret Permissions```: ["Get", "Set", "Delete", "List", "Purge"]
+>- ```Access Policies.Certificate Permissions```: ["Get", "Create", "Delete", "List", "Purge"]
+
+<caption caption="[그림.43] Azure Landing Zone Basic 43" src={azure43} />
+
+Key Vault에 등록할 Secret 값을 입력합니다. Secret에는 Teanat ID가 등록됩니다.
+
+>- ```Key Vault Secret.Name```: default
+>- ```Key Vault Secret.Secret Value```: mySecret
+>- ```Key Vault Secret.Enable Activation Date``` - ```true``` / 활성화 날짜 선택
+>- ```Key Vault Secret.Enabled Expiration Date```- ```true``` / 만료 날짜 선택
+
+<caption caption="[그림.44] Azure Landing Zone Basic 44" src={azure44} />
+
+key Vault에서 관리할 key가 필요한 경우 다음 옵션을 활성화합니다.
+<caption caption="[그림.45] Azure Landing Zone Basic 45" src={azure45} />
+
+
+
+### 20. Private Dns Zone 생성
+**Private DNS Zone** 아이콘을 가져옵니다.
+Azure Private DNS Zone을 Private Endpoint와 연결하면 해당 DNS Zone의 이름 해석 기능이 가상 네트워크 내에서만 사용 가능하게 됩니다.
+이를 통해 가상 머신, 컨테이너, 서비스 등이 Private DNS Zone의 호스트 이름을 사용하여 서로 통신할 수 있습니다.
+또한 Private Endpoint를 사용하면 특정 DNS Zone을 VNet 외부에서 액세스할 수 없도록 보안을 강화할 수 있습니다.
+
+이 가이드에서는 Private Endpoint를 두 개 사용하므로 Private DNS Zone도 두 개 생성합니다.
+
+> - ```Service Name```: 사용자도메인지정
+> - ```Vnet Link```:resourceGroup:Application_vnet
+
+> - ```Service Name```: 사용자도메인지정
+> - ```Vnet Link```:resourceGroup:Application_vnet
+
+<caption caption="[그림.46] Azure Landing Zone Basic 46" src={azure46} />
+
+
+
+
+### 21. Private Endpoint 생성
+**Private Endpoint** 아이콘을 가져옵니다.
+Private Endpoint를 Mysql, Storage Account와 연결합니다. 
+Mysql, Storage Account은 Private 접근만 가능하기 때문에 Private Endpoint를 연결해야 주소를 정상적으로 찾을 수 있습니다.
+
+**endpointmysql**
+> - ```Service Name```: endpointmysql
+> - ```Included Subnet Name```: platform_vnet:ApplicationSubnet
+> - ```Linked Connection Resource Name```: platformdb
+> - ```Subresource Names```: ["mysqlServer"]
+> - ```Connection Name```: connect_db
+
+<caption caption="[그림.47] Azure Landing Zone Basic 47" src={azure47} />
+
+> - ```Dns Zone Group Name```: platformdb.com
+> - ```Private Dns Zone Names```: platformdb.com
+
+
+<caption caption="[그림.48] Azure Landing Zone Basic 48" src={azure48} />
+
+**endpointsa**
+> - ```Service Name```: endpointsa
+> - ```Included Subnet Name```: platform_vnet:ApplicationSubnet
+> - ```Linked Connection Resource Name```: platformsa
+> - ```Subresource Names```: ["blob"]
+> - ```Connection Name```: connect_sa
+
+<caption caption="[그림.49] Azure Landing Zone Basic 49" src={azure49} />
+
+> - ```Dns Zone Group Name```: platformsa.com
+> - ```Private Dns Zone Names```: platformsa.com
+
+<caption caption="[그림.50] Azure Landing Zone Basic 50" src={azure50} />
+
+### 22. Public IP 생성
+Azure Public IP(공용 IP)는 인터넷에서 직접 액세스할 수 있는 고유한 IP 주소입니다.  
+Linux VM용 Public Ip를 생성해야 합니다.
+
+**JumpboxIp**
+
+> - ```Service Name```: JumpboxIp
+> - ```Sku```: standard
+> - ```Allocation Method```: static
+
+**ApplicationIp**
+
+> - ```Service Name```: ApplicationIp
+> - ```Sku```: standard
+> - ```Allocation Method```: static
+
+
+<caption caption="[그림.51] Azure Landing Zone Basic 51" src={azure51} />
+
+### 23. Network Interface 생성
+**Network Interface** 아이콘을 가져옵니다.
+Azure Network Interface는 가상 머신(VM) 또는 가상 머신 스케일 세트(VMSS)와 Azure Virtual Network 간의 네트워크 연결을 담당하는 리소스입니다. 
+네트워크 인터페이스는 VM이나 VMSS를 가상 네트워크에 연결하고, IP 주소 할당 및 보안 그룹과 같은 네트워크 설정을 관리하는 역할을 합니다.
+
+**applicationNic**
+> - ```Included Subnet Name```: platform_vnet:ApplicationSubnet
+> - ```IpConfiguration.name```: ipconfig1
+> - ```IpConfiguration.IsPrimary```: true
+> - ```IpConfiguration.PrivateIPAddressAllocation```: Dynamic
+> - ```Enabled Public Ip```: true
+> - ```Linked Public Ip Name```: applicationIp [applicationIp와 applicationNic를 선으로 연결해주어야 한다]
+
+
+<caption caption="[그림.52] Azure Landing Zone Basic 52" src={azure52} />
+
+**JumpboxNic**
+> - ```Included Subnet Name```: platform_vnet:JumpboxSubnet
+> - ```IpConfiguration.name```: ipconfig1
+> - ```IpConfiguration.IsPrimary```: true
+> - ```IpConfiguration.PrivateIPAddressAllocation```: Dynamic
+> - ```Enabled Public Ip```: true
+> - ```Linked Public Ip Name```: applicationIp [JumpboxIp와 JumpboxNic를 선으로 연결해주어야 한다]
+
+<caption caption="[그림.53] Azure Landing Zone Basic 53" src={azure53} />
+
+### 24. Virtual Machine 생성
+**Linux Virtual Machine** 아이콘을 가져옵니다.
+Virtual Machine은 각 Azure에서 제공하는 가장 기본적인 컴퓨팅 서비스입니다.
+Virtual Machine에 SSH 접속d을 할 때 SSH Private Key 또는 Admin ID, Password를 사용할 수 있습니다.
+이 가이드에서는 Admin ID,ssh public key, Ubuntu 이미지를 사용해서 LinuxVm을 배포합니다.
+
+**ApplicationVM**
+> - ```Service Name```: applicationVm
+> - ```Included Vnet Name```: platform_vnet
+> - ```Size```: 사용자 선택
+
+<caption caption="[그림.54] Azure Landing Zone Basic 54" src={azure54} />
+
+> - ```SourceImage.Enabled Custom Image```: false
+> - ```SourceImage.Publisher```: 사용자 선택
+> - ```SourceImage.Offer```: 사용자 선택
+> - ```SourceImage.Sku```: 사용자 선택
+
+<caption caption="[그림.55] Azure Landing Zone Basic 55" src={azure55} />
+
+사용자의 ssh public key로 인증할 수있도록 설정해줍니다.
+Virtual Machine에 연결되는 OS Disk의 Type을 선택합니다. 
+Azure는 HDD와 SSD를 지원하며, 이 가이드에서는 HDD(Standard_LRS)를 사용합니다.
+
+> - ```Enable Ssh Key Authentication```: true
+> - ```Admin Username```: cloudraw
+> - ```Ssh public key```: 본인이 생성한 ssh public key값을 입력
+> - ```Os Disk Caching```: ReadWrite
+
+<caption caption="[그림.56] Azure Landing Zone Basic 56" src={azure56} />
+
+> - ```Storage Account Type```: Standard_LRS
+> - ```Disk Size Gb```: 127
+
+<caption caption="[그림.57] Azure Landing Zone Basic 57" src={azure57} />
+
+
+**JumpboxVM**
+
+> - ```Service Name```: applicationVm
+> - ```Included Vnet Name```: platform_vnet
+> - ```Size```: 사용자 선택
+
+> - ```SourceImage.Enabled Custom Image```: false
+> - ```SourceImage.Publisher```: 사용자 선택
+> - ```SourceImage.Offer```: 사용자 선택
+> - ```SourceImage.Sku```: 사용자 선택
+
+<caption caption="[그림.58] Azure Landing Zone Basic 58" src={azure58} />
+
+> - ```Enable Ssh Key Authentication```: true
+> - ```Admin Username```: cloudraw
+> - ```Ssh public key```: 본인이 생성한 ssh public key값을 입력
+
+<caption caption="[그림.59] Azure Landing Zone Basic 59" src={azure59} />
+
+> - ```Os Disk Caching```: ReadWrite
+> - ```Storage Account Type```: Standard_LRS
+> - ```Disk Size Gb```: 127
+
+<caption caption="[그림.60] Azure Landing Zone Basic 60" src={azure60} />
+
+
+### 25. DNS Zone 생성
+**DNS Zone** 아이콘을 가져옵니다.
+DNS Zone은 Load Balancer의 Public IP에 도메인을 매핑하기 위해서 사용합니다.
+cafe24, hosting.kr과 같이 다른 호스팅 사이트의 DNS 서버를 사용하고 있는 경우 DNS Zone은 생성하지 않아도 됩니다.
+이 가이드에서는 Azure DNS Zone을 사용합니다. 배포 후 DNS Zone에 A Record를 추가합니다.
+
+> - ```Service Name```: 사용자도메인 [ex. cloudraw.com]
+
+
+<caption caption="[그림.61] Azure Landing Zone Basic 61" src={azure61} />
+
+### 26. Virtual Network Peering 생성
+**Virtual Network Peering** 아이콘을 가져옵니다.
+Hub Vnet과 Spoke Vnet의 통신이 가능하도록 피어링으로 연결합니다.
+Hub Vnet과 Spoke Vnet이 같은 IP 대역을 가지고 있으면 피어링에 실패합니다. 
+서로 다른 IP 대역을 사용하고 있는지 확인해야 합니다.
+
+> - ```Service Name``` : 임의지정
+> - ```Peering1.Name``` : 임의지정
+> - ```Peering1.Linked Vnet Name``` : cloudraw:HubRG:hub_vnet
+> - ```Peering1.Traffic To Remote Vnet``` : true
+> - ```Peering1.Traffic Forwarded From Remote Vnet``` : false
+
+
+<caption caption="[그림.62] Azure Landing Zone Basic 62" src={azure62} />
+
+> - ```Peering2.Name``` : 임의지정
+> - ```Peering2.Linked Vnet Name``` : cloudstudio:PlatformRG:platform_vnet
+> - ```Peering2.Traffic To Remote Vnet``` : true
+> - ```Peering2.Traffic Forwarded From Remote Vnet``` : false
+
+
+<caption caption="[그림.63] Azure Landing Zone Basic 63" src={azure63} />
+
+### 27. Policy Definition 생성
+**Policy Definition** 아이콘을 가져옵니다.
+Azure Policy는 리소스에 대한 규칙을 설정합니다.
+Azure Policy Definition은 리소스 그룹 또는 리소스에 연결할 수 있고 리소스의 비용을 제어하거나 리소스를 쉽게 관리하기 위해 사용할 수 있습니다. 
+
+> - ```Service Name```: Azurepd
+> - ```Type```: Custom
+> - ```Mode```: All
+> - ```Display Name```: default-policy-def
+> - ```Linked Resource Group Name```: HubRG  [관리할 리소스그룹을 선으로 연결해줍니다]
+<caption caption="[그림.64] Azure Landing Zone Basic 64" src={azure64} />
+
+ 
+
+<br/>
+
+<hr />
+
+## 참고 자료
+- [Azure DDOS Protection](https://docs.microsoft.com/ko-kr/azure/ddos-protection/)
+- [Azure Firewall](https://docs.microsoft.com/ko-kr/azure/firewall/)
+- [Azure Firewall Rule](https://docs.microsoft.com/ko-kr/azure/firewall/policy-rule-sets)
+- [Azure Firewall Terraform](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/firewall)
+- [Azure DNS Zone & Records](https://docs.microsoft.com/ko-kr/azure/dns/)
+- [Azure Cost Management](https://docs.microsoft.com/ko-kr/azure/cost-management-billing/)
+- [Azure Cost Management Export](https://docs.microsoft.com/en-us/azure/cost-management-billing/costs/tutorial-export-acm-data?tabs=azure-portal)
+- [Azure Cost Management Terraform](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/resource_group_cost_management_export)
+- [Azure Log Analytics Workspace](https://docs.microsoft.com/ko-kr/azure/azure-monitor/logs/log-analytics-workspace-overview)
+- [Azure Security Center](https://docs.microsoft.com/ko-kr/azure/defender-for-cloud/)
+- [Azure Key Vault](https://docs.microsoft.com/ko-kr/azure/key-vault/general/basic-concepts)
+- [Azure Key Vault Terraform](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/key_vault)
+- [Azure Backup](https://docs.microsoft.com/ko-kr/azure/backup/)
+- [Azure Backup Terraform](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/recovery_services_vault)
+- [Azure Virtual Network Peering 사용 권한](https://docs.microsoft.com/ko-kr/azure/virtual-network/virtual-network-peering-overview)
+- [Azure Policy](https://docs.microsoft.com/ko-kr/azure/governance/policy/)
+- [Azure Policy Definition Terraform](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/policy_definition)
