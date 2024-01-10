@@ -1,0 +1,59 @@
+---
+title: Config
+sidebar_position: 0
+tags: [AWS, 리소스, Config]
+---
+
+<hr />
+<br />
+
+## 리소스 아이콘
+
+<img
+    src={
+        "https://cloudstudioblob.blob.core.windows.net/cloudstudio/awsImg/config-aws_config.png"
+    }
+/>
+
+## 리소스 개요
+
+AWS 계정의 리소스 구성 정보를 기록하여 리소스 간 관계를 확인하는 리소스
+
+## 연관 리소스
+
+### 상위 리소스
+
+-   [**Region**](https://docs.cstudio.app/docs/resource/aws/Base/Region)
+
+### 연결 리소스
+
+-   [**S3 Bucket**](https://docs.cstudio.app/docs/resource/aws/S3/S3Bucket)
+-   [**Sns Topic**](https://docs.cstudio.app/docs/resource/aws/Sns/SnsTopic)
+
+## 리소스 설정 값
+
+-   `enable_config_recorder` : 구성 레코더를 활성화할지 또는 비활성화할지 여부 - `false`, `true`
+-   `role_name` : AWS Config에서 사용할 Iam Role의 이름
+-   `recording_method`
+-   `recording_method.enable_all_supported` : AWS Config가 지원되는 모든 지역 리소스 유형에 대한 구성 변경 사항을 기록하는지 여부 - `false`,`true`
+-   `recording_method.exclude_resource_types` : WS Configuration에서 구성 변경을 기록할 AWS 리소스 유형을 지정하는 목록
+-   `recording_method.include_global_resource_types` : AWS Config가 기록하는 리소스와 함께 지원되는 모든 유형의 글로벌 리소스를 포함하는지 여부 - `false`,`true`
+-   `linked_s3_bucket_name` : 구성 기록을 저장하는 데 사용되는 S3 버킷 이름
+-   `s3_key_prefix` : 사용할 S3 버킷의 prefix
+-   `enable_sns_topic` : AWS Config가 알림을 전달하는 Sns Topic을 활성화할지 여부
+-   `delivery_frequency` : AWS Config가 구성 스냅샷을 정기적으로 전송하는 빈도
+-   `config_rule`
+-   `config_rule.name` : config rule 이름
+-   `config_rule.rule_owner` : AWS 또는 고객이 AWS 구성 규칙을 소유 및 관리하는지 여부 - `AWS`,`customLambda`,`customPolicy`
+-   `config_rule.source_identifier` : AWS 구성 관리 규칙의 경우 미리 정의된 식별자
+
+---
+
+## 참고 자료
+
+-   [Amazon Config(AWS)](https://docs.aws.amazon.com/ko_kr/config/latest/developerguide/WhatIsConfig.html)
+-   [Amazon Config(Terraform)](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/config_configuration_recorder)
+-   [Amazon Config(Terraform)](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/config_delivery_channel)
+-   [Amazon Config(Terraform)](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/config_config_rule)
+-   [Amazon Config(Terraform)](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/config_config_rule)
+-   [Amazon Config(Terraform)](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/config_configuration_recorder_status)
