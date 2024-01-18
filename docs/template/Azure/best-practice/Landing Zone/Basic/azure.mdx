@@ -54,7 +54,7 @@ import azure45 from './img/azure/45.png';
 <hr />
 <br />
 
-Landing Zone은사용자가 요구사는 시스템을 운영하기 위한 기본적인 근간이 되는 요소들을 형상화해서 만든 도구를 의미합니니다.
+Landing Zone은 사용자가 요구하는 시스템을 운영하기 위해 필요한 기본적인 도구를 의미합니다.
 Landing Zone을 통해 보안 전략, 운영 거버넌스 전력을 포함한 전체 아키텍처가 만들어지고 그 위에 사용자의 워크로드가 동작합니다.
 Landing Zone은 기업의 규모에 따라서 구성이 달라집니다. 
 이 가이드에서는 스타트업, 중소기업 등에 적합한 Landing Zone Basic을 Azure에 배포하기 위한 방법을 제공합니다.
@@ -92,7 +92,7 @@ Landing Zone은 기업의 규모에 따라서 구성이 달라집니다.
 ## Azure Landing Zone 아키텍처 만들기
 ### 1. 구독 생성
 캔버스에서 구독 아이콘을 가져온 후 등록한 **크레덴셜**을 선택합니다.
-크레덴셜이 없는 경우 크레덴셜 등록 페이지를 확인해주시기 바랍니다.
+크레덴셜이 없는 경우 [**크레덴셜등록**](https://docs.cstudio.app/docs/credential/createCredential#azure-%ED%81%AC%EB%A0%88%EB%8D%B4%EC%85%9C-%EB%93%B1%EB%A1%9D%ED%95%98%EA%B8%B0)를 확인해주시기 바랍니다.
 
 <caption caption="[그림.1] Azure Landing Zone Basic 1" src={azure1} />
 
@@ -234,7 +234,7 @@ Bastion Host는 Azure Protal에서 Virtual Machine에 대한 안정적인 SSH �
 <caption caption="[그림.7] Azure Landing Zone Basic 7" src={azure7} />
 
 ### 8. Subnet 생성
-- [**Subnet**](https://docs.cstudio.app/docs/resource/azure/Network/Subnet) 아이콘을 가져옵니다.
+**Subnet**아이콘을 가져옵니다.
 Spoke Virtual Network는 Application을 배포합니다.   
 Application이 동작하기 위한 ```ApplicationSubnet```, Application을 관리하기 위한 ```JumpboxSubnet```을 생성합니다.  
 SpokeSubnet은 Private Endpoint를 연결해야되기 때문에 ```Private Link Endpoint Enabled```을 **true**로 설정합니다.

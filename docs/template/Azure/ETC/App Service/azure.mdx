@@ -63,7 +63,7 @@ App Service를 활용한 아키텍처를 Azure에 배포하기 위한 가이드�
 ## Azure App Service 아키텍처 만들기
 ### 1. 구독 생성
 캔버스에서 구독 아이콘을 가져온 후 등록한 **크레덴셜**을 선택합니다.
-크레덴셜이 없는 경우 크레덴셜 등록 페이지를 확인해주시기 바랍니다.
+크레덴셜이 없는 경우 [**크레덴셜등록**](https://docs.cstudio.app/docs/credential/createCredential#azure-%ED%81%AC%EB%A0%88%EB%8D%B4%EC%85%9C-%EB%93%B1%EB%A1%9D%ED%95%98%EA%B8%B0) 페이지를 확인해주시기 바랍니다.
 <caption caption="[그림.1] Azure App Service 1" src={azure1} />
 
 ### 2. 리소스 그룹 생성
@@ -87,7 +87,7 @@ App Service를 활용한 아키텍처를 Azure에 배포하기 위한 가이드�
 
 
 ### 4. Subnet 생성
-- [**Subnet**](https://docs.cstudio.app/docs/resource/azure/Network/Subnet) 아이콘을 가져옵니다. 
+**Subnet**아이콘을 가져옵니다.   
 App Service Private 환경에 있는 데이터를 사용하기 위해서는 App Service가 배포된 Subnet 정보가 필요합니다.
 App Service는 PaaS 서비스기 때문에 App Service 인스턴스의 네트워크 정보를 확인할 수 없습니다.
 Azure Subnet은 PaaS 서비스를 연결할 수 있는 Delegation 옵션을 제공합니다.
@@ -129,7 +129,7 @@ App Service도 가격측정을 위한 SKU를 가집니다. App Service에 배포
 
 ### 6. Linux App Service 생성
 **Linux App Service** 아이콘을 가져옵니다. 
-App Service에서 인증, 권한과 Error 메시지완 관련된 옵션을 설정합니다.
+App Service에서 인증, 권한과 Error 메시지와 관련된 옵션을 설정합니다.
 
 > - ```Service Name```: 사용자지정
 > - ```Linked Service Plan Name```: 사용할 serviceplan과 linux appservice를 연결합니다.

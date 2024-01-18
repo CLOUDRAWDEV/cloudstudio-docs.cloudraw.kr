@@ -1,0 +1,257 @@
+---
+title: LoadBalancer
+sidebar_position: 2
+tags: [Template, 자주 사용하는 리소스, LoadBalancer, Ncloud]
+---
+
+import ncloud1 from './img/ncloud/1.png';
+import ncloud2 from './img/ncloud/2.png';
+import ncloud3 from './img/ncloud/3.png';
+import ncloud4 from './img/ncloud/4.png';
+import ncloud5 from './img/ncloud/5.png';
+import ncloud6 from './img/ncloud/6.png';
+import ncloud7 from './img/ncloud/7.png';
+import ncloud8 from './img/ncloud/8.png';
+import ncloud9 from './img/ncloud/9.png';
+import ncloud10 from './img/ncloud/10.png';
+import ncloud11 from './img/ncloud/11.png';
+import ncloud12 from './img/ncloud/12.png';
+import ncloud13 from './img/ncloud/13.png';
+import ncloud14 from './img/ncloud/14.png';
+import ncloud15 from './img/ncloud/15.png';
+import ncloud16 from './img/ncloud/16.png';
+import ncloud17 from './img/ncloud/17.png';
+import ncloud18 from './img/ncloud/18.png';
+import ncloud19 from './img/ncloud/19.png';
+import ncloud20 from './img/ncloud/20.png';
+import ncloud21 from './img/ncloud/21.png';
+import ncloud22 from './img/ncloud/22.png';
+import ncloud23 from './img/ncloud/23.png';
+import ncloud24 from './img/ncloud/24.png';
+import ncloud25 from './img/ncloud/25.png';
+
+<hr />
+<br/>
+Load Balancer는 수신 트래픽을 다수의 서버로 분산시키는 서비스로, 등록된 Target Group의 서버로 수신 트래픽을 분산시켜 가용성을 높이고 시스템 가동률을 조절하는 역할을 수행합니다. 
+이로 인해 워크로드의 가용성을 향상시켜 예기치 못한 서버의 장애 또는 예정된 변경 작업 등에 대하여 중단 없이 대응할 수 있도록 지원합니다.
+
+
+## 로그인
+- [Ncloud 체험 계정 생성](https://www.ncloud.com/main/creditEvent)
+- <Link to="/docs/start/sign-up">클라우드 스튜디오 회원가입 방법</Link>
+- [클라우드 스튜디오 회원가입 바로가기](https://cloudstudio.cloudraw.kr/signup)
+
+## 전제조건
+- **Ncloud Account**
+- **VPC환경**
+- **클라우드 스튜디오에 Ncloud 크레덴셜 값 등록**
+
+## 구성 서비스
+- [**VPC**](https://docs.cstudio.app/docs/resource/azure/Network/VirtualNetwork)
+- [**Subnet**](https://docs.cstudio.app/docs/resource/azure/Network/Subnet)
+- [**NACL**](https://docs.cstudio.app/docs/resource/azure/Network/NetworkSecurityGroup)
+- [**ACG**](https://docs.cstudio.app/docs/resource/azure/AppService/ServicePlan)
+- [**LoginKey**](https://docs.cstudio.app/docs/resource/azure/Database/Mysql)
+- [**Server**](https://docs.cstudio.app/docs/resource/azure/Dns/PrivateDnsZone)
+- [**LoadBalancer**](https://docs.cstudio.app/docs/resource/ncloud/Network/LoadBalancer)
+
+
+
+
+## 아키텍처
+<caption caption="[그림.1] Ncloud LoadBalancer 1" src={ncloud1} />
+
+## Ncloud LoadBalancer 아키텍처 만들기
+### 1. Base 생성
+캔버스에서 Base 아이콘을 가져온 후 등록한 **크레덴셜**을 선택합니다.
+크레덴셜이 없는 경우 [**크레덴셜등록**](https://docs.cstudio.app/docs/credential/createCredential#ncloud-%ED%81%AC%EB%A0%88%EB%8D%B4%EC%85%9C-%EB%93%B1%EB%A1%9D%ED%95%98%EA%B8%B0)를 확인해주시기 바랍니다.
+
+<caption caption="[그림.2] Ncloud LoadBalancer 2" src={ncloud2} />
+
+### 2. Region 생성
+**Region** 아이콘을 가져옵니다.<br/>
+리소스를 생성할 리전을 선택합니다.
+
+> - ```Service Name```: lbregion
+> - ```Region```: KR
+
+<caption caption="[그림.3] Ncloud LoadBalancer 3" src={ncloud3} />
+
+### 3. VPC 생성
+**VPC** 아이콘을 가져옵니다.
+
+> - ```Service Name```: lbvpc
+> - ```Vnet Address Space```: 10.0.0.0/16
+
+
+<caption caption="[그림.4] Ncloud LoadBalancer 4" src={ncloud4} />
+
+
+### 4. NACL 생성
+**NACL** 아이콘을 가져옵니다. 
+Network ACL은 Subnet의 접근을 제어합니다. LoadBalancer용 NACL과 Server용 NACL을 생성합니다.
+
+> - ```Service Name```: lbacl1
+> - ```included Vpc Name```: lbvpc
+
+<caption caption="[그림.5] Ncloud LoadBalancer 5" src={ncloud5} />
+
+22번 포트 뿐만 아니라 `80`포트와 같이 다른 포트의 Inbound 허용 규칙을 생성할 수 있습니다.
+
+> - ```inbound_rule```
+> - ```inbound_rule.name``` : default_inbound_rule
+> - ```inbound_rule.priority``` : 임의지정 - 다른 inbound rule의 priority와 중복될 수 없음
+> - ```inbound_rule.protocol``` : tcp
+> - ```inbound_rule.rule_action``` : Allow
+
+<caption caption="[그림.6] Ncloud LoadBalancer 6" src={ncloud6} />   
+
+> - ```inbound_rule.ip_block``` : 0.0.0.0/0 - 모든 IP의 접근을 허용하였으나, 실제환경에서는 권장되지 않습니다.
+> - ```inbound_rule.port_range``` : 22 
+
+<caption caption="[그림.7] Ncloud LoadBalancer 7" src={ncloud7} />      
+
+> - ```outbound_rule```
+> - ```outbound_rule.name``` : default_outbound_rule
+> - ```outbound_rule.priority``` : 임의지정 - 다른 outbound rule의 priority와 중복될 수 없음
+> - ```outbound_rule.protocol``` : tcp
+> - ```outbound_rule.rule_action``` : Allow
+
+<caption caption="[그림.8] Ncloud LoadBalancer 8" src={ncloud8} />    
+
+> - ```outbound_rule.ip_block``` : 0.0.0.0/0 
+> - ```outbound_rule.port_range``` : 80
+
+<caption caption="[그림.9] Ncloud LoadBalancer 9" src={ncloud9} />   
+
+### 5. Subnet 생성
+**Subnet** 아이콘을 가져옵니다. 
+생성하려는 리소스에 맞게 서브넷 타입을 지정해야 합니다.  
+LoadBalancer - `LoadBalancer`  
+Server - `General`
+
+**LoadBalancer용 Subnet**  
+LoadBalancer가 배포될 Subnet을 생성합니다.
+> - ```Service Name```: lbsubnet1
+> - ```Subnet Cidr```: 10.0.0.0/24
+> - ```Zone```: 사용자 선택
+> - ```Subnet Type```: Public - Public LoadBalancer를 생성하기 위해서는 서브넷 타입을 Public으로 설정해야 합니다.
+
+<caption caption="[그림.10] Ncloud LoadBalancer 10" src={ncloud10} />
+
+> - ```Usage Type```: LoadBalancer 
+> - ```Included Vpc Name```: lbvpc
+> - ```Linked Nacl Name```: lbacl1 - 선으로 연결시 자동 설정됩니다.
+
+<caption caption="[그림.11] Ncloud LoadBalancer 11" src={ncloud11} />
+
+**Server1용 Subnet**   
+Server가 배포될 Subnet을 생성합니다.
+> - ```Service Name```: lbsubnet2
+> - ```Subnet Cidr```: 10.0.2.0/24
+> - ```Zone```: LoadBalanacer용 Subnet과 같은 Zone을 선택해야 합니다.
+
+
+<caption caption="[그림.12] Ncloud LoadBalancer 12" src={ncloud12} />
+
+> - ```Subnet Type```: Public - Public Server를 생성하기 위해서는 서브넷 타입을 Public으로 설정해야 합니다.
+> - ```Usage Type```: General
+> - ```Included Vpc Name```: lbvpc
+> - ```Linked Nacl Name```: lbacl2 - 선으로 연결시 자동 설정됩니다.
+
+<caption caption="[그림.13] Ncloud LoadBalancer 13" src={ncloud13} />
+
+**Server2용 Subnet**   
+Server가 배포될 Subnet을 생성합니다.
+> - ```Service Name```: lbsubnet3
+> - ```Subnet Cidr```: 10.0.3.0/24
+> - ```Zone```: LoadBalanacer용 Subnet과 같은 Zone을 선택해야 합니다.
+
+<caption caption="[그림.14] Ncloud LoadBalancer 14" src={ncloud14} />
+
+> - ```Subnet Type```: Public - Public Server를 생성하기 위해서는 서브넷 타입을 Public으로 설정해야 합니다.
+> - ```Usage Type```: General 
+> - ```Included Vpc Name```: lbvpc
+> - ```Linked Nacl Name```: lbacl2 - 선으로 연결시 자동 설정됩니다.
+
+<caption caption="[그림.15] Ncloud LoadBalancer 15" src={ncloud15} />
+
+### 6. LoginKey 생성
+**Login Key** 아이콘을 가져옵니다. 
+서버에 접속하기 위해 필요한 리소스입니다
+
+<caption caption="[그림.16] Ncloud LoadBalancer 16" src={ncloud16} />
+
+### 7. Server 생성
+**Server** 아이콘을 가져옵니다. 
+LoadBalancer로 들어오는 트래픽을 전달할 서버를 생성합니다.
+
+> - ```Service Name```: lbserver1
+> - ```Included Subnet Name```: lbsubnet2
+> - ```Server Image Product Code```: 사용자 지정
+> - ```Server Product Code```: 사용자 지정
+
+<caption caption="[그림.17] Ncloud LoadBalancer 17" src={ncloud17} />
+
+> - ```Login Key Name```: lblgkey
+> - ```Init Script```: 사용자 선택
+> - ```Is Encrypted base Block Storage Volume```: `false` or `true`
+
+<caption caption="[그림.18] Ncloud LoadBalancer 18" src={ncloud18} />
+
+### 8. TargetGroup 생성
+LoadBalancer의 요청을 처리할 타겟에 대한 집합인 Target Group을 생성합니다.
+
+> - ```Service Name```: lbtargetgroup
+> - ```Included Vpc Name```: lbvpc
+
+**80포트 기준**
+> - ```Protocol```: HTTP
+> - ```Port```: 80
+
+<caption caption="[그림.19] Ncloud LoadBalancer 19" src={ncloud19} />
+
+> - ```Algorithm Type```: 사용자 지정
+> - ```Health Check Protocol```: HTTP
+
+<caption caption="[그림.20] Ncloud LoadBalancer 20" src={ncloud20} />
+
+> - ```Health Check Http Method```: HEAD
+> - ```Health Check Port```: 80
+
+<caption caption="[그림.21] Ncloud LoadBalancer 21" src={ncloud21} />
+
+> - ```Health Check Cycle```: 30
+> - ```Health Check Up Threshold```: 2
+> - ```Health Check Down Threshold```: 2
+> - ```Linked Server Names```: TargetGroup을 위에서 생성한 Server와 선으로 연결합니다.
+
+<caption caption="[그림.22] Ncloud LoadBalancer 22" src={ncloud22} />
+
+### 9. LoadBalancer 생성
+LoadBalancer를 생성하고 TargetGroup과 연결합니다.
+
+> - ```Network Type```: Public
+> - ```Type```: Application
+> - ```Throughput Type```: 사용자 지정
+
+<caption caption="[그림.23] Ncloud LoadBalancer 23" src={ncloud23} />
+
+> - ```Included Subnet Names```: lbsubnet1
+> - ```Linked Target Group Name```: lbtargetgroup
+
+<caption caption="[그림.24] Ncloud LoadBalancer 24" src={ncloud24} />
+
+리스너는 클라이언트의 요청을 받아들이고 해당 요청을 올바른 서버로 라우팅하는 역할을 합니다.
+> - ```Listener.name```: default_lb_listener
+> - ```Listener.Protocol```: HTTP
+> - ```Listener.Port```: 80
+
+<caption caption="[그림.25] Ncloud LoadBalancer 25" src={ncloud25} />
+
+<hr />
+
+## 참고 자료
+- [Ncloud LoadBalanacer](https://guide.ncloud-docs.com/docs/ko/networking-loadbalancer-loadbalanceroverview)
+- [Ncloud LoadBalanacer Terraform](https://registry.terraform.io/providers/NaverCloudPlatform/ncloud/latest/docs/resources/lb_target_group)
+- [Ncloud LoadBalanacer TargetGroup Terraform](https://registry.terraform.io/providers/NaverCloudPlatform/ncloud/latest/docs/resources/load_balancer)
