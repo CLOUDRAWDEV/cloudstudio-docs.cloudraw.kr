@@ -1,0 +1,59 @@
+---
+title: CdssCluster
+sidebar_position: 0
+tags: [Ncloud, 리소스, Bigdata&Analytics, CdssCluster]
+---
+
+<hr />
+<br />
+
+## 리소스 아이콘
+
+<img
+    src={
+        "https://cloudstudioblob.blob.core.windows.net/cloudstudio/ncloudImg/big_data_&_analytics-cdss_cluster.png"
+    }
+/>
+
+## 리소스 개요
+
+실시간 스트리밍 데이터 파이프라인 및 애플리케이션 빌드를 위한 오픈 소스 플랫폼인 Apache Kafka 클러스터를 손쉽게 배포, 보호, 운영 및 확장할 수 있는 서비스입니다.
+
+
+## 연관 리소스
+
+### 상위 리소스
+
+-   [**VPC**](https://docs.cstudio.app/docs/resource/ncloud/Network/Vpc)
+
+
+### 연결 리소스
+
+
+
+## 리소스 설정 값
+
+-   `kafka_version_code` : CDSS에서 사용할 Kafka 버전
+-   `linked_config_group_name` : 사용할 CDSS config group 이름
+-   `os_image` : 사용할 OS 이미지 타입
+-   `cmak` : CMAK(Cluster Manager for Apache Kafka)의 구성정보 
+    -   `user_name` : CMAK 접근 ID
+    -   `user_password` : CMAK 접근 ID
+-   `manager_node` : CMAK를 통해 Apache Kafka 클러스터를 관리하는 노드 구성 정보
+    -   `manager_node_subnet_name` : 니저 노드가 위치할 subnet 이름
+    -   `manager_node_product_name` : 매니저 노드 하드웨어 제품 코드
+-   `broker_node` : 실제 데이터가 저장되는 서버 노드에 대한 구성 정보
+    -   `broker_node_subnet_name` : 브로커 노드가 위치할 subnet 이름
+    -   `broker_node_product_code` : 브로커 노드 하드웨어 제품 코드
+    -   `broker_node_count` : 브로커 노드 수
+    -   `broker_node_storage_size` : 브로커 노드 저장 용량 - `100~2000`
+
+
+    
+
+---
+
+## 참고 자료
+
+-   [CdssCluster(Ncloud)](https://www.ncloud.com/product/analytics/cloudDataStreamingService)
+-   [ncloud_cdss_cluster(Terraform)](https://registry.terraform.io/providers/NaverCloudPlatform/ncloud/latest/docs/resources/cdss_cluster)
