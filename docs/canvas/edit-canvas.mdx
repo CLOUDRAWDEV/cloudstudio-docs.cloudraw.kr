@@ -12,6 +12,7 @@ import edit from "../start/img/gif/option-edit.gif"
 import undo from "../start/img/undo.png"
 import redo from "../start/img/redo.png"
 import list from "../start/img/list.png"
+import listName from "../start/img/list-name.png"
 import ratio from "../start/img/ratio.png"
 import grid from "../start/img/grid.png"
 import connect from "../start/img/connect.png"
@@ -20,6 +21,25 @@ import group from "../start/img/group.png"
 import back from "../start/img/back.png"
 import front from "../start/img/front.png"
 import tools from "../start/img/tools.png"
+import fullscreen from "../start/img/fullscreen.png"
+import text from "../start/img/text.png"
+import background from "../start/img/background.png"
+import theme from "../start/img/theme.png"
+import icon from "../start/img/icon.png"
+import save from "../start/img/save.png"
+import exporter from "../start/img/export.png"
+import importer from "../start/img/import.png"
+import versionSave from "../start/img/version-save.png"
+import versionCommit from "../start/img/version-commit.png"
+import billing from "../start/img/billing.png"
+import diagnose from "../start/img/diagnose.png"
+import plan from "../start/img/plan.png"
+import deploy from "../start/img/deploy.png"
+import migrate from "../start/img/migrate.png"
+import resourceOption from "../start/img/resource-option.png"
+import code from "../start/img/code.png"
+import configuration from "../start/img/configuration.png"
+import erroroption from "../start/img/error.png"
 
 
 <hr />
@@ -29,6 +49,58 @@ import tools from "../start/img/tools.png"
 캔버스로 구성한 인프라는 단순히 시각적 아키텍처로 사용할 수도 있고 원하는 CSP 사에 직접 배포까지 할 수 있습니다.
 
 ✂️ 자유롭게 캔버스를 편집해보세요!
+
+<p>&nbsp;</p>
+
+## 다이어그램 옵션 툴 박스 사용법 {#toolbox}
+
+상단에 위치한 다이어그램 옵션 툴 박스는 캔버스를 꾸밀 수 있는 다양한 기능을 제공합니다.
+
+| 이미지                                                       | 동작          | 기능                                                   |
+| ------------------------------------------------------------ | ------------- | ------------------------------------------------------ |
+| <img width="40px" src={ undo } alt="실행 취소 이미지" />     | 실행 취소     | 한 칸 이전으로 되돌립니다.                             |
+| <img width="40px" src={ redo } alt="다시 하기 이미지" />     | 다시 하기     | 한 칸 앞으로 돌아갑니다.                               |
+| <img width="40px" src={ list } alt="리소스 리스트 이미지" />  | 리소스 리스트   | 리소스 아이콘 리스트를 껐다 켜는 버튼입니다.   |
+| <img width="40px" src={ listName } alt="리소스 이름 리스트 이미지" /> | 리소스 이름 보여주기 | 이름을 포함한 리소스 아이콘 리스트를 보여주는 버튼입니다.                  |
+| <img width="40px" src={ front } alt="뒤로 보내기 이미지" />              | 뒤로 보내기   | 두 리소스가 겹쳤을 때 선택한 리소스를 뒤로 보냅니다.   |
+| <img width="40px" src={ back } alt="앞으로 보내기 이미지" />               | 앞으로 보내기 | 두 리소스가 겹쳤을 때 선택한 리소스를 앞으로 보냅니다. |
+| <img width="40px" src={ text } alt="텍스트 색상 변경 이미지" />         | 텍스트 색상 변경하기 | 텍스트 글자의 옵션을 변경할 수 있습니다. |
+| <img width="40px" src={ background } alt="캔버스 색상 변경 이미지" />         | 캔버스 색상 변경하기 | 캔버스 배경색을 변경할 수 있습니다. |
+| <img width="40px" src={ theme } alt="캔버스 테마 이미지" />         | 캔버스 테마 바꾸기 | 캔버스에서 해당 CSP에 맞게 테마를 변경할 수 있습니다. |
+| <img width="100px" src={ grid } alt="그리드 이미지" />       | 그리드        | 캔버스 그리드를 해제할 수 있습니다.   |
+| <img width="100px" src={ ratio } alt="화면 비율 이미지" />   | 화면 비율     | 캔버스 화면비율을 조정합니다        
+| <img width="40px" src={ fullscreen } alt="전체화면 이미지" /> | 전체화면  | 전체화면 모드로 변경할 수 있습니다.             |
+| <img width="40px" src={ icon } alt="아이콘 이미지" /> | 캔버스 아이콘 모드  | 캔버스에서 서비스 이름 없이 간단하게 보이게 할 수 있습니다.          |
+
+
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+## 캔버스 옵션 툴 박스 사용법 {#toolbox}
+
+사이드 메뉴에 위치한 캔버스 옵션 툴 박스를 통해 클라우드 스튜디오의 다양한 기능을 이용할 수 있습니다.
+
+| 이미지                                                       | 동작          | 기능                                                   |
+| ------------------------------------------------------------ | ------------- | ------------------------------------------------------ |
+| <img width="40px" src={ save } alt="저장하기 이미지" />     | 저장하기     | 현재까지 작성된 캔버스를 저장합니다.                             |
+| <img width="40px" src={ exporter } alt="내보내기 이미지" />     | 내보내기     | 캔버스에 작성된 아키텍처의 이미지와 테라폼 코드를 압축파일로 다운로드합니다.  |
+| <img width="40px" src={ importer } alt="불러오기 이미지" />  | 불러오기   | 실제 클라우드 환경에 배포된 리소스들을 캔버스로 불러옵니다.   |
+| <img width="40px" src={ versionSave } alt="버전 저장 이미지" /> | 버전저장 | 현재 구성된 캔버스를 버전별로 저장할 수 있습니다.                 |
+| <img width="40px" src={ versionCommit } alt="버전 커밋 이미지" />   | 버전 커밋  | 이전에 기록된 버전커밋을 확인하고 불러올 수 있습니다.   |
+| <img width="40px" src={ billing } alt="비용계산 이미지" />      | 비용 계산 | 현재 캔버스에 구성된 리소스의 비용을 예상하여 계산합니다. |
+| <img width="40px" src={ diagnose } alt="보안 진단 이미지" />         | 보안진단 | 캔버스로 생성된 테라폼코드에 대한 취약점을 진단합니다. |
+| <img width="40px" src={ plan } alt="유효성 검사 이미지" />         | 유효성 검사 | 캔버스로 생성된 테라폼코드에 대한 유효성 검사를 수행합니다. |
+| <img width="40px" src={ deploy } alt="배포 이미지" />         | 배포하기 | 클라우드 환경에 캔버스로 구성된 리소스들을 실제로 배포합니다. |
+| <img width="40px" src={ migrate } alt=" 마이그레이션 이미지" />       | 마이그레이션  | 캔버스에 구성된 인프라를 다른 클라우드의 인프라로 변환하는 역할을 수행합니다.  |
+| <img width="40px" src={ resourceOption } alt=" 리소스옵션 이미지" />       | 리소스옵션확인하기  | 캔버스로 구성된 리소스들의 옵션을 확인할 수 있습니다.  |
+| <img width="40px" src={ code } alt=" 테라폼 코드 이미지" />       | 테라폼 코드 확인하기  | 캔버스 구성으로 만들어진 테라폼 코드를 확인할 수 있습니다.  |
+| <img width="40px" src={ configuration } alt=" 캔버스 구성 이미지" />       | 캔버스 구성 확인하기  | 캔버스 구성을 트리형식으로 확인할 수 있습니다.  |
+| <img width="40px" src={ erroroption } alt=" 리소스 옵션 에러 이미지" />       | 리소스 옵션 에러 확인하기  | 설정한 리소스들의 옵션에 대한 에러를 확인할 수 있습니다.  |
+
+
+
 
 <p>&nbsp;</p>
 
@@ -112,18 +184,3 @@ import tools from "../start/img/tools.png"
 | line  | 필요한 리소스가 연결되어 있지 않은 경우 발생하는 오류 |
 
 <p>&nbsp;</p>
-<p>&nbsp;</p>
-
-## 툴 박스 사용법 {#toolbox}
-
-상단에 위치한 툴 박스는 캔버스를 꾸밀 수 있는 다양한 기능을 제공합니다.
-
-| 이미지                                                       | 동작          | 기능                                                   |
-| ------------------------------------------------------------ | ------------- | ------------------------------------------------------ |
-| <img width="40px" src={ undo } alt="실행 취소 이미지" />     | 실행 취소     | 한 칸 이전으로 되돌립니다.                             |
-| <img width="40px" src={ redo } alt="다시 하기 이미지" />     | 다시 하기     | 한 칸 앞으로 돌아갑니다.                               |
-| <img width="40px" src={ front } alt="이미지" />              | 뒤로 보내기   | 두 리소스가 겹쳤을 때 선택한 리소스를 뒤로 보냅니다.   |
-| <img width="40px" src={ back } alt="이미지" />               | 잎으로 보내기 | 두 리소스가 겹쳤을 때 선택한 리소스를 앞으로 보냅니다. |
-| <img width="40px" src={ list } alt="리소스 리스트 이미지" /> | 리소스 리스트 | 리소스 리스트를 껐다 켜는 버튼입니다.                  |
-| <img width="100px" src={ ratio } alt="화면 비율 이미지" />   | 화면 비율     | 캔버스 화면비율을 조정합니다                           |
-| <img width="100px" src={ grid } alt="그리드 이미지" />       | 그리드        | 캔버스 그리드를 해제할 수 있습니다.                    |
