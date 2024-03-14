@@ -31,11 +31,6 @@ const config = {
           routeBasePath: 'docs',
           path: 'docs',
         },
-        blog: {
-          blogSidebarTitle: 'All posts',
-          blogSidebarCount: 'ALL',
-          showReadingTime: false,
-        },
         theme: {
           customCss: require.resolve("./src/scss/_custom.scss"),
         },
@@ -93,11 +88,6 @@ plugins: [
             label: 'FAQ',
             position: 'left',
             activeBaseRegex: `/docs-faq/`,
-          },
-          { 
-            to: "/blog",
-            label: "Notice",
-            position: "left"
           },
           {
             href: "https://join.slack.com/t/cloudraw/shared_invite/zt-1gazpq5ky-lZQwzvjwmr25JazlrLgyhA",
