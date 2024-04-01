@@ -44,6 +44,7 @@
   }
 
   @include mobile {
+    padding: 8px;
   }
 
   table {
@@ -82,4 +83,32 @@
     }
   }
 
+}
+
+.version {
+  position: fixed;
+  gap:4px;
+  top:82px;
+  right: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 200px;
+
+  span {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  select {
+    font-size: 0.9rem;
+    border-radius: 4px;
+    height: 32px;
+  }
+  @include mobile {
+    position: relative;
+    top:0;
+    left: 0;
+    width: 100%;
+    padding:8px;
+  }
 }

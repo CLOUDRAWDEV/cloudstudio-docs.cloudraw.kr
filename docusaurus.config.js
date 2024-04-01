@@ -93,6 +93,7 @@ plugins: [
             href: "https://join.slack.com/t/cloudraw/shared_invite/zt-1gazpq5ky-lZQwzvjwmr25JazlrLgyhA",
             label: "Contact Slack",
             position: "left",
+            className: "btnSlack"
           },
           {
             href: "https://cstudio.app/",
