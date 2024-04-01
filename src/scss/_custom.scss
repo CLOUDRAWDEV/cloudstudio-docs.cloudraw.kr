@@ -151,11 +151,6 @@ a.navbar__item.navbar__link.btnTrial {
     padding-right: 16px;
     @include white();
 
-    @include mobile {
-        display: flex;
-        padding: 4px 16px;
-    }
-
     &[target="_blank"]:hover {
         @include white();
     }
@@ -181,23 +176,13 @@ div.searchBox_node_modules-\@docusaurus-theme-classic-lib-theme-Navbar-Search-st
 
 .navbar__items--right {
     gap: 16px;
-
-    @media (max-width: 996px) {
-        margin-right: 160px;
-    }
 }
 
-.navbar__item {
-    @media (max-width: 996px) {
-        display: flex;
-    }
-}
 
 a.navbar__item.navbar__link {
     @include mobile {
-        display: none;
+        display: none !important;
     }
-
     svg {
         display: none;
     }
@@ -209,4 +194,39 @@ a.navbar__item.navbar__link {
 
 .theme-doc-version-badge {
     margin-bottom: 16px;
+}
+
+h1 {
+    @include mobile {
+        font-size: 1.6rem;
+    }
+}
+
+h2 {
+    @include mobile {
+        font-size: 1.4rem;
+    }
+}
+
+h3 {
+    @include mobile {
+        font-size: 1.2rem;
+    }
+}
+
+h4,p {
+    @include mobile {
+        font-size: 1.0rem;
+    }
+}
+h5 {
+    @include mobile {
+        font-size: 0.8rem;
+    }
+}
+
+h6 {
+    @include mobile {
+        font-size: 0.6rem;
+    }
 }

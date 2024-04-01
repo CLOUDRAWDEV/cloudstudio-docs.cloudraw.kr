@@ -96,10 +96,13 @@
     }
 
     @include mobile {
-        padding: 32px;
-
+        padding: 24px;
         &__nav {
             flex-direction: column;
+
+            &__menu {
+                gap: 24px;
+            }
 
             h1:after {
                 content: "";
