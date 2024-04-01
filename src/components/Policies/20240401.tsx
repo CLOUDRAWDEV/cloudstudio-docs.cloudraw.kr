@@ -271,7 +271,7 @@ function Policy20240401() {
                         </td>
                         <td> MS Azure 서비스 API 연동을 통한 관리 서비스 제공</td>
                         <td rowSpan={3} style={{ textAlign: "center" }}>
-                            <strong>회원 탈퇴 시 까지</strong>
+                            <strong>삭제시 혹은 회원 탈퇴 시 까지</strong>
                             <br />
                             단, 관계법령에 정함이 있는 경우 해당 법률에서
                             정한 기간동안 보유 및 이용 가능
