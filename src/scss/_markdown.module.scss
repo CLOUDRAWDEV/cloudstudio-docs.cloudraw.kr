@@ -1,5 +1,17 @@
 @charset "utf-8";
-@import './mixin';
+@import "./mixin";
+
+$colorPri: 214, 74%, 48%;
+$colorSec: 215, 100%, 36%;
+$colorGreen: 164, 75%, 49%;
+$colorRed: 0, 100%, 68%;
+$colorYellow: 47, 100%, 65%;
+$colorOrange: 23, 95%, 62%;
+$colorCyan: 187, 98%, 46%;
+$colorLapis: 246, 91%, 63%;
+$colorPurple: 284, 72%, 51%;
+$colorPink: 337, 100%, 68%;
+$colorLivid: 206, 39%, 76%;
 
 .imgWrap {
   width: 100%;
@@ -34,5 +46,42 @@
 .button {
   :hover {
     cursor: pointer;
+  }
+}
+
+.tag {
+  display: flex;
+  width : fit-content;
+  padding: 4px 8px;
+  border-radius: 4px;
+
+  &[data-type="new"] {
+    background: hsla(214, 74%, 48%, 1);
+    color: #ffffff;
+    font-weight: 600;
+  }
+
+  &[data-type="feature"] {
+    background: hsla( 164, 75%, 49%, 1);
+    color: #ffffff;
+    font-weight: 600;
+  }
+
+  &[data-type="changed"] {
+    background: hsla(47, 100%, 65%, 1);
+    color: #ffffff;
+    font-weight: 600;
+  }
+
+  &[data-type="fixed"] {
+    background: hsla(23, 95%, 62%, 1);
+    color: #ffffff;
+    font-weight: 600;
+  }
+
+  &[data-type="deprecated"] {
+    background: hsla(0, 100%, 68%, 1);
+    color: #ffffff;
+    font-weight: 600;
   }
 }
