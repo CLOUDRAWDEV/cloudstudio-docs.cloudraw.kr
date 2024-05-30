@@ -9,13 +9,9 @@ import Head from "@docusaurus/Head"
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
   return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
+    <header className={styles.heroBanner}>
       <div className="container">
-        <h1>{siteConfig.title}</h1>
-        {siteConfig.tagline}
-        <h3>클라우드 스튜디오는 동일한 환경을 구성하는 반복적인 작업을 자동화하고 <br/>
-        관리가 용이한 장점을 가진 IaC 클라우드의 접근성을 높일 수 있도록 GUI 환경에서 쉽고 편리하게 그리고<br/>
-        안전하게 클라우드 인프라를 구성하고 관리할 수 있는 서비스입니다</h3>
+        <h1 className={styles.mainTitle}>{siteConfig.title}</h1>
       </div>
     </header>
   );
