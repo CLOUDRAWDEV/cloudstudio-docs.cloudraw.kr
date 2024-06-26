@@ -74,6 +74,12 @@ $colorLivid: 206, 39%, 76%;
     font-weight: 600;
   }
 
+  &[data-type="update"] {
+    background: hsla(175, 60%, 61%, 0.8);
+    color: #ffffff;
+    font-weight: 600;
+  }
+
   &[data-type="changed"] {
     background: hsla(47, 100%, 65%, 0.8);
     color: #ffffff;
