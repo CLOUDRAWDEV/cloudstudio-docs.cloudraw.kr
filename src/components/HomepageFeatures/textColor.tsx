@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from "../../scss/_markdown.module.scss"
+import styles from "/src/scss/_markdown.module.scss"
 
 const TextColor = ({
     color,

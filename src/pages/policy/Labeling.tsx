@@ -1,6 +1,6 @@
 import { iLabeling } from "@site/src/models/labelingDetailBox"
 import React, { forwardRef, useState } from "react"
-import styles from "../../scss/_labeling.module.scss"
+import styles from "/src/scss/_labeling.module.scss"
 import LabelingDetailBox from "./LabelingDetailBox"
 
 function Labeling(

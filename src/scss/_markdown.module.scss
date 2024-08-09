@@ -97,4 +97,42 @@ $colorLivid: 206, 39%, 76%;
     color: #ffffff;
     font-weight: 600;
   }
+
+  &[data-type="update"] {
+    background: hsla(175, 60%, 61%, 0.8);
+    color: #ffffff;
+    font-weight: 600;
+  }
+
+  &[data-type="low"] {
+    background: rgba(0, 0, 0, 0.3);
+    color: #ffffff;
+    font-weight: 600;
+  }
+
+  &[data-type="medium"] {
+    background: hsla(47, 100%, 65%, 0.8);
+    color: #ffffff;
+    font-weight: 600;
+  }
+
+  &[data-type="high"] {
+    background: hsla(23, 95%, 62%, 0.7);
+    color: #ffffff;
+    font-weight: 600;
+  }
+
+  &[data-type="critical"] {
+    background: hsla(0, 100%, 68%, 0.7);
+    color: #ffffff;
+    font-weight: 600;
+  }
+}
+
+.securityTable {
+  overflow-x: auto;
+  table {
+    width: 1980px;
+  }
+
 }
