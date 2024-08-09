@@ -1,5 +1,5 @@
 import React from "react"
-import policyStyles from "../../scss/_policy.module.scss"
+import policyStyles from "/src/scss/_policy.module.scss"
 
 function OptionalPersonalInfo() {
     return (
