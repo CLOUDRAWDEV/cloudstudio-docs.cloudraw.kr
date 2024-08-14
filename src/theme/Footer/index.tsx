@@ -1,6 +1,6 @@
 import React from 'react';
 // import {useThemeConfig} from '@docusaurus/theme-common';
-import footerStyles from '../../scss/_footer.module.scss';
+import footerStyles from '/src/scss/_footer.module.scss';
 import Link from '@docusaurus/Link';
 
 

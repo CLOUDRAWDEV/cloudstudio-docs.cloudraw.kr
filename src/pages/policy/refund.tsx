@@ -1,6 +1,6 @@
 import React from 'react'
 import Layout from '@theme/Layout';
-import policyStyles from '../../scss/_policy.module.scss';
+import policyStyles from '/src/scss/_policy.module.scss';
 
 export default function Refund() {
     return (
