@@ -16,7 +16,7 @@ import deploy06 from "/docs/start/img/deploy06.png"
 import deploy07 from "/docs/start/img/deploy07.png"
 
 <span className="theme-doc-version-badge badge badge--secondary">
-    last update: 2023.02.01
+    last update: 2024.09.01
 </span>
 
 <hr />
@@ -31,7 +31,7 @@ import deploy07 from "/docs/start/img/deploy07.png"
 IaC의 문법적 오류나 설정이 올바르게 되었는지 가상으로 검증하는 단계입니다. 실제 CSP에 배포되지 않습니다.
 (`--dry-run` option과 같은 역할을 합니다.)
 
-1. 배포테스트를 진행하기 위해서 `배포관리 > 배포 점검`를 클릭합니다.
+1. 배포테스트를 진행하기 위해서 `배포관리 > 유효성 검사`를 클릭합니다.
 
 <div className={styles.imgWrap}>
     <img src={deploy03} width="200px" alt="배포이미지" />
@@ -40,20 +40,17 @@ IaC의 문법적 오류나 설정이 올바르게 되었는지 가상으로 검�
 <br />
 
 2. `크레덴셜`을 선택합니다.
-3. `태그 메세지`를 입력합니다.
-4. `배포 점검하기` 버튼을 클릭합니다.
+3. `유효성 검사하기` 버튼을 클릭합니다.
 
 <div className={styles.imgWrap}>
     <img src={deploy02} alt="배포이미지" />
 </div>
 
-<p>&nbsp;</p>
-
-loader가 돌아가고 있으면 `배포 점검 중`이라는 뜻입니다. loader가 사라질 때까지 기다려주세요.
+<!--loader가 돌아가고 있으면 `배포 점검 중`이라는 뜻입니다. loader가 사라질 때까지 기다려주세요.
 
 <div className={styles.imgWrap}>
     <img src={deploy04} alt="배포이미지" />
-</div>
+</div>-->
 
 <p>&nbsp;</p>
 
@@ -66,7 +63,7 @@ loader가 돌아가고 있으면 `배포 점검 중`이라는 뜻입니다. load
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 
-## 배포 점검 결과 {#test-result}
+<!--## 배포 점검 결과 {#test-result}
 
 `배포 점검 결과`를 확인할 수 있습니다. 배포가 완료된 환경은 `각 CSP 페이지에서 확인`할 수 있습니다.
 
@@ -81,15 +78,16 @@ loader가 돌아가고 있으면 `배포 점검 중`이라는 뜻입니다. load
 
 <p>&nbsp;</p>
 <p>&nbsp;</p>
+-->
 
 ## 배포이력 {#tedeployst-history}
 
 배포이력은 `실제 배포된 인프라에 대한 이력`을 보여줍니다. DEV(개발) / TEST(테스트) / PROD(운영) 각 탭마다의 `최근 배포 이력`을 확인할 수 있습니다.
 
-1. 배포 이력을 확인하기 위해서 `배포관리 > 배포이력`을 클릭합니다.
+1. 배포 이력을 확인하기 위해서 `배포 > 배포이력`을 클릭합니다.
 
 <div className={styles.imgWrap}>
-    <img src={deploy01} width="200px" alt="배포이미지" />
+    <img src={deploy01} width="500px" alt="배포이미지" />
 </div>
 
 <br />
