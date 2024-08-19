@@ -1,39 +1,33 @@
 ---
-title: 로그인
+title: ログイン
 sidebar_position: 2
-tags: [sign in, 로그인, 시작하기]
+tags: [sign in, ログイン, 始めに]
 ---
 
 import login01 from "@site/docs/start/img/login01.png"
-import login from "@site/docs/start/img/login.png"
+import login from "@site/i18n/ja/docusaurus-plugin-content-docs/current/start/img/login.png"
 import otp01 from "@site/docs/start/img/otp01.png"
 import otp02 from "@site/docs/start/img/otp02.png"
 import otp03 from "@site/docs/start/img/otp03.png"
 import otp04 from "@site/docs/start/img/otp04.png"
 import otp05 from "@site/docs/start/img/otp05.png"
-import otp06 from "@site/docs/start/img/otp06.png"
+import otp06 from "@site/i18n/ja/docusaurus-plugin-content-docs/current/start/img/otp06.png"
 import styles from "/src/scss/_markdown.module.scss"
 
 <hr />
 <br />
 
-클라우드 스튜디오는 비회원으로 접속할 수 없습니다. 로그인 전 `회원가입`을 먼저 진행해주세요.
+CloudStudio は非会員でアクセスできません。ログイン前に会員登録を先に行ってください。
 
-🔗  [클라우드 스튜디오 회원가입 링크](https://cstudio.app/signup)
+🔗  [CloudStudio 会員登録リンク](https://cstudio.app/signup)
 
-✏️  <Link to="/docs/start/sign-up">회원가입하는 방법</Link>
+✏️  <Link to="/docs/start/sign-up">会員登録の方法</Link>
 
-회원가입이 끝났다면 [클라우드 스튜디오 로그인 페이지](https://cstudio.app/signin)에 접속합니다.
-
-<!--:::caution
-
-회원가입 후 관리자 승인이 필요합니다.
-
-:::-->
+会員登録が終わりましたら[CloudStudio ログインページ](https://cstudio.app/signin)에 접속합니다.
 
 <p>&nbsp;</p>
 
-1. 회원가입 시 입력했던 이메일을 통해 아이디와 임시 패스워드를 확인합니다.
+1. 会員登録時に入力したメールアドレスから ID と一時パスワードを確認します。
 
 <div className={styles.imgWrap}>
     <img width="100%" src={login01} width="450px" alt="img" />
@@ -41,50 +35,19 @@ import styles from "/src/scss/_markdown.module.scss"
 
 <p>&nbsp;</p>
 
-2. 클라우드 스튜디오 로그인 페이지에서 `아이디와 임시 패스워드를 입력`합니다.
+2. CloudStudio のログインページで`IDと一時パスワードを入力`します。
 
 <img width="100%" src={login} alt="img" />
 
 <p>&nbsp;</p>
 
-<!--3. 최초 로그인 시 OTP 등록을 먼저 해줘야합니다. 링크를 통해 `google authenticator 앱을 설치`해줍니다.
-
-<img width="100%" src={otp01} alt="otp img" />
-
-<p>&nbsp;</p>
-
-4. google authenticator 앱을 실행한 후 `QR코드를 스캔`해줍니다.
-
-<img width="100%" src={otp02} alt="otp img" />
-
-<p>&nbsp;</p>
-
-5. 한 번 발급된 인증키는 `다시 찾을 수 없으니` 반드시 적어두도록 합니다.
-
-<img width="100%" src={otp03} alt="otp img" />
-
-<p>&nbsp;</p>
-
-6. google authenticator 앱에 등록된 `6자리 인증코드`를 입력한 후 `인증완료 버튼`을 클릭합니다.
-
-<img width="100%" src={otp04} alt="otp img" />
-
-<p>&nbsp;</p>
-
-7. OTP 인증에 성공하면 다시 로그인해줍니다.
-
-<img width="100%" src={otp05} alt="otp img" />
-
-<p>&nbsp;</p>
--->
-
-3. 새 비밀번호를 설정합니다.
+3. 新しいパスワードを設定します。
 
 <img width="100%" src={otp06} alt="otp img" />
 
 <p>&nbsp;</p>
 
 :::info
-최초 로그인 시에는 비밀번호를 재설정해 줘야 합니다.
+最初にログインするときは、パスワードをリセットしていただく必要があります。
 
 :::
