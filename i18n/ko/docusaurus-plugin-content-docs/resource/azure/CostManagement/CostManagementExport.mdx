@@ -1,0 +1,54 @@
+---
+title: CostManagementExport
+sidebar_position: 0
+tags: [Azure, 리소스, CostManagement, CostManagementExport]
+---
+
+<hr />
+<br />
+
+
+## 리소스 아이콘
+
+<img
+    src={
+        "https://cloudstudioblob.blob.core.windows.net/cloudstudio/azureImg/cost_management-cost_management_export.png"
+    }
+/>
+
+## 리소스 개요
+Azure Cost Management는 Microsoft Azure에서 제공하는 클라우드 기반 서비스로 조직에서 여러 구독 및 계정에 걸쳐 클라우드 비용을 관리하고 최적화할 수 있습니다. 
+이를 통해 사용자는 가상 머신, 저장소, 데이터베이스 및 기타 리소스와 같은 다양한 Azure 서비스에 대한 지출을 모니터링하고 분석할 수 있습니다.
+
+
+
+
+
+## 리소스 설정 값
+- ```recurrence_type``` : 데이터를 내보내는 빈도 - ```Monthly```, ```Annually```, ```Daily```, ```Weekly```
+
+- ```recurrence_period_start_date``` : 내보내기 시작 날짜 
+
+- ```recurrence_period_end_date``` : 내보내기 종료 날짜
+
+- ```root_folder_path``` : 내보낸 데이터를 저장할 경로 
+
+- ```export_type``` : 데이터의 쿼리 형식 - ```Usage```, ```AmortizedCost```, ```ActualCost```
+
+- ```export_time_frame``` : 데이터를 내보내는 날짜 형식   
+  ```WeekToDate```, ```MonthToDate```, ```BillingMonthToDate```, ```TheLastWeek```, ```TheLastMonth```, ```TheLastBillingMonth```, ```Custom```
+
+- ```linked_storage_account_name``` : 데이터를 내보낼 Storage 계정 이름
+
+- ```storage_container_name``` :   내보낸 데이터를 저장할 컨테이너 이름
+
+
+
+
+
+<hr />
+
+## 참고 자료
+- [Azure CostManagementExport(Microsoft)](https://learn.microsoft.com/ko-kr/azure/cost-management-billing/cost-management-billing-overview)
+- [Azure CostManagementExport 가격](https://azure.microsoft.com/en-us/pricing/details/cost-management/) 
+- [Azure CostManagementExport(Terraform)](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/resource_group_cost_management_export)

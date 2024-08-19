@@ -1,0 +1,55 @@
+---
+title: Mongodb
+sidebar_position: 0
+tags: [Ncloud, 리소스, Database, Mongodb]
+---
+
+<hr />
+<br />
+
+## 리소스 아이콘
+
+<img
+    src={
+        "https://cloudstudioblob.blob.core.windows.net/cloudstudio/ncloudImg/database-mongodb.png"
+    }
+/>
+
+## 리소스 개요
+
+Cloud DB for MongoDB는 MongoDB 데이터베이스를 손쉽게 구축하고 자동으로 관리할 수 있습니다. 네이버의 최적화 설정을 통해 안정적으로 운영하며, 장애 발생 시 자동 복구하는 완전 관리형 클라우드 데이터베이스 서비스입니다.
+
+## 연관 리소스
+
+### 상위 리소스
+
+-   [**Subnet**](https://docs.cstudio.app/docs/resource/ncloud/Networking/Subnet)
+
+
+### 하위 리소스
+
+
+
+
+## 리소스 설정 값
+
+-   `server_name_prefix` : MongoDB 서버 이름
+-   `user_name` : MongoDB 사용자 접근 ID
+-   `user_password` : MongoDB의 사용자 패스워드
+-   `cluster_type_code` : MongoDB의 클러스터 유형을 결정하는 MongoDB 클러스터 유형 코드 - `Stand Alone`, `Stand Replica Set`, `Shared Cluster`
+-   `image_product_code` : MongoDB 버전 이미지 제품 번호
+-   `member_port` : MongoDB Member 서버에 접근할 수 있는 TCP 포트 번호 - `10000-65535`
+-   `member_server_count` : MongoDB Member 서버의 수, 하나의 레플리카 세트 당 멤버 서버의 수가 정해짐 - `3-7`
+-   `mongos_server_count` : MongoDB Mongos 서버의 수 - `2-5`
+-   `backup_file_retention_period` : 백업 파일 보관 기간, 백업은 매일 단위로 진행되며, 백업 파일은 별도의 스토리지에 저장 - `1~30`
+-   `data_storage_type` : 데이터 스토리지 종류  - `SSD`, `HDD`
+-   `compress_code` : MongoDB에서 제공하는 데이터 압축 알고리즘을 선택할 수 있는 MongoDB 데이터 압축 알고리즘 코드  - `SNPP`, `ZLIB`, `ZSTD`, `NONE`
+
+    
+
+---
+
+## 참고 자료
+
+-   [MongoDB(Ncloud)](https://www.ncloud.com/product/database/cloudDbMongoDB)
+-   [ncloud_source_build(Terraform)](https://registry.terraform.io/providers/NaverCloudPlatform/ncloud/latest/docs/resources/mongodb)

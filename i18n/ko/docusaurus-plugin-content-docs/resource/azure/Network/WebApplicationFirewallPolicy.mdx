@@ -1,0 +1,53 @@
+---
+title: WebApplicationFirewallPolicy
+sidebar_position: 17
+tags: [Azure, 리소스, Network, WebApplicationFirewallPolicy]
+---
+
+<hr />
+<br />
+
+## 리소스 아이콘
+
+<img
+    src={
+        "https://cloudstudioblob.blob.core.windows.net/cloudstudio/azureImg/network-web_application_firewall_policy.png"
+    }
+/>
+
+## 리소스 개요
+
+Azure WAF(웹 애플리케이션 방화벽) 정책은 XSS(교차 사이트 스크립팅), SQL 삽입 및 기타 알려지거나 알려지지 않은 악용을 비롯한 다양한 공격으로부터 웹 애플리케이션을 보호하는 데 도움이 되는 Microsoft Azure의 보안 기능입니다.
+WAF 정책은 트래픽이 WAF를 통해 필터링되는 방식을 결정하는 규칙 집합입니다. 이를 통해 허용 및 차단된 트래픽 소스 목록을 정의하고 특정 트래픽 패턴에 대한 사용자 지정 규칙 및 예외를 구성할 수 있습니다.
+WAF 정책은 개별 웹 애플리케이션 또는 전체 애플리케이션 게이트웨이에 적용할 수 있습니다.
+
+## 연관 리소스
+
+### 상위 리소스
+
+-   [**Resource Group**](https://docs.cstudio.app/docs/resource/azure/Base/ResourceGroup)
+
+## 리소스 설정 값
+
+-   `managed_rule_set`
+
+    -   `type` : 취약점을 보호하기 위한 규칙 집합의 유형 - `OWASP`, `Microsoft_BotManagerRuleSet`
+    -   `version` : 규칙 집합의 버전
+
+-   `managed_rule_group`
+    -   `type` : 규칙 집합의 유형 - `OWASP`, `Microsoft_BotManagerRuleSet`
+    -   `rule_group_name` : 사용할 규칙 그룹의 이름
+    -   `disabled_rules` : 비활성화할 규칙 ID 목록
+-   `exclusion`
+    -   `match_variable` : 쿼리 문자열 또는 요청 메서드와 같이 일치시켜야 할 변수 -`RequestArgNames`, `RequestCookieNames`, `RequestHeaderNames`
+    -   `selector` : 연산자를 통해 일치변수의 값과 비교할 값
+    -   `selector_match_operator` : 일치 여부를 평가하는 연산자 -`Contains`, `EndsWith`, `Equals`, `EqualsAny`, `StartsWith`
+-   `tag` : 리소스를 카테고리로 분류하기 위한 태그 - 최대 512자, `key`:`value`
+
+---
+
+## 참고 자료
+
+-   [Azure WebApplicationFirewallPolicy(Microsoft)](https://learn.microsoft.com/ko-kr/azure/web-application-firewall/overview)
+-   [Azure WebApplicationFirewallPolicy 가격](https://azure.microsoft.com/ko-kr/pricing/details/web-application-firewall/)
+-   [Azure WebApplicationFirewallPolicy(Terraform)](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/web_application_firewall_policy)

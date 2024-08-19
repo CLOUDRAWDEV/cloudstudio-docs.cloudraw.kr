@@ -1,0 +1,73 @@
+---
+title: DnsZone
+sidebar_position: 0
+tags: [Azure, 리소스, Dns, DnsZone]
+---
+
+<hr />
+<br />
+
+## 리소스 아이콘
+
+<img
+    src={
+        "https://cloudstudioblob.blob.core.windows.net/cloudstudio/azureImg/dns-dns_zone.png"
+    }
+/>
+
+## 리소스 개요
+
+Azure DNS 영역은 클라우드에서 DNS 도메인을 호스트하고 DNS 레코드를 관리할 수 있도록 Microsoft Azure에서 제공하는 서비스입니다.
+A, AAAA, CNAME, MX 및 TXT와 같은 DNS 레코드를 관리하고 SOA(권한 시작), NS(이름 서버) 및 PTR(포인터) 레코드와 같은 DNS 설정을 구성할 수 있습니다.
+Azure DNS 영역을 사용하면 Virtual Machines, Load Balancer 및 App Services와 같은 다른 Azure 서비스와 통합할 수 있는 가용성과 확장성이 뛰어난 DNS 솔루션을 가질 수 있습니다.
+온프레미스 리소스와 함께 사용하여 통합되고 일관된 DNS 관리 환경을 제공할 수도 있습니다.
+Azure DNS 영역은 퍼블릭 및 프라이빗 DNS 영역을 모두 지원합니다.
+퍼블릭 DNS 영역은 도메인 이름을 인터넷을 통해 액세스할 수 있는 IP 주소에 매핑하는 데 사용되는 반면 프라이빗 DNS 영역은 도메인 이름을 가상 네트워크 내에서만 액세스할 수 있는 프라이빗 IP 주소에 매핑하는 데 사용됩니다.
+
+## 연관 리소스
+
+### 상위 리소스
+
+-   [**Resource Group**](https://docs.cstudio.app/docs/resource/azure/Base/ResourceGroup)
+
+## 리소스 설정 값
+
+-   `dns_a_record`
+
+    -   `ttl` : DNS Record의 Time To Live(초) - `0` ~ `2147483647`
+    -   `records` : IPv4 주소의 목록
+
+-   `dns_aaaa_record`
+
+    -   `ttl` : DNS Record의 Time To Live(초) - `0` ~ `2147483647`
+    -   `records` : IPv6 주소의 목록
+
+-   `dns_cname_record`
+
+    -   `ttl` : DNS Record의 Time To Live(초) - `0` ~ `2147483647`
+    -   `record` : 하위 도메인을 다른 레코드에 연결하기 위한 별칭
+
+-   `dns_ns_record`
+
+    -   `ttl` : DNS Record의 Time To Live(초) - `0` ~ `2147483647`
+    -   `records` : 이름 서버 레코드 목록
+
+-   `dns_ptr_record`
+
+    -   `ttl` : DNS Record의 Time To Live(초) - `0` ~ `2147483647`
+    -   `records` : 포인터 레코드 유형의 도메인 이름 목록
+
+-   `dns_txt_record`
+
+    -   `ttl` : DNS Record의 Time To Live(초) - `0` ~ `2147483647`
+    -   `records` : 텍스트 유형의 레코드 목록
+
+-   `tag` : 리소스를 카테고리로 분류하기 위한 태그 - 최대 512자, `key`:`value`
+
+---
+
+## 참고 자료
+
+-   [Azure DnsZone(Microsoft)](https://learn.microsoft.com/ko-kr/azure/dns/dns-overview)
+-   [Azure DnsZone 가격](https://azure.microsoft.com/en-us/pricing/details/dns/)
+-   [Azure DnsZone(Terraform)](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/dns_zone)

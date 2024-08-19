@@ -1,0 +1,50 @@
+---
+title: Instance
+sidebar_position: 0
+tags: [AWS, 리소스, Ec2, Instance]
+---
+
+<hr />
+<br />
+
+## 리소스 아이콘
+
+<img
+    src={
+        "https://cloudstudioblob.blob.core.windows.net/cloudstudio/awsImg/ec2-instance.png"
+    }
+/>
+
+## 리소스 개요
+
+Amazon Elastic Compute Cloud(Amazon EC2)는 Amazon Web Services(AWS) 클라우드에서 확장 가능 컴퓨팅 용량을 제공합니다. Amazon EC2를 사용하면 하드웨어에 선투자할 필요가 없어 더 빠르게 애플리케이션을 개발하고 배포할 수 있습니다. Amazon EC2를 사용하여 원하는 수의 가상 서버를 구축하고 보안 및 네트워킹을 구성하며 스토리지를 관리할 수 있습니다. Amazon EC2에서는 확장 또는 축소를 통해 요구 사항 변경 또는 사용량 스파이크를 처리할 수 있으므로 트래픽을 예측할 필요성이 줄어듭니다.
+
+## 연관 리소스
+
+### 상위 리소스
+
+-   [**Subnet**](https://docs.cstudio.app/docs/resource/aws/Vpc/Subnet)
+
+## 리소스 설정 값
+
+-   `ami` : 인스턴스를 실행하기 위해 필요한 정보를 갖고 있는 이미지(AWS에서 제공, 지원)
+-   `instance_type` : EC2 인스턴스의 type
+-   `included_subnet_name` : EC2 인스턴스를 배포할 Subnet의 이름
+-   `security_group_name` : EC2 인스턴스의 NIC에 지정할 Security Group의 이름
+-   `eip_enable` : EC2 인스턴스에 EIP를 사용할지 말지 설정 - `true`, `false`
+-   `eip_name` : EIP 이름
+-   `http_endpoint` : 메타데이터 서비스를 사용할 수 있는지 설정 - `enabled`, `disabled`
+-   `http_tokens` : 메타데이터 서비스에 세션 토큰이 필요한지 설정 - `required`, `optional`
+-   `root_volume_type` : Root Volume의 유형 - `gp2`, `gp3`, `io1`, `io2`, `sc1`, `st1`, `standard`
+-   `root_volume_size` : Root Volume의 Size (GiB)
+-   `ebs_block_device`
+    -   `volume_size` : EBS Volume의 Size (GiB)
+    -   `volume_type` : EBS Volume의 유형
+
+---
+
+## 참고 자료
+
+-   [Amazon Ec2(AWS)](https://docs.aws.amazon.com/ko_kr/AWSEC2/latest/UserGuide/concepts.html)
+-   [Amazon Ec2 가격(AWS)](https://aws.amazon.com/ko/ec2/pricing/)
+-   [Amazon Ec2(Terraform)](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ebs_default_kms_key)

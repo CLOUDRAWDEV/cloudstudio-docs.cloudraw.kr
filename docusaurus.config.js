@@ -17,8 +17,8 @@ const config = {
     organizationName: "cloudrawdev",
     projectName: "cloudstudio-docs",
     i18n: {
-        defaultLocale: "en",
-        locales: ["en"],
+        defaultLocale: "ko",
+        locales: ["ko", "en", "ja"],
     },
 
     presets: [
@@ -33,8 +33,8 @@ const config = {
                 },
                 blog: {
                     routeBasePath: "release",
-                    blogSidebarTitle: 'Release Note',
-                    blogSidebarCount: 'ALL',
+                    blogSidebarTitle: "Release Note",
+                    blogSidebarCount: "ALL",
                     path: "blog",
                 },
                 theme: {
@@ -72,7 +72,7 @@ const config = {
     ],
 
     themeConfig:
-    /** @type {import("@docusaurus/preset-classic").ThemeConfig} */
+        /** @type {import("@docusaurus/preset-classic").ThemeConfig} */
         ({
             navbar: {
                 title: "",
@@ -112,6 +112,10 @@ const config = {
                         label: "CloudStudio",
                         position: "right",
                         className: "btnTrial",
+                    },
+                    {
+                        type: "localeDropdown",
+                        position: "right",
                     },
                 ],
             },

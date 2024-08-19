@@ -1,0 +1,50 @@
+---
+title: Network Acl
+sidebar_position: 0
+tags: [Ncloud, 리소스, Security, NetworkAcl]
+---
+
+<hr />
+<br />
+
+## 리소스 아이콘
+
+<img
+    src={
+        "https://cloudstudioblob.blob.core.windows.net/cloudstudio/ncloudImg/security-network_acl.png"
+    }
+/>
+
+## 리소스 개요
+
+서브넷에 대한 네트워크 보안 관리를 할 수 있는 서비스입니다.
+
+## 연관 리소스
+
+### 상위 리소스
+
+-   [**Vpc**](https://docs.cstudio.app/docs/resource/ncloud/Networking/Vpc)
+
+## 리소스 설정 값
+
+-   `included_vpc_name` : ACL을 생성할 VPC 이름
+-   `nacl_description` : ACL에 대한 설명
+-   `inbound_rule`
+    -   `priority` : 인바운드 규칙 우선순위, 0 ~ 199
+    -   `protocol` : 인바운드 트래픽의 프로토콜 - `TCP`, `UDP`, `ICMP`
+    -   `rule_action` : 인바운드 트래픽의 프로토콜 - `ALLOW`, `DROP`
+    -   `ip_block` : 인바운드 트래픽 접근 소스, CDIR 형식의 IP 대역
+    -   `port_range` : 인바운드 규칙을 적용할 포트 범위, 1 ~ 65535의 범위
+-   `outbound_rule` :
+    -   `priority` : 아웃바운드 규칙 우선순위, 0 ~ 199
+    -   `protocol` : 아웃바운드 트래픽의 프로토콜 - `TCP`, `UDP`, `ICMP`
+    -   `rule_action` : 아웃바운드 트래픽의 프로토콜 - `ALLOW`, `DROP`
+    -   `ip_block` : 아웃바운드 트래픽 목적지, CDIR 형식의 IP 대역
+    -   `port_range` : 아웃바운드 규칙을 적용할 포트 범위, 1 ~ 65535의 범위(범위 설정시: 100-200)
+
+---
+
+## 참고 자료
+
+-   [Network ACL(Ncloud)](https://guide.ncloud-docs.com/docs/vpc-nacl-vpc)
+-   [ncloud_network_acl(Terraform)](https://registry.terraform.io/providers/NaverCloudPlatform/ncloud/latest/docs/resources/network_acl)

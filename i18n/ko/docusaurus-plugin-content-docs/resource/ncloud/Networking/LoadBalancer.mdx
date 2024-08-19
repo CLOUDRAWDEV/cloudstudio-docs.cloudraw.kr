@@ -1,0 +1,63 @@
+---
+title: Load Balancer
+sidebar_position: 0
+tags: [Ncloud, 리소스, Network, LoadBalancer]
+---
+
+<hr />
+<br />
+
+## 리소스 아이콘
+
+<img
+    src={
+        "https://cloudstudioblob.blob.core.windows.net/cloudstudio/ncloudImg/networking-load_balancer.png"
+    }
+/>
+
+## 리소스 개요
+
+서버의 성능과 부하량을 고려해 네트워크 트래픽을 다수의 서버로 분산해주는 장치입니다. 특정 서버에 발생한 부하를 분산해 서버 가용성, 응답 시간을 최적화함으로써 무정지 서비스를 제공할 수 있습니다.
+
+## 연관 리소스
+
+### 연결 리소스
+
+-   [**Server**](https://docs.cstudio.app/docs/resource/ncloud/Compute/Server)
+-   [**Auto Scaling**](https://docs.cstudio.app/docs/resource/ncloud/Compute/AutoScaling)
+-   [**Network Acl**](https://docs.cstudio.app/docs/resource/ncloud/Security/NetworkAcl)
+
+## 리소스 설정 값
+
+-   `network_type` : 네트워크 타임, 공용 혹은 사설 - `PUBLIC`, `PRIVATE`
+-   `type` : 생성할 로드 밸런서의 종류, 애플리케이션/네트워크/네트워크 프록시 - `NETWORK`, `NETWORK_PROXY`, `APPLICATION`
+-   `throughput_type` : 부하처리 성능, 초당 연결 수 3만/6만/9만 - `SMALL`, `MEDIUM`, `LARGE`
+-   `included_vpc_name` : 타겟 그룹을 생성할 VPC 이름
+-   `subnet_config`
+    -   `cidr`
+    -   `linked_nacl_name`
+    -   `zone`
+-   `target_group`
+    -   `protocol` : 트래픽을 라우팅에 적용할 프로토콜 타입 - `TCP`, `PROXY_TCP`, `HTTP`, `HTTPS`
+    -   `port` : 트래픽을 받는 포트 번호
+    -   `algorithm_type` : 로드 밸런싱에 사용할 알고리즘 타입, RR/SIPHS/LC - `RR`, `SIPHS`, `LC`, `MH`
+    -   `health_check_protocol` : 타겟 상태 확인에 사용할 프로토콜 - `TCP`, `HTTP`, `HTTPS`
+    -   `health_check_http_method` : 타겟 상태 확인 프로토콜이 HTTP/HTTPS인 경우 사용할 HTTP 메서드 - `HEAD`, `GET`
+    -   `health_check_port` : 타겟 상태 확인에 사용할 포트 번호
+    -   `health_check_cycle` : 타겟 싱테 확인 주기(초), 5 ~ 300의 범위
+    -   `health_check_up_threshold` : 정상 임계값, 비정상 상태의 타켓이 정상 상태가 되기까지 상태 확인 횟수
+    -   `health_check_down_threshold` : 실패 임계값, 정상 상태의 타켓이 비정상 상태가 되기까지 상태 확인 획수
+-   `listener`
+    -   `target_group_name` : 연결할 타겟 그룹 이름
+    -   `protocol` : 리스너가 동작할 프로토콜 타입, 애플리케이션-HTTP 혹은 HTTPS/네트워크-TCP/네트워크 프록시-TCP 혹은 TLS - `APPLICATION`, `HTTP`, `HTTPS`, `TCP`, `TLS`
+    -   `port` : 리스너가 바인드할 로드 밸런서의 포트 번호
+-   `target_group_attachment`
+    -   `target_group_name` : 연결할 타겟 그룹 이름
+    -   `linked_server_names` : 연결할 서버 이름 목록
+
+---
+
+## 참고 자료
+
+-   [Load Balancer(Ncloud)](https://www.ncloud.com/product/networking/loadBalancer)
+-   [ncloud_load_balancer(Terraform)](https://registry.terraform.io/providers/NaverCloudPlatform/ncloud/latest/docs/resources/load_balancer)

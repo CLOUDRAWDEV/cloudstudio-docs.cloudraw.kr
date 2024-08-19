@@ -1,0 +1,46 @@
+---
+title: Directory Service
+sidebar_position: 0
+tags: [AWS, 리소스, DirectoryService, DirectoryService]
+---
+
+<hr />
+<br />
+
+## 리소스 아이콘
+
+<img
+    src={
+        "https://cloudstudioblob.blob.core.windows.net/cloudstudio/awsImg/directory_service-directory_service.png"
+    }
+/>
+
+## 리소스 개요
+
+AWS Directory Service는 다른 AWS 서비스에서 Microsoft Active Directory(AD)를 사용할 수 있는 몇 가지 방법을 제공합니다. 디렉터리는 사용자, 그룹 및 디바이스에 대한 정보를 저장하고, 관리자는 이를 사용하여 정보 및 리소스에 대한 액세스를 관리합니다.AWS Directory Service는 클라우드에서 기존 Microsoft AD 또는 LDAP (Lightweight Directory Access Protocol) 인식 애플리케이션을 사용하려는 고객에게 다양한 디렉터리 선택 옵션을 제공합니다. 또한 사용자, 그룹, 디바이스 및 액세스 권한을 관리하기 위해 디렉터리가 필요한 개발자에게도 동일한 선택 옵션을 제공합니다.
+
+## 연관 리소스
+
+### 상위 리소스
+
+-   [**Subnet**](https://docs.cstudio.app/docs/resource/aws/Vpc/Subnet)
+
+### 연결 리소스
+
+-   [**Directory Service**](https://docs.cstudio.app/docs/resource/aws/DirectoryService/)
+
+## 리소스 설정 값
+
+-   `password` : 디렉토리 관리자 또는 커넥터 사용자의 비밀번호
+-   `type` : `SimpleAD`,`MicrosoftAD`
+-   `size` : 디렉토리의 크기 - `Small`,`Large`
+-   `included_vpc_name` : 디렉터리가 있는 VPC의 이름
+-   `included_subnet_names` : 디렉터리 서버의 서브넷 이름 (서브넷은 서로 다른 2개의 AZ에 있는 배포되어야 함)
+
+---
+
+## 참고 자료
+
+-   [AWS Directory Service(AWS)](https://docs.aws.amazon.com/ko_kr/directoryservice/latest/admin-guide/what_is.html)
+-   [AWS Direct Service 가격(AWS)](https://aws.amazon.com/ko/directoryservice/pricing/?nc=sn&loc=3)
+-   [AWS Direct Service(Terraform)](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/directory_service_conditional_forwarder)

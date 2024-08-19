@@ -1,0 +1,59 @@
+---
+title: Auto Scaling
+sidebar_position: 0
+tags: [Ncloud, 리소스, Compute, AutoScaling]
+---
+
+<hr />
+<br />
+
+## 리소스 아이콘
+
+<img
+    src={
+        "https://cloudstudioblob.blob.core.windows.net/cloudstudio/ncloudImg/compute-auto_scaling.png"
+    }
+/>
+
+## 리소스 개요
+
+사용자가 정한 일정이나 모니터링 결과에 따라 가상 서버의 수를 자동으로 증감하여, 수요 변화에 탄력적으로 대응하는 서비스입니다. 미리 지정해둔 임계치를 기준으로 서버를 모니터링하면서 서버 수를 자동으로 조절하여 서비스를 안정적으로 운영할 수 있습니다.
+
+## 연관 리소스
+
+### 상위 리소스
+
+-   [**Subnet**](https://docs.cstudio.app/docs/resource/ncloud/Networking/Subnet)
+
+### 연결 리소스
+
+-   [**Network Access Control Group**](https://docs.cstudio.app/docs/resource/ncloud/Security/AccessControlGroupp)
+
+## 리소스 설정 값
+
+-   `server_image_product_code` : 사용할 운영체제 이미지 코드(CNTOS:CentOS, UBNTU:Ubuntu, WND:Windows / MYSQL,MARIA:Database / SVR:Server, EN:English Edition)
+-   `server_product_code` : 서버의 하드웨어 구성을 위한 코드(HICPU:High CPU, STAND:Standard, HIMEM:High Memory / C 코어수,M 메모리(GB))
+-   `login_key_name` : 암호화를 위한 공용 로그인 키 이름
+-   `init_script`
+    -   `content` : 서버가 생성될 때 자동으로 실행할 스크립트 내용
+-   `group`
+    -   `min_size` : Auto scaling 그룹의 최소 사이즈, 0 ~ 30의 범위
+    -   `max_size` : Auto scaling 그룹의 최대 사이즈, 0 ~ 30의 범위
+    -   `linked_acg_names` : uto scaling에 적용할 ACG의 이름 목록
+    -   `included_subnet_name` : 서버 생성을 위한 서브넷 이름
+-   `policy`
+    -   `adjustment_type_code` : caling 설정 코드, 중감변경(CHANG)/비율변경(PRCNT)/고정값(EXACT) - `CHANG`, `PRCNT`, `EXACT`
+    -   `scaling_adjustment` : Scaling 설정 값
+-   `schedule`
+    -   `min_size` : Auto scaling 그룹의 최소 사이즈
+    -   `max_size` : Auto scaling 그룹의 최대 사이즈
+    -   `desired_capacity` : Auto scaling 그룹의 기대 사이즈
+    -   `start_time` : 일정의 시작 날짜 및 시간
+    -   `end_time` : 일정의 종료 날짜 및 시간
+
+---
+
+## 참고 자료
+
+-   [Auto Scaling(Ncloud)](https://www.ncloud.com/product/compute/autoScaling)
+-   [ncloud_auto_scaling_group(Terraform)](https://registry.terraform.io/providers/NaverCloudPlatform/ncloud/latest/docs/resources/auto_scaling_group)
