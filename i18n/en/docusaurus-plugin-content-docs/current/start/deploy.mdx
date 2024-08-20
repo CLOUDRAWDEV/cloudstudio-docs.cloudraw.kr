@@ -1,5 +1,5 @@
 ---
-title: 배포관리
+title: Deploy
 sidebar_position: 8
 tags: [deploy, 배포점검, 배포, 점검결과, 자격증명, 시작하기]
 last_update:
@@ -22,16 +22,18 @@ import deploy07 from "/docs/start/img/deploy07.png"
 <hr />
 <br />
 
-클라우드 스튜디오는 단순히 시각적인 인프라 아키텍처를 제공하는 것을 넘어서, 캔버스에 그린 인프라를 `실제 CSP에 배포할 수 있는 기능`을 제공합니다. 이를 통해 사용자들은 쉽게 클라우드 인프라를 구축할 수 있습니다.
+Cloud Studio goes beyond just providing visual infrastructure architecture,it also offers the capability to
+`deploy the infrastructure drawn on the canvas to an actual CSP`. This allows users to easily build their cloud infrastructure.
 
 <p>&nbsp;</p>
 
-## 배포 점검 {#deploy-test}
+## Deploy Validation Check {#deploy-test}
 
-IaC의 문법적 오류나 설정이 올바르게 되었는지 가상으로 검증하는 단계입니다. 실제 CSP에 배포되지 않습니다.
-(`--dry-run` option과 같은 역할을 합니다.)
+This is a step where the syntax and settings of IaC are virtually validated to ensure correctness.
+It does not involve deployment to an actual CSP.
+(It functions similarly to the --dry-run option.)
 
-1. 배포테스트를 진행하기 위해서 `배포관리 > 유효성 검사`를 클릭합니다.
+1. To perform a deployment test, click `Deploy Validation Check > Run Deploy Validation Check`.
 
 <div className={styles.imgWrap}>
     <img src={deploy03} width="200px" alt="배포이미지" />
@@ -39,8 +41,8 @@ IaC의 문법적 오류나 설정이 올바르게 되었는지 가상으로 검�
 
 <br />
 
-2. `자격증명`을 선택합니다.
-3. `유효성 검사하기` 버튼을 클릭합니다.
+2. Select `Credential`.
+3. Click the `Apply Validation Check` button.
 
 <div className={styles.imgWrap}>
     <img src={deploy02} alt="배포이미지" />
@@ -56,7 +58,8 @@ IaC의 문법적 오류나 설정이 올바르게 되었는지 가상으로 검�
 
 :::info
 
-배포테스트를 진행하기 전 `자격증명`을 `필수적으로 등록`해야 합니다. 자격증명을 등록하는 방법은 [여기](/docs/credential/createCredential) 를 참고해주세요.
+Before running a deployment test, you `must register` a `credential`.
+For instructions on how to register a credential, please refer to [this guide](/docs/credential/createCredential).
 
 :::
 
@@ -80,11 +83,12 @@ IaC의 문법적 오류나 설정이 올바르게 되었는지 가상으로 검�
 <p>&nbsp;</p>
 -->
 
-## 배포이력 {#tedeployst-history}
+## Deploy History {#tedeployst-history}
 
-배포이력은 `실제 배포된 인프라에 대한 이력`을 보여줍니다. DEV(개발) / TEST(테스트) / PROD(운영) 각 탭마다의 `최근 배포 이력`을 확인할 수 있습니다.
+Deploy History shows records of `actually deployed infrastructure`.
+You can view the `latest deployment history` under each tab: DEV (Development) / TEST (Testing) / PROD (Production).
 
-1. 배포 이력을 확인하기 위해서 `배포 > 배포이력`을 클릭합니다.
+1. To view the deployment history, click `Deploy > Deploy History`.
 
 <div className={styles.imgWrap}>
     <img src={deploy01} width="500px" alt="배포이미지" />
@@ -92,4 +96,4 @@ IaC의 문법적 오류나 설정이 올바르게 되었는지 가상으로 검�
 
 <br />
 
-2. 최근 배포 이력을 확인합니다. 이력을 삭제하려면 원하는 이력을 선택한 후 `삭제하기 버튼`을 클릭합니다.
+2. Review the most recent deployment history. To delete a record, select the desired history and click the `Delete` button.
