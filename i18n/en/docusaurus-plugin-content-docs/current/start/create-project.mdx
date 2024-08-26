@@ -1,5 +1,5 @@
 ---
-title: 새 프로젝트 생성하기
+title: Create Project
 sidebar_position: 7
 tags: [project, 프로젝트 생성, 빈 프로젝트, 템플릿, 가져오기, import, 시작하기]
 ---
@@ -20,32 +20,32 @@ import import04 from "/docs/start/img/import.gif"
 <hr />
 <br />
 
-클라우드 스튜디오에서는 하나의 캔버스를 📄 프로젝트라고 부릅니다. 프로젝트를
-생성하려면 프로젝트를 관리할 수 있는 📁 폴더가 먼저 생성되어 있어야 합니다.
+In Cloud Studio, a canvas is referred to 📄 as a project. To create a project,
+📁 you must first create a folder to manage it.
 
-폴더를 생성하는 방법은 [여기](/docs/start/create-folder)를 참고해 주세요.
-
-<p>&nbsp;</p>
-
-## 프로젝트를 생성하는 세 가지 방법
-
-클라우드 스튜디오 프로젝트를 생성하는 방법은 아래의 `세 가지`가 있습니다.
-
--   [제공하는 템플릿으로 생성하기](#create-template)
--   [빈 프로젝트 생성하기](#create-empty)
--   [기존 인프라 가져오기(import)](#create-import)
-
-**템플릿을 사용**하면 Landing Zone, MSA, Load Balancer, Ubuntu Virtual Machine, CDN 등 원하는 카테고리의 클라우드 인프라를 빠르게 생성할 수 있습니다. 템플릿에 대한 자세한 설명은 <Link to= "/docs/category/best-practice">여기</Link>를 참고해 주세요.
-
-**템플릿 없이 직접 캔버스를 구성**하고 싶다면 빈 프로젝트 생성하기를 사용합니다. 빈 캔버스에 원하는 리소스를 Drag&Drop하여 클라우드 인프라를 구성합니다.
-
-**기존 인프라를 캔버스로 가져오고 싶다면** 캔버스에 접속한 후 `파일 > 불러오기`를 클릭하여 인프라를 불러옵니다.
+Please refer to [this guide](/docs/start/create-folder) for instructions on how to create a folder.
 
 <p>&nbsp;</p>
 
-### 제공하는 템플릿으로 생성하기 {#create-template}
+## Three methods to create a project
 
-1.  템플릿 페이지에서 `프로젝트 생성하기` 버튼을 클릭하여 프로젝트 생성 팝업을 불러옵니다.
+There are three methods to create a project in Cloud Studio:
+
+-   [Create from a Template](#create-template)
+-   [Create an Empty Project](#create-empty)
+-   [Import Existing Infrastructure(import)](#create-import)
+
+**Using a template** allows you to quickly create cloud infrastructure in categories like Landing Zone, MSA, Load Balancer, Ubuntu Virtual Machine, CDN. For more details about templates please refer to<Link to= "/docs/category/best-practice">this guide</Link>.
+
+**If you prefer to configure the canvas yourself without using a template**you can create an empty project. You can then build your cloud infrastructure by dragging and dropping the resources you want onto the blank canvas.
+
+**If you want to import existing infrastructure into the canvas** access the canvas and click File > Import to load the infrastructure.
+
+<p>&nbsp;</p>
+
+### Create from a Template {#create-template}
+
+1.  Click the `Create Project` button on the templates page to open the project creation popup.
 
 <div className={styles.imgWrap}>
     <img src={createProject05} alt="이미지" />
@@ -53,11 +53,11 @@ import import04 from "/docs/start/img/import.gif"
 
 <br />
 
-2.  `프로젝트명`을 작성합니다. 프로젝트명은 다음 `조건`을 만족해야 합니다.
+2. Enter the `Project Name`. The project name must meet the following criteria:
 
-> -   영문, 한글, 숫자만 허용
-> -   공백 없이
-> -   2 ~ 20 자리
+> -   English, Korean, Numbers allowed
+> -   Without Space
+> -   2 to 12 digits
 
 <div className={styles.imgWrap}>
     <img src={createProject01} alt="프로젝트 팝업 이미지" width={800} />
@@ -65,7 +65,7 @@ import import04 from "/docs/start/img/import.gif"
 
 <br />
 
-3. 프로젝트를 담을 `폴더`를 선택합니다.
+3. Select a `Folder` to contain the project.
 
 <div className={styles.imgWrap}>
     <img src={createProject02} alt="프로젝트 폴더 이미지" />
@@ -73,7 +73,7 @@ import import04 from "/docs/start/img/import.gif"
 
 <br />
 
-4.  프로젝트에 대한 `설명`을 입력합니다. 최대 100글자까지 입력 가능합니다.
+4. Enter a `Description` for the project. You can input up to 100 characters.
 
 <div className={styles.imgWrap}>
     <img src={createProject03} alt="프로젝트 폴더 이미지" />
@@ -81,7 +81,7 @@ import import04 from "/docs/start/img/import.gif"
 
 <br />
 
-5.  `CSP(공급자)`와 `카테고리`를 선택합니다.
+5.  Select the `CSP(Cloud Service Provider)` and `Category`.
 
 <div className={styles.imgWrap}>
     <img src={createProject04} alt="프로젝트 폴더 이미지" width={800} />
@@ -90,31 +90,31 @@ import import04 from "/docs/start/img/import.gif"
 <br />
 
 <details>
-    <summary>CSP란?</summary>
+    <summary>What is a CSP?</summary>
     <h4>
-        Cloud Service Provider의 약자로, 공공 클라우드 인프라, 플랫폼 서비스를
-        제공하는 업체를 의미합니다. 클라우드 스튜디오에서 제공하는 CSP는
-        Micosoft의 Azure, Naver의 NAVER CLOUD PLATFORM, Amazon의 Amazon Web
-        Services 입니다.
+        CSP stands for Cloud Service Provider, which refers to companies that
+        provide public cloud infrastructure and platform services. The CSPs
+        available in Cloud Studio include Microsoft Azure, Naver CLOUD PLATFORM,
+        and Amazon Web Services.
     </h4>
 </details>
 
 <br />
 
-6.  `프로젝트 생성하기` 버튼을 클릭합니다.
+6.  Click the `Create Project` button.
 
 :::info
 
-제공하는 템플릿에 대한 자세한 설명은 <Link to= "/docs/category/best-practice">여기</Link>를 참고해 주세요.
+For detailed information about the available templates, please refer to <Link to= "/docs/category/best-practice">this page</Link>.
 
 :::
 
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 
-### 빈 프로젝트 생성하기 {#create-empty}
+### Create an Empty Template{#create-empty}
 
-1.  내 템플릿 페이지에서 `프로젝트 생성하기` 버튼을 클릭하여 프로젝트 생성 팝업을 불러옵니다.
+1.  On the My Templates page, click the `Create Project` button to open the project creation pop-up.
 
 <div className={styles.imgWrap}>
     <img src={createProject05} alt="이미지" />
@@ -122,11 +122,11 @@ import import04 from "/docs/start/img/import.gif"
 
 <br />
 
-2.  `프로젝트명`을 작성합니다. 프로젝트명은 다음 `조건`을 만족해야 합니다.
+2.  Write a `Project Name`. The folder name needs to satisfy the following conditions.
 
-> -   영문, 한글, 숫자만 허용
-> -   공백 없이
-> -   2 ~ 20 자리
+> -   English, Korean, Numbers allowed
+> -   Without Space
+> -   2 to 12 digits
 
 <div className={styles.imgWrap}>
     <img src={createProject07} alt="프로젝트 팝업 이미지" width={800} />
@@ -134,7 +134,7 @@ import import04 from "/docs/start/img/import.gif"
 
 <br />
 
-3. 프로젝트를 담을 `폴더`를 선택합니다.
+3. Select a Folder to store the project in.
 
 <div className={styles.imgWrap}>
     <img src={createProject02} alt="프로젝트 폴더 이미지" />
@@ -142,7 +142,7 @@ import import04 from "/docs/start/img/import.gif"
 
 <br />
 
-4.  프로젝트에 대한 `설명`을 입력합니다. 최대 100글자까지 입력 가능합니다.
+4. Enter a `description` for the project. You can input up to 100 characters.
 
 <div className={styles.imgWrap}>
     <img src={createProject03} alt="프로젝트 폴더 이미지" />
@@ -150,7 +150,7 @@ import import04 from "/docs/start/img/import.gif"
 
 <br />
 
-5.  `프로젝트 생성하기` 버튼을 클릭합니다.
+5. Click the `Create Project` button.
 
 <div className={styles.imgWrap}>
     <img src={createProject06} alt="이미지" />
@@ -158,16 +158,17 @@ import import04 from "/docs/start/img/import.gif"
 
 <!--:::info
 
-빈 프로젝트를 생성할 때는 `템플릿을 선택할 필요가 없습니다.` 템플릿을 선택한다고 해도 빈 프로젝트 생성하기 버튼을 누르는 순간 선택한 템플릿 정보가 사라집니다.
-
+When creating an empty project, `you do not need to select a template`. Even if you choose a template,
+the selected template information will be discarded once you click the Create Empty Project button.
 :::-->
 
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 
-### 기존 인프라 불러오기(Import) {#create-import}
+### Import Existing Infrastructure {#create-import}
 
-기존 인프라를 불러오기 위해선 캔버스에 접속해야 합니다. 먼저 `빈 프로젝트`를 생성합니다. 빈 프로젝트를 생성하는 방법은 [여기](#create-empty)를 참고해주세요.
+To import existing infrastructure, you need to access the canvas and first create a blank project.
+For instructions on creating a blank project, please refer to [this guide](#create-empty).
 
 <br />
 
@@ -177,16 +178,16 @@ import import04 from "/docs/start/img/import.gif"
 
 <br />
 
-1.  `빈 프로젝트`를 클릭하여 캔버스 페이지에 접속합니다.
-2.  `파일 > 불러오기`를 클릭합니다.
-3.  팝업창이 뜨면 등록된 자격증명 중 원하는 `자격증명을 선택`합니다.
-4.  `리소스 조회` 버튼을 클릭한 후 리소스그룹 목록에서 원하는 `리소스 그룹을 선택`합니다.
-5.  `불러오기` 버튼을 클릭하여 기존 인프라 불러오기를 완료합니다.
+1.  Click `Empty Template` to access the canvas page.
+2.  Click `File > Import`.
+3.  When the pop-up window appears, select the desired credential from the list of registered credentials.
+4.  Click the `Search Resource` button, then choose the desired `Selected resources` from the list.
+5.  Click the `Import` button to complete the import of the existing infrastructure.
 
 <p>&nbsp;</p>
 
 :::caution
 
-인프라를 불러오기 위해서는 자격증명이 필수적으로 등록되어 있어야 합니다.
+To import the infrastructure, a credential must be registered.
 
 :::

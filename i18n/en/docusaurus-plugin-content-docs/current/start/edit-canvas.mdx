@@ -1,5 +1,5 @@
 ---
-title: 캔버스 편집하기
+title: Edit Canvas
 sidebar_position: 6
 tags: [캔버스, 툴박스, 리소스리스트, 오류, 캔버스 편집, 그리기, 시작하기]
 last_update:
@@ -30,18 +30,18 @@ import tools from "../start/img/tools.png"
 <hr />
 <br />
 
-캔버스는 리소스를 `Drag & Drop` 하여 클라우드 인프라를 그리고 버전을 관리하고 배포까지 할 수 있는 <highlight color="#206FD6">클라우드 스튜디오의 핵심 서비스</highlight>입니다.
-캔버스로 구성한 인프라는 단순히 시각적 아키텍처로 사용할 수도 있고 원하는 CSP 사에 직접 배포까지 할 수 있습니다.
+Canvas is a <highlight color="#206FD6">core service of the cloud studio</highlight> that allows you to design cloud infrastructure by `Drag & Drop` resources, manage versions, and even deploy them.
+The infrastructure configured with Canvas can be used as a simple visual architecture, or you can directly deploy it to your preferred CSP if desired.
 
-✂️ 자유롭게 캔버스를 편집해보세요!
+✂️ Enjoy the freedom to edit the Canvas!
 
 <p>&nbsp;</p>
 
-## 리소스 Drag & Drop {#drag-drop}
+## Resource Drag & Drop {#drag-drop}
 
-`Drag & Drop`은 캔버스를 구성할 수 있는 가장 단순한 기능입니다.
-좌측 `리소스 리스트`에서 원하는 리소스를 끌어다 캔버스에 Drag & Drop 해보세요!
-서로 연결될 수 없는 리소스들은 빨간선과 함께 튕깁니다.
+`Drag & Drop` is the simplest way to build your Canvas.
+Drag and drop the desired resource from the left `Resource List` onto the Canvas!
+If the resources cannot be connected, they will bounce back with a red line.
 
 <div className={styles.imgWrap}>
     <img src={dragDrop} alt="드래그앤드롭 이미지" width={800} />
@@ -51,16 +51,16 @@ import tools from "../start/img/tools.png"
 
 :::info
 
-`리소스 리스트`는 캔버스 좌측에 있는 리소스들을 모아놓은 패널입니다.
+`Resource list` is a panel that gathers resources located on the left side of the canvas.
 
 :::
 
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 
-## 리소스 연결하기 {#resource-connect}
+## Connecting Resources {#resource-connect}
 
-캔버스에 Drag & Drop 한 리소스들을 연결 가능한 리소스들끼리 선으로 연결시켜줍니다.
+Connects resources on the canvas with lines, linking those that can be connected via Drag & Drop.
 
 <div className={styles.imgWrap}>
     <img src={lineConnection} alt="리소스 연결 이미지" width={800} />
@@ -69,25 +69,25 @@ import tools from "../start/img/tools.png"
 <br />
 <br />
 
-### 리소스 유형
+### Resource type
 
-리소스는 크게 아래의 `네 가지` 유형으로 나눠집니다. 아래의 리소스 목록을 참고하여 캔버스 리소스들을 연결시켜줍니다.
+Resources are categorized into the `four types` listed below. Refer to the resource list below to connect the resources on the canvas
 
-| 이미지                                            | 이름   | 설명                                                   |
-| ------------------------------------------------- | ------ | ------------------------------------------------------ |
-| <img width="40px" src={ basic } alt="이미지" />   | 기본형 | 그룹 안에 속할 수 있는 리소스들을 보여줍니다.          |
-| <img width="40px" src={ connect } alt="이미지" /> | 연결형 | 해당 리소스에 연결될 수 있는 리소스 목록을 보여줍니다. |
-| <img width="40px" src={ group } alt="이미지" />   | 그룹형 | 해당 그룹에 속할 수 있는 리소스 목록을 보여줍니다.     |
-| <img width="40px" src={ tools } alt="이미지" />   | Tools  | 캔버스 툴 목록을 보여줍니다.                           |
+| Image                                             | Name       | Description                                                           |
+| ------------------------------------------------- | ---------- | --------------------------------------------------------------------- |
+| <img width="40px" src={ basic } alt="이미지" />   | Basic      | Display the resources that can belong to the group.                   |
+| <img width="40px" src={ connect } alt="이미지" /> | Connecting | Display the list of resources that can be connected to this resource. |
+| <img width="40px" src={ group } alt="이미지" />   | Group      | Display the list of resources that can belong to the group.           |
+| <img width="40px" src={ tools } alt="이미지" />   | Tools      | Display the list of canvas tools                                      |
 
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 
-## 리소스 옵션 편집 {#option-edit}
+## Edit Resource Options{#option-edit}
 
-리소스를 `더블 클릭`하여 리소스 설정값을 변경할 수 있는 `편집창`을 열어줍니다.
-`자세히 보기 아이콘`을 클릭하여 해당 리소스에 대한 설명을 확인할 수 있습니다.
-❓ `물음표 아이콘`에 마우스를 가져다 대면 각 옵션에 대한 설명을 확인할 수 있습니다. 설명을 참고하여 원하는 값들을 설정해 줍니다.
+`Double-click` the resource to open the Edit Window where you can change its settings.
+You can view the resource description by clicking the `Read More icon`.
+❓ Hover over the `Question Icon` to view descriptions for each option. Use these descriptions to set the values as desired.
 
 <div className={styles.imgWrap}>
     <img src={edit} alt="옵션 편집 이미지" width={800} />
@@ -96,11 +96,11 @@ import tools from "../start/img/tools.png"
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 
-## 오류 수정하기 {#error-correction}
+## Fix the error {#error-correction}
 
-🔴 빨간 점은 해당 리소스에 오류가 있다는 표시입니다. <highlight color="#FF7272">오류가 있으면 캔버스를 저장 및 배포할 수 없습니다.</highlight>
-오류를 해결하기 위해 캔버스에서 오류가 난 리소스를 `더블 클릭`하여 캔버스 오류창을 열어줍니다.
-캔버스 오류창에서 수정하려는 특정 오류를 더블 클릭하면 오류가 난 곳으로 이동합니다. 오류 원인을 참고하여 오류들을 수정합니다.
+🔴 A red dot indicates that there is an error with the resource. <highlight color="#FF7272">If there are errors, you cannot save or distribute the canvas.</highlight>
+`Double-click` the resource with the error to open the Canvas Error Window.
+In the Canvas Error Window, double-click the specific error to navigate to the error location. Refer to the cause of the error to make the necessary corrections.
 
 <div className={styles.imgWrap}>
     <img src={error} alt="오류 수정 이미지" width={800} />
@@ -108,27 +108,29 @@ import tools from "../start/img/tools.png"
 
 <p>&nbsp;</p>
 
-### 오류의 종류
+### Error Types
 
-| 종류  | 설명                                                  |
-| ----- | ----------------------------------------------------- |
-| value | 입력값이 잘못된 경우 발생하는 오류                    |
-| group | 어떠한 그룹에 속해있지 않은 경우 발생하는 오류        |
-| line  | 필요한 리소스가 연결되어 있지 않은 경우 발생하는 오류 |
+| Type  | Description                                             |
+| ----- | ------------------------------------------------------- | --- |
+| value | Errors caused by incorrect input values                 |
+| group | Errors for ungrouped resources                          |     |
+| line  | Errors due to missing connections to required resources |     |
 
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 
-## 툴 박스 사용법 {#toolbox}
+## How to Use the Toolbox
 
-상단에 위치한 툴 박스는 캔버스를 꾸밀 수 있는 다양한 기능을 제공합니다.
+{#toolbox}
 
-| 이미지                                                       | 동작          | 기능                                                   |
-| ------------------------------------------------------------ | ------------- | ------------------------------------------------------ |
-| <img width="40px" src={ undo } alt="실행 취소 이미지" />     | 실행 취소     | 한 칸 이전으로 되돌립니다.                             |
-| <img width="40px" src={ redo } alt="다시 하기 이미지" />     | 다시 하기     | 한 칸 앞으로 돌아갑니다.                               |
-| <img width="40px" src={ front } alt="이미지" />              | 뒤로 보내기   | 두 리소스가 겹쳤을 때 선택한 리소스를 뒤로 보냅니다.   |
-| <img width="40px" src={ back } alt="이미지" />               | 앞으로 보내기 | 두 리소스가 겹쳤을 때 선택한 리소스를 앞으로 보냅니다. |
-| <img width="40px" src={ list } alt="리소스 리스트 이미지" /> | 리소스 리스트 | 리소스 리스트를 껐다 켜는 버튼입니다.                  |
-| <img width="100px" src={ ratio } alt="화면 비율 이미지" />   | 화면 비율     | 캔버스 화면비율을 조정합니다                           |
-| <img width="100px" src={ grid } alt="그리드 이미지" />       | 그리드        | 캔버스 그리드를 해제할 수 있습니다.                    |
+The toolbox at the top offers various functions for customizing the canvas.
+
+| Image                                                        | Action         | Function                                                             |
+| ------------------------------------------------------------ | -------------- | -------------------------------------------------------------------- |
+| <img width="40px" src={ undo } alt="실행 취소 이미지" />     | Undo           | Reverts the action to the previous step.                             |
+| <img width="40px" src={ redo } alt="다시 하기 이미지" />     | Redo           | Moves forward one step.                                              |
+| <img width="40px" src={ front } alt="이미지" />              | Send Backward  | Moves the selected resource behind other overlapping resources.      |
+| <img width="40px" src={ back } alt="이미지" />               | Bring Forward  | Moves the selected resource in front of other overlapping resources. |
+| <img width="40px" src={ list } alt="리소스 리스트 이미지" /> | Resource Group | A button to toggle the visibility of the resource list.              |
+| <img width="100px" src={ ratio } alt="화면 비율 이미지" />   | Ratio          | Adjusts the canvas aspect ratio.                                     |
+| <img width="100px" src={ grid } alt="그리드 이미지" />       | Show Grid      | Toggle the canvas grid on or off.                                    |
