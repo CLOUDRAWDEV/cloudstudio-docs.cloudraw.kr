@@ -1,7 +1,16 @@
 ---
-title: 새 프로젝트 생성하기
+title: 新しいプロジェクトを生成する
 sidebar_position: 7
-tags: [project, 프로젝트 생성, 빈 프로젝트, 템플릿, 가져오기, import, 시작하기]
+tags:
+    [
+        project,
+        プロジェクトの生成,
+        空のプロジェクト,
+        テンプレート,
+        インポート,
+        import,
+        始めに,
+    ]
 ---
 
 import styles from "/src/scss/_markdown.module.scss"
@@ -12,40 +21,37 @@ import createProject04 from "../start/img/create-project-04.png"
 import createProject05 from "../start/img/create-project-05.png"
 import createProject06 from "../start/img/create-project-06.png"
 import createProject07 from "../start/img/create-project-07.png"
-import import01 from "@site/static/img/import-01.png"
-import import02 from "@site/static/img/import-02.png"
-import import03 from "@site/static/img/import-03.png"
-import import04 from "/docs/start/img/import.gif"
+import import04 from "../start/img/import04.gif"
 
 <hr />
 <br />
 
-클라우드 스튜디오에서는 하나의 캔버스를 📄 프로젝트라고 부릅니다. 프로젝트를
-생성하려면 프로젝트를 관리할 수 있는 📁 폴더가 먼저 생성되어 있어야 합니다.
+CloudStudio では 1 つのキャンバスを 📄 プロジェクトと呼びます。 プロジェクトを
+生成するにはプロジェクトを管理できる 📁 フォルダーが先に生成れている必要があります。
 
-폴더를 생성하는 방법은 [여기](/docs/start/create-folder)를 참고해 주세요.
-
-<p>&nbsp;</p>
-
-## 프로젝트를 생성하는 세 가지 방법
-
-클라우드 스튜디오 프로젝트를 생성하는 방법은 아래의 `세 가지`가 있습니다.
-
--   [제공하는 템플릿으로 생성하기](#create-template)
--   [빈 프로젝트 생성하기](#create-empty)
--   [기존 인프라 가져오기(import)](#create-import)
-
-**템플릿을 사용**하면 Landing Zone, MSA, Load Balancer, Ubuntu Virtual Machine, CDN 등 원하는 카테고리의 클라우드 인프라를 빠르게 생성할 수 있습니다. 템플릿에 대한 자세한 설명은 <Link to= "/docs/category/best-practice">여기</Link>를 참고해 주세요.
-
-**템플릿 없이 직접 캔버스를 구성**하고 싶다면 빈 프로젝트 생성하기를 사용합니다. 빈 캔버스에 원하는 리소스를 Drag&Drop하여 클라우드 인프라를 구성합니다.
-
-**기존 인프라를 캔버스로 가져오고 싶다면** 캔버스에 접속한 후 `파일 > 불러오기`를 클릭하여 인프라를 불러옵니다.
+フォルダを生成する方法は [こちら](/docs/start/create-folder)を参考にしてください。
 
 <p>&nbsp;</p>
 
-### 제공하는 템플릿으로 생성하기 {#create-template}
+## プロジェクトを生成する 3 つの方法
 
-1.  템플릿 페이지에서 `프로젝트 생성하기` 버튼을 클릭하여 프로젝트 생성 팝업을 불러옵니다.
+CloudStudio プロジェクトを生成する方法は以下の`3つ`があります。
+
+-   [提供するテンプレートで生成する](#create-template)
+-   [空のプロジェクトを生成する](#create-empty)
+-   [既存のインフラストラクチャのインポート(import)](#create-import)
+
+**テンプレートを使用**すると Landing Zone, MSA, Load Balancer, Ubuntu Virtual Machine, CDN など希望するカテゴリのクラウドインフラを素早く生成できます。テンプレートについての詳しい説明は<Link to= "/docs/category/best-practice">こちら</Link>を参考にしてください。
+
+**テンプレートなしで自分でキャンバスを構成**したい場合は空のプロジェクトを生成するを使用します。空のキャンバスに必要なリソースを Drag&Drop してクラウドインフラストラクチャを構成します。
+
+**既存のインフラストラクチャをキャンバスにインポートしたい場合は**キャンバスに接続し、`ファイル > インポート`をクリックしてインフラストラクチャをインポートします。
+
+<p>&nbsp;</p>
+
+### 提供するテンプレートで生成する {#create-template}
+
+1.  テンプレートページで`プロジェクトを生成する`ボタンをクリックして、プロジェクト生成ポップアップを読み込みます。
 
 <div className={styles.imgWrap}>
     <img src={createProject05} alt="이미지" />
@@ -53,11 +59,11 @@ import import04 from "/docs/start/img/import.gif"
 
 <br />
 
-2.  `프로젝트명`을 작성합니다. 프로젝트명은 다음 `조건`을 만족해야 합니다.
+2.  `プロジェクト名`を作成します。プロジェクト名は、次の`条件`を満たす必要があります。
 
-> -   영문, 한글, 숫자만 허용
-> -   공백 없이
-> -   2 ~ 20 자리
+> -   英語、ハングル、数字のみ許可
+> -   空白なしで
+> -   2 ~ 20 桁
 
 <div className={styles.imgWrap}>
     <img src={createProject01} alt="프로젝트 팝업 이미지" width={800} />
@@ -65,7 +71,7 @@ import import04 from "/docs/start/img/import.gif"
 
 <br />
 
-3. 프로젝트를 담을 `폴더`를 선택합니다.
+3. プロジェクトを保存する`フォルダ`を選択します。
 
 <div className={styles.imgWrap}>
     <img src={createProject02} alt="프로젝트 폴더 이미지" />
@@ -73,7 +79,7 @@ import import04 from "/docs/start/img/import.gif"
 
 <br />
 
-4.  프로젝트에 대한 `설명`을 입력합니다. 최대 100글자까지 입력 가능합니다.
+4.  プロジェクトの説明を入力します。 最大 100 文字まで入力できます。
 
 <div className={styles.imgWrap}>
     <img src={createProject03} alt="프로젝트 폴더 이미지" />
@@ -81,7 +87,7 @@ import import04 from "/docs/start/img/import.gif"
 
 <br />
 
-5.  `CSP(공급자)`와 `카테고리`를 선택합니다.
+5.  `CSP(プロバイダー)`と`カテゴリ`を選択します。
 
 <div className={styles.imgWrap}>
     <img src={createProject04} alt="프로젝트 폴더 이미지" width={800} />
@@ -90,31 +96,31 @@ import import04 from "/docs/start/img/import.gif"
 <br />
 
 <details>
-    <summary>CSP란?</summary>
+    <summary>CSPとは?</summary>
     <h4>
-        Cloud Service Provider의 약자로, 공공 클라우드 인프라, 플랫폼 서비스를
-        제공하는 업체를 의미합니다. 클라우드 스튜디오에서 제공하는 CSP는
-        Micosoft의 Azure, Naver의 NAVER CLOUD PLATFORM, Amazon의 Amazon Web
-        Services 입니다.
+        Cloud Service
+        Providerの略で,公共クラウドインフラ,プラットフォームサービスを提供する業者を意味します。
+        CloudStudioで提供するCSPはMicosoftのAzure, NaverのNAVER CLOUD PLATFORM,
+        AmazonのAmazon Web Servicesです。
     </h4>
 </details>
 
 <br />
 
-6.  `프로젝트 생성하기` 버튼을 클릭합니다.
+6.  `プロジェクトを生成する`ボタンをクリックします。
 
 :::info
 
-제공하는 템플릿에 대한 자세한 설명은 <Link to= "/docs/category/best-practice">여기</Link>를 참고해 주세요.
+提供するテンプレートについての詳しい説明は <Link to= "/docs/category/best-practice">こちら</Link>を参考にしてください。
 
 :::
 
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 
-### 빈 프로젝트 생성하기 {#create-empty}
+### 空のプロジェクトを生成する {#create-empty}
 
-1.  내 템플릿 페이지에서 `프로젝트 생성하기` 버튼을 클릭하여 프로젝트 생성 팝업을 불러옵니다.
+1.  テンプレートページで`プロジェクトを生成する`ボタンをクリックしてプロジェクト生成ポップアップを読み込みます。
 
 <div className={styles.imgWrap}>
     <img src={createProject05} alt="이미지" />
@@ -122,11 +128,11 @@ import import04 from "/docs/start/img/import.gif"
 
 <br />
 
-2.  `프로젝트명`을 작성합니다. 프로젝트명은 다음 `조건`을 만족해야 합니다.
+2.  `プロジェクト名`を作成します。プロジェクト名は、次の`条件`を満たす必要があります。
 
-> -   영문, 한글, 숫자만 허용
-> -   공백 없이
-> -   2 ~ 20 자리
+> -   英語、ハングル、数字のみ許可
+> -   空白なしで
+> -   2 ~ 20 桁
 
 <div className={styles.imgWrap}>
     <img src={createProject07} alt="프로젝트 팝업 이미지" width={800} />
@@ -134,7 +140,7 @@ import import04 from "/docs/start/img/import.gif"
 
 <br />
 
-3. 프로젝트를 담을 `폴더`를 선택합니다.
+3. プロジェクトを保存する`フォルダ`を選択します。
 
 <div className={styles.imgWrap}>
     <img src={createProject02} alt="프로젝트 폴더 이미지" />
@@ -142,7 +148,7 @@ import import04 from "/docs/start/img/import.gif"
 
 <br />
 
-4.  프로젝트에 대한 `설명`을 입력합니다. 최대 100글자까지 입력 가능합니다.
+4.  プロジェクトの説明を入力します。 最大 100 文字まで入力できます。
 
 <div className={styles.imgWrap}>
     <img src={createProject03} alt="프로젝트 폴더 이미지" />
@@ -150,24 +156,18 @@ import import04 from "/docs/start/img/import.gif"
 
 <br />
 
-5.  `프로젝트 생성하기` 버튼을 클릭합니다.
+5.  `プロジェクトを生成する`ボタンをクリックします。
 
 <div className={styles.imgWrap}>
     <img src={createProject06} alt="이미지" />
 </div>
 
-<!--:::info
-
-빈 프로젝트를 생성할 때는 `템플릿을 선택할 필요가 없습니다.` 템플릿을 선택한다고 해도 빈 프로젝트 생성하기 버튼을 누르는 순간 선택한 템플릿 정보가 사라집니다.
-
-:::-->
-
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 
-### 기존 인프라 불러오기(Import) {#create-import}
+### 既存のインフラストラクチャのインポート(Import) {#create-import}
 
-기존 인프라를 불러오기 위해선 캔버스에 접속해야 합니다. 먼저 `빈 프로젝트`를 생성합니다. 빈 프로젝트를 생성하는 방법은 [여기](#create-empty)를 참고해주세요.
+既存のインフラストラクチャをインポートするにはキャンバスに接続する必要があります。まず、`空のプロジェクト`を生成します。空のプロジェクトを生成する方法は[こちら](#create-empty)を参考にしてください。
 
 <br />
 
@@ -177,16 +177,16 @@ import import04 from "/docs/start/img/import.gif"
 
 <br />
 
-1.  `빈 프로젝트`를 클릭하여 캔버스 페이지에 접속합니다.
-2.  `파일 > 불러오기`를 클릭합니다.
-3.  팝업창이 뜨면 등록된 자격증명 중 원하는 `자격증명을 선택`합니다.
-4.  `리소스 조회` 버튼을 클릭한 후 리소스그룹 목록에서 원하는 `리소스 그룹을 선택`합니다.
-5.  `불러오기` 버튼을 클릭하여 기존 인프라 불러오기를 완료합니다.
+1.  `空のプロジェクト`をクリックしてキャンバスページにアクセスします。
+2.  `ファイル > インポート`をクリックします。
+3.  ポップアップウィンドウが表示されたら登録されたクレデンシャルの中から希望する`クレデンシャル`を選択します。
+4.  `リソース照会`ボタンをボタンをクリックしてリソースグループリストから希望する`リソースグループ`を選択します。
+5.  `インポート`ボタンをボタンをクリックして既存のインフラストラクチャのインポートを完了します。
 
 <p>&nbsp;</p>
 
 :::caution
 
-인프라를 불러오기 위해서는 자격증명이 필수적으로 등록되어 있어야 합니다.
+インフラストラクチャをインポートするにはクレデンシャルが必須登録されている必要があります。
 
 :::

@@ -1,31 +1,31 @@
 ---
-title: 완성된 프로젝트 관리
+title: 完成したプロジェクト管理
 sidebar_position: 8
-tags: [수정, 복사, 삭제, 시작하기]
+tags: [修正, コピー, 削除, 始めに]
 ---
 
 import styles from "/src/scss/_markdown.module.scss"
 import titleModification from "./img/gif/title-modification.gif"
 import contentModification from "./img/gif/content-modification.gif"
-import deleteProject from "@site/static/img/gif/delete-project.gif"
-import modify from "@site/static/img/gif/modify.gif"
-import projectModify from "./img/gif/project-modify.gif"
+import deleteProject from "./img/gif/delete-project.gif"
+import modifyProject from "./img/gif/modify-project.gif"
+import modifyCanvas from "./img/gif/modify-canvas.gif"
 
 <hr />
 <br />
 
-완성된 프로젝트는 `수정 및 복사, 삭제`할 수 있습니다.
+完成したプロジェクトは`修正·コピー·削除`できます。
 
 <br />
 
-## 프로젝트 상세정보 수정하기
+## プロジェクトの詳細情報を修正する
 
-### 프로젝트명 수정하기
+### プロジェクト名を修正する
 
-1. 프로젝트 상세정보를 수정하기 위해 내 템플릿에서 `수정을 원하는 프로젝트를 클릭`합니다.
-2. 팝업이 뜨면 프로젝트명에 `편집 아이콘`을 클릭합니다.
-3. `프로젝트명`을 수정합니다.
-4. 다시 `편집 아이콘`을 클릭하여 수정을 마무리 합니다.
+1. プロジェクトの詳細情報を修正するためにテンプレートメニューで`修正を希望するプロジェクト`をクリックします。
+2. ポップアップが表示されたらプロジェクト名に`編集アイコン`をクリックします。
+3. `プロジェクト名`を修正します。
+4. もう一度`編集アイコン`をクリックして修正を完了します。
 
 <div className={styles.imgWrap}>
     <img src={titleModification} width="800px" alt="이미지" />
@@ -33,12 +33,12 @@ import projectModify from "./img/gif/project-modify.gif"
 
 <p>&nbsp;</p>
 
-### 프로젝트 설명 수정하기
+### プロジェクトの説明を修正する
 
-1. 프로젝트 상세정보를 수정하기 위해 내 템플릿에서 수정을 원하는 프로젝트를 클릭합니다.
-2. 팝업이 뜨면 프로젝트 설명에 `편집 아이콘`을 클릭합니다.
-3. 프로젝트 설명을 수정합니다.
-4. 다시 편집 아이콘을 클릭하여 수정을 마무리 합니다.
+1. プロジェクトの詳細を修正するためにテンプレートメニューで`修正を希望するプロジェクト`をクリックします。
+2. ポップアップが表示されたらプロジェクトの詳細に`編集アイコン`をクリックします。
+3. `プロジェクトの詳細`を修正します。
+4. もう一度`編集アイコン`をクリックして修正を完了します。
 
 <div className={styles.imgWrap}>
     <img src={contentModification} width="800px" alt="이미지" />
@@ -46,43 +46,43 @@ import projectModify from "./img/gif/project-modify.gif"
 
 <p>&nbsp;</p>
 
-### 프로젝트 멤버 추가 및 삭제
+### プロジェクトメンバーの追加及び削除
 
-프로젝트 멤버 추가 및 삭제는 [여기](/docs/canvas/collaboration)를 참고해주세요.
+プロジェクトメンバーの追加及び削除については[こちら](/docs/canvas/collaboration)を参考にしてください。
 
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 
-## 프로젝트 복사 및 삭제하기
+## プロジェクトのコピー及び削除
 
-### 프로젝트 복사
+### プロジェクトのコピー
 
-1. 프로젝트를 복사하기 위해 내 템플릿에서 수정을 원하는 프로젝트의 `더보기 아이콘`을 클릭합니다.
-2. `프로젝트 복사`를 클릭합니다.
-3. 팝업창이 뜨면 프로젝트를 복사할 폴더를 선택합니다.
-4. 프로젝트명을 작성합니다.
+1. プロジェクトをコピーするためにテンプレートメニューで修正を希望するプロジェクトの`三点リーダー`をクリックします。
+2. `コピー`をクリックします。
+3. ポップアップが表示されたらプロジェクトをコピーするフォルダーを選択します。
+4. プロジェクト名を作成します。
 
-> -   영문, 한글, 숫자 허용
-> -   2 ~ 20 자리
+> -   英語、ハングル、数字のみ許可
+> -   2 ~ 20 桁
 
-5. 프로젝트 설명을 작성합니다.
+5. プロジェクトの説明を作成します。
 
-> -   100자 이내
+> -   100 文字以内
 
-6. 복사하기를 클릭합니다.
+6. `コピーする`ボタンをクリックします。
 
 <div className={styles.imgWrap}>
-    <img src={modify} width="800px" alt="이미지" />
+    <img src={modifyProject} width="800px" alt="이미지" />
 </div>
 
 <p>&nbsp;</p>
 
-### 프로젝트 삭제
+### プロジェクトの削除
 
-1. 프로젝트를 삭제하기 위해 템플릿에서 삭제를 원하는 프로젝트의 `더보기 아이콘`을 클릭합니다.
-2. `프로젝트 삭제`를 클릭합니다.
-3. 팝업창이 뜨면 프로젝트명을 다시 한번 입력해줍니다.
-4. `삭제하기` 버튼을 클릭합니다.
+1. プロジェクトを削除するためにテンプレートメニューで削除を希望するプロジェクトの`三点リーダー`をクリックします。
+2. `削除`をクリックします。
+3. ポップアップが表示されたらプロジェクト名をもう一度入力します。
+4. `削除する`ボタンをクリックします。
 
 <div className={styles.imgWrap}>
     <img src={deleteProject} width="800px" alt="이미지" />
@@ -91,11 +91,11 @@ import projectModify from "./img/gif/project-modify.gif"
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 
-## 캔버스 수정
+## キャンバスの修正
 
-1. 캔버스를 수정하기 위해 템플릿에서 수정을 원하는 프로젝트를 클릭합니다.
-2. 팝업이 열리면 우측의 `프로젝트 수정하기`를 클릭합니다.
+1. キャンバスを修正するためにテンプレートから修正を希望するプロジェクトをクリックします。
+2. ポップアップが表示されたら右側の`プロジェクトを修正する`ボタンをクリックします。
 
 <div className={styles.imgWrap}>
-    <img src={projectModify} width="800px" alt="이미지" />
+    <img src={modifyCanvas} width="800px" alt="이미지" />
 </div>
