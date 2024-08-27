@@ -1,0 +1,46 @@
+---
+title: Metric
+sidebar_position: 0
+tags: [AWS, 리소스, Cloudwatch, Metric]
+---
+
+<hr />
+<br />
+
+## 리소스 아이콘
+
+<img
+    src={
+        "https://cloudstudioblob.blob.core.windows.net/cloudstudio/awsImg/cloudwatch-metric.png"
+    }
+/>
+
+## 리소스 개요
+
+AWS CloudWatch Metric은 모니터링 대상 리소스에서 수집된 측정값을 나타내는 이름-값 쌍입니다. 예를 들어, EC2 인스턴스에서 CPU 사용률, 네트워크 입력 및 출력 등의 측정값을 수집할 수 있습니다. 이러한 측정값은 CloudWatch Metric으로 저장되며, 대시보드, 알림 및 분석에 사용됩니다. 또한, 사용자 정의 Metric을 생성하여 애플리케이션 및 서비스에서 수집된 데이터를 모니터링할 수도 있습니다. CloudWatch Metric은 AWS에서 제공하는 다양한 서비스와 통합되어 사용됩니다.
+
+## 연관 리소스
+
+### 상위 리소스
+
+-   [**Region**](https://docs.cstudio.app/docs/resource/aws/Base/Region)
+
+## 리소스 설정 값
+
+-   `comparison_operator` : 지정된 통계 및 임계값을 비교할 때 사용할 산술 연산
+-   `evaluation_periods` : 데이터가 지정된 임계값과 비교되는 기간의 수
+-   `metric_name` : 경보와 연결된 측정 항목의 이름
+-   `namespace` : 경보와 연결된 지표의 네임스페이스
+-   `period` : 지정된 통계가 적용되는 기간(초)
+-   `statistic` : 경보의 관련 측정항목에 적용할 통계
+-   `threshold` : 지정된 통계가 비교되는 값
+-   `alarm_description` : 알람에 대한 설명
+-   `insufficient_data_actions` : 알람이 다른 상태에서 insufficient_data 상태로 전환될 때 실행할 작업 목록
+
+---
+
+## 참고 자료
+
+-   [Amazon CloudWatch(AWS)](https://docs.aws.amazon.com/ko_kr/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html)
+-   [Amazon CloudWatch 가격(AWS)](https://aws.amazon.com/ko/cloudwatch/pricing/?nc2=type_a)
+-   [Amazon CloudWatch Metric(Terraform)](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_metric_alarm)

@@ -1,0 +1,71 @@
+---
+title: Deploy
+sidebar_position: 8
+tags: [deploy, 배포점검, 배포, 점검결과, 자격증명, 시작하기]
+last_update:
+    date: 02/01/2023
+---
+
+import styles from "/src/scss/_markdown.module.scss"
+import deploy01 from "./img/deploy01.png"
+import deploy02 from "./img/deploy02.png"
+import deploy03 from "./img/deploy03.png"
+
+<span className="theme-doc-version-badge badge badge--secondary">
+    last update: 2024.09.01
+</span>
+
+<hr />
+<br />
+
+Cloud Studio goes beyond just providing visual infrastructure architecture,it also offers the capability to
+`deploy the infrastructure drawn on the canvas to an actual CSP`. This allows users to easily build their cloud infrastructure.
+
+<p>&nbsp;</p>
+
+## Deploy Validation Check {#deploy-test}
+
+This is a step where the syntax and settings of IaC are virtually validated to ensure correctness.
+It does not involve deployment to an actual CSP.
+(It functions similarly to the --dry-run option.)
+
+1. To perform a deployment test, click `Deploy Validation Check > Run Deploy Validation Check`.
+
+<div className={styles.imgWrap}>
+    <img src={deploy03} width="200px" alt="배포이미지" />
+</div>
+
+<br />
+
+2. Select `Credential`.
+3. Click the `Apply Validation Check` button.
+
+<div className={styles.imgWrap}>
+    <img src={deploy02} alt="배포이미지" />
+</div>
+
+<p>&nbsp;</p>
+
+:::info
+
+Before running a deployment test, you `must register` a `credential`.
+For instructions on how to register a credential, please refer to [this guide](/docs/credential/createCredential).
+
+:::
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+## Deploy History {#tedeployst-history}
+
+Deploy History shows records of `actually deployed infrastructure`.
+
+1. To view the deployment history, click `Deploy > Deploy History`.
+
+<div className={styles.imgWrap}>
+    <img src={deploy01} width="500px" alt="배포이미지" />
+</div>
+
+<br />
+
+2. Review the most recent deployment history. To delete a record, select the desired history and click the `Delete` button.

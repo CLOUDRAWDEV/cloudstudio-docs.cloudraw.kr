@@ -1,0 +1,55 @@
+---
+title: SecurityCenter
+sidebar_position: 0
+tags: [Azure, 리소스, SecurityCenter]
+---
+
+<hr />
+<br />
+
+## 리소스 아이콘
+
+<img
+    src={
+        "https://cloudstudioblob.blob.core.windows.net/cloudstudio/azureImg/security_center-security_center.png"
+    }
+/>
+
+## 리소스 개요
+
+Azure Security Center는 조직이 하이브리드 클라우드 워크로드에서 보안 위협을 방지, 감지 및 대응할 수 있도록 Microsoft에서 제공하는 클라우드 기반 서비스입니다.
+Microsoft Azure 및 온프레미스 환경에서 호스팅되는 모든 리소스의 보안 상태에 대한 가시성을 제공하는 중앙 집중식 대시보드를 제공합니다.
+Azure Security Center는 환경을 지속적으로 모니터링하고 보안 권장 사항, 취약성 평가, 위협 인텔리전스 및 보안 경고를 제공하여 위협으로부터 보호하고 잠재적 취약성을 식별하는 데 도움을 줍니다.
+
+## 연관 리소스
+
+### 상위 리소스
+
+-   [**Subscription**](https://docs.cstudio.app/docs/resource/azure/Base/Subscription)
+
+### 연결 리소스
+
+-   [**Storage Account**](https://docs.cstudio.app/docs/resource/azure/Storage/StorageAccount)
+-   [**Log Analytics Workspace**](https://docs.cstudio.app/docs/resource/azure/LogAnalytics/LogAnalyticsWorkspace)
+
+## 리소스 설정 값
+
+-   `linked_log_analytics_workspace` : 데이터를 저장할 Log Analytics Workspace 이름
+
+-   `assessment_policy`
+
+    -   `display_name`: Security Center Assessment의 표시 이름
+    -   `severity`: Security Center Assessment의 심각도
+    -   `description`: Security Center Assessment에 대한 설명
+
+-   `assessment`
+
+-   `linked_advanced_threat_protection` : Security Center Advanced Threat Protection 이름
+
+---
+
+## 참고 자료
+
+-   [Azure SecurityCenter(Microsoft)](https://learn.microsoft.com/ko-kr/azure/defender-for-cloud/defender-for-cloud-introduction)
+-   [Azure SecurityCenter 가격](https://azure.microsoft.com/ko-kr/pricing/details/defender-for-cloud/)
+-   [Azure SecurityCenter(Terraform)](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/security_center_workspace)

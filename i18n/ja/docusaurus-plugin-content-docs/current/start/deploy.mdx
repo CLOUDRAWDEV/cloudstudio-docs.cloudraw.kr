@@ -1,0 +1,68 @@
+---
+title: デプロイ管理
+sidebar_position: 8
+tags: [deploy, デプロイ点検, デプロイ, 点検結果, クレデンシャル, 始めに]
+last_update:
+    date: 02/01/2023
+---
+
+import styles from "/src/scss/_markdown.module.scss"
+import deploy01 from "./img/deploy01.png"
+import deploy02 from "./img/deploy02.png"
+import deploy03 from "./img/deploy03.png"
+
+<span className="theme-doc-version-badge badge badge--secondary">
+    last update: 2024.09.01
+</span>
+
+<hr />
+<br />
+
+CloudStudio は単に視覚的なインフラアーキテクチャを提供するだけでなく、キャンバスに描いたインフラを`実際のCSPにデプロイできる機能`を提供します。これにより、ユーザーはクラウド インフラストラクチャを簡単に構築できます。
+
+<p>&nbsp;</p>
+
+## デプロイ点検 {#deploy-test}
+
+IaC の文法的エラーや設定が正しくできているかを仮想的に検証する段階です。実際の CSP にはデプロイされません。
+(`--dry-run` option のような役割をします。)
+
+1. デプロイテストを行うために`デプロイ管理 > 有効性検査`をクリックします。
+
+<div className={styles.imgWrap}>
+    <img src={deploy03} width="200px" alt="배포이미지" />
+</div>
+
+<br />
+
+2. `有効性を検査する`をクリックして`クレデンシャル`を選択します。
+3. `有効性を検査する`ボタンをクリックします。
+
+<div className={styles.imgWrap}>
+    <img src={deploy02} alt="배포이미지" />
+</div>
+
+<p>&nbsp;</p>
+
+:::info
+
+デプロイテストを行う前に`クレデンシャル`を`必須登録`しなければなりません。クレデンシャルを登録する方法は[こちら](/docs/credential/createCredential)を参考にしてください。
+
+:::
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+## デプロイ履歴 {#tedeployst-history}
+
+デプロイ履歴は`実際にデプロイされたインフラに対する履歴`を示しています。
+
+1. デプロイ履歴を確認するために左側のパネルで`デプロイ > デプロイ履歴`をクリックします。
+
+<div className={styles.imgWrap}>
+    <img src={deploy01} width="500px" alt="배포이미지" />
+</div>
+
+<br />
+
+2. 最近のデプロイ履歴を確認します。履歴を削除するには希望する履歴を選択して`削除する`ボタンをクリックします。

@@ -1,0 +1,52 @@
+---
+title: Kubernetes
+sidebar_position: 4
+tags: [security, 보안 진단, 캔버스]
+---
+
+import styles from "/src/scss/_markdown.module.scss"
+import security01 from "/docs/canvas/img/security01.gif"
+import security02 from "/docs/canvas/img/security-result01.png"
+import security03 from "/docs/canvas/img/security-result02.png"
+import { kubernetesRules } from "/src/resource/kubernetesRules"
+import { iso, csap, isms, evaluation } from "/src/resource/rules"
+
+<hr />
+<br />
+
+## Kubernetes 진단 항목
+
+<div className={styles.securityTable}>
+    <table>
+        <thead>
+            <tr>
+                <th>카테고리</th>
+                <th>리소스</th>
+                <th>옵션</th>
+                <th>항목</th>
+                <th>설명</th>
+                <th>위험도</th>
+                <th>ISO27001</th>
+                <th>CSAP</th>
+                <th>ISMS-P</th>
+                <th>안정성 평가</th>
+            </tr>
+        </thead>
+        <tbody>
+            {kubernetesRules.map((item)=>{
+                return (<tr>
+                            <td>{item.category}</td>
+                            <td>{item.resource}</td>
+                            <td>{item.option}</td>
+                            <td>{item.type}</td>
+                            <td>{item.description}</td>
+                            <td><div className={styles.tag} data-type={item.risk}>{item.risk.toUpperCase()}</div></td>
+                            <td>{item.iso} {iso[item.iso]}</td>
+                            <td>{item.csap} {csap[item.csap]}</td>
+                            <td>{item.isms} {isms[item.isms]}</td>
+                            <td>{item.evaluation} {evaluation[item.evaluation]}</td>
+                        </tr>)
+            })}
+        </tbody>
+    </table>
+</div>

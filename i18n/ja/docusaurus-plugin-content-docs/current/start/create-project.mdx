@@ -1,0 +1,192 @@
+---
+title: 新しいプロジェクトを生成する
+sidebar_position: 7
+tags:
+    [
+        project,
+        プロジェクトの生成,
+        空のプロジェクト,
+        テンプレート,
+        インポート,
+        import,
+        始めに,
+    ]
+---
+
+import styles from "/src/scss/_markdown.module.scss"
+import createProject01 from "../start/img/create-project-01.png"
+import createProject02 from "../start/img/create-project-02.png"
+import createProject03 from "../start/img/create-project-03.png"
+import createProject04 from "../start/img/create-project-04.png"
+import createProject05 from "../start/img/create-project-05.png"
+import createProject06 from "../start/img/create-project-06.png"
+import createProject07 from "../start/img/create-project-07.png"
+import import04 from "../start/img/import04.gif"
+
+<hr />
+<br />
+
+CloudStudio では 1 つのキャンバスを 📄 プロジェクトと呼びます。 プロジェクトを
+生成するにはプロジェクトを管理できる 📁 フォルダーが先に生成れている必要があります。
+
+フォルダを生成する方法は [こちら](/docs/start/create-folder)を参考にしてください。
+
+<p>&nbsp;</p>
+
+## プロジェクトを生成する 3 つの方法
+
+CloudStudio プロジェクトを生成する方法は以下の`3つ`があります。
+
+-   [提供するテンプレートで生成する](#create-template)
+-   [空のプロジェクトを生成する](#create-empty)
+-   [既存のインフラストラクチャのインポート(import)](#create-import)
+
+**テンプレートを使用**すると Landing Zone, MSA, Load Balancer, Ubuntu Virtual Machine, CDN など希望するカテゴリのクラウドインフラを素早く生成できます。テンプレートについての詳しい説明は<Link to= "/docs/category/best-practice">こちら</Link>を参考にしてください。
+
+**テンプレートなしで自分でキャンバスを構成**したい場合は空のプロジェクトを生成するを使用します。空のキャンバスに必要なリソースを Drag&Drop してクラウドインフラストラクチャを構成します。
+
+**既存のインフラストラクチャをキャンバスにインポートしたい場合は**キャンバスに接続し、`ファイル > インポート`をクリックしてインフラストラクチャをインポートします。
+
+<p>&nbsp;</p>
+
+### 提供するテンプレートで生成する {#create-template}
+
+1.  テンプレートページで`プロジェクトを生成する`ボタンをクリックして、プロジェクト生成ポップアップを読み込みます。
+
+<div className={styles.imgWrap}>
+    <img src={createProject05} alt="이미지" />
+</div>
+
+<br />
+
+2.  `プロジェクト名`を作成します。プロジェクト名は、次の`条件`を満たす必要があります。
+
+> -   英語、ハングル、数字のみ許可
+> -   空白なしで
+> -   2 ~ 20 桁
+
+<div className={styles.imgWrap}>
+    <img src={createProject01} alt="프로젝트 팝업 이미지" width={800} />
+</div>
+
+<br />
+
+3. プロジェクトを保存する`フォルダ`を選択します。
+
+<div className={styles.imgWrap}>
+    <img src={createProject02} alt="프로젝트 폴더 이미지" />
+</div>
+
+<br />
+
+4.  プロジェクトの説明を入力します。 最大 100 文字まで入力できます。
+
+<div className={styles.imgWrap}>
+    <img src={createProject03} alt="프로젝트 폴더 이미지" />
+</div>
+
+<br />
+
+5.  `CSP(プロバイダー)`と`カテゴリ`を選択します。
+
+<div className={styles.imgWrap}>
+    <img src={createProject04} alt="프로젝트 폴더 이미지" width={800} />
+</div>
+
+<br />
+
+<details>
+    <summary>CSPとは?</summary>
+    <h4>
+        Cloud Service
+        Providerの略で,公共クラウドインフラ,プラットフォームサービスを提供する業者を意味します。
+        CloudStudioで提供するCSPはMicosoftのAzure, NaverのNAVER CLOUD PLATFORM,
+        AmazonのAmazon Web Servicesです。
+    </h4>
+</details>
+
+<br />
+
+6.  `プロジェクトを生成する`ボタンをクリックします。
+
+:::info
+
+提供するテンプレートについての詳しい説明は <Link to= "/docs/category/best-practice">こちら</Link>を参考にしてください。
+
+:::
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+### 空のプロジェクトを生成する {#create-empty}
+
+1.  テンプレートページで`プロジェクトを生成する`ボタンをクリックしてプロジェクト生成ポップアップを読み込みます。
+
+<div className={styles.imgWrap}>
+    <img src={createProject05} alt="이미지" />
+</div>
+
+<br />
+
+2.  `プロジェクト名`を作成します。プロジェクト名は、次の`条件`を満たす必要があります。
+
+> -   英語、ハングル、数字のみ許可
+> -   空白なしで
+> -   2 ~ 20 桁
+
+<div className={styles.imgWrap}>
+    <img src={createProject07} alt="프로젝트 팝업 이미지" width={800} />
+</div>
+
+<br />
+
+3. プロジェクトを保存する`フォルダ`を選択します。
+
+<div className={styles.imgWrap}>
+    <img src={createProject02} alt="프로젝트 폴더 이미지" />
+</div>
+
+<br />
+
+4.  プロジェクトの説明を入力します。 最大 100 文字まで入力できます。
+
+<div className={styles.imgWrap}>
+    <img src={createProject03} alt="프로젝트 폴더 이미지" />
+</div>
+
+<br />
+
+5.  `プロジェクトを生成する`ボタンをクリックします。
+
+<div className={styles.imgWrap}>
+    <img src={createProject06} alt="이미지" />
+</div>
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+### 既存のインフラストラクチャのインポート(Import) {#create-import}
+
+既存のインフラストラクチャをインポートするにはキャンバスに接続する必要があります。まず、`空のプロジェクト`を生成します。空のプロジェクトを生成する方法は[こちら](#create-empty)を参考にしてください。
+
+<br />
+
+<div className={styles.imgWrap}>
+    <img src={import04} width={800} />
+</div>
+
+<br />
+
+1.  `空のプロジェクト`をクリックしてキャンバスページにアクセスします。
+2.  `ファイル > インポート`をクリックします。
+3.  ポップアップウィンドウが表示されたら登録されたクレデンシャルの中から希望する`クレデンシャル`を選択します。
+4.  `リソース照会`ボタンをボタンをクリックしてリソースグループリストから希望する`リソースグループ`を選択します。
+5.  `インポート`ボタンをボタンをクリックして既存のインフラストラクチャのインポートを完了します。
+
+<p>&nbsp;</p>
+
+:::caution
+
+インフラストラクチャをインポートするにはクレデンシャルが必須登録されている必要があります。
+
+:::

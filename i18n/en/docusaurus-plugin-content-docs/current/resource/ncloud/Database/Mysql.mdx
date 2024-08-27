@@ -1,0 +1,55 @@
+---
+title: Mysql
+sidebar_position: 0
+tags: [Ncloud, 리소스, Database, Mysql]
+---
+
+<hr />
+<br />
+
+## 리소스 아이콘
+
+<img
+    src={
+        "https://cloudstudioblob.blob.core.windows.net/cloudstudio/ncloudImg/database-mysql.png"
+    }
+/>
+
+## 리소스 개요
+
+Mysql은 관계형 데이터베이스 MySQL을 이용한 완전 관리형 클라우드 데이터베이스 서비스로 MySQL 데이터베이스를 손쉽게 구축, 안정적으로 운영하며, 장애 발생 시 자동으로 복구하는 서비스입니다.
+
+## 연관 리소스
+
+### 상위 리소스
+
+-   [**Subnet**](https://docs.cstudio.app/docs/resource/ncloud/Networking/Subnet)
+
+### 연결 리소스
+
+-   [**Mysql**](https://docs.cstudio.app/docs/resource/ncloud/Database/Mysql)
+
+
+## 리소스 설정 값
+
+-   `server_name_prefix` : mysql 서버 이름
+-   `user_name` : MySQL 사용자 접근 ID 
+-   `user_password` : MySQL의 사용자 패스워드
+-   `host_ip` : 접속하고자 하는 client ip
+-   `database_name` : 생성하려는 데이터베이스 이름
+-   `image_product_code` : MySQL 구성 인스턴스 스펙으로 생성하고자 하는 MySQL 서버 이미지 제품 코드
+-   `product_code` : 생성할 MySQL 인스턴스의 서버 사양을 결정하는 제품 코드
+-   `data_storage_type` : 데이터 스토리지 종류 - `SSD`, `HDD`
+-   `enable_high_availiability` : 고가용성 기능 사용 여부
+-   `enable_backup` : 백업 기능 사용 여부
+-   `backup_file_retention_period` : 백업 파일 보관 기간, 백업은 매일 단위로 진행되며, 백업 파일은 별도의 스토리지에 저장 - `1~30`
+-   `enable_automatic_backup` : 백업 자동화 사용 여부
+-   `port` : MySQL 접속포트 - `3306~20000`
+    
+
+---
+
+## 참고 자료
+
+-   [Mysql(Ncloud)](https://www.ncloud.com/product/database/cloudDbMysql)
+-   [ncloud_mysql(Terraform)](https://registry.terraform.io/providers/NaverCloudPlatform/ncloud/latest/docs/resources/mysql)
