@@ -7,13 +7,9 @@ last_update:
 ---
 
 import styles from "/src/scss/_markdown.module.scss"
-import deploy01 from "/docs/start/img/deploy01.png"
-import deploy02 from "/docs/start/img/deploy02.png"
-import deploy03 from "/docs/start/img/deploy03.png"
-import deploy04 from "/docs/start/img/deploy04.png"
-import deploy05 from "/docs/start/img/deploy05.png"
-import deploy06 from "/docs/start/img/deploy06.png"
-import deploy07 from "/docs/start/img/deploy07.png"
+import deploy01 from "./img/deploy01.png"
+import deploy02 from "./img/deploy02.png"
+import deploy03 from "./img/deploy03.png"
 
 <span className="theme-doc-version-badge badge badge--secondary">
     last update: 2024.09.01
@@ -46,43 +42,20 @@ IaC의 문법적 오류나 설정이 올바르게 되었는지 가상으로 검�
     <img src={deploy02} alt="배포이미지" />
 </div>
 
-<!--loader가 돌아가고 있으면 `배포 점검 중`이라는 뜻입니다. loader가 사라질 때까지 기다려주세요.
-
-<div className={styles.imgWrap}>
-    <img src={deploy04} alt="배포이미지" />
-</div>-->
-
 <p>&nbsp;</p>
 
 :::info
 
-배포테스트를 진행하기 전 `자격증명`을 `필수적으로 등록`해야 합니다. 자격증명을 등록하는 방법은 [여기](/docs/credential/createCredential.mdx) 를 참고해주세요.
+배포테스트를 진행하기 전 `자격증명`을 `필수적으로 등록`해야 합니다. 자격증명을 등록하는 방법은 [여기](/docs/credential/createCredential) 를 참고해주세요.
 
 :::
 
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 
-<!--## 배포 점검 결과 {#test-result}
-
-`배포 점검 결과`를 확인할 수 있습니다. 배포가 완료된 환경은 `각 CSP 페이지에서 확인`할 수 있습니다.
-
-1. 배포 점검 결과를 확인하기 위해서 `배포관리 > 배포 점검 결과`를 클릭합니다.
-
-<div className={styles.imgWrap}>
-    <img src={deploy07} width="200px" alt="배포이미지" />
-</div>
-
-2. 최근 배포 점검 이력을 확인합니다.
-3. 배포하고자하는 이력을 클릭한 후 `배포하기` 버튼을 클릭합니다.
-
-<p>&nbsp;</p>
-<p>&nbsp;</p>
--->
-
 ## 배포이력 {#tedeployst-history}
 
-배포이력은 `실제 배포된 인프라에 대한 이력`을 보여줍니다. DEV(개발) / TEST(테스트) / PROD(운영) 각 탭마다의 `최근 배포 이력`을 확인할 수 있습니다.
+배포이력은 `실제 배포된 인프라에 대한 이력`을 보여줍니다.
 
 1. 배포 이력을 확인하기 위해서 `배포 > 배포이력`을 클릭합니다.
 
