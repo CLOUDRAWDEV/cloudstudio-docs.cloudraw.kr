@@ -13,6 +13,8 @@ import terraformcloud03 from "./img/terraformcloud03.png"
 import terraformcloud04 from "./img/terraformcloud04.png"
 import terraformcloud05 from "./img/terraformcloud05.png"
 import terraformcloud06 from "./img/terraformcloud06.png"
+import terraformcloud07 from "./img/terraformcloud07.png"
+import terraformcloud08 from "./img/terraformcloud08.png"
 import styles from "/src/scss/_markdown.module.scss"
 
 <span className="theme-doc-version-badge badge badge--secondary">
@@ -52,7 +54,7 @@ import styles from "/src/scss/_markdown.module.scss"
 
 <p>&nbsp;</p>
 
-3. 추후에 이 토큰을 식별할 수 있게 할 `Description`을 입력하고 토큰 유효기간을 설정한 후, `Generate token` 버튼을 클릭합니다.
+3. 추후에 이 토큰을 식별할 수 있게 할 `설명`을 입력하고 `토큰 유효기간`을 설정한 후, `Generate token` 버튼을 클릭합니다.
 
 <img width="100%" src={terraformcloud03} alt="otp img" />
 
@@ -72,7 +74,27 @@ import styles from "/src/scss/_markdown.module.scss"
 
 <p>&nbsp;</p>
 
-5. 클라우드 스튜디오에서 `내 정보 - 플러그인 관리` 를 클릭한 후, Terraform Cloud 계정연동 `+` 버튼을 클릭합니다.
+5. [Terraform Cloud](https://app.terraform.io/app/organizations) 메인화면으로 돌아가 `Create organization` 버튼을 클릭합니다.
+
+<img width="100%" src={terraformcloud05} alt="otp img" />
+
+<p>&nbsp;</p>
+
+6. `Organization name`을 입력하고 `Create organization` 버튼을 클릭합니다.
+
+<img width="100%" src={terraformcloud06} alt="otp img" />
+
+<p>&nbsp;</p>
+
+:::caution
+
+`Organization name` 은 Global 단위에서 고유해야만 합니다.
+
+:::
+
+<p>&nbsp;</p>
+
+7. 클라우드 스튜디오에서 `내 정보 - 플러그인 관리` 를 클릭한 후, Terraform Cloud 계정연동 `+` 버튼을 클릭합니다.
 
 <img width="100%" src={github07} alt="otp img" />
 
@@ -86,12 +108,14 @@ import styles from "/src/scss/_markdown.module.scss"
 
 <p>&nbsp;</p>
 
-6. 발급받은 Terraform Cloud `Token` 을 입력한 후, `등록하기` 버튼을 클릭합니다.
+8. 발급받은 Terraform Cloud `Token` 을 입력한 후, `등록하기` 버튼을 클릭합니다.
 
-<img width="100%" src={terraformcloud05} alt="otp img" />
+<img width="100%" src={terraformcloud07} alt="otp img" />
 
 <p>&nbsp;</p>
 
-7. 유효한 Terraform Cloud 계정의 `Token` 값 입력이 완료되면, 정상적으로 Terraform Cloud 연동이 완료됩니다.
+9. 연동 후 Terraform Cloud에서 생성한 `Organization`을 선택하면 모든 작업이 완료됩니다.
 
-<img width="100%" src={terraformcloud06} alt="otp img" />
+<img width="100%" src={terraformcloud08} alt="otp img" />
+
+<p>&nbsp;</p>
