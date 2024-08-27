@@ -1,0 +1,53 @@
+---
+title: NginxIngress
+sidebar_position: 0
+tags: [Kubernetes, 리소스, Helm, NginxIngress]
+---
+
+
+<hr />
+<br />
+
+
+## 리소스 아이콘
+
+<img
+    src={
+        "https://cloudstudioblob.blob.core.windows.net/cloudstudio/kubernetesImg/helm-nginx_ingress.png"
+    }
+/>
+
+## 리소스 개요
+
+Nginx 인그레스 컨트롤러를 설치하기 위한 헬름 차트입니다.
+
+## 연관 리소스
+
+### 상위 리소스
+
+-   [**Cluster**](https://docs.cstudio.app/docs/resource/kubernetes/Base/Cluster)
+-   [**Namespace**](https://docs.cstudio.app/docs/resource/kubernetes/Core/Namespace)
+
+### 연결 리소스
+
+-   [**Ingress**](https://docs.cstudio.app/docs/resource/kubernetes/Networking/Ingress)
+
+
+## 리소스 설정 값
+
+-   `service_name` : Nginx Ingress-Controller 헬름 차트 릴리즈 이름
+-   `namespace` : Nginx Ingress-Controller 헬름 차트가 배포될 네임스페이스
+-   `version` : 사용할 Nginx Ingress-Controller 헬름 차트 버전
+-   `replica_count` : 인그레스 컨트롤러 Deployment의 복제본 수
+-   `external_traffic_policy` : 외부 트래픽에 대한 응답에 관한 정책을 설정 - `Cluster`,`Local`
+-   `ingressclass_name` : 인그레스를 어떤 인그레스 컨트롤러가 관리할지 지정하는 리소스인 인그레스 클래스의 이름을 지정
+-   `set` : Nginx 인그레스 컨트롤러 기본 차트의 값을 동적으로 변경
+
+
+---
+
+## 참고 자료
+
+-   [Helm install(NginxIngress)](https://docs.nginx.com/nginx-ingress-controller/installation/installing-nic/installation-with-helm/)
+-   [Helm Provider(Terraform)](https://registry.terraform.io/providers/hashicorp/helm/latest/docs)
+

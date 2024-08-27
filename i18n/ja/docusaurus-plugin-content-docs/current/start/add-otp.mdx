@@ -1,0 +1,43 @@
+---
+title: OTP登録する
+sidebar_position: 4
+tags: [otp, 認証]
+---
+
+import otp01 from "./img/otp01.png"
+import otp02 from "./img/otp02.png"
+import otp03 from "./img/otp03.png"
+import otp04 from "./img/otp04.png"
+import otp08 from "./img/otp08.png"
+import styles from "/src/scss/_markdown.module.scss"
+
+<hr />
+<br />
+
+1. `マイページ - アカウント管理`で`OTP登録`ボタンをクリックし、ログインに必要な`パスワード`を入力します。
+
+<img width="100%" src={otp08} alt="otp img" />
+
+<p>&nbsp;</p>
+
+2. リンクを通じて`google authenticatorアプリをインストール`します。
+
+<img width="100%" src={otp01} alt="otp img" />
+
+<p>&nbsp;</p>
+
+3. google authenticator アプリを実行した後、`QRコードをスキャン`します。
+
+<img width="100%" src={otp02} alt="otp img" />
+
+<p>&nbsp;</p>
+
+4. 一度発行された認証キーは`再取得できないので`必ずメモしておいてください。
+
+<img width="100%" src={otp03} alt="otp img" />
+
+<p>&nbsp;</p>
+
+5. google authenticator アプリに登録された`6桁認証コード`を入力して `認証完了`ボタンをクリックします。
+
+<img width="100%" src={otp04} alt="otp img" />

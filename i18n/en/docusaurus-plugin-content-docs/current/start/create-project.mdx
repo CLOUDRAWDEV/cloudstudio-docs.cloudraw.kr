@@ -1,0 +1,184 @@
+---
+title: Create Project
+sidebar_position: 7
+tags: [project, 프로젝트 생성, 빈 프로젝트, 템플릿, 가져오기, import, 시작하기]
+---
+
+import styles from "/src/scss/_markdown.module.scss"
+import createProject01 from "../start/img/create-project-01.png"
+import createProject02 from "../start/img/create-project-02.png"
+import createProject03 from "../start/img/create-project-03.png"
+import createProject04 from "../start/img/create-project-04.png"
+import createProject05 from "../start/img/create-project-05.png"
+import createProject06 from "../start/img/create-project-06.png"
+import createProject07 from "../start/img/create-project-07.png"
+import import04 from "/docs/start/img/import.gif"
+
+<hr />
+<br />
+
+In Cloud Studio, a canvas is referred to 📄 as a project. To create a project,
+📁 you must first create a folder to manage it.
+
+Please refer to [this guide](/docs/start/create-folder) for instructions on how to create a folder.
+
+<p>&nbsp;</p>
+
+## Three methods to create a project
+
+There are three methods to create a project in Cloud Studio:
+
+-   [Create from a Template](#create-template)
+-   [Create an Empty Project](#create-empty)
+-   [Import Existing Infrastructure(import)](#create-import)
+
+**Using a template** allows you to quickly create cloud infrastructure in categories like Landing Zone, MSA, Load Balancer, Ubuntu Virtual Machine, CDN. For more details about templates please refer to<Link to= "/docs/category/best-practice">this guide</Link>.
+
+**If you prefer to configure the canvas yourself without using a template**you can create an empty project. You can then build your cloud infrastructure by dragging and dropping the resources you want onto the blank canvas.
+
+**If you want to import existing infrastructure into the canvas** access the canvas and click File > Import to load the infrastructure.
+
+<p>&nbsp;</p>
+
+### Create from a Template {#create-template}
+
+1.  Click the `Create Project` button on the templates page to open the project creation popup.
+
+<div className={styles.imgWrap}>
+    <img src={createProject05} alt="이미지" />
+</div>
+
+<br />
+
+2. Enter the `Project Name`. The project name must meet the following criteria:
+
+> -   English, Korean, Numbers allowed
+> -   Without Space
+> -   2 to 12 digits
+
+<div className={styles.imgWrap}>
+    <img src={createProject01} alt="프로젝트 팝업 이미지" width={800} />
+</div>
+
+<br />
+
+3. Select a `Folder` to contain the project.
+
+<div className={styles.imgWrap}>
+    <img src={createProject02} alt="프로젝트 폴더 이미지" />
+</div>
+
+<br />
+
+4. Enter a `Description` for the project. You can input up to 100 characters.
+
+<div className={styles.imgWrap}>
+    <img src={createProject03} alt="프로젝트 폴더 이미지" />
+</div>
+
+<br />
+
+5.  Select the `CSP(Cloud Service Provider)` and `Category`.
+
+<div className={styles.imgWrap}>
+    <img src={createProject04} alt="프로젝트 폴더 이미지" width={800} />
+</div>
+
+<br />
+
+<details>
+    <summary>What is a CSP?</summary>
+    <h4>
+        CSP stands for Cloud Service Provider, which refers to companies that
+        provide public cloud infrastructure and platform services. The CSPs
+        available in Cloud Studio include Microsoft Azure, Naver CLOUD PLATFORM,
+        and Amazon Web Services.
+    </h4>
+</details>
+
+<br />
+
+6.  Click the `Create Project` button.
+
+:::info
+
+For detailed information about the available templates, please refer to <Link to= "/docs/category/best-practice">this page</Link>.
+
+:::
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+### Create an Empty Template{#create-empty}
+
+1.  On the My Templates page, click the `Create Project` button to open the project creation pop-up.
+
+<div className={styles.imgWrap}>
+    <img src={createProject05} alt="이미지" />
+</div>
+
+<br />
+
+2.  Write a `Project Name`. The folder name needs to satisfy the following conditions.
+
+> -   English, Korean, Numbers allowed
+> -   Without Space
+> -   2 to 12 digits
+
+<div className={styles.imgWrap}>
+    <img src={createProject07} alt="프로젝트 팝업 이미지" width={800} />
+</div>
+
+<br />
+
+3. Select a Folder to store the project in.
+
+<div className={styles.imgWrap}>
+    <img src={createProject02} alt="프로젝트 폴더 이미지" />
+</div>
+
+<br />
+
+4. Enter a `description` for the project. You can input up to 100 characters.
+
+<div className={styles.imgWrap}>
+    <img src={createProject03} alt="프로젝트 폴더 이미지" />
+</div>
+
+<br />
+
+5. Click the `Create Project` button.
+
+<div className={styles.imgWrap}>
+    <img src={createProject06} alt="이미지" />
+</div>
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+### Import Existing Infrastructure {#create-import}
+
+To import existing infrastructure, you need to access the canvas and first create a blank project.
+For instructions on creating a blank project, please refer to [this guide](#create-empty).
+
+<br />
+
+<div className={styles.imgWrap}>
+    <img src={import04} width={800} />
+</div>
+
+<br />
+
+1.  Click `Empty Template` to access the canvas page.
+2.  Click `File > Import`.
+3.  When the pop-up window appears, select the desired credential from the list of registered credentials.
+4.  Click the `Search Resource` button, then choose the desired `Selected resources` from the list.
+5.  Click the `Import` button to complete the import of the existing infrastructure.
+
+<p>&nbsp;</p>
+
+:::caution
+
+To import the infrastructure, a credential must be registered.
+
+:::

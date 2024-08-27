@@ -1,0 +1,143 @@
+---
+title: キャンバスを編集する
+sidebar_position: 6
+tags:
+    [
+        キャンバス,
+        ツールボックス,
+        リソースリスト,
+        エラー,
+        キャンバスの編集,
+        描く,
+        始めに,
+    ]
+last_update:
+    date: 02/01/2023
+---
+
+import styles from "/src/scss/_markdown.module.scss"
+import dragDrop from "../start/img/gif/drag&drop.gif"
+import lineConnection from "../start/img/gif/line-connection.gif"
+import error from "../start/img/gif/error.gif"
+import edit from "../start/img/gif/option-edit.gif"
+import undo from "./img/undo.png"
+import redo from "./img/redo.png"
+import list from "./img/list.png"
+import ratio from "./img/ratio.png"
+import grid from "./img/grid.png"
+import connect from "../start/img/connect.png"
+import basic from "../start/img/basic.png"
+import group from "../start/img/group.png"
+import back from "../start/img/back.png"
+import front from "../start/img/front.png"
+import tools from "../start/img/tools.png"
+
+<span className="theme-doc-version-badge badge badge--secondary">
+    last update: 2023.02.01
+</span>
+
+<hr />
+<br />
+
+キャンバスはリソースを Drag&Drop してクラウドインフラを描き、バージョンを管理してデプロイまでできる <highlight color="#206FD6">CloudStudio のコアサービス</highlight>です。
+キャンバスで構成されたインフラは単に視覚的アーキテクチャとして使用することもでき、希望する CSP 社に直接デプロイすることもできます。
+
+✂️  自由にキャンバスを編集してみましょう！
+
+<p>&nbsp;</p>
+
+## リソース Drag & Drop {#drag-drop}
+
+`Drag & Drop`はキャンバスを構成できる最も単純な機能です。
+左側の`リソースリスト`から必要なリソースをドラッグしてキャンバスに Drag&Drop してみましょう！
+互いに接続できないリソースは、赤い線とともに跳ね返ります。
+
+<div className={styles.imgWrap}>
+    <img src={dragDrop} alt="드래그앤드롭 이미지" width={800} />
+</div>
+
+<br />
+
+:::info
+
+`リソースリスト`はキャンバス左側にあるリソースを集めたパネルです。
+
+:::
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+## リソースを接続する {#resource-connect}
+
+キャンバスに Drag & Drop したリソースを接続できるリソース同士で線でつなげます。
+
+<div className={styles.imgWrap}>
+    <img src={lineConnection} alt="리소스 연결 이미지" width={800} />
+</div>
+
+<br />
+<br />
+
+### リソースタイプ
+
+リソースは大きく以下の`4つ`タイプに分けられます。以下のリソースリストを参考にして、キャンバス リソースを接続します。
+
+| イメージ                                          | 名前       | 説明                                                   |
+| ------------------------------------------------- | ---------- | ------------------------------------------------------ |
+| <img width="40px" src={ basic } alt="이미지" />   | 基本形     | グループ内に属するリソースを表示します。               |
+| <img width="40px" src={ connect } alt="이미지" /> | 連結形     | そのリソースに接続できるリソースのリストを表示します。 |
+| <img width="40px" src={ group } alt="이미지" />   | グループ型 | 該当グループに属するリソースのリストを表示します。     |
+| <img width="40px" src={ tools } alt="이미지" />   | Tools      | キャンバス ツールのリストを表示します。                |
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+## リソースオプションの編集 {#option-edit}
+
+リソースを`ダブルクリック`してリソース設定値を変更できる`編集ウィンドウ`を開きます。
+`詳細を見る`アイコンをクリックしてそのリソースの説明を確認できます。
+❓ `クェスチョンマーク`アイコンにマウスを合わせると各オプションに関する説明を確認できます。説明を参考にして、必要な値を設定してください。
+
+<div className={styles.imgWrap}>
+    <img src={edit} alt="옵션 편집 이미지" width={800} />
+</div>
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+## エラーを修正する {#error-correction}
+
+🔴  赤い点はそのリソースにエラーがあることを示しています。 <highlight color="#FF7272">エラーがある場合、キャンバスを保存及びデプロイすることはできません。</highlight>
+エラーを解決するために、キャンバスでエラーが発生したリソースを`ダブルクリック`してキャンバスエラーウィンドウを開きます。
+キャンバス エラー ウィンドウで修正しようとしている特定のエラーをダブルクリックすると、エラーが発生した場所に移動します。エラーの原因を参考にしてエラーを修正します。
+
+<div className={styles.imgWrap}>
+    <img src={error} alt="오류 수정 이미지" width={800} />
+</div>
+
+<p>&nbsp;</p>
+
+### エラーの種類
+
+| 種類  | 説明                                                 |
+| ----- | ---------------------------------------------------- |
+| value | 入力値が正しくない場合に発生するエラー               |
+| group | どのグループに属していない場合に発生するエラー       |
+| line  | 必要なリソースが接続されていない場合に発生するエラー |
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+## ツールボックスの使い方 {#toolbox}
+
+上部にあるツールボックスはキャンバスを飾るための様々な機能を提供します。
+
+| イメージ                                                     | 動作           | 機能                                                                 |
+| ------------------------------------------------------------ | -------------- | -------------------------------------------------------------------- |
+| <img width="40px" src={ undo } alt="실행 취소 이미지" />     | 取り消し       | 1 つ前に戻します。                                                   |
+| <img width="40px" src={ redo } alt="다시 하기 이미지" />     | やり直し       | 1 つ先に進みます。                                                   |
+| <img width="40px" src={ front } alt="이미지" />              | 背面に移動     | 2 つのリソースが重なったときに、選択したリソースを後方に送信します。 |
+| <img width="40px" src={ back } alt="이미지" />               | 前面に移動     | 2 つのリソースが重なったときに、選択したリソースを前方に送信します。 |
+| <img width="40px" src={ list } alt="리소스 리스트 이미지" /> | リソースリスト | リソースリストの表示/非表示を切り替えるボタンです。                  |
+| <img width="100px" src={ ratio } alt="화면 비율 이미지" />   | 画面比率       | キャンバスの画面比率を調整します。                                   |
+| <img width="100px" src={ grid } alt="그리드 이미지" />       | グリッド       | キャンバスのグリッドを解除できます。                                 |

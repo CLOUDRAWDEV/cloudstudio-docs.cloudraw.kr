@@ -1,0 +1,136 @@
+---
+title: Edit Canvas
+sidebar_position: 6
+tags: [캔버스, 툴박스, 리소스리스트, 오류, 캔버스 편집, 그리기, 시작하기]
+last_update:
+    date: 02/01/2023
+---
+
+import styles from "/src/scss/_markdown.module.scss"
+import dragDrop from "../start/img/gif/drag&drop.gif"
+import lineConnection from "../start/img/gif/line-connection.gif"
+import error from "../start/img/gif/error.gif"
+import edit from "../start/img/gif/option-edit.gif"
+import undo from "./img/undo.png"
+import redo from "./img/redo.png"
+import list from "./img/list.png"
+import ratio from "./img/ratio.png"
+import grid from "./img/grid.png"
+import connect from "../start/img/connect.png"
+import basic from "../start/img/basic.png"
+import group from "../start/img/group.png"
+import back from "../start/img/back.png"
+import front from "../start/img/front.png"
+import tools from "../start/img/tools.png"
+
+<span className="theme-doc-version-badge badge badge--secondary">
+    last update: 2023.02.01
+</span>
+
+<hr />
+<br />
+
+Canvas is a <highlight color="#206FD6">core service of the cloud studio</highlight> that allows you to design cloud infrastructure by `Drag & Drop` resources, manage versions, and even deploy them.
+The infrastructure configured with Canvas can be used as a simple visual architecture, or you can directly deploy it to your preferred CSP if desired.
+
+✂️ Enjoy the freedom to edit the Canvas!
+
+<p>&nbsp;</p>
+
+## Resource Drag & Drop {#drag-drop}
+
+`Drag & Drop` is the simplest way to build your Canvas.
+Drag and drop the desired resource from the left `Resource List` onto the Canvas!
+If the resources cannot be connected, they will bounce back with a red line.
+
+<div className={styles.imgWrap}>
+    <img src={dragDrop} alt="드래그앤드롭 이미지" width={800} />
+</div>
+
+<br />
+
+:::info
+
+`Resource list` is a panel that gathers resources located on the left side of the canvas.
+
+:::
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+## Connecting Resources {#resource-connect}
+
+Connects resources on the canvas with lines, linking those that can be connected via Drag & Drop.
+
+<div className={styles.imgWrap}>
+    <img src={lineConnection} alt="리소스 연결 이미지" width={800} />
+</div>
+
+<br />
+<br />
+
+### Resource type
+
+Resources are categorized into the `four types` listed below. Refer to the resource list below to connect the resources on the canvas
+
+| Image                                             | Name       | Description                                                           |
+| ------------------------------------------------- | ---------- | --------------------------------------------------------------------- |
+| <img width="40px" src={ basic } alt="이미지" />   | Basic      | Display the resources that can belong to the group.                   |
+| <img width="40px" src={ connect } alt="이미지" /> | Connecting | Display the list of resources that can be connected to this resource. |
+| <img width="40px" src={ group } alt="이미지" />   | Group      | Display the list of resources that can belong to the group.           |
+| <img width="40px" src={ tools } alt="이미지" />   | Tools      | Display the list of canvas tools                                      |
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+## Edit Resource Options{#option-edit}
+
+`Double-click` the resource to open the Edit Window where you can change its settings.
+You can view the resource description by clicking the `Read More icon`.
+❓ Hover over the `Question Icon` to view descriptions for each option. Use these descriptions to set the values as desired.
+
+<div className={styles.imgWrap}>
+    <img src={edit} alt="옵션 편집 이미지" width={800} />
+</div>
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+## Fix the error {#error-correction}
+
+🔴 A red dot indicates that there is an error with the resource. <highlight color="#FF7272">If there are errors, you cannot save or distribute the canvas.</highlight>
+`Double-click` the resource with the error to open the Canvas Error Window.
+In the Canvas Error Window, double-click the specific error to navigate to the error location. Refer to the cause of the error to make the necessary corrections.
+
+<div className={styles.imgWrap}>
+    <img src={error} alt="오류 수정 이미지" width={800} />
+</div>
+
+<p>&nbsp;</p>
+
+### Error Types
+
+| Type  | Description                                             |
+| ----- | ------------------------------------------------------- | --- |
+| value | Errors caused by incorrect input values                 |
+| group | Errors for ungrouped resources                          |     |
+| line  | Errors due to missing connections to required resources |     |
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+## How to Use the Toolbox
+
+{#toolbox}
+
+The toolbox at the top offers various functions for customizing the canvas.
+
+| Image                                                        | Action         | Function                                                             |
+| ------------------------------------------------------------ | -------------- | -------------------------------------------------------------------- |
+| <img width="40px" src={ undo } alt="실행 취소 이미지" />     | Undo           | Reverts the action to the previous step.                             |
+| <img width="40px" src={ redo } alt="다시 하기 이미지" />     | Redo           | Moves forward one step.                                              |
+| <img width="40px" src={ front } alt="이미지" />              | Send Backward  | Moves the selected resource behind other overlapping resources.      |
+| <img width="40px" src={ back } alt="이미지" />               | Bring Forward  | Moves the selected resource in front of other overlapping resources. |
+| <img width="40px" src={ list } alt="리소스 리스트 이미지" /> | Resource Group | A button to toggle the visibility of the resource list.              |
+| <img width="100px" src={ ratio } alt="화면 비율 이미지" />   | Ratio          | Adjusts the canvas aspect ratio.                                     |
+| <img width="100px" src={ grid } alt="그리드 이미지" />       | Show Grid      | Toggle the canvas grid on or off.                                    |

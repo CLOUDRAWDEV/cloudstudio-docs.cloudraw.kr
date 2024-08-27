@@ -1,0 +1,54 @@
+---
+title: Redis
+sidebar_position: 0
+tags: [Ncloud, 리소스, Database, Redis]
+---
+
+<hr />
+<br />
+
+## 리소스 아이콘
+
+<img
+    src={
+        "https://cloudstudioblob.blob.core.windows.net/cloudstudio/ncloudImg/database-redis.png"
+    }
+/>
+
+## 리소스 개요
+
+Cloud DB for Redis는 Redis 캐시를 몇 가지 설정과 클릭만으로 간편하게 구축하고 네이버의 최적화 설정을 통해 안정적으로 운영하며, 장애 발생 시 자동 복구하는 완전 관리형 클라우드 캐시 서비스입니다. 
+
+## 연관 리소스
+
+### 상위 리소스
+
+-   [**Subnet**](https://docs.cstudio.app/docs/resource/ncloud/Networking/Subnet)
+
+### 하위 리소스
+
+
+
+## 리소스 설정 값
+
+-   `server_name_prefix` : Redis Cache 서버 이름
+-   `redis_mode` : Redis의 구성 모드 종류 - `CLUSTER`, `SIMPLE`
+-   `image_product_code` : Redis 구성 인스턴스 스펙으로 생성하고자 하는 redis 서버 이미지 제품 코드
+-   `target_config_group_name` : 연결할 Config Group
+-   `product_code` : 생성할 Redis 인스턴스의 서버 사양을 결정하는 제품 코드
+-   `data_storage_type` : 데이터 스토리지 종류 - `SSD`, `HDD`
+-   `shard_count` : 생성할 샤드 수. master node의 갯수 - `3~10`
+-   `shard_copy_count` : master node와 slave node로 구성되어잇는 Redis cluster의 샤드당 복제본 갯수, HA를 위해서는 slave node가 필수. 복제본 추가 시, 모든 master node에 각각 1개씩 slave node가 할당
+-   `enable_high_availiability` : 고가용성 기능 사용 여부
+-   `enable_backup` : Backup 기능 사용 여부, 만약 고가용성 기능을 사용하면, backup 기능은 사용으로 고정
+-   `port` : Redis 접속포트 - `6379`
+
+    
+
+---
+
+## 참고 자료
+
+-   [Redis(Ncloud)](https://www.ncloud.com/product/database/cloudDbRedis)
+-   [ncloud_redis(Terraform)](https://registry.terraform.io/providers/NaverCloudPlatform/ncloud/latest/docs/resources/redis)
+

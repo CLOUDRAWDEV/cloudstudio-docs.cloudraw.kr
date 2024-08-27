@@ -1,0 +1,51 @@
+---
+title: ClientVpnEndpoint
+sidebar_position: 0
+tags: [AWS, 리소스, Vpc, ClientVpnEndpoint]
+---
+
+<hr />
+<br />
+
+## 리소스 아이콘
+
+<img
+    src={
+        "https://cloudstudioblob.blob.core.windows.net/cloudstudio/awsImg/vpc-client_vpn_endpoint.png"
+    }
+/>
+
+## 리소스 개요
+
+AWS 리소스 및 온프레미스 네트워크의 리소스에 안전하게 액세스할 수 있도록 하는 관리형 클라이언트 기반 VPN 서비스
+
+## 연관 리소스
+
+### 상위 리소스
+
+-   [**Region**](https://docs.cstudio.app/docs/resource/aws/Base/Region)
+-   [**Vpc**](https://docs.cstudio.app/docs/resource/aws/Vpc/Vpc)
+
+## 리소스 설정 값
+
+-   `description` : 클라이언트 VPN 엔드포인트에 대한 간략한 설명
+-   `client_cidr_block` : 클라이언트 IP 주소가 할당되는 IP 주소 범위
+-   `serer_acm_certificate_name` : 서버 인증서 이름
+-   `authentication` : 사용할 인증 방법
+-   `authentication.option_types` : 사용할 인증 방법 - `certificate-authentication`,`directory-service-authentication`,`federated-authentication`
+-   `connection_logging.enalbed` : 클라이언트 연결에 대한 로그 세부 정보 사용 - `false`,`true`
+-   `transport_protocol` : TLS 세션에서 사용하는 전송 프로토콜 - `tcp`,`udp`
+-   `enabled_split_tunnel` : 분할 터널 활성화 - `false`,`true`
+-   `vpn_port` : VPN 포트
+-   `enabled_self_service_portal` : 셀프 서비스 포털 활성화 - `false`,`true`
+-   `session_timeout_hours` : 세션 제한 시간 - `8`,`10`,`12`,`24`
+-   `included_vpc_name` : VPC 이름
+-   `linked_security_group_names` : 엔드포인트에 적용할 보안 그룹 이름
+-   `linked_subnet_names` : 연결할 Subnet 이름
+
+---
+
+## 참고 자료
+
+-   [AWS Client Vpn Endpoint (AWS)](https://docs.aws.amazon.com/ko_kr/vpn/latest/clientvpn-admin/cvpn-working-endpoints.html)
+-   [AWS Client Vpn Endpoint(Terraform)](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ec2_client_vpn_endpoint)

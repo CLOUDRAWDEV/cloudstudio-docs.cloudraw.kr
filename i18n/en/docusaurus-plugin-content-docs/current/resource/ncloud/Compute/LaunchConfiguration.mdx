@@ -1,0 +1,44 @@
+---
+title: LaunchConfiguration
+sidebar_position: 0
+tags: [Ncloud, 리소스, Compute, LaunchConfiguration]
+---
+
+<hr />
+<br />
+
+## 리소스 아이콘
+
+<img
+    src={
+        "https://cloudstudioblob.blob.core.windows.net/cloudstudio/ncloudImg/compute-launch_configuration.png"
+    }
+/>
+
+## 리소스 개요
+
+Auto Scaling 수행 중 서버 확장 필요시 자동으로 생성되는 가상 서버의 스펙을 구성하는 템플릿입니다.
+
+## 연관 리소스
+
+### 상위 리소스
+
+-   [**Region**](https://docs.cstudio.app/docs/resource/ncloud/Base/Region)
+
+
+## 리소스 설정 값
+
+-   `server_image_product_code` : 사용할 운영체제 이미지 코드(CNTOS:CentOS, UBNTU:Ubuntu, WND:Windows / MYSQL,MARIA:Database / SVR:Server, EN:English Edition)
+-   `server_product_code` : 서버의 하드웨어 구성을 위한 코드(HICPU:High CPU, STAND:Standard, HIMEM:High Memory / C 코어수,M 메모리(GB))
+-   `login_key_name` : 서버 인스턴스 접속 및 암호화, 복호화에 필요한 리소스
+-   `init_script`
+    -   `content` : 서버가 생성될 때 자동으로 실행할 스크립트 내용
+-   `is_encrypted_volume` : Basic block storage 암호화 여부
+
+
+---
+
+
+## 참고 자료
+
+-   [ncloud_launch_configuration(Terraform)](https://registry.terraform.io/providers/NaverCloudPlatform/ncloud/latest/docs/resources/launch_configuration)

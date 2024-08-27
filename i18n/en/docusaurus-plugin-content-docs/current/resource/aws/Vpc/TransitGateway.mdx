@@ -1,0 +1,48 @@
+---
+title: Transit Gateway
+sidebar_position: 0
+tags: [AWS, 리소스, Ec2, TransitGateway]
+---
+
+<hr />
+<br />
+
+## 리소스 아이콘
+
+<img
+    src={
+        "https://cloudstudioblob.blob.core.windows.net/cloudstudio/awsImg/ec2-transit_gateway.png"
+    }
+/>
+
+## 리소스 개요
+
+Transit Gateway는 가상 사설 클라우드(VPC)와 온프레미스 네트워크를 상호 연결하는 데 사용할 수 있는 네트워크 전송 허브입니다. 클라우드 인프라가 전 세계적으로 확장됨에 따라 리전 간 피어링은AWS 글로벌 인프라를 사용하여 Transit Gateway를 함께 연결합니다. 데이터는 자동으로 암호화되며 퍼블릭 인터넷을 통해 전송되지 않습니다.
+
+## 연관 리소스
+
+### 상위 리소스
+
+-   [**Region**](https://docs.cstudio.app/docs/resource/aws/Base/Region)
+
+### 연결 리소스
+
+-   [**Vpc**](https://docs.cstudio.app/docs/resource/aws/Vpc/)
+
+## 리소스 설정 값
+
+-   `dns_support` : 연결된 VPC에 대해 도메인 이름 시스템 확인 확성화 - `enable`, `disable`
+-   `vpn_ecmp_support` : 연결된 VPN을 위한 ECMP(다중 경로) 라우팅 지원 - `enable`, `disable`
+-   `default_route_table_association` : Attachment를 기본 라우팅 테이블과 자동 연결 - `enable`, `disable`
+-   `default_route_table_propagation` : 기본 라우팅 테이블로 Attachment를 자동 전파 - `enable`, `disable`
+-   `multicast_support` : 멀티캐스트 도메인 생성 활성화 - `enable`, `disable`
+-   `transit_gateway_cidr_blocks` : Transit Gateway Cidr 블록
+-   `vpc_attachment`
+
+---
+
+## 참고 자료
+
+-   [AWS Transit Gateway(AWS)](https://docs.aws.amazon.com/ko_kr/vpc/latest/tgw/what-is-transit-gateway.html?nc2=type_a)
+-   [AWS Transit Gateway 가격(AWS)](https://aws.amazon.com/ko/transit-gateway/pricing/?nc2=type_a)
+-   [aws_ec2_transit_gateway(Terraform)](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ec2_transit_gateway)

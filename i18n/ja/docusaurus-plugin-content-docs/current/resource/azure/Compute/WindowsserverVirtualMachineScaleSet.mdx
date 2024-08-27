@@ -1,0 +1,58 @@
+---
+title: WindowsserverVirtualMachineScaleSet
+sidebar_position: 5
+tags: [Azure, 리소스, Compute, WindowsserverVirtualMachineScaleSet]
+---
+
+<hr />
+<br />
+
+## 리소스 아이콘
+
+<img
+    src={
+        "https://cloudstudioblob.blob.core.windows.net/cloudstudio/azureImg/compute-windowsserver_virtual_machine_scale_set.png"
+    }
+/>
+
+## 리소스 개요
+
+Azure Windowsserver 가상 머신 확장 집합은 Windows 운영 체제를 실행하는 동일한 가상 머신 그룹으로, 필요에 따라 자동으로 확장 또는 축소할 수 있습니다.
+확장 집합의 VM 수를 수동으로 조정하거나 리소스 사용량(예: CPU, 메모리 요구량 또는 네트워크 트래픽)에 따라 자동으로 크기를 조정하는 규칙을 정의할 수 있습니다.
+그러면 Azure 부하 분산 장치에서 확장 집합의 VM 인스턴스에 트래픽을 분산합니다
+
+## 연관 리소스
+
+### 상위 리소스
+
+-   [**Virtual Network**](https://docs.cstudio.app/docs/resource/azure/Network/VirtualNetwork)
+
+## 리소스 설정 값
+
+-   `included_vnet_name` : Subnet이 포함된 Virtual Network 이름
+-   `orchestration_mode` : Scale Set에 의해 VM이 관리되는지 결정하는 오케스트레이션 방식
+-   `platform_fault_domain_count` : 공통 전원 및 네트워크 스위치를 공유하는 VM의 그룹 수
+-   `vmss_sku` : Virtual Machine Scale Set의 가격 책정 계층
+-   `instances` : Scale Set의 가상머신 수 `1`~`1000`
+-   `source_image`
+    -   `enabled_custom_image` : 사용자 이미지 ID 사용 유무 - `true`, `false`
+    -   `image_id` : VM 생성을 위해 사용하는 이미지의 ID
+    -   `publisher` : VM 생성을 위해 사용하는 이미지의 공급자
+    -   `Offer` : VM 생성을 위해 사용하는 이미지의 ID
+    -   `sku` : VM 생성을 위해 사용하는 이미지의 가격 책정 계층
+-   `computer_name_prefix` : Virtual Machines의 이름으로 사용할 Prefix
+-   `admin_username` : VM에 대한 관리자 사용자 이름
+-   `admin_password` : VM에 대한 관리자 암호
+-   `os_disk_caching` : 내부 OS Disk 사용을 위한 Caching 유형 - `ReadWrite`, `ReadOnly`, `None`
+-   `storage_account_type` : 내부 OS Disk를 백업하기 위한 스토리지 유형 - `Standard_LRS`, `StandardSSD_LRS`, `Premium_LRS`
+-   `disk_size_gb` : 내부 OS Disk의 크기(GB) - `1`~`11400`
+-   `network_interface` : 네트워크 인터페이스 이름
+-   `tag` : 리소스를 카테고리로 분류하기 위한 태그 - 최대 512자, `key`:`value`
+
+---
+
+## 참고 자료
+
+-   [Azure WindowsserverVirtualMachineScaleSet(Microsoft)](https://learn.microsoft.com/ko-kr/azure/virtual-machine-scale-sets/overview)
+-   [Azure WindowsserverVirtualMachineScaleSet 가격](https://azure.microsoft.com/en-us/pricing/details/virtual-machine-scale-sets/windows/)
+-   [Azure WindowsserverVirtualMachineScaleSet(Terraform)](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/windows_virtual_machine_scale_set)

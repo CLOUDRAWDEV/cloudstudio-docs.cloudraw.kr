@@ -1,0 +1,55 @@
+---
+title: ActionGroup
+sidebar_position: 0
+tags: [Azure, 리소스, Monitor, ActionGroup]
+---
+
+<hr />
+<br />
+
+## 리소스 아이콘
+
+<img
+    src={
+        "https://cloudstudioblob.blob.core.windows.net/cloudstudio/azureImg/monitor-action_group.png"
+    }
+/>
+
+## 리소스 개요
+
+Azure Monitor 작업 그룹은 경고가 트리거될 때 실행할 일련의 작업을 정의할 수 있는 Microsoft Azure의 기능입니다. 작업 그룹은 알림 기본 설정 및 특정 경고와 관련된 작업의 모음으로 생각할 수 있습니다.
+경고가 트리거되면 Azure Monitor는 연결된 작업 그룹에 정의된 일련의 작업을 자동으로 수행할 수 있습니다.
+이메일 보내기, 문자 메시지 보내기, 전화 걸기 또는 웹후크 트리거와 같은 다양한 유형의 작업을 수행하도록 작업 그룹을 구성할 수 있습니다.
+병렬 또는 순서대로 실행할 여러 작업을 지정하고 경고가 적절하게 처리되도록 에스컬레이션 정책을 설정할 수도 있습니다.
+
+## 연관 리소스
+
+### 상위 리소스
+
+-   [**Resource Group**](https://docs.cstudio.app/docs/resource/azure/Base/ResourceGroup)
+
+## 리소스 설정 값
+
+-   `short_name` : 메일 및 SMS 알림에서 표시될 Action Group 이름
+
+-   `enabled` : Action Group 활성화
+
+-   `email`
+
+    -   `email_address` : 알림을 받을 이메일 주소
+    -   `use_common_alert_schema` : 일반 경고 스키마 활성화 혹은 비활성화 - `true`, `false`
+
+-   `sms`
+
+    -   `country_code` : SMS 알림의 국가번호
+    -   `phone_number` : 알림을 받을 전화번호
+
+-   `tag` : 리소스를 카테고리로 분류하기 위한 태그 - 최대 512자, `key`:`value`
+
+---
+
+## 참고 자료
+
+-   [Azure ActionGroup(Microsoft)](https://learn.microsoft.com/en-us/azure/azure-monitor/overview)
+-   [Azure ActionGroup 가격](https://azure.microsoft.com/ko-kr/pricing/details/monitor/)
+-   [Azure ActionGroup(Terraform)](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/monitor_action_group)

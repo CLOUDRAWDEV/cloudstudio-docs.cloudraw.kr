@@ -1,0 +1,75 @@
+---
+title: NetworkSecurityGroup
+sidebar_position: 7
+tags: [Azure, 리소스, Network, NetworkSecurityGroup]
+---
+
+<hr />
+<br />
+
+## 리소스 아이콘
+
+<img
+    src={
+        "https://cloudstudioblob.blob.core.windows.net/cloudstudio/azureImg/network-network_security_group.png"
+    }
+/>
+
+## 리소스 개요
+
+Azure NSG(네트워크 보안 그룹)는 Azure의 VNet(가상 네트워크)에서 리소스에 대한 액세스를 제어하는 ​​네트워킹 필터입니다. 정의한 규칙 집합에 따라 네트워크 트래픽을 허용하거나 거부하는 방화벽 역할을 합니다.
+NSG를 VNet의 서브넷, 네트워크 인터페이스 또는 가상 머신과 연결할 수 있습니다. NSG가 리소스와 연결되면 해당 리소스에 대한 인바운드 및 아웃바운드 트래픽을 필터링합니다.
+NSG는 우선 순위를 지정할 수 있는 여러 인바운드 및 아웃바운드 보안 규칙을 포함할 수 있으므로 네트워크 트래픽을 세부적으로 제어할 수 있습니다.
+NSG는 가상 네트워크 리소스에 대한 추가 보호 계층을 제공하는 Azure 네트워크 보안의 중요한 구성 요소입니다. 이를 통해 서브넷 수준에서 네트워크 트래픽을 필터링하여 잠재적인 위협에 대한 노출을 제한할 수 있습니다.
+
+## 연관 리소스
+
+### 상위 리소스
+
+-   [**Resource Group**](https://docs.cstudio.app/docs/resource/azure/Base/ResourceGroup)
+
+### 연결 리소스
+
+-   [**Linux Virtual Machine**](https://docs.cstudio.app/docs/resource/azure/Compute/LinuxVirtualMachine)
+-   [**Windowsserver Virtual Machine**](https://docs.cstudio.app/docs/resource/azure/Compute/WindowsserverVirtualMachine)
+-   [**Application Gateway**](https://docs.cstudio.app/docs/resource/azure/Network/ApplicationGateway)
+-   [**Bastion Host**](https://docs.cstudio.app/docs/resource/azure/Network/BastionHost)
+-   [**Network Interface**](https://docs.cstudio.app/docs/resource/azure/Network/NetworkInterface)
+-   [- [**Subnet**](https://docs.cstudio.app/docs/resource/azure/Network/Subnet)](https://docs.cstudio.app/docs/resource/azure/Network/Subnet)
+
+## 리소스 설정 값
+
+-   `security_rules`
+
+    -   `http`
+        -   `priority` : Rule의 우선순위, 100 ~ 4096의 범위 - `100`~ `4096`
+        -   `direction` : Rule이 인바운드 또는 아웃바운드 트래픽에 적용되는지 여부 - `Inbound`, `Outbound`
+        -   `access` : 네트워크 트래픽을 허용 - `Allow`, `Deny`
+        -   `protocol` : Rule이 적용되는 네트워크 프로토콜 - `Tcp`, `Udp`, `Icmp`, `Esp`, `Ah`, `*`
+        -   `source_port_ranges` : Source Port 혹은 Port 범위, 정수 또는 0 ~ 65535의 범위
+        -   `destination_port_ranges` : Destination Port 혹은 Port 범위, 정수 또는 0 ~ 65535의 범위
+        -   `source_address_prefixes` : CIDR 혹은 Source IP 범위 지정
+        -   `destination_address_prefixes` : CIDR 혹은 Destination IP 범위 지정
+        -   `description` : Security Rule에 대한 설명
+    -   `https`
+        -   `priority` : Rule의 우선순위, 100 ~ 4096의 범위 - `100`~ `4096`
+        -   `direction` : Rule이 인바운드 또는 아웃바운드 트래픽에 적용되는지 여부 - `Inbound`, `Outbound`
+        -   `access` : 네트워크 트래픽을 허용 - `Allow`, `Deny`
+        -   `protocol` : Rule이 적용되는 네트워크 프로토콜 - `Tcp`, `Udp`, `Icmp`, `Esp`, `Ah`, `*`
+        -   `source_port_ranges` : Source Port 혹은 Port 범위, 정수 또는 0 ~ 65535의 범위
+        -   `destination_port_ranges` : Destination Port 혹은 Port 범위, 정수 또는 0 ~ 65535의 범위
+        -   `source_address_prefixes` : CIDR 혹은 Source IP 범위 지정
+        -   `destination_address_prefixes` : CIDR 혹은 Destination IP 범위 지정
+        -   `description` : Security Rule에 대한 설명
+
+-   `linked_subnet_names` : Network Security Group을 연결할 Subnet 이름
+
+-   `linked_network_interface_names` : Network Security Group을 연결할 Network Interface 이름
+-   `tag` : 리소스를 카테고리로 분류하기 위한 태그 - 최대 512자, `key`:`value`
+
+---
+
+## 참고 자료
+
+-   [Azure NetworkSecurityGroup(Microsoft)](https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview)
+-   [Azure NetworkSecurityGroup(Terraform)](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/network_security_group)

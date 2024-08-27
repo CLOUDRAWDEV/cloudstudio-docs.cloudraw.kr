@@ -1,0 +1,112 @@
+---
+title: Save
+sidebar_position: 7
+tags: [save, 저장, 버전이력, 버전관리, 버전저장, 시작하기]
+last_update:
+    date: 02/01/2023
+---
+
+import styles from "/src/scss/_markdown.module.scss"
+import save01 from "../start/img/save01.png"
+import save02 from "../start/img/save02.png"
+import save03 from "../start/img/save03.png"
+import save04 from "../start/img/save04.png"
+import save05 from "../start/img/save05.png"
+import save06 from "../start/img/save06.png"
+
+<span className="theme-doc-version-badge badge badge--secondary">
+    last update: 2023.02.01
+</span>
+
+<hr />
+<br />
+
+## 저장하기 {#save}
+
+There are `two options` to save the canvas.
+
+-   [Save](#save)
+-   [Save Version](#version)
+
+Save saves the `current state of the canvas`. Saving the canvas is similar to saving a project.
+The image you see on the project thumbnail will be the canvas image after saving.
+
+<div className={styles.imgWrap}>
+    <img src={save05} width="300px" alt="저장하기 이미지" />
+</div>
+
+<br />
+
+Saving is simple. Click `File > Save`.
+
+<div className={styles.imgWrap}>
+    <img src={save01} width="200px" alt="저장하기 이미지" />
+</div>
+
+<p>&nbsp;</p>
+
+:::caution
+
+If there are 🔴 errors on the canvas, only the image will be saved. Be sure to resolve all errors before saving.
+For information on how to fix errors, please refer to [here](/docs/start/edit-canvas).
+
+:::
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+## Save Version Version History {#version}
+
+Saving a version allows you to return to a specific point in time on the canvas.
+By saving versions, you can navigate to the state of the canvas at any desired point using the version history.
+
+### Save Version {#version-save}
+
+1. To save a version, click `Save Version Control> Save Version`.
+
+<div className={styles.imgWrap}>
+    <img src={save02} width="200px" alt="버전저장 이미지" />
+</div>
+
+<br />
+
+2. Enter a `Tag Message`. The tag message you provide will appear as the `Version Title` in the version history.
+
+    <div className={styles.imgWrap}>
+        <img src={save03} alt="버전저장 이미지" />
+    </div>
+
+<br />
+
+3. Click `Save`.
+
+<p>&nbsp;</p>
+
+### Version History {#version-history}
+
+1. To check the version history, click Version Control > Version History.
+
+<div className={styles.imgWrap}>
+    <img src={save06} width="200px" alt="버전저장 이미지" />
+</div>
+
+<br />
+
+View the saved versions in the Version History.
+
+:::note
+
+-   <highlight color="#206FD6">Latest</highlight>: Recent Canvas
+-   <highlight color="#AD28DC">Manual</highlight>: Version save history
+-   <highlight color="#02CDE8">Planed</highlight>: Deploy Validation Check
+-   <highlight color="#5C4AF6">Applied</highlight>: Deployment completed history
+
+:::
+
+<br />
+
+Click on the canvas you want to `revert` to.
+
+<div className={styles.imgWrap}>
+    <img src={save04} alt="버전이력 이미지" />
+</div>

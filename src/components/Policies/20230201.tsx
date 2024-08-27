@@ -5,7 +5,7 @@ import RequiredPersonalInfo from "@site/src/pages/policy/RequiredPersonalInfo"
 import OptionalPersonalInfo from "@site/src/pages/policy/OptionalPersonalInfo"
 import Layout from "@theme/Layout"
 
-function Policy20240401 (){
+function Policy20240401() {
     return (
         <>
             <section className={policyStyles.policy}>
@@ -48,7 +48,7 @@ function Policy20240401 (){
                             width={24}
                             height={24}
                             title={"선택 개인정보 수집"}
-                            contents={<OptionalPersonalInfo/>}
+                            contents={<OptionalPersonalInfo />}
                         />
                         <Labeling
                             xmlns={"http://www.w3.org/2000/svg"}
@@ -60,13 +60,14 @@ function Policy20240401 (){
                             title={"개인정보의 보유 기간"}
                             contents={
                                 <>
-                                    <h5
-                                        style={{ fontWeight: "normal" }}
-                                    >회원 탈퇴 시 까지</h5>
                                     <h5 style={{ fontWeight: "normal" }}>
-                                        단, 관계법령에 정함이 있는 경우 해당 법률에서 정한 기간동안 보유 및 이용 가능</h5>
+                                        회원 탈퇴 시 까지
+                                    </h5>
+                                    <h5 style={{ fontWeight: "normal" }}>
+                                        단, 관계법령에 정함이 있는 경우 해당
+                                        법률에서 정한 기간동안 보유 및 이용 가능
+                                    </h5>
                                 </>
-
                             }
                         />
                     </section>
@@ -124,13 +125,21 @@ function Policy20240401 (){
                             contents={
                                 <div>
                                     <h5 style={{ fontWeight: "normal" }}>
-                                        <strong>처리 위탁업체 : </strong>부트페이
+                                        <strong>처리 위탁업체 : </strong>
+                                        부트페이
                                     </h5>
                                     <h5 style={{ fontWeight: "normal" }}>
-                                        <strong>위탁업무 및 이용 목적 : </strong>{" "}
+                                        <strong>
+                                            위탁업무 및 이용 목적 :{" "}
+                                        </strong>{" "}
                                         비용 결제 대행
                                     </h5>
-                                    <h5 style={{ fontWeight: "normal", lineHeight:"22px" }}>
+                                    <h5
+                                        style={{
+                                            fontWeight: "normal",
+                                            lineHeight: "22px",
+                                        }}
+                                    >
                                         <strong>보유 및 이용기간 :</strong> 회원
                                         탈퇴 시 혹은 위탁계약 종료 시 까지 단,
                                         관계법령에 정함이 있는 경우 해당
@@ -156,8 +165,8 @@ function Policy20240401 (){
                                         문현배 본부장
                                     </h5>
                                     <h5 style={{ fontWeight: "normal" }}>
-                                        <strong>이메일 :</strong>
-                                        {" "}hbmoon@cloudraw.kr{" "}
+                                        <strong>이메일 :</strong>{" "}
+                                        hbmoon@cloudraw.kr{" "}
                                     </h5>
                                     <h5
                                         style={{
@@ -186,72 +195,72 @@ function Policy20240401 (){
                 <br />
                 <table>
                     <thead>
-                    <th>구분</th>
-                    <th>수집항목</th>
-                    <th>수집 목적</th>
-                    <th>보유 및 이용기간</th>
+                        <th>구분</th>
+                        <th>수집항목</th>
+                        <th>수집 목적</th>
+                        <th>보유 및 이용기간</th>
                     </thead>
                     <tbody>
-                    <tr>
-                        <th rowSpan={2}>필수</th>
-                        <td>ID, 비밀번호, 이메일</td>
-                        <td>
-                            서비스 이용에 따른 본인 확인 및 고지사항 전달,
-                            서비스 관련 상담 및 불만 처리 등 원활한 의사소통
-                            경로의 확보
-                        </td>
-                        <td rowSpan={7} style={{ textAlign: "center" }}>
-                            <strong>회원 탈퇴 시 까지</strong>
-                            <br />
-                            단, 관계법령에 정함이 있는 경우 해당 법률에서
-                            정한 기간동안 보유 및 이용 가능
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            서비스 이용 기록, 접속로그, 쿠키, 접속 IP 정보
-                        </td>
-                        <td>
-                            이용 서비스 정보 등에 대한 분석 및 세분화를 통한
-                            이용자의 서비스 이용 선호도 분석
-                        </td>
-                    </tr>
-                    <tr>
-                        <th rowSpan={5}>선택</th>
-                        <td>
-                            신용카드 정보(카드 회사명, 카드 번호, 유효 기간)
-                        </td>
-                        <td>서비스 이용에 따른 비용 결제</td>
-                    </tr>
-                    <tr>
-                        <td>
-                            MS Azure CSP 서비스 크레덴셜 정보 (Tenant ID,
-                            Subscription ID, Service Principal ID, Service
-                            Principal Key)
-                        </td>
-                        <td> API 연동을 통한 관리 서비스 제공</td>
-                    </tr>
-                    <tr>
-                        <td>
-                            AWS CSP 서비스 크레덴셜 정보(Access Key, Secret
-                            Key)
-                        </td>
-                        <td>API 연동을 통한 관리 서비스 제공</td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Naver Cloud CSP 서비스 크레덴셜 정보 (Access Key,
-                            Secret Key)
-                        </td>
-                        <td> API 연동을 통한 관리 서비스 제공</td>
-                    </tr>
-                    <tr>
-                        <td>결제 기록</td>
-                        <td>
-                            거래 내역 확인, 부정거래 확인, 결제 취소 금액
-                            환불
-                        </td>
-                    </tr>
+                        <tr>
+                            <th rowSpan={2}>필수</th>
+                            <td>ID, 비밀번호, 이메일</td>
+                            <td>
+                                서비스 이용에 따른 본인 확인 및 고지사항 전달,
+                                서비스 관련 상담 및 불만 처리 등 원활한 의사소통
+                                경로의 확보
+                            </td>
+                            <td rowSpan={7} style={{ textAlign: "center" }}>
+                                <strong>회원 탈퇴 시 까지</strong>
+                                <br />
+                                단, 관계법령에 정함이 있는 경우 해당 법률에서
+                                정한 기간동안 보유 및 이용 가능
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                서비스 이용 기록, 접속로그, 쿠키, 접속 IP 정보
+                            </td>
+                            <td>
+                                이용 서비스 정보 등에 대한 분석 및 세분화를 통한
+                                이용자의 서비스 이용 선호도 분석
+                            </td>
+                        </tr>
+                        <tr>
+                            <th rowSpan={5}>선택</th>
+                            <td>
+                                신용카드 정보(카드 회사명, 카드 번호, 유효 기간)
+                            </td>
+                            <td>서비스 이용에 따른 비용 결제</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                MS Azure CSP 서비스 자격증명 정보 (Tenant ID,
+                                Subscription ID, Service Principal ID, Service
+                                Principal Key)
+                            </td>
+                            <td> API 연동을 통한 관리 서비스 제공</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                AWS CSP 서비스 자격증명 정보(Access Key, Secret
+                                Key)
+                            </td>
+                            <td>API 연동을 통한 관리 서비스 제공</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Naver Cloud CSP 서비스 자격증명 정보 (Access
+                                Key, Secret Key)
+                            </td>
+                            <td> API 연동을 통한 관리 서비스 제공</td>
+                        </tr>
+                        <tr>
+                            <td>결제 기록</td>
+                            <td>
+                                거래 내역 확인, 부정거래 확인, 결제 취소 금액
+                                환불
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
                 <br />
@@ -268,23 +277,23 @@ function Policy20240401 (){
                 <br />
                 <table>
                     <thead>
-                    <th>처리 위탁업체</th>
-                    <th>위탁업무 및 이용 목적</th>
-                    <th>보유 및 이용기간</th>
+                        <th>처리 위탁업체</th>
+                        <th>위탁업무 및 이용 목적</th>
+                        <th>보유 및 이용기간</th>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td>부트페이</td>
-                        <td>비용 결제 대행</td>
-                        <td style={{ textAlign: "center" }}>
-                            <strong>
-                                회원 탈퇴 시 혹은 위탁계약 종료 시 까지
-                            </strong>
-                            <br />
-                            단, 관계법령에 정함이 있는 경우 해당 법률에서
-                            정한 기간동안 보유 및 이용 가능
-                        </td>
-                    </tr>
+                        <tr>
+                            <td>부트페이</td>
+                            <td>비용 결제 대행</td>
+                            <td style={{ textAlign: "center" }}>
+                                <strong>
+                                    회원 탈퇴 시 혹은 위탁계약 종료 시 까지
+                                </strong>
+                                <br />
+                                단, 관계법령에 정함이 있는 경우 해당 법률에서
+                                정한 기간동안 보유 및 이용 가능
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
                 <br />
@@ -301,23 +310,23 @@ function Policy20240401 (){
                 <br />
                 <table>
                     <thead>
-                    <th style={{ width: "100vh" }} colSpan={2}>
-                        개인정보보호책임자(CPO)
-                    </th>
+                        <th style={{ width: "100vh" }} colSpan={2}>
+                            개인정보보호책임자(CPO)
+                        </th>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td>이름</td>
-                        <td>문현배</td>
-                    </tr>
-                    <tr>
-                        <td>직책</td>
-                        <td>본부장</td>
-                    </tr>
-                    <tr>
-                        <td>이메일</td>
-                        <td>hbmoon@cloudraw.kr</td>
-                    </tr>
+                        <tr>
+                            <td>이름</td>
+                            <td>문현배</td>
+                        </tr>
+                        <tr>
+                            <td>직책</td>
+                            <td>본부장</td>
+                        </tr>
+                        <tr>
+                            <td>이메일</td>
+                            <td>hbmoon@cloudraw.kr</td>
+                        </tr>
                     </tbody>
                 </table>
                 <br />

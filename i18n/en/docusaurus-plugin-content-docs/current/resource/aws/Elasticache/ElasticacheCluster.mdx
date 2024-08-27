@@ -1,0 +1,50 @@
+---
+title: Elasticache Cluster
+sidebar_position: 0
+tags: [AWS, 리소스, Elasticache, ElasticacheCluster]
+---
+
+<hr />
+<br />
+
+## 리소스 아이콘
+
+<img
+    src={
+        "https://cloudstudioblob.blob.core.windows.net/cloudstudio/awsImg/elasticache-elasticache_cluster.png"
+    }
+/>
+
+## 리소스 개요
+
+AWS Elasticache Cluster는 클라우드 기반의 인 메모리 데이터 스토어이며, 빠르고 확장 가능한 캐싱 솔루션을 제공합니다. Elasticache Cluster는 Redis 또는 Memcached 엔진을 사용하여 클러스터 모드 또는 단일 노드 모드에서 실행할 수 있습니다. Elasticache Cluster는 애플리케이션의 성능을 향상시키는 데 사용되며, 데이터를 더 빠르게 검색하고 처리할 수 있습니다. Elasticache Cluster는 자동 백업, 복구, 확장 및 모니터링 기능을 제공하여 사용자가 안심하고 데이터를 저장할 수 있도록 도와줍니다.
+
+## 연관 리소스
+
+### 상위 리소스
+
+-   [**Subnet**](https://docs.cstudio.app/docs/resource/aws/Vpc/Subnet)
+
+### 연결 리소스
+
+-   [**Subnet**](https://docs.cstudio.app/docs/resource/aws/ElastiCache/ElasticacheCluster)
+
+## 리소스 설정 값
+
+-   `engine` : Cache Cluster에서 사용할 Cache Engine의 이름 - `redis`, `memcached`
+-   `engine_version` : Cache Engine의 버전
+-   `port` : 각 Cache Node와 연결할 때 사용할 포트 번호. Memcached는 11211, Redis는 6379번 포트를 기본값으로 사용
+-   `parameter_group_name` : Cache Cluster와 연결할 파라미터 그룹의 이름
+-   `node_type` : Cache Cluster에 사용된 인스턴스 클래스
+-   `num_cache_nodes` : Cache Cluster의 최초 Cache Node 수 - `1`~`40`
+-   `az_mode` : Memcached Node Group의 Node가 단일 가용 영역에서 생성되는지 아니면 클러스터 지역의 여러 가용 영역에 걸쳐 생성되는지 여부 - `single-az`, `cross-az`
+-   `included_subnet_names` : Elasticache Cluster를 배포할 Subnet Group에 포함될 Subnet의 이름
+-   `snapshot_retention_limit` : ElastiCache가 자동 캐시 클러스터 스냅샷을 삭제하기 전에 보관하는 기간
+
+---
+
+## 참고 자료
+
+-   [Amazon ElastiCache for Redis(AWS)](https://docs.aws.amazon.com/ko_kr/AmazonElastiCache/latest/red-ug/WhatIs.html)
+-   [Amazon ElastiCache for Redis 요금(AWS)](https://aws.amazon.com/ko/elasticache/pricing/?nc=sn&loc=5)
+-   [aws_elasticache_cluster(Terraform)](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/elasticache_cluster)
