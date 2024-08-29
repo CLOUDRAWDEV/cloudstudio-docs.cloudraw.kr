@@ -14,29 +14,29 @@ $colorPink: 337, 100%, 68%;
 $colorLivid: 206, 39%, 76%;
 
 .imgWrap {
-  width: 100%;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap:12px;
-  flex-direction: column;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    flex-direction: column;
 }
-  
+
 .tabs-container {
-  margin-top: 24px;
-  margin-bottom: 24px;
+    margin-top: 24px;
+    margin-bottom: 24px;
 }
 
 .caption {
-  padding-bottom: 24px;
-  margin: 0px;
+    padding-bottom: 24px;
+    margin: 0px;
 
-  &_img{
-      display: flex;
-      align-items: center;
-      justify-content: center;
-  }
+    &_img {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }
 
 .captionText {
@@ -44,95 +44,94 @@ $colorLivid: 206, 39%, 76%;
 }
 
 .button {
-  :hover {
-    cursor: pointer;
-  }
+    :hover {
+        cursor: pointer;
+    }
 }
 
 .releaseWrap {
-  display: flex;
-  flex-direction: row;
+    display: flex;
+    flex-direction: row;
 }
 
 .tag {
-  min-width: 112px;
-  display: flex;
-  padding: 4px 8px;
-  border-radius: 4px;
-  justify-content: center;
-  align-items: center;
+    min-width: 112px;
+    display: flex;
+    padding: 4px 8px;
+    border-radius: 4px;
+    justify-content: center;
+    align-items: center;
 
-  &[data-type="new"] {
-    background: hsla(214, 74%, 48%, 0.7);
-    color: #ffffff;
-    font-weight: 600;
-  }
+    &[data-type="new"] {
+        background: hsla(214, 74%, 48%, 0.7);
+        color: #ffffff;
+        font-weight: 600;
+    }
 
-  &[data-type="feature"] {
-    background: hsla( 164, 75%, 49%, 0.7);
-    color: #ffffff;
-    font-weight: 600;
-  }
+    &[data-type="feature"] {
+        background: hsla(164, 75%, 49%, 0.7);
+        color: #ffffff;
+        font-weight: 600;
+    }
 
-  &[data-type="update"] {
-    background: hsla(175, 60%, 61%, 0.8);
-    color: #ffffff;
-    font-weight: 600;
-  }
+    &[data-type="update"] {
+        background: hsla(175, 60%, 61%, 0.8);
+        color: #ffffff;
+        font-weight: 600;
+    }
 
-  &[data-type="changed"] {
-    background: hsla(47, 100%, 65%, 0.8);
-    color: #ffffff;
-    font-weight: 600;
-  }
+    &[data-type="changed"] {
+        background: hsla(47, 100%, 65%, 0.8);
+        color: #ffffff;
+        font-weight: 600;
+    }
 
-  &[data-type="fixed"] {
-    background: hsla(23, 95%, 62%, 0.7);
-    color: #ffffff;
-    font-weight: 600;
-  }
+    &[data-type="fixed"] {
+        background: hsla(23, 95%, 62%, 0.7);
+        color: #ffffff;
+        font-weight: 600;
+    }
 
-  &[data-type="deprecated"] {
-    background: hsla(0, 100%, 68%, 0.7);
-    color: #ffffff;
-    font-weight: 600;
-  }
+    &[data-type="deprecated"] {
+        background: hsla(0, 100%, 68%, 0.7);
+        color: #ffffff;
+        font-weight: 600;
+    }
 
-  &[data-type="update"] {
-    background: hsla(175, 60%, 61%, 0.8);
-    color: #ffffff;
-    font-weight: 600;
-  }
+    &[data-type="update"] {
+        background: hsla(175, 60%, 61%, 0.8);
+        color: #ffffff;
+        font-weight: 600;
+    }
 
-  &[data-type="low"] {
-    background: rgba(0, 0, 0, 0.3);
-    color: #ffffff;
-    font-weight: 600;
-  }
+    &[data-type="low"] {
+        background: rgba(0, 0, 0, 0.3);
+        color: #ffffff;
+        font-weight: 600;
+    }
 
-  &[data-type="medium"] {
-    background: hsla(47, 100%, 65%, 0.8);
-    color: #ffffff;
-    font-weight: 600;
-  }
+    &[data-type="medium"] {
+        background: hsla(47, 100%, 65%, 0.8);
+        color: #ffffff;
+        font-weight: 600;
+    }
 
-  &[data-type="high"] {
-    background: hsla(23, 95%, 62%, 0.7);
-    color: #ffffff;
-    font-weight: 600;
-  }
+    &[data-type="high"] {
+        background: hsla(23, 95%, 62%, 0.7);
+        color: #ffffff;
+        font-weight: 600;
+    }
 
-  &[data-type="critical"] {
-    background: hsla(0, 100%, 68%, 0.7);
-    color: #ffffff;
-    font-weight: 600;
-  }
+    &[data-type="critical"] {
+        background: hsla(0, 100%, 68%, 0.7);
+        color: #ffffff;
+        font-weight: 600;
+    }
 }
 
 .securityTable {
-  overflow-x: auto;
-  table {
-    width: 1980px;
-  }
-
+    overflow-x: auto;
+    table {
+        width: 1980px;
+    }
 }
