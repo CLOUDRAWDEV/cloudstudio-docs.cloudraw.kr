@@ -1,16 +1,24 @@
 ---
 title: Save
 sidebar_position: 2
-tags: [save, saving, version history, version control, version saving, getting started]
+tags:
+    [
+        save,
+        saving,
+        version history,
+        version control,
+        version saving,
+        getting started,
+    ]
 ---
 
 import styles from "/src/scss/_markdown.module.scss"
-import save01 from "/docs/start/img/save01.png"
-import save02 from "/docs/start/img/save02.png"
-import save03 from "/docs/start/img/save03.png"
-import save04 from "/docs/start/img/save04.png"
-import save05 from "/docs/start/img/save05.png"
-import save06 from "/docs/start/img/save06.png"
+import save01 from "./img/save01.png"
+import save02 from "./img/save02.png"
+import save03 from "./img/save03.png"
+import save04 from "./img/save04.png"
+import save05 from "./img/save05.png"
+import save06 from "./img/save06.png"
 
 <hr />
 <br />
@@ -22,7 +30,7 @@ There are `two ways` to save the canvas.
 -   [Save](#save)
 -   [Save Version](#version)
 
-Saving refers to saving the current state of the canvas. Saving the canvas is similar to saving a project. 
+Saving refers to saving the current state of the canvas. Saving the canvas is similar to saving a project.
 The image displayed in the project thumbnail reflects the canvas after saving.
 
 <div className={styles.imgWrap}>
@@ -50,14 +58,12 @@ If there are 🔴 errors in the canvas, only the image will be saved. Be sure to
 
 ## Version Save and Version History {#version}
 
-Version saving is a way to save the canvas at a specific point in time. 
+Version saving is a way to save the canvas at a specific point in time.
 By saving a version, you can return to the desired state of the canvas using version history.
-
 
 ### Version Save {#version-save}
 
-1. To save a version, click `Version Management > Save Version`.
-
+1. To save a version, click `Version Control > Save Version`.
 
 <div className={styles.imgWrap}>
     <img src={save02} width="200px" alt="Version save image" />
@@ -66,9 +72,9 @@ By saving a version, you can return to the desired state of the canvas using ver
 <br />
 
 2. Enter a `Tag Message`. The tag message you enter will appear as the `version title` in the version history.
-<div className={styles.imgWrap}>
-    <img src={save03} alt="Version save image" />
-</div>
+    <div className={styles.imgWrap}>
+        <img src={save03} alt="Version save image" />
+    </div>
 
 <br />
 
@@ -78,7 +84,7 @@ By saving a version, you can return to the desired state of the canvas using ver
 
 ### Version History {#version-history}
 
-1. To view version history, click `Version Management > Version History`.
+1. To view version history, click `Version Control > Version History`.
 
 <div className={styles.imgWrap}>
     <img src={save06} width="200px" alt="Version history image" />
@@ -90,10 +96,13 @@ By saving a version, you can return to the desired state of the canvas using ver
 
 :::note
 
--   <highlight color="#206FD6">Latest</highlight>: The most recently saved history.
+-   <highlight color="#206FD6">Latest</highlight>: The most recently saved
+    history.
 -   <highlight color="#AD28DC">Manual</highlight>: The version save history.
--   <highlight color="#02CDE8">Planed</highlight>: The pre-deployment inspection history.
--   <highlight color="#5C4AF6">Applied</highlight>: The completed deployment history.
+-   <highlight color="#02CDE8">Planed</highlight>: The pre-deployment inspection
+    history.
+-   <highlight color="#5C4AF6">Applied</highlight>: The completed deployment
+    history.
 
 :::
 

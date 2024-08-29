@@ -4,31 +4,38 @@ sidebar_position: 6
 tags: [Export, png, architecture, tf, canvas]
 ---
 
-import styles from '/src/scss/_markdown.module.scss';
+import styles from "/src/scss/_markdown.module.scss"
 
 <hr />
 <br />
 
-When exporting files from Cloud Studio, you can obtain three different file formats:
+When exporting files from CloudStudio, you can obtain three different file formats:
 
 ## Formats
-- PNG file
-- Three TF files (main, output, variables)
-- State file (managed infrastructure)
-- nodes.json file
+
+-   PNG file
+-   Three TF files (main, output, variables)
+-   State file (managed infrastructure)
+-   nodes.json file
 
 ### 1. architecture.png File
+
 A PNG file of the canvas architecture drawn by the user.
 
 ### 2. TF Files
+
 Users will receive three TF files:
 
-```main.tf```: This Terraform file provides the framework of the created infrastructure.
-```output.tf```: This Terraform file provides information related to the infrastructure after deployment.
-```variables.tf```: This Terraform file lists the variables used.
+`main.tf`: This Terraform file provides the framework of the created infrastructure.
+
+`output.tf`: This Terraform file provides information related to the infrastructure after deployment.
+
+`variables.tf`: This Terraform file lists the variables used.
 
 ### 3. terraform.state File
+
 A Terraform file that manages the state of the infrastructure after deployment. (Not provided before deployment.)
 
 ### 4. nodes.json File
+
 Contains coordinate data for drawing the canvas.

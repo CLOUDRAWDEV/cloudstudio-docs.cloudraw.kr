@@ -1,24 +1,22 @@
 ---
-title: 협업
+title: Collaboration
 sidebar_position: 7
 tags: [collaboration, collaboration, permissions, control, canvas]
 ---
 
 import styles from "/src/scss/_markdown.module.scss"
-import collaboration01 from "/docs/canvas/img/collaboration01.png"
-import collaboration02 from "/docs/canvas/img/collaboration02.gif"
-import collaboration03 from "/docs/canvas/img/delete-member.gif"
+import collaboration01 from "./img/collaboration01.png"
+import collaboration02 from "./img/collaboration02.gif"
+import collaboration03 from "./img/delete-member.gif"
 
 <hr />
 <br />
 
-Cloud Studio provides functionality for `collaborative work` by allowing you to add members to projects. 
-To collaborate, you first need to create a project. 
-For instructions on creating a project, please refer to [this guide](/docs/start/create-project). 
-The member who creates the project will have `master` permissions and can share the workspace and modify 
+CloudStudio provides functionality for `collaborative work` by allowing you to add members to projects.
+To collaborate, you first need to create a project.
+For instructions on creating a project, please refer to [this guide](/docs/start/create-project).
+The member who creates the project will have `master` permissions and can share the workspace and modify
 the project with invited members.
-
-
 
 ## Adding and Removing Members for Collaboration
 
@@ -33,14 +31,13 @@ the project with invited members.
 1. Click on the project you want to collaborate on.
 2. Click the user icon.
 3. When the project members modal appears, search for the user ID of the member you want to add to the project.
-4. After finding the user, assign permissions and click the Add to List button. (You can add multiple members.)
-5. Once you have added all desired members, click the Add Members button.
-6. Click Close. (Once members are added, they are automatically invited to the project. An invitation email will be sent to the invited members.)
+4. After finding the user, assign permissions and click the `Add to list` button. (You can add multiple members.)
+5. Once you have added all desired members, click the `Add` button.
+6. Click `Close`. (Once members are added, they are automatically invited to the project. An invitation email will be sent to the invited members.)
 
 <br />
 
 ### Removing Members
-
 
 <div className={styles.imgWrap}>
     <img src={collaboration03} alt="이미지" />
@@ -51,24 +48,24 @@ the project with invited members.
 1. Click on the `project` where you want to collaborate.
 2. Click the `arrow` to view member details.
 3. Click the `more options icon` in the settings.
-4. Click `Remove`.
+4. Click `Delete`.
 
 <br />
 
 ### Project Permissions
 
-| Project Permissions | Description                                                                                                                               |
-| ------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| master        | The master is the person who created the project and can perform all actions such as inviting members and sharing the project.                     |
-| admin         | An admin is someone who has been given access to the canvas but cannot delete or manage the project. They can edit, save, and review the canvas.|
-| editor        |An editor is someone who has been given access to the canvas but cannot delete or manage the project. They can edit, save, and review the canvas.|
-| viewer        | A viewer is someone who has been given access to the canvas but cannot delete or manage the project. They can only view the canvas and cannot make edits.           |
+| Project Permissions | Description                                                                                                                                                                      |
+| ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| master              | As the creator of the project, you have full access to perform all tasks, including reading, editing, deleting, importing, deploying, and inviting members to share the project. |
+| admin               | You can read, edit, import, and deploy the project, but you are not allowed to delete it.                                                                                        |
+| editor              | You can read and edit the project, but all other tasks are not allowed.                                                                                                          |
+| viewer              | Only the project reading task is allowed.                                                                                                                                        |
 
 <br />
 
 ## Collaborating
 
-1. When the master adds members to the project, an invitation email (to the user’s registered email) will be sent, and the `shared project` will appear in the Shared Folders section within Cloud Studio.
+1. When the master adds members to the project, an invitation email (to the user’s registered email) will be sent, and the `shared project` will appear in the Shared Folders section within CloudStudio.
 2. To collaborate, click on the shared project and then click the `Edit Project` button.
 3. You can now freely edit the canvas with your team members.
 
@@ -76,32 +73,33 @@ the project with invited members.
 
 ### Collaborating
 
-When the master adds members to the project, an invitation email (to the user’s registered email) will be sent, 
-and the shared project will appear in the Shared Folders section within Cloud Studio.
+When the master adds members to the project, an invitation email (to the user’s registered email) will be sent,
+and the shared project will appear in the Shared Folders section within CloudStudio.
 To collaborate, click on the shared project and then click the Edit Project button.
 You can now freely edit the canvas with your team members.
 
 <p />
 
-Members without control permissions on the canvas can send a <highlight color="#206FD6">Request Control</highlight> 
+Members without control permissions on the canvas can send a <highlight color="#206FD6">Request Control</highlight>
 to the current controller. If the request is accepted, they will gain control of the canvas.
 
 <admonition>
     <p>
-         However, the master can take control immediately without needing the other party's consent when requesting control.
+        However, the master can take control immediately without needing the
+        other party's consent when requesting control.
     </p>
 </admonition>
 
 <p />
 
-Canvas control permissions are automatically transferred to the remaining users when the master leaves the project, 
+Canvas control permissions are automatically transferred to the remaining users when the master leaves the project,
 following the order of `master → admin → editor` (viewers are excluded as they do not have editing rights).
 
 <br />
 
 To transfer canvas control, `follow the steps` below:
 
-`Right-click` on the profile of the member to whom you want to transfer control.
+`click` on the profile of the member to whom you want to transfer control.
 Click Transfer Control.
 
 <div className={styles.imgWrap}>

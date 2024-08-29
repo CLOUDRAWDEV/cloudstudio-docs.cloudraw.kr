@@ -1,7 +1,7 @@
 ---
 title: Security Diagnosis Overview
 sidebar_position: 1
-tags: [security,  Security Diagnosis, canvas]
+tags: [security, Security Diagnosis, canvas]
 ---
 
 import styles from "/src/scss/_markdown.module.scss"
@@ -11,9 +11,9 @@ import security03 from "/docs/canvas/img/security-result02.png"
 
 <hr />
 <br />
-Security diagnosis is a feature that examines the cloud infrastructure drawn on the canvas 
-for potential security issues before final export. 
-It helps users identify human errors and vulnerabilities that may pose security risks.
+Security diagnosis is a feature that examines the cloud infrastructure drawn on
+the canvas for potential security issues before final export. It helps users
+identify human errors and vulnerabilities that may pose security risks.
 
 To perform a security diagnosis, please follow the steps below.
 
@@ -28,8 +28,8 @@ To perform a security diagnosis, please follow the steps below.
 3. Check the `Diagnosis Score Results` in the detailed results.
 4. Click `View Details` to examine the resources associated with each stage.
 5. To modify the infrastructure, locate services marked as `Risky` or `High on the right side.
-6. If a service is found, click the `Arrow Icon` to view resolution suggestions. `Current Code` shows the existing canvas code, 
-while `Recommended Code` displays code with recommended security improvements.
+6. If a service is found, click the `Arrow Icon` to view resolution suggestions. `Current Code` shows the existing canvas code,
+   while `Recommended Code` displays code with recommended security improvements.
 7. Close the security diagnosis window and make the necessary adjustments on the canvas.
 
 <br />
@@ -42,26 +42,26 @@ while `Recommended Code` displays code with recommended security improvements.
 <p>&nbsp;</p>
 <br />
 
-Security threat levels are categorized into five stages: `Critical, Warning, Moderate, Low, and Good`. 
-The number next to each stage represents the number of resources corresponding to that level. For example, 
+Security threat levels are categorized into five stages: `Critical, Warning, Moderate, Low, and Good`.
+The number next to each stage represents the number of resources corresponding to that level. For example,
 if the Critical level shows a number 1, it means there is 1 resource with a critical security issue in the current canvas.
 
-While it's advisable to address resources in the Critical and High categories, it is not mandatory. 
+While it's advisable to address resources in the Critical and High categories, it is not mandatory.
 To view the resources associated with each stage, click View Details.
 
-| Security Threat Level | Description                                                                        |
-| -------------- | --------------------------------------------------------------------------- |
-| Critical           | The security status is highly vulnerable. It's recommended to revise the code if it's a critical infrastructure component. |
-| Warning           | The security status is weak. It's advisable to update the code if it's an important infrastructure component.    |
-| Moderate           | The security status is average.                                                   |
-| Low           | The security status is good.                                                   |
-| Good           | The security status is safe. It is acceptable to proceed with deployment.                    |
+| Security Threat Level | Description                                                                                                                |
+| --------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| Critical              | The security status is highly vulnerable. It's recommended to revise the code if it's a critical infrastructure component. |
+| Warning               | The security status is weak. It's advisable to update the code if it's an important infrastructure component.              |
+| Moderate              | The security status is average.                                                                                            |
+| Low                   | The security status is good.                                                                                               |
+| Good                  | The security status is safe. It is acceptable to proceed with deployment.                                                  |
 
 <br />
 
 ### Security Check Items
 
-Cloud Studio provides six security check items to ensure compliance with security standards.
+CloudStudio provides six security check items to ensure compliance with security standards.
 
 <div className={styles.imgWrap}>
     <img src={security03} width="400px" alt="Image" />
@@ -69,11 +69,11 @@ Cloud Studio provides six security check items to ensure compliance with securit
 
 <p>&nbsp;</p>
 
-| Security Check Item	      | Description                                          |
-| ------------------- | --------------------------------------------- |
-| User Authentication & Authorization | Shows items related to user identification and authentication.|
-| Access Control            | Displays items related to system access control.    |
-| Network Security      | Shows items related to network security.     |
-| Data Protection    | Displays items related to backup and data security. |
-| Logging & Monitoring     | Shows items related to logging and monitoring.  |
-| Encryption              | Displays items related to data encryption.     |
+| Security Check Item                 | Description                                                    |
+| ----------------------------------- | -------------------------------------------------------------- |
+| User Authentication & Authorization | Shows items related to user identification and authentication. |
+| Access Control                      | Displays items related to system access control.               |
+| Network Security                    | Shows items related to network security.                       |
+| Data Protection                     | Displays items related to backup and data security.            |
+| Logging & Monitoring                | Shows items related to logging and monitoring.                 |
+| Encryption                          | Displays items related to data encryption.                     |

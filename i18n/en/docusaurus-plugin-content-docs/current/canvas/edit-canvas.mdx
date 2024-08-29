@@ -41,12 +41,11 @@ import code from "../start/img/code.png"
 import configuration from "../start/img/configuration.png"
 import erroroption from "../start/img/error.png"
 
-
 <hr />
 <br />
 
-The Canvas is <highlight color="#206FD6">the core service of Cloud Studio</highlight> 
-that allows you to `drag & drop` resources to design cloud infrastructure, manage versions, and deploy them. 
+The Canvas is <highlight color="#206FD6">the core service of CloudStudio</highlight>
+that allows you to `drag & drop` resources to design cloud infrastructure, manage versions, and deploy them.
 
 ✂️ Feel free to edit the Canvas as you like!
 
@@ -56,23 +55,21 @@ that allows you to `drag & drop` resources to design cloud infrastructure, manag
 
 The Diagram Options Toolbox, located at the top, offers various features to help you customize and enhance your canvas.
 
-| 이미지                                                       | 동작          | 기능                                              |
-| ------------------------------------------------------------ |-------------|-------------------------------------------------|
-| <img width="40px" src={ undo } alt="Undo Image" />     | Undo       | Reverts to the previous step.                                 |
-| <img width="40px" src={ redo } alt="Redo Image" />     | Redo       | Moves forward one step.                                |
-| <img width="40px" src={ list } alt="Resource List Image" />  | Resource List     | Toggles the resource icon list on and off.                       |
-| <img width="40px" src={ listName } alt="Resource Name List Image" /> | Show Resource Names | Displays the resource icon list with names.                |
-| <img width="40px" src={ front } alt="Send to Back Image" />              | Send to Back      | Sends the selected resource behind others when overlapping.                  |
-| <img width="40px" src={ back } alt="Bring to Front Image" />               | Bring to Front     | Brings the selected resource in front of others when overlapping.                |
-| <img width="40px" src={ text } alt="Text Color Change Image" />         | Change Text Color	 | Allows you to change text color options.                         |
-| <img width="40px" src={ background } alt="Canvas Background Color Change Image" />         | Change Canvas Background Color	 | Allows you to change the canvas background color.                           |
-| <img width="40px" src={ theme } alt="Canvas Theme Change Image" />         | Change Canvas Theme	 | Allows you to change the theme to match the selected CSP on the canvas.               |
-| <img width="100px" src={ grid } alt="Grid Image" />       | Grid         | Toggles the canvas grid on and off.                       |
-| <img width="100px" src={ ratio } alt="ratio" />   | Screen Ratio       | Adjusts the canvas screen ratio.                                 
-| <img width="40px" src={ fullscreen } alt="Fullscreen Image" /> | Fullscreen        | Switches to fullscreen mode.                            |
-| <img width="40px" src={ icon } alt="Icon Image" /> | Switch Canvas Mode | Switches between Studio (features enabled) and Diagram (features disabled) modes. |
-
-
+| 이미지                                                                             | 동작                           | 기능                                                                              |
+| ---------------------------------------------------------------------------------- | ------------------------------ | --------------------------------------------------------------------------------- |
+| <img width="40px" src={ undo } alt="Undo Image" />                                 | Undo                           | Reverts to the previous step.                                                     |
+| <img width="40px" src={ redo } alt="Redo Image" />                                 | Redo                           | Moves forward one step.                                                           |
+| <img width="40px" src={ list } alt="Resource List Image" />                        | Resource List                  | Toggles the resource icon list on and off.                                        |
+| <img width="40px" src={ listName } alt="Resource Name List Image" />               | Show Resource Names            | Displays the resource icon list with names.                                       |
+| <img width="40px" src={ front } alt="Send to Back Image" />                        | Send to Back                   | Sends the selected resource behind others when overlapping.                       |
+| <img width="40px" src={ back } alt="Bring to Front Image" />                       | Bring to Front                 | Brings the selected resource in front of others when overlapping.                 |
+| <img width="40px" src={ text } alt="Text Color Change Image" />                    | Change Text Color              | Allows you to change text color options.                                          |
+| <img width="40px" src={ background } alt="Canvas Background Color Change Image" /> | Change Canvas Background Color | Allows you to change the canvas background color.                                 |
+| <img width="40px" src={ theme } alt="Canvas Theme Change Image" />                 | Change Canvas Theme            | Allows you to change the theme to match the selected CSP on the canvas.           |
+| <img width="100px" src={ grid } alt="Grid Image" />                                | Grid                           | Toggles the canvas grid on and off.                                               |
+| <img width="100px" src={ ratio } alt="ratio" />                                    | Screen Ratio                   | Adjusts the canvas screen ratio.                                                  |
+| <img width="40px" src={ fullscreen } alt="Fullscreen Image" />                     | Fullscreen                     | Switches to fullscreen mode.                                                      |
+| <img width="40px" src={ icon } alt="Icon Image" />                                 | Switch Canvas Mode             | Switches between Studio (features enabled) and Diagram (features disabled) modes. |
 
 <p>&nbsp;</p>
 
@@ -80,38 +77,35 @@ The Diagram Options Toolbox, located at the top, offers various features to help
 
 ## How to Use the Canvas Options Toolbox {#toolbox}
 
-The Canvas Options Toolbox, located in the side menu, provides access to various features of Cloud Studio.
+The Canvas Options Toolbox, located in the side menu, provides access to various features of CloudStudio.
 
-| 이미지                                                       | 동작          | 기능                                                   |
-| ------------------------------------------------------------ | ------------- | ------------------------------------------------------ |
-| <img width="40px" src={ save } alt="Save Image" />     | Save     | Saves the current canvas configuration.                          |
-| <img width="40px" src={ exporter } alt="Export Image" />     | Export     | Downloads an image and Terraform code of the architecture as a compressed file.  |
-| <img width="40px" src={ importer } alt="Import Image" />  | Import   | Imports resources deployed in the actual cloud environment into the canvas.   |
-| <img width="40px" src={ versionSave } alt="Version Save Image" /> | Save Version | Saves the current canvas configuration as a version.                 |
-| <img width="40px" src={ versionCommit } alt="="Version Commit Image" />   | Version Commit  | Allows you to view and load previously recorded version commits.   |
-| <img width="40px" src={ billing } alt="Cost Calculation Image" />      | Cost Calculation | Estimates and calculates the cost of the resources configured in the current canvas. |
-| <img width="40px" src={ diagnose } alt="Security Diagnosis Image" />         | Security Diagnosis | Diagnoses vulnerabilities in the Terraform code generated by the canvas. |
-| <img width="40px" src={ plan } alt="Validation Image" />         | Validation | Performs validation of the Terraform code generated by the canvas. |
-| <img width="40px" src={ deploy } alt="Deploy Image" />         | Deploy | Deploys the resources configured on the canvas to the cloud environment. |
-| <img width="40px" src={ migrate } alt=" Migration Image" />       | Migration  | Converts the infrastructure configured on the canvas to an infrastructure for another cloud provider.  |
-| <img width="40px" src={ resourceOption } alt=" Resource Option Image" />       | Check Resource Options  | Allows you to review the options for the resources configured in the canvas.  |
-| <img width="40px" src={ code } alt="Terraform Code Image" />       | View Terraform Code  | Displays the Terraform code generated by the canvas configuration.  |
-| <img width="40px" src={ configuration } alt="Canvas Configuration Image" />       | View Canvas Configuration  | Shows the canvas configuration in a tree format.  |
-| <img width="40px" src={ erroroption } alt="Resource Option Error Image" />       | Check Resource Option Errors | Allows you to view errors related to the options of the configured resources.  |
-
-
-
+| 이미지                                                                      | 동작                         | 기능                                                                                                  |
+| --------------------------------------------------------------------------- | ---------------------------- | ----------------------------------------------------------------------------------------------------- |
+| <img width="40px" src={ save } alt="Save Image" />                          | Save                         | Saves the current canvas configuration.                                                               |
+| <img width="40px" src={ exporter } alt="Export Image" />                    | Export                       | Downloads an image and Terraform code of the architecture as a compressed file.                       |
+| <img width="40px" src={ importer } alt="Import Image" />                    | Import                       | Imports resources deployed in the actual cloud environment into the canvas.                           |
+| <img width="40px" src={ versionSave } alt="Version Save Image" />           | Save Version                 | Saves the current canvas configuration as a version.                                                  |
+| <img width="40px" src={ versionCommit } alt="Version Commit Image" />       | Version Commit               | Allows you to view and load previously recorded version commits.                                      |
+| <img width="40px" src={ billing } alt="Cost Calculation Image" />           | Cost Calculation             | Estimates and calculates the cost of the resources configured in the current canvas.                  |
+| <img width="40px" src={ diagnose } alt="Security Diagnosis Image" />        | Security Diagnosis           | Diagnoses vulnerabilities in the Terraform code generated by the canvas.                              |
+| <img width="40px" src={ plan } alt="Validation Image" />                    | Validation                   | Performs validation of the Terraform code generated by the canvas.                                    |
+| <img width="40px" src={ deploy } alt="Deploy Image" />                      | Deploy                       | Deploys the resources configured on the canvas to the cloud environment.                              |
+| <img width="40px" src={ migrate } alt=" Migration Image" />                 | Migration                    | Converts the infrastructure configured on the canvas to an infrastructure for another cloud provider. |
+| <img width="40px" src={ resourceOption } alt=" Resource Option Image" />    | Check Resource Options       | Allows you to review the options for the resources configured in the canvas.                          |
+| <img width="40px" src={ code } alt="Terraform Code Image" />                | View Terraform Code          | Displays the Terraform code generated by the canvas configuration.                                    |
+| <img width="40px" src={ configuration } alt="Canvas Configuration Image" /> | View Canvas Configuration    | Shows the canvas configuration in a tree format.                                                      |
+| <img width="40px" src={ erroroption } alt="Resource Option Error Image" />  | Check Resource Option Errors | Allows you to view errors related to the options of the configured resources.                         |
 
 <p>&nbsp;</p>
 
 ## Resource Drag & Drop {#drag-drop}
 
 `Drag & Drop` is the simplest feature for configuring your canvas.
-Drag the desired resource from the left Resource List and drop it onto the canvas! 
+Drag the desired resource from the left Resource List and drop it onto the canvas!
 Resources that cannot be connected will bounce back with a red line.
 
 <div className={styles.imgWrap}>
-  <img src={dragDrop} alt="드래그앤드롭 이미지" />
+    <img src={dragDrop} alt="드래그앤드롭 이미지" />
 </div>
 
 <br />
@@ -130,7 +124,7 @@ The Resource List is a panel on the left side of the canvas that gathers all ava
 Connect the resources you have Dragged & Dropped onto the canvas by linking them with lines between compatible resources.
 
 <div className={styles.imgWrap}>
-  <img src={lineConnection} alt="Resource Connection Image" />
+    <img src={lineConnection} alt="Resource Connection Image" />
 </div>
 
 <br />
@@ -140,25 +134,25 @@ Connect the resources you have Dragged & Dropped onto the canvas by linking them
 
 Resources are broadly categorized into the following four types. Refer to the resource list below to connect resources on the canvas.
 
-| Image                                            | Name   | Description                                                   |
-| ------------------------------------------------- | ------ | ------------------------------------------------------ |
-| <img width="40px" src={ basic } alt="Image" />   | Basic | 그룹 안에 속할 수 있는 리소스들을 보여줍니다.          |
-| <img width="40px" src={ connect } alt="Image" /> | Connect | 해당 리소스에 연결될 수 있는 리소스 목록을 보여줍니다. |
-| <img width="40px" src={ group } alt="Image" />   | Group | 해당 그룹에 속할 수 있는 리소스 목록을 보여줍니다.     |
-| <img width="40px" src={ tools } alt="Image" />   | Tools  | 캔버스 툴 목록을 보여줍니다.                           |
+| Image                                            | Name    | Description                                                       |
+| ------------------------------------------------ | ------- | ----------------------------------------------------------------- |
+| <img width="40px" src={ basic } alt="Image" />   | Basic   | Shows the resources that can belong to a group.                   |
+| <img width="40px" src={ connect } alt="Image" /> | Connect | Shows a list of resources that can be connected to this resource. |
+| <img width="40px" src={ group } alt="Image" />   | Group   | Shows a list of resources that can belong to this group.          |
+| <img width="40px" src={ tools } alt="Image" />   | Tools   | Shows a list of canvas tools.                                     |
 
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 
 ## Editing Resource Options {#option-edit}
 
-Double-click a resource to open an edit panel where you can change the resource settings. 
+Double-click a resource to open an edit panel where you can change the resource settings.
 Click the Details Icon to view the description of the resource.
-❓Hover over the Question Mark Icon to see descriptions for each option. 
+❓Hover over the Question Mark Icon to see descriptions for each option.
 Use these descriptions to configure the settings to your preferences.
 
 <div className={styles.imgWrap}>
-  <img src={edit} alt="Option Edit Image" />
+    <img src={edit} alt="Option Edit Image" />
 </div>
 
 <p>&nbsp;</p>
@@ -169,20 +163,21 @@ Use these descriptions to configure the settings to your preferences.
 🔴 A red dot indicates that there is an error with the resource. <highlight color="#FF7272">
 If there are errors, you cannot save or deploy the canvas.</highlight>
 To resolve errors, double-click the resource with the error on the canvas to open the canvas error window.
-In the canvas error window, double-clicking a specific error will navigate you to the location of the error. 
+In the canvas error window, double-clicking a specific error will navigate you to the location of the error.
 Refer to the error cause and fix the issues accordingly.
+
 <div className={styles.imgWrap}>
-  <img src={error} alt="Error Correction Image" />
+    <img src={error} alt="Error Correction Image" />
 </div>
 
 <p>&nbsp;</p>
 
 ### Types of Errors
 
-| type  | description                                                  |
-| ----- | ----------------------------------------------------- |
-| value | Errors caused by incorrect input values                    |
-| group | Errors when a resource does not belong to any group        |
-| line  | Errors when required resources are not connected |
+| type  | description                                         |
+| ----- | --------------------------------------------------- |
+| value | Errors caused by incorrect input values             |
+| group | Errors when a resource does not belong to any group |
+| line  | Errors when required resources are not connected    |
 
 <p>&nbsp;</p>
