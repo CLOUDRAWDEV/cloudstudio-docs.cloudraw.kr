@@ -1,7 +1,7 @@
 ---
-title: 저장하기
+title: Save
 sidebar_position: 2
-tags: [save, 저장, 버전이력, 버전관리, 버전저장, 시작하기]
+tags: [save, saving, version history, version control, version saving, getting started]
 ---
 
 import styles from "/src/scss/_markdown.module.scss"
@@ -15,23 +15,23 @@ import save06 from "/docs/start/img/save06.png"
 <hr />
 <br />
 
-## 저장하기 {#save}
+## Save {#save}
 
-캔버스 저장에는 `두 가지`가 있습니다.
+There are `two ways` to save the canvas.
 
--   [저장하기](#save)
--   [버전저장하기](#version)
+-   [Save](#save)
+-   [Save Version](#version)
 
-저장하기는 `현재의 캔버스 상태를 저장`하는 것입니다. 캔버스 저장하기는 프로젝트 저장하기와 같습니다.
-프로젝트 썸네일에 보이는 이미지가 저장된 후의 캔버스 이미지입니다.
+Saving refers to saving the current state of the canvas. Saving the canvas is similar to saving a project. 
+The image displayed in the project thumbnail reflects the canvas after saving.
 
 <div className={styles.imgWrap}>
-    <img src={save05} width="300px" alt="저장하기 이미지" />
+    <img src={save05} width="300px" alt="Save image" />
 </div>
 
 <br />
 
-저장을 하는 법은 간단합니다. `파일 > 저장하기`를 클릭합니다.
+The process is simple. Click `File > Save`.
 
 <div className={styles.imgWrap}>
     <img src={save01} width="200px" alt="저장하기 이미지" />
@@ -41,65 +41,66 @@ import save06 from "/docs/start/img/save06.png"
 
 :::caution
 
-캔버스에 🔴 오류가 남아있다면 이미지만 저장됩니다. 반드시 모든 오류를 해결한 후 저장하기를 진행해야 합니다. 오류를 해결하는 방법은 [여기](/docs/canvas/edit-canvas)를 참고해주세요.
+If there are 🔴 errors in the canvas, only the image will be saved. Be sure to resolve all errors before saving. For instructions on how to resolve errors, please refer to [here](/docs/canvas/edit-canvas).
 
 :::
 
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 
-## 버전저장 및 버전이력 {#version}
+## Version Save and Version History {#version}
 
-버전저장하기는 캔버스의 `특정 시점으로 돌아가기 위한 저장`입니다. 버전저장을 하면 버전이력을 통해 내가 원하는 시점의 캔버스 상태로 이동할 수 있습니다.
+Version saving is a way to save the canvas at a specific point in time. 
+By saving a version, you can return to the desired state of the canvas using version history.
 
-### 버전저장 {#version-save}
 
-1. 버전저장을 위해 `버전관리 > 버전저장`을 클릭합니다.
+### Version Save {#version-save}
+
+1. To save a version, click `Version Management > Save Version`.
+
 
 <div className={styles.imgWrap}>
-    <img src={save02} width="200px" alt="버전저장 이미지" />
+    <img src={save02} width="200px" alt="Version save image" />
 </div>
 
 <br />
 
-2. `태그 메세지`를 입력합니다. 입력한 태그 메세지는 버전이력의 `버전 제목`으로 나타납니다.
-
+2. Enter a `Tag Message`. The tag message you enter will appear as the `version title` in the version history.
 <div className={styles.imgWrap}>
-    <img src={save03} alt="버전저장 이미지" />
+    <img src={save03} alt="Version save image" />
 </div>
 
 <br />
 
-3. `저장하기`를 클릭합니다.
+3. Click `Save`.
 
 <p>&nbsp;</p>
 
-### 버전이력 {#version-history}
+### Version History {#version-history}
 
-1. 버전이력을 확인하기 위해 `버전관리 > 버전이력`을 클릭합니다.
+1. To view version history, click `Version Management > Version History`.
 
 <div className={styles.imgWrap}>
-    <img src={save06} width="200px" alt="버전저장 이미지" />
+    <img src={save06} width="200px" alt="Version history image" />
 </div>
 
 <br />
 
-2. 버전이력에서 저장했던 버전들을 확인합니다.
+2. Review the saved versions in the version history.
 
 :::note
 
--   <highlight color="#206FD6">Latest</highlight>: 가장 최근에 저장된
-    이력입니다.
--   <highlight color="#AD28DC">Manual</highlight>: 버전저장 이력입니다.
--   <highlight color="#02CDE8">Planed</highlight>: 배포 전 검사 이력입니다.
--   <highlight color="#5C4AF6">Applied</highlight>: 배포 완료된 이력입니다.
+-   <highlight color="#206FD6">Latest</highlight>: The most recently saved history.
+-   <highlight color="#AD28DC">Manual</highlight>: The version save history.
+-   <highlight color="#02CDE8">Planed</highlight>: The pre-deployment inspection history.
+-   <highlight color="#5C4AF6">Applied</highlight>: The completed deployment history.
 
 :::
 
 <br />
 
-3. 돌아가고 싶은 캔버스를 `클릭`하여 돌아갈 수 있습니다.
+3. Click on the canvas version you want to revert to.
 
 <div className={styles.imgWrap}>
-    <img src={save04} alt="버전이력 이미지" />
+    <img src={save04} alt="Version history image" />
 </div>
