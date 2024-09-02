@@ -1,0 +1,121 @@
+---
+title: Register with Terraform Cloud
+sidebar_position: 2
+tags: [Terraform Cloud]
+last_update:
+    date: 08/27/2024
+---
+
+import github07 from "./img/github07.png"
+import terraformcloud01 from "./img/terraformcloud01.png"
+import terraformcloud02 from "./img/terraformcloud02.png"
+import terraformcloud03 from "./img/terraformcloud03.png"
+import terraformcloud04 from "./img/terraformcloud04.png"
+import terraformcloud05 from "./img/terraformcloud05.png"
+import terraformcloud06 from "./img/terraformcloud06.png"
+import terraformcloud07 from "./img/terraformcloud07.png"
+import terraformcloud08 from "./img/terraformcloud08.png"
+import styles from "/src/scss/_markdown.module.scss"
+
+<span className="theme-doc-version-badge badge badge--secondary">
+    last update: 2024.08.27
+</span>
+
+<hr />
+<br />
+
+## Register with Terraform Cloud
+
+To perform validation or deployment of the infrastructure drawn on the Cloud Studio canvas, integration with a Terraform Cloud account is required. 
+Additionally, integrating with a Terraform Cloud account requires prior [GitHub account integration](/docs/plugin/add-github).
+
+<br />
+
+<details>
+    <summary>What is Terraform Cloud?</summary>
+    <h5>
+    Terraform Cloud is a managed service for Terraform that supports infrastructure automation and collaboration. 
+    It centralizes the management of remote state storage, planning, and applying changes, while facilitating teamwork.
+    </h5>
+</details>
+
+<p>&nbsp;</p>
+
+After signing up and logging into [Terraform Cloud](https://app.terraform.io/session), click on the Profile Icon - 
+Account settings in the left sidebar.
+
+<img width="100%" src={terraformcloud01} alt="otp img" />
+
+<p>&nbsp;</p>
+
+2. Click on `Tokens` at the bottom of the left sidebar, then click the `Create an API token` button on the right.
+
+<img width="100%" src={terraformcloud02} alt="otp img" />
+
+<p>&nbsp;</p>
+
+3. Enter a `Description` to identify the token later, set the `Token Expiration`, and then click the `Generate token` button.
+
+<img width="100%" src={terraformcloud03} alt="otp img" />
+
+<p>&nbsp;</p>
+
+4. Review the issued token.
+
+<img width="100%" src={terraformcloud04} alt="otp img" />
+
+<p>&nbsp;</p>
+
+:::caution
+
+The issued token cannot be viewed again, so make sure to save it securely.
+
+:::
+
+<p>&nbsp;</p>
+
+5. Return to the main screen of [Terraform Cloud](https://app.terraform.io/app/organizations) and click the `Create organization` button.
+
+<img width="100%" src={terraformcloud05} alt="otp img" />
+
+<p>&nbsp;</p>
+
+6. Enter the `Organization name` and click the `Create organization` button.
+
+<img width="100%" src={terraformcloud06} alt="otp img" />
+
+<p>&nbsp;</p>
+
+:::caution
+
+The `Organization name` must be unique globally.
+
+:::
+
+<p>&nbsp;</p>
+
+7. In Cloud Studio, click on `My Info - Plugin Management`, then click the `+` button to link your Terraform Cloud account.
+
+<img width="100%" src={github07} alt="otp img" />
+
+<p>&nbsp;</p>
+
+:::caution
+
+Pre-existing [GitHub account integration](/docs/plugin/add-github) is required to enable Terraform Cloud account integration.
+
+:::
+
+<p>&nbsp;</p>
+
+8. Enter the issued Terraform Cloud `Token`, then click the `Register` button.
+
+<img width="100%" src={terraformcloud07} alt="otp img" />
+
+<p>&nbsp;</p>
+
+9. After integration, select the `Organization` created in Terraform Cloud, and all tasks will be completed.
+
+<img width="100%" src={terraformcloud08} alt="otp img" />
+
+<p>&nbsp;</p>
