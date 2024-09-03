@@ -1,13 +1,13 @@
 ---
 title: OamMonitoringAccount
 sidebar_position: 0
-tags: [AWS, 리소스, Cloudwatch, OamMonitoringAccount]
+tags: [AWS, Resource, Cloudwatch, OamMonitoringAccount]
 ---
 
 <hr />
 <br />
 
-## 리소스 아이콘
+## Resource Icon
 
 <img
     src={
@@ -15,26 +15,26 @@ tags: [AWS, 리소스, Cloudwatch, OamMonitoringAccount]
     }
 />
 
-## 리소스 개요
+## Resource Overview
 
-AWS CloudWatch Oam Monitoring Accounts는  중앙 모니터링 계정을 설정하여 여러 계정의 애플리케이션을 모니터링하는 서비스입니다.
+AWS CloudWatch OAM (Observability Access Management) Monitoring Accounts is a service that allows you to set up a central monitoring account to monitor applications across multiple accounts.
 
-## 연관 리소스
+## Related Resources
 
-### 상위 리소스
+### Parent Resources
 
 -   [**Region**](https://docs.cstudio.app/docs/resource/aws/Base/Region)
 
-### 연결 리소스
+### Connected Resources
 
 -   [**Oam Source Account**](https://docs.cstudio.app/docs/resource/aws/Cloudwatch/OamSourceAccount)
 
-## 리소스 설정 값
+## Resource Configuration Values
 
--   `oam_source_accounts` : 모니터링 계정과 데이터를 공유할 계정의 계정, 조직 경로 또는 조직 ID
--   `resource_types` : 공유하려는 데이터 유형 
+-   `oam_source_accounts`: Accounts, organizational paths, or organizational IDs of the accounts from which data will be shared with the monitoring account.
+-   `resource_types`: Types of data to be shared
     -   `AWS::Logs::LogGroup`
-    -   `AWS::Cloudwatch::LogGroup`
+    -   `AWS::CloudWatch::LogGroup`
     -   `AWS::Logs::LogGroup`
     -   `AWS::Logs::LogGroup`
 
@@ -42,7 +42,7 @@ AWS CloudWatch Oam Monitoring Accounts는  중앙 모니터링 계정을 설정�
 
 ---
 
-## 참고 자료
+## Reference Materials
 
 -   [Amazon CloudWatch Oam Monitoring Account(AWS)](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account-Setup.html#Unified-Cross-Account-Setup-ConfigureMonitoringAccount)
 -   [Amazon CloudWatch Oam Monitoring Account(Terraform)](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/oam_link)

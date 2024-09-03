@@ -7,7 +7,7 @@ tags: [AWS, 리소스, Cloudfront, CloudfrontCachePolicy]
 <hr />
 <br />
 
-## 리소스 아이콘
+## Resource Icon
 
 <img
     src={
@@ -15,31 +15,31 @@ tags: [AWS, 리소스, Cloudfront, CloudfrontCachePolicy]
     }
 />
 
-## 리소스 개요
+## Resource Overview
 
-Cloudfront Cache Policy는 Cloudfront 배포의 캐시 동작에 연결하여 CloudFront의 사용자 지정을 설정하는 캐시 정책입니다.
+A CloudFront Cache Policy is a cache policy that defines the caching behavior settings for a CloudFront distribution. 
+It allows for customization of how CloudFront handles caching.
 
-## 연관 리소스
+## Related Resources
 
-### 상위 리소스
+### Parent Resources
 
 -   [**Base**](https://docs.cstudio.app/docs/resource/aws/Base)
 
-### 연결 리소스
+### Connected Resources
 
 -   [**CloudfrontDistribution**](https://docs.cstudio.app/docs/resource/aws/Cloudfront/CloudfrontDistribution)
 
-## 리소스 설정 값
+## Resource Configuration Values
 
--   `min_ttl` :객체가 CloudFront 캐시에 남아 있어야 하는 최소 시간(초)
--   `max_ttl` : 객체가 CloudFront 캐시에 유지되는 최대 시간(초)
--   `default_ttl` : 객체가 CloudFront 캐시에 남아 있어야 하는 기본 시간(초)
--   `cookie_behavior` : 쿠키를 오리진 서버로 전달할지 여부 - `whitelist`,`all`,`none`,`allExcept`
--   `header_behavior` : 지정된 헤더의 값을 기반으로 객체를 캐싱할지 여부 - `whitelist`,`none`
--   `query_string_behavior` : 쿼리 문자열 파라미터 값을 기준으로 콘텐츠의 다른 버전을 캐싱할지 여부 - `whitelist`,`all`,`none`,`allExcept`
+-   `min_ttl`: The minimum time (in seconds) that an object should remain in the CloudFront cache.
+-   `max_ttl`: The maximum time (in seconds) that an object should be retained in the CloudFront cache.
+-   `default_ttl`: The default time (in seconds) that an object should remain in the CloudFront cache.
+-   `cookie_behavior`: Whether to forward cookies to the origin server - `whitelist`, `all`, `none`, `allExcept`.
+-   `header_behavior`: Whether to cache objects based on the values of specified headers - `whitelist`, `none`.
+-   `query_string_behavior`: Whether to cache different versions of content based on query string parameter values - `whitelist`, `all`, `none`, `allExcept`.
 
-
-## 참고 자료
+## Reference Materials
 
 -   [Amazon CloudFront Cache Policy(AWS)](https://docs.aws.amazon.com/ko_kr/AmazonCloudFront/latest/DeveloperGuide/Introduction.html)
 -   [Amazon CloudFront Cache Policy(Terraform)](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudfront_cache_policy)
