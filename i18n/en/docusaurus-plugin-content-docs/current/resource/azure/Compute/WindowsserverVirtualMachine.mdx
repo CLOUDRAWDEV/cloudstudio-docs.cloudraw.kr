@@ -7,7 +7,7 @@ tags: [Azure, 리소스, Compute, WindowsserverVirtualMachine]
 <hr />
 <br />
 
-## 리소스 아이콘
+## Resource Icon
 
 <img
     src={
@@ -15,45 +15,45 @@ tags: [Azure, 리소스, Compute, WindowsserverVirtualMachine]
     }
 />
 
-## 리소스 개요
+## Resource Overview
 
 Azure WindowsServer Virtual Machine은 Microsoft의 Azure 클라우드 컴퓨팅 플랫폼에서 WindowsServer 운영 체제를 실행하는 가상 머신(VM)입니다.
 Azure에서 WindowsServer 가상 머신을 실행함으로써 사용자는 선호하는 Linux 배포를 사용하면서 Microsoft 클라우드 플랫폼의 확장성, 안정성 및 글로벌 범위를 활용할 수 있습니다.
 
-## 연관 리소스
+## Related Resources
 
-### 상위 리소스
+### Parent Resource
 
 -   [**Virtual Network**](https://docs.cstudio.app/docs/resource/azure/Network/VirtualNetwork)
 -   [**Subnet**](https://docs.cstudio.app/docs/resource/azure/Network/Subnet)
 
-### 연결 리소스
+### Connected Resources
 
 -   [**Network Interface**](https://docs.cstudio.app/docs/resource/azure/Network/NetworkInterface)
 
-## 리소스 설정 값
+## Resource Configuration Values
 
--   `included_vnet_name` : Subnet이 포함된 Virtual Network 이름
--   `size` : 워크로드 실행을 위한 Virtual Machine의 크기 설정
--   `source_image`
-    -   `enabled_custom_image` : 사용자 이미지 ID 사용 유무 - `true`, `false`
-    -   `publisher` : VM 생성을 위해 사용하는 이미지의 공급자
-    -   `Offer` : VM 생성을 위해 사용하는 이미지의 ID
-    -   `sku` : VM 생성을 위해 사용하는 이미지의 가격 책정 계층
--   `computer_name` : Virtual Machine의 host_name
--   `admin_username` : VM에 대한 관리자 사용자 이름
--   `admin_password` : VM에 대한 관리자 암호
--   `on_disk_caching` : 내부 OS Disk 사용을 위한 caching 유형
--   `storage_account_type` : 내부 OS Disk를 백업하기 위한 스토리지 유형
--   `disk_size_gb` : 내부 OS Disk의 크기(GB) - `1`~`32767`
--   `disk_attachment` : 디스크 연결 이름
--   `linked_network_interface_names` : Network Interface 이름
--   `primary_network_interface_name` : Virtual Machine이 연결된 Network Interface 이름
--   `tag` : 리소스를 카테고리로 분류하기 위한 태그 - 최대 512자, `key`:`value`
+- `included_vnet_name`: The name of the Virtual Network that includes the subnet.
+- `size`: The size configuration of the Virtual Machine for running workloads.
+- `source_image`:
+  - `enabled_custom_image`: Whether to use a custom image ID, `true` or `false`.
+  - `publisher`: The publisher of the image used for creating the VM.
+  - `offer`: The offer ID of the image used for creating the VM.
+  - `sku`: The pricing tier of the image used for creating the VM.
+- `computer_name`: The host name of the Virtual Machine.
+- `admin_username`: The administrator username for the VM.
+- `admin_password`: The administrator password for the VM.
+- `on_disk_caching`: The type of caching for the internal OS disk.
+- `storage_account_type`: The type of storage used for backing up the internal OS disk.
+- `disk_size_gb`: The size of the internal OS disk in GB, ranging from `1` to `32767`.
+- `disk_attachment`: The name of the disk attachment.
+- `linked_network_interface_names`: The names of the network interfaces.
+- `primary_network_interface_name`: The name of the primary network interface connected to the Virtual Machine.
+- `tag`: A tag used to categorize resources, up to 512 characters, in the format `key:value`.
 
 ---
 
-## 참고 자료
+## Reference Materials
 
 -   [Azure WindowsserverVirtualMachine(Microsoft)](https://learn.microsoft.com/ko-kr/azure/virtual-machines/overview)
 -   [Azure WindowsserverVirtualMachine 가격](https://azure.microsoft.com/en-us/pricing/details/virtual-machines/windows/)
