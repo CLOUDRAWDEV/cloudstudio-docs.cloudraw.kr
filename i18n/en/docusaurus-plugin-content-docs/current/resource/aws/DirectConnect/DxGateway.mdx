@@ -1,13 +1,13 @@
 ---
 title: DxGateway
 sidebar_position: 0
-tags: [AWS, 리소스, DirectConnect, DxGateway]
+tags: [AWS, Resource, DirectConnect, DxGateway]
 ---
 
 <hr />
 <br />
 
-## 리소스 아이콘
+## Resource Icon
 
 <img
     src={
@@ -15,30 +15,29 @@ tags: [AWS, 리소스, DirectConnect, DxGateway]
     }
 />
 
-## 리소스 개요
+## Resource Overview
 
-Direct Connect 연결을 통해 AWS 리전의 VPC에 엑세스하도록 도와주는 DxGateway
+The Direct Connect gateway (DxGateway) helps provide access to VPCs in AWS regions through a Direct Connect connection.
 
-## 연관 리소스
+## Related Resources
 
-### 상위 리소스
+### Parent Resources
 
 -   [**Base**](https://docs.cstudio.app/docs/resource/aws/Base)
 
-### 하위 리소스
+### Child Resources
 
 -   [**Transit Gateway**](https://docs.cstudio.app/docs/resource/aws/Vpc/TransitGateway)
 -   [**Vpn Gateway**](https://docs.cstudio.app/docs/resource/aws/Vpc/VpnGateway)
 
 
-## 리소스 설정 값
+## Resource Configuration Values
 
--   `side_asn` : Amazon 측 ASN(자율 시스템 번호) - `64512 ~ 4294967294`
-
+-   `side_asn`: The ASN (Autonomous System Number) on the Amazon side - `64512 ~ 4294967294`
 
 ---
 
-## 참고 자료
+## Reference Materials
 
 -   [Amazon DxGateway(AWS)](https://docs.aws.amazon.com/ko_kr/directconnect/latest/UserGuide/direct-connect-gateways-intro.html)
 -   [Amazon DxGateway(Terraform)](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/dx_gateway)

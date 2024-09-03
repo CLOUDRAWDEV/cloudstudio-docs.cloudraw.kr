@@ -1,13 +1,13 @@
 ---
 title: ResolverEndpoint
 sidebar_position: 0
-tags: [AWS, 리소스, Route53, ResolverEndpoint]
+tags: [AWS, Resource, Route53, ResolverEndpoint]
 ---
 
 <hr />
 <br />
 
-## 리소스 아이콘
+## Resource Icon
 
 <img
     src={
@@ -15,30 +15,30 @@ tags: [AWS, 리소스, Route53, ResolverEndpoint]
     }
 />
 
-## 리소스 개요
+## Resource Overview
 
-Amazon Vpc와 송수신하는 DNS 쿼리에 대한 엔드포인트 서비스
+Endpoint service for DNS queries sent to and received from Amazon VPC
 
-### 상위 리소스
+### Parent Resources
 
 -   [**Region**](https://docs.cstudio.app/docs/resource/aws/Base/Region)
 
-### 연결 리소스
+### Connected Resources
 
 -   [**Vpc**](https://docs.cstudio.app/docs/resource/aws/Vpc/Vpc)
 -   [**SecurityGroup**](https://docs.cstudio.app/docs/resource/aws/Vpc/SecurityGroup)
 -   [**ResolverRule**](https://docs.cstudio.app/docs/resource/aws/Route53/ResolverRule)
 
-## 리소스 설정 값
+## Resource Configuration Values
 
--   `direction` : DNS 쿼리 방향 - `INBOUND`, `OUTBOUND`
--   `linked_vpc_name` : 엔드포인트와 연결할 VPC 이름
--   `linked_security_group_names` : 엔드포인트에 대한 보안 그룹 이름
--   `ip_address` : IP 주소에 대한 이름
+-   `direction`: DNS query direction - `INBOUND`, `OUTBOUND`
+-   `linked_vpc_name`: Name of the VPC to link with the endpoint
+-   `linked_security_group_names`: Security group names for the endpoint
+-   `ip_address`: Name associated with the IP address
 
 ---
 
-## 참고 자료
+## Reference Materials
 
 -   [Amazon Resolver Endpoint(AWS)](https://docs.aws.amazon.com/ko_kr/Route53/latest/DeveloperGuide/resolver.html)
 -   [Amazon Resolver Endpoint(Terraform)](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route53_resolver_endpoint)

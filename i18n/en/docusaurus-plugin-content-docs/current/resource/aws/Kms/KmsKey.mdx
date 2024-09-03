@@ -1,13 +1,13 @@
 ---
 title: Kms Key
 sidebar_position: 0
-tags: [AWS, 리소스, Kms, KmsKey]
+tags: [AWS, Resource, Kms, KmsKey]
 ---
 
 <hr />
 <br />
 
-## 리소스 아이콘
+## Resource Icon
 
 <img
     src={
@@ -15,30 +15,33 @@ tags: [AWS, 리소스, Kms, KmsKey]
     }
 />
 
-## 리소스 개요
+## Resource Overview
 
-AWS Key Management Service(AWS KMS)는 클라우드에 맞게 조정된 암호화 및 키 관리 서비스입니다. AWS KMS 키와 기능은 다른 AWS 서비스에서 사용되며, 사용자는 이 AWS KMS 키와 기능을 사용하여 AWS를 사용하는 자체 애플리케이션에서 데이터를 보호할 수 있습니다.
+AWS Key Management Service (AWS KMS) is a cloud-optimized encryption and key management service. 
+AWS KMS keys and features are utilized across various AWS services, allowing users to protect data within their own applications using AWS KMS keys and functionalities.
 
-## 연관 리소스
+## Related Resources
 
-### 상위 리소스
+### Parent Resources
 
 -   [**Region**](https://docs.cstudio.app/docs/resource/aws/Base/Region)
 
-## 리소스 설정 값
+## Resource Configuration Values
 
--   `description` : AWS Console에 나타나는 Key의 설명
--   `key_usage` : Key의 사용 방법을 명시 - `ENCRYPT_DECRYPT`
--   `multi_region` : KMS key를 Multi Region에서 사용할 지 말지 설정 - `true`, `false`
--   `deletion_window_in_days` : KMS Keys의 유효 기간
--   `enable_key_rotation` : 키 회전 활성화 여부를 지정 - `true`, `false`
--   `grant_list` : KMS Grant의 이름
-    -   `operations` : KMS Key에 허용된 동작 - `Decrypt`, `Encrypt`, `GenerateDataKey`, `GenerateDataKeyWithoutPlaintext`, `ReEncryptFrom`, `ReEncryptTo`, `Sign`, `Verify`, `CreateGrant`, `RetireGrant`, `DescribeKey`
+Here is the revised text in English:
+
+-   `description`: The description of the key as displayed in the AWS Console
+-   `key_usage`: Specifies the usage of the key - `ENCRYPT_DECRYPT`
+-   `multi_region`: Indicates whether the KMS key is used across multiple regions - `true`, `false`
+-   `deletion_window_in_days`: The validity period of the KMS key
+-   `enable_key_rotation`: Specifies whether key rotation is enabled - `true`, `false`
+-   `grant_list`: The name of the KMS grant
+    -   `operations`: The actions permitted on the KMS key - `Decrypt`, `Encrypt`, `GenerateDataKey`, `GenerateDataKeyWithoutPlaintext`, `ReEncryptFrom`, `ReEncryptTo`, `Sign`, `Verify`, `CreateGrant`, `RetireGrant`, `DescribeKey`
 
 ---
 
-## 참고 자료
+## Reference Materials
 
 -   [AWS Key Management Service(AWS)](https://docs.aws.amazon.com/ko_kr/kms/latest/developerguide/overview.html)
--   [AWS Key Management Service 요금(AWS)](https://aws.amazon.com/ko/kms/pricing/?nc1=h_ls)
+-   [AWS Key Management Service Price(AWS)](https://aws.amazon.com/ko/kms/pricing/?nc1=h_ls)
 -   [aws_kms_alias(Terraform)](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/kms_alias)
