@@ -7,7 +7,7 @@ tags: [Azure, 리소스, Database, Mysql]
 <hr />
 <br />
 
-## 리소스 아이콘
+## Resource Icon
 
 <img
     src={
@@ -15,54 +15,58 @@ tags: [Azure, 리소스, Database, Mysql]
     }
 />
 
-## 리소스 개요
+## Resource Overview
 
-Azure Database for MySQL은 널리 사용되는 오픈 소스 MySQL 데이터베이스 엔진을 기반으로 하는 Microsoft Azure에서 제공하는 완전히 관리되는 관계형 데이터베이스 서비스입니다.
-기본 인프라에 대해 걱정할 필요 없이 클라우드에서 MySQL 데이터베이스를 쉽게 배포, 관리 및 확장할 수 있습니다.
-Azure Database for MySQL을 사용하면 Microsoft가 패치 적용, 백업 및 모니터링과 같은 작업을 처리하므로 최소한의 관리 오버헤드로 MySQL 데이터베이스를 만들고 관리할 수 있습니다.
-또한 고가용성, 자동 백업 및 지정 시간 복원과 같은 기능을 활용할 수도 있습니다.
+Here's the revised text in English:
 
-## 연관 리소스
+---
 
-### 상위 리소스
+Azure Database for MySQL is a fully managed relational database service offered by Microsoft Azure, based on the widely used open-source MySQL database engine. 
+You can easily deploy, manage, and scale MySQL databases in the cloud without worrying about the underlying infrastructure. 
+With Azure Database for MySQL, Microsoft handles tasks such as patching, backups, and monitoring, allowing you to create and manage MySQL databases with minimal management overhead.
+Additionally, you can take advantage of features like high availability, automated backups, and point-in-time restore.
+
+## Related Resources
+
+### Parent Resource
 
 -   [**Resource Group**](https://docs.cstudio.app/docs/resource/azure/Base/ResourceGroup)
 -   [- [**Subnet**](https://docs.cstudio.app/docs/resource/azure/Network/Subnet)](https://docs.cstudio.app/docs/resource/azure/Network/Subnet)
 
-## 리소스 설정 값
+## Resource Configuration Values
 
--   `version` : 사용할 MySQL 버전 - `5.7`, `5.6`, `8.0`
+-   `version` : The MySQL version to use - `5.7`, `5.6`, `8.0`
 
--   `sku_name` : MySQL 가격 책정 계층 이름, Tier + 컴퓨팅 세대 + 코어 수의 조합 - `azureDatabaseSku`
+-   `sku_name` : The pricing tier name for MySQL, a combination of Tier + Compute Generation + Number of Cores - `azureDatabaseSku`
 
--   `storage_mb` : MySQL Server의 용량(MB) - `5120` ~ `16777216`
+-   `storage_mb` : The capacity of the MySQL server in MB - `5120` ~ `16777216`
 
--   `admin_username` : Creation mode가 default인 경우 Server의 관리자 사용자 이름
+-   `admin_username` : The administrator username for the server when the creation mode is default
 
--   `admin_password` : Creation mode가 default인 경우 Server의 관리자 로그인 암호
+-   `admin_password` : The administrator login password for the server when the creation mode is default
 
--   `public_network_access_enabled` : Server에 퍼블릭 네트워크 접근 허용 - `true` , `false`
+-   `public_network_access_enabled` : Whether to allow public network access to the server - `true` , `false`
 
--   `ssl_enforcement_enabled` : 암호화된 연결(SSL) 적용 여부 - `true` , `false`
+-   `ssl_enforcement_enabled` : Whether encrypted connections (SSL) are applied - `true` , `false`
 
--   `minimal_tls_version` : Server에 지원되는 최소 TLS 버전 - `TLS1_2` , `TLS1_1` , `TLS1_0` , `TLSEnforcementDisabled`
+-   `minimal_tls_version` : The minimum TLS version supported by the server - `TLS1_2` , `TLS1_1` , `TLS1_0` , `TLSEnforcementDisabled`
 
--   `threat_detection_enabled` : 비정상적이고 잠재적으로 유해한 시도를 나타내는 비정상적인 활동 감지 여부 - `true` , `false`
+-   `threat_detection_enabled` : Whether to detect anomalous activities that indicate abnormal and potentially harmful attempts - `true` , `false`
 
 -   `database`
 
-    -   `charset` : MySQL Database의 문자 집합 - `azureMysqlChartSet`
-    -   `collation` : Microsoft SQL 데이터베이스의 데이터 정렬 방식 - `azureMysqlCol`
+    -   `charset` : The character set for the MySQL database - `azureMysqlChartSet`
+    -   `collation` : The collation method for data in the Microsoft SQL database - `azureMysqlCol`
 
 -   `firewall_rule`
-    -   `start_ip_address` : 방화벽 Rule에 연결된 시작 IP 주소
-    -   `end_ip_address` : 방화벽 Rule에 연결된 종료 IP 주소
--   `tag` : 리소스를 카테고리로 분류하기 위한 태그 - 최대 512자, `key`:`value`
+    -   `start_ip_address` : The starting IP address for the firewall rule
+    -   `end_ip_address` : The ending IP address for the firewall rule
+-   `tag` : A tag used to categorize resources - up to 512 characters `key`:`value`
 
 ---
 
-## 참고 자료
+## Reference Materials
 
 -   [Azure Mysql(Microsoft)](https://learn.microsoft.com/ko-kr/azure/mysql/single-server/overview)
--   [Azure Mysql 가격](https://azure.microsoft.com/ko-kr/pricing/details/mysql/server/)
+-   [Azure Mysql Price](https://azure.microsoft.com/ko-kr/pricing/details/mysql/server/)
 -   [Azure Mysql(Terraform)](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/mysql_server)

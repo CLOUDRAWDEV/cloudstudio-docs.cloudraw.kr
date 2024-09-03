@@ -7,7 +7,7 @@ tags: [Azure, 리소스, Monitor, MonitorAutoscaleSetting]
 <hr />
 <br />
 
-## 리소스 아이콘
+## Resource Icon
 
 <img
     src={
@@ -15,42 +15,41 @@ tags: [Azure, 리소스, Monitor, MonitorAutoscaleSetting]
     }
 />
 
-## 리소스 개요
+## Resource Overview
 
 Azure Monitor 자동 크기 조정은 미리 정의된 규칙 및 메트릭을 기반으로 리소스의 자동 크기 조정을 가능하게 하는 Microsoft Azure의 기능입니다.
 자동 크기 조정을 사용하여 가상 머신, 앱 서비스 및 AKS(Azure Kubernetes Service) 클러스터와 같은 리소스를 확장하거나 축소하여 변화하는 요구 사항을 충족하고 비용을 최적화할 수 있습니다.
 
-## 연관 리소스
+## Related Resources
 
-### 상위 리소스
+### Parent Resource
 
 -   [**Resource Group**](https://docs.cstudio.app/docs/resource/azure/Base/ResourceGroup)
 
-### 연결 리소스
+### Connected Resources
 
 -   [**Linux Virtual Machine Scale Set**](https://docs.cstudio.app/docs/resource/azure/Compute/LinuxVirtualMachineScaleSet)
 -   [**Windowsserver Virtual Machine Scale Set**](https://docs.cstudio.app/docs/resource/azure/Compute/WindowsserverVirtualMachineScaleSet)
 
-## 리소스 설정 값
+## Resource Configuration Values
 
--   `target_resource_name` : 자동 크기 조정 설정을 적용할 리소스 이름
+- `target_resource_name`: The name of the resource to which the autoscale settings will be applied
 
--   `scale_condition`
+- `scale_condition`:
 
-    -   `min_instance_count` : 최소 인스턴스 수 - `0` ~ `1000`
-    -   `max_instance_count` : 최대 인스턴스 수 - `1` ~ `1000`
-    -   `default_instance_count` : 리소스 메트릭을 읽을 수 없고 현재 용량이 기본 용량 미만인 경우 스케일 아웃할 기본 인스턴스 수 - `1` ~ `1000`
-    -   `schedule_type` : 크기 조정 작업에 적용할 스케줄 방식 - `start_end_dates`, `repeat_days`
-    -   `timezone` : 스케줄이 작용하는 시간대
-    -   `start_date` : 스케줄 시작 날짜
-    -   `end_date` : 스케줄 끝나는 날짜
+    - `min_instance_count`: Minimum number of instances - `0` ~ `1000`
+    - `max_instance_count`: Maximum number of instances - `1` ~ `1000`
+    - `default_instance_count`: The default number of instances to scale out to if resource metrics cannot be read and current capacity is below the default - `1` ~ `1000`
+    - `schedule_type`: Scheduling method to apply to the scaling operation - `start_end_dates`, `repeat_days`
+    - `timezone`: Time zone in which the schedule applies
+    - `start_date`: Start date of the schedule
+    - `end_date`: End date of the schedule
 
--   `tag` : 리소스를 카테고리로 분류하기 위한 태그 - 최대 512자, `key`:`value`
-
+- `tag`: A tag for categorizing the resource - up to 512 characters, `key`:`value`
 ---
 
-## 참고 자료
+## Reference Materials
 
 -   [Azure MonitorActivityLogAlert(Microsoft)](https://learn.microsoft.com/en-us/azure/azure-monitor/overview)
--   [Azure MonitorActivityLogAlert 가격](https://azure.microsoft.com/ko-kr/pricing/details/monitor/)
+-   [Azure MonitorActivityLogAlert Price](https://azure.microsoft.com/ko-kr/pricing/details/monitor/)
 -   [Azure MonitorActivityLogAlert(Terraform)](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/monitor_autoscale_setting)

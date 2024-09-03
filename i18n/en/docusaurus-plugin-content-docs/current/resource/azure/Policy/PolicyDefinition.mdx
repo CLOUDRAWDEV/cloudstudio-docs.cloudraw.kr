@@ -1,13 +1,13 @@
 ---
 title: PolicyDefinition
 sidebar_position: 0
-tags: [Azure, 리소스, Policy, PolicyDefinition]
+tags: [Azure, Resource, Policy, PolicyDefinition]
 ---
 
 <hr />
 <br />
 
-## 리소스 아이콘
+## Resource Icon
 
 <img
     src={
@@ -15,37 +15,38 @@ tags: [Azure, 리소스, Policy, PolicyDefinition]
     }
 />
 
-## 리소스 개요
+## Resource Overview
 
-Azure 정책 정의는 거버넌스 정책을 적용하고 감사하는 방법을 제공합니다. 정책 정의를 사용하여 리소스 속성, 태그 또는 리소스 그룹에 대한 규칙을 정의할 수 있습니다.
-예를 들어 모든 가상 머신이 특정 태그를 갖도록 요구하거나 특정 지역에서 가상 머신 생성을 제한하는 정책 정의를 생성할 수 있습니다.
-정책 정의를 만든 후에는 리소스 그룹 또는 구독과 같은 Azure의 범위에 할당할 수 있습니다. 이렇게 하면 해당 범위 내의 모든 리소스에 정책이 적용되고 리소스가 거버넌스 정책을 준수하는지 확인하기 위해 규정 준수 보고서가 제공됩니다.
+Azure Policy definitions provide a way to enforce and audit governance policies. 
+You can use policy definitions to create rules for resource properties, tags, or resource groups. 
+For example, you might create a policy definition that requires all virtual machines to have a specific tag or restricts the creation of virtual machines in certain regions.
+Once a policy definition is created, it can be assigned to an Azure scope such as a resource group or subscription. 
+This ensures that the policy is enforced across all resources within that scope, and compliance reports are generated to verify that resources adhere to the governance policies.
 
-## 연관 리소스
+## Related Resources
 
-### 상위 리소스
+### Parent Resource
 
 -   [**Subscription**](https://docs.cstudio.app/docs/resource/azure/Base/Subscription)
 -   [**Policy Set Definition**](https://docs.cstudio.app/docs/resource/azure/Policy/PolicySetDefinition)
 
 
-### 연결 리소스
+### Connected Resources
 
 -   [**Resource Group**](https://docs.cstudio.app/docs/resource/azure/Base/ResourceGroup)
 
-## 리소스 설정 값
+## Resource Configuration Values
 
--   `type` : 정책을 새로 생성하거나 기존 항목 사용 - `Custom`,`BuiltIn`,`NotSpecified`
+-   `type`: Whether to create a new policy or use an existing one - `Custom`, `BuiltIn`, `NotSpecified`
 
--   `mode` : 정책 정의가 적용될 리소스 유형 지정
+-   `mode`: Specifies the resource types to which the policy definition applies
 
--   `display_name` : 정책 정의의 표시 이름
+-   `display_name`: The display name of the policy definition
 
--   `linked_resource_group_name` : Policy를 적용할 Resource Group의 구독 ID와 이름
-
+-   `linked_resource_group_name`: The subscription ID and name of the resource group to which the policy will be applied
 ---
 
-## 참고 자료
+## Reference Materials
 
 -   [Azure PolicyDefinition(Microsoft)](https://learn.microsoft.com/en-us/azure/governance/policy/overview)
 -   [Azure PolicyDefinition 가격](https://azure.microsoft.com/en-us/pricing/details/azure-policy/)
