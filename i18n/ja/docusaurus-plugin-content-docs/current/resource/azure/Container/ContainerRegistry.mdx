@@ -1,14 +1,13 @@
 ---
 title: ContainerRegistry
 sidebar_position: 0
-tags: [Azure, 리소스, Container, ContainerRegistry]
+tags: [Azure, リソース, Container, ContainerRegistry]
 ---
 
 <hr />
 <br />
 
-
-## 리소스 아이콘
+## リソースアイコン
 
 <img
     src={
@@ -16,28 +15,28 @@ tags: [Azure, 리소스, Container, ContainerRegistry]
     }
 />
 
-## 리소스 개요
+## リソース概要
 
-Azure Container Registry는 오픈 소스 Docker Registry 2.0을 기반으로 하는 관리형 레지스트리 서비스입니다.
-Azure 컨테이너 레지스트리를 만들고 유지 관리하여 컨테이너 이미지와 관련 아티팩트를 저장하고 관리합니다.
+Azure Container Registry はオープンソース Docker Registry 2.0 を基盤とする管理型レジストリサービスです。
+Azure コンテナレジストリを作成·維持·管理してコンテナイメージと関連アーティファクトを保存·管理します。
 
-## 리소스 설정 값
+## リソース設定値
 
--   `sku` : Container Registry의 성능 및 확장성을 위한 SKU 유형 - `Basic`, `Standard`, `Premium`
+-   `sku` : Container Registry の性能及び拡張性のための SKU タイプ - `Basic`, `Standard`, `Premium`
 
--   `admin_enabled` : 관리자 활성화 - `true`, `false`
+-   `admin_enabled` : 管理者活性化 - `true`, `false`
 
--   `public_network_access_enabled` : Public 네트워크 접근 허용 - `true`, `false`
+-   `public_network_access_enabled` : Public ネットワークへのアクセスを許容 - `true`, `false`
 
--   `network_rule_set` : SKU 유형이 Premium일 경우 생성 가능
-    -   `default_action` : Rule과 일치하지 않는 요청에 대한 동작 - `Deny`, `Allow`
-    -   `ip_ranges` : Rule과 일치하는 요청의 IP 주소 CIDR
--   `tag` : 리소스를 카테고리로 분류하기 위한 태그 - 최대 512자, `key`:`value`
+-   `network_rule_set` : SKU タイプが Premium の場合に生成可能
+    -   `default_action` : Rule と一致しないリクエストに対する動作 - `Deny`, `Allow`
+    -   `ip_ranges` : Rule と一致するリクエストの IP アドレス IP 주소 CIDR
+-   `tag` : リソースをカテゴリに分類するためのタグ - 最大 512 文字, `key`:`value`
 
 ---
 
-## 참고 자료
+## 参考資料
 
 -   [Azure ContainerRegistry(Microsoft)](https://learn.microsoft.com/ko-kr/azure/container-registry/container-registry-intro)
--   [Azure ContainerRegistry 가격](https://azure.microsoft.com/en-us/pricing/details/container-registry/)
+-   [Azure ContainerRegistry 価格](https://azure.microsoft.com/en-us/pricing/details/container-registry/)
 -   [Azure ContainerRegistry(Terraform)](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/container_registry)

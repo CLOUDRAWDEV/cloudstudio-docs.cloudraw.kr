@@ -1,17 +1,16 @@
 ---
-title: OTP 등록하기
+title: OTP登録
 sidebar_position: 1
-tags: [otp, 인증]
+tags: [otp, 認証]
 last_update:
     date: 02/01/2023
 ---
 
-import otp01 from "@site/docs/start/img/otp01.png"
-import otp02 from "@site/docs/start/img/otp02.png"
-import otp03 from "@site/docs/start/img/otp03.png"
-import otp04 from "@site/docs/start/img/otp04.png"
-import otp05 from "@site/docs/start/img/otp05.png"
-import otp06 from "@site/docs/start/img/otp06.png"
+import otp01 from "./img/otp01.png"
+import otp02 from "./img/otp02.png"
+import otp03 from "./img/otp03.png"
+import otp04 from "./img/otp04.png"
+import otp08 from "./img/otp08.png"
 import styles from "/src/scss/_markdown.module.scss"
 
 <span className="theme-doc-version-badge badge badge--secondary">
@@ -21,24 +20,30 @@ import styles from "/src/scss/_markdown.module.scss"
 <hr />
 <br />
 
-1. 링크를 통해 `google authenticator 앱을 설치`해줍니다.
+1. `マイページ - アカウント管理`で`OTP登録`ボタンをクリックし、ログインに必要な`パスワード`を入力します。
+
+<img width="100%" src={otp08} alt="otp img" />
+
+<p>&nbsp;</p>
+
+2. リンクを通じて`google authenticatorアプリをインストール`します。
 
 <img width="100%" src={otp01} alt="otp img" />
 
 <p>&nbsp;</p>
 
-2. google authenticator 앱을 실행한 후 `QR코드를 스캔`해줍니다.
+3. google authenticator アプリを実行した後、`QRコードをスキャン`します。
 
 <img width="100%" src={otp02} alt="otp img" />
 
 <p>&nbsp;</p>
 
-3. 한 번 발급된 인증키는 `다시 찾을 수 없으니` 반드시 적어두도록 합니다.
+4. 一度発行された認証キーは`再取得できないので`必ずメモしておいてください。
 
 <img width="100%" src={otp03} alt="otp img" />
 
 <p>&nbsp;</p>
 
-4. google authenticator 앱에 등록된 `6자리 인증코드`를 입력한 후 `인증완료 버튼`을 클릭합니다.
+5. google authenticator アプリに登録された`6桁認証コード`を入力して `認証完了`ボタンをクリックします。
 
 <img width="100%" src={otp04} alt="otp img" />

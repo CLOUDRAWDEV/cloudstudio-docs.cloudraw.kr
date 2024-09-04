@@ -30,6 +30,15 @@ const config = {
                     sidebarPath: require.resolve("./sidebars.js"),
                     routeBasePath: "docs",
                     path: "docs",
+                    sidebarItemsGenerator: async ({
+                        defaultSidebarItemsGenerator,
+                        ...args
+                    }) => {
+                        const sidebarItems = await defaultSidebarItemsGenerator(
+                            args
+                        )
+                        return sidebarItems
+                    },
                 },
                 blog: {
                     routeBasePath: "release",
