@@ -7,7 +7,7 @@ tags: [Azure, 리소스, Network, PublicIpPrefix]
 <hr />
 <br />
 
-## 리소스 아이콘
+## リソースアイコン
 
 <img
     src={
@@ -15,28 +15,27 @@ tags: [Azure, 리소스, Network, PublicIpPrefix]
     }
 />
 
-## 리소스 개요
+## リソース概要
 
-Azure Public IP Prefix(공용 IP 접두사)는 여러 개의 연속된 공용 IP 주소 범위를 제공하는 리소스입니다. 
-이는 특정 시나리오에서 필요한 대규모 공용 IP 주소를 사용하는데 유용합니다. 
-Public IP Prefix를 사용하면 Azure 가상 머신, Load Balancer, Application Gateway 등과 같은 
+Azure Public IP Prefix(공용 IP 접두사)는 여러 개의 연속된 공용 IP 주소 범위를 제공하는 리소스입니다.
+이는 특정 시나리오에서 필요한 대규모 공용 IP 주소를 사용하는데 유용합니다.
+Public IP Prefix를 사용하면 Azure 가상 머신, Load Balancer, Application Gateway 등과 같은
 인터넷으로 노출되는 리소스에 대해 대량의 공용 IP 주소를 쉽게 관리할 수 있습니다.
 
+## 関連リソース
 
-## 연관 리소스
-
-### 상위 리소스
+### 上位リソース
 
 -   [**Resource Group**](https://docs.cstudio.app/docs/resource/azure/Base/ResourceGroup)
 
-## 리소스 설정 값
+## リソース設定値
 
 -   `prefix_length` : `28`~`31`
 -   `tag` : 리소스를 카테고리로 분류하기 위한 태그 - 최대 512자, `key`:`value`
 
 ---
 
-## 참고 자료
+## 参考資料
 
 -   [Azure Public Ip(Microsoft)](https://learn.microsoft.com/ko-kr/azure/virtual-network/ip-services/public-ip-addresses)
 -   [Azure Public Ip Prefix(Terraform)](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/public_ip_prefix)
