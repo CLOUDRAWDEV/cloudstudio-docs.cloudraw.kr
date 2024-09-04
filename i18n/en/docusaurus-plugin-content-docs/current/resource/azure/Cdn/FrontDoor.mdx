@@ -20,58 +20,57 @@ tags: [Azure, Resource, Cdn, FrontDoor]
 
 ## Resource Overview
 
-Azure Front Door is Microsoft's latest cloud CDN (Content Delivery Network) that provides fast, reliable, and secure access to static and dynamic web content for users and applications worldwide. 
-Azure Front Door leverages Microsoft's global edge network, which includes hundreds of global and local Points of Presence (POPs), to deliver content close to both enterprise and consumer end-users.
+Azure Front Door is Microsoft's latest cloud CDN(Content Delivery Network) that provides fast, reliable, and secure access to static and dynamic web content for users and applications worldwide. 
+Azure Front Door leverages Microsoft's global edge network, which includes hundreds of global and local Points of Presence (POPs), to deliver content close to both enterprise and consumer end users.
 
-## Related Resources
+## Associated Resources
 
 ### Parent Resource
 
 -   [**Resource Group**](https://docs.cstudio.app/docs/resource/azure/Base/ResourceGroup)
 
-## Resource Configuration Values
+## Resource Setting Values
 
--   `sku`: Specifies the SKU for the Front Door profile - `Standard_AzureFrontDoor`, `Premium_AzureFrontDoor`
+-   `sku`: Specifies the SKU for this Front Door MyPage - `Standard_AzureFrontDoor`, `Premium_AzureFrontDoor`
 
--   `endpoint_names`: List of names for the endpoints to be used
+-   `endpoint_names`: The list of enabled endpoint names
 
 -   `origin_group`
 
-    -   `restore_traffic_time_in_minutes`: Specifies the time that must elapse before traffic is moved to another endpoint when an endpoint is unhealthy or a new endpoint is added. `0` ~ `50`
-    -   `session_affinity_enabled`: Indicates whether session affinity should be enabled on the host - `true`, `false`
-    -   `health_probe_path`: Specifies the relative path for health checks
-    -   `health_probe_protocol`: Specifies the protocol to be used for health probes - `Http`, `Https`
-    -   `health_probe_method`: Specifies the type of health probe request - `HEAD`, `GET`
-    -   `health_probe_interval_in_seconds`: Specifies the interval (in seconds) between health probes - `5` ~ `31536000`
-    -   `load_balancing_latency_in_milliseconds`: Specifies additional latency (in milliseconds) that can be included in the lowest latency bucket - `0` ~ `1000`
-    -   `load_balancing_sample_size`: Specifies the number of load balancing samples - `0` ~ `255`
-    -   `load_balancing_sample_required`: Specifies the number of successful samples required within the period - `0` ~ `255`
+    -   `restore_traffic_time_in_minutes`: Specifies the amount of time which should elapse before shifting traffic to another endpoint when a healthy endpoint becomes unhealthy or a new endpoint is added `0` ~ `50`
+    -   `session_affinity_enabled`: Specifies whether session affinity should be enabled on this host - `true`, `false`
+    -   `health_probe_path`: Specifies the path relative to the origin that is used to determine the health of the origin
+    -   `health_probe_protocol`: Specifies the protocol to use for health probe - `Http`, `Https`
+    -   `health_probe_method`: Specifies the type of health probe request that is made - `HEAD`, `GET`
+    -   `health_probe_interval_in_seconds`: Specifies the number of seconds between health probes - `5` ~ `31536000`
+    -   `load_balancing_latency_in_milliseconds`: Specifies the additional latency in milliseconds for probes to fall into the lowest latency bucket - `0` ~ `1000`
+    -   `load_balancing_sample_size`: Specifies the number of samples to consider for load balancing decisions - `0` ~ `255`
+    -   `load_balancing_sample_required`: Specifies the number of samples within the sample period that must succeed - `0` ~ `255`
 
 -   `origin`
 
-    -   `origin_group_name` : Name of the group that includes the origin
-    -   `host_name` : Hostname of the origin (IPv4 address, IPv6 address, or domain name)
-    -   `origin_host_header` : Host header value sent to the origin with each request (IPv4 address, IPv6 address, or domain name)
-    -   `certificate_name_check_enabled` : Specifies whether to apply certificate validation - `true`, `false`
-    -   `enabled` :  Indicates whether the origin is enabled - `true`, `false`
-    -   `priority` : Origin priority within the origin group for load balancing. 
-    Lower priority origins are not used for load balancing if higher priority origins are healthy - `1` ~ `5`
-    -   `weight` : Weight of the origin in the origin group for load balancing - `1` ~ `1000`
-    -   `http_port` : HTTP port value - `1` ~ `65535`
+    -   `origin_group_name` : Name of the group that contains the origin
+    -   `host_name` : The IPv4 address, IPv6 address or Domain name of the Origin
+    -   `origin_host_header` : The host header value (an IPv4 address, IPv6 address or Domain name) which is sent to the origin with each request
+    -   `certificate_name_check_enabled` : Specifies whether certificate name checks are enabled for this origin - `true`, `false`
+    -   `enabled` :  Whether the origin is enabled - `true`, `false`
+    -   `priority` : Priority of origin in given origin group for load balancing. Higher priorities will not be used for load balancing if any lower priority origin is healthy - `1` ~ `5`
+    -   `weight` : The weight of the origin in a given origin group for load balancing - `1` ~ `1000`
+    -   `http_port` : The HTTP port value - `1` ~ `65535`
 
 -   `route`
-    -   `endpoint_name` : Name of the Front Door endpoint to be specified
-    -   `origin_group_name` : Name of the group that includes the origin
+    -   `endpoint_name` : The name of the Front Door Endpoint to which this Front Door Route should be assigned
+    -   `origin_group_name` : Name of the group that contains the origin
     -   `origin_names` : Names of the origins to be specified
-    -   `patterns_to_match` : Routing path patterns
-    -   `supported_protocols` : Protocols to be specified by Front Door - `Http` , `Https`
-    -   `forwarding_protocol` : Protocol to be used when forwarding traffic to the backend - `HttpOnly`, `HttpsOnly`, `MatchRequest`
--   `tag` : Tag for categorizing the resource - up to 512 characters, - 최대 512자, `key`:`value`
+    -   `patterns_to_match` : The route patterns of the rule
+    -   `supported_protocols` : One or more Protocols supported by this Front Door Route - `Http` , `Https`
+    -   `forwarding_protocol` : The Protocol that will be use when forwarding traffic to backends - `HttpOnly`, `HttpsOnly`, `MatchRequest`
+-   `tag` : Tag to categorize the resource - up to 512 characters, `key`:`value`
 
 ---
 
 ## Reference Materials
 
 -   [Azure FrontDoor(Microsoft)](https://learn.microsoft.com/ko-kr/azure/frontdoor/front-door-overview)
--   [Azure FrontDoor 가격](https://azure.microsoft.com/en-us/pricing/details/frontdoor/)
+-   [Azure FrontDoor Price(Microsoft)](https://azure.microsoft.com/en-us/pricing/details/frontdoor/)
 -   [Azure FrontDoor(Terraform)](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/cdn_frontdoor_endpoint)
