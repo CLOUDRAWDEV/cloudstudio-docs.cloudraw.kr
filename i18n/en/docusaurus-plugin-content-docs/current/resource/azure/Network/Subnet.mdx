@@ -21,14 +21,15 @@ In Microsoft Azure, a subnet is an IP address range within a VNet (virtual netwo
 It represents a logical division of the IP network that allows for network traffic segmentation and management of network resources. 
 A subnet is a smaller network within a larger network and is used to isolate traffic between different parts of a virtual network. 
 Each subnet in Azure can have its own NSG (Network Security Group), which helps to create security boundaries for the resources within that subnet.
-## Related Resources
+
+## Associated Resources
 
 ### Parent Resource
 
 -   [**Resource Group**](https://docs.cstudio.app/docs/resource/azure/Base/ResourceGroup)
 -   [**Virtual Network**](https://docs.cstudio.app/docs/resource/azure/Network/VirtualNetwork)
 
-## Resource Configuration Values
+## Resource Setting Values
 
 - `included_vnet_name`: The name of the virtual network that contains the subnet.
 - `address_prefixes`: The IP address range for the subnet, specified in CIDR format within the address space of the virtual network.

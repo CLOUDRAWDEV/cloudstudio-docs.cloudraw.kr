@@ -20,7 +20,8 @@ tags: [Azure, 리소스, Compute, WindowsserverVirtualMachineScaleSet]
 Azure Windows Server Virtual Machine Scale Sets are groups of virtual machines running the Windows operating system that can automatically scale up or down as needed. 
 You can manually adjust the number of VMs in the scale set or define rules to automatically resize based on resource usage, such as CPU, memory requirements, or network traffic. 
 Traffic is then distributed across the VM instances in the scale set by Azure's load balancer.
-## Related Resources
+
+## Associated Resources
 
 ### Parent Resource
 
@@ -28,30 +29,30 @@ Traffic is then distributed across the VM instances in the scale set by Azure's 
 
 ### Connected Resources
 
-- `included_vnet_name`: The name of the Virtual Network that includes the subnet.
-- `orchestration_mode`: The orchestration mode that determines how VMs are managed by the Scale Set.
-- `platform_fault_domain_count`: The number of groups of VMs that share common power and network switches.
-- `vmss_sku`: The pricing tier of the Virtual Machine Scale Set.
-- `instances`: The number of virtual machines in the Scale Set, ranging from `1` to `1000`.
+- `included_vnet_name`: The name of the Virtual Network to which to attach the Subnet
+- `orchestration_mode`: The orchestration mode that determines how the Scale Set manages VMs.
+- `platform_fault_domain_count`: The number of groups of VMs sharing common power and network switches
+- `vmss_sku`: The pricing tier of the Virtual Machine Scale Set
+- `instances`: The number of virtual machines in the Scale Set, ranging from `1` ~ `1000`
 - `source_image`:
-  - `enabled_custom_image`: Whether to use a custom image ID (`true` or `false`).
-  - `image_id`: The ID of the image used for creating the VM.
-  - `publisher`: The publisher of the image used for creating the VM.
-  - `offer`: The offer ID of the image used for creating the VM.
-  - `sku`: The pricing tier of the image used for creating the VM.
-- `computer_name_prefix`: The prefix to use for naming the Virtual Machines.
-- `admin_username`: The administrator username for the VM.
-- `admin_password`: The administrator password for the VM.
-- `os_disk_caching`: The type of caching for the internal OS disk, such as `ReadWrite`, `ReadOnly`, or `None`.
-- `storage_account_type`: The type of storage used for backing up the internal OS disk, including `Standard_LRS`, `StandardSSD_LRS`, or `Premium_LRS`.
-- `disk_size_gb`: The size of the internal OS disk in GB, ranging from `1` to `11400`.
+  - `enabled_custom_image`: User image ID enabled or disabled - `true` or `false`
+  - `image_id`: The ID of the image used for VM creation
+  - `publisher`: The publisher of the image used to create the virtual machines
+  - `offer`: The image ID used to create the virtual machines
+  - `sku`: The SKU of the image used to create the Virtual machines
+- `enable_ssh_key_authentication`: Enable using SSH keys for authentication
+- `admin_username`: The username of the VM
+- `admin_password`: The password of the VM
+- `on_disk_caching`: The type of caching for the internal OS disk.
+- `storage_account_type`: The size of the internal OS Disk in GB
+- `disk_size_gb`: The size of the internal OS disk in GB - `1` ~ `32767`
 - `network_interface`: The name of the network interface.
-- `tag`: A tag used to categorize resources, up to 512 characters, in the format `key:value`.
+- `tag` : Tag to categorize the resource - up to 512 characters, `key`:`value`
 
 ---
 
 ## Reference Materials
 
 -   [Azure WindowsserverVirtualMachineScaleSet(Microsoft)](https://learn.microsoft.com/ko-kr/azure/virtual-machine-scale-sets/overview)
--   [Azure WindowsserverVirtualMachineScaleSet Price](https://azure.microsoft.com/en-us/pricing/details/virtual-machine-scale-sets/windows/)
+-   [Azure WindowsserverVirtualMachineScaleSet Price(Microsoft)](https://azure.microsoft.com/en-us/pricing/details/virtual-machine-scale-sets/windows/)
 -   [Azure WindowsserverVirtualMachineScaleSet(Terraform)](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/windows_virtual_machine_scale_set)
