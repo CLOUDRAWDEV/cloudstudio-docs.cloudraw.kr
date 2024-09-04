@@ -1,13 +1,13 @@
 ---
 title: Network Acl
 sidebar_position: 0
-tags: [AWS, 리소스, Vpc, NetworkAcl]
+tags: [AWS, Resource, Vpc, NetworkAcl]
 ---
 
 <hr />
 <br />
 
-## 리소스 아이콘
+## Resource Icon
 
 <img
     src={
@@ -15,41 +15,42 @@ tags: [AWS, 리소스, Vpc, NetworkAcl]
     }
 />
 
-## 리소스 개요
+## Resource Overview
 
-네트워크 액세스 제어 목록(ACL)은 서브넷 수준에서 특정 인바운드 또는 아웃바운드 트래픽을 허용하거나 거부합니다. VPC에 대한 기본 네트워크 ACL을 사용하거나 보안 그룹에 대한 규칙과 유사한 규칙을 사용하여 VPC에 대한 사용자 지정 네트워크 ACL을 생성하여 VPC에 보안 계층을 추가할 수 있습니다.
-네트워크 ACL을 사용해도 추가 요금이 부과되지 않습니다.
+A network access control list (ACL) controls whether specific inbound or outbound traffic is allowed or denied at the subnet level. 
+You can use the default network ACL for your VPC or create a custom network ACL with rules similar to those of security groups to add an additional layer of security to your VPC. 
+There are no additional charges for using network ACLs.
 
-## 연관 리소스
+## Related Resources
 
-### 상위 리소스
+### Parent Resources
 
 -   [**Vpc**](https://docs.cstudio.app/docs/resource/aws/Vpc/)
 
-### 연결 리소스
+### Connected Resources
 
 -   [**Vpc Subnet**](https://docs.cstudio.app/docs/resource/aws/Vpc/Subnet)
 
-## 리소스 설정 값
+## Resource Configuration Values
 
--   `included_vpc_name` : Network ACL이 포함된 VPC의 이름
--   `linked_subnet_names` : Network ACL을 적용할 Subnet 이름
--   `ingress` : Network ACL의 Ingress 규칙 이름
-    -   `protocol` : Ingress 규칙의 Protocol - `tcp`, `udp`, `ssh`, `icmp`, `all`
-    -   `action` : Ingress 규칙의 Protocol에 적용할 Action - `allow`, `deny`
-    -   `cidr_block` : Ingress 규칙을 적용할 CIDR
-    -   `from_port` : Ingress 규칙으로 들어오는 포트 번호
-    -   `to_port` : Ingress 규칙을 통해 나가는 포트 번호
--   `egress` : Network ACL의 Ingress 규칙 이름
-    -   `protocol` : Egress 규칙의 Protocol - `tcp`, `udp`, `ssh`, `icmp`, `all`
-    -   `action` : Egress 규칙의 Protocol에 적용할 Action - `allow`, `deny`
-    -   `cidr_block` : Egress 규칙을 적용할 CIDR
-    -   `from_port` : Egress 규칙으로 들어오는 포트 번호
-    -   `to_port` : Egress 규칙을 통해 나가는 포트 번호
+-   `included_vpc_name`: The name of the VPC that includes the Network ACL
+-   `linked_subnet_names`: The names of the subnets to which the Network ACL is applied
+-   `ingress`: The name of the ingress rule for the Network ACL
+    -   `protocol`: The protocol for the ingress rule - `tcp`, `udp`, `ssh`, `icmp`, `all`
+    -   `action`: The action to apply to the protocol for the ingress rule - `allow`, `deny`
+    -   `cidr_block`: The CIDR block to which the ingress rule applies
+    -   `from_port`: The port number for incoming traffic in the ingress rule
+    -   `to_port`: The port number for outgoing traffic in the ingress rule
+-   `egress`: The name of the egress rule for the Network ACL
+    -   `protocol`: The protocol for the egress rule - `tcp`, `udp`, `ssh`, `icmp`, `all`
+    -   `action`: The action to apply to the protocol for the egress rule - `allow`, `deny`
+    -   `cidr_block`: The CIDR block to which the egress rule applies
+    -   `from_port`: The port number for incoming traffic in the egress rule
+    -   `to_port`: The port number for outgoing traffic in the egress rule
 
 ---
 
-## 참고 자료
+## Reference Materials
 
--   [네트워크 ACL을 사용하여 서브넷에 대한 트래픽 제어(AWS)](https://docs.aws.amazon.com/ko_kr/vpc/latest/userguide/vpc-network-acls.html)
+-   [Controlling Traffic to Subnets Using Network ACLs(AWS)](https://docs.aws.amazon.com/ko_kr/vpc/latest/userguide/vpc-network-acls.html)
 -   [aws_network_acl(Terraform)](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/network_acl)

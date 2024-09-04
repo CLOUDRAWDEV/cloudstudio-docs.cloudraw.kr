@@ -1,13 +1,13 @@
 ---
 title: NetworkInterface
 sidebar_position: 0
-tags: [AWS, 리소스, Ec2, NetworkInterface]
+tags: [AWS, Resource, Ec2, NetworkInterface]
 ---
 
 <hr />
 <br />
 
-## 리소스 아이콘
+## Resource Icon
 
 <img
     src={
@@ -15,29 +15,29 @@ tags: [AWS, 리소스, Ec2, NetworkInterface]
     }
 />
 
-## 리소스 개요
+## Resource Overview
 
-VPC에서 가상 네트워크 카드를 나타내는 논리적 네트워킹 구성 요소
+A logical networking component representing a virtual network card within a VPC
 
-## 연관 리소스
+## Related Resources
 
-### 상위 리소스
+### Parent Resources
 
 -   [**Subnet**](https://docs.cstudio.app/docs/resource/aws/Vpc/Subnet)
 
-### 연결 리소스
+### Connected Resources
 
 -   [**Eip**](https://docs.cstudio.app/docs/resource/aws/Ec2/Eip)
 
-## 리소스 설정 값
+## Resource Configuration Values
 
--   `private_ips` : private ips 목록
--   `linked_security_group_names` : 네트워크 인터페이스에 사용할 Security Group 이름
--   `linked_eip_names` : 사용할 Elastic Ip 이름
+-   `private_ips`: List of private IP addresses
+-   `linked_security_group_names`: Names of the security groups to be used with the network interface
+-   `linked_eip_names`: Names of the Elastic IPs to be used
 
 ---
 
-## 참고 자료
+## Reference Materials
 
 -   [Amazon NetworkInterface(AWS)](https://docs.aws.amazon.com/ko_kr/AWSEC2/latest/UserGuide/using-eni.html)
 -   [Amazon NetworkInterface(Terraform)](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/network_interface)

@@ -1,7 +1,7 @@
 ---
 title: FrontDoor
 sidebar_position: 1
-tags: [Azure, 리소스, Cdn, FrontDoor]
+tags: [Azure, Resource, Cdn, FrontDoor]
 ---
 
 
@@ -10,7 +10,7 @@ tags: [Azure, 리소스, Cdn, FrontDoor]
 <br />
 
 
-## 리소스 아이콘
+## Resource Icon
 
 <img
     src={
@@ -18,58 +18,59 @@ tags: [Azure, 리소스, Cdn, FrontDoor]
     }
 />
 
-## 리소스 개요
+## Resource Overview
 
-Azure Front Door는 전 세계 사용자와 애플리케이션의 정적 및 동적 웹 콘텐츠 간에 빠르고 안정적이며 안전한 액세스를 제공하는 Microsoft의 최신 클라우드 CDN(Content Delivery Network)입니다.
-Azure Front Door는 엔터프라이즈 및 소비자 최종 사용자 모두에 가까운 전 세계에 배포된 수백 개의 글로벌 및 로컬 POP(지점) 가 있는 Microsoft의 글로벌 에지 네트워크를 사용하여 콘텐츠를 제공합니다.
+Azure Front Door is Microsoft's latest cloud CDN (Content Delivery Network) that provides fast, reliable, and secure access to static and dynamic web content for users and applications worldwide. 
+Azure Front Door leverages Microsoft's global edge network, which includes hundreds of global and local Points of Presence (POPs), to deliver content close to both enterprise and consumer end-users.
 
-## 연관 리소스
+## Related Resources
 
-### 상위 리소스
+### Parent Resource
 
 -   [**Resource Group**](https://docs.cstudio.app/docs/resource/azure/Base/ResourceGroup)
 
-## 리소스 설정 값
+## Resource Configuration Values
 
--   `sku` : Front Door 프로필에 대한 SKU를 지정 - `Standard_AzureFrontDoor` , `Premium_AzureFrontDoor`
+-   `sku`: Specifies the SKU for the Front Door profile - `Standard_AzureFrontDoor`, `Premium_AzureFrontDoor`
 
--   `endpoint_names` : 사용할 엔드포인트의 이름 목록
+-   `endpoint_names`: List of names for the endpoints to be used
 
 -   `origin_group`
 
-    -   `restore_traffic_time_in_minutes` : 엔드포인트가 비정상이 되거나 새 엔드포인트가 추가될 때 다른 엔드포인트로 트래픽을 이동하기 전에 경과해야 하는 시간을 지정합니다. `0` ~ `50`
-    -   `session_affinity_enabled` : 호스트에서 세션 선호도를 활성화해야 하는지 여부를 지정. - `true` , `false`
-    -   `health_probe_path` : 상태를 체크하는 상대경로를 지정
-    -   `health_probe_protocol` : 상태 프로브에 사용할 프로토콜을 지정 - `Http` , `Https`
-    -   `health_probe_method` : 상태 프로브 요청의 유형을 지정 - `HEAD` , `GET`
-    -   `health_probe_interval_in_seconds` : 상태 프로브 간격(초)을 지정합니다 `5` ~ `31536000`
-    -   `load_balancing_latency_in_milliseconds` : 가장 낮은 지연 시간 버킷에 포함될 수 있는 추가 지연 시간을 밀리초 단위로 지정 - `0` ~ `1000`
-    -   `load_balancing_sample_size` : 로드 밸런싱 샘플 수를 지정 - `0` ~ `255`
-    -   `load_balancing_sample_required` : 기간 내에서 성공해야 하는 샘플 수를 지정 - `0` ~ `255`
+    -   `restore_traffic_time_in_minutes`: Specifies the time that must elapse before traffic is moved to another endpoint when an endpoint is unhealthy or a new endpoint is added. `0` ~ `50`
+    -   `session_affinity_enabled`: Indicates whether session affinity should be enabled on the host - `true`, `false`
+    -   `health_probe_path`: Specifies the relative path for health checks
+    -   `health_probe_protocol`: Specifies the protocol to be used for health probes - `Http`, `Https`
+    -   `health_probe_method`: Specifies the type of health probe request - `HEAD`, `GET`
+    -   `health_probe_interval_in_seconds`: Specifies the interval (in seconds) between health probes - `5` ~ `31536000`
+    -   `load_balancing_latency_in_milliseconds`: Specifies additional latency (in milliseconds) that can be included in the lowest latency bucket - `0` ~ `1000`
+    -   `load_balancing_sample_size`: Specifies the number of load balancing samples - `0` ~ `255`
+    -   `load_balancing_sample_required`: Specifies the number of successful samples required within the period - `0` ~ `255`
 
 -   `origin`
 
-    -   `origin_group_name` : 오리진이 포함되는 그룹의 이름
-    -   `host_name` : 오리진의 호스트 이름 (IPv4 주소, IPv6 주소 또는 도메인 이름)
-    -   `origin_host_header` : 각 요청과 함께 오리진으로 전송되는 호스트 헤더 값 (IPv4 주소, IPv6 주소 또는 도메인 이름)
-    -   `certificate_name_check_enabled` : 인증서 적용 여부를 지정 - `true` , `false`
-    -   `enabled` : 오리진 활성화 여부 - `true` , `false`
-    -   `priority` : 로드 밸런싱을 위해 지정된 오리진 그룹의 오리진 우선 순위, 낮은 우선 순위 오리진이 정상인 경우 높은 우선 순위는 로드 밸런싱에 사용되지 않음 - `1` ~ `5`
-    -   `weight` : 로드 밸런싱을 위해 지정된 오리진 그룹의 오리진 가중치 - `1` ~ `1000`
-    -   `http_port` : Http 포트 값 - `1` ~ `65535`
+    -   `origin_group_name` : Name of the group that includes the origin
+    -   `host_name` : Hostname of the origin (IPv4 address, IPv6 address, or domain name)
+    -   `origin_host_header` : Host header value sent to the origin with each request (IPv4 address, IPv6 address, or domain name)
+    -   `certificate_name_check_enabled` : Specifies whether to apply certificate validation - `true`, `false`
+    -   `enabled` :  Indicates whether the origin is enabled - `true`, `false`
+    -   `priority` : Origin priority within the origin group for load balancing. 
+    Lower priority origins are not used for load balancing if higher priority origins are healthy - `1` ~ `5`
+    -   `weight` : Weight of the origin in the origin group for load balancing - `1` ~ `1000`
+    -   `http_port` : HTTP port value - `1` ~ `65535`
 
 -   `route`
-    -   `endpoint_name` : 지정할 프론트도어 엔드포인트 이름
-    -   `origin_group_name` : 오리진이 포함되는 그룹의 이름
-    -   `origin_names` : 지정할 오리진들의 이름 값
-    -   `patterns_to_match` : 라우팅 경로 패턴
-    -   `supported_protocols` : 프론트도어에서 지정할 프로토콜 - `Http` , `Https`
-    -   `forwarding_protocol` : 트래픽을 백엔드로 전달할 때 사용할 프로토콜 - `HttpOnly`, `HttpsOnly`, `MatchRequest`
--   `tag` : 리소스를 카테고리로 분류하기 위한 태그 - 최대 512자, `key`:`value`
+    -   `endpoint_name` : Name of the Front Door endpoint to be specified
+    -   `origin_group_name` : Name of the group that includes the origin
+    -   `origin_names` : Names of the origins to be specified
+    -   `patterns_to_match` : Routing path patterns
+    -   `supported_protocols` : Protocols to be specified by Front Door - `Http` , `Https`
+    -   `forwarding_protocol` : Protocol to be used when forwarding traffic to the backend - `HttpOnly`, `HttpsOnly`, `MatchRequest`
+-   `tag` : Tag for categorizing the resource - up to 512 characters, - 최대 512자, `key`:`value`
 
 ---
 
-## 참고 자료
+## Reference Materials
 
 -   [Azure FrontDoor(Microsoft)](https://learn.microsoft.com/ko-kr/azure/frontdoor/front-door-overview)
 -   [Azure FrontDoor 가격](https://azure.microsoft.com/en-us/pricing/details/frontdoor/)

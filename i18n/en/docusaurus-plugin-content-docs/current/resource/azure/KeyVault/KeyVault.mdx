@@ -1,13 +1,13 @@
 ---
 title: KeyVault
 sidebar_position: 0
-tags: [Azure, 리소스, KeyVault, KeyVault]
+tags: [Azure, Resource, KeyVault, KeyVault]
 ---
 
 <hr />
 <br />
 
-## 리소스 아이콘
+## Resource Icon
 
 <img
     src={
@@ -15,75 +15,74 @@ tags: [Azure, 리소스, KeyVault, KeyVault]
     }
 />
 
-## 리소스 개요
+## Resource Overview
 
-Azure Key Vault는 비밀을 안전하게 저장하고 액세스하기 위한 클라우드 서비스입니다.
-비밀은 API 키, 암호, 인증서 또는 암호화 키 등에 대한 액세스를 엄격하게 제어하려는 항목입니다. Key Vault 서비스는 자격 증명 모음 및 관리되는 HSM(하드웨어 보안 모듈) 풀이라는 두 가지 유형의 컨테이너를 지원합니다.
-자격 증명 모음은 소프트웨어 및 HSM 지원 키, 암호 및 인증서를 저장하도록 지원합니다. 관리형 HSM 풀은 HSM 지원 키만 지원합니다.
+Azure Key Vault is a cloud service for securely storing and accessing secrets. 
+Secrets include items such as API keys, passwords, certificates, or encryption keys, which require strict access control. 
+The Key Vault service supports two types of containers: vaults and managed HSM (Hardware Security Module) pools. 
+Vaults support storing software and HSM-backed keys, passwords, and certificates, while managed HSM pools support only HSM-backed keys.
 
-## 연관 리소스
+## Related Resources
 
-### 상위 리소스
+### Parent Resource
 
 -   [**Resource Group**](https://docs.cstudio.app/docs/resource/azure/Base/ResourceGroup)
 
-## 리소스 설정 값
+## Resource Configuration Values
 
--   `sku_name` : Key Vault의 규모 및 기능 선택을 위한 가격 책정 계층 - `standard`, `premium`
+- `sku_name`: The pricing tier for selecting the scale and features of Key Vault, such as `standard` or `premium`.
 
--   `enabled_for_disk_encryption` : Azure Disk Encryption이 Vault 및 래핑 해제 키에서 비밀을 검색할 수 있도록 허용 - `true`, `false`
+- `enabled_for_disk_encryption`: Whether Azure Disk Encryption is allowed to retrieve secrets from the Vault and unwrap keys, `true` or `false`.
 
--   `soft_delete_retention_days` : 삭제된 항목 보존 일 수, 7 ~ 90의 범위 - `7` ~ `90`
+- `soft_delete_retention_days`: The number of days to retain deleted items, ranging from `7` ~ `90`.
 
--   `purge_protection_enabled` : 데이터 손실을 방지하기 위한 제거 보호 활성화 - `true`, `false`
+- `purge_protection_enabled`: Whether purge protection is enabled to prevent data loss, `true` or `false`.
 
--   `network_acl_bypass` : 신뢰할 수 있는 서비스가 방화벽을 바이패스하도록 허용 - `AzureServices`, `None`
+- `network_acl_bypass`: Whether to allow trusted services to bypass the firewall, with options such as `AzureServices` or `None`.
 
--   `network_acl_action` : 설정한 IP Rules과 일치하는 규칙이 없는 경우의 동작 - `Deny`, `Allow`
+- `network_acl_action`: The action to take when no rules match the configured IP Rules, such as `Deny` or `Allow`.
 
--   `network_acl_ip_rules` : Key Vault에 접근하기 위한 IP 주소 및 CIDR
+- `network_acl_ip_rules`: IP addresses and CIDR ranges used to access the Key Vault.
 
--   `access_policies`
+- `access_policies`
+    - `object_id`: The object ID of the user or principal for Vault access.
+    - `key_permissions`: The list of key permissions.
+    - `secret_permissions`: The list of secret permissions.
+    - `certificate_permissions`: The list of certificate permissions.
 
-    -   `object_id` : 사용자의 개체 ID를 통해 Vault 사용을 위한 주체 선택
-    -   `key_permissions` : Key 권한 리스트
-    -   `secret_permissions` : Secret 권한 리스트
-    -   `certificate_permissions` : Key certificate 리스트
+- `key_vault_secret`
+    - `name`: The name of the Key Vault secret.
+    - `expiration_date`: The UTC date and time when the secret expires.
 
--   `key_vault_secret`
+Here is the revised text:
 
-    -   `name` : Key Vault Secret 이름
-    -   `expiration_date` : Secret 만료 UTC 날짜 시간
+- `key_vault_key`
+    - `type`: The type of Key Vault Key, such as `EC`, `EC-HSM`, `RSA`, or `RSA-HSM`.
+    - `size`: The key size in bytes if the key type is RSA, with options such as `2048`, `3072`, or `4096`.
+    - `curve`: The curve to specify if the key type is EC, such as `P-256`, `P-256K`, `P-384`, or `P-521`.
+    - `expiration_date`: The UTC date and time when the key expires.
+    - `opts`: The list of allowed JSON web key operations.
 
--   `key_vault_key`
+- `key_vault_certificate`
+    - `import_existing_certificate`: Whether to add an existing certificate, `true` or `false`.
+    - `contents`: The Base64-encoded certificate content.
+    - `password`: The password for the certificate.
+    - `issuer_name`: The issuer name of the certificate, such as `Self` or `Unknown`.
+    - `exportable`: Whether to enable the key for export, `true` or `false`.
+    - `key_type`: The key type, such as `RSA` or `EC`.
+    - `key_size`: The key size, specified as `2048/3072/4096` for RSA keys or `256/384/521` for EC keys.
+    - `curve`: The curve to specify if the key type is EC, such as `P-256`, `P-256K`, `P-384`, or `P-521`.
+    - `reuse_key`: Whether to enable key reuse, `true` or `false`.
+    - `content_type`: The content type of the certificate, such as `application/x-pkcs12` or `application/x-pem-file`.
+    - `key_usage`: The list of key usage flags.
+    - `subject`: The distinguished name in X.500 format.
+    - `validity_in_months`: The validity period of the certificate in months, ranging from `7` ~ `90`.
 
-    -   `type` : Key Vault Key를 사용하기 위한 Key 타입 - `EC`, `EC-HSM`, `RSA`, `RSA-HSM`
-    -   `size` : Key 타입이 RSA인 경우 바이트 단위의 Key 사이즈 지정 - `2048`, `3072`, `4096`
-    -   `curve` : Key 타입이 EC인 경우 Curve 지정 - `P-256`, `P-256K`, `P-384`, `P-521`
-    -   `expiration_date` : Key 만료 UTC 날짜 시간
-    -   `opts` : 허용하는 JSON web key operation 목록
-
--   `key_vault_certificate`
-
-    -   `import_existing_certificate` : 현재 있는 인증서 추가 여부 - `true`, `false`
-    -   `contents` : Base64 기반 인증서 내용
-    -   `password` : 인증서의 암호
-    -   `issuer_name` : Certificate 발행자 이름 - `Self`, `Unknown`
-    -   `exportable` : Key의 외부 저장 활성화 - `true`, `false`
-    -   `key_type` : Key 타입 - `RSA`, `EC`
-    -   `key_size` : Key 사이즈 지정, Key 타입이 RSA인 경우 - `2048/3072/4096`, Key 타입이 EC인 경우 - `256/384/521`
-    -   `curve` : Key 타입이 EC인 경우 Curve 지정 - `P-256`,`P-256K`,`P-384`,`P-521`
-    -   `reuse_key` : Key의 재사용 활성화 - `true`, `false`
-    -   `content_type` : Certificate의 컨텐츠 타입 - `application/x-pkcs12`, `application/x-pem-file`
-    -   `key_usage` : Key 사용 플래그 목록
-    -   `subject` : X.500의 고유 이름
-    -   `validity_in_months` : 인증서 월 단위 유효 기간 - `7` ~ `90`
-
--   `tag` : 리소스를 카테고리로 분류하기 위한 태그 - 최대 512자, `key`:`value`
+- `tag`: A tag used to categorize resources, up to 512 characters, in the format `key:value`.
 
 ---
 
-## 참고 자료
+## Reference Materials
 
 -   [Azure KeyVault(Microsoft)](https://learn.microsoft.com/ko-kr/azure/key-vault/general/overview)
 -   [Azure KeyVault 가격](https://azure.microsoft.com/en-us/pricing/details/key-vault/)

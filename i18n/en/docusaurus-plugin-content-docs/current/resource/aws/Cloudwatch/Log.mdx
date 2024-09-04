@@ -1,13 +1,13 @@
 ---
 title: Log
 sidebar_position: 0
-tags: [AWS, 리소스, Cloudwatch, Log]
+tags: [AWS, Resource, Cloudwatch, Log]
 ---
 
 <hr />
 <br />
 
-## 리소스 아이콘
+## Resource Icon
 
 <img
     src={
@@ -15,32 +15,36 @@ tags: [AWS, 리소스, Cloudwatch, Log]
     }
 />
 
-## 리소스 개요
+## Resource Overview
 
-Amazon CloudWatch Logs를 사용하여 Amazon Elastic Compute Cloud(Amazon EC2) 인스턴스, AWS CloudTrail, Route 53 및 다른 원본에서 시스템, 애플리케이션 및 사용자 지정 로그 파일을 모니터링, 저장 및 액세스할 수 있습니다.
-CloudWatch Logs는 확장성이 뛰어난 단일 서비스에서 사용하는 모든 시스템, 애플리케이션 및 AWS 서비스에서 로그를 중앙 집중화할 수 있습니다. 그런 다음 로그를 쉽게 보고, 특정 오류 코드 또는 패턴이 있는지 검색하고, 특정 필드를 기반으로 필터링하거나, 향후 분석을 위해 안전하게 보관할 수 있습니다. CloudWatch Logs를 사용하면 소스와 관계없이 모든 로그를 시간별로 정렬된 일관된 단일 이벤트 흐름으로 볼 수 있으며, 다른 차원을 기준으로 쿼리 및 정렬하고, 특정 필드별로 그룹화하고, 강력한 쿼리 언어로 사용자 지정 계산을 생성하고, 로그 데이터를 시각화할 수 있습니다.
+Here is the revised version in English:
 
-## 연관 리소스
+Amazon CloudWatch Logs allows you to monitor, store, and access system, application, and custom log files from sources such as Amazon Elastic Compute Cloud (Amazon EC2) instances, AWS CloudTrail, Route 53, and other sources. 
+CloudWatch Logs centralizes logs from all systems, applications, and AWS services in a highly scalable single service. 
+You can then easily view the logs, search for specific error codes or patterns, filter based on specific fields, or securely store them for future analysis. 
+With CloudWatch Logs, you can view all logs as a consistent, time-ordered stream of events regardless of the source, query and sort based on different dimensions, group by specific fields, create custom calculations with a powerful query language, and visualize log data.
 
-### 상위 리소스
+## Related Resources
+
+### Parent Resources
 
 -   [**Region**](https://docs.cstudio.app/docs/resource/aws/Base/Region)
 
-## 리소스 설정 값
+## Resource Configuration Values
 
--   `retention_in_days` : 로그 그룹에서 로그를 저장하고 있는 기간
--   `kms_key_name` : 로그 데이터를 암호화하기 위해 사용할 kms key의 이름
--   `log_stream_name` : 로그 Stream의 이름
--   `metric_filter` : 로그 그룹의 metric 필터의 이름, 최대 512자
-    -   `pattern` : 수집된 로그 이벤트에서 지표 데이터를 추출하기 위한 유효한 CloudWatch Logs 필터 패턴
-    -   `metric_name` : 모니터링되는 로그 정보를 게시해야 하는 CloudWatch 지표의 이름, 최대 255자로 지정, 콜론(:), 별표(\*), 달러 기호($) 및 공백( )을 제외한 모든 문자가 유효
-    -   `metric_namespace` : CloudWatch 지표의 대상 네임스페이스, 최대 255자로 지정, 콜론(:), 별표(\*), 달러 기호($) 및 공백( )을 제외한 모든 문자가 유효
-    -   `metric_value` : 측정항목에 게시할 항목, 유효한 지표 값은 부동 소수점 수(1, 99.9 등), 숫자 필드 식별자(1 USD, 2 USD 등) 또는 명명된 필드 식별자(예: 기호로 구분된 필터 패턴의 $requestSize 또는 JSON 기반 필터 패턴의 $.status - 달러 기호($) 또는 달러 기호와 점($.) 뒤에 영숫자 및/또는 밑줄(\_) 문자)
+-   `retention_in_days`: The duration for which logs are retained in the log group
+-   `kms_key_name`: The name of the KMS key used to encrypt log data
+-   `log_stream_name`: The name of the log stream
+-   `metric_filter`: The name of the metric filter for the log group, up to 512 characters
+    -   `pattern`: A valid CloudWatch Logs filter pattern used to extract metric data from collected log events
+    -   `metric_name`: The name of the CloudWatch metric where the log information should be published, up to 255 characters; valid characters include letters, numbers, underscores (_), and periods (.), but exclude colons (:), asterisks (*), dollar signs ($), and spaces
+    -   `metric_namespace`: The target namespace for the CloudWatch metric, up to 255 characters; valid characters include letters, numbers, underscores (_), and periods (.), but exclude colons (:), asterisks (*), dollar signs ($), and spaces
+    -   `metric_value`: The item to publish to the metric; valid metric values include floating-point numbers (e.g., 1, 99.9), numeric field identifiers (e.g., 1 USD, 2 USD), or named field identifiers (e.g., $requestSize in a delimited filter pattern or $.status in a JSON-based filter pattern—alphanumeric characters and/or underscores (_) following the dollar sign ($) or dot (.) are allowed)
 
 ---
 
-## 참고 자료
+## Reference Materials
 
 -   [Amazon CloudWatch Log(AWS)](https://docs.aws.amazon.com/ko_kr/AmazonCloudWatchLogs/latest/APIReference/Welcome.html)
--   [Amazon CloudWatch 가격(AWS)](https://aws.amazon.com/ko/cloudwatch/pricing/?nc2=type_a)
+-   [Amazon CloudWatch Price(AWS)](https://aws.amazon.com/ko/cloudwatch/pricing/?nc2=type_a)
 -   [Amazon CloudWatch Log(Terraform)](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_log_data_protection_policy)

@@ -1,13 +1,13 @@
 ---
 title: ResourceGroup
 sidebar_position: 0
-tags: [Azure, 리소스, Base, ResourceGroup]
+tags: [Azure, Resource, Base, ResourceGroup]
 ---
 
 <hr />
 <br />
 
-## 리소스 아이콘
+## Resource Icon
 
 <img
     src={
@@ -15,20 +15,20 @@ tags: [Azure, 리소스, Base, ResourceGroup]
     }
 />
 
-## 리소스 개요
+## Resource Overview
 
-리소스 그룹은 Azure 솔루션에 관련된 리소스를 보유하는 컨테이너입니다.
-리소스 그룹에는 솔루션에 대한 모든 리소스 또는 그룹으로 관리하려는 해당 리소스만 포함될 수 있습니다.
-사용자의 조직에 가장 적합한 내용에 따라 리소스 그룹에 리소스를 어떻게 할당할지 결정합니다.
-일반적으로 쉽게 배포, 업데이트하고 그룹으로 삭제할 수 있도록 동일한 리소스 그룹에 대해 동일한 수명 주기를 공유하는 리소스를 추가합니다.
+A resource group is a container that holds resources related to an Azure solution. 
+It can include all the resources for the solution or only those resources that you want to manage as a group. 
+You decide how to allocate resources to resource groups based on what works best for your organization. 
+Typically, you add resources that share the same lifecycle to the same resource group, making it easier to deploy, update, and delete them as a group.
 
-## 연관 리소스
+## Related Resources
 
-### 상위 리소스
+### Parent Resource
 
 -   [**Subscription**](https://docs.cstudio.app/docs/resource/azure/Base/Subscription)
 
-### 하위 리소스
+### Child Resource
 
 -   [**Linux App Service**](https://docs.cstudio.app/docs/resource/azure/AppService/LinuxAppService)
 -   [**Windows App Service**](https://docs.cstudio.app/docs/resource/azure/AppService/WindowsAppService)
@@ -81,13 +81,13 @@ tags: [Azure, 리소스, Base, ResourceGroup]
 -   [**Site Recovery**](https://docs.cstudio.app/docs/resource/azure/RecoveryServices/SiteRecovery)
 -   [**Storage Account**](https://docs.cstudio.app/docs/resource/azure/Storage/StorageAccount)
 
-## 리소스 설정 값
+## Resource Configuration Values
 
--   `location` : 리소스 그룹을 배포할 Azure 지역
+-   `location` : The Azure region where the resource group will be deployed.
 
 ---
 
-## 참고 자료
+## Reference Materials
 
 -   [Azure ResourceGroup(Microsoft)](https://learn.microsoft.com/ko-kr/azure/automation/overview)
 -   [Azure ResourceGroup(Terraform)](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/resource_group)
