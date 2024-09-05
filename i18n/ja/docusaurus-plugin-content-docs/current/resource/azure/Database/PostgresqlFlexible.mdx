@@ -1,7 +1,7 @@
 ---
 title: PostgresqlFlexible
 sidebar_position: 5
-tags: [Azure, 리소스, Database, PostgresqlFlexible]
+tags: [Azure, リソース, Database, PostgresqlFlexible]
 ---
 
 <hr />
@@ -15,10 +15,10 @@ tags: [Azure, 리소스, Database, PostgresqlFlexible]
 
 ## リソース概要
 
-Azure Database for PostgreSQL 유연한 서버는 유연한 서버 아키텍처를 제공하는 Azure의 확장 가능한 완전 관리형 오픈 소스 관계형 데이터베이스 서비스입니다.
-PostgreSQL 환경 구성에 대한 더 많은 제어가 필요한 다양한 워크로드 및 애플리케이션을 지원하도록 설계되었습니다.
-유연한 서버를 통해 고객은 특정 요구 사항을 충족하기 위해 다양한 컴퓨팅 및 스토리지 옵션 중에서 선택할 수 있습니다.
-단일 노드 및 고가용성 구성을 모두 지원하고 백업 및 재해 복구를 위한 여러 옵션을 제공합니다.
+Azure Database for PostgreSQL 柔軟なサーバは柔軟なサーバアーキテクチャを提供する Azure の拡張可能な完全管理型オープンソース関係型データベースサービスです。
+PostgreSQL 環境構成に対するより多くの制御が必要な様々なワークロードおよびアプリケーションをサポートするように設計されました。
+柔軟なサーバーにより、お客様は特定の要件を満たすために、さまざまなコンピューティングおよびストレージ オプションから選択できます。
+単一ノードと高可用性構成の両方をサポートし、バックアップと災害復旧のための複数のオプションを提供します。
 
 ## 関連リソース
 
@@ -28,47 +28,47 @@ PostgreSQL 환경 구성에 대한 더 많은 제어가 필요한 다양한 워�
 
 ## リソース設定値
 
--   `version` : 사용할 Postgresql 버전 - `11`, `12`, `13`, `14`
+-   `version` : 使用する PostgreSQL のバージョン - `11`, `12`, `13`, `14`
 
--   `sku_name` : Postgresql 가격 책정 계층 이름, Tier + 컴퓨팅 세대 + 코어 수의 조합 - `azurePostgresqlFlexibleSku`
+-   `sku_name` : PostgreSQL 価格設定階層名、Tier+コンピューティング世代+コア数の組み合わせ - `azurePostgresqlFlexibleSku`
 
--   `storage_mb` : Postgresql Flexible Server의 최대 용량(MB) - `storageGB`
+-   `storage_mb` : Postgresql Flexible Server の最大容量(MB) - `storageMB`
 
--   `admin_username` : Creation mode가 default인 경우 Server의 관리자 사용자 이름
+-   `admin_username` : Creation mode がデフォルトの場合、サーバーの管理者ユーザー名
 
--   `admin_password` : Creation mode가 default인 경우 Server의 관리자 로그인 암호
+-   `admin_password` : Creation mode がデフォルトの場合、サーバーの管理者ログインパスワード
 
--   `availability_zone` : 가용 영역을 지정합니다. 가능한 값은 1, 2, 3입니다. - `1` ~ `3`
+-   `availability_zone` : アベイラビリティ ゾーンを指定します。 指定できる値は 1、2、3 です。 - `1` ~ `3`
 
--   `enable_high_availability` : Postgresql Flexible Server의 고가용성 활성화 여부 - `true` , `false`
+-   `enable_high_availability` : Postgresql Flexible Server の高可用性活性化の可否 - `true` , `false`
 
--   `backup_retention_days` : MySQL Flexible Server의 백업 보존 일수입니다. 가능한 값은 1~35일입니다. - `1` ~ `35`
+-   `backup_retention_days` : Postgresql Flexible Server のバックアップ保存日数です。可能な値は 1 ~ 35 日です。 - `1` ~ `35`
 
 -   `geo_redundant_backup_enabled` - `true` , `false`
 
--   `public_network_access_enabled` : Server에 퍼블릭 네트워크 접근 허용 - `true` , `false`
+-   `public_network_access_enabled` : Server へのパブリックネットワークへのアクセスを許容 - `true` , `false`
 
 -   `configuration`
 
-    -   `name` : Postgresql 유연한 서버 구성의 이름
-    -   `param_value` : Postgresql 유연한 서버 구성의 값
+    -   `name` : Postgresql Flexible Server Configuration の名前
+    -   `param_value` : Postgresql Flexible Server Configuration の値
 
 -   `database`
 
-    -   `charset` : Postgresql Database의 문자 집합 - `azurePostgresqlChartSet`
-    -   `collation` : Postgresql Database의 데이터 정렬 방식 - `azurePostgresqlFlexibleCol`
+    -   `charset` : PostgreSQL データベースの文字セット - `azurePostgresqlChartSet`
+    -   `collation` : PostgreSQL Database のデータ整列方式 - `azurePostgresqlFlexibleCol`
 
 -   `firewall_rule`
 
-    -   `start_ip_address` : 방화벽 Rule에 연결된 시작 IP 주소
-    -   `end_ip_address` : 방화벽 Rule에 연결된 종료 IP 주소
+    -   `start_ip_address` : Firewall Rule に接続された開始 IP アドレス
+    -   `end_ip_address` : Firewall Rule に接続された終了 IP アドレス
 
--   `tag` : 리소스를 카테고리로 분류하기 위한 태그 - 최대 512자, `key`:`value`
+-   `tag` : リソースをカテゴリに分類するためのタグ - 最大 512 文字, `key`:`value`
 
 ---
 
 ## 参考資料
 
 -   [Azure PostgresqlFlexible(Microsoft)](https://learn.microsoft.com/ko-kr/azure/postgresql/flexible-server/overview)
--   [Azure PostgresqlFlexible 가격](https://azure.microsoft.com/ko-kr/pricing/details/postgresql/flexible-server/)
+-   [Azure PostgresqlFlexible 価格](https://azure.microsoft.com/ko-kr/pricing/details/postgresql/flexible-server/)
 -   [Azure PostgresqlFlexible(Terraform)](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/postgresql_flexible_server)

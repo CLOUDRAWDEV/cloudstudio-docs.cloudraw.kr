@@ -1,7 +1,7 @@
 ---
 title: KeyVault
 sidebar_position: 0
-tags: [Azure, 리소스, KeyVault, KeyVault]
+tags: [Azure, リソース, KeyVault, KeyVault]
 ---
 
 <hr />
@@ -17,74 +17,74 @@ tags: [Azure, 리소스, KeyVault, KeyVault]
 
 ## リソース概要
 
-Azure Key Vault는 비밀을 안전하게 저장하고 액세스하기 위한 클라우드 서비스입니다.
-비밀은 API 키, 암호, 인증서 또는 암호화 키 등에 대한 액세스를 엄격하게 제어하려는 항목입니다. Key Vault 서비스는 자격 증명 모음 및 관리되는 HSM(하드웨어 보안 모듈) 풀이라는 두 가지 유형의 컨테이너를 지원합니다.
-자격 증명 모음은 소프트웨어 및 HSM 지원 키, 암호 및 인증서를 저장하도록 지원합니다. 관리형 HSM 풀은 HSM 지원 키만 지원합니다.
+Azure Key Vault は秘密を安全に保存してアクセスするためのクラウドサービスです。
+秘密は API 鍵、暗号、証明書または暗号化鍵などのアクセスを厳しく制御しようとする項目です。 Key Vault サービスは、クレデンシャルコレクションおよび管理される HSM(ハードウェアセキュリティモジュール)プールという 2 つのタイプのコンテナをサポートします。
+クレデンシャルコレクションは、ソフトウェアと HSM のサポート キー、パスワード、および認証書の保存をサポートします。 管理型 HSM プールは HSM 対応キーのみ対応します。
 
 ## 関連リソース
 
 ### 上位リソース
 
--   [**Resource Group**](https://docs.cstudio.app/docs/resource/azure/Base/ResourceGroup)
+-   [**Resource Group**](https://docs.cstudio.app/ja/docs/resource/azure/Base/ResourceGroup)
 
 ## リソース設定値
 
--   `sku_name` : Key Vault의 규모 및 기능 선택을 위한 가격 책정 계층 - `standard`, `premium`
+-   `sku_name` : Key Vault の規模及び機能選択のための価格設定階層(SKU) - `standard`, `premium`
 
--   `enabled_for_disk_encryption` : Azure Disk Encryption이 Vault 및 래핑 해제 키에서 비밀을 검색할 수 있도록 허용 - `true`, `false`
+-   `enabled_for_disk_encryption` : Azure Disk Encryption が Vault 及びラッピング解除キーで secrets を検索できるように許容 - `true`, `false`
 
--   `soft_delete_retention_days` : 삭제된 항목 보존 일 수, 7 ~ 90의 범위 - `7` ~ `90`
+-   `soft_delete_retention_days` : 削除された項目の保存日数、7~90 の範囲 - `7` ~ `90`
 
--   `purge_protection_enabled` : 데이터 손실을 방지하기 위한 제거 보호 활성화 - `true`, `false`
+-   `purge_protection_enabled` : データ損失を防止するための消去保護を有効にする - `true`, `false`
 
--   `network_acl_bypass` : 신뢰할 수 있는 서비스가 방화벽을 바이패스하도록 허용 - `AzureServices`, `None`
+-   `network_acl_bypass` : 信頼できるサービスが firewall をバイパスできるように許容 - `AzureServices`, `None`
 
--   `network_acl_action` : 설정한 IP Rules과 일치하는 규칙이 없는 경우의 동작 - `Deny`, `Allow`
+-   `network_acl_action` : 設定した IP Rules と一致するルールがない場合の動作 - `Deny`, `Allow`
 
--   `network_acl_ip_rules` : Key Vault에 접근하기 위한 IP 주소 및 CIDR
+-   `network_acl_ip_rules` : Key Vault にアクセスするための IP アドレスおよび CIDR
 
 -   `access_policies`
 
-    -   `object_id` : 사용자의 개체 ID를 통해 Vault 사용을 위한 주체 선택
-    -   `key_permissions` : Key 권한 리스트
-    -   `secret_permissions` : Secret 권한 리스트
-    -   `certificate_permissions` : Key certificate 리스트
+    -   `object_id` : ユーザーのオブジェクト ID を通じて Vault を使用する主体を選択
+    -   `key_permissions` : Key 権限リスト
+    -   `secret_permissions` : Secret 権限リスト
+    -   `certificate_permissions` : Key certificate のリスト
 
 -   `key_vault_secret`
 
-    -   `name` : Key Vault Secret 이름
-    -   `expiration_date` : Secret 만료 UTC 날짜 시간
+    -   `name` : Key Vault Secret 名
+    -   `expiration_date` : Secret 満了 UTC 日付時間
 
 -   `key_vault_key`
 
-    -   `type` : Key Vault Key를 사용하기 위한 Key 타입 - `EC`, `EC-HSM`, `RSA`, `RSA-HSM`
-    -   `size` : Key 타입이 RSA인 경우 바이트 단위의 Key 사이즈 지정 - `2048`, `3072`, `4096`
-    -   `curve` : Key 타입이 EC인 경우 Curve 지정 - `P-256`, `P-256K`, `P-384`, `P-521`
-    -   `expiration_date` : Key 만료 UTC 날짜 시간
-    -   `opts` : 허용하는 JSON web key operation 목록
+    -   `type` : Key Vault Key を使用するための Key タイプ - `EC`, `EC-HSM`, `RSA`, `RSA-HSM`
+    -   `size` : キータイプが RSA の場合、バイト単位のキーサイズ指定 - `2048`, `3072`, `4096`
+    -   `curve` : キータイプが EC の場合は、Curve を指定 - `P-256`, `P-256K`, `P-384`, `P-521`
+    -   `expiration_date` : Key 満了 UTC 日付時間
+    -   `opts` : 許容する JSON web key operation リスト
 
 -   `key_vault_certificate`
 
-    -   `import_existing_certificate` : 현재 있는 인증서 추가 여부 - `true`, `false`
-    -   `contents` : Base64 기반 인증서 내용
-    -   `password` : 인증서의 암호
-    -   `issuer_name` : Certificate 발행자 이름 - `Self`, `Unknown`
-    -   `exportable` : Key의 외부 저장 활성화 - `true`, `false`
-    -   `key_type` : Key 타입 - `RSA`, `EC`
-    -   `key_size` : Key 사이즈 지정, Key 타입이 RSA인 경우 - `2048/3072/4096`, Key 타입이 EC인 경우 - `256/384/521`
-    -   `curve` : Key 타입이 EC인 경우 Curve 지정 - `P-256`,`P-256K`,`P-384`,`P-521`
-    -   `reuse_key` : Key의 재사용 활성화 - `true`, `false`
-    -   `content_type` : Certificate의 컨텐츠 타입 - `application/x-pkcs12`, `application/x-pem-file`
-    -   `key_usage` : Key 사용 플래그 목록
-    -   `subject` : X.500의 고유 이름
-    -   `validity_in_months` : 인증서 월 단위 유효 기간 - `7` ~ `90`
+    -   `import_existing_certificate` : 現在認証書追加の可否 - `true`, `false`
+    -   `contents` : Base64 ベースの認証書の内容
+    -   `password` : 証明書のパスワード
+    -   `issuer_name` : 証明書発行者名 - `Self`, `Unknown`
+    -   `exportable` : Key の外部保存の活性化 - `true`, `false`
+    -   `key_type` : Key タイプ - `RSA`, `EC`
+    -   `key_size` : Key サイズ指定、Key タイプが RSA の場合 - `2048/3072/4096`, Key タイプが EC の場合 - `256/384/521`
+    -   `curve` : キータイプが EC の場合は、Curve を指定 - `P-256`,`P-256K`,`P-384`,`P-521`
+    -   `reuse_key` : Key の外部保存の活性化 - `true`, `false`
+    -   `content_type` : 認証書のコンテンツタイプ - `application/x-pkcs12`, `application/x-pem-file`
+    -   `key_usage` : Key 使用フラグリスト
+    -   `subject` : X.500 の固有名
+    -   `validity_in_months` : 認証書の月単位の有効期限 - `7` ~ `90`
 
--   `tag` : 리소스를 카테고리로 분류하기 위한 태그 - 최대 512자, `key`:`value`
+-   `tag` : リソースをカテゴリに分類するためのタグ - 最大 512 文字, `key`:`value`
 
 ---
 
 ## 参考資料
 
 -   [Azure KeyVault(Microsoft)](https://learn.microsoft.com/ko-kr/azure/key-vault/general/overview)
--   [Azure KeyVault 가격](https://azure.microsoft.com/en-us/pricing/details/key-vault/)
+-   [Azure KeyVault 価格](https://azure.microsoft.com/en-us/pricing/details/key-vault/)
 -   [Azure KeyVault(Terraform)](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/key_vault)

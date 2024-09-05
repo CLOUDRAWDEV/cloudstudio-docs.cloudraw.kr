@@ -1,7 +1,7 @@
 ---
 title: PolicySetDefinition
 sidebar_position: 1
-tags: [Azure, 리소스, Policy, PolicySetDefinition]
+tags: [Azure, リソース, Policy, PolicySetDefinition]
 ---
 
 <hr />
@@ -17,36 +17,36 @@ tags: [Azure, 리소스, Policy, PolicySetDefinition]
 
 ## リソース概要
 
-Azure Policy 집합 정의는 더 쉬운 관리 및 할당을 위해 함께 그룹화된 하나 이상의 정책 정의 모음입니다. 여러 리소스 유형, 리소스 그룹 또는 구독에 적용할 수 있는 정책 집합을 만들 수 있습니다.
-정책 세트 정의를 사용하면 각 정책을 개별적으로 적용하지 않고 단일 작업으로 리소스 또는 리소스 그룹에 정책 세트를 적용할 수 있습니다. 이를 통해 정책 관리를 간소화하고 모든 리소스가 조직의 표준 및 정책을 준수하는지 확인할 수 있습니다.
-정책 세트 정의는 JSON 형식으로 정의할 수 있으며 매개변수, 메타데이터 및 정책 정의를 포함할 수 있습니다. 또한 다른 정책 집합 정의 또는 정책 정의를 참조하여 여러 리소스 및 리소스 그룹에 적용할 수 있는 복잡한 정책을 만들 수 있습니다.
+Azure Policy Set Definition はより簡単な管理と割り当てのために一緒にグループ化された 1 つ以上のポリシー定義のコレクションです。複数のリソース タイプ、リソース グループ、またはサブスクリプションに適用できるポリシー セットを作成できます。
+Policy Set Definition を使用すると、各ポリシーを個別に適用することなく、単一の作業でリソースまたはリソースグループに Policy Set を適用することができます。これにより、ポリシー管理を簡素化し、すべてのリソースが組織の標準およびポリシーに準拠していることを確認できます。
+Policy Set Definition は JSON 形式で定義することができ、媒介変数、メタデータ、およびポリシー定義を含めることができます。 また、他の Policy Set 定義またはポリシー定義を参照して、複数のリソースおよびリソースグループに適用できる複雑なポリシーを作成できます。
 
 ## 関連リソース
 
 ### 上位リソース
 
--   [**Subscription**](https://docs.cstudio.app/docs/resource/azure/Base/Subscription)
+-   [**Subscription**](https://docs.cstudio.app/ja/docs/resource/azure/Base/Subscription)
 
 ### 下位リソース
 
--   [**Policy Definition**](https://docs.cstudio.app/docs/resource/azure/Policy/PolicyDefinition)
+-   [**Policy Definition**](https://docs.cstudio.app/ja/docs/resource/azure/Policy/PolicyDefinition)
 
 ### 接続リソース
 
--   [**Resource Group**](https://docs.cstudio.app/docs/resource/azure/Base/ResourceGroup)
+-   [**Resource Group**](https://docs.cstudio.app/ja/docs/resource/azure/Base/ResourceGroup)
 
 ## リソース設定値
 
--   `type` : 정책 집합을 새로 생성하거나 기존 항목 사용 - `Custom`, `BuiltIn`
+-   `type` : ポリシーのタイプ - `Custom`,`BuiltIn`
 
--   `display_name` : 정책 정의 표시 이름
+-   `display_name` : ポリシー定義の表示名
 
--   `included_definition_name` : 정책 집합 정의에 포함되는 정책 정의 이름
+-   `included_definition_name` : ポリシー セット定義に含まれるポリシー定義名
 
 ---
 
 ## 参考資料
 
 -   [Azure PolicySetDefinition(Microsoft)](https://learn.microsoft.com/en-us/azure/governance/policy/overview)
--   [Azure PolicySetDefinition 가격](https://azure.microsoft.com/en-us/pricing/details/azure-policy/)
+-   [Azure PolicySetDefinition 価格](https://azure.microsoft.com/en-us/pricing/details/azure-policy/)
 -   [Azure PolicySetDefinition(Terraform)](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/policy_set_definition)

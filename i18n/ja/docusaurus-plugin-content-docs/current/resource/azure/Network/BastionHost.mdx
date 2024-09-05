@@ -1,7 +1,7 @@
 ---
 title: BastionHost
 sidebar_position: 1
-tags: [Azure, 리소스, Network, BastionHost]
+tags: [Azure, リソース, Network, BastionHost]
 ---
 
 <hr />
@@ -17,38 +17,38 @@ tags: [Azure, 리소스, Network, BastionHost]
 
 ## リソース概要
 
-Azure Bastion은 브라우저와 Azure Portal을 사용하거나 로컬 컴퓨터에 이미 설치된 기본 SSH 또는 RDP 클라이언트를 통해 가상 머신에 연결할 수 있도록 배포하는 서비스입니다.
-Azure Bastion 서비스는 가상 네트워크 내부에서 프로비저닝하는 완전한 플랫폼 관리형 PaaS 서비스입니다. TLS를 통해 Azure Portal에서 직접 가상 머신에 대한 안전하고 원활한 RDP/SSH 연결을 제공합니다.
-Azure Bastion을 통해 연결하면 가상 머신에 공용 IP 주소, 에이전트 또는 특수 클라이언트 소프트웨어가 필요하지 않습니다.
+Azure Bastion はブラウザと Azure Portal を使用したり、ローカルコンピュータに既にインストールされている基本 SSH または RDP クライアントを通じて仮想マシンに接続できるように配布するサービスです。
+Azure Bastion サービスは仮想ネットワーク内部でプロビジョニングする完全なプラットフォーム管理型 PaaS サービスです。TLS を通じて Azure Portal で直接仮想マシンに対する安全で円滑な RDP/SSH 接続を提供します。
+Azure Bastion を通じて接続すると、仮想マシンに共用 IP アドレス、エージェント、または特殊クライアントソフトウェアを必要としません。
 
 ## 関連リソース
 
 ### 上位リソース
 
--   [**Resource Group**](https://docs.cstudio.app/docs/resource/azure/Base/ResourceGroup)
--   [**Virtual Network**](https://docs.cstudio.app/docs/resource/azure/Network/VirtualNetwork)
--   [- [**Subnet**](https://docs.cstudio.app/docs/resource/azure/Network/Subnet)](https://docs.cstudio.app/docs/resource/azure/Network/Subnet)
+-   [**Resource Group**](https://docs.cstudio.app/ja/docs/resource/azure/Base/ResourceGroup)
+-   [**Virtual Network**](https://docs.cstudio.app/ja/docs/resource/azure/Network/VirtualNetwork)
+-   [- [**Subnet**](https://docs.cstudio.app/ja/docs/resource/azure/Network/Subnet)](https://docs.cstudio.app/docs/resource/azure/Network/Subnet)
 
 ### 接続リソース
 
--   [**Public Ip**](https://docs.cstudio.app/docs/resource/azure/Network/PublicIp)
+-   [**Public Ip**](https://docs.cstudio.app/ja/docs/resource/azure/Network/PublicIp)
 
 ## リソース設定値
 
--   `included_subnet_name` : Bastion Host가 생성된 Virtual Network 이름
+-   `included_subnet_name` : Bastion Host が位置する Subnet の名前
 
--   `sku` : Bastion Host의 SKU - `Basic`, `Standard`
+-   `sku` : Bastion Host の SKU - `Basic`, `Standard`
 
--   `linked_public_ip_name` : Bastion Host 연결할 Public ip 이름
+-   `linked_public_ip_name` : Bastion Host に接続する Public Ip の名前
 
--   `ip_config_name` : IP Configuration 이름
+-   `ip_config_name` : IP Configuration の名前
 
--   `tag` : 리소스를 카테고리로 분류하기 위한 태그 - 최대 512자, `key`:`value`
+-   `tag` : リソースをカテゴリに分類するためのタグ - 最大 512 文字, `key`:`value`
 
 ---
 
 ## 参考資料
 
 -   [Azure BastionHost(Microsoft)](https://learn.microsoft.com/en-us/azure/bastion/bastion-overview)
--   [Azure BastionHost 가격](https://azure.microsoft.com/en-us/pricing/details/azure-bastion/)
+-   [Azure BastionHost 価格](https://azure.microsoft.com/en-us/pricing/details/azure-bastion/)
 -   [Azure BastionHost(Terraform)](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/bastion_host)
