@@ -1,7 +1,7 @@
 ---
 title: CosmodbSql
 sidebar_position: 3
-tags: [Azure, 리소스, Cosmosdb, CosmodbSql]
+tags: [Azure, Resource, Cosmosdb, CosmodbSql]
 ---
 
 <hr />
@@ -29,53 +29,52 @@ Additionally, Cosmos DB SQL supports advanced features such as stored procedures
 
 ## Resource Setting Values
 
--    `capabilities_list`: List of APIs to be used in Cosmos DB - `EnableServerless`, `EnableAggregationPipeline`.
+-   `capabilities_list` : List of the Cosmos DB API which should be used - `EnableServerless`, `EnableAggregationPipeline`
 
--    `enable_multiple_write_locations`: Enable multi-region writes to utilize provisioned throughput across global databases and containers - `true`, `false`.
+-   `enable_multiple_write_locations` : Enable multi-region writes to leverage provisioned throughput across global databases and containers - `true`, `false`
 
--   `public_network_access_enabled`: Enable public access to the account via public IP addresses or service endpoints - `true`, `false`.
+-   `public_network_access_enabled` : Enable connection to the account by public IP address or service endpoint - `true`, `false`
 
--   `enable_automatic_failover`: Enable automatic failover - `true`, `false`.
+-   `enable_automatic_failover` : Enable automatic failover for the account - `true`, `false`
 
--   `virtual_network_filter_enabled`: Enable filtering to allow access to the account only from specific subnets within a virtual network - `true`, `false`.
+-   `virtual_network_filter_enabled` : Enable filters so that only certain Subnets in the Virtual network can access the account - `true`, `false`
 
--   `network_acl_bypass_for_azure_services`: Enable ACL bypass for Azure services - `true`, `false`.
+-   `network_acl_bypass_for_azure_services` :Allow ACL bypass for Azure service - `true`, `false`
 
--   `geo_location`:
+-   `geo_location`
 
-    -   `failover_priority`: Priority for failover within the region - `0` ~ `0`.
-    -   `zone_redundant`: Allow automatic zone replication for fault tolerance - `true`, `false`.
+    -   `failover_priority` : The failover priority of the region - `0`~ `0`
+    -   `zone_redundant` : Enable the zone redundancy in case of an error - `true`~ `false`
 
--    `consistency_policy`:
+-   `consistency_policy`
 
-    -    `consistency_level`: Consistency level for configuring the availability and performance of Cassandra DB - `Eventual`, `Session`, `Strong`, `ConsistentPrefix`, `BoundedStaleness`.
-    -   `max_interval_in_seconds`: Allowed staleness time (in seconds) when the consistency level is Bounded Staleness - `5` ~ `86400`.
-    -   `max_staleness_prefix`: Maximum number of stale requests allowed when the consistency level is Bounded Staleness - `10` ~ `2147483647`.
+    -   `consistency_level` : The consistency level of Cassandra DB to set availability and performance of database - `Eventual`, `Session`, `Strong`, `ConsistentPrefix`, `BoundedStaleness`
+    -   `max_interval_in_seconds` : If using Bounded Staleness, the time amount of staleness tolerated in seconds - `5`~ `86400`
+    -   `max_staleness_prefix` : If using Bounded Staleness, the number of stale requests tolerated - `10`~`2147483647`
 
--   `backup`:
+-   `backup`
 
-    -    `type`: Backup policy type - `Continuous`, `Periodic`.
-    -   `interval_in_minutes`: Frequency of backups in minutes, within the range of 60 ~ 1440 - `60` ~ `1440`.
-    -   `retention_in_hours`: Duration for which backups are retained (in hours), within the range of 8 ~ 720 - `8` ~ `720`.
+    -   `type` : The type of backup - `Continuous`, `Periodic`
+    -   `interval_in_minutes` : The interval of backup in minutes, Between 60 and 1440 - `60`~ `1440`
+    -   `retention_in_hours` : The time in hours that the backup is retained, Between 8 and 720 - `8`~`720`
 
--   `sql_database`:
+-   `cassandra_keyspace`
 
-    -    `throughput`: Throughput for the Cosmos DB SQL database - `400` ~ `1000000`.
-    -   `enable_autoscale`: Whether to enable auto-scaling for the Cosmos DB SQL database - `true`, `false`.
+    -   `throughput` : The throughput of Cassandra keyspace - `400`~ `1000000`
+    -   `enable_autoscale` : Whether to apply auto scaling to Cassandra keyspace - `true`, `false`
 
--   `sql_container`:
+-   `cassandra_table`
 
-    -   `partition_key_version`: Specify the partition key version as either 1 or 2 - `1`, `2`.
-    -   `partition_key_path`: Define the partition key path for the SQL container.
-    -   `throughput`: Throughput for the SQL container - `400` ~ `100000`.
-    -   `indexing_mode`: Set the indexing mode - `consistent`, `none`.
-    -   `included_path`: List of paths to include in indexing.
-    -   `excluded_path`: List of paths to exclude from indexing.
-    -   `unique_key_path`: List of unique key path values for data integrity.
-    -   `enable_autoscale`: Whether to enable auto-scaling for the SQL container - `true`, `false`.
-    -   `included_sql_database_name`: Name of the SQL database where the container will be created.
+    -   `throughput`: The throughput of Cassandra table - `400`~ `1000000`
+    -   `column` : List of the name and type of column, 'name:type' format
+    -   `partition_key` : The name of partition key
+    -   `cluster_key_name` : The name of cluster key to be created
+    -   `cluster_key_order` : Order of the cluster key - `Asc` , `Desc`
+    -   `enable_autoscale` : Whether to apply auto scaling to Cassandra keyspace - `true`, `false`
+    -   `included_cosmosdb_keyspace_name` : The name of the Cosmos DB Cassandra keyspace to create the table within
 
--   `tag`: Tag for categorizing resources - up to 512 characters, in `key:value` format.
+-   `tag` : Tag to categorize resources - up to 512 characters, `key`:`value`
+
 ---
 
 ## Reference Materials

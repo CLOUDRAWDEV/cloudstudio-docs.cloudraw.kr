@@ -1,7 +1,7 @@
 ---
 title: KubernetesCluster
 sidebar_position: 1
-tags: [Azure, 리소스, Container, KubernetesCluster]
+tags: [Azure, Resource, Container, KubernetesCluster]
 ---
 
 <hr />
@@ -23,50 +23,50 @@ In the following quickstart, you can perform the following actions.
 
 ## Resource Setting Values
 
--   `dns_prefix` : DNS prefix to be used with the FQDN of the hosted Kubernetes API server.
+-   `dns_prefix` : DNS prefix for use with Kubernetes API.
 
--   `sku_tier` : Pricing tier for using the Kubernetes cluster. - `Free`, `Paid`
+-   `sku_tier` : The SKU that should be used for the Kubernetes cluster. - `Free`, `Paid`
 
 -   `enable_public_network_access` : - `true`, `false`
 
 -   `api_server_authorized_ip_ranges` : Authorized IP address ranges to secure access to the API server.
 -   `default_node_pool`
 
-    -   `node_pool_name` : Name of the Node Pool to be created in the Kubernetes cluster
-    -   `enable_auto_scaling` : Enable automatic scaling for the cluster to ensure it runs with the appropriate number of nodes
-    -   `node_count` : Number of nodes in the Node Pool - `1`~ `1000`
-    -   `vm_size` : Size of the virtual machines that will form the nodes in the Node Pool
-    -   `os_disk_size_gb` : Size of the OS disk for the virtual machines (in GB) - `0`~ `114000`
-    -   `max_pods` : Maximum number of Pods that can run on a node - `10`~ `250`
-    -   `enable_node_public_ip` : Enable or disable the use of public IP addresses per node - `true`, `false`
+    -   `node_pool_name` : The name of the Node Pool to be created in the Kubernetes cluster
+    -   `enable_auto_scaling` : Enable automatically scaling a cluster to meet application demands
+    -   `node_count` : The initial number of nodes which should exist within the Node pool - `1`~ `1000`
+    -   `vm_size` : The size of the Virtual Machine used in Node pool
+    -   `os_disk_size_gb` : The agent operating system disk size in GB - `0`~ `114000`
+    -   `max_pods` : The maximum number of Pods that can run on each agent - `10`~ `250`
+    -   `enable_node_public_ip` : Enable having a public IP address - `true`, `false`
 
--   `authentication_authorization` : Enable role-based access control to restrict access to cluster resources - `local_accounts`, `azure_rbac`, `kubernetes_rbac`
+-   `authentication_authorization` : Enable Role Based Access Control to limit access to cluster resources - `local_accounts`,`azure_rbac`,`kubernetes_rbac`
 
--   `network_policy` : Network policy to restrict access to specific Pods - `calico`, `azure`
+-   `network_policy` : Network Policy to secure traffic between pods - `calico`,`azure`
 
--   `network_plugin` : Configure the virtual network using either kubenet or Azure CNI - `kubenet`, `azure`
+-   `network_plugin` : Configuring a basic Virtual Network with a kubenet or Azure CNI - `kubenet`, `azure`
 
--   `included_subnet_name` : Name of the subnet where the Kubernetes Cluster will be deployed
+-   `included_subnet_name` : The name of Subnet to which to create the Kubernetes Cluster
 
--   `load_balancer_sku` : Pricing tier for the Load Balancer - `standard`, `basic`
+-   `load_balancer_sku` : The SKU of the Load balancer - `standard`, `basic`
 
--   `pod_cidr` : CIDR for using Pod IP addresses
+-   `pod_cidr` : The CIDR to use for pod IP addresses
 
--   `outbound_type` : Outbound routing type - `loadBalancer`, `userDefinedRouting`
+-   `outbound_type` : The outbound routing method which should be used for the Kubernetes cluster - `loadBalancer`, `userDefinedRouting`
 
 -   `cluster_node_pool`
 
-    -   `node_mode` : System or user mode for the Node Pool - `User`, `System`
-    -   `node_os_type` : OS type for the VMs in the Node Pool - `Linux`, `Windows`
-    -   `enable_auto_scaling` : Enable automatic scaling to ensure the cluster runs with the appropriate number of nodes - `true`, `false`
-    -   `node_count` : Number of nodes in the Node Pool (for user mode) - `1`~ `1000`
-    -   `max_node_count` : Maximum number of nodes in the Node Pool - `0`~ `1000`
-    -   `min_node_count` : Minimum number of nodes in the Node Pool - `0`~ `1000`
-    -   `vm_size` : Size of the virtual machines that form the nodes in the Node Pool
-    -   `os_disk_size_gb` : Size of the OS disk for the virtual machines (in GB) - `4`~ `11400`
-    -   `max_pods` : Maximum number of Pods that can run on a node.
-    -   `enable_node_public_ip` : Enable or disable the use of public IP addresses per node - `true`, `false`
-    -   `public_ip_prefix_name`
+    -   `node_mode` : System or user mode for Node pool - `User`, `System`
+    -   `node_os_type` : The operating system which should be used for the Node pool - `Linux`, `Windows`
+    -   `enable_auto_scaling` : Enable automatically scaling a cluster to meet application demands - `true`, `false`
+    -   `node_count` : The initial number of nodes which should exist within the Node pool, User mode - `1`~ `1000`
+    -   `max_node_count` : The Max number of nodes which should exist within the Node pool - `0`~ `1000`
+    -   `min_node_count` : The Min number of nodes which should exist within the Node pool - `0`~ `1000`
+    -   `vm_size` : The size of the Virtual Machine used in Node pool
+    -   `os_disk_size_gb` : The agent operating system disk size in GB - `4`~ `11400`
+    -   `max_pods` : The maximum number of Pods that can run on each agent
+    -   `enable_node_public_ip` : Enable having a public IP address - `true`, `false`
+    -   `public_ip_prefix_name` : Resource ID for the Public IP Addresses Prefix for the nodes in this Node Pool
 
 -   `tag` : Tag for categorizing resources - up to  512 characters, `key`:`value`
 

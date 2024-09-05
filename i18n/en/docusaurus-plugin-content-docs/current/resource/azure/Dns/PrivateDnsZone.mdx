@@ -17,9 +17,9 @@ tags: [Azure, Resource, Dns, PrivateDnsZone]
 
 ## Resource Overview
 
-Azure 프라이빗 DNS는 사용자 지정 DNS 솔루션을 추가하지 않고도 가상 네트워크의 도메인 이름을 관리하고 확인할 수 있는 안정적이고 신뢰할 수 있는 DNS 서비스를 제공합니다.
-프라이빗 DNS 영역을 사용하면 현재 Azure에서 제공하는 이름 대신 사용자 고유의 사용자 지정 도메인 이름을 사용할 수 있습니다.
-프라이빗 DNS 영역에 포함된 레코드는 인터넷에서 확인할 수 없습니다. 프라이빗 DNS 영역에 대한 DNS 확인은 연결된 가상 네트워크에서만 작동합니다.
+Azure Private DNS provides a reliable and trustworthy DNS service that allows you to manage and resolve domain names within a virtual network without the need to add a custom DNS solution. 
+By using private DNS zones, you can use your own custom domain names instead of the default names provided by Azure. Records in a private DNS zone cannot be resolved from the internet. 
+DNS resolution for private DNS zones only works within the connected virtual networks.
 
 ## Associated Resources
 
@@ -35,34 +35,34 @@ Azure 프라이빗 DNS는 사용자 지정 DNS 솔루션을 추가하지 않고�
 
 -   `private_dns_a_record`
 
-    -   `ttl` : Time To Live (TTL) of the DNS record in seconds - `0` ~ `2147483647`
-    -   `records` : List of IPv4 addresses
+    -   `ttl` : The Time To Live of the DNS record in seconds - `0` ~ `2147483647`
+    -   `records` :The list of values that make up the NS record
 
 -   `private_dns_aaaa_record`
 
-    -   `ttl` : Time To Live (TTL) of the DNS record in seconds - `0` ~ `2147483647`
-    -   `records` : List of IPv6 addresses
+    -   `ttl` : The Time To Live of the DNS record in seconds - `0` ~ `2147483647`
+    -   `records` :The list of values that make up the NS record
 
 -   `private_dns_cname_record`
 
-    -   `ttl` : Time To Live (TTL) of the DNS record in seconds - `0` ~ `2147483647`
-    -   `record` : Alias used to map a subdomain to another record
+    -   `ttl` : The Time To Live of the DNS record in seconds - `0` ~ `2147483647`
+    -   `records` :The list of values that make up the NS record
 
 -   `private_dns_ptr_record`
 
-    -   `ttl` : Time To Live (TTL) of the DNS record in seconds - `0` ~ `2147483647`
-    -   `records` : List of domain names for pointer records
+    -   `ttl` : The Time To Live of the DNS record in seconds - `0` ~ `2147483647`
+    -   `records` :The list of values that make up the NS record
 
 -   `private_dns_txt_record`
 
-    -   `ttl` : Time To Live (TTL) of the DNS record in seconds - `0` ~ `2147483647`
-    -   `records` : List of text records
+    -   `ttl` : The Time To Live of the DNS record in seconds - `0` ~ `2147483647`
+    -   `records` :The list of values that make up the NS record
 
 -   `vnet_link`
 
     -   `linked_vnet_name` : Name of the linked virtual network
 
--   `tag` : Tag used to categorize resources - up to 512 characters, `key`:`value`
+-   `tag`: Tag to categorize resources - up to 512 characters, `key:value`
 ---
 
 ## Reference Materials

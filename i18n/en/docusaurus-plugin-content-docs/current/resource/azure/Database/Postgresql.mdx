@@ -1,7 +1,7 @@
 ---
 title: Postgresql
 sidebar_position: 4
-tags: [Azure, 리소스, Database, Postgresql]
+tags: [Azure, Resource, Database, Postgresql]
 ---
 
 <hr />
@@ -32,38 +32,39 @@ Additionally, you can take advantage of features like high availability, automat
 ## Resource Setting Values
 Here is the revised English version:
 
--`version`: The version of PostgreSQL to be used, e.g., `9.5`, `9.6`, `10`, `10.0`, `10.2`, `11`.
+-   `version`: The version of PostgreSQL Server to use - `2.0`, `12.0`
 
--`sku_name`: The pricing tier name for PostgreSQL, a combination of Tier + Compute Generation + Number of Cores, e.g., `azureDatabaseSku`.
+-   `sku_name` : The name of SKU for the PostgreSQL Server, Tier + compute generation + cores pattern - `azureDatabaseSku`
 
--`storage_mb`: The maximum capacity (in MB) for the PostgreSQL server, ranging from `5120` to `16777216`.
+-   `storage_mb`: Max storage allowed for a Server in MB - `5120`~`16777216`
 
--`create_mode`: The storage IOPS mode for MySQL Flexible Server, e.g., `Default`, `Replica`, `GeoRestore`, `PointInTimeRestore`.
+-   `create_mode` : The storage IOPS mode for MySQL Flexible Server - `Default`, `Replica`, `GeoRestore`, `PointInTimeRestore`
 
--`admin_username`: The administrator username for the server when the creation mode is `default`.
+-   `admin_username` : If the creation mode is default, the administrator login for the PostgreSQL Server
 
--`admin_password`: The administrator login password for the server when the creation mode is `default`.
+-   `admin_password` : If the creation mode is default, the password associated with the administrator login
 
--`public_network_access_enabled`: Whether public network access is allowed for the server, `true` or `false`.
+-   `public_network_access_enabled` : Allow public network access for the Server - `true`, `false`
 
--`ssl_enforcement_enabled`: Whether encrypted connections (SSL) are enforced, `true` or `false`.
+-   `ssl_enforcement_enabled`: Enable SSL enforcement on the Server - `true`, `false`
 
--`minimal_tls_version`: The minimum TLS version supported by the server, e.g., `TLS1_2`, `TLS1_1`, `TLS1_0`, `TLSEnforcementDisabled`.
+-   `minimal_tls_version`: The minimum TLS version to support on the Server - `TLS1_2`, `TLS1_1`, `TLS1_0`, `TLSEnforcementDisabled`
 
--`database`
-    -`charset`: The character set for the PostgreSQL database, e.g., `azurePostgresqlCharset`.
-    -`collation`: The collation for the PostgreSQL database, e.g., `azurePostgresqlCollation`.
+-   `database`
+    -   `charset` : The character for the PostgreSQL database - `azurePostgresqlCharset`
+    -   `collation` : The collation for the PostgreSQL database - `azurePostgresqlCollation`
 
--`firewall_rule`
-    -`start_ip_address`: The starting IP address for the firewall rule.
-    -`end_ip_address`: The ending IP address for the firewall rule.
+-   `firewall_rule`
+    -   `start_ip_address` : The starting IP Address asscociated with the Firewall Rule
+    -   `end_ip_address` : The ending IP Address asscociated with the Firewall Rule
 
--`tag`: A tag used to categorize resources, up to 512 characters, in the format `key:value`.
+
+-   `tag` : A tag used to categorize resources, up to 512 characters, in the format `key:value`.
 
 ---
 
 ## Reference Materials
 
 -   [Azure Postgresql(Microsoft)](https://learn.microsoft.com/ko-kr/azure/postgresql/single-server/overview)
--   [Azure Postgresql 가격](https://azure.microsoft.com/ko-kr/pricing/details/postgresql/server/)
+-   [Azure Postgresql Price](https://azure.microsoft.com/ko-kr/pricing/details/postgresql/server/)
 -   [Azure Postgresql(Terraform)](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/postgresql_server)
