@@ -17,33 +17,33 @@ tags: [Azure, 리소스, LogAnalytics, LogAnalyticsWorkspace]
 
 ## Resource Overview
 
-Log Analytics is a tool used in the Azure Portal for editing and running log queries against data in Azure Monitor log storage. 
-You can create simple queries that return sets of records and then use Log Analytics features to sort, filter, and analyze the data. 
-Alternatively, you can write advanced queries to perform statistical analysis and visualize results in charts to identify specific trends. 
-Whether you are handling query results interactively or using queries with other Azure Monitor features like query alerts or workbook logs, Log Analytics is used for writing and testing queries.
+Log Analytics is a tool used to edit and run log queries for data in the Azure Monitor log repository.
+You can create simple queries that return sets of records and then use Log Analytics functions to sort, filter, and analyze the data.
+Alternatively, you can write advanced queries to perform statistical analysis and visualize results from charts to identify specific trends. 
+Log Analytics is used to create and test queries, whether they are interactive with query results or in combination with other Azure Monitor features such as query alerts or integrated document logs.
 
-## Related Resources
+## Associated Resources
 
 ### Parent Resource
 
 -   [**Resource Group**](https://docs.cstudio.app/docs/resource/azure/Base/ResourceGroup)
 
-## Resource Configuration Values
+## Resource Setting Values
 
-- `retention_in_days`: The number of days data is retained in the workspace, ranging from `30` ~ `730`.
+- `retention_in_days`: The workspace data retention in days, ranging from `30` ~ `730`
 
-- `internet_query_enabled`: Whether queries through the public internet are enabled, `true` or `false`.
+- `internet_query_enabled`: Enable querying over the public internet, `true` or `false`
 
-- `internet_ingestion_enabled`: Whether data ingestion through the public internet is enabled, `true` or `false`.
+- `internet_ingestion_enabled`: Enabling Data Collection over the Public Internet, `true` or `false`
 
-- `linked_automation_account_names`: A list of readable resource names to link with the workspace.
+- `linked_automation_account_names`: List of readable resource names that will be linked to the workspace
 
-- `tag`: A tag used to categorize resources, up to 512 characters, in the format `key:value`.
+- `tag`: Tag to categorize resources - up to 512 characters, `key:value`
 
 ---
 
 ## Reference Materials
 
 -   [Azure LogAnalyticsWorkspace(Microsoft)](https://learn.microsoft.com/ko-kr/azure/azure-monitor/logs/log-analytics-overview)
--   [Azure LogAnalyticsWorkspace Price](https://azure.microsoft.com/ko-kr/pricing/details/monitor/)
+-   [Azure LogAnalyticsWorkspace Price(Microsoft)](https://azure.microsoft.com/ko-kr/pricing/details/monitor/)
 -   [Azure LogAnalyticsWorkspace(Terraform)](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/log_analytics_workspace)
