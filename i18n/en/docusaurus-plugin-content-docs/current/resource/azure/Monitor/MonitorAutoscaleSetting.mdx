@@ -1,7 +1,7 @@
 ---
 title: MonitorAutoscaleSetting
 sidebar_position: 2
-tags: [Azure, 리소스, Monitor, MonitorAutoscaleSetting]
+tags: [Azure, Resource, Monitor, MonitorAutoscaleSetting]
 ---
 
 <hr />
@@ -17,8 +17,8 @@ tags: [Azure, 리소스, Monitor, MonitorAutoscaleSetting]
 
 ## Resource Overview
 
-Azure Monitor 자동 크기 조정은 미리 정의된 규칙 및 메트릭을 기반으로 리소스의 자동 크기 조정을 가능하게 하는 Microsoft Azure의 기능입니다.
-자동 크기 조정을 사용하여 가상 머신, 앱 서비스 및 AKS(Azure Kubernetes Service) 클러스터와 같은 리소스를 확장하거나 축소하여 변화하는 요구 사항을 충족하고 비용을 최적화할 수 있습니다.
+Azure Monitor autoscale is a feature of Microsoft Azure that enables automatic scaling of resources based on predefined rules and metrics. 
+With autoscale, you can scale up or down resources such as virtual machines, app services, and AKS (Azure Kubernetes Service) clusters to meet changing demands and optimize costs.
 
 ## Associated Resources
 
@@ -33,19 +33,19 @@ Azure Monitor 자동 크기 조정은 미리 정의된 규칙 및 메트릭을 �
 
 ## Resource setting values
 
-- `target_resource_name`: The name of the resource to which the autoscale settings will be applied
+- `target_resource_name` : The name of resource that the autoscale setting should be added to
 
 - `scale_condition`:
 
-    - `min_instance_count`: Minimum number of instances - `0` ~ `1000`
-    - `max_instance_count`: Maximum number of instances - `1` ~ `1000`
-    - `default_instance_count`: The default number of instances to scale out to if resource metrics cannot be read and current capacity is below the default - `1` ~ `1000`
-    - `schedule_type`: Scheduling method to apply to the scaling operation - `start_end_dates`, `repeat_days`
-    - `timezone`: Time zone in which the schedule applies
-    - `start_date`: Start date of the schedule
-    - `end_date`: End date of the schedule
+    - `min_instance_count` : The minimum number of instances - `0` ~ `1000`
+    - `max_instance_count` : The Maximum number of instances - `1` ~ `1000`
+    - `default_instance_count` : The number of instances that are available for scaling if metrics are not available for evaluation - `1` ~ `1000`
+    - `schedule_type` : Scheduling method to apply to the scaling action - `start_end_dates`, `repeat_days`
+    - `timezone` : Time zone in which the schedule works
+    - `start_date` : Start date of schedule
+    - `end_date` : End date of schedule
 
-- `tag`: A tag for categorizing the resource - up to 512 characters, `key`:`value`
+-   `tag` : A tag used to categorize resources, up to 512 characters, in the format `key:value`.
 ---
 
 ## Reference Materials

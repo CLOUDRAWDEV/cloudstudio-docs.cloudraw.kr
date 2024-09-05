@@ -1,7 +1,7 @@
 ---
 title: PublicLoadBalancer
 sidebar_position: 1
-tags: [Azure, 리소스, LoadBalancer, PublicLoadBalancer]
+tags: [Azure, Resource, LoadBalancer, PublicLoadBalancer]
 ---
 
 <hr />
@@ -17,16 +17,13 @@ tags: [Azure, 리소스, LoadBalancer, PublicLoadBalancer]
 
 ## Resource Overview
 
-Here's the revised English version:
-
 A Load Balancer efficiently distributes incoming network traffic across a group of backend resources or servers. 
 Azure Load Balancer operates at Layer 4 of the OSI (Open Systems Interconnection) model, serving as a single point of contact for clients. 
-The Load Balancer distributes inbound traffic arriving at its frontend across the backend pool instances. 
+The Load Balancer distributes inbound traffic arriving at its front end across the backend pool instances. 
 This distribution follows the configured load balancing rules and health probes. 
-Backend pool instances can be Azure Virtual Machines or instances from a Virtual Machine Scale Set.
-A Public Load Balancer provides outbound connectivity for virtual machines within a virtual network. 
-It achieves this by translating private IP addresses to public IP addresses. 
-The Public Load Balancer is used to distribute internet traffic to the VMs.
+Backend pool instances can be Azure Virtual Machines or instances from a Virtual Machine Scale Set. 
+A Public Load Balancer provides outbound connectivity for virtual machines within a virtual network by translating private IP addresses to public IP addresses. 
+The Public Load Balancer is also used to distribute internet traffic to the VMs.
 
 ## Associated Resources
 
@@ -40,50 +37,49 @@ The Public Load Balancer is used to distribute internet traffic to the VMs.
 
 ## Resource Setting Values
 
-- `sku`: Pricing tier for selecting the scale and features of Azure Load Balancer - `standard`, `Basic`
+-   `sku` : The SKU to select the scale and features of the Azure Load Balancer - `standard`, `Basic`
 
 - `public_lb_frontend_ip_config`: 
 
-- `virtual_network_name`: Name of the Virtual Network where the Load Balancer will route traffic
+-   `virtual_network_name` : The name of Virtual Machine which forward traffic
 
-- `backend_pool`: Name of the Load Balancer’s Backend Pool
+-   `backend_pool` : Name of the Load Balancer's backend pool
 
-    - `linked_virtual_machine_names`: Names of the Virtual Machines to which the Load Balancer will route traffic
+    -   `linked_virtual_machine_names` : Names of the virtual machines to which the Load Balancer will route traffic
 
-- `health_probe`:
+-   `health_probe`
 
-    - `protocol`: Protocol type used by the health probe for backend endpoints - `Http`, `Https`, `Tcp`
-    - `port`: Port used by the health probe to check the backend endpoint - `0` ~ `65535`
-    - `request_path`: Path to use for GET requests when using Http(s) probes
-    - `interval_in_seconds`: Interval at which the health probe checks the response of backend pool instances (seconds) - `5` ~ `2147483646`
+    -   `protocol` : The type of Backend endpoint protocol which health probe uses - `Http`, `Https`, `Tcp`
+    -   `port` : The port which health probe uses to check backend endpoint - `0` ~ `65535`
+    -   `request_path` : The path to use for GET when using Http(s) probes
+    -   `interval_in_seconds` : Specifies the number of seconds between checking response of the backend pool instance by health probes - `5` ~ `2147483646`
 
-- `rule`:
+-   `rule`
 
-    - `protocol`: Transport protocol for the external endpoint - `Tcp`, `Udp`, `All`
-    - `frontend_port`: Port for the external endpoint, within the range of 0 to 65534 - `0` ~ `65534`
-    - `backend_port`: Port used for internal connections, within the range of 0 to 65535 - `0` ~ `65535`
-    - `disable_outbound_snat`: Enable or disable SNAT for outbound connections - `true`, `false`
-    - `frontend_ip_configuration_name`: Name of the Frontend IP Configuration for the Public Load Balancer
-    - `backend_pool_name`: Name of the Backend Address Pool to which the Load Balancer will route traffic
+    -   `protocol` : The transport protocol for the external endpoint - `Tcp`, `Udp`, `All`
+    -   `frontend_port` : The port for the external endpoint, Range between 0 and 65534 - `0` ~ `65534`
+    -   `backend_port` : The port used for internal connections on the endpoint, Range between 0 and 65535 - `0` ~ `65535`
+    -   `disable_outbound_snat` : Enable SNAT for outbound connections - `true`, `false`
+    -   `frontend_ip_configuration_name` : The name of Public Load Balancer Frontend IP Configuration
+    -   `backend_pool_name` : The name of the Backend Address Pool to which the Load Balancer will forward traffic
 
-- `nat_rule`:
+-   `nat_rule`
 
-    - `protocol`: Transport protocol for the external endpoint - `Tcp`, `Udp`, `All`
-    - `frontend_port`: Port for the external endpoint, within the range of 0 to 65534 - `0` ~ `65534`
-    - `backend_port`: Port used for internal connections, within the range of 0 to 65535 - `0` ~ `65535`
-    - `frontend_ip_configuration_name`: Name of the Frontend IP Configuration for the Public Load Balancer
+    -   `protocol` : The transport protocol for the external endpoint - `Tcp`, `Udp`, `All`
+    -   `frontend_port` : The port for the external endpoint, Range between 0 and 65534 - `0` ~ `65534` - `0` ~ `65534`
+    -   `backend_port` : The port used for internal connections on the endpoint, Range between 0 and 65535 - `0` ~ `65535`
+    -   `frontend_ip_configuration_name` : The name of Public Load Balancer Frontend IP Configuration
 
 - `outbound_rule`:
 
-    - `protocol`: Transport protocol for the external endpoint - `Tcp`, `Udp`, `All`
-    - `frontend_ip_config_name`: Name of the Frontend IP Configuration for the Public Load Balancer
-    - `backend_pool_name`: Name of the Backend Address Pool to which the Load Balancer will route traffic
-
-- `tag`: Tag for categorizing resources - up to 512 characters, `key`:`value`
+    -   `protocol` : The transport protocol for the external endpoint - `Tcp`, `Udp`, `All`
+    -   `frontend_ip_config_name`: The name of Public Load Balancer Frontend IP Configuration
+    -    `backend_pool_name`: The name of the Backend Address Pool to which the Load Balancer will forward traffic
+-   `tag` : A tag used to categorize resources, up to 512 characters, in the format `key:value`.
 ---
 
 ## Reference Materials
 
 -   [Azure PublicLoadBalancer(Microsoft)](https://learn.microsoft.com/ko-kr/azure/load-balancer/load-balancer-overview)
--   [Azure PublicLoadBalancer 가격](https://azure.microsoft.com/en-us/pricing/details/load-balancer/)
+-   [Azure PublicLoadBalancer Price](https://azure.microsoft.com/en-us/pricing/details/load-balancer/)
 -   [Azure PublicLoadBalancer(Terraform)](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/lb)

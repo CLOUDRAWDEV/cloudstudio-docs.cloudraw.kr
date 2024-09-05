@@ -19,20 +19,20 @@ tags: [Azure, Resource, Container, ContainerRegistry]
 ## Resource Overview
 
 Azure Container Registry is a managed registry service based on the open-source Docker Registry 2.0. 
-It provides capabilities to create and maintain a container registry in Azure for storing and managing container images and related artifacts.
+It allows you to create and maintain an Azure container registry to store and manage container images and related artifacts.
 
 ## Resource Setting Values
 
--    `sku`: The SKU name of the container registry for performance and scalability - `Basic`, `Standard`, `Premium`
+-    `radio`: The SKU name of the container registry for performance and scalability - `Basic`, `Standard`, `Premium`
 
 -    `admin_enabled`: Enable the admin user - `true`, `false`
 
 -    `public_network_access_enabled`: Allow public network access - `true`, `false`
 
--    `network_rule_set`: Can be created if the SKU type is Premium
-      - `default_action`: Action for requests that do not match any rules - `Deny`, `Allow`
-      - `ip_ranges`: IP address CIDR for requests that match the rule
--    `tag`: Tag for categorizing resources - up to 512 characters, `key`:`value`
+-    `network_rule_set`: Available when SKU is Premium
+      - `default_action`: The behaviour for requests matching no rules - `Deny`, `Allow`
+      - `ip_ranges`: The CIDR from which requests will match the Rule
+-    `tag`: Tag to categorize resources - up to 512 characters, `key`:`value`
 
 ---
 

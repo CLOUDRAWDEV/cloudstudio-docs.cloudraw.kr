@@ -36,37 +36,35 @@ It also offers advanced functionalities like intelligent performance monitoring,
 
 ## Resource Setting Values
 
-Here’s the revised English version:
-
 -   `version`: The version of Microsoft SQL Server to use - `2.0`, `12.0`
 
--   `admin_username`: The administrator username for the server
+-   `admin_username`: The administrator login for the Microsoft SQL Server
 
--   `admin_password`: The administrator login password for the server
+-   `admin_password`: The password associated with the administrator login
 
--   `minimum_tls_version`: The minimum TLS version supported by the server - `1.0`, `1.1`, `1.2`
+-   `minimum_tls_version`: The minimum TLS version to support on the server - `1.0`, `1.1`, `1.2`
 
--   `public_network_access_enabled`: Whether to allow public network access to the server - `true`, `false`
+-   `public_network_access_enabled`: Allow public network access for the Server - `true`, `false`
 
 -   `firewall_rule`
 
-    -   `start_ip_address`: The starting IP address for the firewall rule
-    -   `end_ip_address`: The ending IP address for the firewall rule
+    -   `start_ip_address`: The Start IP Address asscociated with the Firewall Rule
+    -   `end_ip_address`: The End IP Address asscociated with the Firewall Rule
 
 -   `security_alert_policy`
 
-    -   `alert_policy_state`: The activation state of the applied policy
-    -   `disabled_alerts`: List of security alerts to disable - `Sql_Injection`, `Sql_Injection_Vulnerability`, `Access_Anomaly`, `Data_Exfiltration`, `Unsafe_Action`
-    -   `alert_retention_days`: Number of days to retain threat detection audit logs - `0` ~ `3265`
-    -   `alert_email_account_admins`: Whether to enable sending security alerts via email - `true`, `false`
-    -   `alert_email_addresses`: List of email addresses to receive security alerts
+    -   `alert_policy_state`: The activation state of policy to be applied
+    -   `disabled_alerts`: List of notifications to be disabled - `Sql_Injection`, `Sql_Injection_Vulnerability`, `Access_Anomaly`, `Data_Exfiltration`, `Unsafe_Action`
+    -   `alert_retention_days`: The number of days to keep in the threat detection audit logs - `0` ~ `3265`
+    -   `alert_email_account_admins`: Enable sending alerts to e-mail - `true`, `false`
+    -   `alert_email_addresses`: List of e-mail addresses to which the alert is sent
 
 -   `auditing_policy`
 
     -   `enable_storage_destination`: Whether to enable the storage account - `true`, `false`
-    -   `enable_log_analytics_destination`: Whether to enable Log Analytics - `true`, `false`
+    -   `enable_log_analytics_destination`: Enalbed Auditing policy by Log analytics workspace - `true`, `false`
 
--   `tag`: Tag for categorizing resources - up to 512 characters, `key`: `value`
+-   `tag`: Tag to categorize resources - up to 512 characters, `key:value`
 
 ---
 

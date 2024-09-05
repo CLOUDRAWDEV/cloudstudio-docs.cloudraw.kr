@@ -17,10 +17,10 @@ tags: [Azure, Resource, Database, Mssql]
 
 ## Resource Overview
 
-Azure SQL Database is a fully managed relational database service provided by Microsoft Azure, based on the widely-used Microsoft SQL Server engine. 
-It allows you to create and manage SQL Server databases in the cloud without needing to manage hardware or software infrastructure. 
-With Azure SQL Database, you can leverage features such as automatic patching, backups, high availability, and disaster recovery. 
-Additionally, it offers intelligent performance monitoring, automatic tuning, and advanced security features to optimize database performance and protect critical data.
+Azure SQL Database is a fully managed relational database service provided by Microsoft Azure, based on the widely used Microsoft SQL Server engine. 
+It allows you to create and manage SQL Server databases in the cloud without the need to manage hardware or software infrastructure.
+With Azure SQL Database, you can benefit from features such as automatic patching, backups, high availability, and disaster recovery. 
+It also offers advanced functionalities like intelligent performance monitoring, automatic tuning, and advanced security features to optimize database performance and protect critical data.
 
 ## Associated Resources
 
@@ -31,20 +31,20 @@ Additionally, it offers intelligent performance monitoring, automatic tuning, an
 ## Resource Setting Values
 
 
--   `included_mssql_server_name` : The name of the Microsoft SQL Server where the database will be created.
+-   `included_mssql_server_name` : Microsoft SQL server name where the database will be created
 
--   `sku_name` : The SKU name for the server.
--   `max_size_gb` : The maximum size of the database in gigabytes (GB) - `1` ~ `1024`.
+-   `sku_name` : The SKU of Microsoft SQL Database
+-   `max_size_gb` : The max size of the Database in gigabytes (GB) - `1` ~ `1024`.
 -   `collation` : The collation for the Microsoft SQL Database - `azureMssqlCol`.
--   `license_type` : The license type applicable to the database - `LicenseIncluded`, `BasePrice`.
+-   `license_type` : The license type applied to the Database - `LicenseIncluded`, `BasePrice`.
 -   `read_scale` : Enable the feature to offload read-only workloads using the compute capacity of one of the read-only replicas - `true`, `false`.
 -   `zone_redundant` : Enable zone redundancy for database maintenance operations - `true`, `false`.
 
 -   `auditing_policy` : The list of email addresses to receive security alerts.
 
     -   `database_name` : The name of the database to which the auditing policy will be applied.
-    -   `enable_storage_destination` : Whether to enable storage account destination - `true`, `false`.
-    -   `enable_log_analytics_destination` : Whether to enable Log Analytics destination - `true`, `false`.
+    -   `enable_storage_destination`: Whether to enable the storage account - `true`, `false`
+    -   `enable_log_analytics_destination`: Enalbed Auditing policy by Log analytics workspace - `true`, `false`
 
 -   `tag` : A tag used to categorize resources - up to 512 characters, in the format `key:value`.
 ---

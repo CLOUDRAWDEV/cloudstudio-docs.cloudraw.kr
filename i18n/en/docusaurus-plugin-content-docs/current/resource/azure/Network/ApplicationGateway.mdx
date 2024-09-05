@@ -1,7 +1,7 @@
 ---
 title: ApplicationGateway
 sidebar_position: 0
-tags: [Azure, 리소스, Network, ApplicationGateway]
+tags: [Azure, Resource, Network, ApplicationGateway]
 ---
 
 <hr />
@@ -37,54 +37,54 @@ Conversely, if the URL contains /video, the traffic is routed to a different poo
 
 ## Resource Setting Values
 
--   `included_subnet_name`: The name of the VNet where the Application Gateway will be deployed.
+-   `included_subnet_name` : The name of the Vnet in which to deploy Application Gateway
 
--   `linked_waf_policy_name`: The name of the Web Application Firewall policy to be linked.
+-   `linked_waf_policy_name` : The name of the Web Application Firewall Policy to connected
 
--   `sku_tier`: The pricing tier for using Application Gateway.
+-   `sku_tier` : The tier of the SKU to use for the applicaion gateway
 
--   `sku_name`: The name of the pricing tier for using Application Gateway.
+-   `sku_name` : The name of SKU to use for the application gateway
 
--   `sku_capacity`: The capacity of the pricing tier for Application Gateway, ranging from `1` ~ `32`.
+-   `sku_capacity` : The name of SKU to use for the application gateway - `1` ~ `32`
 
--   `gateway_ip_config_name`: The name of the Gateway IP configuration.
+-   `gateway_ip_config_name` : The Gateway IP configuration name to use
 
--   `frontend_ip_address_type`: The method for allocating public IP addresses - `Both`, `Private`, `Public`.
+-   `frontend_ip_address_type` : The frontend method to use between Private and Public - `Both`, `Private`, `Public`
 
 -   `public_frontend_ip_configuration`
 
-    -   `ip_config_name`: The name of the Frontend IP configuration.
-    -   `linked_public_ip_name`: The name of the public IP to be linked.
+    -   `ip_config_name` : The name of Frontend IP configuration
+    -   `linked_public_ip_name` : The Public Ip name to connect
 
 -   `private_frontend_ip_configuration`
 
-    -   `ip_config_name`: The name of the Private IP configuration.
-    -   `private_ip_address_allocation`: The method for allocating the private IP address - `Static`, `Dynamic`.
-    -   `private_ip_address`: The address of the private IP.
+    -   `ip_config_name` : The name of Private Ip Config
+    -   `private_ip_address_allocation` : The allocation method for the private IP address - `Static`, `Dynamic`
+    -   `private_ip_address` : The private IP address
 
--   `backend_pool_names`: A list of names for the Backend Address Pools to be connected to the Application Gateway.
+-   `backend_pool_names` : A list of names for the Backend Address Pools to be connected to the Application Gateway
 
 -   `http_listener`
-    -   `frontend_ip_config`: The type of Frontend IP configuration to use - `Public`, `Private`.
-    -   `frontend_port_name`: The name of the Frontend Port.
-    -   `frontend_port`: The port number for the Frontend Port - `1` ~ `65502`.
-    -   `protocol`: The protocol between the client and the Application Gateway - `Http`, `Https`.
+    -   `frontend_ip_config` : The type of Frontend IP configuration which should be used - `Public`, `Private`
+    -   `frontend_port_name` : The name of Frontend port which should be used
+    -   `frontend_port` : The number of the Frontend port - `1` ~ `65502`
+    -   `protocol` : The protocol used between client and Application gateway - `Http`, `Https`
 
 -   `backend_http_settings`
-    -   `protocol`: The protocol used to route requests to the Backend Server - `Http`, `Https`.
-    -   `port`: The port number for the Backend Server - `1` ~ `65535`.
-    -   `cookie_based_affinity`: Enable or disable cookie-based affinity for session persistence - `Enabled`, `Disabled`.
-    -   `request_timeout`: The timeout setting for requests (in seconds) - `1` ~ `86400`.
+    -   `protocol` : The protocol which should be used - `Http`, `Https`
+    -   `port` : The port where the Backend servers listen to traffic from the Application gateway - `1` ~ `65535`
+    -   `cookie_based_affinity` : Enable cookie-based affinity to direct subsequent traffic - `Enabled`, `Disabled`
+    -   `request_timeout` : The request timeout in seconds - `1` ~ `86400`
 
 -   `request_routing_rule`
 
-    -   `rule_type`: The type of routing rule to define which Backend Server Pool requests are forwarded to - `Basic`, `PathBasedRouting`.
-    -   `http_listener_name`: The name of the HTTP listener associated with the rule.
-    -   `backend_address_pool_name`: The name of the Backend Address Pool associated with the rule.
-    -   `backend_http_settings_name`: The name of the Backend HTTP settings associated with the rule.
-    -   `priority`: The priority of the routing rule.
+    -   `rule_type` : The name of Request routing rule - `Basic`, `PathBasedRouting`
+    -   `http_listener_name` : The name of HTTP listener to which to attach Rule
+    -   `backend_address_pool_name` : The name of the Backend Address Pool associated with the rule.
+    -   `backend_http_settings_name` : The name of Backend HTTP settings to which to attach Path
+    -   `priority` : The priority of Routing Rule
 
--   `tag`: A tag used to categorize resources - maximum 512 characters, `key`:`value`.
+-   `tag` : A tag used to categorize resources, up to 512 characters, in the format `key:value`.
 ---
 
 ## Reference Materials

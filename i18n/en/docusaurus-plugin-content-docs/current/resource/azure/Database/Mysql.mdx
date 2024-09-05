@@ -1,7 +1,7 @@
 ---
 title: Mysql
 sidebar_position: 2
-tags: [Azure, 리소스, Database, Mysql]
+tags: [Azure, Resource, Database, Mysql]
 ---
 
 <hr />
@@ -17,10 +17,6 @@ tags: [Azure, 리소스, Database, Mysql]
 
 ## Resource Overview
 
-Here's the revised text in English:
-
----
-
 Azure Database for MySQL is a fully managed relational database service offered by Microsoft Azure, based on the widely used open-source MySQL database engine. 
 You can easily deploy, manage, and scale MySQL databases in the cloud without worrying about the underlying infrastructure. 
 With Azure Database for MySQL, Microsoft handles tasks such as patching, backups, and monitoring, allowing you to create and manage MySQL databases with minimal management overhead.
@@ -35,33 +31,35 @@ Additionally, you can take advantage of features like high availability, automat
 
 ## Resource Setting Values
 
--   `version` : The MySQL version to use - `5.7`, `5.6`, `8.0`
+-   `version`: The version of Microsoft SQL Server to use - `2.0`, `12.0`
 
--   `sku_name` : The pricing tier name for MySQL, a combination of Tier + Compute Generation + Number of Cores - `azureDatabaseSku`
+-   `sku_name` : The name of SKU for the MySQL Server, Tier + compute generation + cores pattern - `azureDatabaseSku`
 
--   `storage_mb` : The capacity of the MySQL server in MB - `5120` ~ `16777216`
+-   `storage_mb` : MySQL Server capacity(MB) - `5120` ~ `16777216`
 
--   `admin_username` : The administrator username for the server when the creation mode is default
+-   `admin_username` : If the creation mode is default, the administrator login for the MySQL Server
 
--   `admin_password` : The administrator login password for the server when the creation mode is default
+-   `admin_password` : If the creation mode is default, the password associated with the administrator login
 
--   `public_network_access_enabled` : Whether to allow public network access to the server - `true` , `false`
+-   `public_network_access_enabled` : Allow public network access for the Server - `true` , `false`
 
--   `ssl_enforcement_enabled` : Whether encrypted connections (SSL) are applied - `true` , `false`
+-   `ssl_enforcement_enabled` : Enable SSL enforcement on the Server - `true` , `false`
 
--   `minimal_tls_version` : The minimum TLS version supported by the server - `TLS1_2` , `TLS1_1` , `TLS1_0` , `TLSEnforcementDisabled`
+-   `minimal_tls_version` : The minimum TLS version to support on the Server - `TLS1_2` , `TLS1_1` , `TLS1_0` , `TLSEnforcementDisabled`
 
--   `threat_detection_enabled` : Whether to detect anomalous activities that indicate abnormal and potentially harmful attempts - `true` , `false`
+-   `threat_detection_enabled` : Enable detecting anomalous activities indicating unusual and potentially harmful attempts - `true` , `false`
 
 -   `database`
 
-    -   `charset` : The character set for the MySQL database - `azureMysqlChartSet`
-    -   `collation` : The collation method for data in the Microsoft SQL database - `azureMysqlCol`
+    -   `charset` : The charset for the MySQL Database - `azureMysqlChartSet`
+    -   `collation` : The collation for the MySQL Database - `azureMysqlCol`
 
 -   `firewall_rule`
-    -   `start_ip_address` : The starting IP address for the firewall rule
-    -   `end_ip_address` : The ending IP address for the firewall rule
--   `tag` : A tag used to categorize resources - up to 512 characters `key`:`value`
+
+    -   `start_ip_address`: The Start IP Address asscociated with the Firewall Rule
+    -   `end_ip_address`: The End IP Address asscociated with the Firewall Rule
+
+-   `tag`: Tag to categorize resources - up to 512 characters, `key:value`
 
 ---
 

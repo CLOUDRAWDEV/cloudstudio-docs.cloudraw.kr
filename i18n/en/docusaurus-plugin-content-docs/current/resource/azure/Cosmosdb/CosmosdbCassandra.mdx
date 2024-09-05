@@ -1,7 +1,7 @@
 ---
 title: CosmosdbCassandra
 sidebar_position: 0
-tags: [Azure, 리소스, Cosmosdb, CosmosdbCassandra]
+tags: [Azure, Resource, Cosmosdb, CosmosdbCassandra]
 ---
 
 <hr />
@@ -18,10 +18,10 @@ tags: [Azure, 리소스, Cosmosdb, CosmosdbCassandra]
 
 ## Resource Overview
 
-Azure Cosmos DB for Apache Cassandra can be used as a data store for applications built for Apache Cassandra. 
+Azure Cosmos DB for Apache Cassandra can be used as a data store for applications created for Apache Cassandra. 
 This compatibility means that existing Cassandra applications can communicate with the Cassandra API using existing Apache drivers that comply with CQLv4. 
 In most cases, you can switch from using Apache Cassandra to the Cassandra API simply by updating the connection string. 
-Using the Cassandra API allows you to interact with data stored in Azure Cosmos DB using CQL (Cassandra Query Language), Cassandra-based tools (e.g., cqlsh), and familiar Cassandra client drivers.
+Using the Cassandra API allows you to interact with data stored in Azure Cosmos DB using CQL (Cassandra Query Language), Cassandra-based tools (such as cqlsh), and familiar Cassandra client drivers.
 
 ### Parent Resource
 
@@ -29,51 +29,51 @@ Using the Cassandra API allows you to interact with data stored in Azure Cosmos 
 
 ## Resource Setting Values
 
--   `capabilities_list` : List of Cosmos DB APIs to be used - `EnableServerless`, `EnableAggregationPipeline`
+-   `capabilities_list` : List of the Cosmos DB API which should be used - `EnableServerless`, `EnableAggregationPipeline`
 
 -   `enable_multiple_write_locations` : Enable multi-region writes to leverage provisioned throughput across global databases and containers - `true`, `false`
 
--   `public_network_access_enabled` : Enable public access to the account via public IP addresses or service endpoints - `true`, `false`
+-   `public_network_access_enabled` : Enable connection to the account by public IP address or service endpoint - `true`, `false`
 
--   `enable_automatic_failover` : Enable automatic failover - `true`, `false`
+-   `enable_automatic_failover` : Enable automatic failover for the account - `true`, `false`
 
--   `virtual_network_filter_enabled` : Enable filtering to allow access to the account only from specific subnets within a virtual network - `true`, `false`
+-   `virtual_network_filter_enabled` : Enable filters so that only certain Subnets in the Virtual network can access the account - `true`, `false`
 
--   `network_acl_bypass_for_azure_services` : Enable ACL bypass for Azure services - `true`, `false`
+-   `network_acl_bypass_for_azure_services` :Allow ACL bypass for Azure service - `true`, `false`
 
 -   `geo_location`
 
-    -   `failover_priority` : Failover priority for the region - `0`~ `0`
-    -   `zone_redundant` : Allow automatic zone replication for fault tolerance - `true`~ `false`
+    -   `failover_priority` : The failover priority of the region - `0`~ `0`
+    -   `zone_redundant` : Enable the zone redundancy in case of an error - `true`~ `false`
 
 -   `consistency_policy`
 
-    -   `consistency_level` : Consistency level for Cassandra DB to configure database availability and performance - `Eventual`, `Session`, `Strong`, `ConsistentPrefix`, `BoundedStaleness`
-    -   `max_interval_in_seconds` : Allowed staleness time (in seconds) when the consistency level is Bounded Staleness - `5`~ `86400`
-    -   `max_staleness_prefix` : Maximum number of stale requests allowed when the consistency level is Bounded Staleness - `10`~`2147483647`
+    -   `consistency_level` : The consistency level of Cassandra DB to set availability and performance of database - `Eventual`, `Session`, `Strong`, `ConsistentPrefix`, `BoundedStaleness`
+    -   `max_interval_in_seconds` : If using Bounded Staleness, the time amount of staleness tolerated in seconds - `5`~ `86400`
+    -   `max_staleness_prefix` : If using Bounded Staleness, the number of stale requests tolerated - `10`~`2147483647`
 
 -   `backup`
 
-    -   `type` : Backup policy type - `Continuous`, `Periodic`
-    -   `interval_in_minutes` : Frequency of backups in minutes, within the range of 60 ~ 1440 - `60`~ `1440`
-    -   `retention_in_hours` : Duration for which backups are retained (in hours), within the range of 8 ~ 720 - `8`~`720`
+    -   `type` : The type of backup - `Continuous`, `Periodic`
+    -   `interval_in_minutes` : The interval of backup in minutes, Between 60 and 1440 - `60`~ `1440`
+    -   `retention_in_hours` : The time in hours that the backup is retained, Between 8 and 720 - `8`~`720`
 
 -   `cassandra_keyspace`
 
-    -   `throughput` : Throughput for the Cassandra keyspace - `400`~ `1000000`
-    -   `enable_autoscale` : Whether to apply auto-scaling to the Cassandra keyspace - `true`, `false`
+    -   `throughput` : The throughput of Cassandra keyspace - `400`~ `1000000`
+    -   `enable_autoscale` : Whether to apply auto scaling to Cassandra keyspace - `true`, `false`
 
 -   `cassandra_table`
 
-    -   `throughput` :Throughput for the Cassandra table - `400`~ `1000000`
-    -   `column` : List of column names and types in the format 'name:type'
-    -   `partition_key` : Name of the partition key
-    -   `cluster_key_name` : Name of the cluster key to be created
-    -   `cluster_key_order` : Ordering of the cluster key - `Asc` , `Desc`
-    -   `enable_autoscale` : Whether to apply auto-scaling to the Cassandra table - `true`, `false`
-    -   `included_cosmosdb_keyspace_name` : Name of the Cassandra keyspace where the table will be created
+    -   `throughput`: The throughput of Cassandra table - `400`~ `1000000`
+    -   `column` : List of the name and type of column, 'name:type' format
+    -   `partition_key` : The name of partition key
+    -   `cluster_key_name` : The name of cluster key to be created
+    -   `cluster_key_order` : Order of the cluster key - `Asc` , `Desc`
+    -   `enable_autoscale` : Whether to apply auto scaling to Cassandra keyspace - `true`, `false`
+    -   `included_cosmosdb_keyspace_name` : The name of the Cosmos DB Cassandra keyspace to create the table within
 
--   `tag` : Tag for categorizing resources - up to 512 characters, `key`:`value`
+-   `tag` : Tag to categorize resources - up to 512 characters, `key`:`value`
 
 ---
 

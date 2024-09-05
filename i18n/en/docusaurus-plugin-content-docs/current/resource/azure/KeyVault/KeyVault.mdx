@@ -30,60 +30,58 @@ Vaults support storing software and HSM-backed keys, passwords, and certificates
 
 ## Resource Setting Values
 
-- `sku_name`: The pricing tier for selecting the scale and features of Key Vault, such as `standard` or `premium`.
+- `sku_name`: The SKU to select the scale and features of the Key Vault - `standard` or `premium`.
 
-- `enabled_for_disk_encryption`: Whether Azure Disk Encryption is allowed to retrieve secrets from the Vault and unwrap keys, `true` or `false`.
+- `enabled_for_disk_encryption`: Allow Azure disk encryption to retrieve secrets from Valt and unwrap keys - `true`, `false`.
 
-- `soft_delete_retention_days`: The number of days to retain deleted items, ranging from `7` ~ `90`.
+- `soft_delete_retention_days`: The number of days that items should be retained for once soft-deleted - `7` ~ `90`.
 
-- `purge_protection_enabled`: Whether purge protection is enabled to prevent data loss, `true` or `false`.
+- `purge_protection_enabled`: Enable purge protection to prevent data loss - `true`, `false`.
 
-- `network_acl_bypass`: Whether to allow trusted services to bypass the firewall, with options such as `AzureServices` or `None`.
+- `network_acl_bypass`: Allow trusted services to bypass the firewall - `AzureServices`, `None`.
 
-- `network_acl_action`: The action to take when no rules match the configured IP Rules, such as `Deny` or `Allow`.
+- `network_acl_action`: The Default Action to use when no rules match from established IP rules - `Deny`, `Allow`.
 
-- `network_acl_ip_rules`: IP addresses and CIDR ranges used to access the Key Vault.
+- `network_acl_ip_rules`: IP Address or CIDR which should be able to access the Key Vault
 
 - `access_policies`
-    - `object_id`: The object ID of the user or principal for Vault access.
-    - `key_permissions`: The list of key permissions.
-    - `secret_permissions`: The list of secret permissions.
-    - `certificate_permissions`: The list of certificate permissions.
+    - `object_id`: The object ID of a user for the Vault
+    - `key_permissions`: List of key permissions
+    - `secret_permissions`: List of secret permissions
+    - `certificate_permissions`: List of certificate permissions
 
 - `key_vault_secret`
-    - `name`: The name of the Key Vault secret.
-    - `expiration_date`: The UTC date and time when the secret expires.
-
-Here is the revised text:
+    - `name`: The name of the Key Vault Secret
+    - `expiration_date`: Expiration UTC datetime
 
 - `key_vault_key`
-    - `type`: The type of Key Vault Key, such as `EC`, `EC-HSM`, `RSA`, or `RSA-HSM`.
-    - `size`: The key size in bytes if the key type is RSA, with options such as `2048`, `3072`, or `4096`.
-    - `curve`: The curve to specify if the key type is EC, such as `P-256`, `P-256K`, `P-384`, or `P-521`.
-    - `expiration_date`: The UTC date and time when the key expires.
-    - `opts`: The list of allowed JSON web key operations.
+    - `type`: The key type to use for the Key Vault Key - `EC`, `EC-HSM`, `RSA`, `RSA-HSM`.
+    - `size`: The size of the RSA key to create in bytes - `2048`, `3072`, `4096`.
+    - `curve`: The curve to use when creating an EC key - `P-256`, `P-256K`, `P-384`, `P-521`.
+    - `expiration_date`: Expiration UTC datetime
+    - `opts`: A list of JSON web key operations
 
 - `key_vault_certificate`
-    - `import_existing_certificate`: Whether to add an existing certificate, `true` or `false`.
-    - `contents`: The Base64-encoded certificate content.
-    - `password`: The password for the certificate.
-    - `issuer_name`: The issuer name of the certificate, such as `Self` or `Unknown`.
-    - `exportable`: Whether to enable the key for export, `true` or `false`.
-    - `key_type`: The key type, such as `RSA` or `EC`.
-    - `key_size`: The key size, specified as `2048/3072/4096` for RSA keys or `256/384/521` for EC keys.
-    - `curve`: The curve to specify if the key type is EC, such as `P-256`, `P-256K`, `P-384`, or `P-521`.
-    - `reuse_key`: Whether to enable key reuse, `true` or `false`.
-    - `content_type`: The content type of the certificate, such as `application/x-pkcs12` or `application/x-pem-file`.
-    - `key_usage`: The list of key usage flags.
-    - `subject`: The distinguished name in X.500 format.
-    - `validity_in_months`: The validity period of the certificate in months, ranging from `7` ~ `90`.
+    - `import_existing_certificate`: Whether to import the existing certificate or not - `true`, `false`.
+    - `contents`: The base64-encoded certificate contents
+    - `password`: The password associated with the certificate
+    - `issuer_name`: The name of the certificate issuer - `Self`, `Unknown`
+    - `exportable`: Enable certificate exportable - `true`, `false`
+    - `key_type`: The key type to use for the Key Vault Key - `RSA`, `EC`.
+    - `rsa_key_size`: The size of the key used in the certificate, `2048/3072/4096` for RSA keys, `256/384/521` for EC keys
+    - `curve`: The curve to specify if the key type is EC, such as `P-256`, `P-256K`, `P-384`, `P-521`.
+    - `reuse_key`: Whether to enable key reuse, `true`, `false`.
+    - `content_type`: The content type of the certificate - `application/x-pkcs12`, `application/x-pem-file`.
+    - `key_usage`: A list of uses associated with the Key
+    - `subject`: The Certificate's Subject
+    - `validity_in_months`: The certificates validity period in months - `7` ~ `90`.
 
-- `tag`: A tag used to categorize resources, up to 512 characters, in the format `key:value`.
+-   `tag` : A tag used to categorize resources, up to 512 characters, in the format `key:value`.
 
 ---
 
 ## Reference Materials
 
 -   [Azure KeyVault(Microsoft)](https://learn.microsoft.com/ko-kr/azure/key-vault/general/overview)
--   [Azure KeyVault 가격](https://azure.microsoft.com/en-us/pricing/details/key-vault/)
+-   [Azure KeyVault Price](https://azure.microsoft.com/en-us/pricing/details/key-vault/)
 -   [Azure KeyVault(Terraform)](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/key_vault)
