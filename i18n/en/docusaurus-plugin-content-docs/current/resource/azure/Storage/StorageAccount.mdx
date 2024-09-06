@@ -32,43 +32,41 @@ Blob Storage is used to store unstructured data such as text, images, videos, an
 
 -   [**Backup**](https://docs.cstudio.app/docs/resource/azure/RecoveryServices/Backup)
 
-### Connected Resources
+## Resource Setting Values
 
-Here is the revised text:
+-   `account_kind` : The kind of Account - `StorageV2`,`Storage`
 
--   `account_kind`: The kind of Account - `StorageV2`,`Storage`
+-   `account_tier` : The tier to use for the Storage Account - `Standard`,`Premium`
 
--   `account_tier`: the tier to use for the Storage Account - `Standard`,`Premium`
+-   `account_replication_type` : The type of replication to use for the Storage Account - `LRS`,`GRS`,`RAFRS`,`ZRS`,`GZRS`,`RAGZRS`
 
--   `account_replication_type`: The type of replication to use for the Storage Account - `LRS`,`GRS`,`RA-GRS`,`ZRS`,`GZRS`,`RA-GZRS`
+-   `access_tier` : Data usage pattern for BlobStorage/FileStorage/StorageV2 account - `Hot`,`Cool`
 
--   `access_tier`: Data usage pattern for BlobStorage/FileStorage/StorageV2 account - `Hot`,`Cool`
+-   `min_tls_version` : The minimum supported TLS version for the Storage Account - `TLS1_1`,`TLS1_2`,`TLS1_0`
 
--   `min_tls_version`: The minimum supported TLS version for the Storage Account - `TLS1_0`,`TLS1_1`,`TLS1_2`
+-   `enable_https_traffic_only` : When secure transfer is required, call the Azure Storage REST API operation with HTTPS - `true`,`false`
 
--   `enable_https_traffic_only`: When secure transfer is required, call the Azure Storage REST API operation with HTTPS - `true`,`false`
+-   `network_rules`
 
--   `network_rules`:
+    -   `default_action` : Default action applied to Network Rules - `Deny`,`Allow`
+    -   `bypass` : Specifies whether traffic is bypassed for Logging/Metrics/AzureServices - `AzureServices`,`Logging`,`Metrics`,`None`
+    -   `ip_rules` : IP address to which the network rule applies
 
-    -   `default_action`: Default action applied to Network Rules - `Deny`,`Allow`
-    -   `bypass`: Specifies whether traffic is bypassed for Logging/Metrics/AzureServices - `AzureServices`,`Logging`,`Metrics`,`None`
-    -   `ip_rules`: IP address to which the network rule applies
+-   `storage_container`
 
--   `storage_container`:
+    -   `container_access_type` : The access level configured for the Container - `private`,`blob`,`container`
 
-    -   `container_access_type`: The access level configured for the Container - `private`,`blob`,`container`
+-   `storage_queue`
 
--   `storage_queue`:
+    -   `name` : The name of queue
 
-    -   `name`: The name of queue
+-   `storage_share`
 
--   `storage_share`:
+    -   `quota` : The maximum size of the share in GB - `1` ~ `5120`
 
-    -   `quota`: The maximum size of the share in GB - `1` ~ `5120`
+-   `storage_table`
 
--   `storage_table`:
-
-    -   `name`: The name of table
+    -   `name` : The name of table
 
 -   `tag` : Tag to categorize resources - up to 512 characters, `key`:`value`
 ---

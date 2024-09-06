@@ -1,7 +1,7 @@
 ---
 title: RouteTable
 sidebar_position: 11
-tags: [Azure, 리소스, Network, RouteTable]
+tags: [Azure, Resource, Network, RouteTable]
 ---
 
 <hr />
@@ -44,11 +44,11 @@ Additionally, you can connect route tables to virtual network gateways to contro
 
 ## Resource Setting Values
 
--   `disable_bgp_route_propagation`: Disable route propagation to prevent on-premise route propagation to network interface of the subnet - `true`, `false`
--   `included_subnet_name`: The IP prefix representing routes
+-   `disable_bgp_route_propagation` : Disable route propagation to prevent on-premise route propagation to network interface of the subnet - `true`, `false`
+-   `included_subnet_name` : The IP prefix representing routes
 -   `route`
-    -   `route_address_prefix`: The IP prefix representing routes
-    -   `next_hop_type`: The type of next hop to handle mathing packet-`VirtualNetworkGateway`, `VnetLocal`, `Internet`, `VirtualAppliance`, `None`
+    -   `route_address_prefix` : The IP prefix representing routes
+    -   `next_hop_type` : The type of next hop to handle mathing packet-`VirtualNetworkGateway`, `VnetLocal`, `Internet`, `VirtualAppliance`, `None`
 -   `tag` : Tag to categorize resources - up to 512 characters, `key`:`value`
 
 ---

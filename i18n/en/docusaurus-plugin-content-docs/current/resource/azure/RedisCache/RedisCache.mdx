@@ -19,9 +19,9 @@ tags: [Azure, Resource, RedisCache, RedisCache]
 
 Azure Redis Cache is a fully managed, in-memory data store based on the open-source Redis Cache engine. 
 It is offered as a service on the Microsoft Azure cloud platform and is used to build highly scalable and responsive applications. 
-Azure Redis Cache can be utilized to store and retrieve data such as session data, user preferences, and application state that needs to be accessed frequently and quickly. 
+Azure Redis Cache can be utilized to store and retrieve data such as session data, that needs frequent and fast access, user preferences, and application status.
 It supports various data structures, including strings, hashes, lists, sets, and sorted sets. With features like data persistence, high availability, and automatic scaling, Azure Redis Cache is widely used for building applications that require fast and reliable data access. 
-It can also be integrated with other Azure services such as Azure App Service, Azure Functions, and Azure Logic Apps.
+It can be integrated with other Azure services such as Azure App Service, Azure Functions, and Azure Logic Apps.
 
 ## Associated Resources
 
@@ -31,22 +31,22 @@ It can also be integrated with other Azure services such as Azure App Service, A
 
 ## Resource Setting Values
 
--   `sku_name`: The SKU name of Redis cache - `Basic`,`Standard`,`Premium`,`Enterprise`
+-   `sku_name` : The SKU name of Redis cache - `Basic`,`Standard`,`Premium`,`Enterprise`
 
--   `cache_type`: The SKU pricing group of Redis cache and the size of Redis cache to deploy - `azureRedisCacheSku`
+-   `cache_type` : The SKU pricing group of Redis cache and the size of Redis cache to deploy - `azureRedisCacheSku`
 
--   `version`: The version of Redis - `6`
+-   `version` : The version of Redis - `6`
 
--   `enable_non_ssl_port`: Enable the non-SSL port in Redis - `true`,`false`
+-   `enable_non_ssl_port` : Enable the non-SSL port in Redis - `true`,`false`
 
--   `minimum_tls_version`: The minimum TLS version of Redis - `1.0`,`1.1`,`1.2`
+-   `minimum_tls_version` : The minimum TLS version of Redis - `1.0`,`1.1`,`1.2`
 
--   `public_network_access_enabled`: Enable public network access for the Redis cache - `true`,`false`
+-   `public_network_access_enabled` : Enable public network access for the Redis cache - `true`,`false`
 
 -   `redis_firewall_rule`
-    - `start_ip`: Start address range
-    - `end_ip`: End address range
-    - `included_redis_cache_name`: The name of the Redis cache to which the firewall rule applies
+    - `start_ip` : Start IP address range
+    - `end_ip` : End IP address range
+    - `included_redis_cache_name` : The name of the Redis cache to which the firewall rule applies
 
 -   `tag` : Tag to categorize resources - up to 512 characters, `key`:`value`
 

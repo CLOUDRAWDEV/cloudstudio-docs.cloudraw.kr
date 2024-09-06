@@ -30,34 +30,32 @@ Additionally, it provides features like incremental backups, encryption, and dat
 
 ## Resource Setting Values
 
-Here is the revised text in English:
+- `sku` : The SKU of Recovery services vault - `Standard`,`RS0`
 
-- `sku`: The SKU of Recovery services vault - `Standard`,`RS0`
-
-- `soft_delete_enabled`: Enable soft delete for the Vault - `true`,`false`
+- `soft_delete_enabled` : Enable soft delete for the Vault - `true`,`false`
 
 - `vm_backup_policy`
 
-    - `backup_frequency`: Enable soft delete for the Vault - `Daily`,`Weekly`
-    - `backup_time`: The time of day to perform the backup
-    - `timezone`: The timezone of backup time
-    - `retention_count`: The number of daily backups to keep - `7`~`9999`
+    - `backup_frequency` : Enable soft delete for the Vault - `Daily`,`Weekly`
+    - `backup_time` : The time of day to perform the backup
+    - `timezone` : The timezone of backup time
+    - `retention_count` : The number of daily backups to keep - `7`~`9999`
 
 - `protected_vm`
 
 - `share_backup_policy`
 
-    - `backup_frequency`: The frequency of backup - `Daily`, `Weekly`
-    - `backup_time`: The time of day to perform the backup
-    - `timezone`: The timezone of backup time
-    - `daily_retention_count`: The number of daily backups to keep - `1` ~ `200`
-    - `enabled_weekly_backup`: Enable weekly backup
+    - `backup_frequency` : The frequency of backup - `Daily`, `Weekly`
+    - `backup_time` : The time of day to perform the backup
+    - `timezone` : The timezone of backup time
+    - `daily_retention_count` : The number of daily backups to keep - `1` ~ `200`
+    - `enabled_weekly_backup` : Enable weekly backup
 
 - `protected_share`
 
-    - `source_storage_account_name`: the name of the storage account
-    - `source_share_name`: The name of the File share to backup
-    - `backup_policy_name`: The name of the backup policy to use
+    - `source_storage_account_name` : the name of the storage account
+    - `source_share_name` : The name of the File share to backup
+    - `backup_policy_name` : The name of the backup policy to use
 
 -   `tag` : Tag to categorize resources - up to 512 characters, `key`:`value`
 ---

@@ -18,7 +18,7 @@ tags: [Azure, Resource, Sentinel]
 ## Resource Overview
 
 Azure Sentinel is a cloud-native SIEM (Security Information and Event Management) service offered by Microsoft Azure. 
-It provides comprehensive security solutions by delivering intelligent security analytics and threat intelligence across the enterprise to protect IT infrastructure and assets from cyber threats. 
+It provides comprehensive security solutions with intelligent analytics and threat intelligence to protect IT infrastructure and assets from cyber threats. 
 Azure Sentinel collects data from various sources, including servers, networks, applications, and devices, to offer an integrated view of security threats across the organization. 
 It uses advanced analytics and machine learning algorithms to detect and respond to threats in real time.
 
@@ -32,39 +32,37 @@ It uses advanced analytics and machine learning algorithms to detect and respond
 
 -   [**Log Analytics Workspace**](https://docs.cstudio.app/docs/resource/azure/LogAnalytics/LogAnalyticsWorkspace)
 
-### Connected Resources
+## Resource Setting Values
 
-Here is the corrected text:
+-   `linked_workspace_name` : The name of the Log Analytics Workspace to connect the Sentinel to
 
--   `linked_workspace_name`: The name of the Log Analytics Workspace to connect the Sentinel to
+-   `connect_security_center` : Whether to connect the Microsoft Defender for Cloud Data Connector to Sentinel - `true`,`false`
 
--   `connect_security_center`: Whether to connect the Microsoft Defender for Cloud Data Connector to Sentinel - `true`,`false`
+-   `connect_threat_intelligence` : Whether to connect the Threat Intelligence Platform(Preview) Data Connector to Sentinel - `true`,`false`
 
--   `connect_threat_intelligence`: Whether to connect the Threat Intelligence Platform (Preview) Data Connector to Sentinel - `true`,`false`
+-   `connect_advanced_threat_protection` : Whether to connect the Microsoft Defender for Identity Data Connector to Sentinel - `true`,`false`
 
--   `connect_advanced_threat_protection`: Whether to connect the Microsoft Defender for Identity Data Connector to Sentinel - `true`,`false`
+-   `connect_microsoft_defender` : Whether to connect the Microsoft Defender Data Connector for endpoints to Sentinel - `true`,`false`
 
--   `connect_microsoft_defender`: Whether to connect the Microsoft Defender Data Connector for endpoints to Sentinel - `true`,`false`
-
--   `connect_office_365`: Whether to connect the Office 365 Data Connector to Sentinel - `true`,`false`
+-   `connect_office_365` : Whether to connect the Office 365 Data Connector to Sentinel - `true`,`false`
 
 -   `connect_cloud_app_security` - `true`, `false`
 
--   `fusion_rule_rule_guid`: Whether to connect the Microsoft Defender for Cloud Apps Data Connector to Sentinel
+-   `fusion_rule_rule_guid` : Whether to connect the Microsoft Defender for Cloud Apps Data Connector to Sentinel
 
--   `behavior_analytics_rule_guid`: GUID list of Sentinel ML Behavior Analytics Rule
+-   `behavior_analytics_rule_guid` : GUID list of Sentinel ML Behavior Analytics Rule
 
--   `alert_rule_incident`:
+-   `alert_rule_incident`
 
-    -   `display_name`: The friendly name of this Sentinel MS Security Incident Alert Rule
-    -   `product`: The Microsoft Security Service from where the alert will be generated
-    -   `severity`: Only create incidents from alerts when alert severity level is contained in this list - `High`,`Medium`,`Low`,`Informational`
+    -   `display_name` : The display name of this Sentinel MS Security Incident Alert Rule
+    -   `product` : The Microsoft Security Service from where the alert will be generated
+    -   `severity` : Only create incidents from alerts when alert severity level is contained in this list - `High`,`Medium`,`Low`,`Informational`
 
--   `alert_rule_scheduled`:
+-   `alert_rule_scheduled` :
 
-    -   `display_name`: The friendly name of this Sentinel Scheduled Alert Rule
-    -   `severity`: The alert severity of this Sentinel Scheduled Alert Rule - `High`,`Medium`,`Low`,`Informational`
-    -   `query`: The query of this Sentinel Scheduled Alert Rule
+    -   `display_name` : The friendly name of this Sentinel Scheduled Alert Rule
+    -   `severity` : The alert severity of this Sentinel Scheduled Alert Rule - `High`,`Medium`,`Low`,`Informational`
+    -   `query` : The query of this Sentinel Scheduled Alert Rule
 
 -   `tag` : Tag to categorize resources - up to 512 characters, `key`:`value`
 

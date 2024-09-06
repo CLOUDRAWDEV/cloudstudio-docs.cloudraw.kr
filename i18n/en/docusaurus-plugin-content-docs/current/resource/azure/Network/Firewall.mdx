@@ -47,42 +47,42 @@ It is a fully stateful firewall service with built-in high availability and unli
 
 -   `network_rule_collection`
 
-    -   `priority` : The priority of the Rule collection, Between 100 and 65000 - `100` ~ `65000`
+    -   `priority` : The priority of the Rule collection, Between 100 and 65000 - `100`~ `65000`
     -   `action` : Actions to apply Rule to matching traffic - `Allow`,`Deny`
 
 - `network_rules`
 
-    - `source_addresses`: The list of source IP Addresses or IP ranges
-    - `destination_ports`: The list of destination ports
-    - `destination_addresses`: The list of destination IP addresses or IP ranges
-    - `protocols`: The list of protocols that configure the Rule - `TCP`,`UDP`,`ICMP`,`Any`
+    - `source_addresses` : The list of source IP Addresses or IP ranges
+    - `destination_ports` : The list of destination ports
+    - `destination_addresses` : The list of destination IP addresses or IP ranges
+    - `protocols` : The list of protocols that configure the Rule - `TCP`,`UDP`,`ICMP`,`Any`
 
 - `application_rule_collection`
 
-    - `priority`: The priority of the Rule collection, Between 100 and 65000 - `100` ~ `65000`
-    - `action`: Actions to apply Rule to matching traffic - `Allow`,`Deny`
+    - `priority` : The priority of the Rule collection, Between 100 and 65000 - `100` ~ `65000`
+    - `action` : Actions to apply Rule to matching traffic - `Allow`,`Deny`
 
 - `application_rules`
 
-    - `source_addresses`: The list of source IP Addresses or IP ranges
-    - `target_fqdns`: The list of FQDNs to filter outbound traffic with any TCP/UDP porotocol
-    - `protocol_port`: The port for the connection - `1` ~ `65502`
-    - `protocol_type`: The type of connectio - `Http`, `Https`, `Mssql`.
+    - `source_addresses` : The list of source IP Addresses or IP ranges
+    - `target_fqdns` : The list of FQDNs to filter outbound traffic with any TCP/UDP porotocol
+    - `protocol_port` : The port for the connection - `1` ~ `65502`
+    - `protocol_type` : The type of connectio - `Http`, `Https`, `Mssql`
 
 - `nat_rule_collection`
 
-    - `priority`: The priority of the Rule collection, Between 100 and 65000 - `100` ~ `65000`
-    - `action`: Actions to apply Rule to matching traffic - `Dnat`, `Snat`.
+    - `priority` : The priority of the Rule collection, Between 100 and 65000 - `100` ~ `65000`
+    - `action` : Actions to apply Rule to matching traffic - `Dnat`, `Snat`
 
 - `nat_rules`
 
-    - `source_addresses`: The list of source IP Addresses or IP ranges
-    - `destination_ports`:The list of destination ports
-    - `translated_port`: The port of the service behind the Firewall
-    - `translated_address`: The address of the service behind the Firewall
-    - `protocols`: The list of protocols that configure the Rule - `TCP`, `UDP`, `ICMP`, `Any`.
+    - `source_addresses` : The list of source IP Addresses or IP ranges
+    - `destination_ports` : The list of destination ports
+    - `translated_port` : The port of the service behind the Firewall
+    - `translated_address` : The address of the service behind the Firewall
+    - `protocols` : The list of protocols that configure the Rule - `TCP`, `UDP`, `ICMP`, `Any`
 
--   `tag`: Tag to categorize resources - maximum 512 characters, `key`:`value`.
+-   `tag` : Tag to categorize resources - up to 512 characters, `key`:`value`
 
 ---
 
