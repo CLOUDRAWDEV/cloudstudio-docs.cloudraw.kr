@@ -17,8 +17,6 @@ tags: [Azure, Resource, Network, NatGateway]
 
 ## Resource Overview
 
-Here is the revised text:
-
 Azure NAT (Network Address Translation) Gateway is a managed networking service provided by Microsoft Azure that enables resources within a Virtual Network (VNet) to access the internet while keeping their source IP addresses hidden. 
 By using Azure NAT Gateway, you can provide internet connectivity to resources within a VNet without exposing their private IP addresses to the internet. 
 This helps enhance security by preventing direct access to the resources from the internet. 
@@ -37,18 +35,18 @@ Additionally, it can help reduce the number of public IP addresses required for 
 
 ## Resource Setting Values
 
--   `linked_subnet_name` : Name of the subnet to which the NAT Gateway is attached
+-   `linked_subnet_name` : The name of Subnet to which to attach the Nat gateway
 
--   `linked_public_ip_name` : Name of the public IP address to which the NAT Gateway is attached
+-   `linked_public_ip_name` : The Public IP name to connect to Nat Gateway
 
--   `idle_timeout_in_minutes` : Timeout period (in minutes) for removing idle flows in the NAT Gateway - `4` to `120`
+-   `idle_timeout_in_minutes` : The idle timeout in minutes - `4` to `120`
 
--   `tag` : Tag for categorizing resources - maximum 512 characters, `key`:`value`
+-   `tag`: Tag to categorize resources - maximum 512 characters, `key`:`value`.
 
 ---
 
 ## Reference Materials
 
 -   [Azure NatGateway(Microsoft)](https://learn.microsoft.com/en-us/azure/virtual-network/nat-gateway/nat-overview)
--   [Azure NatGateway 가격](https://azure.microsoft.com/en-us/pricing/details/virtual-network/)
+-   [Azure NatGateway Price](https://azure.microsoft.com/en-us/pricing/details/virtual-network/)
 -   [Azure NatGateway(Terraform)](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/nat_gateway)

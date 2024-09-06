@@ -1,7 +1,7 @@
 ---
 title: TrafficManager
 sidebar_position: 13
-tags: [Azure, 리소스, Network, TrafficManager]
+tags: [Azure, Resource, Network, TrafficManager]
 ---
 
 <hr />
@@ -16,8 +16,6 @@ tags: [Azure, 리소스, Network, TrafficManager]
 />
 
 ## Resource Overview
-
-Here is the corrected English version:
 
 Azure Traffic Manager is a cloud-based traffic management service provided by Microsoft Azure that allows users to control and distribute incoming traffic across multiple endpoints such as Azure virtual machines, cloud services, web apps, and even on-premises endpoints. 
 By using Traffic Manager, users can automatically route traffic to the best available endpoints based on various routing methods such as priority, performance, geographic location, or round-robin. 
@@ -37,24 +35,24 @@ This helps improve the availability, performance, and resilience of applications
 
 -    `traffic_routing_method`
 
-    -   `description`: The method used to route client requests to the appropriate service endpoint - `Geographic`, `MultiValue`, `Performance`, `Priority`, `Subnet`, `Weighted`
+    -   `description`: The traffic-routing method to direct the client requests to the appropriate service endpoint - `Geographic`, `MultiValue`, `Performance`, `Priority`, `Subnet`, `Weighted`
 
--   `relative_domain_name`: The domain name that Traffic Manager will use
--   `ttl`: Time To Live (TTL) value for local DNS users' profiles - `0` to `2147483647`
+-   `relative_domain_name`: The name of Domain used by Traffic manager
+-   `ttl`: The Time To Live value of the MyPage used by Local DNS user - `0`~ `2147483647`
 -   `endpoint_monitor_setting`
 
-    -   `protocol`: The protocol used for monitoring - `HTTP`, `HTTPS`, `TCP`
-    -    `port`: The port number used for monitoring - `0` to `65535`
-    -   `path`: The path used for monitoring when the protocol is HTTP or HTTPS
+    -   `protocol`: The protocol used by the monitoring checks - `HTTP`, `HTTPS`, `TCP`
+    -   `port`: The Port number used by the monitoring checks - `0`~ `65535`
+    -   `path`: If using HTTP or HTTPS, the path used by the monitoring checks
 
 -    `azure_endpoint`
 -   `nested_endpoint`
 -    `external_endpoint`
-    -   `target_name`: The name of the target resource to which the endpoint is connected - depending on the type, this could be a resource name or a domain
-    -   `weight`: The amount of traffic distributed to the endpoint - `1` to `1000`
-    -   `priority`: The priority of the endpoint
-    -   `endpoint_location`: The Azure region of the endpoint
--    `tag`: A tag used to categorize resources - up to 512 characters, `key:value`
+    -   `target_name`: The name of the target resource to attach the endpoint to - Depending on the type, this can be either a resource name or a domain
+    -   `weight`: Amount of traffic distributed to the endpoint - `1`~ `1000`
+    -   `priority`: Priority of the endpoint
+    -   `endpoint_location`: The Azure location of the endpoint
+-   `tag` : Tag to categorize resources - up to 512 characters, `key`:`value`
 
 ---
 

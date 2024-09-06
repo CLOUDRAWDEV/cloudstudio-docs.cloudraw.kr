@@ -1,7 +1,7 @@
 ---
 title: RedisCache
 sidebar_position: 0
-tags: [Azure, 리소스, RedisCache, RedisCache]
+tags: [Azure, Resource, RedisCache, RedisCache]
 ---
 
 <hr />
@@ -31,24 +31,24 @@ It can also be integrated with other Azure services such as Azure App Service, A
 
 ## Resource Setting Values
 
--   `sku_name`: The pricing tier name of the Redis cache - `Basic`, `Standard`, `Premium`, `Enterprise`
+-   `sku_name`: The SKU name of Redis cache - `Basic`,`Standard`,`Premium`,`Enterprise`
 
--   `cache_type`: The pricing group and size of the Redis cache for deployment - `azureRedisCacheSku`
+-   `cache_type`: The SKU pricing group of Redis cache and the size of Redis cache to deploy - `azureRedisCacheSku`
 
--   `version`: Redis version - `6`
+-   `version`: The version of Redis - `6`
 
--   `enable_non_ssl_port`: Whether to enable a non-SSL port for Redis - `true`, `false`
+-   `enable_non_ssl_port`: Enable the non-SSL port in Redis - `true`,`false`
 
--   `minimum_tls_version`: Minimum TLS version for Redis - `1.0`, `1.1`, `1.2`
+-   `minimum_tls_version`: The minimum TLS version of Redis - `1.0`,`1.1`,`1.2`
 
--   `public_network_access_enabled`: Whether to allow public access to Redis cache via a public IP address - `true`, `false`
+-   `public_network_access_enabled`: Enable public network access for the Redis cache - `true`,`false`
 
 -   `redis_firewall_rule`
-    - `start_ip`: Starting IP address range
-    - `end_ip`: Ending IP address range
+    - `start_ip`: Start address range
+    - `end_ip`: End address range
     - `included_redis_cache_name`: The name of the Redis cache to which the firewall rule applies
 
--   `tag`: Tag used to categorize resources - up to 512 characters, `key`: `value`
+-   `tag` : Tag to categorize resources - up to 512 characters, `key`:`value`
 
 ---
 

@@ -30,33 +30,33 @@ This allows organizations to extend their on-premises infrastructure to the clou
 
 ## Resource Setting Values
 
--   `service_provider` : ISP provider for ExpressRoute services - `KINX`, `KT`, `SKTTelecom`, `LGCNS`, `LGUplus`, `SejongTelecom`
+-   `service_provider` : The name of the Express route service provider - `KINX`, `KT`, `SKTTelecom`, `LGCNS`, `LGUplus`, `SejongTelecom`
 
--   `peering_location` : Peering location where the ISP provisions the connection, different from the Azure resource location - `Seoul`, `Busan`
+-   `peering_location` : The name of the peering location, Not the Azure resource location - `Seoul`, `Busan`
 
--   `bandwidth_in_mbps` : Data transfer bandwidth (Mbps) - `50`, `100`, `200`, `500`, `1000`, `2000`, `5000`, `10000`
+-   `bandwidth_in_mbps` : The bandwidth of the circuit in Mbps - `50`, `100`, `200`, `500`, `1000`, `2000`, `5000`, `10000`
 
--   `sku_tier` : Pricing tier for the ExpressRoute circuit - `Basic`, `Local`, `Standard`, `Premium`
+-   `sku_tier` : The SKU of Express route circuit - `Basic`, `Local`, `Standard`, `Premium`
 
--   `sku_family` : Billing model for outbound data transfer - `MeteredData`, `UnlimitedData`
+-   `sku_family` : The billing mode for outbound data transport - `MeteredData`, `UnlimitedData`
 
--   `authorization_name` : Name for circuit authorization
+-   `authorization_name` : The name of authorization
 
 -   `circuit_peering`
 
     -   `AzurePrivatePeering`
-        -   `enabled_peering` : Whether peering of this type is enabled
-        -   `peer_asn` : 16-bit ASN, public or private - `0`~`65535`
-        -   `primary_peer_address` : /30 IPv4 subnet for the primary link
-        -   `secondary_peer_address` : /30 IPv4 subnet for the secondary link
-        -   `vlan_id` : Valid VLAN ID for peering configuration
-        -   `advertised_public_prefixes` : List of all public IPv4 address prefixes advertised via the BGP session
+        -   `enabled_peering` : Enable option types of Circuit Peering
+        -   `peer_asn` : The Either a 16-bit ASN, Can either be public or private - `0`~`65535`
+        -   `primary_peer_address` : The /30 subnet for the primary link
+        -   `secondary_peer_address` : The /30 subnet for the secondary link
+        -   `vlan_id` : The valid VLAN ID to establish the peering on
+        -   `advertised_public_prefixes` : List of public IPv4 address prefixes advertised through BGP sessions
     -   `AzurePublicPeering`
-        -   `enabled_peering` : Whether peering of this type is enabled
+        -   `enabled_peering` : Enable option types of Circuit Peering
     -   `MicrosoftPeering`
-        -   `enabled_peering` : Whether peering of this type is enabled
+        -   `enabled_peering` : Enable option types of Circuit Peering
 
--   `tag` : Tag for categorizing resources - maximum 512 characters, `key`:`value`
+-   `tag`: Tag to categorize resources - maximum 512 characters, `key`:`value`.
 
 ---
 

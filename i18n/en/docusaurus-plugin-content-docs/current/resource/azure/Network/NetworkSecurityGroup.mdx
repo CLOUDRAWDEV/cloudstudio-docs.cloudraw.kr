@@ -17,8 +17,6 @@ tags: [Azure, 리소스, Network, NetworkSecurityGroup]
 
 ## Resource Overview
 
-Here’s the revised English version:
-
 Azure Network Security Group (NSG) is a networking filter in Azure that controls access to resources within a Virtual Network (VNet). 
 It acts as a firewall, allowing or denying network traffic based on a set of defined rules.
 NSGs can be associated with subnets, network interfaces, or virtual machines within a VNet. 
@@ -47,30 +45,30 @@ They help limit exposure to potential threats by filtering network traffic at th
 -   `security_rules`
 
     -   `http`
-        -   `priority`: Priority of the rule, within the range of 100 to 4096 - `100` ~ `4096`
-        -   `direction`: Whether the rule applies to inbound or outbound traffic - `Inbound`, `Outbound`
-        -   `access`: Whether to allow or deny network traffic - `Allow`, `Deny`
-        -   `protocol`: Network protocol to which the rule applies - `Tcp`, `Udp`, `Icmp`, `Esp`, `Ah`, `*`
-        -   `source_port_ranges`: Source port or port range, integer or range from 0 to 65535
-        -   `destination_port_ranges`: Destination port or port range, integer or range from 0 to 65535
-        -   `source_address_prefixes`: CIDR or source IP address range
-        -   `destination_address_prefixes`: CIDR or destination IP address range
-        -   `description`: Description of the security rule
+        -   `priority`: The priority of the Rule, Between 100 and 4096 - `100` ~ `4096`
+        -   `direction`: Whether the rule applies to inbound, or outbound traffic - `Inbound`, `Outbound`
+        -   `access`: Allow network traffic - `Allow`, `Deny`
+        -   `protocol`: Network protocol this rule applies to - `Tcp`, `Udp`, `Icmp`, `Esp`, `Ah`, `*`
+        -   `source_port_ranges`: Source Port or Port range, Integer or range between 0 and 65535 or *
+        -   `destination_port_ranges`: Destination Port or Port range, Integer or range between 0 and 65535 or *
+        -   `source_address_prefixes`: CIDR or source IP range
+        -   `destination_address_prefixes`: CIDR or destination IP range
+        -   `description`: Description of Security Rule
     -   `https`
-        -   `priority`: Priority of the rule, within the range of 100 to 4096 - `100` ~ `4096`
-        -   `direction`: Whether the rule applies to inbound or outbound traffic - `Inbound`, `Outbound`
-        -   `access`: Whether to allow or deny network traffic - `Allow`, `Deny`
-        -   `protocol`: Network protocol to which the rule applies - `Tcp`, `Udp`, `Icmp`, `Esp`, `Ah`, `*`
-        -   `source_port_ranges`: Source port or port range, integer or range from 0 to 65535
-        -   `destination_port_ranges`: Destination port or port range, integer or range from 0 to 65535
-        -   `source_address_prefixes`: CIDR or source IP address range
-        -   `destination_address_prefixes`: CIDR or destination IP address range
-        -   `description`: Description of the security rule
+        -   `priority`: The priority of the Rule, Between 100 and 4096 - `100` ~ `4096`
+        -   `direction`: Whether the rule applies to inbound, or outbound traffic - `Inbound`, `Outbound`
+        -   `access`: Allow network traffic - `Allow`, `Deny`
+        -   `protocol`: Network protocol this rule applies to - `Tcp`, `Udp`, `Icmp`, `Esp`, `Ah`, `*`
+        -   `source_port_ranges`: Source Port or Port range, Integer or range between 0 and 65535 or *
+        -   `destination_port_ranges`: Destination Port or Port range, Integer or range between 0 and 65535 or *
+        -   `source_address_prefixes`: CIDR or source IP range
+        -   `destination_address_prefixes`: CIDR or destination IP range
+        -   `description`: Description of Security Rule
 
--   `linked_subnet_names`: Names of the subnets to which the Network Security Group will be linked
+-   `linked_subnet_names`: The name of Subnet to which to attach the Network Security Group
 
--   `linked_network_interface_names`: Names of the network interfaces to which the Network Security Group will be linked
--   `tag`: Tags for categorizing resources - up to 512 characters, `key`:`value`
+-   `linked_network_interface_names`: The name of Network Interface to which to attach the Network Interface
+-   `tag` : Tag to categorize resources - up to 512 characters, `key`:`value`
 ---
 
 ## Reference Materials
