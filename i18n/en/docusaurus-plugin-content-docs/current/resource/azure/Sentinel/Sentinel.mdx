@@ -1,7 +1,7 @@
 ---
 title: Sentinel
 sidebar_position: 0
-tags: [Azure, 리소스, Sentinel]
+tags: [Azure, Resource, Sentinel]
 ---
 
 <hr />
@@ -36,37 +36,37 @@ It uses advanced analytics and machine learning algorithms to detect and respond
 
 Here is the corrected text:
 
--   `linked_workspace_name`: The name of the Log Analytics Workspace to which Sentinel will be connected.
+-   `linked_workspace_name`: The name of the Log Analytics Workspace to connect the Sentinel to
 
--   `connect_security_center`: Whether to connect the Microsoft Defender for Cloud Data Connector to Sentinel - `true`, `false`
+-   `connect_security_center`: Whether to connect the Microsoft Defender for Cloud Data Connector to Sentinel - `true`,`false`
 
--   `connect_threat_intelligence`: Whether to connect the Threat Intelligence Platform (preview) Data Connector to Sentinel - `true`, `false`
+-   `connect_threat_intelligence`: Whether to connect the Threat Intelligence Platform (Preview) Data Connector to Sentinel - `true`,`false`
 
--   `connect_advanced_threat_protection`: Whether to connect the Microsoft Defender for Identity Data Connector to Sentinel - `true`, `false`
+-   `connect_advanced_threat_protection`: Whether to connect the Microsoft Defender for Identity Data Connector to Sentinel - `true`,`false`
 
--   `connect_microsoft_defender`: Whether to connect the Microsoft Defender Data Connector for endpoints to Sentinel - `true`, `false`
+-   `connect_microsoft_defender`: Whether to connect the Microsoft Defender Data Connector for endpoints to Sentinel - `true`,`false`
 
--   `connect_office_365`: Whether to connect the Office 365 Data Connector to Sentinel - `true`, `false`
+-   `connect_office_365`: Whether to connect the Office 365 Data Connector to Sentinel - `true`,`false`
 
--   `connect_cloud_app_security`: Whether to connect the Cloud App Security Data Connector to Sentinel - `true`, `false`
+-   `connect_cloud_app_security` - `true`, `false`
 
--   `fusion_rule_rule_guid`: The GUID for the Microsoft Defender for Cloud Apps Data Connector to be connected to Sentinel.
+-   `fusion_rule_rule_guid`: Whether to connect the Microsoft Defender for Cloud Apps Data Connector to Sentinel
 
--   `behavior_analytics_rule_guid`: A list of GUIDs for Sentinel ML Behavior Analytics Rules.
+-   `behavior_analytics_rule_guid`: GUID list of Sentinel ML Behavior Analytics Rule
 
 -   `alert_rule_incident`:
 
-    -   `display_name`: The display name of the MS Security Incident Alert Rule in Sentinel.
-    -   `product`: The Microsoft security service that generates the alert.
-    -   `severity`: The severity level of the MS Security Incident Alert - `High`, `Medium`, `Low`, `Informational`.
+    -   `display_name`: The friendly name of this Sentinel MS Security Incident Alert Rule
+    -   `product`: The Microsoft Security Service from where the alert will be generated
+    -   `severity`: Only create incidents from alerts when alert severity level is contained in this list - `High`,`Medium`,`Low`,`Informational`
 
 -   `alert_rule_scheduled`:
 
-    -   `display_name`: The display name of the Scheduled Query Rule in Sentinel.
-    -   `severity`: The severity level of the Scheduled Alert Rule in Sentinel - `High`, `Medium`, `Low`, `Informational`.
-    -   `query`: The query statement for the Scheduled Alert Rule in Sentinel.
+    -   `display_name`: The friendly name of this Sentinel Scheduled Alert Rule
+    -   `severity`: The alert severity of this Sentinel Scheduled Alert Rule - `High`,`Medium`,`Low`,`Informational`
+    -   `query`: The query of this Sentinel Scheduled Alert Rule
 
--   `tag`: A tag for categorizing the resource - up to 512 characters, `key:value`.
+-   `tag` : Tag to categorize resources - up to 512 characters, `key`:`value`
 
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: StorageAccount
 sidebar_position: 0
-tags: [Azure, 리소스, Storage, StorageAccount]
+tags: [Azure, Resource, Storage, StorageAccount]
 ---
 
 <hr />
@@ -36,41 +36,41 @@ Blob Storage is used to store unstructured data such as text, images, videos, an
 
 Here is the revised text:
 
--   `account_kind`: Type of Storage Account - `StorageV2`, `Storage`
+-   `account_kind`: The kind of Account - `StorageV2`,`Storage`
 
--   `account_tier`: Performance tier for the Storage Account - `Standard`, `Premium`
+-   `account_tier`: the tier to use for the Storage Account - `Standard`,`Premium`
 
--   `account_replication_type`: Data replication type for the Storage Account - `LRS`, `GRS`, `RA-GRS`, `ZRS`, `GZRS`, `RA-GZRS`
+-   `account_replication_type`: The type of replication to use for the Storage Account - `LRS`,`GRS`,`RA-GRS`,`ZRS`,`GZRS`,`RA-GZRS`
 
--   `access_tier`: Data access tier for BlobStorage/FileStorage/StorageV2 accounts - `Hot`, `Cool`
+-   `access_tier`: Data usage pattern for BlobStorage/FileStorage/StorageV2 account - `Hot`,`Cool`
 
--   `min_tls_version`: Minimum supported TLS version for the Storage Account - `TLS1_0`, `TLS1_1`, `TLS1_2`
+-   `min_tls_version`: The minimum supported TLS version for the Storage Account - `TLS1_0`,`TLS1_1`,`TLS1_2`
 
--   `enable_https_traffic_only`: Enforce HTTPS for Azure Storage REST API operations - `true`, `false`
+-   `enable_https_traffic_only`: When secure transfer is required, call the Azure Storage REST API operation with HTTPS - `true`,`false`
 
 -   `network_rules`:
 
-    -   `default_action`: Default action applied to Network Rules - `Deny`, `Allow`
-    -   `bypass`: Whether to bypass traffic for Logging/Metrics/AzureServices - `AzureServices`, `Logging`, `Metrics`, `None`
-    -   `ip_rules`: IP address ranges for Network Rules
+    -   `default_action`: Default action applied to Network Rules - `Deny`,`Allow`
+    -   `bypass`: Specifies whether traffic is bypassed for Logging/Metrics/AzureServices - `AzureServices`,`Logging`,`Metrics`,`None`
+    -   `ip_rules`: IP address to which the network rule applies
 
 -   `storage_container`:
 
-    -   `container_access_type`: Access level for the Storage Container - `private`, `blob`, `container`
+    -   `container_access_type`: The access level configured for the Container - `private`,`blob`,`container`
 
 -   `storage_queue`:
 
-    -   `name`: Queue name
+    -   `name`: The name of queue
 
 -   `storage_share`:
 
-    -   `quota`: Maximum capacity for file share in GB - `1` ~ `5120`
+    -   `quota`: The maximum size of the share in GB - `1` ~ `5120`
 
 -   `storage_table`:
 
-    -   `name`: Table name
+    -   `name`: The name of table
 
--   `tag`: Tag to categorize the resource - up to 512 characters, `key:value`
+-   `tag` : Tag to categorize resources - up to 512 characters, `key`:`value`
 ---
 
 ## Reference Materials

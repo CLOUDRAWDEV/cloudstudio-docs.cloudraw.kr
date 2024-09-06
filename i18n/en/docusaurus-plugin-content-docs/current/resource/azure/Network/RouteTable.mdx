@@ -44,12 +44,12 @@ Additionally, you can connect route tables to virtual network gateways to contro
 
 ## Resource Setting Values
 
--   `disable_bgp_route_propagation`: Disable gateway route propagation to prevent on-premises route propagation to the subnet's network interface - `true`, `false`
--   `included_subnet_name`: The name of the subnet to associate with the route table
+-   `disable_bgp_route_propagation`: Disable route propagation to prevent on-premise route propagation to network interface of the subnet - `true`, `false`
+-   `included_subnet_name`: The IP prefix representing routes
 -   `route`
-    -   `route_address_prefix`: The IP prefix representing the route
-    -   `next_hop_type`: The type of next hop to handle packets that match the route - `VirtualNetworkGateway`, `VnetLocal`, `Internet`, `VirtualAppliance`, `None`
--   `tag`: A tag used to categorize the resource - up to 512 characters, `key`: `value`
+    -   `route_address_prefix`: The IP prefix representing routes
+    -   `next_hop_type`: The type of next hop to handle mathing packet-`VirtualNetworkGateway`, `VnetLocal`, `Internet`, `VirtualAppliance`, `None`
+-   `tag` : Tag to categorize resources - up to 512 characters, `key`:`value`
 
 ---
 

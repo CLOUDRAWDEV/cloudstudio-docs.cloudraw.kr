@@ -35,54 +35,54 @@ It is a fully stateful firewall service with built-in high availability and unli
 
 ## Resource Setting Values
 
--   `included_subnet_name` : The name of the subnet where the Firewall will be located.
+-   `included_subnet_name` : The name of Subnet to which to attach Firewall
 
--   `sku_tier` : The pricing tier for the Firewall - `Basic`, `Standard`, `Premium`
+-   `sku_tier` : The SKU of Firewall - `Basic`, `Standard`, `Premium`
 
--   `sku_name` : The pricing tier name for the Firewall -`AZFW_VNet`, `AZFW_Hub`
+-   `sku_name` : Sku name of the Firewall -`AZFW_VNet`, `AZFW_Hub`
 
--   `linked_public_ip_name` : The name of the public IP to be linked to the Firewall.
+-   `linked_public_ip_name` : The Public IP name to connect to Firewall
 
--   `ip_config_name` : The name of the IP configuration.
+-   `ip_config_name` : The name of IP configuration
 
 -   `network_rule_collection`
 
-    -   `priority` : The priority of the rule collection, in the range - `100` ~ `65000`
-    -   `action` : The action to be applied to matching traffic by the rule - `Allow`,`Deny`
+    -   `priority` : The priority of the Rule collection, Between 100 and 65000 - `100` ~ `65000`
+    -   `action` : Actions to apply Rule to matching traffic - `Allow`,`Deny`
 
 - `network_rules`
 
-    - `source_addresses`: A list of source IP addresses or ranges.
-    - `destination_ports`: A list of destination ports.
-    - `destination_addresses`: A list of destination IP addresses or ranges.
-    - `protocols`: A list of protocols that make up the rule, such as `TCP`, `UDP`, `ICMP`, `Any`.
+    - `source_addresses`: The list of source IP Addresses or IP ranges
+    - `destination_ports`: The list of destination ports
+    - `destination_addresses`: The list of destination IP addresses or IP ranges
+    - `protocols`: The list of protocols that configure the Rule - `TCP`,`UDP`,`ICMP`,`Any`
 
 - `application_rule_collection`
 
-    - `priority`: The priority of the rule collection, ranging from `100` ~ `65000`.
-    - `action`: The action to be applied to matching traffic by the rule, such as `Allow`, `Deny`.
+    - `priority`: The priority of the Rule collection, Between 100 and 65000 - `100` ~ `65000`
+    - `action`: Actions to apply Rule to matching traffic - `Allow`,`Deny`
 
 - `application_rules`
 
-    - `source_addresses`: A list of source IP addresses or ranges.
-    - `target_fqdns`: A list of FQDNs for filtering outbound traffic using any TCP/UDP protocol.
-    - `protocol_port`: Port for the protocol connection, ranging from `1` ~ `65502`.
-    - `protocol_type`: The type of protocol connection, such as `Http`, `Https`, `Mssql`.
+    - `source_addresses`: The list of source IP Addresses or IP ranges
+    - `target_fqdns`: The list of FQDNs to filter outbound traffic with any TCP/UDP porotocol
+    - `protocol_port`: The port for the connection - `1` ~ `65502`
+    - `protocol_type`: The type of connectio - `Http`, `Https`, `Mssql`.
 
 - `nat_rule_collection`
 
-    - `priority`: The priority of the rule collection, ranging from `100` ~ `65000`.
-    - `action`: The action to be applied to matching traffic by the rule, such as `Dnat`, `Snat`.
+    - `priority`: The priority of the Rule collection, Between 100 and 65000 - `100` ~ `65000`
+    - `action`: Actions to apply Rule to matching traffic - `Dnat`, `Snat`.
 
 - `nat_rules`
 
-    - `source_addresses`: A list of source IP addresses or ranges.
-    - `destination_ports`: A list of destination ports.
-    - `translated_port`: The port used for translation by the firewall service.
-    - `translated_address`: The address used for translation by the firewall service.
-    - `protocols`: A list of protocols that make up the rule, such as `TCP`, `UDP`, `ICMP`, `Any`.
+    - `source_addresses`: The list of source IP Addresses or IP ranges
+    - `destination_ports`:The list of destination ports
+    - `translated_port`: The port of the service behind the Firewall
+    - `translated_address`: The address of the service behind the Firewall
+    - `protocols`: The list of protocols that configure the Rule - `TCP`, `UDP`, `ICMP`, `Any`.
 
-- `tag`: A tag used to categorize resources, up to 512 characters, in the format `key:value`.
+-   `tag`: Tag to categorize resources - maximum 512 characters, `key`:`value`.
 
 ---
 

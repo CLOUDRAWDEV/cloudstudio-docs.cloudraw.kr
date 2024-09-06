@@ -30,20 +30,20 @@ WAF policies can be applied to individual web applications or to an entire appli
 ## Resource Setting Values
 
 - `managed_rule_set`
-    - `type`: The type of rule set for protecting against vulnerabilities, such as `OWASP` or `Microsoft_BotManagerRuleSet`.
+    - `type`: The type of rule set for protecting against vulnerabilities, such as `OWASP`, `Microsoft_BotManagerRuleSet`
     - `version`: The version of the rule set.
 
 - `managed_rule_group`
-    - `type`: The type of rule set, such as `OWASP` or `Microsoft_BotManagerRuleSet`.
-    - `rule_group_name`: The name of the rule group to be used.
-    - `disabled_rules`: A list of rule IDs to be disabled.
+    - `type`: The type of rule group - `OWASP`, `Microsoft_BotManagerRuleSet`
+    - `rule_group_name`: The name of Rule group to use
+    - `disabled_rules`: List of Rule IDs to disable
 
 - `exclusion`
-    - `match_variable`: The variable to match, such as query strings or request methods, like `RequestArgNames`, `RequestCookieNames`, `RequestHeaderNames`.
-    - `selector`: The value to compare with the matched variable using an operator.
-    - `selector_match_operator`: The operator used to evaluate the match, such as `Contains`, `EndsWith`, `Equals`, `EqualsAny`, `StartsWith`.
+    - `match_variable`: The variable to be matched like a query string or request method - `RequestArgNames`, `RequestCookieNames`, `RequestHeaderNames`.
+    - `selector`: The value to be compared with value of Match variable through the operator
+    - `selector_match_operator`: The operator to evaluate consistency - `Contains`, `EndsWith`, `Equals`, `EqualsAny`, `StartsWith`.
 
-- `tag`: A tag used to categorize resources, up to 512 characters, in the format `key:value`.
+-   `tag` : Tag to categorize resources - up to 512 characters, `key`:`value`
 
 ---
 
