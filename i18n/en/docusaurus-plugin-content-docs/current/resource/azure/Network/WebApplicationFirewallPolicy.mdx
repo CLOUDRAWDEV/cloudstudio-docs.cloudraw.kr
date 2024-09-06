@@ -30,18 +30,18 @@ WAF policies can be applied to individual web applications or to an entire appli
 ## Resource Setting Values
 
 - `managed_rule_set`
-    - `type`: The type of rule set for protecting against vulnerabilities, such as `OWASP`, `Microsoft_BotManagerRuleSet`
-    - `version`: The version of the rule set.
+    - `type` : The type of rule set for protecting against vulnerabilities - `OWASP`, `Microsoft_BotManagerRuleSet`
+    - `version` : The version of the rule set
 
 - `managed_rule_group`
-    - `type`: The type of rule group - `OWASP`, `Microsoft_BotManagerRuleSet`
-    - `rule_group_name`: The name of Rule group to use
-    - `disabled_rules`: List of Rule IDs to disable
+    - `type` : The type of rule group - `OWASP`, `Microsoft_BotManagerRuleSet`
+    - `rule_group_name` : The name of Rule group to use
+    - `disabled_rules` : List of Rule IDs to disable
 
 - `exclusion`
-    - `match_variable`: The variable to be matched like a query string or request method - `RequestArgNames`, `RequestCookieNames`, `RequestHeaderNames`.
-    - `selector`: The value to be compared with value of Match variable through the operator
-    - `selector_match_operator`: The operator to evaluate consistency - `Contains`, `EndsWith`, `Equals`, `EqualsAny`, `StartsWith`.
+    - `match_variable` : The variable to be matched like a query string or request method - `RequestArgNames`, `RequestCookieNames`, `RequestHeaderNames`
+    - `selector` : The value to be compared with value of Match variable through the operator
+    - `selector_match_operator` : The operator to evaluate consistency -`Contains`, `EndsWith`, `Equals`, `EqualsAny`, `StartsWith`
 
 -   `tag` : Tag to categorize resources - up to 512 characters, `key`:`value`
 
@@ -50,5 +50,5 @@ WAF policies can be applied to individual web applications or to an entire appli
 ## Reference Materials
 
 -   [Azure WebApplicationFirewallPolicy(Microsoft)](https://learn.microsoft.com/ko-kr/azure/web-application-firewall/overview)
--   [Azure WebApplicationFirewallPolicy 가격](https://azure.microsoft.com/ko-kr/pricing/details/web-application-firewall/)
+-   [Azure WebApplicationFirewallPolicy Price](https://azure.microsoft.com/ko-kr/pricing/details/web-application-firewall/)
 -   [Azure WebApplicationFirewallPolicy(Terraform)](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/web_application_firewall_policy)

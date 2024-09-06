@@ -1,7 +1,7 @@
 ---
 title: NetworkSecurityGroup
 sidebar_position: 7
-tags: [Azure, 리소스, Network, NetworkSecurityGroup]
+tags: [Azure, Resource, Network, NetworkSecurityGroup]
 ---
 
 <hr />
@@ -45,30 +45,30 @@ They help limit exposure to potential threats by filtering network traffic at th
 -   `security_rules`
 
     -   `http`
-        -   `priority`: The priority of the Rule, Between 100 and 4096 - `100` ~ `4096`
-        -   `direction`: Whether the rule applies to inbound, or outbound traffic - `Inbound`, `Outbound`
-        -   `access`: Allow network traffic - `Allow`, `Deny`
-        -   `protocol`: Network protocol this rule applies to - `Tcp`, `Udp`, `Icmp`, `Esp`, `Ah`, `*`
-        -   `source_port_ranges`: Source Port or Port range, Integer or range between 0 and 65535 or *
-        -   `destination_port_ranges`: Destination Port or Port range, Integer or range between 0 and 65535 or *
-        -   `source_address_prefixes`: CIDR or source IP range
-        -   `destination_address_prefixes`: CIDR or destination IP range
-        -   `description`: Description of Security Rule
+        -   `priority` : The priority of the Rule, Between 100 and 4096 - `100` ~ `4096`
+        -   `direction` : Whether the rule applies to inbound, or outbound traffic - `Inbound`, `Outbound`
+        -   `access` : Allow network traffic - `Allow`, `Deny`
+        -   `protocol` : Network protocol this rule applies to - `Tcp`, `Udp`, `Icmp`, `Esp`, `Ah`, `*`
+        -   `source_port_ranges` : Source Port or Port range, Integer or range between 0 and 65535 or *
+        -   `destination_port_ranges` : Destination Port or Port range, Integer or range between 0 and 65535 or *
+        -   `source_address_prefixes` : CIDR or source IP range
+        -   `destination_address_prefixes` : CIDR or destination IP range
+        -   `description` : Description of Security Rule
     -   `https`
-        -   `priority`: The priority of the Rule, Between 100 and 4096 - `100` ~ `4096`
-        -   `direction`: Whether the rule applies to inbound, or outbound traffic - `Inbound`, `Outbound`
-        -   `access`: Allow network traffic - `Allow`, `Deny`
-        -   `protocol`: Network protocol this rule applies to - `Tcp`, `Udp`, `Icmp`, `Esp`, `Ah`, `*`
-        -   `source_port_ranges`: Source Port or Port range, Integer or range between 0 and 65535 or *
-        -   `destination_port_ranges`: Destination Port or Port range, Integer or range between 0 and 65535 or *
-        -   `source_address_prefixes`: CIDR or source IP range
-        -   `destination_address_prefixes`: CIDR or destination IP range
-        -   `description`: Description of Security Rule
+        -   `priority` : The priority of the Rule, Between 100 and 4096 - `100` ~ `4096`
+        -   `direction` : Whether the rule applies to inbound, or outbound traffic - `Inbound`, `Outbound`
+        -   `access` : Allow network traffic - `Allow`, `Deny`
+        -   `protocol` : Network protocol this rule applies to - `Tcp`, `Udp`, `Icmp`, `Esp`, `Ah`, `*`
+        -   `source_port_ranges` : Source Port or Port range, Integer or range between 0 and 65535 or *
+        -   `destination_port_ranges` : Destination Port or Port range, Integer or range between 0 and 65535 or *
+        -   `source_address_prefixes` : CIDR or source IP range
+        -   `destination_address_prefixes` : CIDR or destination IP range
+        -   `description` : Description of Security Rule
 
--   `linked_subnet_names`: The name of Subnet to which to attach the Network Security Group
+-   `linked_subnet_names` : The name of Subnet to which to attach the Network Security Group
 
--   `linked_network_interface_names`: The name of Network Interface to which to attach the Network Interface
--   `tag` : Tag to categorize resources - up to 512 characters, `key`:`value`
+-   `linked_network_interface_names` : The name of Network Interface to which to attach the Network Interface
+-   `tag` : Tag to categorize resources - up to 512 characters, `key` :`value`
 ---
 
 ## Reference Materials
