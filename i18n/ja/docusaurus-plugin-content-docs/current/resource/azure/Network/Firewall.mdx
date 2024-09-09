@@ -1,7 +1,7 @@
 ---
 title: Firewall
 sidebar_position: 3
-tags: [Azure, 리소스, Network, Firewall]
+tags: [Azure, リソース, Network, Firewall]
 ---
 
 <hr />
@@ -17,33 +17,33 @@ tags: [Azure, 리소스, Network, Firewall]
 
 ## リソース概要
 
-Azure Firewall은 Azure에서 실행되는 클라우드 워크로드에 대해 최상의 위협 보호를 제공하는 클라우드 네이티브 및 지능형 네트워크 방화벽 보안 서비스입니다.
-고가용성 및 무제한 클라우드 확장성이 기본 제공되는 서비스 형태의 완전한 상태 저장 방화벽입니다.
+Azure Firewall は Azure で実行されるクラウドワークロードに対して最高の脅威保護を提供するクラウドネイティブおよびインテリジェントネットワークファイアウォールセキュリティサービスです。
+高可用性と無制限のクラウド拡張性が基本的に提供されるサービス形態の完全な状態保存ファイアウォールです。
 
 ## 関連リソース
 
 ### 上位リソース
 
--   [**Resource Group**](https://docs.cstudio.app/docs/resource/azure/Base/ResourceGroup)
--   [**Virtual Network**](https://docs.cstudio.app/docs/resource/azure/Network/VirtualNetwork)
--   [- [**Subnet**](https://docs.cstudio.app/docs/resource/azure/Network/Subnet)](https://docs.cstudio.app/docs/resource/azure/Network/Subnet)
+-   [**Resource Group**](https://docs.cstudio.app/ja/docs/resource/azure/Base/ResourceGroup)
+-   [**Virtual Network**](https://docs.cstudio.app/ja/docs/resource/azure/Network/VirtualNetwork)
+-   [- [**Subnet**](https://docs.cstudio.app/ja/docs/resource/azure/Network/Subnet)](https://docs.cstudio.app/docs/resource/azure/Network/Subnet)
 
 ### 接続リソース
 
--   [**Network Interface**](https://docs.cstudio.app/docs/resource/azure/Network/NetworkInterface)
--   [**Public Ip**](https://docs.cstudio.app/docs/resource/azure/Network/PublicIp)
+-   [**Network Interface**](https://docs.cstudio.app/ja/docs/resource/azure/Network/NetworkInterface)
+-   [**Public Ip**](https://docs.cstudio.app/ja/docs/resource/azure/Network/PublicIp)
 
 ## リソース設定値
 
--   `included_subnet_name` : Firewall이 위치할 subnet 이름
+-   `included_subnet_name` : Firewall が位置する Subnet の名前
 
--   `sku_tier` : Firewall의 가격 책정 계층 - `Basic`, `Standard`, `Premium`
+-   `sku_tier` : Firewall の価格設定階層 - `Basic`, `Standard`, `Premium`
 
--   `sku_name` : Firewall의 가격 책정 계층 이름 -`AZFW_VNet`, `AZFW_Hub`
+-   `sku_name` : Firewall の価格設定階層名 -`AZFW_VNet`, `AZFW_Hub`
 
--   `linked_public_ip_name` : Firewall에 연결할 public ip 이름
+-   `linked_public_ip_name` : Firewall に接続する Public IP の名前
 
--   `ip_config_name` : IP Configuration 이름
+-   `ip_config_name` : IP Configuration の名前
 
 -   `network_rule_collection`
 
@@ -52,42 +52,42 @@ Azure Firewall은 Azure에서 실행되는 클라우드 워크로드에 대해 �
 
 -   `network_rules`
 
-    -   `source_addresses` : 원본 IP 주소 혹은 범위의 목록
-    -   `destination_ports` : 목적 Port의 목록
-    -   `destination_address` : 목적 IP 주소 혹은 범위의 목록
-    -   `protocols` : Rule을 구성하는 프로토콜 목록 - `TCP`,`UDP`,`ICMP`,`Any`
+    -   `source_addresses` : 元の IP アドレスまたは範囲のリスト
+    -   `destination_ports` : 宛先ポートのリスト
+    -   `destination_address` : 宛先 IP アドレスまたは IP 範囲のリスト
+    -   `protocols` : ルールを設定するプロトコルのリスト - `TCP`,`UDP`,`ICMP`,`Any`
 
 -   `application_rule_collection`
 
-    -   `priority` : Rule Collection의 우선순위, 100 ~ 65000의 범위 - `100` ~ `65000`
-    -   `action` : 일치하는 트래픽에 Rule을 적용할 동작 - `Allow`,`Deny`
+    -   `priority` : Rule Collection の優先順位、100~65000 の範囲 - `100` ~ `65000`
+    -   `action` : 一致するトラフィックにルールを適用する動作 - `Allow`,`Deny`
 
 -   `application_rules`
 
-    -   `source_addresses` : 원본 IP 주소 혹은 범위의 목록
-    -   `target_fqdns` : 임의의 TCP/UDP 프로토콜을 사용하여 아웃바운드 트래픽을 필터링하기 위한 FQDN 리스트
-    -   `protocol_port` : 프로토콜 연결을 위한 Port - `1` ~ `65502`
-    -   `protocol_type` : 프로토콜 연결 타입 - `Http`, `Https`, `Mssql`
+    -   `source_addresses` : 元の IP アドレスまたは範囲のリスト
+    -   `target_fqdns` : 任意の TCP/UDP プロトコルを使用してアウトバウンドトラフィックをフィルタリングするための FQDN リスト
+    -   `protocol_port` : プロトコル接続のためのポート - `1` ~ `65502`
+    -   `protocol_type` : プロトコル接続タイプ - `Http`, `Https`, `Mssql`
 
 -   `nat_rule_collection`
 
-    -   `priority` : Rule Collection의 우선순위, 100 ~ 65000의 범위 - `100` ~ `65000`
-    -   `action` : 일치하는 트래픽에 Rule을 적용할 동작 - `Dnat`, `Snat`
+    -   `priority` : Rule Collection の優先順位、100~65000 の範囲 - `100` ~ `65000`
+    -   `action` : 一致するトラフィックにルールを適用する動作 - `Dnat`, `Snat`
 
 -   `nat_rules`
 
-    -   `source_addresses` : 원본 IP 주소 혹은 범위의 목록
-    -   `destination_ports` : 목적 Port의 목록
-    -   `translated_port` : Firewall을 사용할 서비스의 변환 Port
-    -   `translated_address` : Firewall을 사용할 서비스의 변환 주소
-    -   `protocols` : Rule을 구성하는 프로토콜 목록 - `TCP`, `UDP`, `ICMP`, `Any`
+    -   `source_addresses` : 元の IP アドレスまたは範囲のリスト
+    -   `destination_ports` : 宛先ポートのリスト
+    -   `translated_port` : Firewall を使用するサービスの変換ポート
+    -   `translated_address` : Firewall を使用するサービスの変換アドレス
+    -   `protocols` : Rule を構成するプロトコルのリスト - `TCP`, `UDP`, `ICMP`, `Any`
 
--   `tag` : 리소스를 카테고리로 분류하기 위한 태그 - 최대 512자, `key`:`value`
+-   `tag` : リソースをカテゴリに分類するためのタグ - 最大 512 文字, `key`:`value`
 
 ---
 
 ## 参考資料
 
 -   [Azure Firewall(Microsoft)](https://learn.microsoft.com/ko-kr/azure/firewall/overview)
--   [Azure Firewall 가격](https://azure.microsoft.com/en-us/pricing/details/azure-firewall/)
+-   [Azure Firewall 価格](https://azure.microsoft.com/en-us/pricing/details/azure-firewall/)
 -   [Azure Firewall(Terraform)](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/firewall)
