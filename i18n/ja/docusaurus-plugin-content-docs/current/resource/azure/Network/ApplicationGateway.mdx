@@ -61,7 +61,7 @@ Application Gateway는 URI 경로 또는 호스트 헤더와 같은 HTTP 요청�
     -   `private_ip_address_allocation` : Private Ip의 주소 할당 법칙 - `Static`, `Dynamic`
     -   `private_ip_address` : Private Ip의 주소
 
--   `backend_pool_names` : Application Gateway와 연결할 Backend Address Pool 이름의 목록
+-   `backend_pool_name` : Application Gateway와 연결할 Backend Address Pool 이름의 목록
 
 -   `http_listener`
     -   `frontend_ip_config` : 사용할 Frontend IP 구성의 종류 - `Public`, `Private`
@@ -77,7 +77,7 @@ Application Gateway는 URI 경로 또는 호스트 헤더와 같은 HTTP 요청�
 
     -   `rule_type` : 요청이 전달될 Backend Server Pool을 정의하기 위한 라우팅 규칙 유형 - `Basic`, `PathBasedRouting`
     -   `http_listener_name` : 규칙과 연결할 HTTP 리스너 이름
-    -   `backend_address_pool_name` : 규칙과 연결할 Backend Address Pool 이름
+    -   `backend_pool_name` : 규칙과 연결할 Backend Address Pool 이름
     -   `backend_http_settings_name` : 규칙과 연결할 Backend HTTP settings 이름
     -   `priority` : Routing Rule의 우선 순위
 

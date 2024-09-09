@@ -39,11 +39,11 @@ Azure SQL 데이터베이스를 사용하면 자동 패치, 백업, 고가용성
 -   `read_scale` : 읽기 전용 복제본 중 하나의 컴퓨팅 용량을 사용하여 읽기 전용 워크로드를 오프로드하기 위한 기능 활성화 - `true` , `false`
 -   `zone_redundant` : 데이터베이스 유지 관리 작업을 위한 영역 중복성 활성화 - `true` , `false`
 
--   `auditing_policy` : 보안 경고를 받을 이메일 주소 목록
+-   `auditing_policy` : 감사 정책 이름
 
     -   `database_name` : 감사 정책을 적용할 database 이름
     -   `enable_storage_destination` : Storage 계정 활성화 여부 - `true` ~ `false`
-    -   `enable_log_analytics_destination` : Log analytics 활성화 여부 - `true` , `false`
+    -   `enable_log_analytics_destination` : Log analytics workspace으로 감사 정책 활성화 - `true` , `false`
 
 -   `tag` : 리소스를 카테고리로 분류하기 위한 태그 - 최대 512자, `key`:`value`
 

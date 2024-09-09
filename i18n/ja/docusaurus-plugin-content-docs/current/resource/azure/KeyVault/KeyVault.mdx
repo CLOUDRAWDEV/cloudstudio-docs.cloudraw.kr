@@ -69,11 +69,11 @@ Azure Key Vault는 비밀을 안전하게 저장하고 액세스하기 위한 �
     -   `contents` : Base64 기반 인증서 내용
     -   `password` : 인증서의 암호
     -   `issuer_name` : Certificate 발행자 이름 - `Self`, `Unknown`
-    -   `exportable` : Key의 외부 저장 활성화 - `true`, `false`
+    -   `enabled_export` : Key의 외부 저장 활성화 - `true`, `false`
     -   `key_type` : Key 타입 - `RSA`, `EC`
-    -   `key_size` : Key 사이즈 지정, Key 타입이 RSA인 경우 - `2048/3072/4096`, Key 타입이 EC인 경우 - `256/384/521`
+    -   `rsa_key_size` : Key 사이즈 지정, Key 타입이 RSA인 경우 - `2048/3072/4096`, Key 타입이 EC인 경우 - `256/384/521`
     -   `curve` : Key 타입이 EC인 경우 Curve 지정 - `P-256`,`P-256K`,`P-384`,`P-521`
-    -   `reuse_key` : Key의 재사용 활성화 - `true`, `false`
+    -   `enabled_reuse_key` : Key의 외부 저장 활성화 - `true`, `false`
     -   `content_type` : Certificate의 컨텐츠 타입 - `application/x-pkcs12`, `application/x-pem-file`
     -   `key_usage` : Key 사용 플래그 목록
     -   `subject` : X.500의 고유 이름

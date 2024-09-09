@@ -33,7 +33,7 @@ Azure Front Door leverages Microsoft's global edge network, which includes hundr
 
 -   `sku`: Specifies the SKU for this Front Door MyPage - `Standard_AzureFrontDoor`, `Premium_AzureFrontDoor`
 
--   `endpoint_names`: The list of enabled endpoint names
+-   `endpoint_names`: The list of Endpoint names enabled
 
 -   `origin_group`
 
@@ -49,18 +49,18 @@ Azure Front Door leverages Microsoft's global edge network, which includes hundr
 
 -   `origin`
 
-    -   `origin_group_name` : Name of the group that contains the origin
+    -   `origin_group_name` : The name of the group that includes the origin
     -   `host_name` : The IPv4 address, IPv6 address or Domain name of the Origin
     -   `origin_host_header` : The host header value (an IPv4 address, IPv6 address or Domain name) which is sent to the origin with each request
     -   `certificate_name_check_enabled` : Specifies whether certificate name checks are enabled for this origin - `true`, `false`
     -   `enabled` :  Whether the origin is enabled - `true`, `false`
     -   `priority` : Priority of origin in given origin group for load balancing. Higher priorities will not be used for load balancing if any lower priority origin is healthy - `1` ~ `5`
     -   `weight` : The weight of the origin in a given origin group for load balancing - `1` ~ `1000`
-    -   `http_port` : The HTTP port value - `1` ~ `65535`
+    -   `http_port` : The value of the HTTP port - `1` ~ `65535`
 
 -   `route`
-    -   `endpoint_name` : The name of the Front Door Endpoint to which this Front Door Route should be assigned
-    -   `origin_group_name` : Name of the group that contains the origin
+    -   `endpoint_name` : The name of the Front Door Endpoint where this Front Door Route should exist
+    -   `origin_group_name` : The name of the group that includes the origin
     -   `origin_names` : Names of the origins to be specified
     -   `patterns_to_match` : The route patterns of the rule
     -   `supported_protocols` : One or more Protocols supported by this Front Door Route - `Http` , `Https`

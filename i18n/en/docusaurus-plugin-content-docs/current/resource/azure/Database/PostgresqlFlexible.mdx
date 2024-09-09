@@ -30,40 +30,40 @@ It supports both single-node and high-availability configurations and offers mul
 
 ## Resource Setting Values
 
--   `version`: The version of PostgreSQL Server to use - `2.0`, `12.0`
+-   `version`: The version of PostgreSQL Server to use - `11`, `12`, `13`, `14`
 
--   `sku_name` : The name of SKU for the PostgreSQL Server, Tier + compute generation + cores pattern - `azureDatabaseSku`
+-   `sku_name` : The name of SKU for the Postgresql Server, Tier + compute generation + cores pattern - `azurePostgresqlFlexibleSku`
 
--   `storage_mb`: Max storage allowed for a Server in MB - `5120`~`16777216`
+-   `storage_mb` : Max storage allowed for a Postgresql Flexible Server in MB - `storageGB`
 
--   `admin_username` : If the creation mode is default, the administrator login for the PostgreSQL Server
+-   `admin_username` : If the creation mode is default, the administrator login for the Postgresql Server, Only alphanumeric characters are allowed, Without the reserved words, 1 to 16 characters
 
--   `admin_password` : If the creation mode is default, the password associated with the administrator login
+-   `admin_password` : If the creation mode is default, the password associated with the administrator login, Contain 3 of the following: lowercase letters/uppercase letters/numbers/special characters, Cannot contain more than 3 consecutive alphanumeric characters in the login name, 8 to 128 characters
 
--   `availability_zone` : Specifies the Availability Zone. Possible values are 1, 2, 3. - `1` ~ `3`
+-   `availability_zone` : Specifies the Availability Zone. Possible values are 1, 2, 3 - `1` ~ `3`
 
--   `enable_high_availability` : Enable high availability of MySQL Flexible Server - `true` , `false`
+-   `enable_high_availability` : Enable high availability of Postgresql Flexible Server - `true` , `false`
 
--   `backup_retention_days` : The backup retention days for the MySQL Flexible Server. Possible values are between 1 and 35 days. - `1` ~ `35`
+-   `backup_retention_days` : The backup retention days for the Postgresql Flexible Server. Possible values are between 1 and 35 days - `1` ~ `35`
 
--   `geo_redundant_backup_enabled`: The activation of geo redundant backup - `true` or `false`.
+-   `geo_redundant_backup_enabled` - `true` , `false`
 
 -   `public_network_access_enabled` : Allow public network access for the Server - `true` , `false`
 
 -   `configuration`
 
-    -   `name` : Name of the configuration for MySQL Flexible Server
-    -   `param_value` : Specifies the value of the MySQL Flexible Server Configuration
+    -   `name` : The setting of PostgreSQL Server parameter
+    -   `param_value` : Specifies the value of the Postgresql Flexible Server Configuration
 
 -   `database`
 
-    -   `charset` : The charset for the MySQL Database - `azureMysqlChartSet`
-    -   `collation` : The collation for the MySQL Database - `azureMysqlCol`
+    -   `charset` : The charset for the Postgresql Database - `azurePostgresqlChartSet`
+    -   `collation` : The collation for the Postgresql Database - `azurePostgresqlFlexibleCol`
 
 -   `firewall_rule`
 
-    -   `start_ip_address`: The Start IP Address asscociated with the Firewall Rule
-    -   `end_ip_address`: The End IP Address asscociated with the Firewall Rule
+    -   `start_ip_address` : The Start IP Address asscociated with the Firewall Rule
+    -   `end_ip_address` : The End IP Address asscociated with the Firewall Rule
 
 -   `tag` : Tag to categorize resources - up to 512 characters, `key:value`
 

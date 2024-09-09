@@ -62,7 +62,7 @@ Conversely, if the URL contains /video, the traffic is routed to a different poo
     -   `private_ip_address_allocation` : The allocation method for the private IP address - `Static`, `Dynamic`
     -   `private_ip_address` : The private IP address
 
--   `backend_pool_names` : A list of names for the Backend Address Pools to be connected to the Application Gateway
+-   `backend_pool_name` : A list of names for the Backend Address Pools to be connected to the Application Gateway
 
 -   `http_listener`
     -   `frontend_ip_config` : The type of Frontend IP configuration which should be used - `Public`, `Private`
@@ -80,7 +80,7 @@ Conversely, if the URL contains /video, the traffic is routed to a different poo
 
     -   `rule_type` : The name of Request routing rule - `Basic`, `PathBasedRouting`
     -   `http_listener_name` : The name of HTTP listener to which to attach Rule
-    -   `backend_address_pool_name` : The name of the Backend Address Pool associated with the rule.
+    -   `backend_pool_name` : The name of the Backend Address Pool associated with the rule.
     -   `backend_http_settings_name` : The name of Backend HTTP settings to which to attach Path
     -   `priority` : The priority of Routing Rule
 
