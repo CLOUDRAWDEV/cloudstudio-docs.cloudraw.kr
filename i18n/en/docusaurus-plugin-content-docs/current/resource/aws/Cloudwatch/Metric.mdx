@@ -31,15 +31,15 @@ CloudWatch Metrics are integrated with various services provided by AWS.
 
 ## Resource Setting Values
 
--   `comparison_operator`: The arithmetic operation to use when comparing the specified statistics and thresholds.
--   `evaluation_periods`: The number of periods over which data is compared to the specified threshold.
--   `metric_name`: The name of the metric associated with the alarm.
--   `namespace`: The namespace of the metric associated with the alarm.
--   `period`: The time period (in seconds) over which the specified statistics are applied.
--   `statistic`: The statistic to apply to the relevant metric for the alarm.
--   `threshold`: The value against which the specified statistic is compared.
--   `alarm_description`: A description of the alarm.
--   `insufficient_data_actions`: The list of actions to execute when the alarm transitions from another state to the insufficient data state.
+-   `comparison_operator`: The arithmetic operation to use when comparing the specified Statistic and Threshold
+-   `evaluation_periods`: The number of periods over which data is compared to the specified threshold
+-   `metric_name`: The name for the alarm's associated metric
+-   `namespace`: The namespace for the alarm's associated metric
+-   `period`: The period in seconds over which the specified statistic is applied
+-   `statistic`: The statistic to apply to the alarm's associated metric
+-   `threshold`: The value against which the specified statistic is compared
+-   `alarm_description`: The description for the alarm
+-   `insufficient_data_actions`: SNS list to send alarms for data shortage indicators
 
 ---
 

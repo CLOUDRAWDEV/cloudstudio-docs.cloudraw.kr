@@ -1,7 +1,7 @@
 ---
 title: Cloudfront Distribution
 sidebar_position: 0
-tags: [AWS, 리소스, Cloudfront, CloudfrontDistribution]
+tags: [AWS, Resource, Cloudfront, CloudfrontDistribution]
 ---
 
 <hr />
@@ -34,42 +34,42 @@ When a user requests content, CloudFront serves it through a network of edge loc
 
 ## Resource Setting Values
 
--   `enabled` : Whether the distribution is enabled to accept end-user requests for content - `true`, `false`
--   `origin` : Identifier of the origin
+-   `enabled` : Whether the distribution is enabled to accept end user requests for content - `true`, `false`
+-   `origin` : A unique identifier for the origin
 -   `cache_policy` : Cache Policy name
     -   `min_ttl` : Minimum amount of time (in seconds) that an object should remain in the CloudFront cache
     -   `max_ttl` : Maximum amount of time (in seconds) that an object should remain in the CloudFront cache
     -   `default_ttl` : Default amount of time (in seconds) that an object should remain in the CloudFront cache
     -   `cookie_behavior` : Determines whether cookies from end-user requests are included in the cache key and automatically included in requests CloudFront sends to the origin - `whitelist`, `all`, `none`, `allExcept`
-    -   `cookies_items` : List of cookie items names
-    -   `header_behavior` : Determines whether HTTP headers are included in the cache key and automatically included in requests CloudFront sends to the origin - `whitelist`, `none`
-    -   `headers_items` : List of header items names
-    -   `query_string_behavior` : Determines whether URL query strings from end-user requests are included in the cache key and automatically included in requests CloudFront sends to the origin - `whitelist`, `all`, `none`, `allExcept`
-    -   `query_string_items` : List of query items names
+    -   `cookies_items` : List of cookies to be passed to the origin server
+    -   `header_behavior` : Whether to cache objects based on the values of specified headers - `whitelist`, `none`
+    -   `headers_items` : List of headers to specify when caching an object
+    -   `query_string_behavior` : Whether to cache different versions of content based on query string parameter values - `whitelist`, `all`, `none`, `allExcept`
+    -   `query_string_items` : List of query string parameters
 -   `cache_behavior`
-    -   `path_pattern` : Pattern specifying the requests to which the cache behavior applies
-    -   `compress` : Whether CloudFront should automatically compress content for web requests - `true`, `false`
-    -   `viewer_protocol_policy` : Specifies the protocol that can be used to access the files from the origin specified in TargetOriginId when the request matches the path pattern - `allow-all`, `https-only`, `redirect-to-https`
-    -   `allowed_methods` : Controls the HTTP methods that CloudFront processes and forwards to an Amazon S3 bucket or custom origin - `GET`, `HEAD`, `OPTIONS`, `PATCH`, `POST`, `PUT`, `DELETE`
-    -   `cached_methods` : Controls whether CloudFront caches responses for requests using the specified HTTP methods - `GET`, `HEAD`, `OPTIONS`, `PATCH`, `POST`, `PUT`, `DELETE`
-    -   `origin_name` : Origin name to which CloudFront routes requests when the path pattern matches
-    -   `cache_policy_name` : Cache Policy ID to associate with the Cache Behavior
+    -   `path_pattern` : Pattern that specifies which requests you want this cache behavior to apply to
+    -   `compress` : Whether you want CloudFront to automatically compress content for web requests - `true`, `false`
+    -   `viewer_protocol_policy` : Use this element to specify the protocol that users can use to access the files in the origin specified by TargetOriginId when a request matches the path pattern in PathPattern - `allow-all`, `https-only`, `redirect-to-https`
+    -   `allowed_methods` : Controls which HTTP methods CloudFront processes and forwards to your Amazon S3 bucket or your custom origin - `GET`, `HEAD`, `OPTIONS`, `PATCH`, `POST`, `PUT`, `DELETE`
+    -   `cached_methods` : Controls whether CloudFront caches the response to requests using the specified HTTP methods - `GET`, `HEAD`, `OPTIONS`, `PATCH`, `POST`, `PUT`, `DELETE`
+    -   `origin_name` : The origin name that you want CloudFront to route requests to when a request matches the path pattern
+    -   `cache_policy_name` : The ID of the Cache Policy that is attached to the behavior
 
 -   `restriction`
-    -   `type` : Method used to restrict content distribution by country - `whitelist`, `blacklist`, `none`
-    -   `locations` : ISO 3166-1-alpha-2 codes of locations where CloudFront should or should not distribute content
+    -   `type` : The method that you want to use to restrict distribution of your content by country - `whitelist`, `blacklist`, `none`
+    -   `locations` : The ISO 3166-1-alpha-2 codes for which you want CloudFront either to distribute your content or not distribute your content
 
 -   `viewer_certificate`
-    -   `default_certificate_enabled` : Whether to use HTTPS for requests from end-users and use the CloudFront domain name for the distribution - `true`, `false`
+    -   `default_certificate_enabled` : if you want viewers to use HTTPS to request your objects and you're using the CloudFront domain name for your distribution - `true`, `false`
 
--   `price_class` : Price class of the CloudFront distribution - `PriceClass_100`, `PriceClass_200`, `PriceClass_All`
--   `http_version` : Maximum HTTP version supported by the CloudFront distribution - `http1.1`, `http2`
--   `is_ipv6_enabled` : Whether IPv6 is enabled for the CloudFront distribution - `true`, `false`
+-   `price_class` : The price class for Cloudfront distribution - `PriceClass_100`, `PriceClass_200`, `PriceClass_All`
+-   `http_version` : The maximum HTTP version to support on the distribution - `http1.1`, `http2`
+-   `is_ipv6_enabled` : Whether the IPv6 is enabled for the distribution - `true`, `false`
 
 -   `logging`
-    -   `logging_enabled` : Whether logging is enabled - `true`, `false`
+    -   `logging_enabled` : Enable logging - `true`, `false`
 
--   `linked_waf_web_acl_name` : Name of the WAF WEB ACL to use if security protection is enabled
+-   `linked_waf_web_acl_name` : The name of WAF WEB ACL to use when enabling security protections
 
 ## Reference Materials
 

@@ -31,14 +31,14 @@ The ElastiCache User can also be used alongside other resources within the AWS a
 
 ## Resource Setting Values
 
--   `user_id`: The user's ID, which can include letters and hyphens (-). It must start with a letter, cannot end with a hyphen, and cannot contain two consecutive hyphens. Maximum length is 40 characters.
--   `access_string`: A string that defines the permissions assigned to the user.
--   `authentication_type`: The authentication method the user will use to access the cluster.
+-   `user_id`: Each user's unique ID
+-   `access_string`: A string containing the permission to be applied to the user
+-   `authentication_type`: Authentication method for users to access the cluster
 
 ---
 
 ## Reference Materials
 
 -   [Amazon ElastiCache for Redis(AWS)](https://docs.aws.amazon.com/ko_kr/AmazonElastiCache/latest/red-ug/WhatIs.html)
--   [Amazon ElastiCache for Redis 요금(AWS)](https://aws.amazon.com/ko/elasticache/pricing/?nc=sn&loc=5)
+-   [Amazon ElastiCache for Redis Price(AWS)](https://aws.amazon.com/ko/elasticache/pricing/?nc=sn&loc=5)
 -   [aws_elasticache_user(Terraform)](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/elasticache_user)

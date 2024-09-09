@@ -29,11 +29,11 @@ Amazon Route 53 is a highly available and scalable Domain Name System (DNS) web 
 
 ## Resource Setting Values
 
--   `linked_vpc_names` : Names of the VPCs to which the Route 53 zone will be associated
--   `record` : Name of the record to be created in the Route 53 zone
-    -   `type` : Type of the record - `A`, `CAA`, `CNAME`, `DS`, `NAPTR`, `NS`, `PTR`, `SOA`, `SPF`, `SRV`, `TXT`
-    -   `ttl` : TTL of the record
-    -   `records` : List of strings for the record
+-   `linked_vpc_names` : VPC name to connect Route53 Zone to
+-   `record` : Name of record to be created in Route53 Zone
+    -   `type` : Type of Record - `A`, `CAA`, `CNAME`, `DS`, `NAPTR`, `NS`, `PTR`, `SOA`, `SPF`, `SRV`, `TXT`
+    -   `ttl` : TTL of Record
+    -   `records` : A string list of Records
 
 ---
 

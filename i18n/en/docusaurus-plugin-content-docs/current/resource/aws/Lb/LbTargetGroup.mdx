@@ -34,11 +34,11 @@ A service that routes requests to one or more registered targets, such as EC2 in
 
 ## Resource Setting Values
 
--   `target_type` : Type of the LB target - `Instance`, `Ip`, `Lambda`, `Alb`
--   `protocol` : Protocol used for routing traffic to the targets - `HTTP`, `HTTPS`, `TCP`, `TCP_UDP`, `TLS`
--   `port` : Port for receiving traffic - `1~65535`
--   `included_vpc_name` : Name of the VPC where the target group will be created
--   `linked_instance_names` : List of names of the target instances
+-   `target_type` : The type of LB target - `Instance`, `Ip`, `Lambda`, `Alb`
+-   `protocol` : Protocol to use for routing traffic to the targets - `HTTP`, `HTTPS`, `TCP`, `TCP_UDP`, `TLS`
+-   `port` : Port on which targets receive traffic - `1~65535`
+-   `included_vpc_name` : Name of the VPC in which to create the target group
+-   `linked_instance_names` : List of the target Instance names
 
 
 ---

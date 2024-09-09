@@ -28,15 +28,13 @@ AWS KMS keys and features are utilized across various AWS services, allowing use
 
 ## Resource Setting Values
 
-Here is the revised text in English:
-
--   `description`: The description of the key as displayed in the AWS Console
--   `key_usage`: Specifies the usage of the key - `ENCRYPT_DECRYPT`
--   `multi_region`: Indicates whether the KMS key is used across multiple regions - `true`, `false`
--   `deletion_window_in_days`: The validity period of the KMS key
+-   `description`: The description of the key as viewed in AWS console
+-   `key_usage`: Specifies the intended use of the key - `ENCRYPT_DECRYPT`
+-   `multi_region`: Indicates whether the KMS key is a multi-Region or regional - `true`, `false`
+-   `deletion_window_in_days`: Validity of KMS Keys
 -   `enable_key_rotation`: Specifies whether key rotation is enabled - `true`, `false`
--   `grant_list`: The name of the KMS grant
-    -   `operations`: The actions permitted on the KMS key - `Decrypt`, `Encrypt`, `GenerateDataKey`, `GenerateDataKeyWithoutPlaintext`, `ReEncryptFrom`, `ReEncryptTo`, `Sign`, `Verify`, `CreateGrant`, `RetireGrant`, `DescribeKey`
+-   `grant_list`: The name of the KMS Grant
+    -   `operations`: Allowed operations for KMS Key - `Decrypt`, `Encrypt`, `GenerateDataKey`, `GenerateDataKeyWithoutPlaintext`, `ReEncryptFrom`, `ReEncryptTo`, `Sign`, `Verify`, `CreateGrant`, `RetireGrant`, `DescribeKey`
 
 ---
 

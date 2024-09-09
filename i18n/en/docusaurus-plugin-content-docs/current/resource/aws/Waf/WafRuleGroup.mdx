@@ -31,11 +31,11 @@ Rule Groups control critical aspects of web application security and perform act
 
 ## Resource Setting Values
 
--   `scope`: Specifies whether the Rule Group is for AWS CloudFront distributions or regional applications - `REGIONAL`, `CLOUDFRONT`
--   `capacity`: The number of Web ACL Capacity Units (WCU) required for the Rule Group
--   `cloudwatch_metrics_enabled`: Indicates whether the associated resources should send metrics to CloudWatch - `true`, `false`
--   `metric_name`: The name of the CloudWatch metric, which can include lowercase and uppercase letters, hyphens (`-`), and underscores (`_`), with a length of 1-128 characters
--   `sampled_requests_enabled`: Indicates whether AWS WAF should store samples of web requests that match the rules - `true`, `false`
+-   `scope`: Specifies whether this is for an AWS CloudFront distribution or for a regional application - `REGIONAL`, `CLOUDFRONT`
+-   `capacity`: The web ACL capacity units (WCUs) required for this rule group
+-   `cloudwatch_metrics_enabled`: Set whether the associated resource sends metrics to CloudWatch - `true`, `false`
+-   `metric_name`: Name of the CloudWatch metric, The name can contain only alphanumeric characters (A-Z, a-z, 0-9) hyphen(-) and underscore (_), with length from one to 128 characters
+-   `sampled_requests_enabled`: Set whether AWS WAF should store a sampling of the web requests that match the rules - `true`, `false`
 
 ---
 

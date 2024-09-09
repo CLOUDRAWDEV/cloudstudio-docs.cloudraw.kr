@@ -17,8 +17,6 @@ tags: [AWS, Resource, Rds, Mssql]
 
 ## Resource Overview
 
-Here's the revised English version:
-
 SQL Server is a relational database management system developed by Microsoft. 
 With Amazon RDS for SQL Server, you can easily set up, operate, and scale SQL Server deployments in the cloud. 
 Amazon RDS allows you to deploy various versions of SQL Server, including Express, Web, Standard, and Enterprise editions (2014, 2016, 2017, and 2019), with cost-effective and scalable computing power in just a few minutes. Additionally, Amazon RDS handles time-consuming database management tasks such as provisioning, backups, software patching, monitoring, and hardware scaling, allowing you to focus solely on application development.
@@ -35,30 +33,30 @@ Amazon RDS allows you to deploy various versions of SQL Server, including Expres
 
 ## Resource Setting Values
 
--   `engine` : The type of SQL Server engine to use with RDS - `sqlserver-ex`, `sqlserver-ee`, `sqlserver-web`, `sqlserver-se`
--   `engine_version` : The version of SQL Server to use with RDS
--   `instance_class` : The pricing tier for the RDS DB instance
--   `storage_type` : The storage type for the RDS instance
--   `allocated_storage` : The size of the RDS instance storage (in Gigabytes)
--   `max_allocated_storage` : The upper limit for automatic storage expansion by Amazon RDS for the DB instance
--   `multi_az_enabled` : Whether to enable multi-AZ deployment - `true`, `false`
--   `username` : The username for the RDS instance
--   `password` : The password for the RDS instance
--   `included_subnet_names` : The names of the subnets to associate with the RDS subnet group
--   `publicly_accessible` : Whether the instance is publicly accessible - `true`, `false`
--   `subnet_group_name` : The name of the subnet group to use with RDS
+-   `engine` : MsSQL Engine type to use for RDS - `sqlserver-ex`, `sqlserver-ee`, `sqlserver-web`, `sqlserver-se`
+-   `engine_version` : MsSQL version to use for RDS
+-   `instance_class` : The instance type of the RDS instance
+-   `storage_type` : Storage Type of RDS Instance
+-   `allocated_storage` : Capacity of RDS Instance Storage (Gigabytes)
+-   `max_allocated_storage` : The upper limit to which Amazon RDS can automatically scale the storage of the DB instance
+-   `multi_az_enabled` : Enable multi AZ - `true`, `false`
+-   `username` : Username in RDS
+-   `password` : RDS user password
+-   `included_subnet_names` : Subnet names in RDS Subnet group
+-   `publicly_accessible` : Whether the instance has public access - `true`, `false`
+-   `subnet_group_name` : Subnet group name to use in RDS
 
 -   `monitoring`
-    -   `performance_insights_enabled` : Whether to enable Performance Insights
+    -   `performance_insights_enabled` : Enable performance insights
 
 -   `encryption`
     -   `storage_encrypted` : Whether the DB instance is encrypted - `true`, `false`
-    -   `kms_key_name` : The name of the KMS key used for encryption
+    -   `kms_key_name` : The KMS key name for encryption
 
 -   `backup`
-    -   `backup_retention_period` : The number of days to retain backup data - `1` to `35`
-    -   `final_snapshot_enabled` : Whether to create a final DB snapshot before deleting the DB instance - `true`, `false`
-    -   `final_snapshot_name` : The name of the final snapshot
+    -   `backup_retention_period` : The days to retain backups for - `1`~`35`
+    -   `final_snapshot_enabled` : Determines whether a final DB snapshot is created before the DB instance is deleted - `true`, `false`
+    -   `final_snapshot_name` : The final snapshot name
 
 ---
 

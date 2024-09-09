@@ -33,12 +33,12 @@ Data is automatically encrypted and does not traverse the public internet.
 
 ## Resource Setting Values
 
--   `dns_support` : Enable or disable Domain Name System (DNS) resolution for the attached VPC - `enable`, `disable`
--   `vpn_ecmp_support` : Enable or disable Equal-Cost Multi-Path (ECMP) routing for the attached VPN - `enable`, `disable`
--   `default_route_table_association` : Enable or disable automatic association of the attachment with the default route table - `enable`, `disable`
--   `default_route_table_propagation` : Enable or disable automatic propagation of the attachment to the default route table - `enable`, `disable`
--   `multicast_support` : Enable or disable multicast domain creation - `enable`, `disable`
--   `transit_gateway_cidr_blocks` : CIDR blocks for the Transit Gateway
+-   `dns_support` : Enable DNS verification for connected VPCs - `enable`, `disable`
+-   `vpn_ecmp_support` : ECMP routing support for connected VPNs - `enable`, `disable`
+-   `default_route_table_association` : Automatically associate attachments with the main route table - `enable`, `disable`
+-   `default_route_table_propagation` : Enable auto propagation of attachments with the main route table - `enable`, `disable`
+-   `multicast_support` : Enable create multicast domain - `enable`, `disable`
+-   `transit_gateway_cidr_blocks` : Cidr blocks of Transit Gateway
 -   `vpc_attachment`
 
 ---
@@ -46,5 +46,5 @@ Data is automatically encrypted and does not traverse the public internet.
 ## Reference Materials
 
 -   [AWS Transit Gateway(AWS)](https://docs.aws.amazon.com/ko_kr/vpc/latest/tgw/what-is-transit-gateway.html?nc2=type_a)
--   [AWS Transit Gateway 가격(AWS)](https://aws.amazon.com/ko/transit-gateway/pricing/?nc2=type_a)
+-   [AWS Transit Gateway Price(AWS)](https://aws.amazon.com/ko/transit-gateway/pricing/?nc2=type_a)
 -   [aws_ec2_transit_gateway(Terraform)](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ec2_transit_gateway)

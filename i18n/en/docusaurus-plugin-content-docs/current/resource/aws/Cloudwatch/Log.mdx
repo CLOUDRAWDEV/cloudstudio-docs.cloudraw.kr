@@ -17,8 +17,6 @@ tags: [AWS, Resource, Cloudwatch, Log]
 
 ## Resource Overview
 
-Here is the revised version in English:
-
 Amazon CloudWatch Logs allows you to monitor, store, and access system, application, and custom log files from sources such as Amazon Elastic Compute Cloud (Amazon EC2) instances, AWS CloudTrail, Route 53, and other sources. 
 CloudWatch Logs centralizes logs from all systems, applications, and AWS services in a highly scalable single service. 
 You can then easily view the logs, search for specific error codes or patterns, filter based on specific fields, or securely store them for future analysis. 
@@ -32,14 +30,14 @@ With CloudWatch Logs, you can view all logs as a consistent, time-ordered stream
 
 ## Resource Setting Values
 
--   `retention_in_days`: The duration for which logs are retained in the log group
--   `kms_key_name`: The name of the KMS key used to encrypt log data
--   `log_stream_name`: The name of the log stream
+-   `retention_in_days`: How long the log group is storing logs
+-   `kms_key_name`: The name of the KMS key to use to encrypt log data
+-   `log_stream_name`: Name of Log Stream
 -   `metric_filter`: The name of the metric filter for the log group, up to 512 characters
-    -   `pattern`: A valid CloudWatch Logs filter pattern used to extract metric data from collected log events
-    -   `metric_name`: The name of the CloudWatch metric where the log information should be published, up to 255 characters; valid characters include letters, numbers, underscores (_), and periods (.), but exclude colons (:), asterisks (*), dollar signs ($), and spaces
-    -   `metric_namespace`: The target namespace for the CloudWatch metric, up to 255 characters; valid characters include letters, numbers, underscores (_), and periods (.), but exclude colons (:), asterisks (*), dollar signs ($), and spaces
-    -   `metric_value`: The item to publish to the metric; valid metric values include floating-point numbers (e.g., 1, 99.9), numeric field identifiers (e.g., 1 USD, 2 USD), or named field identifiers (e.g., $requestSize in a delimited filter pattern or $.status in a JSON-based filter pattern—alphanumeric characters and/or underscores (_) following the dollar sign ($) or dot (.) are allowed)
+    -   `pattern`: A valid CloudWatch Logs filter pattern for extracting metric data out of ingested log events
+    -   `metric_name`: The name of the CloudWatch metric to which the monitored log information should be published, Specify up to 255 characters, all characters are valid except colon (:), asterisk (*), dollar sign ($), and space ( )
+    -   `metric_namespace`: The destination namespace of the CloudWatch metric, Specify up to 255 characters, all characters are valid except colon (:), asterisk (*), dollar sign ($), and space ( )
+    -   `metric_value`: What to publish to the metric, Valid metric values are floating-point numbers (1, 99.9, etc.), numeric field identifiers (1 USD, 2 USD, etc.), or named field identifiers (such as $requestSize in a symbol-delimited filter pattern, or $ in a JSON-based filter pattern. status - a dollar sign ($) or a dollar sign and a dot ($.) followed by alphanumeric and/or underscore (_) characters)
 
 ---
 

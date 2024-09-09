@@ -34,20 +34,20 @@ ElastiCache Clusters offer features such as automated backups, recovery, scaling
 
 ## Resource Setting Values
 
--   `engine`: The name of the cache engine to be used in the Cache Cluster - `redis`, `memcached`
--   `engine_version`: The version of the cache engine
--   `port`: The port number used to connect to each cache node. Memcached uses port 11211, and Redis uses port 6379 by default
--   `parameter_group_name`: The name of the parameter group to associate with the Cache Cluster
--   `node_type`: The instance class used in the Cache Cluster
--   `num_cache_nodes`: The initial number of cache nodes in the Cache Cluster - `1` to `40`
--   `az_mode`: Specifies whether the Memcached node group is created in a single Availability Zone or across multiple Availability Zones within the cluster's region - `single-az`, `cross-az`
--   `included_subnet_names`: The names of the subnets included in the Subnet Group where the ElastiCache Cluster will be deployed
--   `snapshot_retention_limit`: The period for which ElastiCache retains automatic cache cluster snapshots before deletion
+-   `engine`: Name of the cache engine to be used for this cache cluster - `redis`, `memcached`
+-   `engine_version`: Version number of the cache engine to be used
+-   `port`: The port number on which each of the cache nodes will accept connections. For Memcached the default is 11211 and for Redis the default port is 6379
+-   `parameter_group_name`: The name of the parameter group to associate with this cache cluster
+-   `node_type`: The instance class used for the cache cluster
+-   `num_cache_nodes`: The initial number of cache nodes that the cache cluster will have - `1` to `40`
+-   `az_mode`: Whether the nodes in this Memcached node group are created in a single Availability Zone or created across multiple Availability Zones in the cluster's region - `single-az`, `cross-az`
+-   `included_subnet_names`: The name of the subnet to be included in the subnet group where the ElastiCache Cluster will be deployed
+-   `snapshot_retention_limit`: Number of days for which ElastiCache will retain automatic cache cluster snapshots before deleting them
 
 ---
 
 ## Reference Materials
 
 -   [Amazon ElastiCache for Redis(AWS)](https://docs.aws.amazon.com/ko_kr/AmazonElastiCache/latest/red-ug/WhatIs.html)
--   [Amazon ElastiCache for Redis 요금(AWS)](https://aws.amazon.com/ko/elasticache/pricing/?nc=sn&loc=5)
+-   [Amazon ElastiCache for Redis Price(AWS)](https://aws.amazon.com/ko/elasticache/pricing/?nc=sn&loc=5)
 -   [aws_elasticache_cluster(Terraform)](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/elasticache_cluster)

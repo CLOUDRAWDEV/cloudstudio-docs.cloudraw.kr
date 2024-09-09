@@ -33,13 +33,13 @@ An AWS service that allows you to configure protection across AWS accounts and r
 
 ## Resource Setting Values
 
--   `description`: Description of the firewall
--   `included_vpc_name`: Name of the VPC where the firewall will be located
--   `linked_subnet_names`: Public subnets dedicated to firewall endpoints
--   `linked_network_firewall_policy_name`: Name of the firewall policy to be associated
--   `enabled_delete_protection`: Enable protection to prevent the firewall from being deleted - `false`, `true`
--   `enabled_subnet_change_protection`: Enable protection to prevent changes to subnet associations - `false`, `true`
--   `encryption_configuration.enabled_custom_configuration`: Encrypt data using AWS managed keys - `false`, `true`
+-   `description`: A description of the firewall policy
+-   `included_vpc_name`: VPC name where the firewall will be located
+-   `linked_subnet_names`: Public subnet dedicated to firewall endpoints
+-   `linked_network_firewall_policy_name`: Firewall policy name to connect to
+-   `enabled_delete_protection`: Enable firewall protection from deletion - `false`, `true`
+-   `enabled_subnet_change_protection`: Enable protection against subnet connectivity changes - `false`, `true`
+-   `encryption_configuration.enabled_custom_configuration`: Encrypt data using AWS-managed key - `false`, `true`
 
 
 ---

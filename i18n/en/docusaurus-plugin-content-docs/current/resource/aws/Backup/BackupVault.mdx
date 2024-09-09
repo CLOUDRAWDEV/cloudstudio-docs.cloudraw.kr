@@ -23,19 +23,19 @@ When creating a Backup Vault, you must specify an AWS KMS encryption key to encr
 
 ### Parent Resource
 
--   [**Base**](https://docs.cstudio.app/docs/resource/aws/Base/)
+-   [**Base**](https://docs.cstudio.app/en/docs/resource/aws/Base/)
 
 ## Associated Resources
 
 
 ## Resource Setting Values
 
--   `kms_key_name`: The server-side encryption key used to protect backups.
--   `lock_configuration`: AWS Backup vault lock configuration resource.
-    -   `lock_configuration.enabled_lock`: Whether vault lock is enabled - `false`, `true`
-        -   `lock_configuration.enabled_lock.lock_mode`: Type of vault lock - `Governance`, `Compliance`
-        -   `lock_configuration.enabled_lock.min_retention_days`: Minimum retention period for which the vault retains recovery points - `1~36500`
-        -   `lock_configuration.enabled_lock.max_retention_days`: Maximum retention period for which the vault retains recovery points - `1~36500`
+-   `kms_key_name` : The server-side encryption key that is used to protect your backups
+-   `lock_configuration` : AWS Backup vault lock configuration resource
+    -   `lock_configuration.enabled_lock` : Whether to enable vault lock - `false`,`true`
+        -   `lock_configuration.enabled_lock.lock_mode` : The mode of vault lock - `Governance`, `Compliance`
+        -   `lock_configuration.enabled_lock.min_retention_days` : The minimum retention period that the vault retains its recovery points - `1~36500`
+        -   `lock_configuration.enabled_lock.max_retention_days` : The maximum retention period that the vault retains its recovery points - `1~36500`
 
 ---
 

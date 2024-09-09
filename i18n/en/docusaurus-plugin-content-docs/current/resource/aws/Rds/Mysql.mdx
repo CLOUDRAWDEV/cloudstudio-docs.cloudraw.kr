@@ -34,31 +34,31 @@ AWS's security features also ensure the safety and protection of your data.
 
 ## Resource Setting Values
 
--   `database_name`: Initial database name
--   `engine_version`: MySQL version to be used with RDS
--   `instance_class`: Pricing tier for the RDS DB instance
--   `storage_type`: Storage type for the RDS instance
--   `allocated_storage`: Storage capacity of the RDS instance (in gigabytes)
--   `max_allocated_storage`: Maximum storage limit for automatic scaling by Amazon RDS
--   `multi_az_enabled`: Enable multi-AZ deployment - `true`, `false`
--   `username`: Username for RDS
--   `password`: Password for RDS
--   `skip_final_snapshot`: Whether to create a final DB snapshot before deleting the DB instance - `true`, `false`
--   `included_subnet_names`: Names of the subnets to be included in the RDS subnet group
--   `subnet_group_name`: Name of the subnet group for RDS
--   `publicly_accessible`: Whether the instance is publicly accessible - `true`, `false`
+-   `database_name` : Database name
+-   `engine_version` : MySQL version to use for RDS
+-   `instance_class` : The instance type of the RDS instance
+-   `storage_type` : Storage Type of RDS Instance
+-   `allocated_storage` : Capacity of RDS Instance Storage (Gigabytes)
+-   `max_allocated_storage` : The upper limit to which Amazon RDS can automatically scale the storage of the DB instance
+-   `multi_az_enabled` : Enable multi AZ - `true`, `false`
+-   `username` : Username in RDS
+-   `password` : RDS user password
+-   `skip_final_snapshot` : Determines whether a final DB snapshot is created before the DB instance is deleted - `true`, `false`
+-   `included_subnet_names` : Subnet names in RDS Subnet group
+-   `subnet_group_name` : Subnet group name to use in RDS
+-   `publicly_accessible` : Whether the instance has public access - `true`, `false`
 
 -   `monitoring`
-    -   `performance_insights_enabled`: Enable performance insights
+    -   `performance_insights_enabled` : Enable performance insights
 
 -   `encryption`
-    -   `storage_encrypted`: Whether the DB instance is encrypted - `true`, `false`
-    -   `kms_key_name`: Name of the KMS key to use for encryption
+    -   `storage_encrypted` : Whether the DB instance is encrypted - `true`, `false`
+    -   `kms_key_name` : The KMS key name for encryption
 
 -   `backup`
-    -   `backup_retention_period`: Duration to retain backup data - `1` to `35` days
-    -   `final_snapshot_enabled`: Whether to create a final DB snapshot before the DB instance is deleted - `true`, `false`
-    -   `final_snapshot_name`: Name of the final snapshot
+    -   `backup_retention_period` : The days to retain backups for - `1` to `35` days
+    -   `final_snapshot_enabled` : Determines whether a final DB snapshot is created before the DB instance is deleted - `true`, `false`
+    -   `final_snapshot_name` : The final snapshot namet
 
 ---
 

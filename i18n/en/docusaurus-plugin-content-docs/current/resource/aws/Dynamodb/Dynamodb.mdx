@@ -29,16 +29,16 @@ It automatically distributes data and traffic across a sufficient number of serv
 
 ## Resource Setting Values
 
--   `billing_mode`: The pricing method and capacity management for read and write throughput in DynamoDB - `PROVISIONED`, `PAY_PER_REQUEST`
--   `read_capacity`: The number of read units for the DynamoDB table
--   `write_capacity`: The number of write units for the DynamoDB table
--   `hash_key`: The attribute to be used as the hash (partition) key
--   `hash_key_type`: The data type of the hash (partition) key attribute - `S` (String), `N` (Number), `B` (Binary)
--   `range_key`: The attribute to be used as the range (sort) key
--   `range_key_type`: The data type of the range (sort) key attribute - `S` (String), `N` (Number), `B` (Binary)
--   `point_in_time_recovery_enabled`: Whether point-in-time recovery is enabled - `true`, `false`
--   `server_side_encryption`: The server-side encryption settings
-  -     `encryption_enabled`: Whether to enable encryption at rest using AWS-managed KMS customer master keys - `true`, `false`
+-   `billing_mode`: Controls how you are charged for read and write throughput and how you manage capacity - `PROVISIONED`, `PAY_PER_REQUEST`
+-   `read_capacity`: The number of read units for this table
+-   `write_capacity`: The number of write units for this table
+-   `hash_key`: The attribute to use as the hash (partition) key
+-   `hash_key_type`: The attribute to use as the hash (partition) key - `S` (String), `N` (Number), `B` (Binary)
+-   `range_key`: The attribute to use as the range (sort) key
+-   `range_key_type`: The attribute to use as the range (sort) key - `S` (String), `N` (Number), `B` (Binary)
+-   `point_in_time_recovery_enabled`: Enable point-in-time recovery options - `true`, `false`
+-   `server_side_encryption`: Server Side Encryption name
+  -     `encryption_enabled`: Whether or not to enable encryption at rest using an AWS managed KMS customer master key (CMK) - `true`, `false`
 
 ---
 

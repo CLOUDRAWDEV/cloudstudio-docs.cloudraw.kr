@@ -34,25 +34,25 @@ Elastic Load Balancing supports three types of load balancers: Application Load 
 
 ## Resource Setting Values
 
--   `load_balancer_type`: The type of ELB - `application`, `network`, `gateway`
--   `internal`: Whether to deploy the ELB as Internet-facing or Internal - `true`, `false`
--   `included_vpc_name`: The name of the VPC where the target group will be created
+-   `load_balancer_type`: The type of load balancer to create - `application`, `network`, `gateway`
+-   `internal`: Set whether to deploy ELB as Internet facing or Internal - `true`, `false`
+-   `included_vpc_name`: Name of the VPC in which to create the target group
 
--   `linked_subnet_names`: List of subnet names to connect to the load balancer
--   `security_group_names`: List of security group names to assign to the load balancer, applicable only for Application Load Balancers
+-   `linked_subnet_names`: A list of subnet names to attach to the LB
+-   `security_group_names`: A list of security group names to assign to the LB. Only valid for Load Balancers of type application
 
--   `drop_invalid_header`: Whether HTTP headers with invalid fields are removed by the load balancer (`true`) or routed to targets (`false`) - `true`, `false`
--   `target_group`: The name of the target group, allowing alphanumeric characters and hyphens (-), up to 32 characters, but cannot start or end with a hyphen
+-   `drop_invalid_header`: Set whether HTTP headers with header fields that are not valid are removed by the load balancer (true) or routed to targets (false) - `true`, `false`
+-   `target_group`: Name of Target Group, A maximum of 32 alphanumeric characters including hyphens(-) are allowed, but the name must not begin or end with a hyphen
 
-    -   `protocol`: The protocol used to route traffic to targets - `HTTP`, `HTTPS`, `TCP`, `TCP_UDP`, `TLS`, `UDP`
-    -   `port`: The port on which traffic is received
-    -   `instance_names`: List of names of the target instances
+    -   `protocol`: Protocol to use for routing traffic to the targets - `HTTP`, `HTTPS`, `TCP`, `TCP_UDP`, `TLS`, `UDP`
+    -   `port`: Port on which targets receive traffic
+    -   `instance_names`: List of the target Instance names
 
--   `listener`: The name of the ELB listener
-    -   `protocol`: The protocol used to route traffic to targets - `HTTP`, `HTTPS`, `TCP`, `TCP_UDP`, `TLS`, `UDP`
-    -   `port`: The port on which traffic is received
-    -   `default_action_type`: The type of routing action - `forward`, `redirect`, `fixed-response`
-    -   `target_group_name`: The name of the target group to which traffic will be routed
+-   `listener`: Name of ELB Listener
+    -   `protocol`: Protocol to use for routing traffic to the targets - `HTTP`, `HTTPS`, `TCP`, `TCP_UDP`, `TLS`, `UDP`
+    -   `port`: Port on which targets receive traffic
+    -   `default_action_type`: Type of routing action - `forward`, `redirect`, `fixed-response`
+    -   `target_group_name`: Name of the Target Group to which to route traffic
 
 ---
 
