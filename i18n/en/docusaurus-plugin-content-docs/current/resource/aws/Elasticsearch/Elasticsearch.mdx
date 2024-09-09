@@ -36,34 +36,34 @@ Amazon Elasticsearch Service can run within an Amazon VPC and integrates seamles
 
 ## Resource Setting Values
 
--   `elasticsearch_version`: The version of the Elasticsearch domain.
--   `availability_zone_count`: The number of availability zones - `2`, `3`.
--   `tls_security_policy`: The name of the TLS security policy to apply to the HTTPS endpoint - `Policy-Min-TLS-1-2-2019-07`, `Policy-Min-TLS-1-0-2019-07`.
+-   `elasticsearch_version`: Elasticsearch Domain Version
+-   `availability_zone_count`: The count of availability zone - `2`, `3`.
+-   `tls_security_policy`: Name of the TLS security policy that needs to be applied to the HTTPS endpoint - `Policy-Min-TLS-1-2-2019-07`, `Policy-Min-TLS-1-0-2019-07`.
 -   `data_node`
-    -   `instance_type`: The instance type of the data nodes in the cluster.
-    -   `instance_count`: The number of instances in the cluster - `1`~`80`.
-    -   `ebs_enabled`: Whether EBS volumes are attached to the domain's data nodes - `true`, `false`.
-    -   `ebs_volume_type`: The type of EBS volume attached to the data nodes - `standard`, `gp2`, `io1`.
-    -   `ebs_volume_size`: The size of the EBS volumes attached to the data nodes (GiB) - `1`~`16384`.
+    -   `instance_type`: Instance type of data nodes in the cluster
+    -   `instance_count`: Number of instances in the cluster - `1`~`80`.
+    -   `ebs_enabled`: Whether EBS volumes are attached to data nodes in the domain - `true`, `false`.
+    -   `ebs_volume_type`: Type of EBS volumes attached to data nodes - `standard`, `gp2`, `io1`.
+    -   `ebs_volume_size`: Size of EBS volumes attached to data nodes (in GiB) - `1`~`16384`.
 -   `master_node`
-    -   `master_node_enabled`: Whether a dedicated master node is enabled in the cluster - `true`, `false`.
-    -   `master_instance_type`: The instance type of the dedicated master nodes in the cluster - `r5.large.search`.
-    -   `master_node_count`: The number of dedicated master nodes in the cluster - `3`, `5`.
+    -   `master_node_enabled`: Enable main nodes in the cluster - `true`, `false`.
+    -   `master_instance_type`: Instance type of the dedicated main nodes in the cluster - `r5.large.search`.
+    -   `master_node_count`: Number of dedicated main nodes in the cluster - `3`, `5`.
 -   `custom_endpoint`
-    -   `custom_endpoint_enabled`: Whether a custom endpoint is enabled - `true`, `false`.
+    -   `custom_endpoint_enabled`: Enable user custom endpoint - `true`, `false`.
 -   `network`
     -   `network_type`: The type of network access - `vpc_access`, `public_access`.
-    -   `included_subnet_names`: A list of VPC subnet IDs for the Elasticsearch domain endpoint.
-    -   `security_group_names`: A list of VPC security group IDs to apply to the Elasticsearch domain endpoint.
+    -   `included_subnet_names`: List of VPC Subnet IDs for the Elasticsearch domain endpoints to be created in
+    -   `security_group_names`: List of VPC Security Group IDs to be applied to the Elasticsearch domain endpoints
 -   `fine_grained_access`
-    -   `fine_grained_access_enabled`: Whether fine-grained access control is enabled - `true`, `false`.
+    -   `fine_grained_access_enabled`: Enable fine grained access - `true`, `false`.
     -   `master_user_type`: The type of master user - `iam_arn`, `master_user`.
-    -   `iam_arn`: The IAM ARN for the master user.
+    -   `iam_arn`: IAM ARN for the Master user
 -   `encryption`
-    -   `enforce_https`: Whether HTTPS is required - `true`, `false`.
-    -   `node_to_node_encryption_enabled`: Whether node-to-node encryption is enabled - `true`, `false`.
-    -   `data_at_rest_encryption_enabled`: Whether encryption at rest is enabled for the data - `true`, `false`.
--   `kms_key_name`: The name of the KMS key to use for data encryption.
+    -   `enforce_https`: Whether or not to require HTTPS - `true`, `false`.
+    -   `node_to_node_encryption_enabled`: Whether to enable node-to-node encryption - `true`, `false`.
+    -   `data_at_rest_encryption_enabled`: Whether to enable encryption at rest - `true`, `false`.
+-   `kms_key_name`: The name of KMS key for encryption at rest
 
 ---
 

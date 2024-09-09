@@ -29,20 +29,20 @@ Amazon Simple Storage Service(Amazon S3)는 업계 최고의 확장성, 데이�
 
 ## Resource Setting Values
 
--   `versioning_status` : Versioning status of the bucket - `Enabled`, `Suspended`
--   `logging_target_prefix` : Prefix for all log object keys
--   `sse_algorithm` : Server-side encryption algorithm to use - `aws:kms`, `AES256`
--   `kms_key_name` : AWS KMS master key name used for SSE-KMS encryption
--   `public_access_block` : S3 Public Access Block settings
+-   `versioning_status` : The versioning state of the bucket - `Enabled`, `Suspended`
+-   `logging_target_prefix` : A prefix for all log object keys
+-   `sse_algorithm` : The server-side encryption algorithm to use - `aws:kms`, `AES256`
+-   `kms_key_name` : The AWS KMS master key name used for the SSE-KMS encryption
+-   `public_access_block` : Name of the S3 Public Access Block
 
-    -   `block_public_acls` : Whether Amazon S3 should block public ACLs on the bucket - `true`, `false`
-    -   `block_public_policy` : Whether Amazon S3 should block public bucket policies on the bucket - `true`, `false`
-    -   `ignore_public_acls` : Whether Amazon S3 should ignore public ACLs on the bucket - `true`, `false`
-    -   `restrict_public_buckets` : Whether Amazon S3 should restrict public bucket policies on the bucket - `true`, `false`
+    -   `block_public_acls` : Whether Amazon S3 should block public ACLs for this bucket - `true`, `false`
+    -   `block_public_policy` : Whether Amazon S3 should block public bucket policies for this bucket - `true`, `false`
+    -   `ignore_public_acls` : Whether Amazon S3 should ignore public ACLs for this bucket - `true`, `false`
+    -   `restrict_public_buckets` : Whether Amazon S3 should restrict public bucket policies for this bucket - `true`, `false`
 
 -   `ownership_control`
-    -   `acl_enabled` : Whether to enable object ownership and ACLs on objects written to the S3 bucket - `true`, `false`
-    -   `object_ownership` : Ownership model for objects written to the S3 bucket - `BucketOwnerEnforced`, `BucketOwnerPreferred`, `ObjectWriter`
+    -   `acl_enabled` : Enable ownership of objects written to the S3 bucket and use of ACLs - `true`, `false`
+    -   `object_ownership` : The type of how to own an object written to an S3 bucket - `BucketOwnerEnforced`, `BucketOwnerPreferred`, `ObjectWriter`
 
 ---
 

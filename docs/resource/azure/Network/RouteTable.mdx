@@ -45,7 +45,7 @@ Azure에서 경로 테이블을 서브넷과 연결할 수 있으며 해당 서�
 ## 리소스 설정 값
 
 -   `disable_bgp_route_propagation` : Subnet의 네트워크 인터페이스로 온-프레미스 경로 전파를 방지하기 위해 게이트웨이 경로 전파 비활성화 - `true`, `false`
--   `included_subnet_name` : 경로 테이블과 연결할 Subnet 이름
+-   `included_subnet_names` : 경로 테이블과 연결할 Subnet 이름
 -   `route`
     -   `route_address_prefix` : 경로를 나타내는 IP 접두사
     -   `next_hop_type` : 경로의 일치하는 패킷을 처리하기 위해 다음 홉 형식 지정 - `VirtualNetworkGateway`, `VnetLocal`, `Internet`, `VirtualAppliance`, `None`

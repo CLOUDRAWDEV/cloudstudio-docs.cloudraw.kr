@@ -30,19 +30,19 @@ It also enables you to handle changes in requirements or usage spikes by scaling
 
 ## Resource Setting Values
 
--   `ami` : The image that contains the information required to launch an instance (provided and supported by AWS)
--   `instance_type` : The type of EC2 instance
+-   `ami` : A supported and maintained image provided by AWS which provides required information to launch an instance
+-   `instance_type` : EC2 instance type
 -   `included_subnet_name` : The name of the subnet where the EC2 instance will be deployed
 -   `security_group_name` : The name of the security group to assign to the EC2 instance's NIC
 -   `eip_enable` : Whether to enable or disable the use of an Elastic IP (EIP) for the EC2 instance - `true`, `false`
 -   `eip_name` : The name of the Elastic IP (EIP)
--   `http_endpoint` : Whether metadata service access is enabled or disabled - `enabled`, `disabled`
--   `http_tokens` : Whether session tokens are required for the metadata service - `required`, `optional`
--   `root_volume_type` : The type of the root volume - `gp2`, `gp3`, `io1`, `io2`, `sc1`, `st1`, `standard`
+-   `http_endpoint` : Set whether the metadata service is available - `enabled`, `disabled`
+-   `http_tokens` : Set whether or not the metadata service requires session tokens - `required`, `optional`
+-   `root_volume_type` : Type of Root Volume - `gp2`, `gp3`, `io1`, `io2`, `sc1`, `st1`, `standard`
 -   `root_volume_size` : The size of the root volume (GiB)
 -   `ebs_block_device`
-    -   `volume_size` : The size of the EBS volume (GiB)
-    -   `volume_type` : The type of the EBS volume
+    -   `volume_size` : Type of EBS Volume
+    -   `volume_type` : Size of the EBS Volume in gibibytes (GiB)
 
 ---
 

@@ -22,36 +22,36 @@ HTTP APIs are simpler and more cost-effective than traditional REST APIs, making
 
 ### Parent Resource
 
--   [**Region**](https://docs.cstudio.app/docs/resource/aws/Base/Region)
+-   [**Region**](https://docs.cstudio.app/en/docs/resource/aws/Base/Region)
 
 ## Associated Resources
 
--   [**Lambda Function**](https://docs.cstudio.app/docs/resource/aws/Lambda/LambdaFunction)
+-   [**Lambda Function**](https://docs.cstudio.app/en/docs/resource/aws/Lambda/LambdaFunction)
 
 ## Resource Setting Values
 
--   `integration`: Name of the API Gateway Integration
+-   `integration` : Name of API Gateway Integration
     -   `http_integration`
-        -   `integration_type`: Type of API Gateway Integration - `Http`, `Lambda`
-        -   `integration_method`: HTTP method for the API Gateway Integration
-        -   `integration_url`: URL to be specified for HTTP integration
+        -   `integration_type` : The integration type of API Gateway - `Http`, `Lambda`
+        -   `integration_method` : The integration's HTTP method of API Gateway
+        -   `integration_url` : The specify a fully-qualified URL for HTTP integration
     -   `lambda_integration`
-        -   `integration_type`: Type of API Gateway Integration - `Http`, `Lambda`
-        -   `integration_method`: HTTP method for the API Gateway Integration
-        -   `linked_lambda_name`: Name of the Lambda function for Lambda proxy integration
+        -   `integration_type` : The integration type of API Gateway - `Http`, `Lambda`
+        -   `integration_method` : The integration's HTTP method of API Gateway
+        -   `linked_lambda_name` : The name of the Lambda function for a Lambda proxy integration
 -   `route`
-    -   `route_method`: HTTP method for the HTTP API
-    -   `route_path`: Resource path for the HTTP API
-    -   `target_integration`: Name of the API Gateway Integration to link to the route - `http_integration`, `lambda_integration`
+    -   `route_method` : The HTTP method for HTTP API
+    -   `route_path` : The HTTP method for resource path
+    -   `target_integration` : The name of API Gateway Integration - `http_integration`, `lambda_integration`
 -   `deployment`
-    -   `description`: Description of the API Gateway deployment
+    -   `description` : The description of API Gateway Deployment
 -   `stage`
     -   `dev`
-        -   `enable_deployment`: Enable deployment for the API Gateway stage
-        -   `auto_deployment`: Enable automatic deployment
+        -   `enable_deployment` : Name of REST API Gateway Stage
+        -   `auto_deployment` : Enable auto Deployment
     -   `test`
-        -   `enable_deployment`: Enable deployment for the API Gateway stage
-        -   `auto_deployment`: Enable automatic deployment
-        -   `deployment_name`: Name of the API Gateway deployment to connect
+        -   `enable_deployment` : Name of REST API Gateway Stage
+        -   `auto_deployment` : Enable auto Deployment
+        -   `deployment_name` : The name of API Gateway Deployment to connect to
     -   `prod`
-        -   `enable_deployment`: Enable deployment for the API Gateway stage
+        -   `enable_deployment` : Name of REST API Gateway Stage

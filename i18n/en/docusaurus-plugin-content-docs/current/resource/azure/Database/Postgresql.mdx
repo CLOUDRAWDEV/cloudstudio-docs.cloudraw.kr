@@ -30,35 +30,36 @@ Additionally, you can take advantage of features like high availability, automat
 -   [- [**Subnet**](https://docs.cstudio.app/docs/resource/azure/Network/Subnet)](https://docs.cstudio.app/docs/resource/azure/Network/Subnet)
 
 ## Resource Setting Values
-Here is the revised English version:
 
--   `version`: The version of PostgreSQL Server to use - `2.0`, `12.0`
+
+-   `version` : The version of PostgreSQL to use - `9.5`, ` 9.6`,  `10` , `10.0 `, ` 10.2`,  `11`
 
 -   `sku_name` : The name of SKU for the PostgreSQL Server, Tier + compute generation + cores pattern - `azureDatabaseSku`
 
--   `storage_mb`: Max storage allowed for a Server in MB - `5120`~`16777216`
+-   `storage_mb` : Max storage allowed for a Server in MB - `5120`~`16777216`
 
--   `create_mode` : The storage IOPS mode for MySQL Flexible Server - `Default`, `Replica`, `GeoRestore`, `PointInTimeRestore`
+-   `create_mode` : The creation mode for restoring or replicating existing Servers - `Default`,`Replica`,`GeoRestore`,`PointInTimeRestore`
 
--   `admin_username` : If the creation mode is default, the administrator login for the PostgreSQL Server
+-   `admin_username` : If the creation mode is default, the administrator login for the MySQL Server, Only alphanumeric characters are allowed, Without the reserved words, 1 to 63 characters
 
--   `admin_password` : If the creation mode is default, the password associated with the administrator login
+-   `admin_password` : If the creation mode is default, the password associated with the administrator login, Contain 3 of the following: lowercase letters/uppercase letters/numbers/special characters, Cannot contain more than 3 consecutive alphanumeric characters in the login name, 8 to 128 characters
 
--   `public_network_access_enabled` : Allow public network access for the Server - `true`, `false`
+-   `public_network_access_enabled` : Allow public network access for the Server - `true` , `false`
 
--   `ssl_enforcement_enabled` : Enable SSL enforcement on the Server - `true`, `false`
+-   `ssl_enforcement_enabled` : Enable SSL enforcement on the Server - `true` , `false`
 
--   `minimal_tls_version` : The minimum TLS version to support on the Server - `TLS1_2`, `TLS1_1`, `TLS1_0`, `TLSEnforcementDisabled`
+-   `minimal_tls_version` : The minimum TLS version to support on the Server - `TLS1_2` , `TLS1_1` , `TLS1_0` , `TLSEnforcementDisabled`
 
 -   `database`
-    -   `charset` : The character for the PostgreSQL database - `azurePostgresqlCharset`
-    -   `collation` : The collation for the PostgreSQL database - `azurePostgresqlCollation`
+
+    -   `charset` : The charset for the PostgreSQL Database - `azurePostgresqlChartSet`
+    -   `collation` : The collation for the PostgreSQL Database - `azurePostgresqlCol`
 
 -   `firewall_rule`
-    -   `start_ip_address` : The starting IP Address asscociated with the Firewall Rule
-    -   `end_ip_address` : The ending IP Address asscociated with the Firewall Rule
 
-
+    -   `start_ip_address` : The Start IP Address asscociated with the Firewall Rule
+    -   `end_ip_address` : The End IP Address asscociated with the Firewall Rule
+    
 -   `tag` : A tag used to categorize resources, up to 512 characters, in the format `key:value`.
 
 ---

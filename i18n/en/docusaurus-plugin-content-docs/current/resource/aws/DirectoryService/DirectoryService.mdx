@@ -34,16 +34,16 @@ It also provides the same options for developers who need a directory to manage 
 
 ## Resource Setting Values
 
--   `password`: Password for the directory administrator or connector user
--   `type`: Directory type - `SimpleAD`, `MicrosoftAD`
--   `size`: Size of the directory - `Small`, `Large`
--   `included_vpc_name`: Name of the VPC where the directory is located
--   `included_subnet_names`: Names of the subnets for the directory servers (subnets must be deployed in two different availability zones)
+-   `password` : The password for the directory administrator or connector user
+-   `type` : `SimpleAD`,`MicrosoftAD`
+-   `size`: The size of the directory - `Small`, `Large`
+-   `included_vpc_name`: The name of the VPC that the directory is in
+-   `included_subnet_names`: The identifiers of the subnets for the directory servers (2 subnets in 2 different AZs)
 
 ---
 
 ## Reference Materials
 
 -   [AWS Directory Service(AWS)](https://docs.aws.amazon.com/ko_kr/directoryservice/latest/admin-guide/what_is.html)
--   [AWS Direct Service 가격(AWS)](https://aws.amazon.com/ko/directoryservice/pricing/?nc=sn&loc=3)
+-   [AWS Direct Service Price(AWS)](https://aws.amazon.com/ko/directoryservice/pricing/?nc=sn&loc=3)
 -   [AWS Direct Service(Terraform)](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/directory_service_conditional_forwarder)

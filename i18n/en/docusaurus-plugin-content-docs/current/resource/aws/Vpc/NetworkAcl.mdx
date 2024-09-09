@@ -33,20 +33,20 @@ There are no additional charges for using network ACLs.
 
 ## Resource Setting Values
 
--   `included_vpc_name`: The name of the VPC that includes the Network ACL
--   `linked_subnet_names`: The names of the subnets to which the Network ACL is applied
--   `ingress`: The name of the ingress rule for the Network ACL
-    -   `protocol`: The protocol for the ingress rule - `tcp`, `udp`, `ssh`, `icmp`, `all`
-    -   `action`: The action to apply to the protocol for the ingress rule - `allow`, `deny`
-    -   `cidr_block`: The CIDR block to which the ingress rule applies
-    -   `from_port`: The port number for incoming traffic in the ingress rule
-    -   `to_port`: The port number for outgoing traffic in the ingress rule
--   `egress`: The name of the egress rule for the Network ACL
-    -   `protocol`: The protocol for the egress rule - `tcp`, `udp`, `ssh`, `icmp`, `all`
-    -   `action`: The action to apply to the protocol for the egress rule - `allow`, `deny`
-    -   `cidr_block`: The CIDR block to which the egress rule applies
-    -   `from_port`: The port number for incoming traffic in the egress rule
-    -   `to_port`: The port number for outgoing traffic in the egress rule
+-   `included_vpc_name`: The name of the VPC with the Network ACL
+-   `linked_subnet_names`: Subnet names to apply Network ACL to
+-   `ingress`: Ingress rule name in Network ACL
+    -   `protocol`: Protocol in Ingress Rule - `tcp`, `udp`, `ssh`, `icmp`, `all`
+    -   `action`: Action to be applied to the protocol of the Ingress rule - `allow`, `deny`
+    -   `cidr_block`: CIDR to apply the Ingress rule to
+    -   `from_port`: Port number coming into the Ingress rule
+    -   `to_port`: Outgoing port number through the Ingress rule
+-   `egress`: Ingress rule name in Network ACL
+    -   `protocol`: Protocol in Egress Rule - `tcp`, `udp`, `ssh`, `icmp`, `all`
+    -   `action`: Action to be applied to the protocol of the Egress rule - `allow`, `deny`
+    -   `cidr_block`: CIDR to apply the Egress rule to
+    -   `from_port`: Port number coming into the Egress rule
+    -   `to_port`: Outgoing port number through the Egress rule
 
 ---
 

@@ -33,26 +33,26 @@ A reusable set of criteria for inspecting and handling network traffic
 
 ## Resource Setting Values
 
--   `description`: Description of the network firewall rule group
--   `rule_group_type`: Type of rule group - `STATEFUL`, `STATELESS`
--   `generated_rules_type`: Type of rule group - `StandardStatefulRules`, `DomainList`, `SuricataRuleStrings`
--   `rule_evaluation_order`: Rule evaluation order - `STRICT_ORDER`, `DEFAULT_ACTION_ORDER`
--   `capacity`: Expected number of rules to be included in this rule group over its lifecycle - `1-30000`
--   `ip_set`: IP set variable
--   `ip_set.name`: Name of the IP set variable
+-   `description`: Rule group type
+-   `rule_group_type`: Rule group type - `STATEFUL`, `STATELESS`
+-   `generated_rules_type`: Rule group format - `StandardStatefulRules`, `DomainList`, `SuricataRuleStrings`
+-   `rule_evaluation_order`: The way that your stateful rules are ordered for evaluation - `STRICT_ORDER`, `DEFAULT_ACTION_ORDER`
+-   `capacity`: The number of rules expected to have in this rule group during its lifetime - `1-30000`
+-   `ip_set`: IP set variable name
+-   `ip_set.name`: IP set variable name
 -   `ip_set.cidrs`: Values of the IP set variable
--   `port_set`: Port set variable
+-   `port_set`: Port variable name
 -   `port_set.name`: Name of the port set variable
--   `port_set.cidrs`: Values of the port set variable
--   `stateful_rule`: Standard stateful rule
+-   `port_set.cidrs`: Standard stateful rule
+-   `stateful_rule`: Standard stateful rule name
 -   `stateful_rule.name`: Name of the standard stateful rule
--   `stateful_rule.protocol`: Transport protocol to inspect - `IP`, `TCP`, `UDP`, `ICMP`, `HTTP`
--   `stateful_rule.source_ip_or_cidr`: Source IP address and address range to inspect
+-   `stateful_rule.protocol`: Transport protocols to inspect for - `IP`, `TCP`, `UDP`, `ICMP`, `HTTP`
+-   `stateful_rule.source_ip_or_cidr`: The source IP addresses and address ranges to inspect for
 -   `stateful_rule.source_port`: Source port or port range to inspect
 -   `stateful_rule.target_ip_or_cidr`: Target IP address and address range to inspect
--   `stateful_rule.traffic_direction`: Traffic direction to inspect - `ANY`, `FORWARD`
--   `stateful_rule.action`: Action for the network firewall to take when a packet matches the rule - `ALERT`, `DROP`, `PASS`, `REJECT`
--   `encryption_configuration.enabled_custom_configuration`: Whether to encrypt data using AWS managed keys - `false`, `true`
+-   `stateful_rule.traffic_direction`: The traffic direction to inspect for - `ANY`, `FORWARD`
+-   `stateful_rule.action`: Action that a network firewall will do when a packet matches the rule settings - `ALERT`, `DROP`, `PASS`, `REJECT`
+-   `encryption_configuration.enabled_custom_configuration`: Encrypt data using AWS-managed key - `false`, `true`
 
 ---
 

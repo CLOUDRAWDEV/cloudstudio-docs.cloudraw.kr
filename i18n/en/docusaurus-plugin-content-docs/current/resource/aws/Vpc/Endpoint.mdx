@@ -33,12 +33,12 @@ A service that allows customers to privately connect to supported AWS services a
 
 ## Resource Setting Values
 
--   `service_range`: The category of the service for using the endpoint service - `awsService`, `endpointService`
--   `aws_service_name`: The name of the AWS service using the endpoint service
--   `vpc_endpoint_type`: The type of VPC endpoint service to use - `gateway`, `interface`, `gatewayloadbalancer`
--   `included_vpc_name`: The name of the VPC where the endpoint will be created
--   `route_table_names`: One or more route table IDs to associate with the endpoint
--   `policy_access`: The policy access scope to control service access for the endpoint - `Full`, `Custom`
+-   `service_range` : The range of AWS service to use endpoint - `awsService`, `endpointService`
+-   `aws_service_name` : The name of AWS service to use endpoint
+-   `vpc_endpoint_type` : The name of other endpoint service to use endpoint - `gateway`, `interface`, `gatewayloadbalancer`
+-   `included_vpc_name` : The name of VPC to use endpoint
+-   `route_table_names` : One or more route table IDs to associate with endpoint
+-   `policy_access` : Policy access range to attach to the endpoint that controls access to the service - `Full`, `Custom`
 
 ---
 

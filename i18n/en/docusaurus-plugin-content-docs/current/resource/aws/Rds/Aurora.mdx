@@ -31,25 +31,25 @@ Amazon Aurora(Aurora)는 MySQL 및 PostgreSQL과 호환되는 완전 관리형 �
 
 ## Resource Setting Values
 
--   `database_name` : Initial database name
--   `engine` : Aurora Engine type to use with RDS - `aurora`, `aurora-mysql`, `aurora-postgresql`
--   `engine_version` : Aurora Engine version to use with RDS
--   `instance_class` : Pricing tier for the RDS DB instance
--   `engine_mode` : Aurora engine mode - `aurora`, `multimaster`, `parallelquery`, `serverless`
--   `multi_az_enabled` : Enable multi-AZ deployment - `true`, `false`
--   `master_username` : Master username
--   `master_password` : Master password
--   `included_subnet_names` : Subnet names to connect to the RDS subnet group
+-   `database_name` : Database name
+-   `engine` : MySQL version to use for RDS - `aurora`, `aurora-mysql`, `aurora-postgresql`
+-   `engine_version` : MySQL version to use for RDS
+-   `instance_class` : The instance type of the RDS instance
+-   `engine_mode` : `aurora`, `multimaster`, `parallelquery`, `serverless`
+-   `multi_az_enabled` : Enable multi az - `true`, `false`
+-   `master_username` : Master user password
+-   `master_password` : Master user password
+-   `included_subnet_names` : Subnet names in RDS Subnet group
 -   `subnet_group_name` : Name of the subnet group to use with RDS
 -   `monitoring`
-    -   `performance_insights_enabled` : Enable Performance Insights
+    -   `performance_insights_enabled` : Enable performance insights
 -   `encryption`
-    -   `storage_encrypted` : Specify whether the DB instance is encrypted - `true`, `false`
-    -   `kms_key_name` : Name of the KMS key to use for encryption
+    -   `storage_encrypted` : Whether the DB instance is encrypted - `true`, `false`
+    -   `kms_key_name` : The KMS key name for encryption
 -   `backup`
-    -   `backup_retention_period` : Period for retaining backup data - `1` to `35`
-    -   `final_snapshot_enabled` : Whether to create a final DB snapshot before deleting the DB instance - `true`, `false`
-    -   `final_snapshot_name` : Name of the final snapshot
+    -   `backup_retention_period` : The days to retain backups for - `1` to `35`
+    -   `final_snapshot_enabled` : Determines whether a final DB snapshot is created before the DB instance is deleted - `true`, `false`
+    -   `final_snapshot_name` : The final snapshot name
 
 ---
 

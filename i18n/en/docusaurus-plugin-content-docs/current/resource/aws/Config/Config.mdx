@@ -32,20 +32,20 @@ A resource that records the configuration information of resources in an AWS acc
 
 ## Resource Setting Values
 
--   `enable_config_recorder`: Whether to enable or disable the configuration recorder - `false`, `true`
--   `role_name`: The name of the IAM role used by AWS Config
+-   `enable_config_recorder`: Whether the configuration recorder should be enabled or disabled - `false`, `true`
+-   `role_name`: The name of Iam Role used in AWS Config
 -   `recording_method`
--   `recording_method.enable_all_supported`: Whether AWS Config records configuration changes for all supported regional resource types - `false`, `true`
--   `recording_method.exclude_resource_types`: A list specifying the AWS resource types for which AWS Config should not record configuration changes
--   `recording_method.include_global_resource_types`: Whether AWS Config includes all types of global resources in the recording - `false`, `true`
--   `linked_s3_bucket_name`: The name of the S3 bucket used to store configuration records
--   `s3_key_prefix`: The prefix for the S3 bucket
--   `enable_sns_topic`: Whether to enable the SNS topic for AWS Config notifications
--   `delivery_frequency`: The frequency at which AWS Config sends configuration snapshots
+-   `recording_method.enable_all_supported`: Whether AWS Config records configuration changes for every supported type of regional resource - `false`, `true`
+-   `recording_method.exclude_resource_types`: A list that specifies the types of AWS resources for which AWS Config records configuration changes
+-   `recording_method.include_global_resource_types`: Whether AWS Config includes all supported types of global resources with the resources that it records - `false`, `true`
+-   `linked_s3_bucket_name`: The name of the S3 bucket used to store the configuration history
+-   `s3_key_prefix`: The prefix for the specified S3 bucket
+-   `enable_sns_topic`: Whether to enable the Sns Topic that AWS Config delivers notifications to
+-   `delivery_frequency`: The frequency with which AWS Config delivers recurring configuration snapshots
 -   `config_rule`
 -   `config_rule.name`: The name of the config rule
--   `config_rule.rule_owner`: Whether the AWS Config rule is owned and managed by AWS or by the customer - `AWS`, `customLambda`, `customPolicy`
--   `config_rule.source_identifier`: A predefined identifier for AWS Config managed rules
+-   `config_rule.rule_owner`: Whether AWS or the customer owns and manages the AWS Config rule - `AWS`, `customLambda`, `customPolicy`
+-   `config_rule.source_identifier`: For AWS Config managed rules, a predefined identifier
 
 ---
 

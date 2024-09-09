@@ -33,21 +33,22 @@ You only need to supply your code in one of the languages supported by Lambda.
 
 -   [**Lambda Function**](https://docs.cstudio.app/docs/resource/aws/Lambda/LambdaFunction)
 
- values
 
--   `architectures`: The instruction set architecture for the Lambda function - `x86_64`, `arm64`
--   `runtime`: The runtime identifier for the Lambda function - `nodejs`, `nodejs4.3`, `nodejs6.10`, `nodejs8.10`, `nodejs10.x`, `nodejs12.x`, `nodejs14.x`, `java8`, `java8.al2`, `java11`, `python2.7`, `python3.6`, `python3.7`, `python3.8`, `python3.9`, `dotnetcore1.0`, `dotnetcore2.0`, `dotnetcore2.1`, `dotnetcore3.1`, `nodejs4.3-edge`, `go1.x`, `ruby2.5`, `ruby2.7`, `provided`, `provided.al2`
--   `memory_size`: The amount of memory allocated for the Lambda function at runtime (MB), ranging from 128 to 10240 MB - `128`, `512`, `1024`, `1536`, `2048`, `3072`, `4096`, `5120`, `6144`, `7168`, `8192`, `9216`, `10240`
--   `handler`: The entry point function in the code
--   `s3_bucket_name`: The name of the S3 resource that holds the function's deployment package
--   `file_directory`: The path to the function's deployment package within S3 (zip file format)
--   `included_subnet_names`: The list of subnet IDs connected to the Lambda function, with a minimum of at least 2
--   `security_group_names`: The list of security group IDs associated with the Lambda function
+## Resource Setting Values
 
--   `tracing_enabled`: Whether AWS X-Ray tracing is enabled - `true`, `false`
--   `tracing_mode`: The tracing mode for AWS X-Ray - `PassThrough`, `Active`
+-   `architectures` : Instruction set architecture for your Lambda function - `x86_64`, `arm64`
+-   `runtime` : Identifier of the lambda function's runtime - `nodejs`, `nodejs4.3`, `nodejs6.10`, `nodejs8.10`, `nodejs10.x`, `nodejs12.x`, `nodejs14.x`, `java8`, `java8.al2`, `java11`, `python2.7`, `python3.6`, `python3.7`, `python3.8`, `python3.9`, `dotnetcore1.0`, `dotnetcore2.0`, `dotnetcore2.1`, `dotnetcore3.1`, `nodejs4.3-edge`, `go1.x`, `ruby2.5`, `ruby2.7`, `provided`, `provided.al2`
+-   `memory_size` : Amount of memory in MB your Lambda Function can use at runtime, 128 to 10240 (MB) - `128`, `512`, `1024`, `1536`, `2048`, `3072`, `4096`, `5120`, `6144`, `7168`, `8192`, `9216`, `10240`
+-   `handler` : Function entrypoint in your code
+-   `s3_bucket_name` : Name of S3 bucket which has function's deployment package, and has to be currently deployed
+-   `file_directory` : Path to the function's deployment package within S3 (zip file format)
+-   `included_subnet_names` : List of subnet IDs associated with the Lambda function, at least 2
+-   `security_group_names` : List of security group IDs associated with the Lambda function
 
--   `environment_variable`: Environment variables available to the function during execution
+-   `tracing_enabled` : Whether AWS X-Ray tracing is enabled - `true`, `false`
+-   `tracing_mode` : The tracing mode for AWS X-Ray - `PassThrough`, `Active`
+
+-   `environment_variable` : Environment variables available to the function during execution
 
 ---
 

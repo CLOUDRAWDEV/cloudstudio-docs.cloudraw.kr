@@ -32,27 +32,27 @@ Amazon Elastic Kubernetes Service (Amazon EKS) is a managed service that makes i
 
 ## Resource Setting Values
 
--   `version`: The version of the EKS Cluster
--   `cluster_role_arn`: The IAM role that allows the Kubernetes control plane to manage AWS resources on your behalf
--   `enabled_encryption`: Enable encryption for secrets - `true`, `false`
--   `included_subnet_names`: The names of the subnets to be included in the Subnet Group where the EKS Cluster will be deployed
--   `security_group_name`: The name of the security group to be set for the EKS Cluster
--   `endpoint_access_type`: The type of access for the EKS API server endpoint - `public`, `publicAndPrivate`, `private`
--   `enabled_cluster_log_types`: The list of Control Plane log types to be enabled - `api`, `audit`, `authenticator`, `controllerManager`, `scheduler`
+-   `version`: Version of EKS Cluster
+-   `cluster_role_arn`: IAM role that allows the Kubernetes control plane to manage AWS resources on your behalf
+-   `enabled_encryption`: Enable Encryption for Passwords - `true`, `false`
+-   `included_subnet_names`: Name of Subnet to be included in Subnet Group to deploy EKS Cluster
+-   `security_group_name`: Name of Security Group to set up for the EKS Cluster
+-   `endpoint_access_type`: Access type to EKS API server endpoint - `public`, `publicAndPrivate`, `private`
+-   `enabled_cluster_log_types`: List of the desired control plane logging to enable - `api`, `audit`, `authenticator`, `controllerManager`, `scheduler`
 -   `add_ons`:
-    -   `kube_proxy_version`: The version of the network proxy running on each node - `v1.26.4-eksbuild.1`, `v1.26.2-eksbuild.1`, `v1.25.9-eksbuild.1`, `v1.25.6-eksbuild.2`, `v1.24.10-eksbuild.2`
-    -   `vpc_cni_version`: The version of the Amazon VPC CNI plugin - `v1.12.6-eksbuild.2`, `v1.12.6-eksbuild.1`, `v1.12.5-eksbuild.2`, `v1.12.0-eksbuild.2`
-    -   `core_dns_version`: The version of the DNS service provided within the cluster - `v1.9.3-eksbuild.3`, `v1.9.3-eksbuild.2`, `v1.8.7-eksbuild.4`
+    -   `kube_proxy_version`: Version of Network proxy running on each node - `v1.26.4-eksbuild.1`, `v1.26.2-eksbuild.1`, `v1.25.9-eksbuild.1`, `v1.25.6-eksbuild.2`, `v1.24.10-eksbuild.2`
+    -   `vpc_cni_version`: Version of Amazon VPC CNI plugin - `v1.12.6-eksbuild.2`, `v1.12.6-eksbuild.1`, `v1.12.5-eksbuild.2`, `v1.12.0-eksbuild.2`
+    -   `core_dns_version`: DNS service version provided by the cluster - `v1.9.3-eksbuild.3`, `v1.9.3-eksbuild.2`, `v1.8.7-eksbuild.4`
 
--   `node_group`: The name of the Cluster Node Group; can include letters, numbers, hyphens (-), and underscores (_)
-    -   `node_role_arn`: The IAM role to be used by the nodes
-    -   `enable_launch_template`: Configure the node group using a launch template - `true`, `false`
-    -   `min_node_count`: The minimum number of EKS worker nodes
-    -   `max_node_count`: The maximum number of EKS worker nodes
-    -   `desired_node_count`: The desired number of EKS worker nodes
-    -   `max_node_unavailable`: The maximum desired number of worker nodes that can be unavailable during a node group update
-    -   `max_percentage_unavailable`: The maximum desired percentage of worker nodes that can be unavailable during a node group update - `1`~`100`
-    -   `disk_size`: The size of the EBS volume attached to each node
+-   `node_group`: Name of Cluster Node Group, Alphanumeric characters, hyphens (-), and underscores (_) can be used
+    -   `node_role_arn`: IAM role to use on the node
+    -   `enable_launch_template`: Configure node groups using launch templates - `true`, `false`
+    -   `min_node_count`: Minimum number of EKS worker nodes
+    -   `max_node_count`: Maximum number of EKS worker nodes
+    -   `desired_node_count`: Desired number of EKS worker nodes
+    -   `max_node_unavailable`: Desired max number of unavailable worker nodes during node group update
+    -   `max_percentage_unavailable`: Desired max percentage of unavailable worker nodes during node group update - `1`~`100`
+    -   `disk_size`: Size of EBS volumes attached to each node
 
 ---
 

@@ -30,14 +30,14 @@ Rules used by the Resolver to forward queries for specified domain names over th
 
 ## Resource Setting Values
 
--   `rule_type` : Type of rule - `Forward`, `system`
+-   `rule_type` : Rule type - `Forward`, `system`
 -   `domain_name` : Domain name to which DNS queries are forwarded
--   `linked_vpc_names` : Names of the VPCs using the rule
--   `linked_resolver_endpoint_name` : Name of the outbound endpoint used by the Resolver
+-   `linked_vpc_names` : VPC name using rules
+-   `linked_resolver_endpoint_name` : Outbound endpoint name used by Resolver
 -   `target_ip` : Target IP address
 -   `target_ip.name` : Name of the target IP address
--   `target_ip.ip` : IP address of the target IP
--   `target_ip.port` : Port of the target IP address - `1~65535`
+-   `target_ip.ip` : IP of Target IP address
+-   `target_ip.port` : Port of Target IP address - `1`~`65535`
 
 ---
 

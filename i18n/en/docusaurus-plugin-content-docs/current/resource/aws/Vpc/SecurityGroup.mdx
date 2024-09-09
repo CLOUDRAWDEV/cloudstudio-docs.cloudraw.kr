@@ -36,22 +36,22 @@ There is no additional charge for using security groups.
 
 ## Resource Setting Values
 
--   `description`: Description of the Security Group
--   `included_vpc_name`: Name of the VPC where the Security Group is located
--   `ingress`: Ingress rules for the Security Group
-    -   `rule_name`: Name of the Ingress rule
-    -   `description`: Description of the Ingress rule
-    -   `from_port`: Port number for incoming traffic in the Ingress rule
-    -   `to_port`: Port number for outgoing traffic in the Ingress rule
-    -   `protocol`: Protocol for the Ingress rule - `tcp`, `udp`, `icmp`, `all`
-    -   `cidr_block`: CIDR block applicable for the Ingress rule
--   `egress`: Egress rules for the Security Group
-    -   `rule_name`: Name of the Egress rule
-    -   `description`: Description of the Egress rule
-    -   `from_port`: Port number for outgoing traffic in the Egress rule
-    -   `to_port`: Port number for outgoing traffic in the Egress rule
-    -   `protocol`: Protocol for the Egress rule - `tcp`, `udp`, `icmp`, `all`
-    -   `cidr_block`: CIDR block applicable for the Egress rule
+-   `description`: Description of Security Group
+-   `included_vpc_name`: The name of the VPC with the Security Group
+-   `ingress`: Ingress rule name in Security Group
+    -   `rule_name`: Ingress rule name in Security Group
+    -   `description`: Description of Ingress rules
+    -   `from_port`: Port number coming into the Ingress rule
+    -   `to_port`: Outgoing port number through the Ingress rule
+    -   `protocol`: Protocol in Ingress Rule - `tcp`, `udp`, `icmp`, `all`
+    -   `cidr_block`: CIDR to apply the Ingress rule to
+-   `egress`: Egress rule name in Security Group
+    -   `rule_name`: Egress rule name in Security Group
+    -   `description`: Description of Egress rules
+    -   `from_port`: Port number coming into the Egress rule
+    -   `to_port`: Outgoing port number through the Egress rule
+    -   `protocol`: Protocol in Egress Rule - `tcp`, `udp`, `icmp`, `all`
+    -   `cidr_block`: CIDR to apply the Egress rule to
 
 ---
 

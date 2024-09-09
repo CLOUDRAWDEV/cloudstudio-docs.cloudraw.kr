@@ -29,11 +29,11 @@ You can use your preferred CLI to push, pull, and manage Docker images, Open Con
 
 ## Resource Setting Values
 
--   `image_tag_mutability`: Tag mutability setting for the repository - `IMMUTABLE`, `MUTABLE`
--   `scan_on_push`: Whether to scan images after they are pushed to the repository - `true`, `false`
--   `encryption_type`: Encryption type for the repository - `KMS`, `AES256`
--   `kms_key_name`: ARN of the KMS Key to use
--   `target_principal_arn`: ARN of the target to which the policy will be applied
+-   `image_tag_mutability`: The tag mutability setting for the repository - `IMMUTABLE`, `MUTABLE`
+-   `scan_on_push`: Indicates whether images are scanned after being pushed to the repository or not scanned - `true`, `false`
+-   `encryption_type`: The encryption type to use for the repository - `KMS`, `AES256`
+-   `kms_key_name`: The ARN of the KMS key to use
+-   `target_principal_arn`: Policyを適用する対象のARN
 
 ---
 

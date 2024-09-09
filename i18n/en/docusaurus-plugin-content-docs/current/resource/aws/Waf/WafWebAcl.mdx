@@ -1,13 +1,13 @@
 ---
 title: Waf Web Acl
 sidebar_position: 0
-tags: [AWS, 리소스, Waf, WafWebAcl]
+tags: [AWS, Resource, Waf, WafWebAcl]
 ---
 
 <hr />
 <br />
 
-## 리소스 아이콘
+## Resource Icon
 
 <img
     src={
@@ -15,29 +15,29 @@ tags: [AWS, 리소스, Waf, WafWebAcl]
     }
 />
 
-## 리소스 개요
+## Resource Overview
 
 AWS WAF Web ACL은 웹 애플리케이션에 적용되는 규칙 집합의 최상위 계층입니다. Web ACL을 사용하여 여러 Rule Groups과 규칙을 결합하고, 웹 애플리케이션에 대한 요청 처리 순서를 정의할 수 있습니다. 이를 통해 웹 애플리케이션 보안을 강화하며, 요청을 허용, 차단, 또는 카운트하는 기능을 구현할 수 있습니다.
 
-## 연관 리소스
+## Associated Resources
 
-### 상위 리소스
+### Parent Resources
 
 -   [**Region**](https://docs.cstudio.app/docs/resource/aws/Base/)
 -   [**Base**](https://docs.cstudio.app/docs/resource/aws/Base/)
 
 
-## 리소스 설정 값
+## Resource Setting Values
 
--   `scope` : AWS CloudFront 배포용인지 아니면 리전 애플리케이션용인지 지정 - `REGIONAL`, `CLOUDFRONT`
--   `cloudwatch_metrics_enabled` : 연결된 리소스가 CloudWatch에 지표를 보낼지 여부 설정 - `true`, `false`
--   `metric_name` : CloudWatch metric의 이름, 영대소문자, 하이픈(-), 밑줄(\_)만 포함할 수 있으며 길이는 1-128자
--   `sampled_requests_enabled` : AWS WAF가 규칙과 일치하는 웹 요청의 샘플링을 저장해야 하는지 여부를 설정 - `true`, `false`
+-   `scope` : Specifies whether this is for an AWS CloudFront distribution or for a regional application - `REGIONAL`, `CLOUDFRONT`
+-   `cloudwatch_metrics_enabled` : Set whether the associated resource sends metrics to CloudWatch - `true`, `false`
+-   `metric_name` : Name of the CloudWatch metric, The name can contain only alphanumeric characters (A-Z, a-z, 0-9) hyphen(-) and underscore (_), with length from one to 128 characters
+-   `sampled_requests_enabled` : Set whether AWS WAF should store a sampling of the web requests that match the rules - `true`, `false`
 
 ---
 
 ## 참고 자료
 
--   [AWS WAF 기능(AWS)](https://aws.amazon.com/ko/waf/features/)
--   [AWS WAF 요금(AWS)](https://aws.amazon.com/ko/waf/pricing/?nc2=type_a)
+-   [AWS WAF Function(AWS)](https://aws.amazon.com/ko/waf/features/)
+-   [AWS WAF Price(AWS)](https://aws.amazon.com/ko/waf/pricing/?nc2=type_a)
 -   [aws_waf_web_acl(Terraform)](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/waf_web_acl)

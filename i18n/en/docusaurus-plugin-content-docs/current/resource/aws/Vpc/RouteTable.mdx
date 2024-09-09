@@ -17,8 +17,6 @@ tags: [AWS, Resource, Vpc, RouteTable]
 
 ## Resource Overview
 
-Here's the revised text in English:
-
 An AWS VPC (Virtual Private Cloud) Route Table is an AWS resource that defines how traffic within subnets of the VPC should be directed to its destination. 
 Every subnet in a VPC is associated with one or more route tables, which specify routing rules for targets such as internet gateways, NAT gateways, VPC endpoints, or VPN connections. 
 The route table routes traffic based on the order of the routing rules, and all traffic originating from a subnet is directed to its destination through the associated route table. This allows subnets within the VPC to securely communicate with the internet or other VPCs.
@@ -38,10 +36,10 @@ The route table routes traffic based on the order of the routing rules, and all 
 
 ## Resource Setting Values
 
--   `included_vpc_name` : The name of the VPC that contains the Route Table
--   `subnet_names` : Description of the Route Table
--   `linked_route` : The name of the routing path
-    -   `cidr_block` : CIDR of the target resource for routing
+-   `included_vpc_name` : The name of the VPC with the Route Table
+-   `subnet_names` : Description of Route Table
+-   `linked_route` : The name of the Route
+    -   `cidr_block` : CIDR of target resource to route
     -   `internet_gateway_name` : Name of the Internet Gateway for the routing path
     -   `ec2_instance_name` : Name of the EC2 Instance for the routing path
     -   `nat_gateway_name` : Name of the NAT Gateway for the routing path
