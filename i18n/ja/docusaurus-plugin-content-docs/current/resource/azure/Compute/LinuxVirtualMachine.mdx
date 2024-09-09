@@ -1,14 +1,13 @@
 ---
 title: LinuxVirtualMachine
 sidebar_position: 2
-tags: [Azure, 리소스, Compute, LinuxVirtualMachine]
+tags: [Azure, リソース, Compute, LinuxVirtualMachine]
 ---
 
 <hr />
 <br />
 
-
-## 리소스 아이콘
+## リソースアイコン
 
 <img
     src={
@@ -16,45 +15,45 @@ tags: [Azure, 리소스, Compute, LinuxVirtualMachine]
     }
 />
 
-## 리소스 개요
+## リソース概要
 
-Azure Linux Virtual Machine은 Microsoft의 Azure 클라우드 컴퓨팅 플랫폼에서 Linux 운영 체제를 실행하는 가상 머신(VM)입니다.
-Azure에서 Linux 가상 머신을 실행함으로써 사용자는 선호하는 Linux 배포를 사용하면서 Microsoft 클라우드 플랫폼의 확장성, 안정성 및 글로벌 범위를 활용할 수 있습니다.
+Azure Linux Virtual Machine は Microsoft の Azure クラウドコンピューティングプラットフォームで Linux オペレーティングシステムを実行する仮想マシン(VM)です。
+Azure で Linux 仮想マシンを実行することでユーザは好む Linux デプロイを使用しながら Microsoft クラウドプラットフォームの拡張性、安定性及びグローバル範囲を活用することができます。
 
-## 연관 리소스
+## 関連リソース
 
-### 상위 리소스
+### 上位リソース
 
 -   [**Virtual Network**](https://docs.cstudio.app/docs/resource/azure/Network/VirtualNetwork)
 -   [- [**Subnet**](https://docs.cstudio.app/docs/resource/azure/Network/Subnet)](https://docs.cstudio.app/docs/resource/azure/Network/Subnet)
 
-### 연결 리소스
+### 接続リソース
 
 -   [**Network Interface**](https://docs.cstudio.app/docs/resource/azure/Network/NetworkInterface)
 
-## 리소스 설정 값
+## リソース設定値
 
--   `included_vnet_name` : Subnet이 포함된 Virtual Network 이름
--   `size` : 워크로드 실행을 위한 Virtual Machine의 크기 설정
+-   `included_vnet_name` : Subnet が含まれている Virtual Network 名
+-   `size` : ワークロード実行のための Virtual Machine のサイズ設定
 -   `source_image`
-    -   `enabled_custom_image` : 사용자 이미지 ID 사용 유무 - `true`, `false`
-    -   `publisher` : VM 생성을 위해 사용하는 이미지의 공급자
-    -   `Offer` : VM 생성을 위해 사용하는 이미지의 ID
-    -   `sku` : VM 생성을 위해 사용하는 이미지의 가격 책정 계층
--   `enable_ssh_key_authentication` : 관리자 계정을 인증하기 위해 ssh 키 사용
--   `admin_username` : VM에 대한 관리자 사용자 이름
--   `admin_password` : VM에 대한 관리자 암호
--   `on_disk_caching` : 내부 OS Disk 사용을 위한 caching 유형
--   `storage_account_type` : 내부 OS Disk를 백업하기 위한 스토리지 유형
--   `disk_size_gb` : 내부 OS Disk의 크기(GB) - `1`~`32767`
--   `disk_attachment` : 디스크 연결 이름
--   `linked_network_interface_names` : Network Interface 이름
--   `primary_network_interface_name` : Virtual Machine이 연결된 Network Interface 이름
--   `tag` : 리소스를 카테고리로 분류하기 위한 태그 - 최대 512자, `key`:`value`
+    -   `enabled_custom_image` : ユーザーイメージ ID の使用有無 - `true`, `false`
+    -   `publisher` : VM 生成のために使用するイメージのプロバイダー
+    -   `Offer` : VM 生成のために使用するイメージの ID
+    -   `sku` : VM 生成のために使用するイメージの価格設定階層
+-   `enable_ssh_key_authentication` : 管理者アカウントを認証するために ssh キーを使用
+-   `admin_username` : VM に対する管理者ユーザー名
+-   `admin_password` : VM に対する管理者パスワード
+-   `on_disk_caching` : 内部 OS Disk 使用のための caching タイプ
+-   `storage_account_type` : 内部 OS Disk をバックアップするためのストレージタイプ
+-   `disk_size_gb` : 内部 OS Disk のサイズ(GB) - `1`~`32767`
+-   `disk_attachment` : ディスク接続名
+-   `linked_network_interface_names` : Network Interface 名
+-   `primary_network_interface_name` : Virtual Machine が接続された Network Interface 名
+-   `tag` : リソースをカテゴリに分類するためのタグ - 最大 512 文字, `key`:`value`
 
 ---
 
-## 참고 자료
+## 参考資料
 
 -   [Azure LinuxVirtualMachine(Microsoft)](https://learn.microsoft.com/ko-kr/azure/virtual-machines/overview)
 -   [Azure LinuxVirtualMachine 가격](https://azure.microsoft.com/en-us/pricing/details/virtual-machines/linux/)

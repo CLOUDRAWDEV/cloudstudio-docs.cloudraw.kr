@@ -1,34 +1,39 @@
 ---
-title: 내보내기
+title: エクスポート
 sidebar_position: 6
-tags: [내보내기, png, 아키텍처, tf, 캔버스]
+tags: [エクスポート, png, アーキテクチャ, tf, キャンバス]
 ---
 
-import styles from '/src/scss/_markdown.module.scss';
+import styles from "/src/scss/_markdown.module.scss"
 
 <hr />
 <br />
 
-클라우드 스튜디오에서 파일 내보내기 시 세 가지 형식의 파일을 얻을 수 있습니다.
+CloudStudio からファイルをエクスポートすると 3 つの形式のファイルを取得できます。
 
-## 형식
-- png 파일
-- 세 가지의 tf 파일 (main, output, variables)
-- state 파일 (관리중인 인프라)
-- nodes.json 파일
+## 形式
 
-### 1. architecture.png 파일
-사용자가 그린 캔버스 아키텍처의 png 파일입니다.
+-   png ファイル
+-   3 つの tf ファイル (main, output, variables)
+-   state ファイル (管理中のインフラストラクチャ)
+-   nodes.json ファイル
 
-### 2. tf 파일
-사용자는 세 가지의 tf 파일을 얻을 수 있습니다.
+### 1. architecture.png ファイル
 
-```main.tf```: main.tf은 생성한 인프라의 뼈대를 보여주는 테라폼 파일입니다.  
-```output.tf```: 인프라 배포 후 관련 정보를 알려주는 테라폼 파일입니다.  
-```variables```: variables.tf는 변수들을 보여주는 테라폼 파일입니다.
+ユーザーが描いたキャンバス アーキテクチャの png ファイルです。
 
-### 3. terraform.state 파일
-배포 이후 인프라의 상태를 관리하는 테라폼 파일입니다. (배포 이전 제공하지 않습니다.)
+### 2. tf ファイル
 
-### 4. nodes.json 파일
-캔버스를 그리기 위한 좌표 데이터입니다.
+ユーザーは 3 つの tf ファイルを取得できます。
+
+`main.tf`: 生成したインフラストラクチャの骨組みを示す Terraform ファイルです。
+`output.tf`: インフラストラクチャデプロイ後に関連情報を知らせる Terraform ファイルです。
+`variables.tf`: 使用された変数を示す Terraform ファイルです。
+
+### 3. terraform.state ファイル
+
+デプロイ後のインフラストラクチャの状態を管理する Terraform ファイルです。デプロイには提供いたしません。
+
+### 4. nodes.json ファイル
+
+キャンバスを描画するための座標データです。

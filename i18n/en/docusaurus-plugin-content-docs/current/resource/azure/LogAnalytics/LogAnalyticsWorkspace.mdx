@@ -1,13 +1,13 @@
 ---
 title: LogAnalyticsWorkspace
 sidebar_position: 0
-tags: [Azure, 리소스, LogAnalytics, LogAnalyticsWorkspace]
+tags: [Azure, Resource, LogAnalytics, LogAnalyticsWorkspace]
 ---
 
 <hr />
 <br />
 
-## 리소스 아이콘
+## Resource Icon
 
 <img
     src={
@@ -15,32 +15,33 @@ tags: [Azure, 리소스, LogAnalytics, LogAnalyticsWorkspace]
     }
 />
 
-## 리소스 개요
+## Resource Overview
 
-Log Analytics는 Azure Portal에서 Azure Monitor 로그 저장소의 데이터에 대해 로그 쿼리를 편집하고 실행하는 데 사용되는 도구입니다.
-레코드 세트를 반환하는 간단한 쿼리를 작성한 다음, Log Analytics 기능을 사용하여 정렬, 필터링, 분석할 수 있습니다. 또는 통계 분석을 수행하고 차트에서 결과를 시각화하여 특정 트렌드를 파악하는 고급 쿼리를 작성할 수 있습니다.
-쿼리 결과를 대화형으로 처리하든, 쿼리 경고 또는 통합 문서 로그와 같은 다른 Azure Monitor 기능과 함께 사용하든, 쿼리 작성 및 테스트에 Log Analytics가 사용됩니다.
+Log Analytics is a tool used within the Azure Portal to edit and execute log queries against data in Azure Monitor log stores. 
+You can write simple queries that return record sets and then use Log Analytics features to sort, filter, and analyze the data. 
+Alternatively, you can create advanced queries to perform statistical analysis and visualize results in charts to identify specific trends. 
+Whether handling query results interactively or using them in conjunction with other Azure Monitor features like query alerts or workbook logs, Log Analytics is used for query creation and testing.
 
-## 연관 리소스
+## Associated Resources
 
-### 상위 리소스
+### Parent Resource
 
 -   [**Resource Group**](https://docs.cstudio.app/docs/resource/azure/Base/ResourceGroup)
 
-## 리소스 설정 값
+## Resource Setting Values
 
--   `retention_in_days` : Workspace의 데이터 보관 일 수 - `30`~ `730`
+- `retention_in_days` : The workspace data retention in days - `30`~ `730`
 
--   `internet_query_enabled` : 공용 인터넷을 통한 쿼리 활성화 - `true`, `false`
+- `internet_query_enabled` : Enable querying over the public Internet - `true`, `false`
 
--   `internet_ingestion_enabled` : 공용 인터넷을 통한 데이터 수집 활성화 - `true`, `false`
+- `internet_ingestion_enabled` : Enable ingestion over the public Internet - `true`, `false`
 
--   `linked_automation_account_names` : Workspace와 연결할 읽기 가능한 리소스 이름 목록
+- `linked_automation_account_names` : List of readable resource name that will be linked to the workspace
 
 <hr />
 
-## 참고 자료
+## Reference Materials
 
 -   [Azure LogAnalyticsWorkspace(Microsoft)](https://learn.microsoft.com/ko-kr/azure/azure-monitor/logs/log-analytics-overview)
--   [Azure LogAnalyticsWorkspace 가격](https://azure.microsoft.com/ko-kr/pricing/details/monitor/)
+-   [Azure LogAnalyticsWorkspace Price](https://azure.microsoft.com/ko-kr/pricing/details/monitor/)
 -   [Azure LogAnalyticsWorkspace(Terraform)](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/log_analytics_workspace)

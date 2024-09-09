@@ -1,13 +1,13 @@
 ---
 title: Route53
 sidebar_position: 0
-tags: [AWS, 리소스, Route53]
+tags: [AWS, Resource, Route53]
 ---
 
 <hr />
 <br />
 
-## 리소스 아이콘
+## Resource Icon
 
 <img
     src={
@@ -15,30 +15,30 @@ tags: [AWS, 리소스, Route53]
     }
 />
 
-## 리소스 개요
+## Resource Overview
 
-Amazon Route 53은 가용성과 확장성이 우수한 도메인 이름 시스템(DNS) 웹 서비스입니다.
+Amazon Route 53 is a highly available and scalable Domain Name System (DNS) web service.
 
-### 상위 리소스
+### Parent Resources
 
 -   [**Base**](https://docs.cstudio.app/docs/resource/aws/Base/)
 
-### 연결 리소스
+### Connected Resources
 
 -   [**Vpc**](https://docs.cstudio.app/docs/resource/aws/Vpc/Vpc)
 
-## 리소스 설정 값
+## Resource Setting Values
 
--   `linked_vpc_names` : Route53 Zone을 연결할 VPC 이름
--   `record` : Route53 Zone에 생성할 Record의 이름
-    -   `type` : Record의 type - `A`, `CAA`, `CNAME`, `DS`, `NAPTR`, `NS`, `PTR`, `SOA`, `SPF`, `SRV`, `TXT`
-    -   `ttl` : Record의 ttl
-    -   `records` : 레코드의 문자열 목록
+-   `linked_vpc_names` : VPC name to connect Route53 Zone to
+-   `record` : Name of record to be created in Route53 Zone
+    -   `type` : Type of Record - `A`, `CAA`, `CNAME`, `DS`, `NAPTR`, `NS`, `PTR`, `SOA`, `SPF`, `SRV`, `TXT`
+    -   `ttl` : TTL of Record
+    -   `records` : A string list of Records
 
 ---
 
-## 참고 자료
+## Reference Materials
 
 -   [Amazon Route 53(AWS)](https://docs.aws.amazon.com/ko_kr/Route53/latest/DeveloperGuide/Welcome.html)
--   [Amazon Route 53 요금(AWS)](https://aws.amazon.com/ko/route53/pricing/?nc2=type_a)
+-   [Amazon Route 53 Price(AWS)](https://aws.amazon.com/ko/route53/pricing/?nc2=type_a)
 -   [aws-route53(Terraform)](https://registry.terraform.io/modules/terraform-aws-modules/route53/aws/latest)

@@ -1,7 +1,7 @@
 ---
 title: Service Plan
 sidebar_position: 2
-tags: [Azure, 리소스, ServicePlan]
+tags: [Azure, Resource, ServicePlan]
 ---
 
 
@@ -9,7 +9,7 @@ tags: [Azure, 리소스, ServicePlan]
 <br />
 
 
-## 리소스 아이콘
+## Resource Icon
 
 <img
     src={
@@ -17,30 +17,30 @@ tags: [Azure, 리소스, ServicePlan]
     }
 />
 
-## 리소스 개요
+## Resource Overview
 
-Azure App Service는 인프라를 관리할 필요 없이 선택한 프로그래밍 언어로 웹앱, 모바일 백 엔드 및 RESTful API를 빌드하고 호스팅할 수 있는 PaaS 서비스입니다.
-App Service는 Auto Scailing 및 고가용성을 제공하고, 운영체제로 Windows 및 Linux를 모두 지원합니다.
-GitHub, Azure DevOps 또는 Git 리포지토리에서 자동으로 배포할 수 있습니다.
 
-## 연관 리소스
+Azure App Service is a PaaS service that allows you to build and host web apps, mobile backends, and RESTful APIs in selected programming languages, without needing to manage the infrastructure. App Service provides Auto Scailing and high availability, and supports both Windows and Linux as operating systems. 
+It can be deployed automatically from GitHub, Azure DevOps, or Git repositories.
 
-### 상위 리소스
+## Associated Resources
+
+### Parent Resource
 
 -   [**Resource Group**](https://docs.cstudio.app/docs/resource/azure/Base/ResourceGroup)
 -   [- [**Subnet**](https://docs.cstudio.app/docs/resource/azure/Network/Subnet)](https://docs.cstudio.app/docs/resource/azure/Network/Subnet)
 
-### 연결 리소스
+### Connected Resources
 
-## 리소스 설정 값
+## Resource Setting Values
 
--   `kind` : App Service가 사용할 운영 체제- `Linux`,`Windows`
--   `sku_tier` : App Service 요금제의 가격 책정 계층
+-   `kind`: The operating system to be used by App Service - `Linux`, `Windows`
+-   `sku_tier`: The SKU tier of the App Service plan
 
 ---
 
-## 참고 자료
+## Reference Materials
 
 -   [Azure App Service(Microsoft)](https://learn.microsoft.com/ko-kr/azure/app-service/overview)
--   [Azurerm App Service 가격(Microsoft)](https://azure.microsoft.com/ko-kr/pricing/details/app-service/windows/)
+-   [Azurerm App Service Price(Microsoft)](https://azure.microsoft.com/ko-kr/pricing/details/app-service/windows/)
 -   [Azurerm App Service(Terraform)](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/app_service)

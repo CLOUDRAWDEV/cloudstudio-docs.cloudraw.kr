@@ -7,7 +7,7 @@ tags: [Azure, 리소스, KeyVault, KeyVault]
 <hr />
 <br />
 
-## 리소스 아이콘
+## リソースアイコン
 
 <img
     src={
@@ -15,19 +15,19 @@ tags: [Azure, 리소스, KeyVault, KeyVault]
     }
 />
 
-## 리소스 개요
+## リソース概要
 
 Azure Key Vault는 비밀을 안전하게 저장하고 액세스하기 위한 클라우드 서비스입니다.
 비밀은 API 키, 암호, 인증서 또는 암호화 키 등에 대한 액세스를 엄격하게 제어하려는 항목입니다. Key Vault 서비스는 자격 증명 모음 및 관리되는 HSM(하드웨어 보안 모듈) 풀이라는 두 가지 유형의 컨테이너를 지원합니다.
 자격 증명 모음은 소프트웨어 및 HSM 지원 키, 암호 및 인증서를 저장하도록 지원합니다. 관리형 HSM 풀은 HSM 지원 키만 지원합니다.
 
-## 연관 리소스
+## 関連リソース
 
-### 상위 리소스
+### 上位リソース
 
 -   [**Resource Group**](https://docs.cstudio.app/docs/resource/azure/Base/ResourceGroup)
 
-## 리소스 설정 값
+## リソース設定値
 
 -   `sku_name` : Key Vault의 규모 및 기능 선택을 위한 가격 책정 계층 - `standard`, `premium`
 
@@ -69,11 +69,11 @@ Azure Key Vault는 비밀을 안전하게 저장하고 액세스하기 위한 �
     -   `contents` : Base64 기반 인증서 내용
     -   `password` : 인증서의 암호
     -   `issuer_name` : Certificate 발행자 이름 - `Self`, `Unknown`
-    -   `exportable` : Key의 외부 저장 활성화 - `true`, `false`
+    -   `enabled_export` : Key의 외부 저장 활성화 - `true`, `false`
     -   `key_type` : Key 타입 - `RSA`, `EC`
-    -   `key_size` : Key 사이즈 지정, Key 타입이 RSA인 경우 - `2048/3072/4096`, Key 타입이 EC인 경우 - `256/384/521`
+    -   `rsa_key_size` : Key 사이즈 지정, Key 타입이 RSA인 경우 - `2048/3072/4096`, Key 타입이 EC인 경우 - `256/384/521`
     -   `curve` : Key 타입이 EC인 경우 Curve 지정 - `P-256`,`P-256K`,`P-384`,`P-521`
-    -   `reuse_key` : Key의 재사용 활성화 - `true`, `false`
+    -   `enabled_reuse_key` : Key의 외부 저장 활성화 - `true`, `false`
     -   `content_type` : Certificate의 컨텐츠 타입 - `application/x-pkcs12`, `application/x-pem-file`
     -   `key_usage` : Key 사용 플래그 목록
     -   `subject` : X.500의 고유 이름
@@ -83,7 +83,7 @@ Azure Key Vault는 비밀을 안전하게 저장하고 액세스하기 위한 �
 
 ---
 
-## 참고 자료
+## 参考資料
 
 -   [Azure KeyVault(Microsoft)](https://learn.microsoft.com/ko-kr/azure/key-vault/general/overview)
 -   [Azure KeyVault 가격](https://azure.microsoft.com/en-us/pricing/details/key-vault/)

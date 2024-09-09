@@ -1,13 +1,13 @@
 ---
 title: SecurityCenter
 sidebar_position: 0
-tags: [Azure, 리소스, SecurityCenter]
+tags: [Azure, Resource, SecurityCenter]
 ---
 
 <hr />
 <br />
 
-## 리소스 아이콘
+## Resource Icon
 
 <img
     src={
@@ -15,41 +15,40 @@ tags: [Azure, 리소스, SecurityCenter]
     }
 />
 
-## 리소스 개요
+## Resource Overview
 
-Azure Security Center는 조직이 하이브리드 클라우드 워크로드에서 보안 위협을 방지, 감지 및 대응할 수 있도록 Microsoft에서 제공하는 클라우드 기반 서비스입니다.
-Microsoft Azure 및 온프레미스 환경에서 호스팅되는 모든 리소스의 보안 상태에 대한 가시성을 제공하는 중앙 집중식 대시보드를 제공합니다.
-Azure Security Center는 환경을 지속적으로 모니터링하고 보안 권장 사항, 취약성 평가, 위협 인텔리전스 및 보안 경고를 제공하여 위협으로부터 보호하고 잠재적 취약성을 식별하는 데 도움을 줍니다.
+Azure Security Center is a cloud-based service provided by Microsoft that helps organizations prevent, detect, and respond for security threats across hybrid cloud workloads. 
+It offers a centralized dashboard that provides visibility into the security posture of resources hosted in both Microsoft Azure and on-premises environments. 
+Azure Security Center continuously monitors your environment and provides security recommendations, vulnerability assessments, threat intelligence, and security alerts to help protect against threats and identify potential vulnerabilities.
 
-## 연관 리소스
+## Associated Resources
 
-### 상위 리소스
+### Parent Resource
 
 -   [**Subscription**](https://docs.cstudio.app/docs/resource/azure/Base/Subscription)
 
-### 연결 리소스
+### Connected Resources
 
 -   [**Storage Account**](https://docs.cstudio.app/docs/resource/azure/Storage/StorageAccount)
 -   [**Log Analytics Workspace**](https://docs.cstudio.app/docs/resource/azure/LogAnalytics/LogAnalyticsWorkspace)
 
-## 리소스 설정 값
+## Resource Setting Values
 
--   `linked_log_analytics_workspace` : 데이터를 저장할 Log Analytics Workspace 이름
+-   `linked_log_analytics_workspace`: Name of the Log Analytics Workspace where data will be stored
 
--   `assessment_policy`
-
-    -   `display_name`: Security Center Assessment의 표시 이름
-    -   `severity`: Security Center Assessment의 심각도
-    -   `description`: Security Center Assessment에 대한 설명
+-    `assessment_policy`
+      -    `display_name`: The display name of the Security center assessment
+      -    `severity`: The severity level of the Security center assessment
+      -    `description`: The description of the Security center assessment
 
 -   `assessment`
 
--   `linked_advanced_threat_protection` : Security Center Advanced Threat Protection 이름
+-   `linked_advanced_threat_protection`: The name of Security Center Advanced Threat Protection
 
 ---
 
-## 참고 자료
+## Reference Materials
 
 -   [Azure SecurityCenter(Microsoft)](https://learn.microsoft.com/ko-kr/azure/defender-for-cloud/defender-for-cloud-introduction)
--   [Azure SecurityCenter 가격](https://azure.microsoft.com/ko-kr/pricing/details/defender-for-cloud/)
+-   [Azure SecurityCenter Price](https://azure.microsoft.com/ko-kr/pricing/details/defender-for-cloud/)
 -   [Azure SecurityCenter(Terraform)](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/security_center_workspace)

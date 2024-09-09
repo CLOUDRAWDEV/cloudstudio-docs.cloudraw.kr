@@ -1,13 +1,13 @@
 ---
 title: Config
 sidebar_position: 0
-tags: [AWS, 리소스, Config]
+tags: [AWS, Resource, Config]
 ---
 
 <hr />
 <br />
 
-## 리소스 아이콘
+## Resource Icon
 
 <img
     src={
@@ -15,41 +15,41 @@ tags: [AWS, 리소스, Config]
     }
 />
 
-## 리소스 개요
+## Resource Overview
 
-AWS 계정의 리소스 구성 정보를 기록하여 리소스 간 관계를 확인하는 리소스
+A resource that records the configuration information of resources in an AWS account to identify relationships between them.
 
-## 연관 리소스
+## Associated Resources
 
-### 상위 리소스
+### Parent Resources
 
 -   [**Region**](https://docs.cstudio.app/docs/resource/aws/Base/Region)
 
-### 연결 리소스
+### Connected Resources
 
 -   [**S3 Bucket**](https://docs.cstudio.app/docs/resource/aws/S3/S3Bucket)
 -   [**Sns Topic**](https://docs.cstudio.app/docs/resource/aws/Sns/SnsTopic)
 
-## 리소스 설정 값
+## Resource Setting Values
 
--   `enable_config_recorder` : 구성 레코더를 활성화할지 또는 비활성화할지 여부 - `false`, `true`
--   `role_name` : AWS Config에서 사용할 Iam Role의 이름
+-   `enable_config_recorder`: Whether the configuration recorder should be enabled or disabled - `false`, `true`
+-   `role_name`: The name of Iam Role used in AWS Config
 -   `recording_method`
--   `recording_method.enable_all_supported` : AWS Config가 지원되는 모든 지역 리소스 유형에 대한 구성 변경 사항을 기록하는지 여부 - `false`,`true`
--   `recording_method.exclude_resource_types` : WS Configuration에서 구성 변경을 기록할 AWS 리소스 유형을 지정하는 목록
--   `recording_method.include_global_resource_types` : AWS Config가 기록하는 리소스와 함께 지원되는 모든 유형의 글로벌 리소스를 포함하는지 여부 - `false`,`true`
--   `linked_s3_bucket_name` : 구성 기록을 저장하는 데 사용되는 S3 버킷 이름
--   `s3_key_prefix` : 사용할 S3 버킷의 prefix
--   `enable_sns_topic` : AWS Config가 알림을 전달하는 Sns Topic을 활성화할지 여부
--   `delivery_frequency` : AWS Config가 구성 스냅샷을 정기적으로 전송하는 빈도
+-   `recording_method.enable_all_supported`: Whether AWS Config records configuration changes for every supported type of regional resource - `false`, `true`
+-   `recording_method.exclude_resource_types`: A list that specifies the types of AWS resources for which AWS Config records configuration changes
+-   `recording_method.include_global_resource_types`: Whether AWS Config includes all supported types of global resources with the resources that it records - `false`, `true`
+-   `linked_s3_bucket_name`: The name of the S3 bucket used to store the configuration history
+-   `s3_key_prefix`: The prefix for the specified S3 bucket
+-   `enable_sns_topic`: Whether to enable the Sns Topic that AWS Config delivers notifications to
+-   `delivery_frequency`: The frequency with which AWS Config delivers recurring configuration snapshots
 -   `config_rule`
--   `config_rule.name` : config rule 이름
--   `config_rule.rule_owner` : AWS 또는 고객이 AWS 구성 규칙을 소유 및 관리하는지 여부 - `AWS`,`customLambda`,`customPolicy`
--   `config_rule.source_identifier` : AWS 구성 관리 규칙의 경우 미리 정의된 식별자
+-   `config_rule.name`: The name of the config rule
+-   `config_rule.rule_owner`: Whether AWS or the customer owns and manages the AWS Config rule - `AWS`, `customLambda`, `customPolicy`
+-   `config_rule.source_identifier`: For AWS Config managed rules, a predefined identifier
 
 ---
 
-## 참고 자료
+## Reference Materials
 
 -   [Amazon Config(AWS)](https://docs.aws.amazon.com/ko_kr/config/latest/developerguide/WhatIsConfig.html)
 -   [Amazon Config(Terraform)](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/config_configuration_recorder)

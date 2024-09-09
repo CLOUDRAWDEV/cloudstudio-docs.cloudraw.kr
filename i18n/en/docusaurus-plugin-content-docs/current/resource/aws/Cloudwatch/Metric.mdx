@@ -1,13 +1,13 @@
 ---
 title: Metric
 sidebar_position: 0
-tags: [AWS, 리소스, Cloudwatch, Metric]
+tags: [AWS, Resource, Cloudwatch, Metric]
 ---
 
 <hr />
 <br />
 
-## 리소스 아이콘
+## Resource Icon
 
 <img
     src={
@@ -15,32 +15,36 @@ tags: [AWS, 리소스, Cloudwatch, Metric]
     }
 />
 
-## 리소스 개요
+## Resource Overview
 
-AWS CloudWatch Metric은 모니터링 대상 리소스에서 수집된 측정값을 나타내는 이름-값 쌍입니다. 예를 들어, EC2 인스턴스에서 CPU 사용률, 네트워크 입력 및 출력 등의 측정값을 수집할 수 있습니다. 이러한 측정값은 CloudWatch Metric으로 저장되며, 대시보드, 알림 및 분석에 사용됩니다. 또한, 사용자 정의 Metric을 생성하여 애플리케이션 및 서비스에서 수집된 데이터를 모니터링할 수도 있습니다. CloudWatch Metric은 AWS에서 제공하는 다양한 서비스와 통합되어 사용됩니다.
+AWS CloudWatch Metrics are name-value pairs that represent measurements collected from monitored resources. 
+For example, metrics such as CPU utilization, network input, and output can be collected from EC2 instances. 
+These metrics are stored as CloudWatch Metrics and are used for dashboards, alerts, and analysis. 
+Additionally, you can create custom metrics to monitor data collected from your applications and services. 
+CloudWatch Metrics are integrated with various services provided by AWS.
 
-## 연관 리소스
+## Associated Resources
 
-### 상위 리소스
+### Parent Resources
 
 -   [**Region**](https://docs.cstudio.app/docs/resource/aws/Base/Region)
 
-## 리소스 설정 값
+## Resource Setting Values
 
--   `comparison_operator` : 지정된 통계 및 임계값을 비교할 때 사용할 산술 연산
--   `evaluation_periods` : 데이터가 지정된 임계값과 비교되는 기간의 수
--   `metric_name` : 경보와 연결된 측정 항목의 이름
--   `namespace` : 경보와 연결된 지표의 네임스페이스
--   `period` : 지정된 통계가 적용되는 기간(초)
--   `statistic` : 경보의 관련 측정항목에 적용할 통계
--   `threshold` : 지정된 통계가 비교되는 값
--   `alarm_description` : 알람에 대한 설명
--   `insufficient_data_actions` : 알람이 다른 상태에서 insufficient_data 상태로 전환될 때 실행할 작업 목록
+-   `comparison_operator`: The arithmetic operation to use when comparing the specified Statistic and Threshold
+-   `evaluation_periods`: The number of periods over which data is compared to the specified threshold
+-   `metric_name`: The name for the alarm's associated metric
+-   `namespace`: The namespace for the alarm's associated metric
+-   `period`: The period in seconds over which the specified statistic is applied
+-   `statistic`: The statistic to apply to the alarm's associated metric
+-   `threshold`: The value against which the specified statistic is compared
+-   `alarm_description`: The description for the alarm
+-   `insufficient_data_actions`: SNS list to send alarms for data shortage indicators
 
 ---
 
-## 참고 자료
+## Reference Materials
 
 -   [Amazon CloudWatch(AWS)](https://docs.aws.amazon.com/ko_kr/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html)
--   [Amazon CloudWatch 가격(AWS)](https://aws.amazon.com/ko/cloudwatch/pricing/?nc2=type_a)
+-   [Amazon CloudWatch Price(AWS)](https://aws.amazon.com/ko/cloudwatch/pricing/?nc2=type_a)
 -   [Amazon CloudWatch Metric(Terraform)](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_metric_alarm)

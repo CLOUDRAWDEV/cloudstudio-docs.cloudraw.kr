@@ -1,13 +1,13 @@
 ---
 title: NetworkFirewall
 sidebar_position: 0
-tags: [AWS, 리소스, Vpc, NetworkFirewall]
+tags: [AWS, Resource, Vpc, NetworkFirewall]
 ---
 
 <hr />
 <br />
 
-## 리소스 아이콘
+## Resource Icon
 
 <img
     src={
@@ -15,36 +15,36 @@ tags: [AWS, 리소스, Vpc, NetworkFirewall]
     }
 />
 
-## 리소스 개요
+## Resource Overview
 
-조직 내 AWS 계정 및 리소스 전반에 걸쳐 보호를 구성할 수 있는 AWS 서비스
+An AWS service that allows you to configure protection across AWS accounts and resources within your organization
 
-## 연관 리소스
+## Associated Resources
 
-### 상위 리소스
+### Parent Resources
 
 -   [**Vpc**](https://docs.cstudio.app/docs/resource/aws/Vpc/Vpc)
 
-### 연결 리소스
+### Connected Resources
 
 -   [**Network Firewall Policy**](https://docs.cstudio.app/docs/resource/aws/Vpc/NetworkFirewallPolicy)
 -   [**Subnet**](https://docs.cstudio.app/docs/resource/aws/Vpc/Subnet)
 
 
-## 리소스 설정 값
+## Resource Setting Values
 
--   `description` : 방화벽 설명
--   `included_vpc_name` : 방화벽이 위치할 VPC 이름
--   `linked_subnet_names` : 방화벽 엔드포인트 전용 퍼블릭 서브넷
--   `linked_network_firewall_policy_name` : 연결할 방화벽 정책 이름
--   `enabled_delete_protection` : 방화벽이 삭제되지 않도록 보호 활성화 - `false`,`true`
--   `enabled_subnet_change_protection` : 서브넷 연결이 변경되지 않도록 보호 활성화 - `false`,`true`
--   `encryption_configuration.enabled_custom_configuration` : AWS 관리형 키를 사용하여 데이터를 암호화 - `false`,`true`
+-   `description`: A description of the firewall policy
+-   `included_vpc_name`: VPC name where the firewall will be located
+-   `linked_subnet_names`: Public subnet dedicated to firewall endpoints
+-   `linked_network_firewall_policy_name`: Firewall policy name to connect to
+-   `enabled_delete_protection`: Enable firewall protection from deletion - `false`, `true`
+-   `enabled_subnet_change_protection`: Enable protection against subnet connectivity changes - `false`, `true`
+-   `encryption_configuration.enabled_custom_configuration`: Encrypt data using AWS-managed key - `false`, `true`
 
 
 ---
 
-## 참고 자료
+## Reference Materials
 
 -   [NetworkFirewall(AWS)](https://docs.aws.amazon.com/network-firewall/latest/developerguide/what-is-aws-network-firewall.html)
 -   [NetworkFirewall(Terraform)](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/networkfirewall_firewall)

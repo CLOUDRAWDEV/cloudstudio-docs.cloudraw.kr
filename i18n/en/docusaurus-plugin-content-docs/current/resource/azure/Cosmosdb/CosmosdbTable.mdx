@@ -1,14 +1,14 @@
 ---
 title: CosmosdbTable
 sidebar_position: 4
-tags: [Azure, 리소스, Cosmosdb, CosmosdbTable]
+tags: [Azure, Resource, Cosmosdb, CosmosdbTable]
 ---
 
 <hr />
 <br />
 
 
-## 리소스 아이콘
+## Resource Icon
 
 <img
     src={
@@ -16,58 +16,68 @@ tags: [Azure, 리소스, Cosmosdb, CosmosdbTable]
     }
 />
 
-## 리소스 개요
+## Resource Overview
 
-Cosmos DB Table API는 Microsoft의 Azure 플랫폼에서 제공하는 NoSQL 데이터베이스 서비스로  
-이를 통해 개발자는 테이블을 기본 데이터 스토리지 개념으로 사용하여 방대한 양의 반정형 또는 정형 데이터를 저장하고 쿼리할 수 있습니다.
-Cosmos DB Table API는 자동 인덱싱, 글로벌 배포, 고가용성 등의 기능을 지원하므로 IoT 원격 측정, 게임 순위표 등과 같은 다양한 사용 사례에 적합합니다.
+The Cosmos DB Table API is a NoSQL database service provided on Microsoft’s Azure platform. 
+It allows developers to use tables as the fundamental data storage concept, enabling them to store and query vast amounts of semi-structured or structured data. 
+The Cosmos DB Table API supports features such as automatic indexing, global distribution, and high availability, making it suitable for a variety of use cases, including IoT telemetry and game leaderboards.
 
-### 상위 리소스
+### Parent Resource
 
 -   [**Resource Group**](https://docs.cstudio.app/docs/resource/azure/Base/ResourceGroup)
 
-## 리소스 설정 값
+## Resource Setting Values
 
--   `capabilities_list` : 사용할 Cosmos DB의 API 목룍 - `EnableServerless`, `EnableAggregationPipeline`
+-   `capabilities_list` : List of the Cosmos DB API which should be used - `EnableServerless`, `EnableAggregationPipeline`
 
--   `enable_multiple_write_locations` : 전 세계의 데이터베이스 및 컨테이너에 대해 프로비전된 처리량을 활용하기 위한 다중 영역 쓰기 활성화 - `true`, `false`
+-   `enable_multiple_write_locations` : Enable multi-region writes to leverage provisioned throughput across global databases and containers - `true`, `false`
 
--   `public_network_access_enabled` : 공용 IP 주소 또는 서비스 엔드포인트를 통해 공개적으로 계정에 연결 활성화 - `true`, `false`
+-   `public_network_access_enabled` : Enable connection to the account by public IP address or service endpoint - `true`, `false`
 
--   `enable_automatic_failover` : 자동 장애 조치 활성화 - `true`, `false`
+-   `enable_automatic_failover` : Enable automatic failover for the account - `true`, `false`
 
--   `virtual_network_filter_enabled` : 가상 네트워크의 특정 Subnet만 계정에 접근하도록 필터 활성화 - `true`, `false`
+-   `virtual_network_filter_enabled` : Enable filters so that only certain Subnets in the Virtual network can access the account - `true`, `false`
 
--   `network_acl_bypass_for_azure_services` : Azure 서비스의 ACL bypass 활성화 - `true`, `false`
+-   `network_acl_bypass_for_azure_services` :Allow ACL bypass for Azure service - `true`, `false`
 
 -   `geo_location`
 
-    -   `failover_priority` : 지역의 장애 처리 우선순위 - `0`~ `0`
-    -   `zone_redundant` : 오류에 대비하여 자동으로 zone 복제 허용 - `true`~ `false`
+    -   `failover_priority` : The failover priority of the region - `0`~ `0`
+    -   `zone_redundant` : Enable the zone redundancy in case of an error - `true`~ `false`
 
 -   `consistency_policy`
 
-    -   `consistency_level` : 데이터베이스의 가용성과 성능 설정을 위한 Cassandra DB의 일관성 수준 - `Eventual`, `Session`, `Strong`, `ConsistentPrefix`, `BoundedStaleness`
-    -   `max_interval_in_seconds` : 일관성 수준이 Bounded Staleness인 경우, 허용되는 Staleness 시간(초) - `5`~ `86400`
-    -   `max_staleness_prefix` : 일관성 수준이 Bounded Staleness인 경우, 허용되는 최대 Stale Request 수 - `10`~`2147483647`
+    -   `consistency_level` : The consistency level of Cassandra DB to set availability and performance of database - `Eventual`, `Session`, `Strong`, `ConsistentPrefix`, `BoundedStaleness`
+    -   `max_interval_in_seconds` : If using Bounded Staleness, the time amount of staleness tolerated in seconds - `5`~ `86400`
+    -   `max_staleness_prefix` : If using Bounded Staleness, the number of stale requests tolerated - `10`~`2147483647`
 
 -   `backup`
 
-    -   `type` : 백업 정책 유형 - `Continuous`, `Periodic`
-    -   `interval_in_minutes` : 백업을 수행하는 분당 빈도, 60 ~ 1440의 범위 - `60`~ `1440`
-    -   `retention_in_hours` : 백업을 저장하는 기간(시간), 8 ~ 720의 범위 - `8`~`720`
+    -   `type` : The type of backup - `Continuous`, `Periodic`
+    -   `interval_in_minutes` : The interval of backup in minutes, Between 60 and 1440 - `60`~ `1440`
+    -   `retention_in_hours` : The time in hours that the backup is retained, Between 8 and 720 - `8`~`720`
 
--   `table`
+-   `cassandra_keyspace`
 
-    -   `throughput` : Cosmos DB SQL 데이터베이스의 처리량 - `400`~ `1000000`
-    -   `enable_autoscale` : Cassandra 키스페이스에 auto scaling을 적용할 것인지 - `true`, `false`
+    -   `throughput` : The throughput of Cassandra keyspace - `400`~ `1000000`
+    -   `enable_autoscale` : Whether to apply auto scaling to Cassandra keyspace - `true`, `false`
 
--   `tag` : 리소스를 카테고리로 분류하기 위한 태그 - 최대 512자, `key`:`value`
+-   `cassandra_table`
+
+    -   `throughput`: The throughput of Cassandra table - `400`~ `1000000`
+    -   `column` : List of the name and type of column, 'name:type' format
+    -   `partition_key` : The name of partition key
+    -   `cluster_key_name` : The name of cluster key to be created
+    -   `cluster_key_order` : Order of the cluster key - `Asc` , `Desc`
+    -   `enable_autoscale` : Whether to apply auto scaling to Cassandra keyspace - `true`, `false`
+    -   `included_cosmosdb_keyspace_name` : The name of the Cosmos DB Cassandra keyspace to create the table within
+
+-   `tag` : Tag to categorize resources - up to 512 characters, `key:value`
 
 ---
 
-## 참고 자료
+## Reference Materials
 
 -   [Azure Cosmosdb(Microsoft)](https://learn.microsoft.com/ko-kr/azure/cosmos-db/introduction)
--   [Azure Cosmosdb 가격](https://azure.microsoft.com/en-us/pricing/details/cosmos-db/autoscale-provisioned/)
+-   [Azure Cosmosdb Price](https://azure.microsoft.com/en-us/pricing/details/cosmos-db/autoscale-provisioned/)
 -   [Azure Cosmosdb(Terraform)](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/cosmosdb_account)

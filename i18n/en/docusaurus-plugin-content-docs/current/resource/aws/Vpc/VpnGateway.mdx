@@ -1,13 +1,13 @@
 ---
 title: Vpn Gateway
 sidebar_position: 0
-tags: [AWS, 리소스, Vpc, VpnGateway]
+tags: [AWS, Resource, Vpc, VpnGateway]
 ---
 
 <hr />
 <br />
 
-## 리소스 아이콘
+## Resource Icon
 
 <img
     src={
@@ -15,32 +15,33 @@ tags: [AWS, 리소스, Vpc, VpnGateway]
     }
 />
 
-## 리소스 개요
+## Resource Overview
 
-가상 프라이빗 게이트웨이는 Site-to-Site VPN 연결의 Amazon 측에 있는 VPN 집선기입니다. 가상 프라이빗 게이트웨이를 생성하여 Site-to-Site VPN 연결을 생성할 VPC에 연결합니다.
+The Virtual Private Gateway is the VPN concentrator on the Amazon side of a Site-to-Site VPN connection. 
+You create a Virtual Private Gateway and attach it to the VPC where you will establish the Site-to-Site VPN connection.
 
-## 연관 리소스
+## Associated Resources
 
-### 상위 리소스
+### Parent Resources
 
 -   [**Region**](https://docs.cstudio.app/docs/resource/aws/Base/Region)
 
-### 연결 리소스
+### Connected Resources
 
 -   [**Vpc**](https://docs.cstudio.app/docs/resource/aws/Vpc/)
 
 -   [**Vpc Customer Gateway**](https://docs.cstudio.app/docs/resource/aws/Vpc/CustomerGateway)
 
-## 리소스 설정 값
+## Resource Setting Values
 
--   `linked_vpc_name` : VPN Gateway가 포함될 VPC 이름
--   `vpn_connection` : VPN Connection 이름
-    -   `linked_customer_gateway` : VPN Gateway와 연결할 Customer Gateway 이름
-    -   `static_routes_only` : Gateway간 라우팅 시 정적 라우팅만 사용할지 지정 - `true`, `false`
+-   `linked_vpc_name` : The name of the VPC that contain the VPN Gateway
+-   `vpn_connection` : VPN Connection Name
+    -   `linked_customer_gateway` : The name of the Customer Gateway to connect to the VPN Gateway
+    -   `static_routes_only` : Specify whether to use only static routing for routing between gateways - `true`, `false`
 
 ---
 
-## 참고 자료
+## Reference Materials
 
--   [AWS Site-to-Site VPN 작동 방식(AWS)](https://docs.aws.amazon.com/ko_kr/vpn/latest/s2svpn/how_it_works.html)
+-   [AWS Site-to-Site VPN Working Mechanism (AWS)](https://docs.aws.amazon.com/ko_kr/vpn/latest/s2svpn/how_it_works.html)
 -   [aws_api_gateway_resource(Terraform)](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/api_gateway_resource)

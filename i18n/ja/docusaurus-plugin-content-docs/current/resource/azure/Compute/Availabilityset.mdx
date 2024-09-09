@@ -1,15 +1,13 @@
 ---
 title: AvailabilitySet
 sidebar_position: 0
-tags: [Azure, 리소스, Compute, AvailabilitySet]
+tags: [Azure, リソース, Compute, AvailabilitySet]
 ---
-
 
 <hr />
 <br />
 
-
-## 리소스 아이콘
+## リソースアイコン
 
 <img
     src={
@@ -17,27 +15,27 @@ tags: [Azure, 리소스, Compute, AvailabilitySet]
     }
 />
 
-## 리소스 개요
+## リソース概要
 
-가용성 집합은 중복성과 가용성을 제공하기 위해 Azure에서 애플리케이션이 빌드되는 방식을 이해할 수 있도록 하는 VM의 논리적 그룹입니다.  
-고가용성 애플리케이션을 제공하고 99.95% Azure SLA를 충족할 수 있도록 가용성 집합 내에 둘 이상의 VM을 만드는 것이 좋습니다.  
-가용성 집합 자체에 대한 비용은 없으므로 만드는 각 VM 인스턴스에 대해서만 요금을 지불합니다.
+AvailabilitySet は重複性と可用性を提供するために Azure でアプリケーションがビルドされる方法を理解できるようにする VM の論理的グループです。
+高可用性アプリケーションを提供し、99.95% Azure SLA を満たすために、可用性セット内に 2 つ以上の VM を作成することをお勧めします。
+AvailabilitySet 自体に対する費用はないので作成する各 VM インスタンスに対してのみ料金を支払います。
 
-## 연관 리소스
+## 関連リソース
 
-### 상위 리소스
+### 上位リソース
 
 -   [**Resource Group**](https://docs.cstudio.app/docs/resource/azure/Base/ResourceGroup)
 
-## 리소스 설정 값
+## リソース設定値
 
--   `update_domain_count` : 가상머신 그룹을 동시에 다시 부팅하기 위한 업데이트 도메인의 수 - `1` ~ `20`
--   `fault_domain_count` : Cognitive Service 사용을 위한 가격 책정 계층 - `1` ~ `3`
--   `tag` : 리소스를 카테고리로 분류하기 위한 태그 - 최대 512자, `key`:`value`
+-   `update_domain_count` : 仮想マシン グループを同時に再起動するための更新ドメインの数 - `1` ~ `20`
+-   `fault_domain_count` : Cognitive Service 使用のための価格設定階層 - `1` ~ `3`
+-   `tag` : リソースをカテゴリに分類するためのタグ - 最大 512 文字, `key`:`value`
 
 ---
 
-## 참고 자료
+## 参考資料
 
 -   [Azure AvailabilitySet(Microsoft)](https://learn.microsoft.com/ko-kr/azure/virtual-machines/availability-set-overview)
 -   [Azure AvailabilitySet(Terraform)](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/availability_set)

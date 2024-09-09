@@ -1,13 +1,13 @@
 ---
 title: RedisCache
 sidebar_position: 0
-tags: [Azure, 리소스, RedisCache, RedisCache]
+tags: [Azure, Resource, RedisCache, RedisCache]
 ---
 
 <hr />
 <br />
 
-## 리소스 아이콘
+## Resource Icon
 
 <img
     src={
@@ -15,47 +15,45 @@ tags: [Azure, 리소스, RedisCache, RedisCache]
     }
 />
 
-## 리소스 개요
+## Resource Overview
 
-Azure Redis Cache는 오픈 소스 Redis Cache 엔진을 기반으로 하는 완전히 관리되는 메모리 내 데이터 저장소입니다.
-Microsoft Azure 클라우드 플랫폼에서 서비스로 제공되며 확장성이 뛰어나고 응답성이 뛰어난 애플리케이션을 구축하는 데 사용됩니다.
-Azure Redis Cache는 자주 그리고 빠르게 액세스해야 하는 세션 데이터, 사용자 기본 설정 및 애플리케이션 상태와 같은 데이터를 저장하고 검색하는 데 사용할 수 있습니다.
-문자열, 해시, 목록, 세트 및 정렬된 세트와 같은 데이터 구조를 지원합니다.
-Azure Redis Cache는 데이터 지속성, 고가용성 및 자동 크기 조정과 같은 기능을 제공하므로 빠르고 안정적인 데이터 액세스가 필요한 애플리케이션을 빌드하는 데 널리 사용됩니다.
-Azure App Service, Azure Functions 및 Azure Logic Apps와 같은 다른 Azure 서비스와 통합할 수도 있습니다.
+Azure Redis Cache is a fully managed, in-memory data store based on the open-source Redis Cache engine. 
+It is offered as a service on the Microsoft Azure cloud platform and is used to build highly scalable and responsive applications. 
+Azure Redis Cache can be utilized to store and retrieve data such as session data, that needs frequent and fast access, user preferences, and application status.
+It supports various data structures, including strings, hashes, lists, sets, and sorted sets. With features like data persistence, high availability, and automatic scaling, Azure Redis Cache is widely used for building applications that require fast and reliable data access. 
+It can be integrated with other Azure services such as Azure App Service, Azure Functions, and Azure Logic Apps.
 
-## 연관 리소스
+## Associated Resources
 
-### 상위 리소스
+### Parent Resource
 
 -   [**Resource Group**](https://docs.cstudio.app/docs/resource/azure/Base/ResourceGroup)
 
-## 리소스 설정 값
+## Resource Setting Values
 
--   `sku_name` : Redis 캐시의 가격 책정 계층 이름 - `Basic`,`Standard`,`Premium`,`Enterprise`
+-   `sku_name` : The SKU name of Redis cache - `Basic`,`Standard`,`Premium`,`Enterprise`
 
--   `cache_type` : Redis 캐시의 가격 책정 그룹 및 배포를 위한 Redis Cache의 크기 - `azureRedisCacheSku`
+-   `cache_type` : The SKU pricing group of Redis cache and the size of Redis cache to deploy - `azureRedisCacheSku`
 
--   `version` : Redis 버전 - `6`
+-   `version` : The version of Redis - `6`
 
--   `enable_non_ssl_port` : Redis에 non-SSL port를 적용할 것인지 - `true`,`false`
+-   `enable_non_ssl_port` : Enable the non-SSL port in Redis - `true`,`false`
 
--   `minimum_tls_version` : Redis의 TLS 최소 버전 - `1.0`,`1.1`,`1.2`
+-   `minimum_tls_version` : The minimum TLS version of Redis - `1.0`,`1.1`,`1.2`
 
--   `public_network_access_enabled` : 공용 IP 주소를 통해 공개적으로 Redis 캐시에 접근 허용 - `true`,`false`
+-   `public_network_access_enabled` : Enable public network access for the Redis cache - `true`,`false`
 
 -   `redis_firewall_rule`
+    - `start_ip` : Start IP address range
+    - `end_ip` : End IP address range
+    - `included_redis_cache_name` : The name of the Redis cache to which the firewall rule applies
 
-    -   `start_ip` : 시작 IP 주소 범위
-    -   `end_ip` : 종료 IP 주소 범위
-    -   `included_redis_cache_name` : 방화벽 규칙을 적용할 Redis 캐시 이름
-
--   `tag` : 리소스를 카테고리로 분류하기 위한 태그 - 최대 512자, `key`:`value`
+-   `tag` : Tag to categorize resources - up to 512 characters, `key`:`value`
 
 ---
 
-## 참고 자료
+## Reference Materials
 
 -   [Azure RedisCache(Microsoft)](https://learn.microsoft.com/en-us/azure/azure-cache-for-redis/cache-overview)
--   [Azure RedisCache 가격](https://azure.microsoft.com/ko-kr/pricing/details/cache/)
+-   [Azure RedisCache Price](https://azure.microsoft.com/ko-kr/pricing/details/cache/)
 -   [Azure RedisCache(Terraform)](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/redis_cache)

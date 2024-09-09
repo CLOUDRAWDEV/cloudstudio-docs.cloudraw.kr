@@ -1,13 +1,13 @@
 ---
 title: OamSourceAccount
 sidebar_position: 0
-tags: [AWS, 리소스, Cloudwatch, OamSourceAccount]
+tags: [AWS, Resource, Cloudwatch, OamSourceAccount]
 ---
 
 <hr />
 <br />
 
-## 리소스 아이콘
+## Resource Icon
 
 <img
     src={
@@ -15,38 +15,38 @@ tags: [AWS, 리소스, Cloudwatch, OamSourceAccount]
     }
 />
 
-## 리소스 개요
+## Resource Overview
 
-AWS CloudWatch Oam Source Accounts는 중앙 모니터링 계정과 공유될 소스 계정을 구성합니다.
+AWS CloudWatch OAM Source Accounts configures the source accounts that will be shared with the central monitoring account.
 
-## 연관 리소스
+## Associated Resources
 
-### 상위 리소스
+### Parent Resources
 
 -   [**Region**](https://docs.cstudio.app/docs/resource/aws/Base/Region)
 
-### 연결 리소스
+### Connected Resources
 
 -   [**Oam Monitoring Account**](https://docs.cstudio.app/docs/resource/aws/Cloudwatch/OamMonitoringAccount)
 
-## 리소스 설정 값
+## Resource Setting Values
 
--   `is_manual` : 연결할 Oam Source Account Arn를 직접 입력할지 여부 - `false`,`true`
--   `linked_oam_monitoring_account_name` : 연결할 Oam Monitoring Account 이름 
--   `resource_types` : 모니터링 계정과 공유하려는 데이터 유형
+-   `is_manual`: Whether to enter the Oam Source Account Arn to connect directly - `false`, `true`
+-   `linked_oam_monitoring_account_name`: Oam Monitoring Account name to connect to
+-   `resource_types`: The data types that you want to share with the monitoring account
     -   `AWS::Logs::LogGroup`
-    -   `AWS::Cloudwatch::LogGroup`
+    -   `AWS::CloudWatch::LogGroup`
     -   `AWS::Logs::LogGroup`
     -   `AWS::Logs::LogGroup`
     -   `AWS::Logs::LogGroup`
--   `label_template` : 소스 계정을 식별하는 데 도움이 되는 레이블
+-   `label_template`: A label to help identify your source account
 
 
 
 
 ---
 
-## 참고 자료
+## Reference Materials
 
 -   [Amazon CloudWatch OamMonitoringAccount(AWS)](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account-Setup.html#Unified-Cross-Account-Setup-ConfigureSourceAccount)
 -   [Amazon CloudWatch OamMonitoringAccount(Terraform)](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/oam_link)

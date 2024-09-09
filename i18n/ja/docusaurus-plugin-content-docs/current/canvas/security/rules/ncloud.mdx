@@ -26,26 +26,24 @@ import { iso, csap, isms, evaluation } from "/src/resource/rules"
                 <th>항목</th>
                 <th>설명</th>
                 <th>위험도</th>
-                <th>ISO27001</th>
-                <th>CSAP</th>
-                <th>ISMS-P</th>
-                <th>안정성 평가</th>
             </tr>
         </thead>
         <tbody>
-            {ncloudRules.map((item)=>{
-                return (<tr>
-                            <td>{item.category}</td>
-                            <td>{item.resource}</td>
-                            <td>{item.option}</td>
-                            <td>{item.type}</td>
-                            <td>{item.description}</td>
-                            <td><div className={styles.tag} data-type={item.risk}>{item.risk.toUpperCase()}</div></td>
-                            <td>{item.iso} {iso[item.iso]}</td>
-                            <td>{item.csap} {csap[item.csap]}</td>
-                            <td>{item.isms} {isms[item.isms]}</td>
-                            <td>{item.evaluation} {evaluation[item.evaluation]}</td>
-                        </tr>)
+            {ncloudRules.map((item) => {
+                return (
+                    <tr>
+                        <td>{item.category}</td>
+                        <td>{item.resource}</td>
+                        <td>{item.option}</td>
+                        <td>{item.type}</td>
+                        <td>{item.description}</td>
+                        <td>
+                            <div className={styles.tag} data-type={item.risk}>
+                                {item.risk.toUpperCase()}
+                            </div>
+                        </td>
+                    </tr>
+                )
             })}
         </tbody>
     </table>

@@ -1,13 +1,13 @@
 ---
 title: ApiGatewayHttp
 sidebar_position: 0
-tags: [AWS, 리소스, ApiGatewayHttp]
+tags: [AWS, Resource, ApiGatewayHttp]
 ---
 
 <hr />
 <br />
 
-## 리소스 아이콘
+## Resource Icon
 
 <img
     src={
@@ -15,47 +15,43 @@ tags: [AWS, 리소스, ApiGatewayHttp]
     }
 />
 
-## 리소스 개요
+## Resource Overview
 
-API Gateway에서 HTTP API는 API Gateway의 한 유형으로서, 간단하고 가볍게 HTTP 프로토콜을 기반으로하는 API를 구축하기 위한 것입니다. 
-HTTP API는 기존의 REST API보다 더 단순하고 비용 효율적이며, 주로 서버리스 웹 애플리케이션과 단순한 마이크로서비스에 적합합니다.
+In API Gateway, HTTP API is a type of API Gateway designed for building APIs based on the HTTP protocol in a simple and lightweight manner. 
+HTTP APIs are simpler and more cost-effective than traditional REST APIs, making them ideal for serverless web applications and simple microservices.
 
-### 상위 리소스
+### Parent Resource
 
--   [**Region**](https://docs.cstudio.app/docs/resource/aws/Base/Region)
+-   [**Region**](https://docs.cstudio.app/en/docs/resource/aws/Base/Region)
 
-## 연관 리소스
+## Associated Resources
 
--   [**Lambda Function**](https://docs.cstudio.app/docs/resource/aws/Lambda/LambdaFunction)
+-   [**Lambda Function**](https://docs.cstudio.app/en/docs/resource/aws/Lambda/LambdaFunction)
 
-## 리소스 설정 값
+## Resource Setting Values
 
--   `integration` : API Gateway Integration의 이름
+-   `integration` : Name of API Gateway Integration
     -   `http_integration`
-        -   `integration_type` : API Gateway Integration의 유형 - `Http`, `Lambda`
-        -   `integration_method` : API Gateway Integration의 HTTP Method
-        -   `integration_url` : HTTP 통합을 위한 정규화된 URL 지정
+        -   `integration_type` : The integration type of API Gateway - `Http`, `Lambda`
+        -   `integration_method` : The integration's HTTP method of API Gateway
+        -   `integration_url` : The specify a fully-qualified URL for HTTP integration
     -   `lambda_integration`
-        -   `integration_type` : API Gateway Integration의 유형 - `Http`, `Lambda`
-        -   `integration_method` : API Gateway Integration의 HTTP Method
-        -   `linked_lambda_name` : Lambda 프록시 통합을 위한 Lambda 함수 이름
+        -   `integration_type` : The integration type of API Gateway - `Http`, `Lambda`
+        -   `integration_method` : The integration's HTTP method of API Gateway
+        -   `linked_lambda_name` : The name of the Lambda function for a Lambda proxy integration
 -   `route`
-
-    -   `route_method` : HTTP API에 대한 HTTP Method
-    -   `route_path` : HTTP API에 대한 리소스 경로
-    -   `target_integration` : Route를 연결할 API Gateway Integration 이름 - `http_integration`, `lambda_integration`
-
+    -   `route_method` : The HTTP method for HTTP API
+    -   `route_path` : The HTTP method for resource path
+    -   `target_integration` : The name of API Gateway Integration - `http_integration`, `lambda_integration`
 -   `deployment`
-
-    -   `description` : API Gateway Development 설명
-
+    -   `description` : The description of API Gateway Deployment
 -   `stage`
     -   `dev`
-        -   `enable_deployment` : API Gateway Stage 배포
-        -   `auto_deployment` : 자동 배포 활성화
+        -   `enable_deployment` : Name of REST API Gateway Stage
+        -   `auto_deployment` : Enable auto Deployment
     -   `test`
-        -   `enable_deployment` : API Gateway Stage 배포
-        -   `auto_deployment` : 자동 배포 활성화
-        -   `deployment_name` : 연결할 API Gateway Deployment 이름
+        -   `enable_deployment` : Name of REST API Gateway Stage
+        -   `auto_deployment` : Enable auto Deployment
+        -   `deployment_name` : The name of API Gateway Deployment to connect to
     -   `prod`
-        -   `enable_deployment` : API Gateway Stage 배포
+        -   `enable_deployment` : Name of REST API Gateway Stage

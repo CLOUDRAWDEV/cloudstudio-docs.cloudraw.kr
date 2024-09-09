@@ -1,13 +1,13 @@
 ---
 title: EndpointService
 sidebar_position: 0
-tags: [AWS, 리소스, Vpc, EndpointService]
+tags: [AWS, Resource, Vpc, EndpointService]
 ---
 
 <hr />
 <br />
 
-## 리소스 아이콘
+## Resource Icon
 
 <img
     src={
@@ -15,33 +15,33 @@ tags: [AWS, 리소스, Vpc, EndpointService]
     }
 />
 
-## 리소스 개요
+## Resource Overview
 
-고객이 지원하는 AWS 서비스 및 VPC endpoint 서비스에 private하게 연결할 수 있는 서비스
+A service that allows customers to privately connect to supported AWS services and VPC endpoint services
 
-## 연관 리소스
+## Associated Resources
 
-### 상위 리소스
+### Parent Resources
 
 -   [**Region**](https://docs.cstudio.app/docs/resource/aws/Base/Region)
 
-### 하위 리소스
+### Child Resources
 
 -   [**LB**](https://docs.cstudio.app/docs/resource/aws/Lb/Lb)
 -   [**Endpoint**](https://docs.cstudio.app/docs/resource/aws/Vpc/Endpoint)
 
-## 리소스 설정 값
+## Resource Setting Values
 
--   `acceptance_required` : 서비스 소유자가 서비스에 대한 VPC 끝점 연결 요청을 수락해야 하는지 여부 - `false`,`true`
--   `loadbalancer_type` : Endpoint service에서 연결할 load balancer 유형 - `network`, `gateway`
--   `linked_lb_names` : 엔드포인트 서비스에 대한 하나 이상의 연결된 Lb 리소스 이름
--   `manual_lb_arns` : 엔드포인트 서비스에 대한 하나 이상의 로드 밸런싱 장치의 아마존 리소스 이름(ARN)
--   `supported_ip_address_types` : 지원되는 IP 주소 유형 - `ipv4`
--   `activate_private_dns_name` : 서비스의 개인 DNS 이름
+-   `acceptance_required` : Whether or not VPC endpoint connection requests to the service must be accepted by the service owner - `false`, `true`
+-   `loadbalancer_type` : Type of load balancer to connect from Endpoint service - `network`, `gateway`
+-   `linked_lb_names` : Names of Lb for the endpoint service
+-   `manual_lb_arns` : Amazon Resource Names(ARNs) of one or more Load Balancers for the endpoint service
+-   `supported_ip_address_types` : The supported IP address types - `ipv4`
+-   `activate_private_dns_name` : The private DNS name for the service
 
 ---
 
-## 참고 자료
+## Reference Materials
 
 -   [AWS EndPointService (AWS)](https://docs.aws.amazon.com/ko_kr/vpc/latest/privatelink/configure-endpoint-service.html)
 -   [AWS EndPointSerivce (Terraform)](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/vpc_endpoint_service)

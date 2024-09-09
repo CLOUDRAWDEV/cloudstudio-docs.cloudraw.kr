@@ -1,13 +1,13 @@
 ---
 title: EcsTaskDefinition
 sidebar_position: 0
-tags: [AWS, 리소스, Ecs, EcsTaskDefinition]
+tags: [AWS, Resource, Ecs, EcsTaskDefinition]
 ---
 
 <hr />
 <br />
 
-## 리소스 아이콘
+## Resource Icon
 
 <img
     src={
@@ -15,45 +15,43 @@ tags: [AWS, 리소스, Ecs, EcsTaskDefinition]
     }
 />
 
-## 리소스 개요
+## Resource Overview
 
 
-## 연관 리소스
+## Associated Resources
 
-### 상위 리소스
+### Parent Resources
 
 -   [**Region**](https://docs.cstudio.app/docs/resource/aws/Base/Region)
 
 
-## 리소스 설정 값
+## Resource Setting Values
 
--   `app_environment` : 작업에 필요한 시작 유형 - `EC2`,`Fargate`
--   `os_architecture` : 작업 정의를 등록할 때 사용할 운영 체제 제품군
--   `task_cpu` : 작업에서 사용하는 CPU 단위 수
--   `task_memory` : 작업에서 사용하는 메모리 양(MiB)
--   `network_mode` : 작업의 컨테이너에 사용할 네트워킹 모드 - `awsvpc`,`none`,`bridge`,`host`
--   `container` : ECS Cluster에서 동작할 Container 이름
--   `container.image_url` : ECS Cluster에서 동작할 Container의 이미지
--   `container.essential_enabled` : Container가 동작을 멈춘 경우, container 관련 다른 오브젝트도 같이 동작을 멈출지 정상적으로 동작할지 여부 - `false`,`true`
--   `container.port_mapping` : 포트 맵핑 이름
-    -   `container.port_mapping.name`
-    -   `container.port_mapping.container_port` : Container가 Host Container Instance에 트래픽을 보내거나 받을 때 사용할 포트 번호
-    -   `container.port_mapping.protocoal` : 포트 맵핑에 사용할 프로토콜 - `tcp`,`udp`
-    -   `container.port_mapping.app_protocol` : Service 연결에 사용하는 애플리케이션 프로토콜 - `http`,`http2`,`grpc`,`none`
--   `container.cpu` : ECS Cluster에서 동작하는 Container의 CPU 용량
--   `container.memory` : ECS Cluster에서 동작하는 Container의 Memory 용량
+-   `app_environment`: Launch type required for the task - `EC2`, `Fargate`
+-   `os_architecture`: Operating system family to use when registering the task definition
+-   `task_cpu`: Number of CPU units used by the task
+-   `task_memory`: Amount of memory used by the task (MiB)
+-   `network_mode`: Networking mode to use for the task's container - `awsvpc`, `none`, `bridge`, `host`
+-   `container`: Name of the container to run in the ECS Cluster
+-   `container.image_url`: Image of the container to run in the ECS Cluster
+-   `container.essential_enabled`: Whether other objects related to the container should stop or continue running if the container stops - `false`, `true`
+-   `container.port_mapping`: Port mapping details
+  -     `container.port_mapping.name`: Name of the port mapping
+  -     `container.port_mapping.container_port`: Port number used by the container for traffic to and from the host container instance
+  -     `container.port_mapping.protocol`: Protocol used for port mapping - `tcp`, `udp`
+  -     `container.port_mapping.app_protocol`: Application protocol used for service connections - `http`, `http2`, `grpc`, `none`
+-   `container.cpu`: CPU capacity of the container running in the ECS Cluster
+-   `container.memory`: Memory capacity of the container running in the ECS Cluster
 
--   `volume.name` : Task Definition에 연결할 Volume 이름
--   `volume_mount.name` : Task Definition에 연결할 Volume 이름
--   `volume_mount.container_name` : Volume을 탑재할 Container 이름
--   `volume_mount.volume_name` : 탑재할 Volume 이름
--   `volume_mount.container_path` : 볼륨을 탑재할 컨테이너의 경로
--   `volume_mount.read_only` : Container가 Volume에 read-only 접근만 가능한지 여부 - `false`,`true`
+-   `volume.name`: Name of the volume to attach to the task definition
+-   `volume_mount.name`: Name of the volume to attach to the task definition
+-   `volume_mount.container_name`: Name of the container where the volume will be mounted
+-   `volume_mount.volume_name`: Name of the volume to be mounted
+-   `volume_mount.container_path`: Path in the container where the volume will be mounted
+-   `volume_mount.read_only`: Whether the container has read-only access to the volume - `false`, `true`
 
 
-  
-
-## 참고 자료
+## Reference Materials
 
 -   [Amazon Ecs Task Definition(AWS)](https://docs.aws.amazon.com/ko_kr/AmazonECS/latest/developerguide/task_definitions.html)
 -   [Amazon Ecs Task Definition(Terraform)](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ecs_task_definition)

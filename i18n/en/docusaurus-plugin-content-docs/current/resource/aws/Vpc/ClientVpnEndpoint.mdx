@@ -1,13 +1,13 @@
 ---
 title: ClientVpnEndpoint
 sidebar_position: 0
-tags: [AWS, 리소스, Vpc, ClientVpnEndpoint]
+tags: [AWS, Resource, Vpc, ClientVpnEndpoint]
 ---
 
 <hr />
 <br />
 
-## 리소스 아이콘
+## Resource Icon
 
 <img
     src={
@@ -15,37 +15,37 @@ tags: [AWS, 리소스, Vpc, ClientVpnEndpoint]
     }
 />
 
-## 리소스 개요
+## Resource Overview
 
-AWS 리소스 및 온프레미스 네트워크의 리소스에 안전하게 액세스할 수 있도록 하는 관리형 클라이언트 기반 VPN 서비스
+A managed client-based VPN service that provides secure access to AWS resources and on-premises network resources.
 
-## 연관 리소스
+## Associated Resources
 
-### 상위 리소스
+### Parent Resources
 
 -   [**Region**](https://docs.cstudio.app/docs/resource/aws/Base/Region)
 -   [**Vpc**](https://docs.cstudio.app/docs/resource/aws/Vpc/Vpc)
 
-## 리소스 설정 값
+## Resource Setting Values
 
--   `description` : 클라이언트 VPN 엔드포인트에 대한 간략한 설명
--   `client_cidr_block` : 클라이언트 IP 주소가 할당되는 IP 주소 범위
--   `serer_acm_certificate_name` : 서버 인증서 이름
--   `authentication` : 사용할 인증 방법
--   `authentication.option_types` : 사용할 인증 방법 - `certificate-authentication`,`directory-service-authentication`,`federated-authentication`
--   `connection_logging.enalbed` : 클라이언트 연결에 대한 로그 세부 정보 사용 - `false`,`true`
--   `transport_protocol` : TLS 세션에서 사용하는 전송 프로토콜 - `tcp`,`udp`
--   `enabled_split_tunnel` : 분할 터널 활성화 - `false`,`true`
--   `vpn_port` : VPN 포트
--   `enabled_self_service_portal` : 셀프 서비스 포털 활성화 - `false`,`true`
--   `session_timeout_hours` : 세션 제한 시간 - `8`,`10`,`12`,`24`
--   `included_vpc_name` : VPC 이름
--   `linked_security_group_names` : 엔드포인트에 적용할 보안 그룹 이름
--   `linked_subnet_names` : 연결할 Subnet 이름
+-   `description`: A brief description of the client VPN endpoint
+-   `client_cidr_block`: The IP address range from which client IP addresses are allocated
+-   `server_acm_certificate_name`: The server certificate name
+-   `authentication`: Authentication methods to use
+-   `authentication.option_types`: Authentication methods to use - `certificate-authentication`, `directory-service-authentication`, `federated-authentication`
+-   `connection_logging.enabled`: Enable log details on client connections - `false`, `true`
+-   `transport_protocol`: Transport protocol used by the TLS sessions - `tcp`, `udp`
+-   `enabled_split_tunnel`: Enable split-tunnel - `false`, `true`
+-   `vpn_port`: VPN port
+-   `enabled_self_service_portal`: Enable self-service portal - `false`, `true`
+-   `session_timeout_hours`: Session timeout hours - `8`, `10`, `12`, `24`
+-   `included_vpc_name`: VPC name
+-   `linked_security_group_names`: Security group names to be applied to the endpoint
+-   `linked_subnet_names`: Subnet names to be connected to the endpoint
 
 ---
 
-## 참고 자료
+## Reference Materials
 
 -   [AWS Client Vpn Endpoint (AWS)](https://docs.aws.amazon.com/ko_kr/vpn/latest/clientvpn-admin/cvpn-working-endpoints.html)
 -   [AWS Client Vpn Endpoint(Terraform)](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ec2_client_vpn_endpoint)

@@ -1,13 +1,13 @@
 ---
 title: Nat Gateway
 sidebar_position: 0
-tags: [AWS, 리소스, Vpc, NatGateway]
+tags: [AWS, Resource, Vpc, NatGateway]
 ---
 
 <hr />
 <br />
 
-## 리소스 아이콘
+## Resource Icon
 
 <img
     src={
@@ -15,26 +15,27 @@ tags: [AWS, 리소스, Vpc, NatGateway]
     }
 />
 
-## 리소스 개요
+## Resource Overview
 
-NAT 게이트웨이는 NAT(네트워크 주소 변환) 서비스입니다. 프라이빗 서브넷의 인스턴스가 VPC 외부의 서비스에 연결할 수 있지만 외부 서비스에서 이러한 인스턴스와의 연결을 시작할 수 없도록 NAT 게이트웨이를 사용할 수 있습니다.
+A NAT gateway is a Network Address Translation (NAT) service. 
+It allows instances in a private subnet to connect to services outside the VPC while preventing external services from initiating connections to those instances.
 
-## 연관 리소스
+## Associated Resources
 
-### 상위 리소스
+### Parent Resources
 
 -   [**Subnet**](https://docs.cstudio.app/docs/resource/aws/Vpc/Subnet)
 
-## 리소스 설정 값
+## Resource Setting Values
 
--   `included_subnet_name` : NAT Gateway를 연결할 Subnet의 이름
--   `connectivity_type` : NAT Gateway의 연결 유형 - `public`, `private`
--   `eip_name` : EIP 이름
+-   `included_subnet_name` : The name of Subnet to create the Nat gateway
+-   `connectivity_type` : Connection type of NAT Gateway - `public`, `private`
+-   `eip_name` : The name of the Elastic IP (EIP)
 
 ---
 
-## 참고 자료
+## Reference Materials
 
--   [NAT 게이트웨이(AWS)](https://docs.aws.amazon.com/ko_kr/vpc/latest/userguide/vpc-nat-gateway.html)
--   [Amazon VPC 요금(AWS)](https://aws.amazon.com/ko/vpc/pricing/)
+-   [NAT Gateway(AWS)](https://docs.aws.amazon.com/ko_kr/vpc/latest/userguide/vpc-nat-gateway.html)
+-   [Amazon VPC Price(AWS)](https://aws.amazon.com/ko/vpc/pricing/)
 -   [aws_nat_gateway(Terraform)](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/nat_gateway)
