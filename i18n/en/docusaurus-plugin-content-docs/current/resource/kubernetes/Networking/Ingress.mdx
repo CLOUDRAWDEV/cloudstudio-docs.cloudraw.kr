@@ -1,7 +1,7 @@
 ---
 title: Ingress
 sidebar_position: 0
-tags: [Kubernetes, 리소스, Networking, Ingress]
+tags: [Kubernetes, Resource, Networking, Ingress]
 ---
 
 
@@ -9,7 +9,7 @@ tags: [Kubernetes, 리소스, Networking, Ingress]
 <br />
 
 
-## 리소스 아이콘
+## Resource Icon
 
 <img
     src={
@@ -17,40 +17,40 @@ tags: [Kubernetes, 리소스, Networking, Ingress]
     }
 />
 
-## 리소스 개요
+## Resource Overview
 
-인바운드 연결이 백엔드에서 정의한 엔드포인트에 도달하도록 허용하는 규칙에 관한 쿠버네티스 리소스
+A Kubernetes resource related to rules that allow inbound connections to reach endpoints defined by the backend
 
-## 연관 리소스
+## Associated Resources
 
-### 상위 리소스
+### Parent Resource
 
--   [**Cluster**](https://docs.cstudio.app/docs/resource/kubernetes/Base/Cluster)
--   [**Namespace**](https://docs.cstudio.app/docs/resource/kubernetes/Core/Namespace)
+-   [**Cluster**](https://docs.cstudio.app/en/docs/resource/kubernetes/Base/Cluster)
+-   [**Namespace**](https://docs.cstudio.app/en/docs/resource/kubernetes/Core/Namespace)
 
 
-### 연결 리소스
+### Connected Resources
 
 -   [**IngressClass**]
--   [**NginxIngress**](https://docs.cstudio.app/docs/resource/kubernetes/Helm/NginxIngress)
+-   [**NginxIngress**](https://docs.cstudio.app/en/docs/resource/kubernetes/Helm/NginxIngress)
 
 
-## 리소스 설정 값
+## Resource Setting Values
 
--   `service_name` : Ingress 리소스 이름
--   `namespace` : Ingress 리소스가 배포될 네임스페이스
--   `annotations` : 쿠버네티스 시스템에서 필요한 정보들을 표시해 주기 위해서 사용하는 key-value
--   `labels` : 객체를 구분하기 위해서 사용자가 임의로 원하는 값을 지정
--   `tls` : TLS를 적용
-    -   `hosts` : TLS 인증서에 포함된 호스트 목록
-    -   `secret_name` : TLS 인증서와 관련된 쿠버네티스 시크릿 이름 지정
--   `ingress_class_name` : 연결할 인그레스 클래스 이름을 지정
--   `host` : 라우팅 규칙을 적용할 호스트네임 주소를 지정
--   `backend` : 라우팅할 백엔드 정보를 입력
-    -   `name` : 라우팅 rule 이름
-        -   `path` : 백엔드와 연결될 경로
-        -   `path_type` : 경로 일치의 해석을 결정 - `Prefix`, `ImplementationSpecific`, `Exact`
-        -   `port` : 서비스의 포트 번호 - `1~65535`
+-   `service_name` : Name of the Ingress resource
+-   `namespace` : Namespace where Ingress resources will be deployed
+-   `annotations` : A key-value used to display necessary information in the Kubernetes system
+-   `labels` : To distinguish objects, the user arbitrarily specifies the desired value
+-   `tls` : Apply TLS
+    -   `hosts` : List of hosts included in the TLS certificate
+    -   `secret_name` : Naming the Kubernetes Secret Associated with the TLS Certificate
+-   `ingress_class_name` : Name of the Ingress class to connect to
+-   `host` : Hostname address where routing rules will be applied
+-   `backend` : Backend information for routing
+    -   `name` : Name of the routing rule
+        -   `path` : Path to be connected with the backend
+        -   `path_type` : Determines how path matching is interpreted - `Prefix`, `ImplementationSpecific`, `Exact`
+        -   `port` : Port number of the service - `1~65535`
 
 
 
@@ -59,7 +59,7 @@ tags: [Kubernetes, 리소스, Networking, Ingress]
 
 ---
 
-## 참고 자료
+## Reference Materials
 
--   [Ingress(kubernetes)](https://kubernetes.io/docs/concepts/services-networking/ingress/)
--   [Ingress(Terraform)](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/ingress)
+-   [Ingress(kubernetes)](https://kubernetes.io/en/docs/concepts/services-networking/ingress/)
+-   [Ingress(Terraform)](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/en/docs/resources/ingress)
