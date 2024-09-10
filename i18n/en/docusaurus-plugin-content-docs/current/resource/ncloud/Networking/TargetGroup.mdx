@@ -1,13 +1,13 @@
 ---
 title: TargetGroup
 sidebar_position: 0
-tags: [Ncloud, 리소스, Network, TargetGroup]
+tags: [Ncloud, Resource, Network, TargetGroup]
 ---
 
 <hr />
 <br />
 
-## 리소스 아이콘
+## Resource Icon
 
 <img
     src={
@@ -15,42 +15,42 @@ tags: [Ncloud, 리소스, Network, TargetGroup]
     }
 />
 
-## 리소스 개요
+## Resource Overview
 
-로드 밸런서의 요청을 처리할 타겟에 대한 집합을 나타내는 리소스입니다.
+This resource represents a group of targets that handle requests from a load balancer.
 
-## 연관 리소스
+## Associated Resources
 
-### 상위 리소스
+### Parent Resource
 
 -   [**Vpc**](https://docs.cstudio.app/docs/resource/ncloud/Networking/Vpc)
 
-### 연결 리소스
+### Connected Resources
 
 -   [**Server**](https://docs.cstudio.app/docs/resource/ncloud/Compute/Server)
 -   [**Load Balancer**](https://docs.cstudio.app/docs/resource/ncloud/Networking/LoadBalancer)
 -   [**Auto Scaling**](https://docs.cstudio.app/docs/resource/ncloud/Compute/AutoScaling)
 
 
-## 리소스 설정 값
+## Resource Setting Values
 
--   `included_vpc_name` : 타켓 그룹이 존재할 vpc 이름
--   `protocol` : 트래픽을 라우팅에 적용할 프로토콜 타입 - `TCP`, `PROXY_TCP`, `HTTP`, `HTTPS`
--   `port` : 트래픽을 받는 포트 번호 
--   `algorithm_type` : 로드 밸런싱에 사용할 알고리즘 타입, RR/SIPHS/LC - `RR`, `SIPHS`, `LC`, `MH`
--   `health_check_protocol` : 로드 밸런싱에 사용할 알고리즘 타입, RR/SIPHS/LC - `TCP`, `HTTP`, `HTTPS`
--   `health_check_http_method` : 타겟 상태 확인 프로토콜이 HTTP/HTTPS인 경우 사용할 HTTP 메서드, HEAD 혹은 GET - `HEAD`, `GET`
--   `health_check_port` : 타겟 상태 확인에 사용할 포트 번호
--   `health_check_cycle` : 타겟 싱테 확인 주기(초), 5 ~ 300의 범위
--   `health_check_up_threshold` : 정상 임계값, 비정상 상태의 타켓이 정상 상태가 되기까지 상태 확인 횟수, 2 ~ 10 의 범위
--   `health_check_down_threshold` : 실패 임계값, 정상 상태의 타켓이 비정상 상태가 되기까지 상태 확인, 2 ~ 10 의 범위 
--   `linked_server_names` : 연결할 서버 이름 목록
+-   `included_vpc_name` : The name of the VPC where the target group will exist
+-   `protocol` : The type of protocol to use for routing traffic - `TCP`, `PROXY_TCP`, `HTTP`, `HTTPS`
+-   `port` : The port on which targets receive traffic
+-   `algorithm_type` : The type of algorithm to use for Load balancing, RR/SIPHS/LC - `RR`, `SIPHS`, `LC`, `MH`
+-   `health_check_protocol` : The protocol to use for health checks, RR/SIPHS/LC - `TCP`, `HTTP`, `HTTPS`
+-   `health_check_http_method` : The HTTP method for the health check if using HTTP/HTTPS for the health check protocol, HEAD or GET - `HEAD`, `GET`
+-   `health_check_port` : The port to use for health checks
+-   `health_check_cycle` : The health check cycle in seconds, From 5 to 300
+-   `health_check_up_threshold` : The number of health check normal threshold, From 2 to 10
+-   `health_check_down_threshold` : The number of health check failure threshold, From 2 to 10
+-   `linked_server_names` : The list of server names to connect to
 
 
 
 ---
 
-## 참고 자료
+## Reference Materials
 
 
 -   [ncloud_target_group(Terraform)](https://registry.terraform.io/providers/NaverCloudPlatform/ncloud/latest/docs/resources/lb_target_group)

@@ -1,13 +1,13 @@
 ---
 title: Mssql
 sidebar_position: 0
-tags: [Ncloud, 리소스, Database, Mssql]
+tags: [Ncloud, Resource, Database, Mssql]
 ---
 
 <hr />
 <br />
 
-## 리소스 아이콘
+## Resource Icon
 
 <img
     src={
@@ -15,38 +15,38 @@ tags: [Ncloud, 리소스, Database, Mssql]
     }
 />
 
-## 리소스 개요
+## Resource Overview
 
-Cloud DB for MSSQL은 MSSQL 데이터베이스를 손쉽게 구축하고 자동으로 관리할 수 있습니다. 네이버의 최적화 설정을 통해 안정적으로 운영하며, 장애 발생 시 자동 복구하는 완전 관리형 클라우드 데이터베이스 서비스입니다.
+Cloud DB for MSSQL allows you to easily build and automatically manage MSSQL databases. It operates reliably with optimized settings from Naver and is a fully managed cloud database service that automatically recovers from failures.
 
-## 연관 리소스
+## Associated Resources
 
-### 상위 리소스
+### Parent Resource
 
 -   [**Subnet**](https://docs.cstudio.app/docs/resource/ncloud/Networking/Subnet)
 
 
-### 하위 리소스
+### Child Resource
 
 
 
-## 리소스 설정 값
+## Resource Setting Values
 
--   `enable_high_availiability` : 고가용성 기능 사용 여부
--   `user_name` : MSSQL 사용자 접근 ID
--   `user_password` : MSSQL 사용자 접근 비밀번호
--   `image_product_code` : 생성할 MSSQL 인스턴트 서버 이미지 스펙에 대한 이미지 제품 번호
--   `product_code` : 생성할 MSSQL 인스턴스 서버 이미지 스펙에 대한 제품 번호
--   `data_storage_type` : 데이터 스토리지 종류  - `SSD`, `HDD`
--   `backup_file_retention_period` : 백업 파일 보관 기간, 백업은 매일 단위로 진행되며, 백업 파일은 별도의 스토리지에 저장 - `1~30`
--   `enable_automatic_backup` : 백업 자동화 사용 여부
--   `port` : MySQL 접속포트 - `3306~20000`
--   `character_set_name` : DB 문자 세트. 한글과 영문 조합 중에서 선택 가능
+-   `enable_high_availiability` : Whether to use high availability
+-   `user_name` : The MSSQL access user ID
+-   `user_password` : The MSSQL access user password
+-   `image_product_code` : The Image product code to determine the MSSQL instance server image specification to create
+-   `product_code` : The product code to determine the MSSQL instance server image specification to create
+-   `data_storage_type` : The data storage type  - `SSD`, `HDD`
+-   `backup_file_retention_period` : The backup file retention period. The backups are performed daily and backup files are stored in separate backup storage - `1~30`
+-   `enable_automatic_backup` : Whether to use automatic backup
+-   `port` : The TCP port number to access MSSQL - `3306~20000`
+-   `character_set_name` : The DB character set. The DB character set can be selected from Korean and English collation
     
 
 ---
 
-## 참고 자료
+## Reference Materials
 
 -   [Mssql(Ncloud)](https://www.ncloud.com/product/database/cloudDbMssql)
 -   [ncloud_mssql(Terraform)](https://registry.terraform.io/providers/NaverCloudPlatform/ncloud/latest/docs/resources/mssql)

@@ -1,7 +1,7 @@
 ---
 title: Namespace
 sidebar_position: 0
-tags: [Kubernetes, 리소스, Core, Namespace]
+tags: [Kubernetes, Resource, Core, Namespace]
 ---
 
 
@@ -9,7 +9,7 @@ tags: [Kubernetes, 리소스, Core, Namespace]
 <br />
 
 
-## 리소스 아이콘
+## Resource Icon
 
 <img
     src={
@@ -17,18 +17,18 @@ tags: [Kubernetes, 리소스, Core, Namespace]
     }
 />
 
-## 리소스 개요
+## Resource Overview
 
-클러스터 내에서 오브젝트들을 그룹화하고 격리하는 데 사용되는 쿠버네티스 리소스입니다.
+A Kubernetes resource used to group and isolate objects within a cluster.
 
-## 연관 리소스
+## Associated Resources
 
-### 상위 리소스
+### Parent Resource
 
 -   [**Cluster**](https://docs.cstudio.app/docs/resource/kubernetes/Base/Cluster)
 
 
-### 하위 리소스
+### Child Resources
 
 -   [**Deployment**](https://docs.cstudio.app/docs/resource/kubernetes/Apps/Deployment)
 -   [**StatefulSet**](https://docs.cstudio.app/docs/resource/kubernetes/Apps/StatefulSet)
@@ -57,16 +57,16 @@ tags: [Kubernetes, 리소스, Core, Namespace]
 
 
 
-## 리소스 설정 값
+## Resource Setting Values
 
--   `service_name` : ConfigMap 리소스 이름
--   `annotations` : 쿠버네티스 시스템에서 필요한 정보들을 표시해 주기 위해서 사용하는 key-value
--   `labels` : 객체를 구분하기 위해서 사용자가 임의로 원하는 값을 지정
+-   `service_name` : Name of the ConfigMap resource
+-   `annotations` : A key-value used to display necessary information in the Kubernetes system
+-   `labels` : To distinguish objects, the user arbitrarily specifies the desired value
 
 
 ---
 
-## 참고 자료
+## Reference Materials
 
 -   [Namespace(Kubernetes)](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/)
 -   [Namespace(Terraform)](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/namespace)

@@ -1,7 +1,7 @@
 ---
 title: ConfigMap
 sidebar_position: 0
-tags: [Kubernetes, 리소스, Core, ConfigMap]
+tags: [Kubernetes, Resource, Core, ConfigMap]
 ---
 
 
@@ -9,7 +9,7 @@ tags: [Kubernetes, 리소스, Core, ConfigMap]
 <br />
 
 
-## 리소스 아이콘
+## Resource Icon
 
 <img
     src={
@@ -17,18 +17,18 @@ tags: [Kubernetes, 리소스, Core, ConfigMap]
     }
 />
 
-## 리소스 개요
+## Resource Overview
 
-애플리케이션 설정 정보를 분리하여 저장하고 파드 내의 컨테이너에 전달하는 데 사용되는 쿠버네티스 리소스입니다.
+A Kubernetes resource used to separate and store application configuration data and pass it to containers within a pod.
 
-## 연관 리소스
+## Associated Resources
 
-### 상위 리소스
+### Parent Resource
 
 -   [**Cluster**](https://docs.cstudio.app/docs/resource/kubernetes/Base/Cluster)
 -   [**Namespace**](https://docs.cstudio.app/docs/resource/kubernetes/Core/Namespace)
 
-### 연결 리소스
+### Connected Resources
 
 -   [**Pod**](https://docs.cstudio.app/docs/resource/kubernetes/Core/Pod)
 -   [**Deployment**](https://docs.cstudio.app/docs/resource/kubernetes/Apps/Deployment)
@@ -38,23 +38,23 @@ tags: [Kubernetes, 리소스, Core, ConfigMap]
 -   [**CronJob**](https://docs.cstudio.app/docs/resource/kubernetes/Batch/CronJob)
 
 
-## 리소스 설정 값
+## Resource Setting Values
 
--   `service_name` : ConfigMap 리소스 이름
--   `namespace` : ConfigMap 리소스가 배포될 네임스페이스
--   `annotations` : 쿠버네티스 시스템에서 필요한 정보들을 표시해 주기 위해서 사용하는 key-value
--   `labels` : 객체를 구분하기 위해서 사용자가 임의로 원하는 값을 지정
--   `data` : key-value 쌍으로 일반적인 데이터 - 설정파일,환경변수 등과 같은 텍스트 형식의 구성정보를 저장하는데 사용
-    -   `data.name` : data의 key 값
-    -   `data.value` : data의 value 값
--   `binary_data` : 특정 키에 대한 바이너리 데이터 - 바이너리 파일 또는 기타 이진형식의 데이터를 저장하는데 사용
-    -   `data.name` : binary data의 key 값
-    -   `data.value` : binary data의 value 값
+-   `service_name` : Name of the ConfigMap resource
+-   `namespace` : Namespace where ConfigMap resources will be deployed
+-   `annotations` : A key-value used to display necessary information in the Kubernetes system
+-   `labels` : To distinguish objects, the user arbitrarily specifies the desired value
+-   `data` : General data as key-value pairs - used to store configuration information in text format such as configuration files, environment variables, etc
+    -   `data.name` : The key value of the data
+    -   `data.value` : The value of the data
+-   `binary_data` : Binary data for a specific key - used to store binary files or other binary format data
+    -   `data.name` : The key for the binary data
+    -   `data.value` : The value for the binary data
 
 
 ---
 
-## 참고 자료
+## Reference Materials
 
 -   [ConfigMap(Kubernetes)](https://kubernetes.io/docs/concepts/configuration/configmap/)
 -   [ConfigMap(Terraform)](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/config_map)

@@ -1,13 +1,13 @@
 ---
 title: Nat Gateway
 sidebar_position: 0
-tags: [Ncloud, 리소스, Network, NatGateway]
+tags: [Ncloud, Resource, Network, NatGateway]
 ---
 
 <hr />
 <br />
 
-## 리소스 아이콘
+## Resource Icon
 
 <img
     src={
@@ -15,24 +15,24 @@ tags: [Ncloud, 리소스, Network, NatGateway]
     }
 />
 
-## 리소스 개요
+## Resource Overview
 
-하나의 공용 IP로 여러 서버와 연결하고 외부로 부터 직접 접근을 막는 서비스입니다. 여러 대의 비공인 IP를 가진 서버가 외부 서버와 통신할 수 있도록 연결하며 외부로부터의 직접 접근을 막아 보안을 유지합니다.
+This service allows multiple servers to connect through a single public IP while blocking direct external access. It enables servers with private IPs to communicate with external servers while maintaining security by preventing direct external access.
 
-## 연관 리소스
+## Associated Resources
 
-### 상위 리소스
+### Parent Resource
 
 -   [**Vpc**](https://docs.cstudio.app/docs/resource/ncloud/Networking/Vpc)
 
-## 리소스 설정 값
+## Resource Setting Values
 
--   `included_vpc_name` : Nat gateway를 생성할 VPC 이름
--   `zone` : Nat gateway가 위치할 물리적 지역 - `KR-1`, `KR-2`
+-   `included_vpc_name` : The name of VPC to create the Nat gateway
+-   `zone` : Available zone where the Nat gateway will be placed physically - `KR-1`, `KR-2`
 
 ---
 
-## 참고 자료
+## Reference Materials
 
 -   [NAT Gateway(Ncloud)](https://www.ncloud.com/product/networking/natGateway)
 -   [ncloud_nat_gateway(Terraform)](https://registry.terraform.io/providers/NaverCloudPlatform/ncloud/latest/docs/resources/nat_gateway)

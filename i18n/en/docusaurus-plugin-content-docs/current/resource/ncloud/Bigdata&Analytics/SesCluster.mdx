@@ -7,7 +7,7 @@ tags: [Ncloud, 리소스, Bigdata&Analytics, SesCluster]
 <hr />
 <br />
 
-## 리소스 아이콘
+## Resource Icon
 
 <img
     src={
@@ -15,42 +15,42 @@ tags: [Ncloud, 리소스, Bigdata&Analytics, SesCluster]
     }
 />
 
-## 리소스 개요
+## Resource Overview
 
 elasticsearch 및 OpenSearch 클러스터를 편리하게 관리할 수 있는 환경을 제공하고, 다양한 서버 유형 및 스토리지 용량을 선택하여 클러스터를 구성하고 손쉽게 배포, 운영 및 확장할 수 있는 리소스입니다.
 
-## 연관 리소스
+## Associated Resources
 
-### 상위 리소스
+### Parent Resource
 
 -   [**VPC**](https://docs.cstudio.app/docs/resource/ncloud/Networking/Vpc)
 
-### 연결 리소스
+### Connected Resources
 
 
-## 리소스 설정 값
+## Resource Setting Values
 
--   `os_image_code` : 사용할 OS 타입
--   `search_engine` : Search Engine 노드 주요 항목
-    -   `version_code` : 사용할 Search Engine 버전 코드
-    -   `user_name` : Search Engine 사용자 이름
-    -   `user_password` : Search Engine 사용자 비밀번호
+-   `os_image_code` : The OS type to be used
+-   `search_engine` : The main items of Search Engine
+    -   `version_code` : The Search Engine Service version to be used
+    -   `user_name` : The Search Engine UserName
+    -   `user_password` : The Search Engine User password
     -   `dashboard_port` : Search Engine 대시보드의 포트 (1024 ~ 65535)
--   `manager_node` : manager node 주요 항목
+-   `manager_node` : The Search Engine Dashboard port
     -   `enable_dual_manager` : manager node 이중화 여부
-    -   `manager_node_product_code` : 사용할 manager node 제품 코드
-    -   `manager_node_subnet_name` : manager node를 위치시킬 subnet 이름
--   `data_node` : data node 주요 항목
-    -   `data_node_product_code` : 사용할 data node 제품 코드
-    -   `data_node_subnet_name` : data node를 위치시킬 subnet 이름
-    -   `data_node_count` : data node의 수 (3 ~10)
-    -   `data_node_storage_size` : data node 스토리지 용량(100~2000)
--   `enable_master_node` : master node 사용 여부
--   `login_key_name` : 암호화를 위한 공용 로그인 키 이름
+    -   `manager_node_product_code` : Whether to make redundancy of manager node
+    -   `manager_node_subnet_name` : The subnet number where the manager node is to be located
+-   `data_node` : The main items of data node
+    -   `data_node_product_code` : The HW specifications of the data node
+    -   `data_node_subnet_name` : The subnet number where the data node is to be located
+    -   `data_node_count` : Number of data nodes (3 ~10)
+    -   `data_node_storage_size` : The data node storage capacity (100~2000)
+-   `enable_master_node` : Whether to use master node
+-   `login_key_name` : The name of Login key to encrypt with the public key
 
 ---
 
-## 참고 자료
+## Reference Materials
 
 -   [Ses Cluster(Ncloud)](https://www.ncloud.com/product/analytics/searchEngineService)
 -   [ncloud_ses_cluster(Terraform)](https://registry.terraform.io/providers/NaverCloudPlatform/ncloud/latest/docs/resources/ses_cluster)
