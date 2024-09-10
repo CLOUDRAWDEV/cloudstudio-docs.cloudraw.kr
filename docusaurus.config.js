@@ -110,10 +110,10 @@ const config = {
                         position: "right",
                         className: "btnTrial",
                     },
-                    // {
-                    //     type: "localeDropdown",
-                    //     position: "right",
-                    // },
+                    {
+                        type: "localeDropdown",
+                        position: "right",
+                    },
                 ],
             },
             footer: {},
