@@ -23,6 +23,10 @@
         "message": "クレデンシャル",
         "description": "The label for category 자격증명 in sidebar mySidebar"
     },
+    "sidebar.mySidebar.category.플러그인": {
+        "message": "プラグイン",
+        "description": "The label for category 플러그인 in sidebar mySidebar"
+    },
     "sidebar.mySidebar.category.OTP": {
         "message": "OTP",
         "description": "The label for category OTP in sidebar mySidebar"
@@ -30,10 +34,6 @@
     "sidebar.mySidebar.category.리소스": {
         "message": "リソース",
         "description": "The label for category 리소스 in sidebar mySidebar"
-    },
-    "sidebar.mySidebar.category.플러그인": {
-        "message": "プラグイン",
-        "description": "The label for category 플러그인 in sidebar mySidebar"
     },
     "sidebar.mySidebar.category.Azure": {
         "message": "Azure",
@@ -352,7 +352,7 @@
         "description": "The label for category EC2 in sidebar mySidebar"
     },
     "sidebar.mySidebar.category.Cicd": {
-        "message": "Cicd",
+        "message": "CI/CD",
         "description": "The label for category Cicd in sidebar mySidebar"
     }
 }

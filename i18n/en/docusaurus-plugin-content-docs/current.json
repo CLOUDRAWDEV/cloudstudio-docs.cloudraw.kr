@@ -4,31 +4,35 @@
     "description": "The label for version current"
   },
   "sidebar.mySidebar.category.시작하기": {
-    "message": "시작하기",
+    "message": "Getting Start",
     "description": "The label for category 시작하기 in sidebar mySidebar"
   },
   "sidebar.mySidebar.category.캔버스": {
-    "message": "캔버스",
+    "message": "Canvas",
     "description": "The label for category 캔버스 in sidebar mySidebar"
   },
   "sidebar.mySidebar.category.보안진단": {
-    "message": "보안진단",
+    "message": "Security diagnosis",
     "description": "The label for category 보안진단 in sidebar mySidebar"
   },
   "sidebar.mySidebar.category.보안진단 항목": {
-    "message": "보안진단 항목",
+    "message": "Security diagnosis items",
     "description": "The label for category 보안진단 항목 in sidebar mySidebar"
   },
   "sidebar.mySidebar.category.자격증명": {
-    "message": "자격증명",
+    "message": "Credential",
     "description": "The label for category 자격증명 in sidebar mySidebar"
+  },
+  "sidebar.mySidebar.category.플러그인": {
+    "message": "Plugin",
+    "description": "The label for category 플러그인 in sidebar mySidebar"
   },
   "sidebar.mySidebar.category.OTP": {
     "message": "OTP",
     "description": "The label for category OTP in sidebar mySidebar"
   },
   "sidebar.mySidebar.category.리소스": {
-    "message": "리소스",
+    "message": "Resource",
     "description": "The label for category 리소스 in sidebar mySidebar"
   },
   "sidebar.mySidebar.category.Azure": {
@@ -348,7 +352,7 @@
     "description": "The label for category EC2 in sidebar mySidebar"
   },
   "sidebar.mySidebar.category.Cicd": {
-    "message": "Cicd",
+    "message": "CI/CD",
     "description": "The label for category Cicd in sidebar mySidebar"
   }
 }
