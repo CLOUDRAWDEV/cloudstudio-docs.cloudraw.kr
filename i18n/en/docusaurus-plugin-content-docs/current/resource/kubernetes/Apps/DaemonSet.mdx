@@ -46,7 +46,7 @@ A DaemonSet is a Kubernetes resource that ensures all (or some) nodes run a copy
 
 -   `template_labels` : Labels applied to Pods created per node
 
--   `containers` : Defines templates for containers belonging to a Pod. You can set default values and apply them, and then configure detailed settings.
+-   `containers` : Defines templates for containers belonging to a Pod - You can set default values and apply them, and then configure detailed settings.
  
     -   `containers.name` : Name of the container
 
@@ -58,22 +58,22 @@ A DaemonSet is a Kubernetes resource that ensures all (or some) nodes run a copy
 
         -   `port` : List of ports exposed by the container
 
-        -   `resources` : Specifies the amount of resources in the container
+        -   `resources` : Specifies the amount of resources in the container - Detailed settings
 
             -   `resources.name` : Specify the minimum/maximum amount of computing resources - `Limits`, `requests`
             -   `resources.cpu` : Amount of CPU (m)
             -   `resources.memory` : Amount of memory (Mi)
-        -   `probe` : Defines how to diagnose the health of a Pod
+        -   `probe` : Defines how to diagnose the health of a Pod - Detailed settings
             -   `probe.name` : Probe method selection - `startup`, `liveness`, `readiness`
             -   `probe.http_get_path` : Path to access the HTTP server
             -   `probe.http_get_port` : Port number to be accessed by the container
             -   `probe.http_header` : Custom headers to set in the request
             -   `probe.initial_delay_seconds` : Number of seconds after the container starts before the probe begins
             -   `probe.period_seconds` : How often to perform probes (in seconds)
-        -   `env` : Block of key-value pairs to set in container environment
+        -   `env` : Block of key-value pairs to set in container environment - Detailed settings
             -   `env.name` : Name of the environment variable
             -   `env.value` : Value for the environment variable
-        -   `volume_mount` : The Pod volume to mount on the container's file system
+        -   `volume_mount` : The Pod volume to mount on the container's file system - Detailed settings
             -   `volume_mount.name` : Name of the volume mount
             -   `volume_mount.path`
                 -   `volume_mount.path.mount_path` : Path within the container where the volume should be mounted
