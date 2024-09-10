@@ -1,13 +1,13 @@
 ---
 title: LaunchConfiguration
 sidebar_position: 0
-tags: [Ncloud, 리소스, Compute, LaunchConfiguration]
+tags: [Ncloud, Resource, Compute, LaunchConfiguration]
 ---
 
 <hr />
 <br />
 
-## 리소스 아이콘
+## Resource Icon
 
 <img
     src={
@@ -15,30 +15,30 @@ tags: [Ncloud, 리소스, Compute, LaunchConfiguration]
     }
 />
 
-## 리소스 개요
+## Resource Overview
 
-Auto Scaling 수행 중 서버 확장 필요시 자동으로 생성되는 가상 서버의 스펙을 구성하는 템플릿입니다.
+This is a template for configuring the specifications of virtual servers that are automatically created when scaling out during Auto Scaling.
 
-## 연관 리소스
+## Associated Resources
 
-### 상위 리소스
+### Parent Resource
 
 -   [**Region**](https://docs.cstudio.app/docs/resource/ncloud/Base/Region)
 
 
-## 리소스 설정 값
+## Resource Setting Values
 
--   `server_image_product_code` : 사용할 운영체제 이미지 코드(CNTOS:CentOS, UBNTU:Ubuntu, WND:Windows / MYSQL,MARIA:Database / SVR:Server, EN:English Edition)
--   `server_product_code` : 서버의 하드웨어 구성을 위한 코드(HICPU:High CPU, STAND:Standard, HIMEM:High Memory / C 코어수,M 메모리(GB))
--   `login_key_name` : 서버 인스턴스 접속 및 암호화, 복호화에 필요한 리소스
+-   `server_image_product_code` : The code of OS image to use(CNTOS:CentOS, UBNTU:Ubuntu, WND:Windows / MYSQL,MARIA:Database / SVR:Server, EN:English Edition)
+-   `server_product_code` : The code for hardware configuration on the server(HICPU:High CPU, STAND:Standard, HIMEM:High Memory / C:Cores,M:Memory(GB))
+-   `login_key_name` : The name of Login key to encrypt with the public key
 -   `init_script`
-    -   `content` : 서버가 생성될 때 자동으로 실행할 스크립트 내용
--   `is_encrypted_volume` : Basic block storage 암호화 여부
+    -   `content` : The script to run automatically when the server is created
+-   `is_encrypted_volume` : Whether to encrypt basic block storage
 
 
 ---
 
 
-## 참고 자료
+## Reference Materials
 
 -   [ncloud_launch_configuration(Terraform)](https://registry.terraform.io/providers/NaverCloudPlatform/ncloud/latest/docs/resources/launch_configuration)

@@ -1,7 +1,7 @@
 ---
 title: Service
 sidebar_position: 0
-tags: [Kubernetes, 리소스, Core, Service]
+tags: [Kubernetes, Resource, Core, Service]
 ---
 
 
@@ -9,7 +9,7 @@ tags: [Kubernetes, 리소스, Core, Service]
 <br />
 
 
-## 리소스 아이콘
+## Resource Icon
 
 <img
     src={
@@ -17,43 +17,44 @@ tags: [Kubernetes, 리소스, Core, Service]
     }
 />
 
-## 리소스 개요
+## Resource Overview
 
-파드(Pod)에 대한 단일 진입점을 제공하고, 그 파드들 간의 통신을 관리하는 추상화된 쿠버네티스 리소스입니다.
+An abstract Kubernetes resource that provides a single entry point for Pods and manages communication between those Pods.
 
-## 연관 리소스
+## Associated Resources
 
-### 상위 리소스
+### Parent Resource
+
 
 -   [**Cluster**](https://docs.cstudio.app/docs/resource/kubernetes/Base/Cluster)
 -   [**Namespace**](https://docs.cstudio.app/docs/resource/kubernetes/Core/Namespace)
 
-### 연결 리소스
+### Connected Resources
 
 -   [**Deployment**](https://docs.cstudio.app/docs/resource/kubernetes/Apps/Deployment)
 -   [**Pod**](https://docs.cstudio.app/docs/resource/kubernetes/Core/Pod)
 -   [**Ingress**](https://docs.cstudio.app/docs/resource/kubernetes/Networking/Ingress)
 
 
-## 리소스 설정 값
+## Resource Setting Values
 
--   `service_name` : Service 리소스 이름
--   `namespace` : Service 리소스가 배포될 네임스페이스
--   `annotations` : 쿠버네티스 시스템에서 필요한 정보들을 표시해 주기 위해서 사용하는 key-value
--   `labels` : 객체를 구분하기 위해서 사용자가 임의로 원하는 값을 지정
--   `selector` : Selector와 일치하는 레이블의 key-value를 사용하여 서비스 트래픽을 Pod로 라우팅
--   `type` : 서비스의 타입을 지정 - `ClusterIP`,`NodePort`,`LoadBalancer`
--   `session_affinity` : 클라이언트의 요청이 특정 파드로만 가도록 유지되게 하는 정책 - `None`,`clientIP`
--   `port` : 서비스에 의해 노출되는 포트 목록
-    -   `name` : 포트 설정 이름  
-        -   `protocol` : 해당 포트의 IP 프로토콜 - `TCP`,`UDP`
-        -   `port` : 서비스에 의해 노출되는 포트 번호 
-        -   `target_port` : 서비스 대상 파드(Pod)에서 액세스할 포트의 번호 
+-   `service_name` : Name of the Service resource
+-   `namespace` : Namespace where Service resources will be deployed
+-   `annotations` : A key-value used to display necessary information in the Kubernetes system
+-   `labels` : To distinguish objects, the user arbitrarily specifies the desired value
+-   `selector` : Route service traffic to Pods using the key-value of the label that matches the selector
+-   `type` : Specifies the type of service - `ClusterIP`,`NodePort`,`LoadBalancer`
+-   `session_affinity` : A policy that ensures that requests from clients go only to specific pods - `None`,`clientIP`
+-   `port` : List of ports exposed by the service
+    -   `name` : Port configuration name
+        -   `protocol` : IP protocol for that port - `TCP`,`UDP`
+        -   `port` : Port number exposed by the service 
+        -   `target_port` : Number of ports to be accessed by the serviced pod 
 
 
 ---
 
-## 참고 자료
+## Reference Materials
 
 -   [Service(Kubernetes)](https://kubernetes.io/docs/concepts/services-networking/service/)
 -   [Service(Terraform)](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/service)

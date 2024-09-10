@@ -1,13 +1,13 @@
 ---
 title: Server
 sidebar_position: 0
-tags: [Ncloud, 리소스, Compute, Server]
+tags: [Ncloud, Resource, Compute, Server]
 ---
 
 <hr />
 <br />
 
-## 리소스 아이콘
+## Resource Icon
 
 <img
     src={
@@ -15,34 +15,34 @@ tags: [Ncloud, 리소스, Compute, Server]
     }
 />
 
-## 리소스 개요
+## Resource Overview
 
-실제 하드웨어를 관리하지 않아도 가상화의 유연성을 제공하는 컴퓨팅 리소스입니다. 클라우드 환경에 서버를 생성하여 시간과 비용 측면에서 효율적이며 인프라 운영이 부담되거나 일시적으로 많은 서버 자원이 필요한 경우에 적합합니다.
+This computing resource provides the flexibility of virtualization without the need to manage physical hardware. It is efficient in terms of time and cost by creating servers in a cloud environment, making it suitable for scenarios where infrastructure management is burdensome or when temporary access to a large number of server resources is needed.
 
-## 연관 리소스
+## Associated Resources
 
-### 상위 리소스
+### Parent Resource
 -   [**Subnet**](https://docs.cstudio.app/docs/resource/ncloud/Networking/Subnet)
 
-### 연결 리소스
+### Connected Resources
 
 -   [**BlockStorage**](https://docs.cstudio.app/docs/resource/ncloud/Storage/BlockStorage)
 -   [**PublicIp**](https://docs.cstudio.app/docs/resource/ncloud/Networking/PublicIP)
 -   [**TargetGroup**](https://docs.cstudio.app/docs/resource/ncloud/Networking/TargetGroup)
 
-## 리소스 설정 값
+## Resource Setting Values
 
--   `includ_subnet_name` : 서버가 위치하는 Subnet 이름
--   `server_image_product_code` : 사용할 운영체제 이미지 코드
--   `server_product_code` : 서버의 하드웨어 구성을 위한 코드
--   `login_key_name` : 사용할 login_key 이름
--   `init_script` : 사용할 init_script 이름
--   `is_encrypted_base_block_storage_volume` : 스토리지 암호화 여부
--   `linked_network_interface_name` : 서버에 할당하는 네트워크 인터페이스
+-   `includ_subnet_name` : The name of Subnet to which to create the Server
+-   `server_image_product_code` : The code of OS image to use
+-   `server_product_code` : The code for hardware configuration on the server
+-   `login_key_name` : The Login key name to use
+-   `init_script` : The name of Init script to apply
+-   `is_encrypted_base_block_storage_volume` : Whether to encrypt basic Block storage if server image is RHV
+-   `linked_network_interface_name` : The Network interface to apply with the server
 
 
 ---
 
-## 참고 자료
+## Reference Materials
 
 -   [ncloud_server(Terraform)](https://registry.terraform.io/providers/NaverCloudPlatform/ncloud/latest/docs/resources/server)

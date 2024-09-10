@@ -1,13 +1,13 @@
 ---
 title: NetworkInterface
 sidebar_position: 0
-tags: [Ncloud, 리소스, Networking, NetworkInterface]
+tags: [Ncloud, Resource, Networking, NetworkInterface]
 ---
 
 <hr />
 <br />
 
-## 리소스 아이콘
+## Resource Icon
 
 <img
     src={
@@ -15,30 +15,30 @@ tags: [Ncloud, 리소스, Networking, NetworkInterface]
     }
 />
 
-## 리소스 개요
+## Resource Overview
 
-서버에 할당할 수 있는 네트워크 인터페이스를 생성하는 서비스입니다. 네트워크 인터페이스가 적용된 서버들은 Subnet을 사용하여 독립된 네트워크 통신이 가능합니다.
+This service creates network interfaces that can be assigned to servers. Servers with applied network interfaces can use subnets to enable independent network communication.
 
-## 연관 리소스
+## Associated Resources
 
-### 상위 리소스
+### Parent Resource
 
 -   [**Subnet**](https://docs.cstudio.app/docs/resource/ncloud/Networking/Subnet)
 
-### 연결 리소스
+### Connected Resources
 
 -   [**Access Control Group**](https://docs.cstudio.app/docs/resource/ncloud/Security/AccessControlGroup)
 -   [**Server**](https://docs.cstudio.app/docs/resource/ncloud/Compute/Server)
 
-## 리소스 설정 값
+## Resource Setting Values
 
--   `included_subnet_name` : Network Interface가 포함될 subnet 이름
--   `linked_acg_names` : 네트워크 인터페이스를 적용할 ACG 이름 목록
+-   `included_subnet_name` : The name of Subnet to included with the Network interface
+-   `linked_acg_names` : The names of ACG to apply the Network interface is located
 
 
 ---
 
-## 참고 자료
+## Reference Materials
 
 
 -   [ncloud_server(Terraform)](https://registry.terraform.io/providers/NaverCloudPlatform/ncloud/latest/docs/resources/network_interface)
