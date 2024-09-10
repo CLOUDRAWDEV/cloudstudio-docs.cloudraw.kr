@@ -1,13 +1,13 @@
 ---
 title: Postgresql
 sidebar_position: 0
-tags: [AWS, 리소스, Rds, Postgresql]
+tags: [AWS, リソース, Rds, Postgresql]
 ---
 
 <hr />
 <br />
 
-## 리소스 아이콘
+## リソースアイコン
 
 <img
     src={
@@ -15,50 +15,51 @@ tags: [AWS, 리소스, Rds, Postgresql]
     }
 />
 
-## 리소스 개요
+## リソース概要
 
-AWS에서 PostgreSQL을 사용하여 RDS를 구축하면 데이터베이스 운영과 관리가 쉽고, 확장성이 높습니다. 또한 RDS는 데이터베이스 인스턴스에 대한 자동 백업 및 복원 기능을 제공하여 데이터 손실을 방지할 수 있으며, AWS에서 제공하는 보안 기능으로 데이터의 안전성을 보장할 수 있습니다.
+AWS で PostgreSQL を使用して RDS を構築すると、データベースの運営と管理が容易になり、拡張性が高くなります。
+また、RDS はデータベースインスタンスに対する自動バックアップおよび復元機能を提供し、データ損失を防止することができ、AWS が提供するセキュリティ機能でデータの安全性を保障することができます。
 
-## 연관 리소스
+## 関連リソース
 
-### 상위 리소스
+### 上位リソース
 
--   [**Subnet**](https://docs.cstudio.app/docs/resource/aws/Vpc/Subnet)
+-   [**Subnet**](https://docs.cstudio.app/ja/docs/resource/aws/Vpc/Subnet)
 
-### 연결 리소스
+### 接続リソース
 
--   [**PostgreSQL**](https://docs.cstudio.app/docs/resource/aws/Rds/Postgresql)
+-   [**PostgreSQL**](https://docs.cstudio.app/ja/docs/resource/aws/Rds/Postgresql)
 
-## 리소스 설정 값
+## リソース設定値
 
--   `database_name` : 초기 데이터베이스 이름
--   `engine_version` : RDS에 사용할 PostgreSQL 버전
--   `instance_class` : RDS DB의 가격 측정 계층
--   `storage_type` : RDS 인스턴스의 Storage Type - `gp2`, `io1`, `standard`
--   `allocated_storage` : RDS Insatance Storage의 용량 (Gigabytes)
--   `max_allocated_storage` : Amazon RDS가 DB 인스턴스의 스토리지를 자동으로 확장할 수 있는 상한선
--   `multi_az_enabled` : 다중 AZ 배포 활성화 - `true`, `false`
--   `username` : RDS의 사용자 이름
--   `password` : RDS의 사용자 패스워드
--   `skip_final_snapshot` : DB 인스턴스가 삭제되기 전에 최종 DB 스냅샷을 생성할지 여부를 결정
--   `included_subnet_names` : RDS Subnet 그룹에 연결할 Subnet 이름
--   `backup_retention_period` : 백업 데이터를 보관할 기간
--   `storage_encrypted` : DB 인스턴스의 암호화 여부를 지정 - `true`, `false`
--   `publicly_accessible` : 인스턴스에 public access가 가능한지 여부 - `true`, `false`
+-   `database_name` : 初期データベース名
+-   `engine_version` : RDS に使用する PostgreSQL のバージョン
+-   `instance_class` : RDS DB の価格測定階層
+-   `storage_type` : RDS インスタンスの Storage Type - `gp2`, `io1`, `standard`
+-   `allocated_storage` : RDS Insatance Storage の容量(Gigabytes)
+-   `max_allocated_storage` : Amazon RDS が DB インスタンスのストレージを自動的に拡張できる上限線
+-   `multi_az_enabled` : マルチ AZ 活性化 - `true`, `false`
+-   `username` : RDS のユーザー名
+-   `password` : RDS のユーザーパスワード
+-   `skip_final_snapshot` : DB インスタンスが削除される前に、最終 DB スナップショットを生成するかどうかの可否
+-   `included_subnet_names` : RDS Subnet グループに接続する Subnet 名
+-   `backup_retention_period` : バックアップデータを保持する期間
+-   `storage_encrypted` : DB インスタンスの暗号化可否を指定 - `true`, `false`
+-   `publicly_accessible` : インスタンスに public access が可能かどうかの可否 - `true`, `false`
 -   `monitoring`
     -   `performance_insights_enabled` : 성능 인사이트 활성화
 -   `encryption`
-    -   `storage_encrypted` : DB 인스턴스의 암호화 여부를 지정 - `true`, `false`
-    -   `kms_key_name` : 암호화에 사용할 kms 키 이름
+    -   `storage_encrypted` : DB インスタンスの暗号化可否を指定 - `true`, `false`
+    -   `kms_key_name` : 暗号化に使用する KMS キー名
 -   `backup`
-    -   `backup_retention_period` : 백업 데이터를 보관할 기간 - `1`~`35`
-    -   `final_snapshot_enabled` : DB 인스턴스가 삭제되기 전, 최종 DB 스냅샷을 생성할지 여부 - `true`, `false`
-    -   `final_snapshot_name` : 최종 스냅샷 이름ess가 가능한지 여부 - `true`, `false`
+    -   `backup_retention_period` : バックアップデータを保持する期間 - `1`~`35`
+    -   `final_snapshot_enabled` : DB インスタンスが削除される前に、最終 DB スナップショットを生成するかどうかの可否 - `true`, `false`
+    -   `final_snapshot_name` : 最終スナップショット名 - `true`, `false`
 
 ---
 
-## 참고 자료
+## 参考資料
 
 -   [Amazon RDS for PostgreSQL(Amazon RDS)(AWS)](https://aws.amazon.com/ko/rds/postgresql/)
 -   [What is PostgreSQL?(AWS)](https://aws.amazon.com/ko/rds/postgresql/what-is-postgresql/)
--   [Amazon RDS for PostgreSQL 요금](https://aws.amazon.com/ko/rds/postgresql/pricing/)
+-   [Amazon RDS for PostgreSQL 料金](https://aws.amazon.com/ko/rds/postgresql/pricing/)

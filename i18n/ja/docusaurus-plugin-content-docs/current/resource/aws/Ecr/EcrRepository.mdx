@@ -1,13 +1,13 @@
 ---
 title: Ecr Repository
 sidebar_position: 0
-tags: [AWS, 리소스, Ecr, EcrRepository]
+tags: [AWS, リソース, Ecr, EcrRepository]
 ---
 
 <hr />
 <br />
 
-## 리소스 아이콘
+## リソースアイコン
 
 <img
     src={
@@ -15,27 +15,30 @@ tags: [AWS, 리소스, Ecr, EcrRepository]
     }
 />
 
-## 리소스 개요
+## リソース概要
 
-Amazon Elastic Container Registry(Amazon ECR)는 안전하고 확장 가능하고 신뢰할 수 있는 AWS 관리형 컨테이너 이미지 레지스트리 서비스입니다. Amazon ECR은 AWS IAM을 사용하여 리소스 기반 권한을 가진 프라이빗 리포지토리를 지원합니다. 따라서 지정된 사용자 또는 Amazon EC2 인스턴스가 컨테이너 리포지토리 및 이미지에 액세스할 수 있습니다. 원하는 CLI를 사용하여 도커 이미지, Open Container Initiative(OCI) 이미지 및 OCI 호환 아티팩트를 푸시, 풀 및 관리할 수 있습니다.
+Amazon Elastic Container Registry(Amazon ECR)は安全で拡張可能で信頼できる AWS 管理型コンテナイメージレジストリサービスです。
+Amazon ECR は AWS IAM を使用してリソースベースの権限を持つプライベートリポジトリをサポートします。
+したがって、指定されたユーザーまたは Amazon EC2 インスタンスがコンテナリポジトリ及びイメージにアクセスできます。
+希望する CLI を使用して Docker イメージ、 Open Container Initiative(OCI)イメージ及び OCI 互換アーティファクトをプッシュ、プル及び管理することができます。
 
-## 연관 리소스
+## 関連リソース
 
-### 상위 리소스
+### 上位リソース
 
--   [**Region**](https://docs.cstudio.app/docs/resource/aws/Base/Region)
+-   [**Region**](https://docs.cstudio.app/ja/docs/resource/aws/Base/Region)
 
-## 리소스 설정 값
+## リソース設定値
 
--   `image_tag_mutability` : 저장소의 태그 변경 가능 설정 - `IMMUTABLE`, `MUTABLE`
--   `scan_on_push` : 이미지가 저장소로 푸시된 후 스캔되는지 여부를 설정 - `true`, `false`
--   `encryption_type` : 저장소에 사용할 암호화 유형 - `KMS`, `AES256`
--   `kms_key_name` : 사용할 KMS Key의 ARN 이름
--   `target_principal_arn` : Policy를 적용할 대상의 ARN
+-   `image_tag_mutability` : リポジトリのタグ変更可能設定 - `IMMUTABLE`, `MUTABLE`
+-   `scan_on_push` : イメージがリポジトリにプッシュされてからスキャンされるかどうかを設定 - `true`, `false`
+-   `encryption_type` : リポジトリに使用する暗号化タイプ - `KMS`, `AES256`
+-   `kms_key_name` : 使用する KMS Key の ARN 名
+-   `target_principal_arn` : Policy を適用する対象の ARN
 
 ---
 
-## 참고 자료
+## 参考資料
 
 -   [Amazon Elastic Container Registry(AWS)](https://docs.aws.amazon.com/ko_kr/AmazonECR/latest/userguide/what-is-ecr.html)
 -   [Amazon Elastic Container Registry(AWS)](https://aws.amazon.com/ko/ecr/pricing/?nc2=type_a)

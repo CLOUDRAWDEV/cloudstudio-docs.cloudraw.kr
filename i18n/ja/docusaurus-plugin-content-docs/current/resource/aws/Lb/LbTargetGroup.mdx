@@ -1,13 +1,13 @@
 ---
 title: LbTargetGroup
 sidebar_position: 0
-tags: [AWS, 리소스, Lb, LbTargetGroup]
+tags: [AWS, リソース, Lb, LbTargetGroup]
 ---
 
 <hr />
 <br />
 
-## 리소스 아이콘
+## リソースアイコン
 
 <img
     src={
@@ -15,35 +15,34 @@ tags: [AWS, 리소스, Lb, LbTargetGroup]
     }
 />
 
-## 리소스 개요
+## リソース概要
 
-지정한 프로토콜과 포트 번호를 사용하여 EC2 인스턴스 같은 하나 이상의 등록된 대상으로 요청을 라우팅하는 서비스
+指定したプロトコルとポート番号を使用して EC2 インスタンスのような 1 つ以上の登録された対象にリクエストをルーティングするサービス
 
-## 연관 리소스
+## 関連リソース
 
-### 상위 리소스
+### 上位リソース
 
--   [**Region**](https://docs.cstudio.app/docs/resource/aws/Base/Region)
--   [**Vpc**](https://docs.cstudio.app/docs/resource/aws/Vpc/Vpc)
+-   [**Region**](https://docs.cstudio.app/ja/docs/resource/aws/Base/Region)
+-   [**Vpc**](https://docs.cstudio.app/ja/docs/resource/aws/Vpc/Vpc)
 
-### 연결 리소스
+### 接続リソース
 
--   [**Ec2 Instance**](https://docs.cstudio.app/docs/resource/aws/Ec2/Instance)
--   [**Lambda Function**](https://docs.cstudio.app/docs/resource/aws/Lambda/LambdaFunction)
--   [**Lb**]https://docs.cstudio.app/docs/resource/aws/Lb)
+-   [**Ec2 Instance**](https://docs.cstudio.app/ja/docs/resource/aws/Ec2/Instance)
+-   [**Lambda Function**](https://docs.cstudio.app/ja/docs/resource/aws/Lambda/LambdaFunction)
+-   [**Lb**](https://docs.cstudio.app/ja/docs/resource/aws/Lb)
 
-## 리소스 설정 값
+## リソース設定値
 
--   `target_type` : LB 대상의 종류 - `Instance`, `Ip`, `Lambda`, `Alb`
--   `protocol` : 트래픽을 대상으로 라우팅하는 데 사용할 프로토콜 - `HTTP`,`HTTPS`,`TCP`,`TCP_UDP`,`TLS`
--   `port` : 트래픽을 수신하는 포트 - `1~65535`
--   `included_vpc_name` : 대상 그룹을 생성할 VPC의 이름
--   `linked_instance_names` : Target Instance의 이름 목록
-
+-   `target_type` : LB ターゲットの種類 - `Instance`, `Ip`, `Lambda`, `Alb`
+-   `protocol` : トラフィックへのルーティングに使用するプロトコル - `HTTP`,`HTTPS`,`TCP`,`TCP_UDP`,`TLS`
+-   `port` : トラフィックを受信するポート - `1~65535`
+-   `included_vpc_name` : ターゲットグループを生成する VPC の名前
+-   `linked_instance_names` : Target Instance の名前リスト
 
 ---
 
-## 참고 자료
+## 参考資料
 
 -   [LB Target Group(AWS)](https://docs.aws.amazon.com/ko_kr/elasticloadbalancing/latest/application/load-balancer-target-groups.html)
 -   [LB Target Group(Terraform)](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lb_target_group)

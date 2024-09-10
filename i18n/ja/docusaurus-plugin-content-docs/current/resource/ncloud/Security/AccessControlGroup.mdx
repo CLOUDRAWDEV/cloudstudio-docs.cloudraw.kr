@@ -1,13 +1,13 @@
 ---
 title: AccessControlGroup
 sidebar_position: 0
-tags: [Ncloud, 리소스, Security, AccessControlGroup]
+tags: [Ncloud, リソース, Security, AccessControlGroup]
 ---
 
 <hr />
 <br />
 
-## 리소스 아이콘
+## リソースアイコン
 
 <img
     src={
@@ -15,42 +15,43 @@ tags: [Ncloud, 리소스, Security, AccessControlGroup]
     }
 />
 
-## 리소스 개요
+## リソース概要
 
-서버 간 네트워크 접근 제어 및 관리를 할 수 있는 IP/Port 기반 필터링 방화벽 서비스입니다.
+サーバー間ネットワークアクセス制御および管理ができる IP/Port ベースのフィルタリングファイアウォールサービスです。
 
-## 연관 리소스
+## 関連リソース
 
-### 상위 리소스
+### 上位リソース
 
--   [**VPC**](https://docs.cstudio.app/docs/resource/ncloud/Networking/Vpc)
+-   [**VPC**](https://docs.cstudio.app/ja/docs/resource/ncloud/Networking/Vpc)
 
-### 연결 리소스
+### 接続リソース
 
--   [**Network Interface**](https://docs.cstudio.app/docs/resource/ncloud/Networking/NetworkInterface)
--   [**Auto Scaling**](https://docs.cstudio.app/docs/resource/ncloud/Compute/AutoScaling)
+-   [**Network Interface**](https://docs.cstudio.app/ja/docs/resource/ncloud/Networking/NetworkInterface)
+-   [**Auto Scaling**](https://docs.cstudio.app/ja/docs/resource/ncloud/Compute/AutoScaling)
 
-## 리소스 설정 값
+## リソース設定値
 
--   `included_vpc_name` : ACG를 생성할 VPC 이름
--   `acg_description` : ACG에 대한 설명
+-   `included_vpc_name` : ACG を作成する VPC の名前
+-   `acg_description` : ACG の説明
 -   `inbound_rule`
-    -   `name` : inbound rule에 대한 이름
-    -   `protocol` : 인바운드 트래픽의 프로토콜 - `TCP`, `UDP`, `ICMP`
-    -   `rule_apply_method` : 인바운드 규칙 적용 방법 - `ip_block`, `source_name`
-    -   `ip_block` : 인바운드 트래픽 목적지, CDIR 형식의 IP 대역
-    -   `port_range` : 인바운드 규칙을 적용할 포트 범위, 1 ~ 65535의 범위(범위 설정시: 100-200)
+
+    -   `name` : インバウンドルールの名前
+    -   `protocol` : インバウンドトラフィックのプロトコル - `TCP`, `UDP`, `ICMP`
+    -   `rule_apply_method` : インバウンドルールを適用する方法 - `ip_block`, `source_name`
+    -   `ip_block` : インバウンドトラフィックの宛先、CIDR ブロック
+    -   `port_range` : 適用するポート範囲、1 から 65535
 
 -   `outbound_rule`
-    -   `name` : outbound rule에 대한 이름
-    -   `protocol` : 아웃바운드 트래픽의 프로토콜 - `TCP`, `UDP`, `ICMP`
-    -   `rule_apply_method` : 아웃바운드 규칙 적용 방법 - `ip_block`, `source_name`
-    -   `ip_block` : 인바운드 트래픽 목적지, CDIR 형식의 IP 대역
-    -   `port_range` : 인바운드 규칙을 적용할 포트 범위, 1 ~ 65535의 범위(범위 설정시: 100-200)
-    
+    -   `name` : アウトバウンドルールの名前
+    -   `protocol` : アウトバウンドトラフィックのプロトコル - `TCP`, `UDP`, `ICMP`
+    -   `rule_apply_method` : アウトバウンドルールを適用する方法 - `ip_block`, `source_name`
+    -   `ip_block` : アウトバウンドトラフィックの宛先、CIDR ブロック
+    -   `port_range` : 適用するポート範囲、1 から 65535
+
 ---
 
-## 참고 자료
+## 参考資料
 
 -   [ACG(Ncloud)](https://www.ncloud.com/product/security/acg)
 -   [ncloud_acg(Terraform)](https://registry.terraform.io/providers/NaverCloudPlatform/ncloud/latest/docs/resources/access_control_group)

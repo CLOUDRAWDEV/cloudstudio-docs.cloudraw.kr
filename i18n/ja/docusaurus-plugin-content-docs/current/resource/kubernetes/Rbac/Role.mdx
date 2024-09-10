@@ -1,15 +1,13 @@
 ---
 title: Role
 sidebar_position: 0
-tags: [Kubernetes, 리소스, RBAC, Role]
+tags: [Kubernetes, リソース, RBAC, Role]
 ---
-
 
 <hr />
 <br />
 
-
-## 리소스 아이콘
+## リソースアイコン
 
 <img
     src={
@@ -17,45 +15,37 @@ tags: [Kubernetes, 리소스, RBAC, Role]
     }
 />
 
-## 리소스 개요
+## リソース概要
 
-지정된 네임스페이스에만 적용되는 역할을 생성하는 쿠버네티스 리소스
+指定された名前空間にのみ適用される役割を生成するクバネティスリソース
 
-## 연관 리소스
+## 関連リソース
 
-### 상위 리소스
+### 上位リソース
 
--   [**Cluster**](https://docs.cstudio.app/docs/resource/kubernetes/Base/Cluster)
--   [**Namespace**](https://docs.cstudio.app/docs/resource/kubernetes/Core/Namespace)
+-   [**Cluster**](https://docs.cstudio.app/ja/docs/resource/kubernetes/Base/Cluster)
+-   [**Namespace**](https://docs.cstudio.app/ja/docs/resource/kubernetes/Core/Namespace)
 
+### 接続リソース
 
-### 연결 리소스
+-   [**RoleBinding**](https://docs.cstudio.app/ja/docs/resource/kubernetes/Rbac/RoleBinding)
 
--   [**RoleBinding**](https://docs.cstudio.app/docs/resource/kubernetes/Rbac/RoleBinding)
+## リソース設定値
 
-
-
-## 리소스 설정 값
-
--   `service_name` : Role 리소스 이름
--   `namespace` : Role 리소스가 배포될 네임스페이스
--   `annotations` : 쿠버네티스 시스템에서 필요한 정보들을 표시해 주기 위해서 사용하는 key-value
--   `labels` : 객체를 구분하기 위해서 사용자가 임의로 원하는 값을 지정
--   `rule` : 해당 role에 대한 정책역할
-    -   `name` : 정책역할 이름
-    -   `api_groups` : 작업을 허용할 리소스가 포함된 API Group
-    -   `resources` : 이 규칙이 적용되는 리소스 목록
-    -   `resource_names` : 해당 리소스의 개별 인스턴스로 선택할 경우 지정 - 빈 값일 경우 해당 리소스 전체를 포함
-    -   `verbs` : Rule에 포함된 모든 리소스에 적용되는 동사 목록
-
-
-
-
-
+-   `service_name` : Role リソース名
+-   `namespace` : Role リソースがデプロイされるネームスペース
+-   `annotations` : クバネティスシステムで必要な情報を表示するために使用する key-value
+-   `labels` : オブジェクトを区切るためにユーザーが任意に希望する値を指定
+-   `rule` : 当該 Cluster Role に対するポリシーの役割
+    -   `name` : rule 名
+    -   `api_groups` : 作業を許可するリソースを含む API Group
+    -   `resources` : このルールが適用されるリソースのリスト
+    -   `resource_names` : 対応するリソースの個別のインスタンスとして選択する場合は指定 - 空き値の場合は、対応するリソース全体を含めます
+    -   `verbs` : Rule に含まれるすべてのリソースに適用される動詞リスト
 
 ---
 
-## 참고 자료
+## 参考資料
 
 -   [Role(kubernetes)](https://kubernetes.io/docs/reference/access-authn-authz/rbac/#role-and-clusterrole)
 -   [Role(Terraform)](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/role)

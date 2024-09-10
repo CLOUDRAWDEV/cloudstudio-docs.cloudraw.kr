@@ -1,13 +1,13 @@
 ---
 title: S3 Bucket
 sidebar_position: 0
-tags: [AWS, 리소스, S3, S3Bucket]
+tags: [AWS, リソース, S3, S3Bucket]
 ---
 
 <hr />
 <br />
 
-## 리소스 아이콘
+## リソースアイコン
 
 <img
     src={
@@ -15,39 +15,41 @@ tags: [AWS, 리소스, S3, S3Bucket]
     }
 />
 
-## 리소스 개요
+## リソース概要
 
-Amazon Simple Storage Service(Amazon S3)는 업계 최고의 확장성, 데이터 가용성, 보안 및 성능을 제공하는 객체 스토리지 서비스입니다. 모든 규모와 업종의 고객은 Amazon S3를 사용하여 데이터 레이크, 웹 사이트, 모바일 애플리케이션, 백업 및 복원, 아카이브, 엔터프라이즈 애플리케이션, IoT 디바이스, 빅 데이터 분석 등 다양한 사용 사례에서 원하는 양의 데이터를 저장하고 보호할 수 있습니다. Amazon S3는 특정 비즈니스, 조직 및 규정 준수 요구 사항에 맞게 데이터에 대한 액세스를 최적화, 구조화 및 구성할 수 있는 관리 기능을 제공합니다.
+Amazon Simple Storage Service(Amazon S3)は業界最高の拡張性、データ可用性、セキュリティ及び性能を提供するオブジェクトストレージサービスです。
+すべての規模と業種のお客様は Amazon S3 を使用してデータレイク、ウェブサイト、モバイルアプリケーション、バックアップおよび復元、アーカイブ、エンタープライズアプリケーション、IoT デバイス、ビッグデータ分析など、様々な使用事例から必要な量のデータを保存·保護することができます。
+Amazon S3 は特定のビジネス、組織およびコンプライアンスの要件に合わせて、データへのアクセスを最適化、構造化および構成できる管理機能を提供します。
 
-## 연관 리소스
+## 関連リソース
 
-### 상위 리소스
+### 上位リソース
 
--   [**Region**](https://docs.cstudio.app/docs/resource/aws/Base/Region)
+-   [**Region**](https://docs.cstudio.app/ja/docs/resource/aws/Base/Region)
 
-### 연결 리소스
+### 接続リソース
 
-## 리소스 설정 값
+## リソース設定値
 
--   `versioning_status` : 버킷의 버전 관리 상태 - `Enabled`, `Suspended`
--   `logging_target_prefix` : 모든 로그 개체 키에 대한 접두사
--   `sse_algorithm` : 사용할 서버 측 암호화 알고리즘 - `aws:kms`, `AES256
--   `kms_key_name` : SSE-KMS 암호화에 사용되는 AWS KMS 마스터 키 이름
--   `public_access_block` : S3 Public Access Block 이름
+-   `versioning_status` : バケットのバージョン管理ステータス - `Enabled`, `Suspended`
+-   `logging_target_prefix` : すべてのログオブジェクトのキーに対するプレフィックス
+-   `sse_algorithm` : 使用するサーバ側の暗号化アルゴリズム - `aws:kms`, `AES256
+-   `kms_key_name` : SSE-KMS 暗号化に使用される AWS KMS マスターキー名
+-   `public_access_block` : S3 Public Access Block の名前
 
-    -   `block_public_acls` : Amazon S3가 버킷에 대한 퍼블릭 ACL을 차단해야 하는지 여부 - `true`, `false`
-    -   `block_public_policy` : Amazon S3가 이 버킷에 대한 퍼블릭 버킷 정책을 차단해야 하는지 여부 - `true`, `false`
-    -   `ignore_public_acls` : Amazon S3가 이 버킷에 대한 퍼블릭 ACL을 무시해야 하는지 여부 - `true`, `false`
-    -   `restrict_public_buckets` : Amazon S3가 이 버킷에 대한 퍼블릭 버킷 정책을 제한해야 하는지 여부 - `true`, `false`
+    -   `block_public_acls` : Amazon S3 がバケットに対するパブリック ACL をブロックすべきかどうかの可否 - `true`, `false`
+    -   `block_public_policy` : Amazon S3 がこのバケットに対するパブリックバケットポリシーをブロックすべきかどうかの可否 - `true`, `false`
+    -   `ignore_public_acls` : Amazon S3 がこのバケットに対するパブリック ACL を無視すべきかどうかの可否 - `true`, `false`
+    -   `restrict_public_buckets` : Amazon S3 がこのバケットに対するパブリックバケットポリシーを制限すべきかどうかの可否 - `true`, `false`
 
 -   `ownership_control`
-    -   `acl_enabled` : S3 버킷에 작성한 객체의 소유권 및 ACL의 사용 활성화 - `true`, `false`
-    -   `object_ownership` : S3 버킷에 작성한 객체 소유권 방식 - `BucketOwnerEnforced`, `BucketOwnerPreferred`, `ObjectWriter`
+    -   `acl_enabled` : S3 バケットに作成したオブジェクトの所有権及び ACL の使用活性化 - `true`, `false`
+    -   `object_ownership` : S3 バケットに作成したオブジェクト所有権方式 - `BucketOwnerEnforced`, `BucketOwnerPreferred`, `ObjectWriter`
 
 ---
 
-## 참고 자료
+## 参考資料
 
 -   [Amazon S3(AWS)](https://docs.aws.amazon.com/ko_kr/AmazonS3/latest/userguide/Welcome.html)
--   [Amazon S3 요금(AWS)](https://aws.amazon.com/ko/s3/pricing/?nc2=type_a)
+-   [Amazon S3 料金(AWS)](https://aws.amazon.com/ko/s3/pricing/?nc2=type_a)
 -   [aws-s3-bucket(Terraform)](https://registry.terraform.io/modules/terraform-aws-modules/s3-bucket/aws/latest)

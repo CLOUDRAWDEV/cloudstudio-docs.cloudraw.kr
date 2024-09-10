@@ -1,7 +1,7 @@
 ---
 title: ClusterRole
 sidebar_position: 0
-tags: [Kubernetes, 리소스, RBAC, ClusterRole]
+tags: [Kubernetes, Resource, RBAC, ClusterRole]
 ---
 
 
@@ -9,7 +9,7 @@ tags: [Kubernetes, 리소스, RBAC, ClusterRole]
 <br />
 
 
-## 리소스 아이콘
+## Resource Icon
 
 <img
     src={
@@ -17,35 +17,34 @@ tags: [Kubernetes, 리소스, RBAC, ClusterRole]
     }
 />
 
-## 리소스 개요
+## Resource Overview
 
-클러스터 수준과 모든 네임스페이스에서 적용되는 역할을 생성하는 쿠버네티스 리소스
+A Kubernetes resource that creates roles applicable at the cluster level and across all namespaces
 
-## 연관 리소스
+## Associated Resources
 
-### 상위 리소스
+### Parent Resource
 
--   [**Cluster**](https://docs.cstudio.app/docs/resource/kubernetes/Base/Cluster)
-
-
-### 연결 리소스
-
--   [**ClusterRolebinding**](https://docs.cstudio.app/docs/resource/kubernetes/Rbac/ClusterRolebinding)
+-   [**Cluster**](https://docs.cstudio.app/en/docs/resource/kubernetes/Base/Cluster)
 
 
-## 리소스 설정 값
+### Connected Resources
 
--   `service_name` : ClusterRole 리소스 이름
--   `annotations` : 쿠버네티스 시스템에서 필요한 정보들을 표시해 주기 위해서 사용하는 key-value
--   `labels` : 객체를 구분하기 위해서 사용자가 임의로 원하는 값을 지정
--   `rule` : 해당 clusterrole에 대한 정책역할
-    -   `name` : 정책역할 이름
-    -   `api_groups` : 작업을 허용할 리소스가 포함된 API Group
-    -   `resources` : 이 규칙이 적용되는 리소스 목록
-    -   `resource_names` : 해당 리소스의 개별 인스턴스로 선택할 경우 지정 - 빈 값일 경우 해당 리소스 전체를 포함
-    -   `non_resource_urls` : 리소스가 아니라 url형식으로 rule을 지정할 때 사용 - 헬스체크용 url 지정 가능
-    -   `verbs` : Rule에 포함된 모든 리소스에 적용되는 동사 목록
+-   [**ClusterRolebinding**](https://docs.cstudio.app/en/docs/resource/kubernetes/Rbac/ClusterRolebinding)
 
+
+## Resource Setting Values
+
+-   `service_name`: Name of the ClusterRole resource
+-   `annotations`: Key-value pairs used to display necessary information in the Kubernetes system
+-   `labels`: User-specified values to distinguish objects
+-   `rule`: Policy role for the ClusterRole
+    -   `name`: Name of the policy role
+    -   `api_groups`: API groups that include the resources allowed by this policy
+    -   `resources`: List of resources to which this rule applies
+    -   `resource_names`: Specifies individual instances of the resource if selected - if empty, includes all instances of the resource
+    -   `non_resource_urls`: Used for specifying rules in URL format rather than as resources - can specify URLs for health checks
+    -   `verbs`: List of verbs applied to all resources included in the rule
 
 
 
@@ -53,7 +52,7 @@ tags: [Kubernetes, 리소스, RBAC, ClusterRole]
 
 ---
 
-## 참고 자료
+## Reference Materials
 
--   [ClusterRole(kubernetes)](https://kubernetes.io/docs/reference/access-authn-authz/rbac/#role-and-clusterrole)
--   [ClusterRole(Terraform)](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/cluster_role)
+-   [ClusterRole(kubernetes)](https://kubernetes.io/en/docs/reference/access-authn-authz/rbac/#role-and-clusterrole)
+-   [ClusterRole(Terraform)](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/en/docs/resources/cluster_role)

@@ -1,15 +1,13 @@
 ---
 title: NginxIngress
 sidebar_position: 0
-tags: [Kubernetes, 리소스, Helm, NginxIngress]
+tags: [Kubernetes, リソース, Helm, NginxIngress]
 ---
-
 
 <hr />
 <br />
 
-
-## 리소스 아이콘
+## リソースアイコン
 
 <img
     src={
@@ -17,37 +15,34 @@ tags: [Kubernetes, 리소스, Helm, NginxIngress]
     }
 />
 
-## 리소스 개요
+## リソース概要
 
-Nginx 인그레스 컨트롤러를 설치하기 위한 헬름 차트입니다.
+Nginx Ingress Controller をインストールするための Helm Chart です。
 
-## 연관 리소스
+## 関連リソース
 
-### 상위 리소스
+### 上位リソース
 
--   [**Cluster**](https://docs.cstudio.app/docs/resource/kubernetes/Base/Cluster)
--   [**Namespace**](https://docs.cstudio.app/docs/resource/kubernetes/Core/Namespace)
+-   [**Cluster**](https://docs.cstudio.app/ja/docs/resource/kubernetes/Base/Cluster)
+-   [**Namespace**](https://docs.cstudio.app/ja/docs/resource/kubernetes/Core/Namespace)
 
-### 연결 리소스
+### 接続リソース
 
--   [**Ingress**](https://docs.cstudio.app/docs/resource/kubernetes/Networking/Ingress)
+-   [**Ingress**](https://docs.cstudio.app/ja/docs/resource/kubernetes/Networking/Ingress)
 
+## リソース設定値
 
-## 리소스 설정 값
-
--   `service_name` : Nginx Ingress-Controller 헬름 차트 릴리즈 이름
--   `namespace` : Nginx Ingress-Controller 헬름 차트가 배포될 네임스페이스
--   `version` : 사용할 Nginx Ingress-Controller 헬름 차트 버전
--   `replica_count` : 인그레스 컨트롤러 Deployment의 복제본 수
--   `external_traffic_policy` : 외부 트래픽에 대한 응답에 관한 정책을 설정 - `Cluster`,`Local`
--   `ingressclass_name` : 인그레스를 어떤 인그레스 컨트롤러가 관리할지 지정하는 리소스인 인그레스 클래스의 이름을 지정
--   `set` : Nginx 인그레스 컨트롤러 기본 차트의 값을 동적으로 변경
-
+-   `service_name` : Nginx Ingress Controller Helm Chart リリース名
+-   `namespace` : Nginx Ingress Controller Helm Chart リソースがデプロイされるネームスペース
+-   `version` : Nginx Ingress Controller Helm Chart のバージョンを指定
+-   `replica_count` : Nginx Ingress Controller Deployment のレプリカの数
+-   `external_traffic_policy` : 外部トラフィックへの応答に関するポリシーを設定 - `Cluster`,`Local`
+-   `ingress_class_name` : イングレスをどのイングレス コントローラーが管理するかを指定するリソースであるイングレス クラスの名前を指定
+-   `set` : Nginx イングレスコントローラデフォルトのチャートの値を動的に変更
 
 ---
 
-## 참고 자료
+## 参考資料
 
 -   [Helm install(NginxIngress)](https://docs.nginx.com/nginx-ingress-controller/installation/installing-nic/installation-with-helm/)
 -   [Helm Provider(Terraform)](https://registry.terraform.io/providers/hashicorp/helm/latest/docs)
-

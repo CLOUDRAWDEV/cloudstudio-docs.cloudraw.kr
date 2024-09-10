@@ -1,7 +1,7 @@
 ---
 title: PublicLoadBalancer
 sidebar_position: 1
-tags: [Azure, 리소스, LoadBalancer, PublicLoadBalancer]
+tags: [Azure, リソース, LoadBalancer, PublicLoadBalancer]
 ---
 
 <hr />
@@ -17,71 +17,71 @@ tags: [Azure, 리소스, LoadBalancer, PublicLoadBalancer]
 
 ## リソース概要
 
-LoadBalancer는 백 엔드 리소스 또는 서버의 그룹에서 로드(들어오는 네트워크 트래픽)를 효율적으로 분산하는 것을 의미합니다.
-Azure Load Balancer는 OSI(Open Systems Interconnect) 모델의 계층 4에서 작동합니다. 클라이언트의 단일 연락 지점입니다.
-Laod Balancer는 Load Balancer의 프런트 엔드에 도착하는 인바운드 흐름을 백 엔드 풀 인스턴스에 분산합니다.
-이러한 흐름은 구성된 부하 분산 규칙 및 상태 프로브에 따라 진행됩니다.
-백 엔드 풀 인스턴스는 Azure Virtual Machines 또는 Virtual Machine Scale Set의 인스턴스일 수 있습니다.
-Public LoadBalancer를 사용하여 가상 네트워크 내의 VM(가상 머신)에 대해 아웃바운드 연결을 제공합니다.
-이러한 연결은 개인 IP 주소를 공용 IP 주소로 변환하여 수행됩니다. Public Load Balancer는 인터넷 트래픽 부하를 VM에 분산하는 데 사용됩니다.
+LoadBalancer はバックエンドリソースまたはサーバーのグループからロード（入ってくるネットワークトラフィック）を効率的に分散することを意味します。
+Azure Load Balancer は OSI(Open Systems Interconnect) モデルの階層 4 で動作します。 クライアントの単一の連絡ポイントです。
+Load Balancer は Load Balancer のフロントエンドに到着するインバウンドの流れをバックエンドフルインスタンスに分散します。
+これらの流れは、構成された負荷分散ルールと状態プローブに従って行われます。
+バックエンドフルインスタンスは、Azure Virtual Machines または Virtual Machine Scale Set のインスタンスである場合があります。
+Public Load Balancer を使用して、仮想ネットワーク内の VM（仮想マシン）に対してアウトバウンド接続を提供します。
+このような接続は、個人 IP アドレスを共用 IP アドレスに変換して実行されます。 Public Load Balancer は、インターネットトラフィックの負荷を VM に分散するために使用されます。
 
 ## 関連リソース
 
 ### 上位リソース
 
--   [**Resource Group**](https://docs.cstudio.app/docs/resource/azure/Base/ResourceGroup)
+-   [**Resource Group**](https://docs.cstudio.app/ja/docs/resource/azure/Base/ResourceGroup)
 
 ### 接続リソース
 
--   [**Public Ip**](https://docs.cstudio.app/docs/resource/azure/Network/PublicIp)
+-   [**Public Ip**](https://docs.cstudio.app/ja/docs/resource/azure/Network/PublicIp)
 
 ## リソース設定値
 
--   `sku` : Azure Load Balancer의 규모 및 기능 선택을 위한 가격 책정 계층 - `standard`, `Basic`
+-   `sku` : Azure Load Balancer の規模及び機能選択のための価格設定階層(SKU) - `standard`, `Basic`
 
 -   `public_lb_frontend_ip_config`
 
--   `virtual_network_name` : Load Balancer가 트래픽을 전달할 Virtual Network 이름
+-   `virtual_network_name` : Load Balancer がトラフィックを配信する Virtual Network 名
 
--   `backend_pool` : Load Balancer의 Backend Pool 이름
+-   `backend_pool` : Load Balancer の Backend Pool 名
 
-    -   `linked_virtual_machine_names` : Load Balancer가 트래픽을 전달할 Virtual Machine 이름
+    -   `linked_virtual_machine_names` : Load Balancer がトラフィックを配信する Virtual Machine の名前
 
 -   `health_probe`
 
-    -   `protocol` : 상태 프로브가 사용하는 백엔드 엔드포인트의 프로토콜 타입 - `Http`, `Https`, `Tcp`
-    -   `port` : 상태 프로브가 백엔드 엔드포인트를 확인하는 포트 - `0` ~ `65535`
-    -   `request_path` : Http(s) 프로브를 사용할 때 GET에 사용할 경로
-    -   `interval_in_seconds` : 상태 프로브가 백엔드 풀 인스턴스의 응답을 확인하는 간격 (초) - `5` ~ `2147483646`
+    -   `protocol` : ヘルスプローブが使用するバックエンドエンドポイントプロトコルのタイプ - `Http`, `Https`, `Tcp`
+    -   `port` : ヘルスプローブがバックエンドエンドポイントをチェックするポート - `0` ~ `65535`
+    -   `request_path` : Http(s)プローブを使用する時に GET に使用するパス
+    -   `interval_in_seconds` : 状態プローブがバックエンドフルインスタンスの応答を確認する間隔(秒) - `5` ~ `2147483646`
 
 -   `rule`
 
-    -   `protocol` : 외부 Endpoint를 위한 전송 Protocol - `Tcp`, `Udp`, `All`
-    -   `frontend_port` : 외부 Endpoint의 Port, 0 ~ 65534의 범위 - `0` ~ `65534`
-    -   `backend_port` : 내부 Connection에 사용할 Port, 0 ~ 65535의 범위 - `0` ~ `65535`
-    -   `disable_outbound_snat` : 아웃바운드 연결을 위해 Rule에 대한 SNAT 활성화 - `true`, `false`
-    -   `frontend_ip_configuration_name` : Public Load Balancer의 Frontend IP Configuration Name
-    -   `backend_pool_name` : Load Balancer가 트래픽을 전달할 Backend Address Pool의 이름
+    -   `protocol` : 外部 Endpoint のための転送 Protocol - `Tcp`, `Udp`, `All`
+    -   `frontend_port` : 外部 Endpoint のポート、0~65534 の範囲 - `0` ~ `65534`
+    -   `backend_port` : 内部コネクションに使用するポート、0~65535 の範囲위 - `0` ~ `65535`
+    -   `disable_outbound_snat` : アウトバウンド接続のためルールに対する SNAT 活性化 - `true`, `false`
+    -   `frontend_ip_configuration_name` : Public Load Balancer の Frontend IP Configuration Name
+    -   `backend_pool_name` : Load Balancer がトラフィックを伝達する Backend Address Pool の名前
 
 -   `nat_rule`
 
-    -   `protocol` : 외부 Endpoint를 위한 전송 Protocol - `Tcp`, `Udp`, `All`
-    -   `frontend_port` : 외부 Endpoint의 Port, 0 ~ 65534의 범위 - `0` ~ `65534`
-    -   `backend_port` : 내부 Connection에 사용할 Port, 0 ~ 65535의 범위 - `0` ~ `65535`
-    -   `frontend_ip_configuration_name` : Public Load Balancer의 Frontend IP Configuration Name
+    -   `protocol` : 外部 Endpoint のための転送 Protocol - `Tcp`, `Udp`, `All`
+    -   `frontend_port` : 外部 Endpoint のポート、0 ~ 65534 の範囲 - `0` ~ `65534`
+    -   `backend_port` : 内部コネクションに使用するポート、0~65535 の範囲 - `0` ~ `65535`
+    -   `frontend_ip_configuration_name` : Public Load Balancer の Frontend IP Configuration Name
 
 -   `outbound_rule`
 
-    -   `protocol` : 외부 Endpoint를 위한 전송 Protocol - `Tcp`, `Udp`, `All`
-    -   `frontend_ip_config_name` : Public Load Balancer의 Frontend IP Configuration Name
-    -   `backend_pool_name` : Load Balancer가 트래픽을 전달할 Backend Address Pool의 이름
+    -   `protocol` : 外部 Endpoint のための転送 Protocol - `Tcp`, `Udp`, `All`
+    -   `frontend_ip_config_name` : Public Load Balancer の Frontend IP Configuration Name
+    -   `backend_pool_name` :Load Balancer がトラフィックを伝達する Backend Address Pool の名前
 
--   `tag` : 리소스를 카테고리로 분류하기 위한 태그 - 최대 512자, `key`:`value`
+-   `tag` : リソースをカテゴリに分類するためのタグ - 最大 512 文字, `key`:`value`
 
 ---
 
 ## 参考資料
 
 -   [Azure PublicLoadBalancer(Microsoft)](https://learn.microsoft.com/ko-kr/azure/load-balancer/load-balancer-overview)
--   [Azure PublicLoadBalancer 가격](https://azure.microsoft.com/en-us/pricing/details/load-balancer/)
+-   [Azure PublicLoadBalancer 価格](https://azure.microsoft.com/en-us/pricing/details/load-balancer/)
 -   [Azure PublicLoadBalancer(Terraform)](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/lb)

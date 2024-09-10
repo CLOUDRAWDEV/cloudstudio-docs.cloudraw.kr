@@ -7,7 +7,7 @@ tags: [Ncloud, 리소스, Bigdata&Analytics, CdssCluster]
 <hr />
 <br />
 
-## 리소스 아이콘
+## Resource Icon
 
 <img
     src={
@@ -15,45 +15,44 @@ tags: [Ncloud, 리소스, Bigdata&Analytics, CdssCluster]
     }
 />
 
-## 리소스 개요
+## Resource Overview
 
-실시간 스트리밍 데이터 파이프라인 및 애플리케이션 빌드를 위한 오픈 소스 플랫폼인 Apache Kafka 클러스터를 손쉽게 배포, 보호, 운영 및 확장할 수 있는 서비스입니다.
+This service enables you to easily deploy, secure, operate, and scale Apache Kafka clusters, an open-source platform for building real-time streaming data pipelines and applications.
 
+## Associated Resources
 
-## 연관 리소스
+### Parent Resource
 
-### 상위 리소스
-
--   [**VPC**](https://docs.cstudio.app/docs/resource/ncloud/Networking/Vpc)
-
-
-### 연결 리소스
+-   [**VPC**](https://docs.cstudio.app/en/docs/resource/ncloud/Networking/Vpc)
 
 
+### Connected Resources
 
-## 리소스 설정 값
 
--   `kafka_version_code` : CDSS에서 사용할 Kafka 버전
--   `linked_config_group_name` : 사용할 CDSS config group 이름
--   `os_image` : 사용할 OS 이미지 타입
--   `cmak` : CMAK(Cluster Manager for Apache Kafka)의 구성정보 
-    -   `user_name` : CMAK 접근 ID
-    -   `user_password` : CMAK 접근 ID
--   `manager_node` : CMAK를 통해 Apache Kafka 클러스터를 관리하는 노드 구성 정보
-    -   `manager_node_subnet_name` : 니저 노드가 위치할 subnet 이름
-    -   `manager_node_product_name` : 매니저 노드 하드웨어 제품 코드
--   `broker_node` : 실제 데이터가 저장되는 서버 노드에 대한 구성 정보
-    -   `broker_node_subnet_name` : 브로커 노드가 위치할 subnet 이름
-    -   `broker_node_product_code` : 브로커 노드 하드웨어 제품 코드
-    -   `broker_node_count` : 브로커 노드 수
-    -   `broker_node_storage_size` : 브로커 노드 저장 용량 - `100~2000`
+
+## Resource Setting Values
+
+-   `kafka_version_code` : The CDSS Kafka version to be used
+-   `linked_config_group_name` : The CDSS config group name to be used
+-   `os_image` : The OS type to be used
+-   `cmak` : The configuration about CMAK(Cluster Manager for Apache Kafka)
+    -   `user_name` : The CMAK access ID
+    -   `user_password` : The CMAK access password
+-   `manager_node` : The configuration about nodes that manage Apache Kafka clusters through CMAK
+    -   `manager_node_subnet_name` : The subnet name where the manager node is to be located
+    -   `manager_node_product_name` : The HW specifications of the manager node
+-   `broker_node` : The configuration information for the server node where the actual data is stored
+    -   `broker_node_subnet_name` : The subnet name where the broker node is to be located
+    -   `broker_node_product_code` : The HW specifications of the broker node
+    -   `broker_node_count` : The number of broker nodes
+    -   `broker_node_storage_size` : The broker node storage capacity - `100~2000`
 
 
     
 
 ---
 
-## 참고 자료
+## Reference Materials
 
 -   [CdssCluster(Ncloud)](https://www.ncloud.com/product/analytics/cloudDataStreamingService)
--   [ncloud_cdss_cluster(Terraform)](https://registry.terraform.io/providers/NaverCloudPlatform/ncloud/latest/docs/resources/cdss_cluster)
+-   [ncloud_cdss_cluster(Terraform)](https://registry.terraform.io/providers/NaverCloudPlatform/ncloud/latest/en/docs/resources/cdss_cluster)

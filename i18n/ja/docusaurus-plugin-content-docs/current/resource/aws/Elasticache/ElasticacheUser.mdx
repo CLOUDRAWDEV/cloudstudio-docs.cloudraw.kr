@@ -1,13 +1,13 @@
 ---
 title: Elasticache User
 sidebar_position: 0
-tags: [AWS, 리소스, Elasticache, ElasticacheUser]
+tags: [AWS, リソース, Elasticache, ElasticacheUser]
 ---
 
 <hr />
 <br />
 
-## 리소스 아이콘
+## リソースアイコン
 
 <img
     src={
@@ -15,26 +15,30 @@ tags: [AWS, 리소스, Elasticache, ElasticacheUser]
     }
 />
 
-## 리소스 개요
+## リソース概要
 
-AWS Elasticache User는 Elasticache 클러스터를 사용하기 위해 필요한 IAM 사용자입니다. Elasticache User는 Elasticache 클러스터를 생성, 수정 및 삭제할 수 있는 권한을 갖습니다. Elasticache User는 AWS IAM에서 생성되며, 일반적으로 Elasticache를 사용하는 애플리케이션 또는 개발자에게 할당됩니다. Elasticache User는 Elasticache 클러스터에 대한 보안 및 액세스 제어를 담당하며, 이를 통해 애플리케이션과 데이터를 보호할 수 있습니다. Elasticache User는 AWS 계정에서 다른 리소스와 함께 사용될 수 있습니다.
+AWS Elasticache User は Elasticache クラスタを使用するために必要な IAM ユーザーです。
+Elasticache User は Elasticache クラスタを生成、修正及び削除する権限を持ちます。
+Elasticache User は AWS IAM で生成され、一般的に Elasticache を使用するアプリケーションまたは開発者に割り当てられます。
+Elasticache User は Elasticache クラスタに対するセキュリティ及びアクセス制御を担当し、これによりアプリケーションとデータを保護することができます。
+Elasticache User は AWS アカウントで他のリソースと一緒に使用することができます。
 
-## 연관 리소스
+## 関連リソース
 
-### 상위 리소스
+### 上位リソース
 
--   [**Region**](https://docs.cstudio.app/docs/resource/aws/Base/Region)
+-   [**Region**](https://docs.cstudio.app/ja/docs/resource/aws/Base/Region)
 
-## 리소스 설정 값
+## リソース設定値
 
--   `user_id` : 사용자의 ID, 영문자, 하이픈(-) 사용 가능, 문자로 시작, 하이픈으로 끝나거나 하이픈을 두 개 연속으로 포함할 수 없음, 최대 40자
--   `access_string` : 사용자에게 적용할 권한을 입력한 string
--   `authentication_type` : 사용자가 클러스터에 접근하기 위한 인증 방식
+-   `user_id` : ユーザーの ID、英文字、ハイフン(-)使用可能、文字で始まり、ハイフンで終わるか、ハイフンを二つ連続で含めることはできない、最大 40 文字
+-   `access_string` : ユーザーに適用する権限を入力した string
+-   `authentication_type` : ユーザーがクラスターにアクセスするための認証方式
 
 ---
 
-## 참고 자료
+## 参考資料
 
 -   [Amazon ElastiCache for Redis(AWS)](https://docs.aws.amazon.com/ko_kr/AmazonElastiCache/latest/red-ug/WhatIs.html)
--   [Amazon ElastiCache for Redis 요금(AWS)](https://aws.amazon.com/ko/elasticache/pricing/?nc=sn&loc=5)
+-   [Amazon ElastiCache for Redis 料金(AWS)](https://aws.amazon.com/ko/elasticache/pricing/?nc=sn&loc=5)
 -   [aws_elasticache_user(Terraform)](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/elasticache_user)

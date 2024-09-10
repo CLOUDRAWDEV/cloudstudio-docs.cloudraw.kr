@@ -1,15 +1,13 @@
 ---
 title: HorizontalPodAutoscaling
 sidebar_position: 0
-tags: [Kubernetes, 리소스, AutoScaling, HorizontalPodAutoscaling]
+tags: [Kubernetes, リソース, AutoScaling, HorizontalPodAutoscaling]
 ---
-
 
 <hr />
 <br />
 
-
-## 리소스 아이콘
+## リソースアイコン
 
 <img
     src={
@@ -17,40 +15,38 @@ tags: [Kubernetes, 리소스, AutoScaling, HorizontalPodAutoscaling]
     }
 />
 
-## 리소스 개요
+## リソース概要
 
-관찰된 CPU 사용률을 기반으로 Deployment, ReplicaSet, StatefulSet의 파드(Pod) 수를 자동으로 확장해주는 kubernetes 리소스입니다.
+観察された CPU 使用率に基づいて Deployment、Replicaset、StatefulSet のポッド数を自動的に拡張する kubernetes リソースです。
 
-## 연관 리소스
+## 関連リソース
 
-### 상위 리소스
+### 上位リソース
 
--   [**Cluster**](https://docs.cstudio.app/docs/resource/kubernetes/Base/Cluster)
--   [**Namespace**](https://docs.cstudio.app/docs/resource/kubernetes/Core/Namespace)
+-   [**Cluster**](https://docs.cstudio.app/ja/docs/resource/kubernetes/Base/Cluster)
+-   [**Namespace**](https://docs.cstudio.app/ja/docs/resource/kubernetes/Core/Namespace)
 
-### 연결 리소스
+### 接続リソース
 
--   [**Deployment**](https://docs.cstudio.app/docs/resource/kubernetes/Apps/Deployment)
--   [**StatefulSet**](https://docs.cstudio.app/docs/resource/kubernetes/Apps/StatefulSet)
+-   [**Deployment**](https://docs.cstudio.app/ja/docs/resource/kubernetes/Apps/Deployment)
+-   [**StatefulSet**](https://docs.cstudio.app/ja/docs/resource/kubernetes/Apps/StatefulSet)
 
-## 리소스 설정 값
+## リソース設定値
 
--   `service_name` : HPA 리소스 이름
--   `namespace` : HPA 리소스가 배포될 네임스페이스
--   `annotations` : 쿠버네티스 시스템에서 필요한 정보들을 표시해 주기 위해서 사용하는 key-value
--   `labels` : 객체를 구분하기 위해서 사용자가 임의로 원하는 값을 지정
--   `min_replicas` : HPA에서 설정할 수 있는 Pod 수의 최솟값 - 기본값은 1개
--   `max_replicas` : HPA에서 설정할 수 있는 Pod 수의 최댓값
--   `target_cpu_utilization_percentage` : 파드(Pod) 대한 목표 평균 CPU 사용률(요청된 CPU의 백분율로 표시)
--   `scale_target_ref` : 확장된 리소스에 대한 참조
-    -   `name` : 참조할 리소스의 이름
-    -   `kind` : 참조할 리소스의 종류 - `Deployment`, `StatefulSet`
-
-
+-   `service_name` : HPA リソース名
+-   `namespace` : HPA リソースがデプロイされるネームスペース
+-   `annotations` : クバネティスシステムで必要な情報を表示するために使用する key-value
+-   `labels` : オブジェクトを区切るためにユーザーが任意に希望する値を指定
+-   `min_replicas` : HPA で設定できる Pod の数の最小値 - 基本値は 1
+-   `max_replicas` : HPA で設定できる Pod の数の最大値
+-   `target_cpu_utilization_percentage` : Pod に対する目標平均 CPU 使用率(リクエストされた CPU の割合で表示)
+-   `scale_target_ref` : 拡張されたリソースへの参照
+    -   `name` : リソースの名前
+    -   `kind` : リソースの種類 - `Deployment`, `StatefulSet`
 
 ---
 
-## 참고 자료
+## 参考資料
 
 -   [Horizontal Pod Autoscaling(Kubernetes)](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/)
 -   [Horizontal Pod Autoscaling(Terraform)](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/horizontal_pod_autoscaler)

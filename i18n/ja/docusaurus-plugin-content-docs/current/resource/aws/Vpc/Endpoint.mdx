@@ -1,13 +1,13 @@
 ---
 title: Endpoint
 sidebar_position: 0
-tags: [AWS, 리소스, Vpc, Endpoint]
+tags: [AWS, リソース, Vpc, Endpoint]
 ---
 
 <hr />
 <br />
 
-## 리소스 아이콘
+## リソースアイコン
 
 <img
     src={
@@ -15,34 +15,34 @@ tags: [AWS, 리소스, Vpc, Endpoint]
     }
 />
 
-## 리소스 개요
+## リソース概要
 
-고객이 지원하는 AWS 서비스 및 VPC 엔드포인트 서비스에 프라이빗하게 연결할 수 있는 서비스
+お客様がサポートする AWS サービスおよび VPC エンドポイントサービスにプライベートで接続できるサービス
 
-## 연관 리소스
+## 関連リソース
 
-### 상위 리소스
+### 上位リソース
 
--   [**Vpc**](https://docs.cstudio.app/docs/resource/aws/Vpc/Vpc)
+-   [**Vpc**](https://docs.cstudio.app/ja/docs/resource/aws/Vpc/Vpc)
 
-### 하위 리소스
+### 下位リソース
 
--   [**Endpoint Service**](https://docs.cstudio.app/docs/resource/aws/Vpc/EndpointService)
--   [**Security Group**](https://docs.cstudio.app/docs/resource/aws/Vpc/SecurityGroup)
--   [**Subnet**](https://docs.cstudio.app/docs/resource/aws/Vpc/Subnet)
+-   [**Endpoint Service**](https://docs.cstudio.app/ja/docs/resource/aws/Vpc/EndpointService)
+-   [**Security Group**](https://docs.cstudio.app/ja/docs/resource/aws/Vpc/SecurityGroup)
+-   [**Subnet**](https://docs.cstudio.app/ja/docs/resource/aws/Vpc/Subnet)
 
-## 리소스 설정 값
+## リソース設定値
 
--   `service_range` : Endpoint 서비스를 사용할 서비스의 범주 - `awsService`,`endpointService`
--   `aws_service_name` : Endpoint 서비스를 사용할 AWS 서비스의 이름
--   `vpc_endpoint_type` : Endpoint 서비스를 사용할 다른 endpoint 서비스의 이름 - `gateway`, `interface`, `gatewayloadbalancer`
--   `included_vpc_name` : 엔드포인트를 생성할 VPC 이름
--   `route_table_names` : endpoin와 연결할 하나 이상의 경로 테이블 ID
--   `policy_access` : 서비스 액세스를 제어하는 endpoint의 연결할 정책 액세스 범위 - `Full`, `Custom`
+-   `service_range` : Endpoint サービスを使用するサービスのカテゴリ - `awsService`,`endpointService`
+-   `aws_service_name` : Endpoint サービスを使用するサービスの名前
+-   `vpc_endpoint_type` : Endpoint サービスを使用する他の Endpoint サービスの名前 - `gateway`, `interface`, `gatewayloadbalancer`
+-   `included_vpc_name` : The name of VPC to use endpoint
+-   `route_table_names` : endpoint と接続する 1 つ以上のパステーブル ID
+-   `policy_access` : サービスアクセスを制御する endpoint に接続するポリシーアクセス範囲 - `Full`, `Custom`
 
 ---
 
-## 참고 자료
+## 参考資料
 
 -   [AWS EndPoint (AWS)](https://docs.aws.amazon.com/whitepapers/latest/aws-privatelink/what-are-vpc-endpoints.html)
 -   [AWS EndPoint(Terraform)](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/vpc_endpoint)

@@ -1,13 +1,13 @@
 ---
 title: Cloudfront Distribution
 sidebar_position: 0
-tags: [AWS, 리소스, Cloudfront, CloudfrontDistribution]
+tags: [AWS, リソース, Cloudfront, CloudfrontDistribution]
 ---
 
 <hr />
 <br />
 
-## 리소스 아이콘
+## リソースアイコン
 
 <img
     src={
@@ -15,67 +15,68 @@ tags: [AWS, 리소스, Cloudfront, CloudfrontDistribution]
     }
 />
 
-## 리소스 개요
+## リソース概要
 
-Amazon CloudFront는 .html, .css, .php, 이미지 및 미디어 파일과 같은 정적 및 동적 웹 콘텐츠의 배포 속도를 높입니다. 사용자가 콘텐츠를 요청하면 CloudFront는 짧은 지연 시간과 고성능을 제공하는 전 세계 엣지 로케이션 네트워크를 통해 콘텐츠를 제공합니다.
+Amazon CloudFront는 .html, .css, .php, イメージ及びメディアファイルなどの静的·動的ウェブコンテンツの配布速度を高めます。
+ユーザーがコンテンツをリクエストすると CloudFront は短い遅延時間と高性能を提供する全世界のエッジロケーションネットワークを通じてコンテンツを提供します。
 
-## 연관 리소스
+## 関連リソース
 
-### 상위 리소스
+### 上位リソース
 
--   [**Base**](https://docs.cstudio.app/docs/resource/aws/Base/)
+-   [**Base**](https://docs.cstudio.app/ja/docs/resource/aws/Base/)
 
-### 연결 리소스
+### 接続リソース
 
--   [**Cloudfront Cache Policy**](https://docs.cstudio.app/docs/resource/aws/Cloudfront/CloudfrontDistribution)
--   [**S3 Bucket**](https://docs.cstudio.app/docs/resource/aws/S3/S3Bucket)
--   [**Waf Web Acl**](https://docs.cstudio.app/docs/resource/aws/Waf/WafWebAcl)
+-   [**Cloudfront Cache Policy**](https://docs.cstudio.app/ja/docs/resource/aws/Cloudfront/CloudfrontDistribution)
+-   [**S3 Bucket**](https://docs.cstudio.app/ja/docs/resource/aws/S3/S3Bucket)
+-   [**Waf Web Acl**](https://docs.cstudio.app/ja/docs/resource/aws/Waf/WafWebAcl)
 
-## 리소스 설정 값
+## リソース設定値
 
--   `enabled` :콘텐츠에 대한 최종 사용자 요청을 수락하도록 배포가 활성화되어 있는지 여부 - `true`, `false`
--   `origin` : Origin의 식별자
--   `cache_policy` : Cache Policy 이름
-    -   `min_ttl` : 객체를 CloudFront 캐시에 유지하려는 최소 시간(초)
-    -   `max_ttl` : 객체가 CloudFront 캐시에 유지되는 최대 시간(초)
-    -   `default_ttl` : 객체를 CloudFront 캐시에 유지하려는 기본 시간(초)
-    -   `cookie_behavior` : 최종 사용자 요청의 쿠키가 캐시 키에 포함되고 CloudFront가 오리진으로 보내는 요청에 자동으로 포함되는지 여부를 결정 - `whitelist`,`all`,`none`,`allExcept`
-    -   `cookies_items` : Cookie Items 이름 리스트
-    -   `header_behavior` : HTTP 헤더가 캐시 키에 포함되고 CloudFront가 오리진으로 보내는 요청에 자동으로 포함되는지 여부를 결정 - `whitelist`,`none`
-    -   `headers_items` : Header Items 이름 리스트
-    -   `query_string_behavior` : 최종 사용자 요청의 URL 쿼리 문자열이 캐시 키에 포함되고 CloudFront가 오리진으로 보내는 요청에 자동으로 포함되는지 여부를 결정 - `whitelist`,`all`,`none`,`allExcept`
-    -   `query_string_items` : query items 이름 리스트
+-   `enabled` : コンテンツに対するエンドユーザーのリクエストを受け入れるようにディストリビューションが有効になっているかどうかの可否 - `true`, `false`
+-   `origin` : Origin の識別子
+-   `cache_policy` : Cache Policy の名前
+    -   `min_ttl` : オブジェクトが CloudFront キャッシュに残っている必要がある最小時間(秒)
+    -   `max_ttl` : オブジェクトが CloudFront キャッシュに維持される最大時間(秒)
+    -   `default_ttl` : オブジェクトが CloudFront キャッシュに残っている必要がある基本時間(秒)
+    -   `cookie_behavior` : クッキーをオリジンサーバーに渡すかどうかの可否 - `whitelist`,`all`,`none`,`allExcept`
+    -   `cookies_items` : Cookie Items の名前リスト
+    -   `header_behavior` : 指定されたヘッダーの値に基づいてオブジェクトをキャッシングするかどうかの可否 - `whitelist`,`none`
+    -   `headers_items` : Header Items の名前リスト
+    -   `query_string_behavior` : エンドユーザー要請の URL クエリ文字列がキャッシュキーに含まれ、CloudFront がオリジンに送る要請に自動的に含まれるかどうかを決定 - `whitelist`,`all`,`none`,`allExcept`
+    -   `query_string_items` : query items の名前リスト
 -   `cache_behavior`
 
-    -   `path_pattern` : Cache Behavior에 적용할 요청을 지정하는 패턴
-    -   `compress` : CloudFront에서 웹 요청에 대한 콘텐츠를 자동으로 압축할지 여부 - `true`, `false`
-    -   `viewer_protocol_policy` : 요청이 PathPattern의 경로 패턴과 일치할 때 TargetOriginId에서 지정한 원본의 파일에 액세스하는 데 사용할 수 있는 프로토콜을 지정 - `allow-all`,`https-only`,`redirect-to-https`
-    -   `allowed_methods` : CloudFront에서 처리하고 Amazon S3 버킷 또는 사용자 지정 오리진으로 전달하는 HTTP 메서드를 제어 - `GET`,`HEAD`,`OPTIONS`,`PATCH`,`POST`,`PUT`,`DELETE`
-    -   `cached_methods` : CloudFront에서 지정된 HTTP 메서드를 사용하여 요청에 대한 응답을 캐시할지 여부를 제어 - `GET`,`HEAD`,`OPTIONS`,`PATCH`,`POST`,`PUT`,`DELETE`
-    -   `origin_name` : 경로 패턴이 일치할 때 Cloudfront에서 요청을 라우팅할 Origin 이름
-    -   `cache_policy_name` : Cache Behavior에 연결할 Cache Policy ID
+    -   `path_pattern` : Cache Behavior に適用するリクエストを指定するパターン
+    -   `compress` : CloudFront でウェブリクエストに対するコンテンツを自動に圧縮するかどうかの可否 - `true`, `false`
+    -   `viewer_protocol_policy` : リクエストが PathPattern のパスパターンと一致する時、TargetOriginId で指定した原本のファイルにアクセスするために使用できるプロトコルを指定 - `allow-all`,`https-only`,`redirect-to-https`
+    -   `allowed_methods` : CloudFront で処理し、Amazon S3 バケットまたはユーザ指定オリジンに伝達する HTTP メソッドを制御 - `GET`,`HEAD`,`OPTIONS`,`PATCH`,`POST`,`PUT`,`DELETE`
+    -   `cached_methods` : CloudFront で指定された HTTP メソッドを使用してリクエストに対する応答をキャッシュするかどうかの可否を制御 - `GET`,`HEAD`,`OPTIONS`,`PATCH`,`POST`,`PUT`,`DELETE`
+    -   `origin_name` : パスパターンが一致した時に Cloudfront でリクエストをルーティングする Origin 名
+    -   `cache_policy_name` : Cache Behavior に接続する Cache Policy ID
 
 -   `restriction`
 
-    -   `type` : 국가별로 콘텐츠 배포를 제한하는 데 사용하려는 방법 - `whitelist`,`blacklist`,`none`
-    -   `locations` : CloudFront에서 콘텐츠를 배포하거나 배포하지 않도록 하려는 ISO 3166-1-alpha-2 코드
+    -   `type` : 国別のコンテンツデプロイを制限するために使用する方法 - `whitelist`,`blacklist`,`none`
+    -   `locations` : CloudFront でコンテンツをデプロイまたはデプロイしないようにする ISO 3166-1-alpha-2 コード
 
 -   `viewer_certificate`
 
-    -   `default_certificate_enabled` : 최종 사용자가 HTTPS를 사용하여 객체를 요청하도록 하고 배포에 CloudFront 도메인 이름을 사용하는 경우 - `true`, `false`
+    -   `default_certificate_enabled` : エンドユーザーが HTTPS を使用してオブジェクトをリクエストするようにし、 デプロイに CloudFront ドメイン名を使用する場合 - `true`, `false`
 
--   `price_class` : Cloudfront distribution의 가격 등급 - `PriceClass_100`, `PriceClass_200`, `PriceClass_All`
--   `http_version` : Cloudfront distribution에서 지원하는 HTTP의 최대 버전 - `http1.1`, `http2`
--   `is_ipv6_enabled` : Cloudfront distribution의 IPv6 허용 여부 - `true`, `false`
+-   `price_class` : Cloudfront distribution の価格等級(price class) - `PriceClass_100`, `PriceClass_200`, `PriceClass_All`
+-   `http_version` : Cloudfront distribution でサポートする HTTP の最大バージョン - `http1.1`, `http2`
+-   `is_ipv6_enabled` : Cloudfront distribution の IPv6 許容可否 - `true`, `false`
 
 -   `logging`
 
-    -   `logging_enabled` : 로깅 활성화 - `true`, `false`
+    -   `logging_enabled` : ロギング活性化 - `true`, `false`
 
--   `linked_waf_web_acl_name` : 보안 보호를 활성화 할 경우 사용할 WAF WEB ACL 이름
+-   `linked_waf_web_acl_name` : セキュリティ保護を活性化する場合に使用する WAF WEB ACL 名
 
-## 참고 자료
+## 参考資料
 
 -   [Amazon CloudFront(AWS)](https://docs.aws.amazon.com/ko_kr/AmazonCloudFront/latest/DeveloperGuide/Introduction.html)
--   [Amazon CloudFront 가격(AWS)](https://aws.amazon.com/ko/cloudfront/pricing/?nc2=type_a)
+-   [Amazon CloudFront 価格(AWS)](https://aws.amazon.com/ko/cloudfront/pricing/?nc2=type_a)
 -   [Amazon CloudFront Distribution(Terraform)](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudfront_distribution)

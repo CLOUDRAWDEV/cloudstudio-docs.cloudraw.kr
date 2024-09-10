@@ -12,11 +12,11 @@
         "description": "The label for category 캔버스 in sidebar mySidebar"
     },
     "sidebar.mySidebar.category.보안진단": {
-        "message": "보안진단",
+        "message": "セキュリティ診断",
         "description": "The label for category 보안진단 in sidebar mySidebar"
     },
     "sidebar.mySidebar.category.보안진단 항목": {
-        "message": "보안진단 항목",
+        "message": "セキュリティ診断項目",
         "description": "The label for category 보안진단 항목 in sidebar mySidebar"
     },
     "sidebar.mySidebar.category.자격증명": {

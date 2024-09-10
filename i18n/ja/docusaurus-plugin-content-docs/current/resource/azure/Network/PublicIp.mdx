@@ -1,7 +1,7 @@
 ---
 title: PublicIp
 sidebar_position: 9
-tags: [Azure, 리소스, Network, PublicIp]
+tags: [Azure, リソース, Network, PublicIp]
 ---
 
 <hr />
@@ -17,33 +17,33 @@ tags: [Azure, 리소스, Network, PublicIp]
 
 ## リソース概要
 
-Azure Public IP(공용 IP)는 인터넷에서 직접 액세스할 수 있는 고유한 IP 주소입니다.
-Azure 리소스, 예를 들어 가상 머신, Load Balancer, VPN Gateway 등과 같이 인터넷으로 노출되는 리소스에 사용됩니다.
-이를 통해 Azure 리소스에 대한 인터넷 트래픽을 보낼 수 있고, 인터넷에서 해당 리소스에 접근할 수 있게 됩니다.
+Azure Public IP（共用 IP）はインターネットから直接アクセスできる固有の IP アドレスです。
+Azure リソース、例えば仮想マシン、Load Balancer、VPN Gateway などのようにインターネットで露出されるリソースに使用されます。
+これにより、Azure リソースに対するインターネットトラフィックを送信することができ、インターネットからそのリソースにアクセスすることができます。
 
 ## 関連リソース
 
 ### 上位リソース
 
--   [**Resource Group**](https://docs.cstudio.app/docs/resource/azure/Base/ResourceGroup)
--   [- [**Subnet**](https://docs.cstudio.app/docs/resource/azure/Network/Subnet)](https://docs.cstudio.app/docs/resource/azure/Network/Subnet)
+-   [**Resource Group**](https://docs.cstudio.app/ja/docs/resource/azure/Base/ResourceGroup)
+-   [- [**Subnet**](https://docs.cstudio.app/ja/docs/resource/azure/Network/Subnet)](https://docs.cstudio.app/ja/docs/resource/azure/Network/Subnet)
 
 ### 接続リソース
 
--   [**Container Registry**](https://docs.cstudio.app/docs/resource/azure/Container/ContainerRegistry)
--   [**Mysql**](https://docs.cstudio.app/docs/resource/azure/Database/Mysql)
--   [**Mssql Database**](https://docs.cstudio.app/docs/resource/azure/Database/MssqlDatabase)
--   [**Postgresql**](https://docs.cstudio.app/docs/resource/azure/Database/Postgresql)
--   [**Key Vault**](https://docs.cstudio.app/docs/resource/azure/KeyVault)
--   [**Application Gateway**](https://docs.cstudio.app/docs/resource/azure/Network/ApplicationGateway)
--   [**Redis Cache**](https://docs.cstudio.app/docs/resource/azure/RedisCache/)
--   [**Storage Account**](https://docs.cstudio.app/docs/resource/azure/Storage/StorageAccount)
+-   [**Container Registry**](https://docs.cstudio.app/ja/docs/resource/azure/Container/ContainerRegistry)
+-   [**Mysql**](https://docs.cstudio.app/ja/docs/resource/azure/Database/Mysql)
+-   [**Mssql Database**](https://docs.cstudio.app/ja/docs/resource/azure/Database/MssqlDatabase)
+-   [**Postgresql**](https://docs.cstudio.app/ja/docs/resource/azure/Database/Postgresql)
+-   [**Key Vault**](https://docs.cstudio.app/ja/docs/resource/azure/KeyVault)
+-   [**Application Gateway**](https://docs.cstudio.app/ja/docs/resource/azure/Network/ApplicationGateway)
+-   [**Redis Cache**](https://docs.cstudio.app/ja/docs/resource/azure/RedisCache/)
+-   [**Storage Account**](https://docs.cstudio.app/ja/docs/resource/azure/Storage/StorageAccount)
 
 ## リソース設定値
 
--   `sku` : public ip의 가격 책정 계층 - `true`, `false`
--   `allocation_method` : public ip의 주소 할당 방식 - `Static`, `Dynamic`
--   `tag` : 리소스를 카테고리로 분류하기 위한 태그 - 최대 512자, `key`:`value`
+-   `sku` : Public Ip の価格設定階層 - `true`, `false`
+-   `allocation_method` : Public Ip アドレス割り当て方式 - `Static`, `Dynamic`
+-   `tag` : リソースをカテゴリに分類するためのタグ - 最大 512 文字, `key`:`value`
 
 ---
 

@@ -1,15 +1,13 @@
 ---
 title: IngressClass
 sidebar_position: 0
-tags: [Kubernetes, 리소스, Networking, IngressClass]
+tags: [Kubernetes, リソース, Networking, IngressClass]
 ---
-
 
 <hr />
 <br />
 
-
-## 리소스 아이콘
+## リソースアイコン
 
 <img
     src={
@@ -17,41 +15,36 @@ tags: [Kubernetes, 리소스, Networking, IngressClass]
     }
 />
 
-## 리소스 개요
+## リソース概要
 
-인그레스가 사용할 인그레스 컨트롤러를 선택하기 위한 쿠버네티스 리소스
+Ingress が使用するイングレスコントローラーを選択するためのクバネティスリソース
 
-## 연관 리소스
+## 関連リソース
 
-### 상위 리소스
+### 上位リソース
 
--   [**Cluster**](https://docs.cstudio.app/docs/resource/kubernetes/Base/Cluster)
+-   [**Cluster**](https://docs.cstudio.app/ja/docs/resource/kubernetes/Base/Cluster)
 
+### 接続リソース
 
+-   [**Ingress**](https://docs.cstudio.app/ja/docs/resource/kubernetes/Networking/Ingress)
 
-### 연결 리소스
+## リソース設定値
 
--   [**Ingress**](https://docs.cstudio.app/docs/resource/kubernetes/Networking/Ingress)
-
-
-
-## 리소스 설정 값
-
--   `service_name` : IngressClass 리소스 이름
--   `annotations` : 쿠버네티스 시스템에서 필요한 정보들을 표시해 주기 위해서 사용하는 key-value
--   `labels` : 객체를 구분하기 위해서 사용자가 임의로 원하는 값을 지정
--   `controller` : 인그레스클래스를 처리해야 하는 컨트롤러 이름
--   `parameters` : 참조되는 리소스의 정보
-    -   `name` : 참조되는 리소스 이름
-    -   `kind` : 참조되는 리소스 유형
-    -   `namespace` : 참조되는 리소스의 네임스페이스
-    -   `scope` : 리소스의 범위를 나타냄 - 클러스터 또는 네임스페이스
-    -   `api_group` : 참조되는 리소스의 API 그룹
-
+-   `service_name` : IngressClass リソース名
+-   `annotations` : クバネティスシステムで必要な情報を表示するために使用する key-value
+-   `labels` : オブジェクトを区切るためにユーザーが任意に希望する値を指定
+-   `controller` : IngressClass を処理する必要があるコントローラ名
+-   `parameters` : 参照されるリソースの情報
+    -   `name` : 参照されるリソース名
+    -   `kind` : 参照されるリソース タイプ
+    -   `namespace` : 参照されるリソースのネームスペース
+    -   `scope` : リソースの範囲を示します - クラスターまたはネームスペース
+    -   `api_group` : 参照されるリソースに関するグループ
 
 ---
 
-## 참고 자료
+## 参考資料
 
 -   [IngressClass(kubernetes)](https://kubernetes.io/docs/concepts/services-networking/ingress/#ingress-class)
 -   [IngressClass(Terraform)](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/ingress_class)

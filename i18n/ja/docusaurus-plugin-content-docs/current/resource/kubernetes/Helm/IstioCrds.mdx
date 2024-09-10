@@ -1,15 +1,13 @@
 ---
 title: IstioCrds
 sidebar_position: 0
-tags: [Kubernetes, 리소스, Helm, IstioCrds]
+tags: [Kubernetes, リソース, Helm, IstioCrds]
 ---
-
 
 <hr />
 <br />
 
-
-## 리소스 아이콘
+## リソースアイコン
 
 <img
     src={
@@ -17,34 +15,29 @@ tags: [Kubernetes, 리소스, Helm, IstioCrds]
     }
 />
 
-## 리소스 개요
+## リソース概要
 
-istio용 Custom Resource Definitions 헬름 차트입니다.
+istio 用 Custom Resource Definitions Helm Chart です。
 
-## 연관 리소스
+## 関連リソース
 
-### 상위 리소스
+### 上位リソース
 
--   [**Cluster**](https://docs.cstudio.app/docs/resource/kubernetes/Base/Cluster)
--   [**Namespace**](https://docs.cstudio.app/docs/resource/kubernetes/Core/Namespace)
+-   [**Cluster**](https://docs.cstudio.app/ja/docs/resource/kubernetes/Base/Cluster)
+-   [**Namespace**](https://docs.cstudio.app/ja/docs/resource/kubernetes/Core/Namespace)
 
-### 연결 리소스
+### 接続リソース
 
+## リソース設定値
 
-
-
-## 리소스 설정 값
-
--   `service_name` : Istio crds 헬름 차트 릴리즈 이름
--   `namespace` : Istio crds 헬름 차트가 배포될 네임스페이스 -  `istio-system`으로 지정
--   `version` : 사용할 Istio crds 헬름 차트 버전
--   `set` : Istio crds 기본 차트의 값을 동적으로 변경
-
+-   `service_name` : Istio CRDs Helm Chart リリース名
+-   `namespace` : Istio CRDs Helm Chart リソースがデプロイされるネームスペース - `istio-system`に指定
+-   `version` : Istio CRDs Helm Chart のバージョンを指定
+-   `set` : Istio CRDs デフォルトのチャートの値を動的に変更
 
 ---
 
-## 참고 자료
+## 参考資料
 
 -   [Helm install(Istio)](https://istio.io/latest/docs/setup/install/helm/)
 -   [Helm Provider(Terraform)](https://registry.terraform.io/providers/hashicorp/helm/latest/docs)
-

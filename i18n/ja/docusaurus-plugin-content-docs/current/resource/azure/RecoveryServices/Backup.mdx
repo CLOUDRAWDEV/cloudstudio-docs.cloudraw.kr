@@ -1,7 +1,7 @@
 ---
 title: Backup
 sidebar_position: 0
-tags: [Azure, 리소스, RecoveryServices, Backup]
+tags: [Azure, リソース, RecoveryServices, Backup]
 ---
 
 <hr />
@@ -17,52 +17,52 @@ tags: [Azure, 리소스, RecoveryServices, Backup]
 
 ## リソース概要
 
-Azure Backup은 클라우드에서 데이터와 애플리케이션을 백업하고 보호할 수 있는 Microsoft의 클라우드 기반 백업 솔루션입니다.
-Azure Backup을 사용하면 온-프레미스 서버, Azure에서 실행되는 가상 머신 및 기타 클라우드 서비스에서 데이터를 백업할 수 있습니다.
-Azure Backup은 유연한 백업 일정 및 보존 정책을 제공하므로 백업을 보존할 빈도와 기간을 사용자 지정할 수 있습니다.
-또한 증분 백업, 암호화 및 데이터 압축과 같은 기능을 제공하여 백업 저장소 사용을 최적화하고 백업 시간을 줄입니다.
+Azure Backup はクラウドでデータとアプリケーションをバックアップして保護できる Microsoft のクラウドベースのバックアップソリューションです。
+Azure Backup を使用するとオンプレミスサーバー、Azure で実行される仮想マシンおよびその他のクラウドサービスからデータをバックアップすることができます。
+Azure Backup は柔軟なバックアップスケジュールと保存ポリシーを提供するので、バックアップを保存する頻度と期間をカスタマイズすることができます。
+また、増分バックアップ、暗号化、データ圧縮などの機能を提供し、バックアップリポジトリの使用を最適化し、バックアップ時間を短縮します。
 
 ## 関連リソース
 
 ### 上位リソース
 
--   [**Resource Group**](https://docs.cstudio.app/docs/resource/azure/Base/ResourceGroup)
+-   [**Resource Group**](https://docs.cstudio.app/ja/docs/resource/azure/Base/ResourceGroup)
 
 ## リソース設定値
 
--   `sku` : Recovery Services Vault 사용을 위한 가격 책정 계층 - `Standard`,`RS0`
+-   `sku` : Recovery Services Vault を使用するための価格設定階層(SKU) - `Standard`,`RS0`
 
--   `soft_delete_enabled` : Vault의 Soft delete 활성화 - `true`,`false`
+-   `soft_delete_enabled` : Vault の Soft delete 活性化 - `true`,`false`
 
 -   `vm_backup_policy`
 
-    -   `backup_frequency` : 항목이 백업되는 빈도 - `Daily`,`Weekly`
-    -   `backup_time` : 항목이 백업되는 시간
-    -   `timezone` : 백업 시간의 시간대
-    -   `retention_count` : 일일 백업 보존 수 - `7`~`9999`
+    -   `backup_frequency` : 項目がバックアップされる頻度 - `Daily`,`Weekly`
+    -   `backup_time` : 項目がバックアップされる時間
+    -   `timezone` : バックアップ時間の時間帯
+    -   `retention_count` : 毎日のバックアップ保存数 - `7`~`9999`
 
 -   `protected_vm`
 
 -   `share_backup_policy`
 
-    -   `backup_frequency` : 항목이 백업되는 빈도 - `Daily`,`Weekly`
-    -   `backup_time` : 항목이 백업되는 시간
-    -   `timezone` : 백업 시간의 시간대
-    -   `daily_retention_count` : 일일 백업 보존 수 - `1`~`200`
-    -   `enabled_weekly_backup` : 주간 백업 활성화
+    -   `backup_frequency` : 項目がバックアップされる頻度 - `Daily`,`Weekly`
+    -   `backup_time` : 項目がバックアップされる時間
+    -   `timezone` : バックアップ時間の時間帯
+    -   `daily_retention_count` : 毎日のバックアップ保存数 - `1`~`200`
+    -   `enabled_weekly_backup` : 週間バックアップを有効にする
 
 -   `protected_share`
 
-    -   `source_storage_account_name` : 백업할 파일 공유의 Storage 계정 이름
-    -   `source_share_name` : 백업할 파일 공유 이름
-    -   `backup_policy_name` : 백업에 적용할 백업 정책 이름
+    -   `source_storage_account_name` : バックアップするファイル共有の Storage アカウント名
+    -   `source_share_name` : バックアップするファイル共有名
+    -   `backup_policy_name` : バックアップに適用するバックアップポリシー名
 
--   `tag` : 리소스를 카테고리로 분류하기 위한 태그 - 최대 512자, `key`:`value`
+-   `tag` : リソースをカテゴリに分類するためのタグ - 最大 512 文字, `key`:`value`
 
 ---
 
 ## 参考資料
 
 -   [Azure Backup(Microsoft)](https://learn.microsoft.com/en-us/azure/backup/backup-overview)
--   [Azure Backup 가격](https://azure.microsoft.com/en-us/pricing/details/backup/)
+-   [Azure Backup 価格](https://azure.microsoft.com/en-us/pricing/details/backup/)
 -   [Azure Backup(Terraform)](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/recovery_services_vault)

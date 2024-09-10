@@ -9,7 +9,7 @@ tags: [Kubernetes, 리소스, Helm, IstioGateway]
 <br />
 
 
-## 리소스 아이콘
+## Resource Icon
 
 <img
     src={
@@ -17,33 +17,33 @@ tags: [Kubernetes, 리소스, Helm, IstioGateway]
     }
 />
 
-## 리소스 개요
+## Resource Overview
 
-Istio Gateway 헬름 차트입니다.
+Helm chart for Istio Gateway.
 
-## 연관 리소스
+## Associated Resources
 
-### 상위 리소스
+### Parent Resource
 
--   [**Cluster**](https://docs.cstudio.app/docs/resource/kubernetes/Base/Cluster)
--   [**Namespace**](https://docs.cstudio.app/docs/resource/kubernetes/Core/Namespace)
+-   [**Cluster**](https://docs.cstudio.app/en/docs/resource/kubernetes/Base/Cluster)
+-   [**Namespace**](https://docs.cstudio.app/en/docs/resource/kubernetes/Core/Namespace)
 
-### 연결 리소스
-
-
+### Connected Resources
 
 
-## 리소스 설정 값
 
--   `service_name` : Istio gateway 헬름 차트 릴리즈 이름
--   `namespace` : Istio gateway 헬름 차트가 배포될 네임스페이스
--   `version` : 사용할 Istio gateway 헬름 차트 버전
--   `set` : Istio gateway 기본 차트의 값을 동적으로 변경
+
+## Resource Setting Values
+
+-   `service_name` : Istio gateway Vault Helm chart release name
+-   `namespace` : Namespace where Istio Ingress Helm Chart resources will be deployed
+-   `version` : Specifies the version of the Istio Ingress Helm char
+-   `set` : Dynamically change values of Istio Ingress default chart
 
 
 ---
 
-## 참고 자료
+## Reference Materials
 
 -   [Helm install(Istio gateway)](https://artifacthub.io/packages/helm/istio-official/gateway)
 -   [Helm Provider(Terraform)](https://registry.terraform.io/providers/hashicorp/helm/latest/docs)

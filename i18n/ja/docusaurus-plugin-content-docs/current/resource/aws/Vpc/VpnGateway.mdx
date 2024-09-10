@@ -1,13 +1,13 @@
 ---
 title: Vpn Gateway
 sidebar_position: 0
-tags: [AWS, 리소스, Vpc, VpnGateway]
+tags: [AWS, リソース, Vpc, VpnGateway]
 ---
 
 <hr />
 <br />
 
-## 리소스 아이콘
+## リソースアイコン
 
 <img
     src={
@@ -15,32 +15,32 @@ tags: [AWS, 리소스, Vpc, VpnGateway]
     }
 />
 
-## 리소스 개요
+## リソース概要
 
-가상 프라이빗 게이트웨이는 Site-to-Site VPN 연결의 Amazon 측에 있는 VPN 집선기입니다. 가상 프라이빗 게이트웨이를 생성하여 Site-to-Site VPN 연결을 생성할 VPC에 연결합니다.
+Vpn Gateway は、Site-to-Site VPN 接続の Amazon 側にある VPN 集線器です。 仮想プライベートゲートウェイを生成して、Site-to-Site VPN 接続を生成する VPC に接続します。
 
-## 연관 리소스
+## 関連リソース
 
-### 상위 리소스
+### 上位リソース
 
--   [**Region**](https://docs.cstudio.app/docs/resource/aws/Base/Region)
+-   [**Region**](https://docs.cstudio.app/ja/docs/resource/aws/Base/Region)
 
-### 연결 리소스
+### 接続リソース
 
--   [**Vpc**](https://docs.cstudio.app/docs/resource/aws/Vpc/)
+-   [**Vpc**](https://docs.cstudio.app/ja/docs/resource/aws/Vpc/)
 
--   [**Vpc Customer Gateway**](https://docs.cstudio.app/docs/resource/aws/Vpc/CustomerGateway)
+-   [**Vpc Customer Gateway**](https://docs.cstudio.app/ja/docs/resource/aws/Vpc/CustomerGateway)
 
-## 리소스 설정 값
+## リソース設定値
 
--   `linked_vpc_name` : VPN Gateway가 포함될 VPC 이름
--   `vpn_connection` : VPN Connection 이름
-    -   `linked_customer_gateway` : VPN Gateway와 연결할 Customer Gateway 이름
-    -   `static_routes_only` : Gateway간 라우팅 시 정적 라우팅만 사용할지 지정 - `true`, `false`
+-   `linked_vpc_name` : VPN Gateway が含まれる VPC 名
+-   `vpn_connection` : VPN Connection 名
+    -   `linked_customer_gateway` : VPN Gateway と接続する Customer Gateway 名
+    -   `static_routes_only` : ゲートウェイ間ルーティング時、static ルーティングのみを使用するかどうかを指定 - `true`, `false`
 
 ---
 
-## 참고 자료
+## 参考資料
 
--   [AWS Site-to-Site VPN 작동 방식(AWS)](https://docs.aws.amazon.com/ko_kr/vpn/latest/s2svpn/how_it_works.html)
+-   [AWS Site-to-Site VPN 作動方式(AWS)](https://docs.aws.amazon.com/ko_kr/vpn/latest/s2svpn/how_it_works.html)
 -   [aws_api_gateway_resource(Terraform)](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/api_gateway_resource)

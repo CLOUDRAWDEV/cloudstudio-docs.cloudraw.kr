@@ -1,13 +1,13 @@
 ---
 title: SourcePipeline
 sidebar_position: 0
-tags: [Ncloud, 리소스, DeveloperTool, SourcePipeline]
+tags: [Ncloud, リソース, DeveloperTool, SourcePipeline]
 ---
 
 <hr />
 <br />
 
-## 리소스 아이콘
+## リソースアイコン
 
 <img
     src={
@@ -15,67 +15,68 @@ tags: [Ncloud, 리소스, DeveloperTool, SourcePipeline]
     }
 />
 
-## 리소스 개요
+## リソース概要
 
-SourceCommit, SourceBuild, SourceDeploy 서비스를 통합하여 빠르고 안정적인 소프트웨어 출시를 위한 프로세스 자동화 서비스
+SourceCommit, SourceBuild, SourceDeploy サービスを統合し、迅速かつ安定したソフトウェアをリリースするためのプロセス自動化サービス
 
-## 연관 리소스
+## 関連リソース
 
-### 상위 리소스
+### 上位リソース
 
-### 하위 리소스
+### 下位リソース
 
+## リソース設定値
 
+-   `default_task` : パイプラインが行う最初の作
 
-## 리소스 설정 값
+    -   `name` : パイプラインが行う最初の作業名前
+    -   `type` : task の種類 - `SourceBuild`,`SourceDeploy`
 
--   `default_task` : 파이프라인이 수행할 첫 번째 작업
-    -   `name` : 파이프라인이 수행할 첫 번째 작업 이름  
-    -   `type` : task 종류 - `SourceBuild`,`SourceDeploy`
+    -   type が SourceBuild の場合
 
-    - type이 SourceBuild일 경우
-        - `target_source_build_project` : SourceBuild task의 프로젝트 이름
-        - `repository_branch` : SourceBuild task의 타켓 repository 브랜치 이름
+        -   `target_source_build_project` : SourceBuild または SourceDeploy の task のプロジェクト名
+        -   `repository_branch` : SourceBuild task のターゲット repository ブランチ名
 
-    - type이 SourceDeploy일 경우
-        -  `target_source_deploy_project` : SourceDeploy의 task의 프로젝트 이름
-        -  `target_source_deploy_project_stage` : SourceDeploy의 task의 프로젝트 stage 이름
-        -  `target_source_deploy_project_scenario` : SourceDeploy의 task의 프로젝트 scenario 이름
+    -   type が SourceDeploy の場合
+        -   `target_source_deploy_project` : SourceBuild の task のプロジェクト名
+        -   `target_source_deploy_project_stage` : SourceBuild の task のプロジェクトステージ名
+        -   `target_source_deploy_project_scenario` : SourceBuild の task のプロジェクト scenario 名
 
--   `additional_task` : 파이프라인이 수행할 작업
-    -   `name` : 파이프라인이 수행할 작업 이름
-    -   `type` : task 종류 - `SourceBuild`,`SourceDeploy`
+-   `additional_task` : パイプラインが行う作業
 
-    - type이 SourceBuild일 경우
-        - `target_source_build_project` : SourceBuild task의 프로젝트 이름
-        - `repository_branch` : SourceBuild task의 타켓 repository 브랜치 이름
-        -  `pre_tasks` : 사전에 실행할 task 리스트
-    
-    - type이 SourceDeploy일 경우
-        -  `target_source_deploy_project` : SourceDeploy의 task의 프로젝트 이름
-        -  `target_source_deploy_project_stage` : SourceDeploy의 task의 프로젝트 stage 이름
-        -  `target_source_deploy_project_scenario` : SourceDeploy의 task의 프로젝트 scenario 이름
-        -  `pre_tasks` : 사전에 실행할 task 리스트
+    -   `name` : パイプラインが行う作業の名前
+    -   `type` : task の種類 - `SourceBuild`,`SourceDeploy`
 
--   `push_repository` : 파이프라인이 동작할 트리거를 정의
-    -   `type_of_repository` : trigger에 사용할 repository 유형 - `sourcecommit`
-    -   `name_of_repository` : trigger에 사용할 repository 이름
-    -   `branch_of_repository` : trigger에 사용할 repository 브랜치
+    -   type が SourceBuild の場合
 
--   `schedule` : 파이파라인이 자동 실행되도록 예약 설정
-    - `day` : 배포 예약을 할 요일
-    - `time` : 배포 예약을 할 시간
-    - `timezone` : 예정된 날짜에 배포 예약할 시간의 timezone
-    - `execute_only_with_change` : Sourcepipeline 프로젝트 구성 또는 Sourcecommit 리포지토리가 변경된 경우 일정 트리거가 항상 시간 내에 실행되는지 또는 실행되는지 여부 
+        -   `target_source_build_project` : SourceDeploy の task のプロジェクト名
+        -   `repository_branch` : SourceBuild task のターゲット repository ブランチ名
+        -   `pre_tasks` : 事前に実行するタスクリスト
 
--   `target_sourcepipeline_id` : trigger 설정된 파이프라인이 실행완료 될 때 자동으로 실행될 파이프라인 아이디 리스트
- 
+    -   type が SourceDeploy の場合
+        -   `target_source_deploy_project` : SourceDeploy の task のプロジェクト名
+        -   `target_source_deploy_project_stage` : SourceDeploy の task のプロジェクトステージ名
+        -   `target_source_deploy_project_scenario` : SourceDeploy の task のプロジェクト scenario 名
+        -   `pre_tasks` : 事前に実行するタスクリスト
 
+-   `push_repository` : パイプラインが動作するトリガーを定義
+
+    -   `type_of_repository` : Trigger に使用する repository タイプ - `sourcecommit`
+    -   `name_of_repository` : Trigger に使用する repository の名前
+    -   `branch_of_repository` : Trigger に使用する repository branch
+
+-   `schedule` : パイパラインが自動実行されるように予約設定
+
+    -   `day` : デプロイ予約をする曜日
+    -   `time` : デプロイ予約をする時間
+    -   `timezone` : 予定日にデプロイ予約する時間の time zone
+    -   `execute_only_with_change` : Sourcepipeline プロジェクト構成または Sourcecommit リポジトリが変更された場合、スケジュールトリガーが常に時間内に実行されるか、または実行されるかどうかの可否
+
+-   `target_sourcepipeline_id` : Trigger 設定されたパイプラインが実行完了時に自動的に実行されるパイプライン ID リスト
 
 ---
 
-
-## 참고 자료
+## 参考資料
 
 -   [Source Pipeline(Ncloud)](https://www.ncloud.com/product/devTools/sourcePipeline)
 -   [ncloud_sourcepipeline(Terraform)](https://registry.terraform.io/providers/NaverCloudPlatform/ncloud/latest/docs/resources/sourcepipeline_project)

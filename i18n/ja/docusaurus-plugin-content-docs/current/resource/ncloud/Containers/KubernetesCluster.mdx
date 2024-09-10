@@ -1,13 +1,13 @@
 ---
 title: Kubernetes Cluster
 sidebar_position: 0
-tags: [Ncloud, 리소스, Containers, KubernetesCluster]
+tags: [Ncloud, リソース, Containers, KubernetesCluster]
 ---
 
 <hr />
 <br />
 
-## 리소스 아이콘
+## リソースアイコン
 
 <img
     src={
@@ -15,44 +15,45 @@ tags: [Ncloud, 리소스, Containers, KubernetesCluster]
     }
 />
 
-## 리소스 개요
+## リソース概要
 
-애플리케이션 컨테이너화, 배포, 관리를 자동화하는 오픈 소스 플랫폼인 쿠버네티스 서비스입니다. 컨테이너 배포, 관리, 확장 등 컨테이너를 사용하는 데 필요한 작업을 자동화하여 업무 효율을 높여줍니다.
+アプリケーションのコンテナ化、デプロイ、管理を自動化するオープンソースプラットフォームであるクバネティスサービスです。
+コンテナのデプロイ、管理、拡張など、コンテナを使用するために必要な作業を自動化し、業務効率を高めます。
 
-## 연관 리소스
+## 関連リソース
 
-### 상위 리소스
+### 上位リソース
 
--   [**Vpc**](https://docs.cstudio.app/docs/resource/ncloud/Networking/Vpc)
+-   [**Vpc**](https://docs.cstudio.app/ja/docs/resource/ncloud/Networking/Vpc)
 
-### 하위 리소스
+### 下位リソース
 
--   [**Subnet**](https://docs.cstudio.app/docs/resource/ncloud/Networking/Subnet)
--   [**LoadBalancer**](https://docs.cstudio.app/docs/resource/ncloud/Networking/LoadBalancer)
+-   [**Subnet**](https://docs.cstudio.app/ja/docs/resource/ncloud/Networking/Subnet)
+-   [**LoadBalancer**](https://docs.cstudio.app/ja/docs/resource/ncloud/Networking/LoadBalancer)
 
-## 리소스 설정 값
+## リソース設定値
 
--   `zone` : 클러스터를 생성할 물리적 지역 - `KR-1`, `KR-2`
--   `included_vpc_name` : 클러스터를 생성할 VPC 이름
--   `hypervisor_code` : 하이퍼바이저 코드 클러스터 버전 - `XEN`
--   `version` : 클러스터 버전 - `1.26.10-nks.1`, `1.27.9-nks.1`
--   `maximum_number_of_nodes` : 클러스터의 최대 노드 수 설정, 10 혹은 50 
--   `enable_public_subnet_network` : 퍼블릭 서브넷과 연결할지 여부
--   `subnet_names` : 클러스터를 구성할 서브넷 이름 목록, 최대 3개
--   `lb_private_subnet_name` : 클러스터와 연동할 프라이빗 로드 밸런서가 위치하는 프라이빗 서브넷 이름 
--   `lb_pubic_subnet_name` : 클러스터와 연동할 프라이빗 로드 밸런서가 위치하는 프라이빗 서브넷 이름 
--   `login_key_name` : 사용할 login key 이름
--   `enable_audit_log` : audit log 기능 사용 여부
--   `node_pool` : 노드 풀 이름
-    -   `node_count` : 클러스터의 노드 수
-    -   `software_code` : 노드의 서버 이미지 코드
-    -   `product_code` : 노드의 하드웨어 구성을 위한 코드 
-    -   `node_pool_subnet_name` : 노드풀이 생성될 서브넷 이름
--   `enable_autoscale` : 오토 스케일 기능 사용 여부
+-   `zone` : クラスターを生成する物理的地域 - `KR-1`, `KR-2`
+-   `included_vpc_name` : クラスターを生成する VPC 名
+-   `hypervisor_code` : ハイパーバイザーコードクラスターバージョン - `XEN`
+-   `version` : クラスターバージョン - `1.26.10-nks.1`, `1.27.9-nks.1`
+-   `maximum_number_of_nodes` : クラスターの最大 Node 数の設定、10 または 50
+-   `enable_public_subnet_network` : パブリックサブネットと接続するかどうかの可否
+-   `subnet_names` : クラスターを構成するサブネット名のリスト、最大 3 つ
+-   `lb_private_subnet_name` : クラスターと連動するプライベート ロード バランサーが位置するプライベート サブネット名
+-   `lb_pubic_subnet_name` : クラスターと連動するパブリック ロード バランサーが位置するパブリック サブネット名
+-   `login_key_name` : 使用する Login key の名前
+-   `enable_audit_log` : audit log 機能を使用しているかどうかの可否
+-   `node_pool` : Node pool 名
+    -   `node_count` : クラスターの Node 数
+    -   `software_code` : Node のサーバーイメージコード
+    -   `product_code` : Node のハードウェア構成用のコード
+    -   `node_pool_subnet_name` : Node pool が作成されるサブネット名
+-   `enable_autoscale` : オートスケール機能が使用されているかどうかの可否
 
 ---
 
-## 참고 자료
+## 参考資料
 
 -   [Kubernetes Service(Ncloud)](https://www.ncloud.com/product/containers/kubernetes)
 -   [ncloud_nks_cluster(Terraform)](https://registry.terraform.io/providers/NaverCloudPlatform/ncloud/latest/docs/resources/nks_cluster)

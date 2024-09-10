@@ -1,13 +1,13 @@
 ---
 title: Waf Rule Group
 sidebar_position: 0
-tags: [AWS, 리소스, Waf, WafRuleGroup]
+tags: [AWS, リソース, Waf, WafRuleGroup]
 ---
 
 <hr />
 <br />
 
-## 리소스 아이콘
+## リソースアイコン
 
 <img
     src={
@@ -15,30 +15,31 @@ tags: [AWS, 리소스, Waf, WafRuleGroup]
     }
 />
 
-## 리소스 개요
+## リソース概要
 
-AWS WAF Rule Group은 Web Application Firewall에서 사용하는 규칙 모음입니다. Rule Group을 사용하여 여러 규칙을 묶어 웹 애플리케이션에 적용하고, 재사용성과 관리 효율성을 높일 수 있습니다. 규칙 그룹은 웹 애플리케이션 보안에 대한 중요한 측면을 제어하고, 요청을 허용, 차단 또는 카운트하는 기능을 수행합니다.
+AWS WAF Rule Group は Web Application Firewall で使用する Rule Group です。
+Rule Group を使用して複数のルールをまとめてウェブアプリケーションに適用し、再使用性と管理効率性を高めることができます。
+Rule Group はウェブ アプリケーションのセキュリティの重要な側面を制御し、リクエストを許可、ブロック、またはカウントする機能を実行します。
 
-## 연관 리소스
+## 関連リソース
 
-### 상위 리소스
+### 上位リソース
 
--   [**Region**](https://docs.cstudio.app/docs/resource/aws/Base/)
--   [**Base**](https://docs.cstudio.app/docs/resource/aws/Base/)
+-   [**Region**](https://docs.cstudio.app/ja/docs/resource/aws/Base/Region/)
+-   [**Base**](https://docs.cstudio.app/ja/docs/resource/aws/Base/)
 
+## リソース設定値
 
-## 리소스 설정 값
-
--   `scope` : AWS CloudFront 배포용인지 아니면 리전 애플리케이션용인지 지정 - `REGIONAL`, `CLOUDFRONT`
--   `capacity` : 규칙 그룹에 필요한 웹 ACL 용량 단위(WCU)
--   `cloudwatch_metrics_enabled` : 연결된 리소스가 CloudWatch에 지표를 보낼지 여부 설정 - `true`, `false`
--   `metric_name` : CloudWatch metric의 이름, 영대소문자, 하이픈(-), 밑줄(\_)만 포함할 수 있으며 길이는 1-128자
--   `sampled_requests_enabled` : AWS WAF가 규칙과 일치하는 웹 요청의 샘플링을 저장해야 하는지 여부를 설정 - `true`, `false`
+-   `scope` : AWS CloudFront デプロイ用か、それともリージョンアプリケーション用かを指定 - `REGIONAL`, `CLOUDFRONT`
+-   `capacity` : ルールグループに必要な Web ACL 容量単位(WCU)
+-   `cloudwatch_metrics_enabled` : 接続されたリソースが CloudWatch に指標を送信するかどうかを設定 - `true`, `false`
+-   `metric_name` : CloudWatch metric の名前、英大小文字、ハイフン(-)、下線(\_)のみ含めることができ、長さは 1-128 文字
+-   `sampled_requests_enabled` : AWS WAF がルールと一致するウェブリクエストのサンプリングを保存すべきかどうかを設定 - `true`, `false`
 
 ---
 
-## 참고 자료
+## 参考資料
 
--   [AWS WAF 기능(AWS)](https://aws.amazon.com/ko/waf/features/)
--   [AWS WAF 요금(AWS)](https://aws.amazon.com/ko/waf/pricing/?nc2=type_a)
+-   [AWS WAF 機能(AWS)](https://aws.amazon.com/ko/waf/features/)
+-   [AWS WAF 料金(AWS)](https://aws.amazon.com/ko/waf/pricing/?nc2=type_a)
 -   [aws_waf_rule_group(Terraform)](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/waf_rule_group)

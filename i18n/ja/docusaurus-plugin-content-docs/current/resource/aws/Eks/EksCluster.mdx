@@ -1,13 +1,13 @@
 ---
 title: Eks Cluster
 sidebar_position: 0
-tags: [AWS, 리소스, Eks, EksCluster]
+tags: [AWS, リソース, Eks, EksCluster]
 ---
 
 <hr />
 <br />
 
-## 리소스 아이콘
+## リソースアイコン
 
 <img
     src={
@@ -15,51 +15,49 @@ tags: [AWS, 리소스, Eks, EksCluster]
     }
 />
 
-## 리소스 개요
+## リソース概要
 
-Amazon Elastic Kubernetes Service(Amazon EKS)는 Kubernetes 클러스터를 설치하고 운영할 필요 없이 AWS에서 Kubernetes를 손쉽게 실행할 수 있는 관리형 서비스입니다.
+Amazon Elastic Kubernetes Service(Amazon EKS)は Kubernetes クラスタをインストールして運営する必要がなく、AWS で Kubernetes を簡単に実行できる管理型サービスです。
 
+## 関連リソース
 
-## 연관 리소스
+### 上位リソース
 
-### 상위 리소스
+-   [**Subnet**](https://docs.cstudio.app/ja/docs/resource/aws/Vpc/Subnet)
 
--   [**Subnet**](https://docs.cstudio.app/docs/resource/aws/Vpc/Subnet)
+### 接続リソース
 
-### 연결 리소스
+-   [**Eks Cluster**](https://docs.cstudio.app/ja/docs/resource/aws/Eks/EksCluster)
 
--   [**Eks Cluster**](https://docs.cstudio.app/docs/resource/aws/Eks/EksCluster)
+## リソース設定値
 
-
-## 리소스 설정 값
-
--   `version` : EKS Cluster의 버전
--   `cluster_role_arn` : Kubernetes 컨트롤 플레인이 사용자를 대신하여 aws 리소스를 관리하도록 허용하는 IAM 역할
--   `enabled_encryption` : 암호에 대한 암호화 활성화 - `true`, `false`
--   `included_subnet_names` : EKS Cluster를 배포할 Subnet Group에 포함될 Subnet의 이름
--   `security_group_name` : EKS Cluster에 설정할 보안 그룹 이름
--   `endpoint_access_type` : EKS API 서버 엔드포인트 액세스 종류 - `public`, `publicAndPrivate`, `private`
--   `enabled_cluster_log_types` : 활성화할 Control Plane 로깅 목록 - `api`, `audit`, `authenticator`, `controllerManager`, `scheduler`
+-   `version` : EKS Cluster のバージョン
+-   `cluster_role_arn` : Kubernetes コントロールプレーンがユーザーに代わって AWS リソースを管理できるようにする IAM 役割
+-   `enabled_encryption` : クラスターの暗号化を有効にする - `true`, `false`
+-   `included_subnet_names` : EKS Cluster をデプロイする Subnet Group に含まれる Subnet の名前
+-   `security_group_name` : EKS Cluster に設定するセキュリティグループ名
+-   `endpoint_access_type` : EKS API サーバーエンドポイントアクセスの種類 - `public`, `publicAndPrivate`, `private`
+-   `enabled_cluster_log_types` : 有効にする Control Plane ロギングリスト - `api`, `audit`, `authenticator`, `controllerManager`, `scheduler`
 -   `add_ons`
 
-    -   `kube_proxy_version` : 각 노드에서 실행되는 네트워크 프록시 버전 - `v1.26.4-eksbuild.1`, `v1.26.2-eksbuild.1`, `v1.25.9-eksbuild.1`, `v1.25.6-eksbuild.2`, `v1.24.10-eksbuild.2`
-    -   `vpc_cni_version` : Amazon VPC CNI 플러그인 버전 - `v1.12.6-eksbuild.2`, `v1.12.6-eksbuild.1`, `v1.12.5-eksbuild.2`, `v1.12.0-eksbuild.2`
-    -   `core_dns_version` : 클러스터 내에서 제공하는 DNS 서비스 버전 - `v1.9.3-eksbuild.3`, `v1.9.3-eksbuild.2`, `v1.8.7-eksbuild.4`
+    -   `kube_proxy_version` : 各ノードで実行されるネットワークプロキシバージョン - `v1.26.4-eksbuild.1`, `v1.26.2-eksbuild.1`, `v1.25.9-eksbuild.1`, `v1.25.6-eksbuild.2`, `v1.24.10-eksbuild.2`
+    -   `vpc_cni_version` : Amazon VPC CNI プラグインバージョン - `v1.12.6-eksbuild.2`, `v1.12.6-eksbuild.1`, `v1.12.5-eksbuild.2`, `v1.12.0-eksbuild.2`
+    -   `core_dns_version` : クラスタ内で提供する DNS サービスバージョン - `v1.9.3-eksbuild.3`, `v1.9.3-eksbuild.2`, `v1.8.7-eksbuild.4`
 
--   `node_group` : Cluster Node Group 이름, 영문, 숫자, 하이픈(-), 밑줄(\_) 사용 가능
-    -   `node_role_arn` : 노드에서 사용할 IAM 역할
-    -   `enable_launch_template` : 시작 템플릿을 사용하여 노드 그룹 구성 - `true`, `false`
-    -   `min_node_count` : 최소 EKS 작업자 노드 수
-    -   `max_node_count` : 최대 EKS 작업자 노드 수
-    -   `desired_node_count` : 원하는 EKS 작업자 노드 수
-    -   `max_node_unavailable` : 노드 그룹 업데이트 중 사용할 수 없는 작업자 노드의 원하는 최대 수
-    -   `max_percentage_unavailable` : 노드 그룹 업데이트 중 사용할 수 없는 작업자 노드의 원하는 최대 백분율 - `1`~`100`
-    -   `disk_size` : 각 노드에 연결되는 EBS 볼륨의 크기
+-   `node_group` : Cluster Node Group 名、英文、数字、ハイフン(-)、下線(\_)使用可能
+    -   `node_role_arn` : node で使用する IAM の役割
+    -   `enable_launch_template` : 開始テンプレートを使用して node グループを構成 - `true`, `false`
+    -   `min_node_count` : 最小 EKS ワーカー node 数
+    -   `max_node_count` : 最大 EKS ワーカー node 数
+    -   `desired_node_count` : 希望の EKS ワーカー node 数
+    -   `max_node_unavailable` : node グループの更新中に使用できないワーカー node の希望する最大数
+    -   `max_percentage_unavailable` : node グループの更新中に使用できないワーカー node の希望する最大パーセンテージ - `1`~`100`
+    -   `disk_size` : 各 node に接続される EBS ボリュームのサイズ
 
 ---
 
-## 참고 자료
+## 参考資料
 
 -   [Amazon EKS(AWS)](https://docs.aws.amazon.com/ko_kr/eks/latest/userguide/what-is-eks.html)
--   [Amazon EKS 요금(AWS)](https://aws.amazon.com/ko/eks/pricing/)
+-   [Amazon EKS 料金(AWS)](https://aws.amazon.com/ko/eks/pricing/)
 -   [aws_eks_cluster(Terraform)](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/eks_cluster)

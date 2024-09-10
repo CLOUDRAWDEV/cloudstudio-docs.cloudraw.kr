@@ -1,13 +1,13 @@
 ---
 title: Block Storage
 sidebar_position: 0
-tags: [Ncloud, 리소스, Storage, BlockStorage]
+tags: [Ncloud, Resource, Storage, BlockStorage]
 ---
 
 <hr />
 <br />
 
-## 리소스 아이콘
+## Resource Icon
 
 <img
     src={
@@ -15,30 +15,30 @@ tags: [Ncloud, 리소스, Storage, BlockStorage]
     }
 />
 
-## 리소스 개요
+## Resource Overview
 
 서버의 기본 스토리지 외에 추가로 제공하는 HDD 또는 SSD 스토리지 서비스입니다. 단시간에 생성하여 즉시 서버와 연결할 수 있고 필요하지 않을 경우 바로 반납할 수 있습니다.
 
-## 연관 리소스
+## Associated Resources
 
-### 상위 리소스
+### Parent Resource
 
--   [**Subnet**](https://docs.cstudio.app/docs/resource/ncloud/Networking/Subnet)
+-   [**Subnet**](https://docs.cstudio.app/en/docs/resource/ncloud/Networking/Subnet)
 
-### 연결 리소스
+### Connected Resources
 
--   [**Server**](https://docs.cstudio.app/docs/resource/ncloud/Compute/Server)
+-   [**Server**](https://docs.cstudio.app/en/docs/resource/ncloud/Compute/Server)
 
-## 리소스 설정 값
+## Resource Setting Values
 
--   `linked_server_name` : 블록 스토리지를 연결할 서버 이름
--   `storage_size` : 블록 스토리지의 크기(GB), 10 ~ 2000의 범위
--   `storage_disk_type` : 블록 스토리지의 디스크 종료, SSD 혹은 HDD - `SSD`, `HDD`
--   `snapshot_name` : 생성할 스냅샷 이름
+-   `linked_server_name` : The name of server to associate with the Block storage
+-   `storage_size` : The size of Block storage in GB, From 10 to 16380
+-   `storage_disk_type` : The type of Block storage disk, SSD or HDD - `SSD`, `HDD`
+-   `snapshot_name` : Name of the snapshot to be created
 
 ---
 
-## 참고 자료
+## Reference Materials
 
 -   [Block Storage(Ncloud)](https://www.ncloud.com/product/storage/blockStorage)
--   [ncloud_block_storage(Terraform)](https://registry.terraform.io/providers/NaverCloudPlatform/ncloud/latest/docs/resources/block_storage)
+-   [ncloud_block_storage(Terraform)](https://registry.terraform.io/providers/NaverCloudPlatform/ncloud/latest/en/docs/resources/block_storage)
