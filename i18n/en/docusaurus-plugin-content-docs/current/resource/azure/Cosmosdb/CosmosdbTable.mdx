@@ -24,7 +24,7 @@ The Cosmos DB Table API supports features such as automatic indexing, global dis
 
 ### Parent Resource
 
--   [**Resource Group**](https://docs.cstudio.app/docs/resource/azure/Base/ResourceGroup)
+-   [**Resource Group**](https://docs.cstudio.app/en/docs/resource/azure/Base/ResourceGroup)
 
 ## Resource Setting Values
 
@@ -57,20 +57,10 @@ The Cosmos DB Table API supports features such as automatic indexing, global dis
     -   `interval_in_minutes` : The interval of backup in minutes, Between 60 and 1440 - `60`~ `1440`
     -   `retention_in_hours` : The time in hours that the backup is retained, Between 8 and 720 - `8`~`720`
 
--   `cassandra_keyspace`
+-   `table`
 
-    -   `throughput` : The throughput of Cassandra keyspace - `400`~ `1000000`
-    -   `enable_autoscale` : Whether to apply auto scaling to Cassandra keyspace - `true`, `false`
-
--   `cassandra_table`
-
-    -   `throughput`: The throughput of Cassandra table - `400`~ `1000000`
-    -   `column` : List of the name and type of column, 'name:type' format
-    -   `partition_key` : The name of partition key
-    -   `cluster_key_name` : The name of cluster key to be created
-    -   `cluster_key_order` : Order of the cluster key - `Asc` , `Desc`
-    -   `enable_autoscale` : Whether to apply auto scaling to Cassandra keyspace - `true`, `false`
-    -   `included_cosmosdb_keyspace_name` : The name of the Cosmos DB Cassandra keyspace to create the table within
+    -   `throughput` : The throughput of the Cosmos DB Table - `Continuous`, `Periodic`
+    -   `enable_autoscale` : The interval of backup in minutes, Between 60 and 1440 - `60`~ `1440`
 
 -   `tag` : Tag to categorize resources - up to 512 characters, `key:value`
 
