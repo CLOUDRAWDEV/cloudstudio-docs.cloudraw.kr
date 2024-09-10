@@ -1,13 +1,13 @@
 ---
 title: SourceDeployStage
 sidebar_position: 0
-tags: [Ncloud, 리소스, DeveloperTool, SourceDeployStage]
+tags: [Ncloud, リソース, DeveloperTool, SourceDeployStage]
 ---
 
 <hr />
 <br />
 
-## 리소스 아이콘
+## リソースアイコン
 
 <img
     src={
@@ -15,43 +15,38 @@ tags: [Ncloud, 리소스, DeveloperTool, SourceDeployStage]
     }
 />
 
-## 리소스 개요
+## リソース概要
 
-생성한 SourceDeploy 프로젝트에 Deploy Stage를 추가/수정/삭제하거나 배포 타깃이 없는 배포 Stage에 배포 타깃을 생성할 수 있습니다.
+生成した SourceDeploy プロジェクトに DeployStage を追加/修正/削除したり、デプロイターゲットがないデプロイ Stage にデプロイターゲットを生成することができます。
 
+## 関連リソース
 
+### 上位リソース
 
-## 연관 리소스
+### 下位リソース
 
-### 상위 리소스
+## リソース設定値
 
-### 하위 리소스
-
-
-
-## 리소스 설정 값
-
--   `included_source_deploy_name` : SourceDeploy 프로젝트 이름
--   `target_type` : 배포 대상의 유형 - `Server`,`AutoScalingGroup`,`KubernetesService`,`ObjectStorage`
--   `linked_server_list` : 연결할 서버 이름 리스트
--   `included_subnet_names` : 클러스터를 구성할 서브넷 이름 목록, 최대 3개
--   `scenario` : 배포 환경을 실행할 수 있는 배포 시나리오
-    -   `deploy_scenario_description` : source deploy 프로젝트 설명
-    -   `deploy_scenario_strategy` : 배포 전략 - `normal`,`blueGreen`,`rolling`,`canary`
-    -   `deploy_scenario_file_type` : 배포 시나리오의 파일 타입 - `SourceBuild`,`ObjectStorage`,`later`
-    -   `linked_source_build_project` : source build 프로젝트의 이름 
-    -   `rollback` : 배포 실패 시 롤백할 지 여부
-    -   `pre_deploy_user` : 배포 전 실행 계정
-    -   `pre_deploy_command` : 배포 전 실행 명령어
-    -   `source_path_command` : 배포할 원본 파일 경로
-    -   `deploy_path_command` : 배포할 경로
-    -   `post_deploy_user` : 배포 후 실행 계정
-    -   `post_deploy_command` : 배포 후 실행 명령어
-  
+-   `included_source_deploy_name` : SourceDeploy プロジェクト名
+-   `target_type` : デプロイ対象のタイプ - `Server`,`AutoScalingGroup`,`KubernetesService`,`ObjectStorage`
+-   `linked_server_list` : 接続するサーバー名のリスト
+-   `included_subnet_names` : クラスターを構成するサブネット名のリスト、最大 3 つ
+-   `scenario` : デプロイ環境を実行できる配布シナリオ
+    -   `deploy_scenario_description` : Source deploy プロジェクトの説明
+    -   `deploy_scenario_strategy` : デプロイ戦略 - `normal`,`blueGreen`,`rolling`,`canary`
+    -   `deploy_scenario_file_type` : デプロイシナリオのファイルタイプ - `SourceBuild`,`ObjectStorage`,`later`
+    -   `linked_source_build_project` : Source build プロジェクトの名前
+    -   `rollback` : デプロイに失敗した場合、ロールバックするかどうかの可否
+    -   `pre_deploy_user` : デプロイ前の実行アカウント
+    -   `pre_deploy_command` : デプロイ前の実行コマンド
+    -   `source_path_command` : デプロイする元のファイルパス
+    -   `deploy_path_command` : デプロイするパス
+    -   `post_deploy_user` : デプロイ後の実行アカウント
+    -   `post_deploy_command` : デプロイ後の実行コマンド
 
 ---
 
-## 참고 자료
+## 参考資料
 
 -   [Source Deploy Stage(Ncloud)](https://www.ncloud.com/product/devTools/sourceDeploy)
 -   [ncloud_source_deploy_stage(Terraform)](https://registry.terraform.io/providers/NaverCloudPlatform/ncloud/latest/docs/resources/sourcedeploy_project_stage)

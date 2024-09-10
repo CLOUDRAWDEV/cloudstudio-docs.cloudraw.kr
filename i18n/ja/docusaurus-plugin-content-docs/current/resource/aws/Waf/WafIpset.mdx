@@ -1,13 +1,13 @@
 ---
 title: Waf Ipset
 sidebar_position: 0
-tags: [AWS, 리소스, Waf, WafIpset]
+tags: [AWS, リソース, Waf, WafIpset]
 ---
 
 <hr />
 <br />
 
-## 리소스 아이콘
+## リソースアイコン
 
 <img
     src={
@@ -15,27 +15,29 @@ tags: [AWS, 리소스, Waf, WafIpset]
     }
 />
 
-## 리소스 개요
+## リソース概要
 
-AWS WAF IPSet은 Amazon Web Services의 Web Application Firewall에서 사용하는 IP 주소 목록입니다. 이를 통해, 사용자는 정의한 IP 주소들에 대한 액세스 규칙을 생성하고 관리할 수 있습니다. IPSet을 활용하면, 특정 IP 주소들로부터의 요청을 허용하거나 차단함으로써 웹 애플리케이션 보안을 강화할 수 있습니다.
+AWS WAF IPSet は Amazon Web Services の Web Application Firewall で使用する IP アドレスのリストです。
+これにより、ユーザは定義した IP アドレスへのアクセス規則を生成し、管理することができます。
+IPSet を活用すると、特定の IP アドレスからの要請を許可または遮断することで、ウェブアプリケーションのセキュリティを強化することができます。
 
-## 연관 리소스
+## 関連リソース
 
-### 상위 리소스
+### 上位リソース
 
--   [**Region**](https://docs.cstudio.app/docs/resource/aws/Base/)
--   [**Base**](https://docs.cstudio.app/docs/resource/aws/Base/)
+-   [**Region**](https://docs.cstudio.app/jp/docs/resource/aws/Base/)
+-   [**Base**](https://docs.cstudio.app/jp/docs/resource/aws/Base/)
 
-## 리소스 설정 값
+## リソース設定値
 
--   `scope` : AWS CloudFront 배포용인지 아니면 리전 애플리케이션용인지 지정 - `REGIONAL`, `CLOUDFRONT`
--   `ip_address_version` : IPV4 또는 IPV6 지정 - `IPV4`, `IPV6`
--   `addresses` : CIDR 표기법으로 하나 이상의 IP 주소 또는 IP 주소 블록을 지정하는 문자열 배열을 입력
+-   `scope` : AWS CloudFront 配布用か、それともリージョンアプリケーション用かを指定 - `REGIONAL`, `CLOUDFRONT`
+-   `ip_address_version` : IPV4 または IPV6 指定 - `IPV4`, `IPV6`
+-   `addresses` : CIDR 表記法で 1 つ以上の IP アドレスまたは IP アドレスブロックを指定する文字列配列を入力
 
 ---
 
-## 참고 자료
+## 参考資料
 
--   [AWS WAF 기능(AWS)](https://aws.amazon.com/ko/waf/features/)
--   [AWS WAF 요금(AWS)](https://aws.amazon.com/ko/waf/pricing/?nc2=type_a)
+-   [AWS WAF 機能(AWS)](https://aws.amazon.com/ko/waf/features/)
+-   [AWS WAF 料金(AWS)](https://aws.amazon.com/ko/waf/pricing/?nc2=type_a)
 -   [aws_waf_ipset(Terraform)](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/waf_ipset)

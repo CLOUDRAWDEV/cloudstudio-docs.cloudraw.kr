@@ -1,13 +1,13 @@
 ---
 title: InitScript
 sidebar_position: 0
-tags: [Ncloud, 리소스, Compute, Initscript]
+tags: [Ncloud, リソース, Compute, Initscript]
 ---
 
 <hr />
 <br />
 
-## 리소스 아이콘
+## リソースアイコン
 
 <img
     src={
@@ -15,24 +15,24 @@ tags: [Ncloud, 리소스, Compute, Initscript]
     }
 />
 
-## 리소스 개요
+## リソース概要
 
-Init Script는 미리 작성해 둔 스크립트를 서버 생성 시 자동으로 실행시킬 수 있는 기능입니다. 같은 용도의 서버를 여러 대 일괄 생성하거나, 같은 환경의 서버를 주기적으로 생성하거나 용도별로 서버 초기 환경 관리가 필요한 경우 등 여러 가지 경우에 활용할 수 있습니다.
+Init Script はあらかじめ作成しておいたスクリプトをサーバー生成時に自動的に実行させることができる機能です。
+同じ用途のサーバーを複数台一括生成したり、同じ環境のサーバーを周期的に生成したり、用途別にサーバーの初期環境管理が必要な場合など、様々な場合に活用できます。
 
-## 연관 리소스
+## 関連リソース
 
-### 상위 리소스
+### 上位リソース
 
--   [**Region**](https://docs.cstudio.app/docs/resource/ncloud/Base/Region)
+-   [**Region**](https://docs.cstudio.app/ja/docs/resource/ncloud/Base/Region)
 
+## リソース設定値
 
-## 리소스 설정 값
-
--   `OS_type` : 사용할 서버 인스턴스의 종류 - `LNX`, `WND`
--   `Content` : 서버가 생성될 때 자동으로 실행할 스크립트 내용, 예) #!/bin/bash yum install -y httpd && systemctl start httpd
+-   `OS_type` : 使用するサーバーインスタンスの種類 - `LNX`, `WND`
+-   `Content` : サーバーが生成される時に自動的に実行するスクリプト内容、例) #!/bin/bash yum install -y httpd && systemctl start httpd
 
 ---
 
-## 참고 자료
+## 参考資料
 
 -   [ncloud_InitScript(Terraform)](https://registry.terraform.io/providers/NaverCloudPlatform/ncloud/latest/docs/resources/init_script)

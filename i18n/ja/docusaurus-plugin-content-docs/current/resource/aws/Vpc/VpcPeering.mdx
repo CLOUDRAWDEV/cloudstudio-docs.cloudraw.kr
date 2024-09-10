@@ -1,13 +1,13 @@
 ---
 title: Vpc Peering
 sidebar_position: 0
-tags: [AWS, 리소스, Vpc, VpcPeering]
+tags: [AWS, リソース, Vpc, VpcPeering]
 ---
 
 <hr />
 <br />
 
-## 리소스 아이콘
+## リソースアイコン
 
 <img
     src={
@@ -15,26 +15,29 @@ tags: [AWS, 리소스, Vpc, VpcPeering]
     }
 />
 
-## 리소스 개요
+## リソース概要
 
-Virtual Private Cloud(VPC)는 사용자의 AWS 계정 전용 가상 네트워크입니다. VPC는 AWS 클라우드에서 다른 가상 네트워크와 논리적으로 분리되어 있습니다. AWS 리소스(예: Amazon EC2 인스턴스)를 VPC에서 시작할 수 있습니다.
-VPC 피어링 연결은 프라이빗 IPv4 주소 또는 IPv6 주소를 사용하여 두 VPC 간에 트래픽을 라우팅할 수 있도록 하기 위한 두 VPC 사이의 네트워킹 연결입니다. 동일한 네트워크에 속하는 경우와 같이 VPC의 인스턴스가 서로 통신할 수 있습니다. 사용자의 자체 VPC 또는 다른 AWS 계정의 VPC와 VPC 피어링 연결을 만들 수 있습니다. VPC는 상이한 리전에 있을 수 있습니다(리전 간 VPC 피어링 연결이라고도 함).
+Virtual Private Cloud(VPC)はユーザの AWS アカウント専用の仮想ネットワークです。VPC は AWS クラウドで他の仮想ネットワークと論理的に分離されています。
+AWS リソース(例:Amazon EC2 インスタンス)を VPC から開始できます。
+VPC ピアリング接続はプライベート IPv4 アドレスまたは IPv6 アドレスを使用して 2 つの VPC 間のトラフィックをルーティングできるようにするための 2 つの VPC 間のネットワーキング接続です。
+同一のネットワークに属する場合と同様に、VPC のインスタンスが相互に通信できます。ユーザーの独自 VPC または他の AWS アカウントの VPC と VPC ピアリング接続を作成することができます。
+VPC は異なるリージョンにある可能性があります（リージョン間 VPC ピアリング接続とも呼ばれます）。
 
-## 연관 리소스
+## 関連リソース
 
-### 연결 리소스
+### 接続リソース
 
--   [**Vpc**](https://docs.cstudio.app/docs/resource/aws/Vpc/)
+-   [**Vpc**](https://docs.cstudio.app/ja/docs/resource/aws/Vpc/)
 
-## 리소스 설정 값
+## リソース設定値
 
--   `linked_vpc_name_01` : Peering을 할 VPC 이름
--   `linked_vpc_name_02` : Peering을 할 VPC 이름
--   `auto_accept` : Peering 연결을 자동 승낙 여부 - `true`, `false`
+-   `linked_vpc_name_01` : Peering する VPC 名
+-   `linked_vpc_name_02` : Peering する VPC 名
+-   `auto_accept` : Peering 接続自動承諾の可否부 - `true`, `false`
 
 ---
 
-## 참고 자료
+## 参考資料
 
--   [VPC 피어링이란?(AWS)](https://docs.aws.amazon.com/ko_kr/vpc/latest/peering/what-is-vpc-peering.html)
+-   [VPC Peering とは?(AWS)](https://docs.aws.amazon.com/ko_kr/vpc/latest/peering/what-is-vpc-peering.html)
 -   [aws_vpc_peering_connection(Terraform)](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/vpc_peering_connection)

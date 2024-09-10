@@ -1,13 +1,13 @@
 ---
 title: SesCluster
 sidebar_position: 0
-tags: [Ncloud, 리소스, Bigdata&Analytics, SesCluster]
+tags: [Ncloud, リソース, Bigdata&Analytics, SesCluster]
 ---
 
 <hr />
 <br />
 
-## 리소스 아이콘
+## リソースアイコン
 
 <img
     src={
@@ -15,42 +15,42 @@ tags: [Ncloud, 리소스, Bigdata&Analytics, SesCluster]
     }
 />
 
-## 리소스 개요
+## リソース概要
 
-elasticsearch 및 OpenSearch 클러스터를 편리하게 관리할 수 있는 환경을 제공하고, 다양한 서버 유형 및 스토리지 용량을 선택하여 클러스터를 구성하고 손쉽게 배포, 운영 및 확장할 수 있는 리소스입니다.
+elasticsearch 及び OpenSearch クラスタを便利に管理できる環境を提供し、
+様々なサーバタイプ及びストレージ容量を選択してクラスタを構成し、簡単に配布、運営、及び拡張できるリソースです。
 
-## 연관 리소스
+## 関連リソース
 
-### 상위 리소스
+### 上位リソース
 
--   [**VPC**](https://docs.cstudio.app/docs/resource/ncloud/Networking/Vpc)
+-   [**VPC**](https://docs.cstudio.app/ja/docs/resource/ncloud/Networking/Vpc)
 
-### 연결 리소스
+### 接続リソース
 
+## リソース設定値
 
-## 리소스 설정 값
-
--   `os_image_code` : 사용할 OS 타입
--   `search_engine` : Search Engine 노드 주요 항목
-    -   `version_code` : 사용할 Search Engine 버전 코드
-    -   `user_name` : Search Engine 사용자 이름
-    -   `user_password` : Search Engine 사용자 비밀번호
-    -   `dashboard_port` : Search Engine 대시보드의 포트 (1024 ~ 65535)
--   `manager_node` : manager node 주요 항목
-    -   `enable_dual_manager` : manager node 이중화 여부
-    -   `manager_node_product_code` : 사용할 manager node 제품 코드
-    -   `manager_node_subnet_name` : manager node를 위치시킬 subnet 이름
--   `data_node` : data node 주요 항목
-    -   `data_node_product_code` : 사용할 data node 제품 코드
-    -   `data_node_subnet_name` : data node를 위치시킬 subnet 이름
-    -   `data_node_count` : data node의 수 (3 ~10)
-    -   `data_node_storage_size` : data node 스토리지 용량(100~2000)
--   `enable_master_node` : master node 사용 여부
--   `login_key_name` : 암호화를 위한 공용 로그인 키 이름
+-   `os_image_code` : 使用する OS タイプ
+-   `search_engine` : Search EngineNode の主要項目
+    -   `version_code` : 使用する Search Engine バージョンコード
+    -   `user_name` : Search Engine ユーザー名
+    -   `user_password` : Search Engine ユーザーパスワード
+    -   `dashboard_port` : Search Engine ダッシュボードのポート (1024 ~ 65535)
+-   `manager_node` : manager node 主要項目
+    -   `enable_dual_manager` : manager node 二重化可否
+    -   `manager_node_product_code` : 使用する manager node 製品コード
+    -   `manager_node_subnet_name` : manager node を位置させる subnet の名前
+-   `data_node` : データ Node の主要項目
+    -   `data_node_product_code` : 使用するデータ Node 製品コード
+    -   `data_node_subnet_name` : data node を位置させる subnet の名前
+    -   `data_node_count` : データ Node の数 (3 ~10)
+    -   `data_node_storage_size` : データノードストレージ容量(100~2000)
+-   `enable_master_node` : master node を使用しているかどうかの可否
+-   `login_key_name` : 暗号化用のパブリック ログイン キー名
 
 ---
 
-## 참고 자료
+## 参考資料
 
 -   [Ses Cluster(Ncloud)](https://www.ncloud.com/product/analytics/searchEngineService)
 -   [ncloud_ses_cluster(Terraform)](https://registry.terraform.io/providers/NaverCloudPlatform/ncloud/latest/docs/resources/ses_cluster)

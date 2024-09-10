@@ -99,22 +99,10 @@ const config = {
                         activeBaseRegex: `/docs/`,
                     },
                     {
-                        to: "/docs-faq/category/계정-및-프로필",
-                        label: "FAQ",
-                        position: "left",
-                        activeBaseRegex: `/docs-faq/`,
-                    },
-                    {
                         to: "/release",
                         label: "Release",
                         position: "left",
                         activeBaseRegex: `/release/`,
-                    },
-                    {
-                        href: "https://join.slack.com/t/cloudraw/shared_invite/zt-1gazpq5ky-lZQwzvjwmr25JazlrLgyhA",
-                        label: "Contact Slack",
-                        position: "left",
-                        className: "btnSlack",
                     },
                     {
                         href: "https://cstudio.app/",

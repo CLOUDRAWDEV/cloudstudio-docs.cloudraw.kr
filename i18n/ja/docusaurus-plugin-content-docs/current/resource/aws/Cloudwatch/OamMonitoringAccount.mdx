@@ -1,13 +1,13 @@
 ---
 title: OamMonitoringAccount
 sidebar_position: 0
-tags: [AWS, 리소스, Cloudwatch, OamMonitoringAccount]
+tags: [AWS, リソース, Cloudwatch, OamMonitoringAccount]
 ---
 
 <hr />
 <br />
 
-## 리소스 아이콘
+## リソースアイコン
 
 <img
     src={
@@ -15,36 +15,33 @@ tags: [AWS, 리소스, Cloudwatch, OamMonitoringAccount]
     }
 />
 
-## 리소스 개요
+## リソース概要
 
-AWS CloudWatch Oam Monitoring Accounts는  중앙 모니터링 계정을 설정하여 여러 계정의 애플리케이션을 모니터링하는 서비스입니다.
+AWS CloudWatch Oam Monitoring Accounts は中央モニタリングアカウントを設定し、複数のアカウントのアプリケーションをモニタリングするサービスです。
 
-## 연관 리소스
+## 関連リソース
 
-### 상위 리소스
+### 上位リソース
 
--   [**Region**](https://docs.cstudio.app/docs/resource/aws/Base/Region)
+-   [**Region**](https://docs.cstudio.app/ja/docs/resource/aws/Base/Region)
 
-### 연결 리소스
+### 接続リソース
 
--   [**Oam Source Account**](https://docs.cstudio.app/docs/resource/aws/Cloudwatch/OamSourceAccount)
+-   [**Oam Source Account**](https://docs.cstudio.app/ja/docs/resource/aws/Cloudwatch/OamSourceAccount)
 
-## 리소스 설정 값
+## リソース設定値
 
--   `oam_source_accounts` : 모니터링 계정과 데이터를 공유할 계정의 계정, 조직 경로 또는 조직 ID
--   `resource_types` : 공유하려는 데이터 유형 
+-   `oam_source_accounts` : モニタリングアカウントとデータを共有するアカウントのアカウント、組織パスまたは組織 ID
+-   `resource_types` : 共有しようとしているデータタイプ
     -   `AWS::Logs::LogGroup`
     -   `AWS::Cloudwatch::LogGroup`
     -   `AWS::Logs::LogGroup`
     -   `AWS::Logs::LogGroup`
 
-
-
 ---
 
-## 참고 자료
+## 参考資料
 
 -   [Amazon CloudWatch Oam Monitoring Account(AWS)](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account-Setup.html#Unified-Cross-Account-Setup-ConfigureMonitoringAccount)
 -   [Amazon CloudWatch Oam Monitoring Account(Terraform)](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/oam_link)
 -   [Amazon CloudWatch Oam Monitoring Account(Terraform)](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/oam_sink_policy)
-

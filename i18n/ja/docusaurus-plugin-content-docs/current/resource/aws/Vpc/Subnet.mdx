@@ -1,13 +1,13 @@
 ---
 title: Subnet
 sidebar_position: 0
-tags: [AWS, 리소스, Vpc, Subnet]
+tags: [AWS, リソース, Vpc, Subnet]
 ---
 
 <hr />
 <br />
 
-## 리소스 아이콘
+## リソースアイコン
 
 <img
     src={
@@ -15,44 +15,43 @@ tags: [AWS, 리소스, Vpc, Subnet]
     }
 />
 
-## 리소스 개요
+## リソース概要
 
-서브넷은 VPC의 IP 주소 범위입니다. 특정 서브넷에서 EC2 인스턴스와 같은 AWS 리소스를 생성할 수 있습니다.
+Subnet は VPC の IP アドレス範囲です。特定のサブネットから EC2 インスタンスなどの AWS リソースを生成できます。
 
-## 연관 리소스
+## 関連リソース
 
-### 상위 리소스
+### 上位リソース
 
--   [**Vpc**](https://docs.cstudio.app/docs/resource/aws/Vpc/Vpc)
+-   [**Vpc**](https://docs.cstudio.app/ja/docs/resource/aws/Vpc/Vpc)
 
-### 하위 리소스
+### 下位リソース
 
--   [**Directory Service**](https://docs.cstudio.app/docs/resource/aws/DirectoryService/)
--   [**Ec2 Instance**](https://docs.cstudio.app/docs/resource/aws/Ec2/Instance)
--   [**Ecs Cluster**](https://docs.cstudio.app/docs/resource/aws/Ecs/EcsCluster)
--   [**Eks Cluster**](https://docs.cstudio.app/docs/resource/aws/Eks/EksCluster)
--   [**Elasticache Cluster**](https://docs.cstudio.app/docs/resource/aws/Elasticache/ElasticacheCluster)
--   [**Elasticsearch**](https://docs.cstudio.app/docs/resource/aws/Elasticsearch/Elasticsearch)
--   [**Lambda Function**](https://docs.cstudio.app/docs/resource/aws/Lambda/LambdaFunction)
--   [**Rds Aurora**](https://docs.cstudio.app/docs/resource/aws/Rds/Aurora)
--   [**Rds Mariadb**](https://docs.cstudio.app/docs/resource/aws/Rds/Mariadb)
--   [**Rds Mssql**](https://docs.cstudio.app/docs/resource/aws/Rds/Mssql)
--   [**Rds Mysql**](https://docs.cstudio.app/docs/resource/aws/Rds/Mysql)
--   [**Rds Oracle**](https://docs.cstudio.app/docs/resource/aws/Rds/Oracle)
--   [**Rds Postgresql**](https://docs.cstudio.app/docs/resource/aws/Rds/Postgresql)
--   [**Vpc Nat Gateway**](https://docs.cstudio.app/docs/resource/aws/Vpc/NatGateway)
+-   [**Directory Service**](https://docs.cstudio.app/ja/docs/resource/aws/DirectoryService/)
+-   [**Ec2 Instance**](https://docs.cstudio.app/ja/docs/resource/aws/Ec2/Instance)
+-   [**Ecs Cluster**](https://docs.cstudio.app/ja/docs/resource/aws/Ecs/EcsCluster)
+-   [**Eks Cluster**](https://docs.cstudio.app/ja/docs/resource/aws/Eks/EksCluster)
+-   [**Elasticache Cluster**](https://docs.cstudio.app/ja/docs/resource/aws/Elasticache/ElasticacheCluster)
+-   [**Elasticsearch**](https://docs.cstudio.app/ja/docs/resource/aws/Elasticsearch/Elasticsearch)
+-   [**Lambda Function**](https://docs.cstudio.app/ja/docs/resource/aws/Lambda/LambdaFunction)
+-   [**Rds Aurora**](https://docs.cstudio.app/ja/docs/resource/aws/Rds/Aurora)
+-   [**Rds Mariadb**](https://docs.cstudio.app/ja/docs/resource/aws/Rds/Mariadb)
+-   [**Rds Mssql**](https://docs.cstudio.app/ja/docs/resource/aws/Rds/Mssql)
+-   [**Rds Mysql**](https://docs.cstudio.app/ja/docs/resource/aws/Rds/Mysql)
+-   [**Rds Oracle**](https://docs.cstudio.app/ja/docs/resource/aws/Rds/Oracle)
+-   [**Rds Postgresql**](https://docs.cstudio.app/ja/docs/resource/aws/Rds/Postgresql)
+-   [**Vpc Nat Gateway**](https://docs.cstudio.app/ja/docs/resource/aws/Vpc/NatGateway)
 
-## 리소스 설정 값
+## リソース設定値
 
--   `included_vpc_name` : Subnet을 배포할 VPC의 이름
--   `cidr_block` : Subnet의 IP 대역(CIDR)
--   `availability_zone` : Subnet을 배포할 가용성 영역
--   `pip_enable` : 퍼블릭 IP 할당
-
+-   `included_vpc_name` : Subnet をデプロイする VPC 名
+-   `cidr_block` : Subnet の IP 帯域(CIDR)
+-   `availability_zone` : Subnet をデプロイする Availability Zone
+-   `pip_enable` : Public IP 割り当て
 
 ---
 
-## 참고 자료
+## 参考資料
 
--   [VPC의 서브넷(AWS)](https://docs.aws.amazon.com/ko_kr/vpc/latest/userguide/configure-subnets.html)
+-   [VPC の Subnet(AWS)](https://docs.aws.amazon.com/ko_kr/vpc/latest/userguide/configure-subnets.html)
 -   [aws_subnet(Terraform)](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/subnet)

@@ -1,13 +1,13 @@
 ---
 title: ResolverRule
 sidebar_position: 0
-tags: [AWS, 리소스, Route53, ResolverRule]
+tags: [AWS, リソース, Route53, ResolverRule]
 ---
 
 <hr />
 <br />
 
-## 리소스 아이콘
+## リソースアイコン
 
 <img
     src={
@@ -15,33 +15,33 @@ tags: [AWS, 리소스, Route53, ResolverRule]
     }
 />
 
-## 리소스 개요
+## リソース概要
 
-Resolver가 지정된 도메인 이름의 쿼리를 네트워크로 전달할 때 사용하는 규칙
+Resolver が指定されたドメイン名のクエリをネットワークに転送するときに使用するルール
 
-### 상위 리소스
+### 上位リソース
 
--   [**Region**](https://docs.cstudio.app/docs/resource/aws/Base/Region)
+-   [**Region**](https://docs.cstudio.app/ja/docs/resource/aws/Base/Region)
 
-### 연결 리소스
+### 接続リソース
 
--   [**Vpc**](https://docs.cstudio.app/docs/resource/aws/Vpc/Vpc)
--   [**ResolverEndpoint**](https://docs.cstudio.app/docs/resource/aws/Route53/ResolverEndpoint)
+-   [**Vpc**](https://docs.cstudio.app/ja/docs/resource/aws/Vpc/Vpc)
+-   [**ResolverEndpoint**](https://docs.cstudio.app/ja/docs/resource/aws/Route53/ResolverEndpoint)
 
-## 리소스 설정 값
+## リソース設定値
 
--   `rule_type` : 규칙 유형 - `Forward`, `system`
--   `domain_name` : DNS 쿼리가 전달되는 도메인 이름
--   `linked_vpc_names` : 규칙을 사용하는 VPC 이름
--   `linked_resolver_endpoint_name` : Resolver가 사용하는 아웃바운드 엔드포인트 이름
--   `target_ip` : Target IP 주소
+-   `rule_type` : ルールタイプ - `Forward`, `system`
+-   `domain_name` : DNS クエリーが転送されるドメイン名
+-   `linked_vpc_names` : ルールを使用する VPC 名
+-   `linked_resolver_endpoint_name` : Resolver が使用するアウトバウンドエンドポイントの名前
+-   `target_ip` : Target IP アドレス
 -   `target_ip.name`
--   `target_ip.ip` : Target IP 주소의 IP
--   `target_ip.port` : Target IP 주소의 포트 - `1~65535`
+-   `target_ip.ip` : Target IP アドレスの IP
+-   `target_ip.port` : Target IP アドレスのポート - `1~65535`
 
 ---
 
-## 참고 자료
+## 参考資料
 
 -   [Amazon Resolver rule(AWS)](https://docs.aws.amazon.com/ko_kr/Route53/latest/DeveloperGuide/resolver.html)
 -   [Amazon Resolver rule(Terraform)](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route53_resolver_rule)

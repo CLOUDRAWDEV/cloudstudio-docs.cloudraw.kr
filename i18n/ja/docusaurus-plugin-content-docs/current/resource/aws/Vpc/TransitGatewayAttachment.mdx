@@ -1,13 +1,13 @@
 ---
 title: TransitGatewayAttachment
 sidebar_position: 0
-tags: [AWS, 리소스, VPC, TransitGatewayAttachment]
+tags: [AWS, リソース, VPC, TransitGatewayAttachment]
 ---
 
 <hr />
 <br />
 
-## 리소스 아이콘
+## リソースアイコン
 
 <img
     src={
@@ -15,34 +15,32 @@ tags: [AWS, 리소스, VPC, TransitGatewayAttachment]
     }
 />
 
-## 리소스 개요
+## リソース概要
 
-VPC와 온프레미스 네트워크를 연결하는 데 사용할 수 있는 서비스
+VPC とオンプレミスネットワークを接続するために使用できるサービス
 
-## 연관 리소스
+## 関連リソース
 
+### 上位リソース
 
+-   [**Region**](https://docs.cstudio.app/ja/docs/resource/aws/Base/Region)
 
-### 상위 리소스
+### 接続リソース
 
--   [**Region**](https://docs.cstudio.app/docs/resource/aws/Base/Region)
+-   [**Vpc**](https://docs.cstudio.app/ja/docs/resource/aws/Vpc/Vpc)
+-   [**TransitGateway**](https://docs.cstudio.app/ja/docs/resource/aws/Vpc/TransitGateway)
+-   [**TransitGatewayAttachmentAccepter**](https://docs.cstudio.app/ja/docs/resource/aws/Vpc/TransitGatewayAttachmentAccepter)
 
-### 연결 리소스
+## リソース設定値
 
--   [**Vpc**](https://docs.cstudio.app/docs/resource/aws/Vpc/Vpc)
--   [**TransitGateway**](https://docs.cstudio.app/docs/resource/aws/Vpc/TransitGateway)
--   [**TransitGatewayAttachmentAccepter**](https://docs.cstudio.app/docs/resource/aws/Vpc/TransitGatewayAttachmentAccepter)
+-   `linked_tranit_gateway_name` : VPC と接続する Transit Gateway 名
+-   `is_manual` : 接続する VPC ID を直接入力するかどうかの可否 - `false`,`true`
+-   `linked_vpc_name` : Transit Gateway を接続する VPC 名
+-   `subnet_names` : Transit Gateway を接続する Subnet 名
 
-
-## 리소스 설정 값
-
--   `linked_tranit_gateway_name` : Vpc와 연결하는 Transit Gateway 이름
--   `is_manual` : 연결할 VPC ID를 직접 입력할지 여부 - `false`,`true`
--   `linked_vpc_name` : Transit Gateway를 연결할 VPC 이름
--   `subnet_names` : Transit Gateway를 연결할 Subnet 이름
 ---
 
-## 참고 자료
+## 参考資料
 
 -   [TransitGatewayAttachment(AWS)](https://docs.aws.amazon.com/ko_kr/vpc/latest/tgw/tgw-vpc-attachments.html)
 -   [TransitGatewayAttachment(Terraform)](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ec2_transit_gateway_vpc_attachment)

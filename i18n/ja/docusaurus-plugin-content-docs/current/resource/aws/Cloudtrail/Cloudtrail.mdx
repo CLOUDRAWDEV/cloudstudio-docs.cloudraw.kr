@@ -1,13 +1,13 @@
 ---
 title: CloudTrail
 sidebar_position: 0
-tags: [AWS, 리소스, CloudTrail]
+tags: [AWS, リソース, CloudTrail]
 ---
 
 <hr />
 <br />
 
-## 리소스 아이콘
+## リソースアイコン
 
 <img
     src={
@@ -15,31 +15,35 @@ tags: [AWS, 리소스, CloudTrail]
     }
 />
 
-## 리소스 개요
+## リソース概要
 
-AWS CloudTrail을 사용하면 AWS Management Console, AWS SDK, 명령줄 도구 및 상위 수준 AWS 서비스를 통해 수행된 API 호출을 포함하여 계정에 대한 AWS API 호출 기록을 가져오는 방식으로 클라우드에서 AWS 배포 현황을 모니터링할 수 있습니다. 또한 어떤 사용자 및 계정이 CloudTrail을 지원하는 서비스에 대해 AWS API를 호출했는지, 어떤 소스 IP 주소에 호출이 이루어졌는지, 언제 호출이 발생한 시간을 확인할 수 있습니다. API를 사용해 CloudTrail을 애플리케이션에 통합하고, 조직에 대한 추적 생성을 자동화하고, 추적 상태를 확인하며, 관리자가 CloudTrail 로깅을 활성화하고 비활성화하는 방식을 제어할 수 있습니다.
+AWS CloudTrail を使用すると AWS Management Console、AWS SDK、コマンドラインツールおよび上位レベルの AWS サービスを通じて
+実行された API 呼び出しを含め、アカウントに対する AWS API 呼び出し記録を取得することで、クラウドで AWS 配布状況をモニタリングすることができます。
+また、どのユーザやアカウントが CloudTrail をサポートするサービスに対して AWS API を呼び出したのか、どのソース IP アドレスに呼び出しが行われたのか、
+いつ呼び出しが発生した時間を確認することができます。 API を使用して CloudTrail をアプリケーションに統合し、組織に対する追跡生成を自動化し、
+追跡状態を確認し、管理者が CloudTrail ロギングを有効にし、無効にする方法を制御することができます。
 
-## 연관 리소스
+## 関連リソース
 
-### 상위 리소스
+### 上位リソース
 
--   [**Region**](https://docs.cstudio.app/docs/resource/aws/Base/Region)
+-   [**Region**](https://docs.cstudio.app/ja/docs/resource/aws/Base/Region)
 
-### 연결 리소스
+### 接続リソース
 
--   [**S3 Bucket**](https://docs.cstudio.app/docs/resource/aws/S3/S3Bucket)
+-   [**S3 Bucket**](https://docs.cstudio.app/ja/docs/resource/aws/S3/S3Bucket)
 
-## 리소스 설정 값
+## リソース設定値
 
--   `linked_s3_bucket_name` : 로그 파일 publish용으로 지정된 S3 버킷의 이름
--   `s3_key_prefix` : 로그 파일 전송을 위해 지정한 버킷 이름 뒤에 오는 S3 키 접두사
--   `multi_region_enabled` : 다중 리전 추적 활성화
--   `global_service_events` : Cloudtrail이 IAM과 같은 글로벌 서비스의 이벤트를 로그 파일에 게시하는지 여부 - `true`, `false`
+-   `linked_s3_bucket_name` : ログファイルの publish 用に指定された S3 バケットの名前
+-   `s3_key_prefix` : ログファイル転送のために指定したバケット名の後に来る S3 キー接頭辞
+-   `multi_region_enabled` : multi-region 追跡活性化
+-   `global_service_events` : Cloudtrail が IAM のようなグローバルサービスのイベントをログファイルに掲示するかどうかの可否 - `true`, `false`
 
 ---
 
-## 참고 자료
+## 参考資料
 
 -   [Amazon CloudTrail(AWS)](https://docs.aws.amazon.com/ko_kr/awscloudtrail/latest/userguide/cloudtrail-user-guide.html)
--   [Amazon CloudTrail 가격(AWS)](https://aws.amazon.com/ko/cloudtrail/pricing/?nc2=type_a)
+-   [Amazon CloudTrail 価格(AWS)](https://aws.amazon.com/ko/cloudtrail/pricing/?nc2=type_a)
 -   [Amazon CloudTrail(Terraform)](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudtrail)

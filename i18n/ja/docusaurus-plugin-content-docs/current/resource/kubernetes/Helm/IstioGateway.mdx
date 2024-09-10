@@ -1,15 +1,13 @@
 ---
 title: IstioGateway
 sidebar_position: 0
-tags: [Kubernetes, 리소스, Helm, IstioGateway]
+tags: [Kubernetes, リソース, Helm, IstioGateway]
 ---
-
 
 <hr />
 <br />
 
-
-## 리소스 아이콘
+## リソースアイコン
 
 <img
     src={
@@ -17,34 +15,29 @@ tags: [Kubernetes, 리소스, Helm, IstioGateway]
     }
 />
 
-## 리소스 개요
+## リソース概要
 
-Istio Gateway 헬름 차트입니다.
+Istio Gateway Helm Chart です。
 
-## 연관 리소스
+## 関連リソース
 
-### 상위 리소스
+### 上位リソース
 
--   [**Cluster**](https://docs.cstudio.app/docs/resource/kubernetes/Base/Cluster)
--   [**Namespace**](https://docs.cstudio.app/docs/resource/kubernetes/Core/Namespace)
+-   [**Cluster**](https://docs.cstudio.app/ja/docs/resource/kubernetes/Base/Cluster)
+-   [**Namespace**](https://docs.cstudio.app/ja/docs/resource/kubernetes/Core/Namespace)
 
-### 연결 리소스
+### 接続リソース
 
+## リソース設定値
 
-
-
-## 리소스 설정 값
-
--   `service_name` : Istio gateway 헬름 차트 릴리즈 이름
--   `namespace` : Istio gateway 헬름 차트가 배포될 네임스페이스
--   `version` : 사용할 Istio gateway 헬름 차트 버전
--   `set` : Istio gateway 기본 차트의 값을 동적으로 변경
-
+-   `service_name` : Istio gateway Helm Chart リリース名
+-   `namespace` : Istio gateway Helm Chart リソースがデプロイされるネームスペース
+-   `version` : Istio gateway Helm Chart のバージョンを指定
+-   `set` : Istio gateway デフォルトのチャートの値を動的に変更
 
 ---
 
-## 참고 자료
+## 参考資料
 
 -   [Helm install(Istio gateway)](https://artifacthub.io/packages/helm/istio-official/gateway)
 -   [Helm Provider(Terraform)](https://registry.terraform.io/providers/hashicorp/helm/latest/docs)
-
