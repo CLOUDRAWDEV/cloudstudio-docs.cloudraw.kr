@@ -1,13 +1,13 @@
 ---
 title: Route53
 sidebar_position: 0
-tags: [AWS, 리소스, Route53]
+tags: [AWS, リソース, Route53]
 ---
 
 <hr />
 <br />
 
-## 리소스 아이콘
+## リソースアイコン
 
 <img
     src={
@@ -15,30 +15,30 @@ tags: [AWS, 리소스, Route53]
     }
 />
 
-## 리소스 개요
+## リソース概要
 
-Amazon Route 53은 가용성과 확장성이 우수한 도메인 이름 시스템(DNS) 웹 서비스입니다.
+Amazon Route 53 は可用性と拡張性に優れたドメイン名システム(DNS)ウェブサービスです。
 
-### 상위 리소스
+### 上位リソース
 
--   [**Base**](https://docs.cstudio.app/docs/resource/aws/Base/)
+-   [**Base**](https://docs.cstudio.app/ja/docs/resource/aws/Base/)
 
-### 연결 리소스
+### 接続リソース
 
--   [**Vpc**](https://docs.cstudio.app/docs/resource/aws/Vpc/Vpc)
+-   [**Vpc**](https://docs.cstudio.app/ja/docs/resource/aws/Vpc/Vpc)
 
-## 리소스 설정 값
+## リソース設定値
 
--   `linked_vpc_names` : Route53 Zone을 연결할 VPC 이름
--   `record` : Route53 Zone에 생성할 Record의 이름
-    -   `type` : Record의 type - `A`, `CAA`, `CNAME`, `DS`, `NAPTR`, `NS`, `PTR`, `SOA`, `SPF`, `SRV`, `TXT`
-    -   `ttl` : Record의 ttl
-    -   `records` : 레코드의 문자열 목록
+-   `linked_vpc_names` : Route53 Zone を接続する VPC 名
+-   `record` : Route53 Zone に生成する Record の名前
+    -   `type` : Record のタイプ - `A`, `CAA`, `CNAME`, `DS`, `NAPTR`, `NS`, `PTR`, `SOA`, `SPF`, `SRV`, `TXT`
+    -   `ttl` : Record の ttl
+    -   `records` : レコードの文字列リスト
 
 ---
 
-## 참고 자료
+## 参考資料
 
 -   [Amazon Route 53(AWS)](https://docs.aws.amazon.com/ko_kr/Route53/latest/DeveloperGuide/Welcome.html)
--   [Amazon Route 53 요금(AWS)](https://aws.amazon.com/ko/route53/pricing/?nc2=type_a)
+-   [Amazon Route 53 料金(AWS)](https://aws.amazon.com/ko/route53/pricing/?nc2=type_a)
 -   [aws-route53(Terraform)](https://registry.terraform.io/modules/terraform-aws-modules/route53/aws/latest)

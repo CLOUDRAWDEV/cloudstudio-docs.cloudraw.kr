@@ -1,15 +1,13 @@
 ---
 title: CustomChart
 sidebar_position: 0
-tags: [Kubernetes, 리소스, Helm, CustomChart]
+tags: [Kubernetes, リソース, Helm, CustomChart]
 ---
-
 
 <hr />
 <br />
 
-
-## 리소스 아이콘
+## リソースアイコン
 
 <img
     src={
@@ -17,32 +15,29 @@ tags: [Kubernetes, 리소스, Helm, CustomChart]
     }
 />
 
-## 리소스 개요
+## リソース概要
 
-기본 헬름 차트를 사용자가 원하는 값으로 설정하여 배포할 수 있는 리소스입니다.
+デフォルトのヘルムチャートをユーザーが希望する値に設定して配布できるリソースです。
 
-## 연관 리소스
+## 関連リソース
 
-### 상위 리소스
+### 上位リソース
 
--   [**Cluster**](https://docs.cstudio.app/docs/resource/kubernetes/Base/Cluster)
+-   [**Cluster**](https://docs.cstudio.app/ja/docs/resource/kubernetes/Base/Cluster)
 
-### 연결 리소스
+### 接続リソース
 
+## リソース設定値
 
-
-## 리소스 설정 값
-
--   `service_name` : Helm Custom 차트 릴리즈 이름
--   `namespace` : Helm Custom가 배포될 네임스페이스
--   `repository` : 헬름차트를 저장하고 공유하기 위한 저장소 (커스텀할 차트가 저장된 저장소를 지정)
--   `chart` : 커스텀할 헬름 차트 이름을 지정
--   `version` : 커스텀할 헬름 차트의 버전을 지정
--   `set` : 기본 차트의 값을 동적으로 변경
+-   `service_name` : Helm Custom Chart リリース名
+-   `namespace` : カスタム Helm Chart リソースがデプロイされるネームスペース
+-   `repository` : ヘルムチャートを保存および共有するためのリポジトリ(カスタムするチャートが保存されているリポジトリを指定)
+-   `chart` : カスタムするヘルムチャート名を指定
+-   `version` : カスタムするヘルム チャートのバージョンを指定
+-   `set` : デフォルトのチャートの値を動的に変更
 
 ---
 
-## 참고 자료
-
+## 参考資料
 
 -   [Helm Provider(Terraform)](https://registry.terraform.io/providers/hashicorp/helm/latest/docs)

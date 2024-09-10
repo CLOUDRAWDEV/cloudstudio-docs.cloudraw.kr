@@ -1,13 +1,13 @@
 ---
 title: Flow Log
 sidebar_position: 0
-tags: [AWS, 리소스, Vpc, FlowLog]
+tags: [AWS, リソース, Vpc, FlowLog]
 ---
 
 <hr />
 <br />
 
-## 리소스 아이콘
+## リソースアイコン
 
 <img
     src={
@@ -15,32 +15,34 @@ tags: [AWS, 리소스, Vpc, FlowLog]
     }
 />
 
-## 리소스 개요
+## リソース概要
 
-VPC 흐름 로그는 VPC의 네트워크 인터페이스에서 전송되고 수신되는 IP 트래픽에 대한 정보를 수집할 수 있는 기능입니다. 흐름 로그 데이터는 Amazon CloudWatch Logs, Amazon S3 또는 Amazon Kinesis Data Firehose에 게시될 수 있습니다. 흐름 로그를 생성하면 구성한 로그 그룹, 버킷 또는 전송 스트림의 흐름 로그 레코드를 검색하고 볼 수 있습니다.
+VPC FlowLog は VPC のネットワークインタフェースから送信され、受信される IP トラフィックに関する情報を収集できる機能です。
+FlowLog データは Amazon CloudWatch Logs, Amazon S3 または Amazon Kinesis Data Firehose に掲示されることがあります。
+FlowLog を生成すると構成したロググループ、バケット、または転送ストリームの FlowLog レコードを検索して表示できます。
 
-## 연관 리소스
+## 関連リソース
 
-### 상위 리소스
+### 上位リソース
 
--   [**Vpc**](https://docs.cstudio.app/docs/resource/aws/Vpc/)
+-   [**Vpc**](https://docs.cstudio.app/ja/docs/resource/aws/Vpc/)
 
-### 연결 리소스
+### 接続リソース
 
--   [**S3 Bucket**](https://docs.cstudio.app/docs/resource/aws/S3/S3Bucket)
--   [**Cloudwatch Log**](https://docs.cstudio.app/docs/resource/aws/Cloudwatch/Log)
+-   [**S3 Bucket**](https://docs.cstudio.app/ja/docs/resource/aws/S3/S3Bucket)
+-   [**Cloudwatch Log**](https://docs.cstudio.app/ja/docs/resource/aws/Cloudwatch/Log)
 
-## 리소스 설정 값
+## リソース設定値
 
--   `linked_log_destination_type` : 로그 데이터를 저장할 저장소 타입
--   `linked_log_destination_name` : 로그 데이터를 저장할 저장소 이름
--   `traffic_type` : 수집할 트래픽 종류
--   `included_vpc_name` : Flow Log를 연결할 VPC 이름
+-   `linked_log_destination_type` : ログデータを保存するリポジトリタイプ
+-   `linked_log_destination_name` : ログデータを保存するリポジトリ名
+-   `traffic_type` : 収集するトラフィックのタイプ
+-   `included_vpc_name` : Flow Log を接続する VPC 名
 
 ---
 
-## 참고 자료
+## 参考資料
 
--   [VPC 흐름 로그를 사용하여 IP 트래픽 로깅(AWS)](https://docs.aws.amazon.com/ko_kr/vpc/latest/userguide/flow-logs.html)
--   [Amazon CloudWatch 요금(AWS)](zzzhttps://aws.amazon.com/ko/cloudwatch/pricing/)
+-   [VPC FlowLog を使用して IP トラフィックロギング(AWS)](https://docs.aws.amazon.com/ko_kr/vpc/latest/userguide/flow-logs.html)
+-   [Amazon CloudWatch 요금(AWS)](https://aws.amazon.com/ko/cloudwatch/pricing/)
 -   [aws_flow_log(Terraform)](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/flow_log)

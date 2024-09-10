@@ -1,0 +1,122 @@
+---
+title: Terraform Cloud 登録
+sidebar_position: 2
+tags: [Terraform Cloud, テラフォームクラウド]
+last_update:
+    date: 08/27/2024
+---
+
+import github07 from "./img/github07.png"
+import terraformcloud01 from "./img/terraformcloud01.png"
+import terraformcloud02 from "./img/terraformcloud02.png"
+import terraformcloud03 from "./img/terraformcloud03.png"
+import terraformcloud04 from "./img/terraformcloud04.png"
+import terraformcloud05 from "./img/terraformcloud05.png"
+import terraformcloud06 from "./img/terraformcloud06.png"
+import terraformcloud07 from "./img/terraformcloud07.png"
+import terraformcloud08 from "./img/terraformcloud08.png"
+import styles from "/src/scss/_markdown.module.scss"
+
+<span className="theme-doc-version-badge badge badge--secondary">
+    last update: 2024.08.27
+</span>
+
+<hr />
+<br />
+
+## Terraform Cloud 登録
+
+CloudStudio のキャンバスに描いたインフラの有効性検査とデプロイを行うためには Terraform Cloud アカウントの連動が必要です。
+また、Terraform Cloud アカウントを連携するには[Github アカウントを連携](/docs/plugin/add-github)が先行されなければなりません。
+
+<br />
+
+<details>
+    <summary>Terraform Cloudとは?</summary>
+    <h5>
+        Terraform
+        CloudはTerraformの管理型サービスで、インフラの自動化とコラボレーションを
+        サポートします。リモート
+        ステータスの保存、計画及び適用タスクを中央で管理し、チームとのコラボレーションを容易にします。
+    </h5>
+</details>
+
+<p>&nbsp;</p>
+
+1. [Terraform Cloud](https://app.terraform.io/session)会員登録及びログイン後、左側のサイドバーの`プロフィールアイコン - Account settings`をクリックします。
+
+<img width="100%" src={terraformcloud01} alt="otp img" />
+
+<p>&nbsp;</p>
+
+2. 左側のサイドバー下段の`Tokens`をクリックし、右側の`Create an API token` ボタンをクリックします。
+
+<img width="100%" src={terraformcloud02} alt="otp img" />
+
+<p>&nbsp;</p>
+
+3. 後でこのトークンを識別できるようにする `説明`を入力し、`トークンの有効期限`を設定し、`Generate token` ボタンをクリックします。
+
+<img width="100%" src={terraformcloud03} alt="otp img" />
+
+<p>&nbsp;</p>
+
+4. 発行されたトークンを確認します。
+
+<img width="100%" src={terraformcloud04} alt="otp img" />
+
+<p>&nbsp;</p>
+
+:::caution
+
+発行されたトークンは再確認できないので、必ず別に保存しておくようにします。
+
+:::
+
+<p>&nbsp;</p>
+
+5. [Terraform Cloud](https://app.terraform.io/app/organizations) メイン画面に戻って`Create organization` ボタンをクリックします。
+
+<img width="100%" src={terraformcloud05} alt="otp img" />
+
+<p>&nbsp;</p>
+
+6. `Organization name`を入力して `Create organization` ボタンをクリックします。
+
+<img width="100%" src={terraformcloud06} alt="otp img" />
+
+<p>&nbsp;</p>
+
+:::caution
+
+`Organization name` は Global 単位で固有でなければなりません。
+
+:::
+
+<p>&nbsp;</p>
+
+7. CloudStudio で `マイページ - プラグイン管理`をクリックして、 Terraform Cloud アカウント連動 `+` ボタンをクリックします。
+
+<img width="100%" src={github07} alt="otp img" />
+
+<p>&nbsp;</p>
+
+:::caution
+
+事前に [Github アカウント連動](/docs/plugin/add-github)が先行してから Terraform Cloud アカウントの連動ができます。
+
+:::
+
+<p>&nbsp;</p>
+
+8. 発行された Terraform Cloud `Token` を入力し、`登録する` ボタンをクリックします。
+
+<img width="100%" src={terraformcloud07} alt="otp img" />
+
+<p>&nbsp;</p>
+
+9. 連動後、Terraform Cloud で生成した`Organization`を選択すると、すべての作業が完了します。
+
+<img width="100%" src={terraformcloud08} alt="otp img" />
+
+<p>&nbsp;</p>

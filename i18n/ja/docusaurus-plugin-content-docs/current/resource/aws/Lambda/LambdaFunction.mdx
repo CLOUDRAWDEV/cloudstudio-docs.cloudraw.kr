@@ -1,13 +1,13 @@
 ---
 title: Lambda Function
 sidebar_position: 0
-tags: [AWS, 리소스, Lambda, LambdaFunction]
+tags: [AWS, リソース, Lambda, LambdaFunction]
 ---
 
 <hr />
 <br />
 
-## 리소스 아이콘
+## リソースアイコン
 
 <img
     src={
@@ -15,41 +15,44 @@ tags: [AWS, 리소스, Lambda, LambdaFunction]
     }
 />
 
-## 리소스 개요
+## リソース概要
 
-AWS Lambda은 서버를 프로비저닝하거나 관리하지 않고도 코드를 실행할 수 있게 해주는 컴퓨팅 서비스입니다. Lambda는 고가용성 컴퓨팅 인프라에서 코드를 실행하고 서버와 운영 체제 유지 관리, 용량 프로비저닝 및 자동 조정, 코드 및 보안 패치 배포, 로깅 등 모든 컴퓨팅 리소스 관리를 수행합니다. Lambda를 사용하면 거의 모든 유형의 애플리케이션 또는 백엔드 서비스에 대한 코드를 실행할 수 있습니다. Lambda가 지원하는 언어 중 하나로 코드를 공급하기만 하면 됩니다.
+AWS Lambda はサーバーをプロビジョニングしたり管理しなくても、コードを実行できるようにするコンピューティングサービスです。
+Lambda は高可用性コンピューティングインフラでコードを実行し、サーバーとオペレーティングシステムの維持管理、容量プロビジョニングと自動調整、コードとセキュリティパッチの配布、ロギングなど、すべてのコンピューティングリソースの管理を行います。
+Lambda を使用するとほぼすべてのタイプのアプリケーションまたはバックエンドサービスに対するコードを実行することができます
+Lambda がサポートする言語の一つにコードを供給するだけです。
 
-## 연관 리소스
+## 関連リソース
 
-### 상위 리소스
+### 上位リソース
 
--   [**Region**](https://docs.cstudio.app/docs/resource/aws/Base/Region)
--   [**Subnet**](https://docs.cstudio.app/docs/resource/aws/Vpc/Subnet)
+-   [**Region**](https://docs.cstudio.app/ja/docs/resource/aws/Base/Region)
+-   [**Subnet**](https://docs.cstudio.app/ja/docs/resource/aws/Vpc/Subnet)
 
-### 연결 리소스
+### 接続リソース
 
--   [**Lambda Function**](https://docs.cstudio.app/docs/resource/aws/Lambda/LambdaFunction)
+-   [**Lambda Function**](https://docs.cstudio.app/ja/docs/resource/aws/Lambda/LambdaFunction)
 
-## 리소스 설정 값
+## リソース設定値
 
--   `architectures` : Lambda 함수에 대한 명령어 세트 아키텍처 - `x86_64`, `arm64`
--   `runtime` : 람다 함수의 런타임 식별자 - `nodejs`, `nodejs4.3`, `nodejs6.10`, `nodejs8.10`, `nodejs10.x`, `nodejs12.x`, `nodejs14.x`, `java8`, `java8.al2`, `java11`, `python2.7`, `python3.6`, `python3.7`, `python3.8`, `python3.9`, `dotnetcore1.0`, `dotnetcore2.0`, `dotnetcore2.1`, `dotnetcore3.1`, `nodejs4.3-edge`, `go1.x`, `ruby2.5`, `ruby2.7`, `provided`, `provided.al2`
--   `memory_size` : Lambda 함수가 런타임에 사용할 수 있는 메모리 양(MB), 128 ~ 10240(MB) - `128`, `512`, `1024`, `1536`, `2048`, `3072`, `4096`, `5120`, `6144`, `7168`, `8192`, `9216`, `10240`
--   `handler` : 코드의 함수 Entrypoint
--   `s3_bucket_name` : 함수의 배포 패키지를 보유한 S3 리소스 이름
--   `file_directory` : S3 내에서 함수의 배포 패키지 경로 (zip 파일 형식)
--   `included_subnet_names` : Lambda 함수와 연결된 서브넷 ID 목록, 최소 2개 이상
--   `security_group_names` : Lambda 함수와 연결된 보안 그룹 ID 목록
+-   `architectures` : Lambda ファンクションに対するコマンドセットアーキテクチャ - `x86_64`, `arm64`
+-   `runtime` : Lambda ファンクションのランタイムの識別子 - `nodejs`, `nodejs4.3`, `nodejs6.10`, `nodejs8.10`, `nodejs10.x`, `nodejs12.x`, `nodejs14.x`, `java8`, `java8.al2`, `java11`, `python2.7`, `python3.6`, `python3.7`, `python3.8`, `python3.9`, `dotnetcore1.0`, `dotnetcore2.0`, `dotnetcore2.1`, `dotnetcore3.1`, `nodejs4.3-edge`, `go1.x`, `ruby2.5`, `ruby2.7`, `provided`, `provided.al2`
+-   `memory_size` : Lambda ファンクションがランタイムに使用できるメモリ量(MB)、128~10240(MB) - `128`, `512`, `1024`, `1536`, `2048`, `3072`, `4096`, `5120`, `6144`, `7168`, `8192`, `9216`, `10240`
+-   `handler` : コードのファンクションエントリポイント
+-   `s3_bucket_name` : ファンクションのデプロイパッケージを保有する S3 名
+-   `file_directory` : S3 内でファンクションのデプロイパッケージへのパス（zip ファイル形式）
+-   `included_subnet_names` : Lambda ファンクションと接続されたサブネット ID のリスト、少なくとも 2 個以上
+-   `security_group_names` : Lambda ファンクションと接続されたセキュリティグループ ID のリスト
 
--   `tracing_enabled` : AWS X-Ray 추적 활성화 - `true`, `false`
--   `tracing_mode` : AWS X-Ray 추적 방식 - `PassThrough`, `Active`
+-   `tracing_enabled` : AWS X-Ray トレースを有効にする - `true`, `false`
+-   `tracing_mode` : AWS X-Ray トレース方式 - `PassThrough`, `Active`
 
--   `environment_variable` : Lambda 실행 중, Function에서 사용할 수 있는 환경 변수 설정
+-   `environment_variable` : Lambda 実行中、Function で使用できる環境変数設定
 
 ---
 
-## 참고 자료
+## 参考資料
 
 -   [AWS Lambda(AWS)](https://docs.aws.amazon.com/ko_kr/lambda/latest/dg/welcome.html)
--   [AWS Lambda 요금(AWS)](https://aws.amazon.com/ko/lambda/pricing/?nc2=type_a)
+-   [AWS Lambda 料金(AWS)](https://aws.amazon.com/ko/lambda/pricing/?nc2=type_a)
 -   [aws_lambda_function(Terraform)](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lambda_function)

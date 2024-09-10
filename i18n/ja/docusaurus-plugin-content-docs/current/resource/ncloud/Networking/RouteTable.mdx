@@ -1,13 +1,13 @@
 ---
 title: Route Table
 sidebar_position: 0
-tags: [Ncloud, 리소스, Network, RouteTable]
+tags: [Ncloud, リソース, Network, RouteTable]
 ---
 
 <hr />
 <br />
 
-## 리소스 아이콘
+## リソースアイコン
 
 <img
     src={
@@ -15,34 +15,34 @@ tags: [Ncloud, 리소스, Network, RouteTable]
     }
 />
 
-## 리소스 개요
+## リソース概要
 
-VPC 내 리소스의 네트워크 경로를 정의하는 서비스입니다.
+VPC 内のリソースのネットワーク経路を定義するサービスです。
 
-## 연관 리소스
+## 関連リソース
 
-### 상위 리소스
+### 上位リソース
 
--   [**Vpc**](https://docs.cstudio.app/docs/resource/ncloud/Networking/Vpc)
+-   [**Vpc**](https://docs.cstudio.app/ja/docs/resource/ncloud/Networking/Vpc)
 
-### 연결 리소스
+### 接続リソース
 
--   [**Subnet**](https://docs.cstudio.app/docs/resource/ncloud/Networking/Subnet)
+-   [**Subnet**](https://docs.cstudio.app/ja/docs/resource/ncloud/Networking/Subnet)
 
-## 리소스 설정 값
+## リソース設定値
 
--   `included_vpc_name` : 연결할 VPC 이름
--   `supported_subnet_type` : 지원하는 서브넷 설정, 퍼블릭 혹은 프라이빗 - `PUBLIC`, `PRIVATE`
--   `route_table_description` : Route Table 설명
--   `linked_subnet_names` : 연결할 서브넷 이름 목록
+-   `included_vpc_name` : 接続する VPC の名前
+-   `supported_subnet_type` : サポートされるサブネットの設定、公用またはプライベート - `PUBLIC`, `PRIVATE`
+-   `route_table_description` : ルートテーブルの説明
+-   `linked_subnet_names` : 接続するサブネット名のリスト
 -   `route`
-    -   `target_type` : 목적지 유형, Nat gateway 혹은 VPC 피어링 - `NATGW`, `VPCPEERING`, `VGW`
-    -   `target_name` : 목적지 이름
-    -   `destination_cidr_block` : CIDR 형식의 목적지 IP 범위
+    -   `target_type` : 宛先タイプ、Nat ゲートウェイまたは VPC ピアリング - `NATGW`, `VPCPEERING`, `VGW`
+    -   `target_name` : 宛先の名前
+    -   `destination_cidr_block` : CIDR 形式の宛先 IP 範囲
 
 ---
 
-## 참고 자료
+## 参考資料
 
 -   [Route Table(Ncloud)](https://guide.ncloud-docs.com/docs/networking-vpc-vpcdetailedroutetable)
 -   [ncloud_route_table(Terraform)](https://registry.terraform.io/providers/NaverCloudPlatform/ncloud/latest/docs/resources/route_table)

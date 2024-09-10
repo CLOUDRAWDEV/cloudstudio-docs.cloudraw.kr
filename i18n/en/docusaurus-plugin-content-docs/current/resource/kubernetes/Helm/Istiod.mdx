@@ -1,7 +1,7 @@
 ---
 title: Istiod
 sidebar_position: 0
-tags: [Kubernetes, 리소스, Helm, Istiod]
+tags: [Kubernetes, Resource, Helm, Istiod]
 ---
 
 
@@ -9,7 +9,7 @@ tags: [Kubernetes, 리소스, Helm, Istiod]
 <br />
 
 
-## 리소스 아이콘
+## Resource Icon
 
 <img
     src={
@@ -17,34 +17,34 @@ tags: [Kubernetes, 리소스, Helm, Istiod]
     }
 />
 
-## 리소스 개요
+## Resource Overview
 
-Istio 헬름 차트입니다.
+It’s an Istio Helm chart.
 
-## 연관 리소스
+## Associated Resources
 
-### 상위 리소스
+### Parent Resource
 
--   [**Cluster**](https://docs.cstudio.app/docs/resource/kubernetes/Base/Cluster)
--   [**Namespace**](https://docs.cstudio.app/docs/resource/kubernetes/Core/Namespace)
+-   [**Cluster**](https://docs.cstudio.app/en/docs/resource/kubernetes/Base/Cluster)
+-   [**Namespace**](https://docs.cstudio.app/en/docs/resource/kubernetes/Core/Namespace)
 
-### 연결 리소스
-
-
+### Connected Resources
 
 
-## 리소스 설정 값
 
--   `service_name` : Istio 헬름 차트 릴리즈 이름
--   `namespace` : Istio 헬름 차트가 배포될 네임스페이스 - `istio-system`으로 지정
--   `version` : 사용할 Istio 헬름 차트 버전
--   `set` : Istio 기본 차트의 값을 동적으로 변경
+
+## Resource Setting Values
+
+-   `service_name` : Istio Helm Chart Release Name
+-   `namespace` : Namespace where Istiod Helm Chart resources will be deployed - typically set to `istio-system`
+-   `version` : Specifies the version of the Istiod Helm chart
+-   `set` : Dynamically change values of Istiod default chart
 
 
 ---
 
-## 참고 자료
+## Reference Materials
 
--   [Helm install(Istio)](https://istio.io/latest/docs/setup/install/helm/)
+-   [Helm install(Istio)](https://istio.io/latest/en/docs/setup/install/helm/)
 -   [Helm Provider(Terraform)](https://registry.terraform.io/providers/hashicorp/helm/latest/docs)
 

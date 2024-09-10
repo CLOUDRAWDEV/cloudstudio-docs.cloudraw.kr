@@ -1,13 +1,13 @@
 ---
 title: Directory Service
 sidebar_position: 0
-tags: [AWS, 리소스, DirectoryService, DirectoryService]
+tags: [AWS, リソース, DirectoryService, DirectoryService]
 ---
 
 <hr />
 <br />
 
-## 리소스 아이콘
+## リソースアイコン
 
 <img
     src={
@@ -15,32 +15,35 @@ tags: [AWS, 리소스, DirectoryService, DirectoryService]
     }
 />
 
-## 리소스 개요
+## リソース概要
 
-AWS Directory Service는 다른 AWS 서비스에서 Microsoft Active Directory(AD)를 사용할 수 있는 몇 가지 방법을 제공합니다. 디렉터리는 사용자, 그룹 및 디바이스에 대한 정보를 저장하고, 관리자는 이를 사용하여 정보 및 리소스에 대한 액세스를 관리합니다.AWS Directory Service는 클라우드에서 기존 Microsoft AD 또는 LDAP (Lightweight Directory Access Protocol) 인식 애플리케이션을 사용하려는 고객에게 다양한 디렉터리 선택 옵션을 제공합니다. 또한 사용자, 그룹, 디바이스 및 액세스 권한을 관리하기 위해 디렉터리가 필요한 개발자에게도 동일한 선택 옵션을 제공합니다.
+AWS Directory Service は他の AWS サービスで Microsoft Active Directory(AD)を使用できるいくつかの方法を提供します。
+ディレクトリはユーザー、グループ、およびデバイスに関する情報を保存し、管理者はこれを使用して情報およびリソースへのアクセスを管理します。
+AWS Directory Service はクラウドで既存の Microsoft AD または LDAP(Lightweight Directory Access Protocol)認識アプリケーションを使用しようとするお客様に多様なディレクトリ選択オプションを提供します。
+また、ユーザー、グループ、デバイス、およびアクセス権を管理するためにディレクトリが必要な開発者にも同じ選択オプションを提供します。
 
-## 연관 리소스
+## 関連リソース
 
-### 상위 리소스
+### 上位リソース
 
--   [**Subnet**](https://docs.cstudio.app/docs/resource/aws/Vpc/Subnet)
+-   [**Subnet**](https://docs.cstudio.app/ja/docs/resource/aws/Vpc/Subnet)
 
-### 연결 리소스
+### 接続リソース
 
--   [**Directory Service**](https://docs.cstudio.app/docs/resource/aws/DirectoryService/)
+-   [**Directory Service**](https://docs.cstudio.app/ja/docs/resource/aws/DirectoryService/)
 
-## 리소스 설정 값
+## リソース設定値
 
--   `password` : 디렉토리 관리자 또는 커넥터 사용자의 비밀번호
+-   `password` : ディレクトリ管理者またはコネクタユーザーのパスワード
 -   `type` : `SimpleAD`,`MicrosoftAD`
--   `size` : 디렉토리의 크기 - `Small`,`Large`
--   `included_vpc_name` : 디렉터리가 있는 VPC의 이름
--   `included_subnet_names` : 디렉터리 서버의 서브넷 이름 (서브넷은 서로 다른 2개의 AZ에 있는 배포되어야 함)
+-   `size` : ディレクトリのサイズ - `Small`,`Large`
+-   `included_vpc_name` : ディレクトリがある VPC の名前
+-   `included_subnet_names` : ディレクトリサーバーのサブネット名(サブネットは 2 つの異なる AZ にデプロイされる必要があります。)
 
 ---
 
-## 참고 자료
+## 参考資料
 
 -   [AWS Directory Service(AWS)](https://docs.aws.amazon.com/ko_kr/directoryservice/latest/admin-guide/what_is.html)
--   [AWS Direct Service 가격(AWS)](https://aws.amazon.com/ko/directoryservice/pricing/?nc=sn&loc=3)
+-   [AWS Direct Service 価格(AWS)](https://aws.amazon.com/ko/directoryservice/pricing/?nc=sn&loc=3)
 -   [AWS Direct Service(Terraform)](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/directory_service_conditional_forwarder)

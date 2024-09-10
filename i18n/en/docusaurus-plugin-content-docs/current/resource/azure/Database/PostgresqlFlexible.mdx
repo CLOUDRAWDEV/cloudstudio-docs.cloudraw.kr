@@ -1,11 +1,13 @@
 ---
 title: PostgresqlFlexible
 sidebar_position: 5
-tags: [Azure, 리소스, Database, PostgresqlFlexible]
+tags: [Azure, Resource, Database, PostgresqlFlexible]
 ---
 
 <hr />
 <br />
+
+## Resource Icon
 
 <img
     src={
@@ -13,62 +15,62 @@ tags: [Azure, 리소스, Database, PostgresqlFlexible]
     }
 />
 
-## 리소스 개요
+## Resource Overview
 
-Azure Database for PostgreSQL 유연한 서버는 유연한 서버 아키텍처를 제공하는 Azure의 확장 가능한 완전 관리형 오픈 소스 관계형 데이터베이스 서비스입니다.
-PostgreSQL 환경 구성에 대한 더 많은 제어가 필요한 다양한 워크로드 및 애플리케이션을 지원하도록 설계되었습니다.
-유연한 서버를 통해 고객은 특정 요구 사항을 충족하기 위해 다양한 컴퓨팅 및 스토리지 옵션 중에서 선택할 수 있습니다.
-단일 노드 및 고가용성 구성을 모두 지원하고 백업 및 재해 복구를 위한 여러 옵션을 제공합니다.
+Azure Database for PostgreSQL Flexible Server is a scalable, fully managed open-source relational database service on Azure that provides a flexible server architecture. 
+It is designed to support a range of workloads and applications that require more control over PostgreSQL environment configuration. 
+With Flexible Server, customers can choose from various compute and storage options to meet their specific needs. 
+It supports both single-node and high-availability configurations and offers multiple options for backup and disaster recovery.
 
-## 연관 리소스
+## Associated Resources
 
-### 상위 리소스
+### Parent Resource
 
--   [**Resource Group**](https://docs.cstudio.app/docs/resource/azure/Base/ResourceGroup)
+-   [**Resource Group**](https://docs.cstudio.app/en/docs/resource/azure/Base/ResourceGroup)
 
-## 리소스 설정 값
+## Resource Setting Values
 
--   `version` : 사용할 Postgresql 버전 - `11`, `12`, `13`, `14`
+-   `version`: The version of PostgreSQL Server to use - `11`, `12`, `13`, `14`
 
--   `sku_name` : Postgresql 가격 책정 계층 이름, Tier + 컴퓨팅 세대 + 코어 수의 조합 - `azurePostgresqlFlexibleSku`
+-   `sku_name` : The name of SKU for the Postgresql Server, Tier + compute generation + cores pattern - `azurePostgresqlFlexibleSku`
 
--   `storage_mb` : Postgresql Flexible Server의 최대 용량(MB) - `storageGB`
+-   `storage_mb` : Max storage allowed for a Postgresql Flexible Server in MB - `storageGB`
 
--   `admin_username` : Creation mode가 default인 경우 Server의 관리자 사용자 이름
+-   `admin_username` : If the creation mode is default, the administrator login for the Postgresql Server, Only alphanumeric characters are allowed, Without the reserved words, 1 to 16 characters
 
--   `admin_password` : Creation mode가 default인 경우 Server의 관리자 로그인 암호
+-   `admin_password` : If the creation mode is default, the password associated with the administrator login, Contain 3 of the following: lowercase letters/uppercase letters/numbers/special characters, Cannot contain more than 3 consecutive alphanumeric characters in the login name, 8 to 128 characters
 
--   `availability_zone` : 가용 영역을 지정합니다. 가능한 값은 1, 2, 3입니다. - `1` ~ `3`
+-   `availability_zone` : Specifies the Availability Zone. Possible values are 1, 2, 3 - `1` ~ `3`
 
--   `enable_high_availability` : Postgresql Flexible Server의 고가용성 활성화 여부 - `true` , `false`
+-   `enable_high_availability` : Enable high availability of Postgresql Flexible Server - `true` , `false`
 
--   `backup_retention_days` : MySQL Flexible Server의 백업 보존 일수입니다. 가능한 값은 1~35일입니다. - `1` ~ `35`
+-   `backup_retention_days` : The backup retention days for the Postgresql Flexible Server. Possible values are between 1 and 35 days - `1` ~ `35`
 
 -   `geo_redundant_backup_enabled` - `true` , `false`
 
--   `public_network_access_enabled` : Server에 퍼블릭 네트워크 접근 허용 - `true` , `false`
+-   `public_network_access_enabled` : Allow public network access for the Server - `true` , `false`
 
 -   `configuration`
 
-    -   `name` : Postgresql 유연한 서버 구성의 이름
-    -   `param_value` : Postgresql 유연한 서버 구성의 값
+    -   `name` : The setting of PostgreSQL Server parameter
+    -   `param_value` : Specifies the value of the Postgresql Flexible Server Configuration
 
 -   `database`
 
-    -   `charset` : Postgresql Database의 문자 집합 - `azurePostgresqlChartSet`
-    -   `collation` : Postgresql Database의 데이터 정렬 방식 - `azurePostgresqlFlexibleCol`
+    -   `charset` : The charset for the Postgresql Database - `azurePostgresqlChartSet`
+    -   `collation` : The collation for the Postgresql Database - `azurePostgresqlFlexibleCol`
 
 -   `firewall_rule`
 
-    -   `start_ip_address` : 방화벽 Rule에 연결된 시작 IP 주소
-    -   `end_ip_address` : 방화벽 Rule에 연결된 종료 IP 주소
+    -   `start_ip_address` : The Start IP Address asscociated with the Firewall Rule
+    -   `end_ip_address` : The End IP Address asscociated with the Firewall Rule
 
--   `tag` : 리소스를 카테고리로 분류하기 위한 태그 - 최대 512자, `key`:`value`
+-   `tag` : Tag to categorize resources - up to 512 characters, `key:value`
 
 ---
 
-## 참고 자료
+## Reference Materials
 
 -   [Azure PostgresqlFlexible(Microsoft)](https://learn.microsoft.com/ko-kr/azure/postgresql/flexible-server/overview)
--   [Azure PostgresqlFlexible 가격](https://azure.microsoft.com/ko-kr/pricing/details/postgresql/flexible-server/)
+-   [Azure PostgresqlFlexible Price](https://azure.microsoft.com/ko-kr/pricing/details/postgresql/flexible-server/)
 -   [Azure PostgresqlFlexible(Terraform)](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/postgresql_flexible_server)

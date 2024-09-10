@@ -1,13 +1,13 @@
 ---
 title: Mysql
 sidebar_position: 0
-tags: [AWS, 리소스, Rds, Mysql]
+tags: [AWS, Resource, Rds, Mysql]
 ---
 
 <hr />
 <br />
 
-## 리소스 아이콘
+## Resource Icon
 
 <img
     src={
@@ -15,50 +15,55 @@ tags: [AWS, 리소스, Rds, Mysql]
     }
 />
 
-## 리소스 개요
+## Resource Overview
 
-AWS에서 MySQL을 사용하여 RDS를 구축하면 데이터베이스의 운영 및 관리를 쉽게 할 수 있습니다. RDS는 확장성이 뛰어나며, 필요에 따라 인스턴스 유형을 변경하여 성능을 향상시킬 수 있습니다. 또한 RDS는 데이터베이스 인스턴스에 대한 자동 백업 및 복원 기능을 제공하여 데이터 손실을 방지할 수 있습니다. 또한 AWS에서 제공하는 보안 기능으로 데이터의 안전성을 보장할 수 있습니다.
+Using MySQL with RDS on AWS makes database management and operations easier. 
+RDS is highly scalable, allowing you to improve performance by changing instance types as needed. 
+Additionally, RDS provides automatic backups and restore capabilities to prevent data loss. 
+AWS's security features also ensure the safety and protection of your data.
 
-## 연관 리소스
+## Associated Resources
 
-### 상위 리소스
+### Parent Resources
 
--   [**Subnet**](https://docs.cstudio.app/docs/resource/aws/Vpc/Subnet)
+-   [**Subnet**](https://docs.cstudio.app/en/docs/resource/aws/Vpc/Subnet)
 
-### 연결 리소스
+### Connected Resources
 
--   [**Mysql**](https://docs.cstudio.app/docs/resource/aws/Rds/Mysql)
+-   [**Mysql**](https://docs.cstudio.app/en/docs/resource/aws/Rds/Mysql)
 
-## 리소스 설정 값
+## Resource Setting Values
 
--   `database_name` : 초기 데이터베이스 이름
--   `engine_version` : RDS에 사용할 MySQL 버전
--   `instance_class` : RDS DB의 가격 측정 계층
--   `storage_type` : RDS 인스턴스의 Storage Type
--   `allocated_storage` : RDS Insatance Storage의 용량 (Gigabytes)
--   `max_allocated_storage` : Amazon RDS가 DB 인스턴스의 스토리지를 자동으로 확장할 수 있는 상한선
--   `multi_az_enabled` : 다중 AZ 배포 활성화 - `true`, `false`
--   `username` : RDS의 사용자 이름
--   `password` : RDS의 사용자 패스워드
--   `skip_final_snapshot` : DB 인스턴스가 삭제되기 전에 최종 DB 스냅샷을 생성할지 여부를 결정 - `true`, `false`
--   `included_subnet_names` : RDS Subnet 그룹에 연결할 Subnet 이름
--   `subnet_group_name` : RDS에 사용할 Subnet 그룹 이름
--   `publicly_accessible` : 인스턴스에 public access가 가능한지 여부 - `true`, `false`
+-   `database_name` : Database name
+-   `engine_version` : MySQL version to use for RDS
+-   `instance_class` : The instance type of the RDS instance
+-   `storage_type` : Storage Type of RDS Instance
+-   `allocated_storage` : Capacity of RDS Instance Storage (Gigabytes)
+-   `max_allocated_storage` : The upper limit to which Amazon RDS can automatically scale the storage of the DB instance
+-   `multi_az_enabled` : Enable multi AZ - `true`, `false`
+-   `username` : Username in RDS
+-   `password` : RDS user password
+-   `skip_final_snapshot` : Determines whether a final DB snapshot is created before the DB instance is deleted - `true`, `false`
+-   `included_subnet_names` : Subnet names in RDS Subnet group
+-   `subnet_group_name` : Subnet group name to use in RDS
+-   `publicly_accessible` : Whether the instance has public access - `true`, `false`
 
 -   `monitoring`
-    -   `performance_insights_enabled` : 성능 인사이트 활성화
+    -   `performance_insights_enabled` : Enable performance insights
+
 -   `encryption`
-    -   `storage_encrypted` : DB 인스턴스의 암호화 여부를 지정 - `true`, `false`
-    -   `kms_key_name` : 암호화에 사용할 kms 키 이름
+    -   `storage_encrypted` : Whether the DB instance is encrypted - `true`, `false`
+    -   `kms_key_name` : The KMS key name for encryption
+
 -   `backup`
-    -   `backup_retention_period` : 백업 데이터를 보관할 기간 - `1`~`35`
-    -   `final_snapshot_enabled` : DB 인스턴스가 삭제되기 전, 최종 DB 스냅샷을 생성할지 여부 - `true`, `false`
-    -   `final_snapshot_name` : 최종 스냅샷 이름
+    -   `backup_retention_period` : The days to retain backups for - `1` to `35` days
+    -   `final_snapshot_enabled` : Determines whether a final DB snapshot is created before the DB instance is deleted - `true`, `false`
+    -   `final_snapshot_name` : The final snapshot namet
 
 ---
 
-## 참고 자료
+## Reference Materials
 
--   [Amazon RDS를 사용하여 MySQL 데이터베이스 생성 및 연결(Amazon RDS)(AWS)](https://aws.amazon.com/ko/getting-started/hands-on/create-mysql-db/)
--   [Amazon RDS 요금(AWS)](https://aws.amazon.com/ko/rds/pricing/?nc2=type_a)
+-   [Creating and Connecting to a MySQL Database Using Amazon RDS(Amazon RDS)(AWS)](https://aws.amazon.com/ko/getting-started/hands-on/create-mysql-db/)
+-   [Amazon RDS Price(AWS)](https://aws.amazon.com/ko/rds/pricing/?nc2=type_a)
 -   [rds-mysql(Terraform)](https://registry.terraform.io/modules/infrablocks/rds-mysql/aws/latest)

@@ -1,13 +1,13 @@
 ---
 title: TransitGatewayAttachmentAccepter
 sidebar_position: 0
-tags: [AWS, 리소스, VPC, TransitGatewayAttachmentAccepter]
+tags: [AWS, Resource, VPC, TransitGatewayAttachmentAccepter]
 ---
 
 <hr />
 <br />
 
-## 리소스 아이콘
+## Resource Icon
 
 <img
     src={
@@ -15,29 +15,29 @@ tags: [AWS, 리소스, VPC, TransitGatewayAttachmentAccepter]
     }
 />
 
-## 리소스 개요
+## Resource Overview
 
-타 계정의 리소스 공유에 대한 허용여부를 결정하는 리소스
+A resource that determines whether to allow the sharing of resources across different accounts
 
-## 연관 리소스
+## Associated Resources
 
-### 상위 리소스
+### Parent Resources
 
--   [**Region**](https://docs.cstudio.app/docs/resource/aws/Base/Region)
+-   [**Region**](https://docs.cstudio.app/en/docs/resource/aws/Base/Region)
 
-### 연결 리소스
+### Connected Resources
 
--   [**TransitGatewayAttachment**](https://docs.cstudio.app/docs/resource/aws/Vpc/TransitGatewayAttachment)
+-   [**TransitGatewayAttachment**](https://docs.cstudio.app/en/docs/resource/aws/Vpc/TransitGatewayAttachment)
 
-## 리소스 설정 값
+## Resource Setting Values
 
--   `is_manual` : 연결할 Transit gateway Attachment ID를 직접 입력할지 여부 - `false`,`true`
--   `linked_transit_gateway_attachment_name` : 공유를 허용할 다른 Transit Gateway Attachment의 Name
+-   `is_manual` : Whether to enter the Transit gateway Attachment ID to connect directly - `false`, `true`
+-   `linked_transit_gateway_attachment_name` : Transit Gateway Attachment's Name that to enable share
 
 
 ---
 
-## 참고 자료
+## Reference Materials
 
 -   [TransitGatewayAttachmentAccepter(AWS)](https://docs.aws.amazon.com/ko_kr/vpc/latest/tgw/tgw-vpc-attachments.html)
 -   [TransitGatewayAttachmentAccepter(Terraform)](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ec2_transit_gateway_vpc_attachment_accepter)

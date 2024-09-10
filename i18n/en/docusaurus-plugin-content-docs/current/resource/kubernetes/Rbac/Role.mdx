@@ -1,7 +1,7 @@
 ---
 title: Role
 sidebar_position: 0
-tags: [Kubernetes, 리소스, RBAC, Role]
+tags: [Kubernetes, Resource, RBAC, Role]
 ---
 
 
@@ -9,7 +9,7 @@ tags: [Kubernetes, 리소스, RBAC, Role]
 <br />
 
 
-## 리소스 아이콘
+## Resource Icon
 
 <img
     src={
@@ -17,45 +17,40 @@ tags: [Kubernetes, 리소스, RBAC, Role]
     }
 />
 
-## 리소스 개요
+## Resource Overview
 
-지정된 네임스페이스에만 적용되는 역할을 생성하는 쿠버네티스 리소스
+A Kubernetes resource that creates roles applicable only within a specified namespace.
 
-## 연관 리소스
+## Associated Resources
 
-### 상위 리소스
+### Parent Resource
 
--   [**Cluster**](https://docs.cstudio.app/docs/resource/kubernetes/Base/Cluster)
--   [**Namespace**](https://docs.cstudio.app/docs/resource/kubernetes/Core/Namespace)
-
-
-### 연결 리소스
-
--   [**RoleBinding**](https://docs.cstudio.app/docs/resource/kubernetes/Rbac/RoleBinding)
+-   [**Cluster**](https://docs.cstudio.app/en/docs/resource/kubernetes/Base/Cluster)
+-   [**Namespace**](https://docs.cstudio.app/en/docs/resource/kubernetes/Core/Namespace)
 
 
+### Connected Resources
 
-## 리소스 설정 값
-
--   `service_name` : Role 리소스 이름
--   `namespace` : Role 리소스가 배포될 네임스페이스
--   `annotations` : 쿠버네티스 시스템에서 필요한 정보들을 표시해 주기 위해서 사용하는 key-value
--   `labels` : 객체를 구분하기 위해서 사용자가 임의로 원하는 값을 지정
--   `rule` : 해당 role에 대한 정책역할
-    -   `name` : 정책역할 이름
-    -   `api_groups` : 작업을 허용할 리소스가 포함된 API Group
-    -   `resources` : 이 규칙이 적용되는 리소스 목록
-    -   `resource_names` : 해당 리소스의 개별 인스턴스로 선택할 경우 지정 - 빈 값일 경우 해당 리소스 전체를 포함
-    -   `verbs` : Rule에 포함된 모든 리소스에 적용되는 동사 목록
+-   [**RoleBinding**](https://docs.cstudio.app/en/docs/resource/kubernetes/Rbac/RoleBinding)
 
 
 
+## Resource Setting Values
 
-
+-   `service_name`: Name of the Role resource
+-   `namespace`: Namespace where the Role resource will be deployed
+-   `annotations`: Key-value pairs used to display necessary information in the Kubernetes system
+-   `labels`: User-specified values to distinguish objects
+-   `rule`: Policy rules for the role
+    -   `name`: Name of the policy rule
+    -   `api_groups`: API groups that include the resources allowed by the rule
+    -   `resources`: List of resources to which the rule applies
+    -   `resource_names`: Specifies individual instances of the resource if applicable - if empty, includes all instances of the resource
+    -   `verbs`: List of verbs that apply to all resources included in the rule
 
 ---
 
-## 참고 자료
+## Reference Materials
 
--   [Role(kubernetes)](https://kubernetes.io/docs/reference/access-authn-authz/rbac/#role-and-clusterrole)
--   [Role(Terraform)](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/role)
+-   [Role(kubernetes)](https://kubernetes.io/en/docs/reference/access-authn-authz/rbac/#role-and-clusterrole)
+-   [Role(Terraform)](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/en/docs/resources/role)

@@ -1,13 +1,13 @@
 ---
 title: MssqlServer
 sidebar_position: 0
-tags: [Azure, 리소스, Server, Mssql]
+tags: [Azure, Resource, Server, Mssql]
 ---
 
 <hr />
 <br />
 
-## 리소스 아이콘
+## Resource Icon
 
 <img
     src={
@@ -15,60 +15,61 @@ tags: [Azure, 리소스, Server, Mssql]
     }
 />
 
-## 리소스 개요
+## Resource Overview
 
-Azure SQL Database는 널리 사용되는 Microsoft SQL Server 엔진을 기반으로 하는 Microsoft Azure에서 제공하는 완전히 관리되는 관계형 데이터베이스 서비스입니다.
-하드웨어 또는 소프트웨어 인프라를 관리할 필요 없이 클라우드에서 SQL Server 데이터베이스를 만들고 관리할 수 있습니다.
-Azure SQL 데이터베이스를 사용하면 자동 패치, 백업, 고가용성 및 재해 복구와 같은 기능을 활용할 수 있습니다.
-또한 지능형 성능 모니터링, 자동 조정, 고급 보안 기능과 같은 기능을 제공하여 데이터베이스 성능을 최적화하고 중요한 데이터를 보호할 수 있습니다.
 
-## 연관 리소스
+Azure SQL Database is a fully managed relational database service provided by Microsoft Azure, based on the widely used Microsoft SQL Server engine. 
+It allows you to create and manage SQL Server databases in the cloud without the need to manage hardware or software infrastructure.
+With Azure SQL Database, you can benefit from features such as automatic patching, backups, high availability, and disaster recovery. 
+It also offers advanced functionalities like intelligent performance monitoring, automatic tuning, and advanced security features to optimize database performance and protect critical data.
 
-### 상위 리소스
+## Associated Resources
 
--   [**Resource Group**](https://docs.cstudio.app/docs/resource/azure/Base/ResourceGroup)
+### Parent Resource
 
-### 연결 리소스
+-   [**Resource Group**](https://docs.cstudio.app/en/docs/resource/azure/Base/ResourceGroup)
 
--   [**Log Analytics Workspace**](https://docs.cstudio.app/docs/resource/azure/LogAnalytics/LogAnalyticsWorkspace)
--   [**Storage Account**](https://docs.cstudio.app/docs/resource/azure/Storage/StorageAccount)
+### Connected Resources
 
-## 리소스 설정 값
+-   [**Log Analytics Workspace**](https://docs.cstudio.app/en/docs/resource/azure/LogAnalytics/LogAnalyticsWorkspace)
+-   [**Storage Account**](https://docs.cstudio.app/en/docs/resource/azure/Storage/StorageAccount)
 
--   `version` : 사용할 Microsoft SQL 서버 버전 - `2.0`, `12.0`
+## Resource Setting Values
 
--   `admin_username` : 서버의 관리자 사용자 이름
+-   `version` : The version of Microsoft SQL Server to use - `2.0`, `12.0`
 
--   `admin_password` : 서버의 관리자 로그인 암호
+-   `admin_username` : The administrator login for the Microsoft SQL Server
 
--   `minimum_tls_version` : 서버에 지원되는 최소 TLS 버전 - `1.0`, `1.1`, `1.2`
+-   `admin_password` : The password associated with the administrator login
 
--   `public_network_access_enabled` : 서버에 퍼블릭 네트워크 접근 허용 - `true`, `false`
+-   `minimum_tls_version` : The minimum TLS version to support on the server - `1.0`, `1.1`, `1.2`
+
+-   `public_network_access_enabled` : Allow public network access for the Server - `true`, `false`
 
 -   `firewall_rule`
 
-    -   `start_ip_address` : 방화벽 Rule에 연결된 시작 IP 주소
-    -   `end_ip_address` : 방화벽 Rule에 연결된 종료 IP 주소
+    -   `start_ip_address` : The Start IP Address asscociated with the Firewall Rule
+    -   `end_ip_address` : The End IP Address asscociated with the Firewall Rule
 
 -   `security_alert_policy`
 
-    -   `alert_policy_state` : 적용할 정책의 활성화 상태
-    -   `disabled_alerts` : 비활성화할 보안 경고 목록 - `Sql_Injection`, `Sql_Injection_Vulnerability`, `Access_Anomaly`, `Data_Exfiltration`, `Unsafe_Action`
-    -   `alert_retention_days` : 위협 탐지 감사 로그의 보관일 수 - `0` ~ `3265`
-    -   `alert_email_account_admins` : 이메일에 보안 경고 전송 활성화 - `true` , `false`
-    -   `alert_email_addresses` : 보안 경고를 받을 이메일 주소 목록
+    -   `alert_policy_state` : The activation state of policy to be applied
+    -   `disabled_alerts` : List of notifications to be disabled - `Sql_Injection`, `Sql_Injection_Vulnerability`, `Access_Anomaly`, `Data_Exfiltration`, `Unsafe_Action`
+    -   `alert_retention_days` : The number of days to keep in the threat detection audit logs - `0` ~ `3265`
+    -   `alert_email_account_admins` : Enable sending alerts to e-mail - `true`, `false`
+    -   `alert_email_addresses` : List of e-mail addresses to which the alert is sent
 
 -   `auditing_policy`
 
-    -   `enable_storage_destination` : Storage 계정 활성화 여부 - `true` , `false`
-    -   `enable_log_analytics_destination` : Log analytics 활성화 여부 - `true` , `false`
+    -   `enable_storage_destination` : Enable Storage account as destination - `true`, `false`
+    -   `enable_log_analytics_destination` : Enalbed Auditing policy by Log analytics workspace - `true`, `false`
 
--   `tag` : 리소스를 카테고리로 분류하기 위한 태그 - 최대 512자, `key`:`value`
+-   `tag` : Tag to categorize resources - up to 512 characters, `key:value`
 
 ---
 
-## 참고 자료
+## Reference Materials
 
 -   [Azure Mssql(Microsoft)](https://learn.microsoft.com/ko-kr/azure/azure-sql/database/sql-database-paas-overview?view=azuresql)
--   [Azure Mssql 가격](https://azure.microsoft.com/ko-kr/pricing/details/azure-sql-database/single/)
+-   [Azure Mssql Price](https://azure.microsoft.com/ko-kr/pricing/details/azure-sql-database/single/)
 -   [Azure Mssql(Terraform)](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/mssql_server)

@@ -1,7 +1,7 @@
 ---
 title: HashicorpVault
 sidebar_position: 0
-tags: [Kubernetes, 리소스, Helm, HashicorpVault]
+tags: [Kubernetes, Resource, Helm, HashicorpVault]
 ---
 
 
@@ -9,7 +9,7 @@ tags: [Kubernetes, 리소스, Helm, HashicorpVault]
 <br />
 
 
-## 리소스 아이콘
+## Resource Icon
 
 <img
     src={
@@ -17,34 +17,34 @@ tags: [Kubernetes, 리소스, Helm, HashicorpVault]
     }
 />
 
-## 리소스 개요
+## Resource Overview
 
-Hashicorp-Vault를 설치하기 위한 헬름 차트입니다.
+This is a Helm chart for installing HashiCorp Vault.
 
-## 연관 리소스
+## Associated Resources
 
-### 상위 리소스
+### Parent Resource
 
--   [**Cluster**](https://docs.cstudio.app/docs/resource/kubernetes/Base/Cluster)
--   [**Namespace**](https://docs.cstudio.app/docs/resource/kubernetes/Core/Namespace)
+-   [**Cluster**](https://docs.cstudio.app/en/docs/resource/kubernetes/Base/Cluster)
+-   [**Namespace**](https://docs.cstudio.app/en/docs/resource/kubernetes/Core/Namespace)
 
-### 연결 리소스
-
-
+### Connected Resources
 
 
-## 리소스 설정 값
 
--   `service_name` : Hashicorp-vault 헬름 차트 릴리즈 이름
--   `namespace` : Hashicorp-vault 헬름 차트가 배포될 네임스페이스
--   `version` : 사용할 Hashicorp-vault 헬름 차트 버전
--   `set` : Hashicorp-vault 기본 차트의 값을 동적으로 변경
+
+## Resource Setting Values
+
+-   `service_name` : HashiCorp Vault Helm Chart Release Name
+-   `namespace` : Namespace where Hashicorp Vault Helm Chart resources will be deployed
+-   `version` : Specifies the version of the Hashicorp Vault Helm chart
+-   `set` : Dynamically change values of Hashicorp Vault default chart
 
 
 ---
 
-## 참고 자료
+## Reference Materials
 
--   [Helm install(Hashicorp-vault)](https://developer.hashicorp.com/vault/docs/platform/k8s/helm)
+-   [Helm install(Hashicorp-vault)](https://developer.hashicorp.com/vault/en/docs/platform/k8s/helm)
 -   [Helm Provider(Terraform)](https://registry.terraform.io/providers/hashicorp/helm/latest/docs)
 

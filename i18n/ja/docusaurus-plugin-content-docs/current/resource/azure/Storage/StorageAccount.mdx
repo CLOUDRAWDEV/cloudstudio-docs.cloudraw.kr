@@ -1,13 +1,13 @@
 ---
 title: StorageAccount
 sidebar_position: 0
-tags: [Azure, 리소스, Storage, StorageAccount]
+tags: [Azure, リソース, Storage, StorageAccount]
 ---
 
 <hr />
 <br />
 
-## 리소스 아이콘
+## リソースアイコン
 
 <img
     src={
@@ -15,64 +15,64 @@ tags: [Azure, 리소스, Storage, StorageAccount]
     }
 />
 
-## 리소스 개요
+## リソース概要
 
-Azure 저장소 계정은 Microsoft Azure에서 제공하는 클라우드 기반 저장소 솔루션입니다.
-Azure 클라우드에서 실행되는 애플리케이션, 가상 머신 및 기타 서비스를 위한 확장 가능하고 가용성이 높은 데이터 스토리지 플랫폼을 제공합니다.
-Azure 저장소 계정은 Blob 저장소, 파일 저장소, 큐 저장소 및 테이블 저장소를 비롯한 다양한 유형의 저장소 서비스를 지원합니다.
-Blob 저장소는 텍스트, 이미지, 비디오 및 기타 이진 데이터와 같은 구조화되지 않은 데이터를 저장하는 데 사용됩니다.
+Azure リポジトリアカウントは、Microsoft Azure が提供するクラウドベースのリポジトリソリューションです。
+Azure クラウドで実行されるアプリケーション、仮想マシン、およびその他のサービスのための拡張可能で可用性の高いデータストレージプラットフォームを提供します。
+Azure リポジトリアカウントは、Blob リポジトリ、ファイルリポジトリ、キューリポジトリ、テーブルリポジトリなど、様々なタイプのリポジトリサービスをサポートします。
+Blob リポジトリは、テキスト、画像、ビデオ、およびその他のバイナリデータなどの非構造化データを保存するために使用されます。
 
-## 연관 리소스
+## 関連リソース
 
-### 상위 리소스
+### 上位リソース
 
--   [**Resource Group**](https://docs.cstudio.app/docs/resource/azure/Base/ResourceGroup)
+-   [**Resource Group**](https://docs.cstudio.app/ja/docs/resource/azure/Base/ResourceGroup)
 
-### 연결 리소스
+### 接続リソース
 
--   [**Backup**](https://docs.cstudio.app/docs/resource/azure/RecoveryServices/Backup)
+-   [**Backup**](https://docs.cstudio.app/ja/docs/resource/azure/RecoveryServices/Backup)
 
-## 리소스 설정 값
+## リソース設定値
 
--   `account_kind` : Storage Account의 유형 - `StorageV2`,`Storage`
+-   `account_kind` : Storage Account のタイプ - `StorageV2`,`Storage`
 
--   `account_tier` : Storage Account 사용을 위한 성능 계층 - `Standard`,`Premium`
--   `account_replication_type` : Storage Account의 데이터 복제 타입 - `LRS`,`GRS`,`RAFRS`,`ZRS`,`GZRS`,`RAGZRS`
+-   `account_tier` : Storage Account 使用のための性能階層 - `Standard`,`Premium`
+-   `account_replication_type` : Storage Account のデータ複製タイプ - `LRS`,`GRS`,`RAFRS`,`ZRS`,`GZRS`,`RAGZRS`
 
--   `access_tier` : 계정의 유형이 BlobStorage/FileStorage/StorageV2인 경우, 데이터 사용 패턴 지정 계층 - `Hot`,`Cool`
+-   `access_tier` : アカウントのタイプが BlobStorage/FileStorage/Storage V2 の場合、データ使用パターン指定階層 - `Hot`,`Cool`
 
--   `min_tls_version` : Storage Account에 대해 지원되는 최소 TLS 버전 - `TLS1_1`,`TLS1_2`,`TLS1_0`
+-   `min_tls_version` : Storage Account に対してサポートされる最小 TLS バージョン - `TLS1_1`,`TLS1_2`,`TLS1_0`
 
--   `enable_https_traffic_only` : 보안 전송이 필요한 경우 HTTPS를 통해 Azure Storage REST API 작업을 호출 - `true`,`false`
+-   `enable_https_traffic_only` : セキュリティ転送が必要な場合、HTTPS を通じて Azure Storage REST API 作業を呼び出し - `true`,`false`
 
 -   `network_rules`
 
-    -   `default_action` : Network Rules에 적용할 default action - `Deny`,`Allow`
-    -   `bypass` : Logging/Metrics/AzureServices에 대해 트래픽을 우회할지 여부 - `AzureServices`,`Logging`,`Metrics`,`None`
-    -   `ip_rules` : Network Rules을 적용할 IP 주소 범위
+    -   `default_action` : Network Rules に適用する default action - `Deny`,`Allow`
+    -   `bypass` : Logging/Metrics/AzureServices に対してトラフィック迂回の可否 - `AzureServices`,`Logging`,`Metrics`,`None`
+    -   `ip_rules` : Network Rules を適用する IP アドレス範囲
 
 -   `storage_container`
 
-    -   `container_access_type` : Storage Container에 대한 접근 레벨 - `private`,`blob`,`container`
+    -   `container_access_type` : Storage Container へのアクセスレベル - `private`,`blob`,`container`
 
 -   `storage_queue`
 
-    -   `name` : Queue 이름
+    -   `name` : Queue 名
 
 -   `storage_share`
 
-    -   `quota` : 파일 공유 GB 단위의 최대 용량 - `1` ~ `5120`
+    -   `quota` : ファイル共有 GB 単位の最大容量 - `1` ~ `5120`
 
 -   `storage_table`
 
-    -   `name` : 테이블 이름
+    -   `name` : テーブル名
 
--   `tag` : 리소스를 카테고리로 분류하기 위한 태그 - 최대 512자, `key`:`value`
+-- `tag` : リソースをカテゴリに分類するためのタグ - 最大 512 文字, `key`:`value`
 
 ---
 
-## 참고 자료
+## 参考資料
 
 -   [Azure StorageAccount(Microsoft)](https://learn.microsoft.com/en-us/azure/storage/common/storage-account-overview)
--   [Azure StorageAccount 가격](https://azure.microsoft.com/en-us/pricing/details/storage/blobs/)
+-   [Azure StorageAccount 価格](https://azure.microsoft.com/en-us/pricing/details/storage/blobs/)
 -   [Azure StorageAccount(Terraform)](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/storage_account)

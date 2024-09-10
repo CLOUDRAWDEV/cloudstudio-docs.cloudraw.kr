@@ -1,34 +1,41 @@
 ---
-title: 내보내기
+title: Export
 sidebar_position: 6
-tags: [내보내기, png, 아키텍처, tf, 캔버스]
+tags: [Export, png, Architecture, tf, Canvas]
 ---
 
-import styles from '/src/scss/_markdown.module.scss';
+import styles from "/src/scss/_markdown.module.scss"
 
 <hr />
 <br />
 
-클라우드 스튜디오에서 파일 내보내기 시 세 가지 형식의 파일을 얻을 수 있습니다.
+When exporting files from CloudStudio, you can obtain three different file formats:
 
-## 형식
-- png 파일
-- 세 가지의 tf 파일 (main, output, variables)
-- state 파일 (관리중인 인프라)
-- nodes.json 파일
+## Formats
 
-### 1. architecture.png 파일
-사용자가 그린 캔버스 아키텍처의 png 파일입니다.
+-   PNG file
+-   Three TF files (main, output, variables)
+-   State file (managed infrastructure)
+-   nodes.json file
 
-### 2. tf 파일
-사용자는 세 가지의 tf 파일을 얻을 수 있습니다.
+### 1. architecture.png File
 
-```main.tf```: main.tf은 생성한 인프라의 뼈대를 보여주는 테라폼 파일입니다.  
-```output.tf```: 인프라 배포 후 관련 정보를 알려주는 테라폼 파일입니다.  
-```variables```: variables.tf는 변수들을 보여주는 테라폼 파일입니다.
+A PNG file of the canvas architecture drawn by the user.
 
-### 3. terraform.state 파일
-배포 이후 인프라의 상태를 관리하는 테라폼 파일입니다. (배포 이전 제공하지 않습니다.)
+### 2. TF Files
 
-### 4. nodes.json 파일
-캔버스를 그리기 위한 좌표 데이터입니다.
+Users will receive three TF files:
+
+`main.tf`: This Terraform file provides the framework of the created infrastructure.
+
+`output.tf`: This Terraform file provides information related to the infrastructure after deployment.
+
+`variables.tf`: This Terraform file lists the variables used.
+
+### 3. terraform.state File
+
+A Terraform file that manages the state of the infrastructure after deployment. (Not provided before deployment.)
+
+### 4. nodes.json File
+
+Contains coordinate data for drawing the canvas.

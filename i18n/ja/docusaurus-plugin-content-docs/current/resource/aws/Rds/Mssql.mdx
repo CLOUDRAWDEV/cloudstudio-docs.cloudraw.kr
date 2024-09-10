@@ -1,13 +1,13 @@
 ---
 title: Mssql
 sidebar_position: 0
-tags: [AWS, 리소스, Rds, Mssql]
+tags: [AWS, リソース, Rds, Mssql]
 ---
 
 <hr />
 <br />
 
-## 리소스 아이콘
+## リソースアイコン
 
 <img
     src={
@@ -15,48 +15,51 @@ tags: [AWS, 리소스, Rds, Mssql]
     }
 />
 
-## 리소스 개요
+## リソース概要
 
-SQL Server는 Microsoft에서 개발한 관계형 데이터베이스 관리 시스템입니다. Amazon RDS for SQL Server를 사용하면 클라우드에서 SQL Server 배포를 손쉽게 설정, 운영 및 확장할 수 있습니다. Amazon RDS를 사용하면 비용 효율적이고 크기 조정 가능한 컴퓨팅 파워와 함께 Express, Web, Standard, Enterprise 등 여러 버전의 SQL Server(2014, 2016, 2017 및 2019)를 몇 분 만에 배포할 수 있습니다. 또한 프로비저닝, 백업, 소프트웨어 패치, 모니터링, 하드웨어 크기 조정 같은 시간 소모적인 데이터베이스 관리 업무를 대신 처리하므로 고객은 애플리케이션 개발에만 집중할 수 있습니다.
+SQL Server は Microsoft が開発したリレーショナルデータベース管理システムです。
+Amazon RDS for SQL Server を使用すると、クラウドで SQL Server のデプロイを簡単に設定、運営、及び拡張することができます。
+Amazon RDS を使用すると、コスト効率的でサイズ調整可能なコンピューティングパワーとともに、Express、Web、Standard、Enterprise などの複数のバージョンの SQL Server(2014、2016、2017、および 2019)を数分でデプロイすることができます。
+また、プロビジョニング、バックアップ、ソフトウェアパッチ、モニタリング、ハードウェアのサイズ調整といった時間の無駄なデータベース管理業務を代わりに処理するため、お客様はアプリケーションの開発だけに集中できます。
 
-## 연관 리소스
+## 関連リソース
 
-### 상위 리소스
+### 上位リソース
 
--   [**Subnet**](https://docs.cstudio.app/docs/resource/aws/Vpc/Subnet)
+-   [**Subnet**](https://docs.cstudio.app/ja/docs/resource/aws/Vpc/Subnet)
 
-### 연결 리소스
+### 接続リソース
 
--   [**Mssql**](https://docs.cstudio.app/docs/resource/aws/Rds/Mssql)
+-   [**Mssql**](https://docs.cstudio.app/ja/docs/resource/aws/Rds/Mssql)
 
-## 리소스 설정 값
+## リソース設定値
 
--   `engine` : RDS에 사용할 MsSQL Engine 종류 - `sqlserver-ex`, `sqlserver-ee`, `sqlserver-web`, `sqlserver-se`
--   `engine_version` : RDS에 사용할 MsSQL 버전
--   `instance_class` : RDS DB의 가격 측정 계층
--   `storage_type` : RDS 인스턴스의 Storage Type
--   `allocated_storage` : RDS Insatance Storage의 용량 (Gigabytes)
--   `max_allocated_storage` : Amazon RDS가 DB 인스턴스의 스토리지를 자동으로 확장할 수 있는 상한선
--   `multi_az_enabled` : 다중 AZ 배포 활성화 - `true`, `false`
--   `username` : RDS의 사용자 이름
--   `password` : RDS의 사용자 패스워드
--   `included_subnet_names` : RDS Subnet 그룹에 연결할 Subnet 이름
--   `publicly_accessible` : 인스턴스에 public access가 가능한지 여부 - `true`, `false`
--   `subnet_group_name` : RDS에 사용할 Subnet 그룹 이름
+-   `engine` : RDS に使用する MsSQL Engine の種類 - `sqlserver-ex`, `sqlserver-ee`, `sqlserver-web`, `sqlserver-se`
+-   `engine_version` : RDS に使用する MsSQL のバージョン
+-   `instance_class` : RDS DB の価格測定階層
+-   `storage_type` : RDS インスタンスの Storage Type
+-   `allocated_storage` : RDS Insatance Storage の容量(Gigabytes) (Gigabytes)
+-   `max_allocated_storage` : Amazon RDS が DB インスタンスのストレージを自動的に拡張できる上限線
+-   `multi_az_enabled` : マルチ AZ 活性化 - `true`, `false`
+-   `username` : RDS のユーザー名
+-   `password` : RDS のユーザーパスワード
+-   `included_subnet_names` : RDS Subnet グループに接続する Subnet 名
+-   `publicly_accessible` : インスタンスに public access が可能かどうかの可否 - `true`, `false`
+-   `subnet_group_name` : RDS に使用する Subnet グループ名
 
 -   `monitoring`
-    -   `performance_insights_enabled` : 성능 인사이트 활성화
+    -   `performance_insights_enabled` : パフォーマンスインサイト活性化
 -   `encryption`
-    -   `storage_encrypted` : DB 인스턴스의 암호화 여부를 지정 - `true`, `false`
-    -   `kms_key_name` : 암호화에 사용할 kms 키 이름
+    -   `storage_encrypted` : DB インスタンスの暗号化可否を指定 - `true`, `false`
+    -   `kms_key_name` : 暗号化に使用する KMS キー名
 -   `backup`
-    -   `backup_retention_period` : 백업 데이터를 보관할 기간 - `1`~`35`
-    -   `final_snapshot_enabled` : DB 인스턴스가 삭제되기 전, 최종 DB 스냅샷을 생성할지 여부 - `true`, `false`
-    -   `final_snapshot_name` : 최종 스냅샷 이름
+    -   `backup_retention_period` : バックアップデータを保持する期間 - `1`~`35`
+    -   `final_snapshot_enabled` : DB インスタンスが削除される前に、最終 DB スナップショットを生成するかどうかの可否 - `true`, `false`
+    -   `final_snapshot_name` : 最終スナップショット名
 
 ---
 
-## 참고 자료
+## 参考資料
 
 -   [Amazon RDS for SQL Server(AWS)](https://aws.amazon.com/ko/rds/sqlserver/)
--   [Amazon RDS for SQL Server 요금(AWS)](https://aws.amazon.com/ko/rds/sqlserver/pricing/?nc=sn&loc=4)
+-   [Amazon RDS for SQL Server 料金(AWS)](https://aws.amazon.com/ko/rds/sqlserver/pricing/?nc=sn&loc=4)

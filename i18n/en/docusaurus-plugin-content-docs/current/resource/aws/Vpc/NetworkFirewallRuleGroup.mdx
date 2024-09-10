@@ -1,13 +1,13 @@
 ---
 title: NetworkFirewallRuleGroup
 sidebar_position: 0
-tags: [AWS, 리소스, Vpc, NetworkFirewallRuleGroup]
+tags: [AWS, Resource, Vpc, NetworkFirewallRuleGroup]
 ---
 
 <hr />
 <br />
 
-## 리소스 아이콘
+## Resource Icon
 
 <img
     src={
@@ -15,50 +15,48 @@ tags: [AWS, 리소스, Vpc, NetworkFirewallRuleGroup]
     }
 />
 
-## 리소스 개요
+## Resource Overview
 
-네트워크 트래픽을 검사하고 처리하기 위한 재사용 가능한 기준 세트
+A reusable set of criteria for inspecting and handling network traffic
 
-## 연관 리소스
+## Associated Resources
 
-### 상위 리소스
+### Parent Resources
 
--   [**Region**](https://docs.cstudio.app/docs/resource/aws/Base/Region)
+-   [**Region**](https://docs.cstudio.app/en/docs/resource/aws/Base/Region)
 
-### 연결 리소스
+### Connected Resources
 
--   [**Network Firewall Policy**](https://docs.cstudio.app/docs/resource/aws/Vpc/NetworkFirewallPolicy)
+-   [**Network Firewall Policy**](https://docs.cstudio.app/en/docs/resource/aws/Vpc/NetworkFirewallPolicy)
 
 
 
-## 리소스 설정 값
+## Resource Setting Values
 
--   `description` : 네트워크 방화벽 규칙 그룹의 설명
--   `rule_group_type` : 규칙 그룹 유형 - `STATEFUL`,`STATELESS`
--   `generated_rules_type` : 규칙 그룹 형식 - `StandardStatefulRules`,`DomainList`,`SuricataRuleStrings`
--   `rule_evaluation_order` : `STRICT_ORDER`,`DEFAULT_ACTION_ORDER`
--   `capacity` : 수명 주기 동안 이 규칙 그룹에 포함될 것으로 예상되는 규칙의 수 - `1-30000`
--   `ip_set` : IP 세트 변수 
--   `ip_set.name` : IP 세트 변수 이름
--   `ip_set.cidrs` : IP 세트 변수 값
--   `port_set` : 포트 변수 
--   `port_set.name` : 포트 변수 이름
--   `port_set.cidrs` : 포트 변수 값
--   `stateful_rule` : 표준 상태 저장 규칙 
--   `stateful_rule.name` : 표준 상태 저장 규칙 이름
--   `stateful_rule.protocol` : 검사할 전송 프로토콜 - `IP`,`TCP`,`UDP`,`ICMP`,`HTTP`
--   `stateful_rule.source_ip_or_cidr` : 검사할 소스 IP 주소 및 주소 범위
--   `stateful_rule.source_port` : 검사할 소스 포트 또는 포트 범위
--   `stateful_rule.target_ip_or_cidr` : 검사할 대상 IP 주소 및 주소 범위
--   `stateful_rule.target_ip_or_cidr` : 검사할 대상 IP 주소 및 주소 범위
--   `stateful_rule.traffic_direction` : 검사할 트래픽 방향 - `ANY`,`FORWARD`
--   `stateful_rule.action` : 패킷이 규칙 설정과 일치할 때 네트워크 방화벽이 수행할 작업 - `ALERT`,`DROP`,`PASS`,`REJECT`
--   `encryption_configuration.enabled_custom_configuration` : AWS 관리형 키를 사용하여 데이터를 암호화 - `false`,`true`
-
+-   `description`: Rule group type
+-   `rule_group_type`: Rule group type - `STATEFUL`, `STATELESS`
+-   `generated_rules_type`: Rule group format - `StandardStatefulRules`, `DomainList`, `SuricataRuleStrings`
+-   `rule_evaluation_order`: The way that your stateful rules are ordered for evaluation - `STRICT_ORDER`, `DEFAULT_ACTION_ORDER`
+-   `capacity`: The number of rules expected to have in this rule group during its lifetime - `1-30000`
+-   `ip_set`: IP set variable name
+-   `ip_set.name`: IP set variable name
+-   `ip_set.cidrs`: Values of the IP set variable
+-   `port_set`: Port variable name
+-   `port_set.name`: Name of the port set variable
+-   `port_set.cidrs`: Standard stateful rule
+-   `stateful_rule`: Standard stateful rule name
+-   `stateful_rule.name`: Name of the standard stateful rule
+-   `stateful_rule.protocol`: Transport protocols to inspect for - `IP`, `TCP`, `UDP`, `ICMP`, `HTTP`
+-   `stateful_rule.source_ip_or_cidr`: The source IP addresses and address ranges to inspect for
+-   `stateful_rule.source_port`: Source port or port range to inspect
+-   `stateful_rule.target_ip_or_cidr`: Target IP address and address range to inspect
+-   `stateful_rule.traffic_direction`: The traffic direction to inspect for - `ANY`, `FORWARD`
+-   `stateful_rule.action`: Action that a network firewall will do when a packet matches the rule settings - `ALERT`, `DROP`, `PASS`, `REJECT`
+-   `encryption_configuration.enabled_custom_configuration`: Encrypt data using AWS-managed key - `false`, `true`
 
 ---
 
-## 참고 자료
+## Reference Materials
 
 -   [NetworkFirewallRuleGroup(AWS)](https://docs.aws.amazon.com/network-firewall/latest/developerguide/rule-groups.html)
 -   [NetworkFirewallRuleGroup(Terraform)](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/networkfirewall_rule_group)

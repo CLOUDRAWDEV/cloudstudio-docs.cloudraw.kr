@@ -1,13 +1,13 @@
 ---
 title: Eks Cluster
 sidebar_position: 0
-tags: [AWS, 리소스, Eks, EksCluster]
+tags: [AWS, Resource, Eks, EksCluster]
 ---
 
 <hr />
 <br />
 
-## 리소스 아이콘
+## Resource Icon
 
 <img
     src={
@@ -15,51 +15,49 @@ tags: [AWS, 리소스, Eks, EksCluster]
     }
 />
 
-## 리소스 개요
+## Resource Overview
 
-Amazon Elastic Kubernetes Service(Amazon EKS)는 Kubernetes 클러스터를 설치하고 운영할 필요 없이 AWS에서 Kubernetes를 손쉽게 실행할 수 있는 관리형 서비스입니다.
+Amazon Elastic Kubernetes Service (Amazon EKS) is a managed service that makes it easy to run Kubernetes on AWS without needing to install and operate Kubernetes clusters.
+
+## Associated Resources
+
+### Parent Resources
+
+-   [**Subnet**](https://docs.cstudio.app/en/docs/resource/aws/Vpc/Subnet)
+
+### Connected Resources
+
+-   [**Eks Cluster**](https://docs.cstudio.app/en/docs/resource/aws/Eks/EksCluster)
 
 
-## 연관 리소스
+## Resource Setting Values
 
-### 상위 리소스
+-   `version`: Version of EKS Cluster
+-   `cluster_role_arn`: IAM role that allows the Kubernetes control plane to manage AWS resources on your behalf
+-   `enabled_encryption`: Enable Encryption for Passwords - `true`, `false`
+-   `included_subnet_names`: Name of Subnet to be included in Subnet Group to deploy EKS Cluster
+-   `security_group_name`: Name of Security Group to set up for the EKS Cluster
+-   `endpoint_access_type`: Access type to EKS API server endpoint - `public`, `publicAndPrivate`, `private`
+-   `enabled_cluster_log_types`: List of the desired control plane logging to enable - `api`, `audit`, `authenticator`, `controllerManager`, `scheduler`
+-   `add_ons`:
+    -   `kube_proxy_version`: Version of Network proxy running on each node - `v1.26.4-eksbuild.1`, `v1.26.2-eksbuild.1`, `v1.25.9-eksbuild.1`, `v1.25.6-eksbuild.2`, `v1.24.10-eksbuild.2`
+    -   `vpc_cni_version`: Version of Amazon VPC CNI plugin - `v1.12.6-eksbuild.2`, `v1.12.6-eksbuild.1`, `v1.12.5-eksbuild.2`, `v1.12.0-eksbuild.2`
+    -   `core_dns_version`: DNS service version provided by the cluster - `v1.9.3-eksbuild.3`, `v1.9.3-eksbuild.2`, `v1.8.7-eksbuild.4`
 
--   [**Subnet**](https://docs.cstudio.app/docs/resource/aws/Vpc/Subnet)
-
-### 연결 리소스
-
--   [**Eks Cluster**](https://docs.cstudio.app/docs/resource/aws/Eks/EksCluster)
-
-
-## 리소스 설정 값
-
--   `version` : EKS Cluster의 버전
--   `cluster_role_arn` : Kubernetes 컨트롤 플레인이 사용자를 대신하여 aws 리소스를 관리하도록 허용하는 IAM 역할
--   `enabled_encryption` : 암호에 대한 암호화 활성화 - `true`, `false`
--   `included_subnet_names` : EKS Cluster를 배포할 Subnet Group에 포함될 Subnet의 이름
--   `security_group_name` : EKS Cluster에 설정할 보안 그룹 이름
--   `endpoint_access_type` : EKS API 서버 엔드포인트 액세스 종류 - `public`, `publicAndPrivate`, `private`
--   `enabled_cluster_log_types` : 활성화할 Control Plane 로깅 목록 - `api`, `audit`, `authenticator`, `controllerManager`, `scheduler`
--   `add_ons`
-
-    -   `kube_proxy_version` : 각 노드에서 실행되는 네트워크 프록시 버전 - `v1.26.4-eksbuild.1`, `v1.26.2-eksbuild.1`, `v1.25.9-eksbuild.1`, `v1.25.6-eksbuild.2`, `v1.24.10-eksbuild.2`
-    -   `vpc_cni_version` : Amazon VPC CNI 플러그인 버전 - `v1.12.6-eksbuild.2`, `v1.12.6-eksbuild.1`, `v1.12.5-eksbuild.2`, `v1.12.0-eksbuild.2`
-    -   `core_dns_version` : 클러스터 내에서 제공하는 DNS 서비스 버전 - `v1.9.3-eksbuild.3`, `v1.9.3-eksbuild.2`, `v1.8.7-eksbuild.4`
-
--   `node_group` : Cluster Node Group 이름, 영문, 숫자, 하이픈(-), 밑줄(\_) 사용 가능
-    -   `node_role_arn` : 노드에서 사용할 IAM 역할
-    -   `enable_launch_template` : 시작 템플릿을 사용하여 노드 그룹 구성 - `true`, `false`
-    -   `min_node_count` : 최소 EKS 작업자 노드 수
-    -   `max_node_count` : 최대 EKS 작업자 노드 수
-    -   `desired_node_count` : 원하는 EKS 작업자 노드 수
-    -   `max_node_unavailable` : 노드 그룹 업데이트 중 사용할 수 없는 작업자 노드의 원하는 최대 수
-    -   `max_percentage_unavailable` : 노드 그룹 업데이트 중 사용할 수 없는 작업자 노드의 원하는 최대 백분율 - `1`~`100`
-    -   `disk_size` : 각 노드에 연결되는 EBS 볼륨의 크기
+-   `node_group`: Name of Cluster Node Group, Alphanumeric characters, hyphens (-), and underscores (_) can be used
+    -   `node_role_arn`: IAM role to use on the node
+    -   `enable_launch_template`: Configure node groups using launch templates - `true`, `false`
+    -   `min_node_count`: Minimum number of EKS worker nodes
+    -   `max_node_count`: Maximum number of EKS worker nodes
+    -   `desired_node_count`: Desired number of EKS worker nodes
+    -   `max_node_unavailable`: Desired max number of unavailable worker nodes during node group update
+    -   `max_percentage_unavailable`: Desired max percentage of unavailable worker nodes during node group update - `1`~`100`
+    -   `disk_size`: Size of EBS volumes attached to each node
 
 ---
 
-## 참고 자료
+## Reference Materials
 
 -   [Amazon EKS(AWS)](https://docs.aws.amazon.com/ko_kr/eks/latest/userguide/what-is-eks.html)
--   [Amazon EKS 요금(AWS)](https://aws.amazon.com/ko/eks/pricing/)
+-   [Amazon EKS Price(AWS)](https://aws.amazon.com/ko/eks/pricing/)
 -   [aws_eks_cluster(Terraform)](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/eks_cluster)

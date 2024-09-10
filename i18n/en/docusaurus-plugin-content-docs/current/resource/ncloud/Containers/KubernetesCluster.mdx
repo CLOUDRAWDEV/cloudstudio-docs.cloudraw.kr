@@ -1,13 +1,13 @@
 ---
 title: Kubernetes Cluster
 sidebar_position: 0
-tags: [Ncloud, 리소스, Containers, KubernetesCluster]
+tags: [Ncloud, Resource, Containers, KubernetesCluster]
 ---
 
 <hr />
 <br />
 
-## 리소스 아이콘
+## Resource Icon
 
 <img
     src={
@@ -15,44 +15,44 @@ tags: [Ncloud, 리소스, Containers, KubernetesCluster]
     }
 />
 
-## 리소스 개요
+## Resource Overview
 
-애플리케이션 컨테이너화, 배포, 관리를 자동화하는 오픈 소스 플랫폼인 쿠버네티스 서비스입니다. 컨테이너 배포, 관리, 확장 등 컨테이너를 사용하는 데 필요한 작업을 자동화하여 업무 효율을 높여줍니다.
+Kubernetes is an open-source platform that automates the containerization, deployment, and management of applications. It enhances operational efficiency by automating tasks such as container deployment, management, and scaling.
 
-## 연관 리소스
+## Associated Resources
 
-### 상위 리소스
+### Parent Resource
 
--   [**Vpc**](https://docs.cstudio.app/docs/resource/ncloud/Networking/Vpc)
+-   [**Vpc**](https://docs.cstudio.app/en/docs/resource/ncloud/Networking/Vpc)
 
-### 하위 리소스
+### Child Resource
 
--   [**Subnet**](https://docs.cstudio.app/docs/resource/ncloud/Networking/Subnet)
--   [**LoadBalancer**](https://docs.cstudio.app/docs/resource/ncloud/Networking/LoadBalancer)
+-   [**Subnet**](https://docs.cstudio.app/en/docs/resource/ncloud/Networking/Subnet)
+-   [**LoadBalancer**](https://docs.cstudio.app/en/docs/resource/ncloud/Networking/LoadBalancer)
 
-## 리소스 설정 값
+## Resource Setting Values
 
--   `zone` : 클러스터를 생성할 물리적 지역 - `KR-1`, `KR-2`
--   `included_vpc_name` : 클러스터를 생성할 VPC 이름
--   `hypervisor_code` : 하이퍼바이저 코드 클러스터 버전 - `XEN`
--   `version` : 클러스터 버전 - `1.26.10-nks.1`, `1.27.9-nks.1`
--   `maximum_number_of_nodes` : 클러스터의 최대 노드 수 설정, 10 혹은 50 
--   `enable_public_subnet_network` : 퍼블릭 서브넷과 연결할지 여부
--   `subnet_names` : 클러스터를 구성할 서브넷 이름 목록, 최대 3개
--   `lb_private_subnet_name` : 클러스터와 연동할 프라이빗 로드 밸런서가 위치하는 프라이빗 서브넷 이름 
--   `lb_pubic_subnet_name` : 클러스터와 연동할 프라이빗 로드 밸런서가 위치하는 프라이빗 서브넷 이름 
--   `login_key_name` : 사용할 login key 이름
--   `enable_audit_log` : audit log 기능 사용 여부
--   `node_pool` : 노드 풀 이름
-    -   `node_count` : 클러스터의 노드 수
-    -   `software_code` : 노드의 서버 이미지 코드
-    -   `product_code` : 노드의 하드웨어 구성을 위한 코드 
-    -   `node_pool_subnet_name` : 노드풀이 생성될 서브넷 이름
--   `enable_autoscale` : 오토 스케일 기능 사용 여부
+-   `zone` : Available zone where the cluster will be placed physically - `KR-1`, `KR-2`
+-   `included_vpc_name` : The name of VPC to create cluster
+-   `hypervisor_code` : The Hypervisor code version of cluster - `XEN`
+-   `version` : The version of cluster - `1.26.10-nks.1`, `1.27.9-nks.1`
+-   `maximum_number_of_nodes` : The maximum number of nodes, 10 or 50
+-   `enable_public_subnet_network` : Whether to connect Public Subnet Network
+-   `subnet_names` : The list of Subnet names to configure the Cluster, Up to 3
+-   `lb_private_subnet_name` : The name of Subnet where the Loadbalancer is located 
+-   `lb_pubic_subnet_name` : The name of Subnet where the Loadbalancer is located 
+-   `login_key_name` : The name of Login key to apply
+-   `enable_audit_log` : Whether to use audit log
+-   `node_pool` : The name of Node pool
+    -   `node_count` : The number of codes
+    -   `software_code` : The code for Server image
+    -   `product_code` : The code for hardware configuration of nodes
+    -   `node_pool_subnet_name` : The name of Subnet to create Node pool
+-   `enable_autoscale` : Whether to use autoscale
 
 ---
 
-## 참고 자료
+## Reference Materials
 
 -   [Kubernetes Service(Ncloud)](https://www.ncloud.com/product/containers/kubernetes)
--   [ncloud_nks_cluster(Terraform)](https://registry.terraform.io/providers/NaverCloudPlatform/ncloud/latest/docs/resources/nks_cluster)
+-   [ncloud_nks_cluster(Terraform)](https://registry.terraform.io/providers/NaverCloudPlatform/ncloud/latest/en/docs/resources/nks_cluster)

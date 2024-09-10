@@ -1,41 +1,43 @@
 ---
-title: 협업
+title: Collaboration
 sidebar_position: 7
-tags: [collaboration, 협업, 권한, 제어권, 캔버스]
+tags: [Collaboration, Permissions, Control, Canvas]
 ---
 
 import styles from "/src/scss/_markdown.module.scss"
-import collaboration01 from "/docs/canvas/img/collaboration01.png"
-import collaboration02 from "/docs/canvas/img/collaboration02.gif"
-import collaboration03 from "/docs/canvas/img/delete-member.gif"
+import collaboration01 from "./img/collaboration01.png"
+import collaboration02 from "./img/collaboration02.gif"
+import collaboration03 from "./img/delete-member.gif"
 
 <hr />
 <br />
 
-클라우드 스튜디오는 프로젝트별로 협업할 멤버를 추가하여 `공동 작업`할 수 있는 기능을 제공합니다.
-협업을 하기 위해선 먼저 프로젝트를 생성해야 합니다. 프로젝트 생성방법은 [여기](/docs/start/create-project)를 참고해주세요.
-프로젝트를 생성한 멤버는 프로젝트 `master` 권한을 갖게되며 초대한 멤버들과 작업 화면을 공유하며 프로젝트를 수정할 수 있습니다.
+CloudStudio provides functionality for `collaborative work` by allowing you to add members to projects.
+To collaborate, you first need to create a project.
+For instructions on creating a project, please refer to [this guide](/docs/start/create-project).
+The member who creates the project will have `master` permissions and can share the workspace and modify
+the project with invited members.
 
-## 협업을 위한 멤버 추가 및 삭제
+## Adding and Removing Members for Collaboration
 
-### 멤버 추가
+### Adding Members
 
 <div className={styles.imgWrap}>
-    <img src={collaboration02} width="800px" alt="이미지" />
+    <img src={collaboration02} width="800px" alt="image" />
 </div>
 
 <br />
 
-1. 협업을 진행할 `프로젝트를 클릭`합니다.
-2. `사용자 아이콘`을 클릭합니다.
-3. 프로젝트 멤버 모달이 뜨면 프로젝트에 추가할 멤버의 `아이디를 검색`합니다.
-4. 찾은 사용자에게 `권한`을 부여한 후 `리스트에 추가` 버튼을 클릭합니다. (멤버는 여러명 추가할 수 있습니다.)
-5. 원하는 멤버를 모두 추가했다면 `멤버 추가` 버튼을 클릭합니다.
-6. `닫기`를 클릭합니다. (프로젝트에 멤버를 추가하면 자동으로 멤버가 프로젝트에 초대됩니다. 초대한 멤버에게는 초대 이메일이 전송됩니다.)
+1. Click on the project you want to collaborate on.
+2. Click the user icon.
+3. When the project members modal appears, search for the user ID of the member you want to add to the project.
+4. After finding the user, assign permissions and click the `Add to list` button. (You can add multiple members.)
+5. Once you have added all desired members, click the `Add` button.
+6. Click `Close`. (Once members are added, they are automatically invited to the project. An invitation email will be sent to the invited members.)
 
 <br />
 
-### 멤버 삭제
+### Removing Members
 
 <div className={styles.imgWrap}>
     <img src={collaboration03} alt="이미지" />
@@ -43,62 +45,63 @@ import collaboration03 from "/docs/canvas/img/delete-member.gif"
 
 <br />
 
-1. 협업을 진행할 `프로젝트`를 클릭합니다.
-2. 멤버 상세보기 `화살표`를 클릭합니다.
-3. 설정에 `더보기 아이콘`을 클릭합니다.
-4. `삭제하기`를 클릭합니다.
+1. Click on the `project` where you want to collaborate.
+2. Click the `arrow` to view member details.
+3. Click the `more options icon` in the settings.
+4. Click `Delete`.
 
 <br />
 
-### 프로젝트 권한
+### Project Permissions
 
-| 프로젝트 권한 | 내용                                                                                                                               |
-| ------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| master        | master는 프로젝트를 생성한 사람으로 프로젝트에 멤버들을 초대하여 공유하는 등의 모든 작업이 가능합니다.                             |
-| admin         | 캔버스를 공유받은 사람으로 프로젝트를 삭제하거나 관리하는 작업은 불가합니다. 캔버스를 편집하고 저장, 배포점검 등을 할 수 있습니다. |
-| editor        | 캔버스를 공유받은 사람으로 프로젝트를 삭제하거나 관리하는 작업은 불가합니다. 캔버스를 편집하고 저장, 배포점검 등을 할 수 있습니다. |
-| viewer        | 캔버스를 공유받은 사람으로 프로젝트를 삭제하거나 관리하는 작업은 불가합니다. 캔버스를 편집할 수 없고 볼 수만 있습니다.             |
-
-<br />
-
-## 협업하기
-
-1. master가 프로젝트에 멤버를 추가했다면 해당 멤버들에게 초대메일(사용자가 가입했던 메일)이 전송됨과 동시에 클라우드 스튜디오 내에서 `공유 받은 폴더`에 공유 프로젝트가 나타납니다.
-2. 협업을 위해 공유받은 프로젝트를 클릭한 후 `프로젝트 편집하기`버튼을 클릭합니다.
-3. 이제 팀원들과 자유롭게 캔버스를 편집해보세요.
+| Project Permissions | Description                                                                                                                                                                      |
+| ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| master              | As the creator of the project, you have full access to perform all tasks, including reading, editing, deleting, importing, deploying, and inviting members to share the project. |
+| admin               | You can read, edit, import, and deploy the project, but you are not allowed to delete it.                                                                                        |
+| editor              | You can read and edit the project, but all other tasks are not allowed.                                                                                                          |
+| viewer              | Only the project reading task is allowed.                                                                                                                                        |
 
 <br />
 
-### 캔버스 제어권
+## Collaborating
 
-캔버스를 편집하기 위해서는 프로젝트 권한과 별개로 `캔버스 제어권`이 필요합니다.
-기본적으로 캔버스는 `한 명만 편집`할 수 있으며 처음에는 프로젝트 생성자인
-`master에게 캔버스 제어권이 부여`됩니다. master는 원하는 멤버를 지정하여 캔버스 제어권을
-넘겨줄 수 있습니다.
+1. When the master adds members to the project, an invitation email (to the user’s registered email) will be sent, and the `shared project` will appear in the Shared Folders section within CloudStudio.
+2. To collaborate, click on the shared project and then click the `Edit Project` button.
+3. You can now freely edit the canvas with your team members.
+
+<br />
+
+### Collaborating
+
+When the master adds members to the project, an invitation email (to the user’s registered email) will be sent,
+and the shared project will appear in the Shared Folders section within CloudStudio.
+To collaborate, click on the shared project and then click the Edit Project button.
+You can now freely edit the canvas with your team members.
 
 <p />
 
-캔버스 제어권이 없는 멤버는 현재 제어권이 있는 멤버에게 <highlight color="#206FD6">제어권 요청 표시</highlight> 를 보낼 수 있습니다. 상대방이 요청을 수락하면 캔버스 제어권을 가져올 수 있습니다.
+Members without control permissions on the canvas can send a <highlight color="#206FD6">Request Control</highlight>
+to the current controller. If the request is accepted, they will gain control of the canvas.
 
 <admonition>
     <p>
-        단, master는 제어권 요청 시 상대방의 의사와 상관없이 바로 제어권을
-        가져올 수 있습니다.
+        However, the master can take control immediately without needing the
+        other party's consent when requesting control.
     </p>
 </admonition>
 
 <p />
 
-캔버스 제어권은 master가 프로젝트를 이탈할 시에 자동으로 남은 유저에게 전달되며
-이때는 `master → admin → editor` 순으로 제어권을 전달합니다. (viewer는 편집권한이 없으므로 제외됩니다.)
+Canvas control permissions are automatically transferred to the remaining users when the master leaves the project,
+following the order of `master → admin → editor` (viewers are excluded as they do not have editing rights).
 
 <br />
 
-캔버스 제어권을 전달하려면 `아래의 절차`를 따라해주세요.
+To transfer canvas control, `follow the steps` below:
 
-1. 제어권을 전달할 멤버의 프로필을 `우클릭`합니다.
-2. `제어권 전달`을 클릭합니다.
+`click` on the profile of the member to whom you want to transfer control.
+Click Transfer Control.
 
 <div className={styles.imgWrap}>
-    <img src={collaboration01} alt="제어권전달 이미지" />
+    <img src={collaboration01} alt="Control Transfer Image" />
 </div>

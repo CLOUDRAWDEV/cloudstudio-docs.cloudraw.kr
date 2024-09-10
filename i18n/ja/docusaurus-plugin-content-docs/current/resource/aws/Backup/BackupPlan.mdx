@@ -1,46 +1,47 @@
 ---
 title: BackupPlan
 sidebar_position: 0
-tags: [AWS, 리소스, Backup, BackupPlan]
+tags: [AWS, リソース, Backup, BackupPlan]
 ---
 
 <hr />
 <br />
 
-## 리소스 아이콘
+## リソースアイコン
 
-     src={
+<img
+    src={
         "https://cloudstudioblob.blob.core.windows.net/cloudstudio/awsImg/backup-backup_plan.png"
     }
-
 />
 
-## 리소스 개요
+## リソース概要
 
-AWS 리소스를 백업하려는 시기와 방법을 정의하는 정책 표현식입니다. Backup Plan에 리소스를 할당할 수 있으며, AWS 백업은 Backup Plan에 따라 해당 리소스에 대한 백업을 자동으로 백업하고 유지합니다.
+AWS リソースをバックアップする時期と方法を定義するポリシー表現式です。
+Backup Plan にリソースを割り当てることができ、AWS バックアップは BackupPlan に従って、そのリソースのバックアップを自動的にバックアップし、維持します。
 
-### 상위 리소스
+### 上位リソース
 
--   [**Region**](https://docs.cstudio.app/docs/resource/aws/Base/Region)
+-   [**Region**](https://docs.cstudio.app/ja/docs/resource/aws/Base/Region)
 
-## 연관 리소스
+## 関連リソース
 
-## 리소스 설정 값
+## リソース設定値
 
--   `rule.rule_name` : 백업 규칙 이름
--   `rule.backup_vault_name` : 백업 저장에 사용되는 논리적 컨테이너 이름
--   `rule.frequency_type` : 백업에 대한 주기 타이밍
--   `rule.frequency_hour` : 백업 계획을 초기화할 시간 - `1 이상`
--   `rule.start_time` : 백업 계획 시작 시간
--   `rule.start_after_minutes` : 백업을 시작하기까지 총 걸리는 시간 - `60 이상`
--   `rule.complete_after_minutes` : 작업을 취소하고 오류를 반환하기 전까지 AWS Backup에서 백업을 시도하는 시간(분) - `121이상`
--   `rule.enabled_use_cold_storage` : cold storage 사용 여부
--   `rule.warm_storage_retention_days` : 생성 후 복구 지점을 콜드 스토리지로 이동할 지정 일 수 - `1 ~ 36410`
--   `rule.told_retention_days` : 생성 후 복구 지점을 삭제할 지정 일 수 - `91 ~ 36500`
+-   `rule.rule_name` : バックアップルール名
+-   `rule.backup_vault_name` : バックアップの保存に使用される論理的コンテナ名
+-   `rule.frequency_type` : バックアップに関するサイクルのタイミング
+-   `rule.frequency_hour` : バックアップ計画を初期化する時間 - `1 以上`
+-   `rule.start_time` : バックアップ計画の開始時
+-   `rule.start_after_minutes` : バックアップを開始するまでの合計時間 - `60 以上`
+-   `rule.complete_after_minutes` : 作業をキャンセルし、エラーを返すまで AWS Backup でバックアップを試行する時間(分) - `121以上`
+-   `rule.enabled_use_cold_storage` : cold storage 使用可否
+-   `rule.warm_storage_retention_days` : 生成後、リカバリポイントをコールドストレージに移動する指定日数 - `1 ~ 36410`
+-   `rule.told_retention_days` : リカバリ地点が作成された後、リカバリ地点を削除する指定日数 - `91 ~ 36500`
 
 -   `resource_assignment.name`
--   `resource_assignment.iam_role_arn` : 대상 리소스를 복원 및 백업할 때 AWS 백업에서 인증하는 데 사용하는 IAM 역할의 ARN
--   `resource_assignment.enabled_contain_all` : 모든 리소스 포함 여부 - `false`,`true`
+-   `resource_assignment.iam_role_arn` : 対象リソースをリカバリおよびバックアップする時に AWS バックアップで認証するために使用する IAM ロールの ARN
+-   `resource_assignment.enabled_contain_all` : すべてのリソースを含めるかどうかを指定 - `false`,`true`
 
 -   [Amazon BackupPlan(AWS)](https://docs.aws.amazon.com/ko_kr/aws-backup/latest/devguide/creating-a-backup-plan.html)
 -   [Amazon BackupPlan(Terraform)](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/backup_plan)

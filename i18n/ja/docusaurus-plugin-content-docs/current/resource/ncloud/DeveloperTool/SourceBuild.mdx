@@ -1,13 +1,13 @@
 ---
 title: SourceBuild
 sidebar_position: 0
-tags: [Ncloud, 리소스, DeveloperTool, SourceBuild]
+tags: [Ncloud, リソース, DeveloperTool, SourceBuild]
 ---
 
 <hr />
 <br />
 
-## 리소스 아이콘
+## リソースアイコン
 
 <img
     src={
@@ -15,49 +15,45 @@ tags: [Ncloud, 리소스, DeveloperTool, SourceBuild]
     }
 />
 
-## 리소스 개요
+## リソース概要
 
-SourceBuild는 다양한 언어로 개발된 소스 코드를 손쉽게 빌드하는 서비스입니다. SoureBuild에 독립된 빌드 서버들을 실시간으로 생성하고 여러 개의 빌드 실행 요청을 동시에 처리할 수 있습니다.
+SourceBuild は様々な言語で開発されたソースコードを簡単にビルドするサービスです。
+SourceBuild に独立したビルドサーバをリアルタイムで生成し、複数のビルド実行要求を同時に処理することができます。
 
-## 연관 리소스
+## 関連リソース
 
-### 상위 리소스
+### 上位リソース
 
-### 하위 리소스
+### 下位リソース
 
+## リソース設定値
 
-
-## 리소스 설정 값
-
--   `source_type` : 빌드 타겟 타입 - `SourceCommit`
--   `source_branch` : 빌드하려는 브랜치 이름 
--   `linked_repository_name` : 빌드하려는 레포지토리 이름
--   `env` : 빌드 환경 설정 내용
-    -   `env_compute_spec` : 빌드하려는 컴퓨팅 환경 스펙 - `2cpu-4memory`,`4cpu-8memory`,`8cpu-16memory`
-    -   `env_platform_type` : 빌드하려는 컴퓨팅 환경 이미지 종류 - `SourceBuild`,`ContainerRegistry`,`PublicRegistry`
-    -   `env_platform_os_spec` : 사용할 OS 스펙 - `ubuntu-archiX64-16.04`
-    -   `env_platform_runtime_name` : 빌드 런타임 이름 - `base`,`java`,`dotnet`,`android_java`,`python`
-    -   `env_platform_runtime_version` : 빌드 런타임 버젼 - `1.0-1.0.0`,`2.0-1.0.0`,`3.0-1.0.0`,`4.0-1.0.0`,`5.0-1.0.0`
-    -   `env_timeout` : 빌드 시작 후 종료까지의 최대 대기시간(분), 5~540
-    -   `env_user_docker` : 도커 엔진 사용 여부 
-    -   `env_var` : 빌드에 사용할 환경 변수 
--   `build_command` : 빌드 관련 실행 명령어 
-    -   `pre_build_command` : 빌드 전에 사용할 명령어
-    -   `in_build_command` : 빌드 중에 사용할 명령어
-    -   `post_build_command` : 빌드 후에 사용할 명령어
--   `enable_cloud_log_analytics` : 클라우드 로그 분석에 빌드 로그 저장 여부
--   `enable_file_safer` : file safer 이용 안전 확인 여부
--   `artifact` : 빌드 결과물 저장 관련 설정
-    -   `save_build_results` : 빌드 결과 저장 여부
--   `upload` : 빌드 완료 후 이미지 업로드 설정
-    -   `upload_build_results` : 구축 환경의 저장 여부
-
-
-    
+-   `source_type` : ビルドターゲットタイプ - `SourceCommit`
+-   `source_branch` : ビルドしたいブランチの名前
+-   `linked_repository_name` : ビルドしたいレポジトリの名前
+-   `env` : ビルド環境設定内容
+    -   `env_compute_spec` : ビルドしようとしているコンピューティング環境のスペッ - `2cpu-4memory`,`4cpu-8memory`,`8cpu-16memory`
+    -   `env_platform_type` : ビルドしたいコンピューティング環境イメージの種類 - `SourceBuild`,`ContainerRegistry`,`PublicRegistry`
+    -   `env_platform_os_spec` : 使用する OS スペック - `ubuntu-archiX64-16.04`
+    -   `env_platform_runtime_name` : ビルドランタイム名 - `base`,`java`,`dotnet`,`android_java`,`python`
+    -   `env_platform_runtime_version` : ビルドランタイムバージョン - `1.0-1.0.0`,`2.0-1.0.0`,`3.0-1.0.0`,`4.0-1.0.0`,`5.0-1.0.0`
+    -   `env_timeout` : ビルド開始から終了までの最大待ち時間(分)、5~540
+    -   `env_user_docker` : Docker エンジンを使用有無
+    -   `env_var` : ビルドに使用する環境変数
+-   `build_command` : ビルド関連の実行コマンド
+    -   `pre_build_command` : ビルド前に使用するコマンド
+    -   `in_build_command` : ビルド中に使用するコマンド
+    -   `post_build_command` : ビルド後に使用するコマンド
+-   `enable_cloud_log_analytics` : クラウドログ分析にビルドログを保存するかどうか
+-   `enable_file_safer` : File safer の利用安全確認の可否
+-   `artifact` : ビルド結果物の保存に関する設定
+    -   `save_build_results` : ビルド結果保存の可否
+-   `upload` : ビルド完了後のイメージアップロード設定
+    -   `upload_build_results` : 構築環境保存の可否
 
 ---
 
-## 참고 자료
+## 参考資料
 
 -   [Source Build(Ncloud)](https://www.ncloud.com/product/devTools/sourceBuild)
 -   [ncloud_source_build(Terraform)](https://registry.terraform.io/providers/NaverCloudPlatform/ncloud/latest/docs/resources/nks_cluster)

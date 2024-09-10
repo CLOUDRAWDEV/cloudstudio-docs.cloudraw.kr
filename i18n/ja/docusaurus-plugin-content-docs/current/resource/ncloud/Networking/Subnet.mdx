@@ -1,13 +1,13 @@
 ---
 title: Subnet
 sidebar_position: 0
-tags: [Ncloud, 리소스, Network, Subnet]
+tags: [Ncloud, リソース, Network, Subnet]
 ---
 
 <hr />
 <br />
 
-## 리소스 아이콘
+## リソースアイコン
 
 <img
     src={
@@ -15,38 +15,38 @@ tags: [Ncloud, 리소스, Network, Subnet]
     }
 />
 
-## 리소스 개요
+## リソース概要
 
-네트워크 용도별 세분화가 가능한 VPC 하위 네트워크입니다.
+ネットワーク用途別の細分化が可能な VPC 下位ネットワークです。
 
-## 연관 리소스
+## 関連リソース
 
-### 상위 리소스
+### 上位リソース
 
--   [**Vpc**](https://docs.cstudio.app/docs/resource/ncloud/Networking/Vpc)
+-   [**Vpc**](https://docs.cstudio.app/ja/docs/resource/ncloud/Networking/Vpc)
 
-### 하위 리소스
+### 下位リソース
 
--   [**Server**](https://docs.cstudio.app/docs/resource/ncloud/Compute/Server)
--   [**Auto Scaling**](https://docs.cstudio.app/docs/resource/ncloud/Compute/AutoScaling)
--   [**Block Storage**](https://docs.cstudio.app/docs/resource/ncloud/Storage/BlockStorage)
+-   [**Server**](https://docs.cstudio.app/ja/docs/resource/ncloud/Compute/Server)
+-   [**Auto Scaling**](https://docs.cstudio.app/ja/docs/resource/ncloud/Compute/AutoScaling)
+-   [**Block Storage**](https://docs.cstudio.app/ja/docs/resource/ncloud/Storage/BlockStorage)
 
-### 연결 리소스
+### 接続リソース
 
--   [**Network Acl**](https://docs.cstudio.app/docs/resource/ncloud/Network/NetworkAcl)
+-   [**Network Acl**](https://docs.cstudio.app/ja/docs/resource/ncloud/Network/NetworkAcl)
 
-## 리소스 설정 값
+## リソース設定値
 
--   `subnet_cidr` : VPC 주소 범위 내의 서브넷 IP 주소 범위
--   `zone` : 서브넷이 위치할 물리적 지역 - `KR-1`, `KR-2`
--   `subnet_type` : 퍼블릭 혹은 프라이빗 서브넷 설정 - `PUBLIC`, `PRIVATE`
--   `usage_type` : 로드 밸런서 사용 여부 설정 - `GEN`, `BM`
--   `included_vpc_name` : 서브넷이 위치할 VPC 이름
--   `linked_nacl_name` : 서브넷에 대한 접근 제어를 위한 Network access control list
+-   `subnet_cidr` : VPC アドレス範囲内のサブネット IP アドレス範囲
+-   `zone` : サブネットが配置される物理的なゾーン - `KR-1`, `KR-2`
+-   `subnet_type` : インターネット接続、公用またはプライベート - `PUBLIC`, `PRIVATE`
+-   `usage_type` : ロードバランサーの使用可否の設定 - `GEN`, `BM`
+-   `included_vpc_name` : サブネットが配置される VPC の名前
+-   `linked_nacl_name` : ブネットへのアクセスを制御する Network access control list
 
 ---
 
-## 참고 자료
+## 参考資料
 
 -   [Subnet Management(Ncloud)](https://guide.ncloud-docs.com/docs/vpc-subnetmanage-vpc)
 -   [ncloud_subnet(Terraform)](https://registry.terraform.io/providers/NaverCloudPlatform/ncloud/latest/docs/resources/subnet)

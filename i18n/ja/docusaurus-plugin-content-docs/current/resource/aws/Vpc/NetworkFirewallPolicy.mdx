@@ -1,13 +1,13 @@
 ---
 title: NetworkFirewallPolicy
 sidebar_position: 0
-tags: [AWS, 리소스, Vpc, NetworkFirewallPolicy]
+tags: [AWS, リソース, Vpc, NetworkFirewallPolicy]
 ---
 
 <hr />
 <br />
 
-## 리소스 아이콘
+## リソースアイコン
 
 <img
     src={
@@ -15,40 +15,39 @@ tags: [AWS, 리소스, Vpc, NetworkFirewallPolicy]
     }
 />
 
-## 리소스 개요
+## リソース概要
 
-AWS Network Firewall Policy는 Network Firewall에 대한 모니터링 및 보호 동작을 정의합니다.
-## 연관 리소스
+AWS Network Firewall Policy は Network Firewall に対するモニタリング及び保護動作を定義します。
 
-### 상위 리소스
+## 関連リソース
 
--   [**Region**](https://docs.cstudio.app/docs/resource/aws/Base/Region)
+### 上位リソース
 
-### 연결 리소스
+-   [**Region**](https://docs.cstudio.app/ja/docs/resource/aws/Base/Region)
 
--   [**Network Firewall**](https://docs.cstudio.app/docs/resource/aws/Vpc/NetworkFirewall)
--   [**Network Firewall Rule Group**](https://docs.cstudio.app/docs/resource/aws/Vpc/NetworkFirewallRuleGroup)
+### 接続リソース
 
+-   [**Network Firewall**](https://docs.cstudio.app/ja/docs/resource/aws/Vpc/NetworkFirewall)
+-   [**Network Firewall Rule Group**](https://docs.cstudio.app/ja/docs/resource/aws/Vpc/NetworkFirewallRuleGroup)
 
-## 리소스 설정 값
+## リソース設定値
 
--   `description` : 방화벽 정책에 대한 설명
--   `stream_exception_policy` : 미드스트림이 끊어진 트래픽을 처리하는 방법 - `drop`,`continue`,`reject`
--   `stateless_default_action` : stateless_default_action 설정
--   `stateless_default_action.enabled_fragment_packet_action` : 조각 패킷 작업을 활성화 여부 - `false`,`true`
--   `stateless_default_action.default_action` : 패킷이 정책의 상태 비저장 규칙과 일치하지 않을 경우 수행할 작업 목록 - `aws:drop`,`aws:pass`,`aws:forward_to_sfe`
--   `stateless_rule_group_names` : 정책에 사용되는 상태 stateless 규칙 그룹
--   `stateful_default_action` : stateful 기본 action의 구성
--   `stateful_default_action.rule_evaluation_order` : 정책에 대한 상태 규칙 평가 순서를 관리하는 방법
--   `stateful_default_action.default_actions` : 패킷이 정책의 상태 저장 규칙과 일치하지 않을 경우 수행할 작업 목록 - `aws:drop_strict`,`aws:drop_established`,`aws:alert_strict`,`aws:alert_established`
--   `strict_stateful_rule_group_names` : 패킷이 정책의 상태 규칙과 일치하지 않을 경우 수행할 작업 목록
--   `rule_variables` : 방화벽 정책에서 기본 수리 데이터 설정을 재정의하는 데 사용할 수 있는 변수
--   `encryption_configuration.enabled_custom_configuration` : AWS 관리형 키를 사용하여 데이터를 암호화 - `false`,`true`
-
+-   `description` : Firewall ポリシーの説明
+-   `stream_exception_policy` : ミッドストリームが切断されたトラフィックを処理する方法 - `drop`,`continue`,`reject`
+-   `stateless_default_action` : stateless_default_action の設定
+-   `stateless_default_action.enabled_fragment_packet_action` : フラグメントパケットアクションの活性化可否 - `false`,`true`
+-   `stateless_default_action.default_action` : パケットがポリシーのステータス非保存ルールと一致しない場合に実行するワークリスト - `aws:drop`,`aws:pass`,`aws:forward_to_sfe`
+-   `stateless_rule_group_names` : ポリシーに使用されるステータス stateless ルールグループ
+-   `stateful_default_action` : stateful 基本アクションの構成
+-   `stateful_default_action.rule_evaluation_order` : ポリシーのステータスルールの評価手順を管理する方法
+-   `stateful_default_action.default_actions` : パケットがポリシーのステータス保存ルールと一致しない場合に実行するタスクのリスト - `aws:drop_strict`,`aws:drop_established`,`aws:alert_strict`,`aws:alert_established`
+-   `strict_stateful_rule_group_names` : パケットがポリシーのステータスルールと一致しない場合に実行するワークリスト
+-   `rule_variables` : Firewall ポリシーでデフォルトの修理データ設定を再定義するために使用できる変数
+-   `encryption_configuration.enabled_custom_configuration` : AWS 管理型キーを使用してデータを暗号化 - `false`,`true`
 
 ---
 
-## 참고 자료
+## 参考資料
 
 -   [NetworkFirewallPolicy(AWS)](https://docs.aws.amazon.com/network-firewall/latest/developerguide/firewall-policies.html)
 -   [NetworkFirewallPolicy(Terraform)](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/networkfirewall_firewall_policy)

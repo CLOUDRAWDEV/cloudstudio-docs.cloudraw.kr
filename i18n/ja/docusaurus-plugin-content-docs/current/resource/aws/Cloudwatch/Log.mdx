@@ -1,13 +1,13 @@
 ---
 title: Log
 sidebar_position: 0
-tags: [AWS, 리소스, Cloudwatch, Log]
+tags: [AWS, リソース, Cloudwatch, Log]
 ---
 
 <hr />
 <br />
 
-## 리소스 아이콘
+## リソースアイコン
 
 <img
     src={
@@ -15,32 +15,35 @@ tags: [AWS, 리소스, Cloudwatch, Log]
     }
 />
 
-## 리소스 개요
+## リソース概要
 
-Amazon CloudWatch Logs를 사용하여 Amazon Elastic Compute Cloud(Amazon EC2) 인스턴스, AWS CloudTrail, Route 53 및 다른 원본에서 시스템, 애플리케이션 및 사용자 지정 로그 파일을 모니터링, 저장 및 액세스할 수 있습니다.
-CloudWatch Logs는 확장성이 뛰어난 단일 서비스에서 사용하는 모든 시스템, 애플리케이션 및 AWS 서비스에서 로그를 중앙 집중화할 수 있습니다. 그런 다음 로그를 쉽게 보고, 특정 오류 코드 또는 패턴이 있는지 검색하고, 특정 필드를 기반으로 필터링하거나, 향후 분석을 위해 안전하게 보관할 수 있습니다. CloudWatch Logs를 사용하면 소스와 관계없이 모든 로그를 시간별로 정렬된 일관된 단일 이벤트 흐름으로 볼 수 있으며, 다른 차원을 기준으로 쿼리 및 정렬하고, 특정 필드별로 그룹화하고, 강력한 쿼리 언어로 사용자 지정 계산을 생성하고, 로그 데이터를 시각화할 수 있습니다.
+Amazon CloudWatch Logs を使用して Amazon Elastic Compute Cloud(Amazon EC2)インスタンス、AWS CloudTrail、Route 53 および他のソースから
+システム、アプリケーション、およびユーザー指定ログファイルをモニタリング、保存、およびアクセスすることができます。
+CloudWatch Logs は 拡張性に優れた単一サービスで使用するすべてのシステム、アプリケーション、および AWS サービスでログを集中化できます。
+次に、ログを簡単に見て、特定のエラー コードまたはパターンがあるかどうかを検索し、特定のフィールドに基づいてフィルタリングするか、または将来の分析のために安全に保管できます。
+CloudWatch Logs を使用すると、ソースに関係なくすべてのログを時間別に整列された一貫した単一イベントの流れとして見ることができ、他の次元を基準にクエリー及び整列し、特定のフィールド別にグループ化し、強力なクエリー言語でユーザ指定計算を生成し、ログデータを視覚化することができます。
 
-## 연관 리소스
+## 関連リソース
 
-### 상위 리소스
+### 上位リソース
 
--   [**Region**](https://docs.cstudio.app/docs/resource/aws/Base/Region)
+-   [**Region**](https://docs.cstudio.app/ja/docs/resource/aws/Base/Region)
 
-## 리소스 설정 값
+## リソース設定値
 
--   `retention_in_days` : 로그 그룹에서 로그를 저장하고 있는 기간
--   `kms_key_name` : 로그 데이터를 암호화하기 위해 사용할 kms key의 이름
--   `log_stream_name` : 로그 Stream의 이름
--   `metric_filter` : 로그 그룹의 metric 필터의 이름, 최대 512자
-    -   `pattern` : 수집된 로그 이벤트에서 지표 데이터를 추출하기 위한 유효한 CloudWatch Logs 필터 패턴
-    -   `metric_name` : 모니터링되는 로그 정보를 게시해야 하는 CloudWatch 지표의 이름, 최대 255자로 지정, 콜론(:), 별표(\*), 달러 기호($) 및 공백( )을 제외한 모든 문자가 유효
-    -   `metric_namespace` : CloudWatch 지표의 대상 네임스페이스, 최대 255자로 지정, 콜론(:), 별표(\*), 달러 기호($) 및 공백( )을 제외한 모든 문자가 유효
-    -   `metric_value` : 측정항목에 게시할 항목, 유효한 지표 값은 부동 소수점 수(1, 99.9 등), 숫자 필드 식별자(1 USD, 2 USD 등) 또는 명명된 필드 식별자(예: 기호로 구분된 필터 패턴의 $requestSize 또는 JSON 기반 필터 패턴의 $.status - 달러 기호($) 또는 달러 기호와 점($.) 뒤에 영숫자 및/또는 밑줄(\_) 문자)
+-   `retention_in_days` : ロググループでログを保存している期間
+-   `kms_key_name` : ログデータを暗号化するために使用する KMS Key の名前
+-   `log_stream_name` : ログ Stream の名前
+-   `metric_filter` : ロググループの metric フィルターの名前、最大 512 文字
+    -   `pattern` : 収集されたログイベントから指標データを抽出するための有効な CloudWatch Logs フィルターパターン
+    -   `metric_name` : モニタリングされるログ情報を掲示しなければならない CloudWatch 指標の名前、最大 255 文字に指定、コロン(:)、星印(\*)、ドル記号($)、および空白()を除くすべての文字が有効
+    -   `metric_namespace` : CloudWatch 指標の対象ネームスペース、最大 255 文字で指定、コロン(:)、星印(\*)、ドル記号($)および空白()を除いたすべての文字が有効
+    -   `metric_value` : 測定項目に掲示する項目、有効な指標値は浮動小数点数(1,99.9 など)、数字フィールド識別子(1USD、2USD など)または命名されたフィールド識別子(例:記号で区分されたフィルターパターンの$requestSizeまたはJSONベースのフィルターパターンの$.status - ドル記号($)またはドル記号と点($.)の後に英数字および/または下線(\_)文字)
 
 ---
 
-## 참고 자료
+## 参考資料
 
 -   [Amazon CloudWatch Log(AWS)](https://docs.aws.amazon.com/ko_kr/AmazonCloudWatchLogs/latest/APIReference/Welcome.html)
--   [Amazon CloudWatch 가격(AWS)](https://aws.amazon.com/ko/cloudwatch/pricing/?nc2=type_a)
+-   [Amazon CloudWatch 価格(AWS)](https://aws.amazon.com/ko/cloudwatch/pricing/?nc2=type_a)
 -   [Amazon CloudWatch Log(Terraform)](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_log_data_protection_policy)

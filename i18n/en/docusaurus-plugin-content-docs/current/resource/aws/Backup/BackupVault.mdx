@@ -1,13 +1,13 @@
 ---
 title: BackupVault
 sidebar_position: 0
-tags: [AWS, 리소스, Backup, BackupVault]
+tags: [AWS, Resource, Backup, BackupVault]
 ---
 
 <hr />
 <br />
 
-## 리소스 아이콘
+## Resource Icon
 
 <img
     src={
@@ -15,31 +15,31 @@ tags: [AWS, 리소스, Backup, BackupVault]
     }
 />
 
-## 리소스 개요
+## Resource Overview
 
-AWS Backup에서 Backup Vault는 백업을 저장하고 구성하는 컨테이너입니다. 
-Backup Vault를 생성할 때, 이 볼트에 있는 일부 백업을 암호화하는 AWS KMS 암호화키를 지정해야 합니다. 
-
-
-### 상위 리소스
-
--   [**Base**](https://docs.cstudio.app/docs/resource/aws/Base/)
-
-## 연관 리소스
+In AWS Backup, a Backup Vault is a container for storing and managing backups. 
+When creating a Backup Vault, you must specify an AWS KMS encryption key to encrypt some of the backups in the vault.
 
 
-## 리소스 설정 값
+### Parent Resource
 
--   `kms_key_name` : 백업을 보호하는 데 사용되는 서버 측 암호화 키
--   `lock_configuration` : AWS Backup vault lock 구성 리소스
-    -   `lock_configuration.enabled_lock` : vault lock 사용 여부 - `false`,`true`
-        -   `lock_configuration.enabled_lock.lock_mode` : vault lock 유형 - `Governance`,`Compliance`
-        -   `lock_configuration.enabled_lock.min_retention_days` : vault가 복구 지점을 유지하는 최소 보존 기간 - `1~36500`
-        -   `lock_configuration.enabled_lock.max_retention_days` : vault가 복구 지점을 유지하는 최대 보존 기간 - `1~36500`
+-   [**Base**](https://docs.cstudio.app/en/docs/resource/aws/Base/)
+
+## Associated Resources
+
+
+## Resource Setting Values
+
+-   `kms_key_name` : The server-side encryption key that is used to protect your backups
+-   `lock_configuration` : AWS Backup vault lock configuration resource
+    -   `lock_configuration.enabled_lock` : Whether to enable vault lock - `false`,`true`
+        -   `lock_configuration.enabled_lock.lock_mode` : The mode of vault lock - `Governance`, `Compliance`
+        -   `lock_configuration.enabled_lock.min_retention_days` : The minimum retention period that the vault retains its recovery points - `1~36500`
+        -   `lock_configuration.enabled_lock.max_retention_days` : The maximum retention period that the vault retains its recovery points - `1~36500`
 
 ---
 
-## 참고 자료
+## Reference Materials
 
 -   [Amazon BackupVault(AWS)](https://docs.aws.amazon.com/ko_kr/aws-backup/latest/devguide/create-a-vault.html)
 -   [Amazon BackupVault(Terraform)](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/backup_vault)

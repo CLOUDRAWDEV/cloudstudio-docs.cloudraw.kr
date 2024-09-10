@@ -1,13 +1,13 @@
 ---
 title: Server
 sidebar_position: 0
-tags: [Ncloud, 리소스, Compute, Server]
+tags: [Ncloud, リソース, Compute, Server]
 ---
 
 <hr />
 <br />
 
-## 리소스 아이콘
+## リソースアイコン
 
 <img
     src={
@@ -15,34 +15,35 @@ tags: [Ncloud, 리소스, Compute, Server]
     }
 />
 
-## 리소스 개요
+## リソース概要
 
-실제 하드웨어를 관리하지 않아도 가상화의 유연성을 제공하는 컴퓨팅 리소스입니다. 클라우드 환경에 서버를 생성하여 시간과 비용 측면에서 효율적이며 인프라 운영이 부담되거나 일시적으로 많은 서버 자원이 필요한 경우에 적합합니다.
+実際のハードウェアを管理しなくても、仮想化の柔軟性を提供するコンピューティング リソースです。
+クラウド環境にサーバーを生成し、時間とコストの面で効率的でインフラ運用が負担になったり、一時的に多くのサーバーリソースが必要な場合に適しています。
 
-## 연관 리소스
+## 関連リソース
 
-### 상위 리소스
--   [**Subnet**](https://docs.cstudio.app/docs/resource/ncloud/Networking/Subnet)
+### 上位リソース
 
-### 연결 리소스
+-   [**Subnet**](https://docs.cstudio.app/ja/docs/resource/ncloud/Networking/Subnet)
 
--   [**BlockStorage**](https://docs.cstudio.app/docs/resource/ncloud/Storage/BlockStorage)
--   [**PublicIp**](https://docs.cstudio.app/docs/resource/ncloud/Networking/PublicIP)
--   [**TargetGroup**](https://docs.cstudio.app/docs/resource/ncloud/Networking/TargetGroup)
+### 接続リソース
 
-## 리소스 설정 값
+-   [**BlockStorage**](https://docs.cstudio.app/ja/docs/resource/ncloud/Storage/BlockStorage)
+-   [**PublicIp**](https://docs.cstudio.app/ja/docs/resource/ncloud/Networking/PublicIP)
+-   [**TargetGroup**](https://docs.cstudio.app/ja/docs/resource/ncloud/Networking/TargetGroup)
 
--   `includ_subnet_name` : 서버가 위치하는 Subnet 이름
--   `server_image_product_code` : 사용할 운영체제 이미지 코드
--   `server_product_code` : 서버의 하드웨어 구성을 위한 코드
--   `login_key_name` : 사용할 login_key 이름
--   `init_script` : 사용할 init_script 이름
--   `is_encrypted_base_block_storage_volume` : 스토리지 암호화 여부
--   `linked_network_interface_name` : 서버에 할당하는 네트워크 인터페이스
+## リソース設定値
 
+-   `included_subnet_name` : サーバーが位置する Subnet の名前
+-   `server_image_product_code` : 使用するオペレーティングシステムイメージコード
+-   `server_product_code` : サーバーのハードウェア構成用のコード
+-   `login_key_name` : 使用する Login key の名前
+-   `init_script` : 使用する Init script の名前
+-   `is_encrypted_base_block_storage_volume` : ブロックストレージを暗号化するかどうかの可否
+-   `linked_network_interface_name` : サーバーに割り当てるネットワーク インターフェイス
 
 ---
 
-## 참고 자료
+## 参考資料
 
 -   [ncloud_server(Terraform)](https://registry.terraform.io/providers/NaverCloudPlatform/ncloud/latest/docs/resources/server)

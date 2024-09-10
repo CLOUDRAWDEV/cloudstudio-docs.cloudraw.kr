@@ -1,13 +1,13 @@
 ---
 title: ResolverEndpoint
 sidebar_position: 0
-tags: [AWS, 리소스, Route53, ResolverEndpoint]
+tags: [AWS, リソース, Route53, ResolverEndpoint]
 ---
 
 <hr />
 <br />
 
-## 리소스 아이콘
+## リソースアイコン
 
 <img
     src={
@@ -15,30 +15,30 @@ tags: [AWS, 리소스, Route53, ResolverEndpoint]
     }
 />
 
-## 리소스 개요
+## リソース概要
 
-Amazon Vpc와 송수신하는 DNS 쿼리에 대한 엔드포인트 서비스
+Amazon Vpc と送受信する DNS クエリに対するエンドポイントサービス
 
-### 상위 리소스
+### 上位リソース
 
--   [**Region**](https://docs.cstudio.app/docs/resource/aws/Base/Region)
+-   [**Region**](https://docs.cstudio.app/ja/docs/resource/aws/Base/Region)
 
-### 연결 리소스
+### 接続リソース
 
--   [**Vpc**](https://docs.cstudio.app/docs/resource/aws/Vpc/Vpc)
--   [**SecurityGroup**](https://docs.cstudio.app/docs/resource/aws/Vpc/SecurityGroup)
--   [**ResolverRule**](https://docs.cstudio.app/docs/resource/aws/Route53/ResolverRule)
+-   [**Vpc**](https://docs.cstudio.app/ja/docs/resource/aws/Vpc/Vpc)
+-   [**SecurityGroup**](https://docs.cstudio.app/ja/docs/resource/aws/Vpc/SecurityGroup)
+-   [**ResolverRule**](https://docs.cstudio.app/ja/docs/resource/aws/Route53/ResolverRule)
 
-## 리소스 설정 값
+## リソース設定値
 
--   `direction` : DNS 쿼리 방향 - `INBOUND`, `OUTBOUND`
--   `linked_vpc_name` : 엔드포인트와 연결할 VPC 이름
--   `linked_security_group_names` : 엔드포인트에 대한 보안 그룹 이름
--   `ip_address` : IP 주소에 대한 이름
+-   `direction` : DNS クエリ方向 - `INBOUND`, `OUTBOUND`
+-   `linked_vpc_name` : エンドポイントと接続する VPC 名
+-   `linked_security_group_names` : エンドポイントのセキュリティグループ名
+-   `ip_address` : IP アドレスの名前
 
 ---
 
-## 참고 자료
+## 参考資料
 
 -   [Amazon Resolver Endpoint(AWS)](https://docs.aws.amazon.com/ko_kr/Route53/latest/DeveloperGuide/resolver.html)
 -   [Amazon Resolver Endpoint(Terraform)](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route53_resolver_endpoint)

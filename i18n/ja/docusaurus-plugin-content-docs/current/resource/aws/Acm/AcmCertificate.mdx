@@ -1,13 +1,13 @@
 ---
 title: AcmCertificate
 sidebar_position: 0
-tags: [AWS, 리소스, AcmCertificate]
+tags: [AWS, リソース, AcmCertificate]
 ---
 
 <hr />
 <br />
 
-## 리소스 아이콘
+## リソースアイコン
 
 <img
     src={
@@ -15,26 +15,24 @@ tags: [AWS, 리소스, AcmCertificate]
     }
 />
 
-## 리소스 개요
+## リソース概要
 
-ACM Certificate 리소스를 사용하면 Amazon Certificate Manager에서 인증서를 요청하고 관리할 수 있습니다.
+ACM Certificate リソースを使用すると、Amazon Certificate Manager で認証書を要請及び管理することができます。
 
-### 상위 리소스
+### 上位リソース
 
--   [**Region**](https://docs.cstudio.app/docs/resource/aws/Base/Region)
+-   [**Region**](https://docs.cstudio.app/ja/docs/resource/aws/Base/Region)
 
-## 연관 리소스
+## 関連リソース
 
+## リソース設定値
 
-## 리소스 설정 값
+-   `enabled_import` : 証明書インポート
+-   `certificate_body` : インポートする証明書の PEM-encoded
+-   `certificate_private_key` : インポートする証明書の PEM-encoded プライベートキー
+-   `certificate_chain` : インポートする証明書の PEM-encoded 証明書 chain
 
--   `enabled_import` : 인증서 불러오기
--   `certificate_body` : 불러올 인증서의 PEM 인코딩된 본문
--   `certificate_private_key` : 불러올 인증서의 PEM 인코딩된 프라이빗 키
--   `certificate_chain` : 불러올 인증서의 PEM 인코딩된 인증서 체인
-
-## 참고 자료
+## 参考資料
 
 -   [Amazon AcmCertificate(AWS)](https://docs.aws.amazon.com/ko_kr/acm/latest/userguide/acm-overview.html)
 -   [Amazon AcmCertificate(Terraform)](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/acm_certificate)
-

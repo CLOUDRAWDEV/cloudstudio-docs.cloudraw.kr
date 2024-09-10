@@ -1,13 +1,13 @@
 ---
 title: SourceDeployStage
 sidebar_position: 0
-tags: [Ncloud, 리소스, DeveloperTool, SourceDeployStage]
+tags: [Ncloud, Resource, DeveloperTool, SourceDeployStage]
 ---
 
 <hr />
 <br />
 
-## 리소스 아이콘
+## Resource Icon
 
 <img
     src={
@@ -15,43 +15,42 @@ tags: [Ncloud, 리소스, DeveloperTool, SourceDeployStage]
     }
 />
 
-## 리소스 개요
+## Resource Overview
 
-생성한 SourceDeploy 프로젝트에 Deploy Stage를 추가/수정/삭제하거나 배포 타깃이 없는 배포 Stage에 배포 타깃을 생성할 수 있습니다.
-
-
-
-## 연관 리소스
-
-### 상위 리소스
-
-### 하위 리소스
+You can add, modify, or delete Deploy Stages in the SourceDeploy project you created, or create deployment targets for Deploy Stages that currently do not have any targets.
 
 
+## Associated Resources
 
-## 리소스 설정 값
+### Parent Resource
 
--   `included_source_deploy_name` : SourceDeploy 프로젝트 이름
--   `target_type` : 배포 대상의 유형 - `Server`,`AutoScalingGroup`,`KubernetesService`,`ObjectStorage`
--   `linked_server_list` : 연결할 서버 이름 리스트
--   `included_subnet_names` : 클러스터를 구성할 서브넷 이름 목록, 최대 3개
--   `scenario` : 배포 환경을 실행할 수 있는 배포 시나리오
-    -   `deploy_scenario_description` : source deploy 프로젝트 설명
-    -   `deploy_scenario_strategy` : 배포 전략 - `normal`,`blueGreen`,`rolling`,`canary`
-    -   `deploy_scenario_file_type` : 배포 시나리오의 파일 타입 - `SourceBuild`,`ObjectStorage`,`later`
-    -   `linked_source_build_project` : source build 프로젝트의 이름 
-    -   `rollback` : 배포 실패 시 롤백할 지 여부
-    -   `pre_deploy_user` : 배포 전 실행 계정
-    -   `pre_deploy_command` : 배포 전 실행 명령어
-    -   `source_path_command` : 배포할 원본 파일 경로
-    -   `deploy_path_command` : 배포할 경로
-    -   `post_deploy_user` : 배포 후 실행 계정
-    -   `post_deploy_command` : 배포 후 실행 명령어
+### Child Resource
+
+
+
+## Resource Setting Values
+
+-   `included_source_deploy_name` : The name of Sourcedeploy project
+-   `target_type` : The type of deploy target - `Server`,`AutoScalingGroup`,`KubernetesService`,`ObjectStorage`
+-   `linked_server_list` : The list of server name to use
+-   `included_subnet_names` : The list of Subnet names to configure the Cluster, Up to 3
+-   `scenario` : Scenario to run deployment environment
+    -   `deploy_scenario_description` : Source deploy project description
+    -   `deploy_scenario_strategy` : Deployment strategy - `normal`,`blueGreen`,`rolling`,`canary`
+    -   `deploy_scenario_file_type` : File type of scenario - `SourceBuild`,`ObjectStorage`,`later`
+    -   `linked_source_build_project` : The name of Source Biuld project
+    -   `rollback` : Whether to use rollback on deployment failure
+    -   `pre_deploy_user` : Account used for pre-deployment execution
+    -   `pre_deploy_command` : Command executed before deployment
+    -   `source_path_command` : Path to the source files to be deployed
+    -   `deploy_path_command` : Path where the files will be deployed
+    -   `post_deploy_user` : Account used for post-deployment execution
+    -   `post_deploy_command` : Command executed after deployment
   
 
 ---
 
-## 참고 자료
+## Reference Materials
 
 -   [Source Deploy Stage(Ncloud)](https://www.ncloud.com/product/devTools/sourceDeploy)
--   [ncloud_source_deploy_stage(Terraform)](https://registry.terraform.io/providers/NaverCloudPlatform/ncloud/latest/docs/resources/sourcedeploy_project_stage)
+-   [ncloud_source_deploy_stage(Terraform)](https://registry.terraform.io/providers/NaverCloudPlatform/ncloud/latest/en/docs/resources/sourcedeploy_project_stage)

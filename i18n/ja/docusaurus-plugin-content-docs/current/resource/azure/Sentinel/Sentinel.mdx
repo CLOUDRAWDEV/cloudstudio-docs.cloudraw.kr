@@ -1,13 +1,13 @@
 ---
 title: Sentinel
 sidebar_position: 0
-tags: [Azure, 리소스, Sentinel]
+tags: [Azure, リソース, Sentinel]
 ---
 
 <hr />
 <br />
 
-## 리소스 아이콘
+## リソースアイコン
 
 <img
     src={
@@ -15,60 +15,60 @@ tags: [Azure, 리소스, Sentinel]
     }
 />
 
-## 리소스 개요
+## リソース概要
 
-Azure Sentinel은 Microsoft Azure에서 제공하는 클라우드 네이티브 SIEM(보안 정보 및 이벤트 관리) 서비스입니다.
-전사적으로 지능형 보안 분석 및 위협 인텔리전스를 제공하여 사이버 위협으로부터 조직의 IT 인프라와 자산을 보호하는 포괄적인 보안 솔루션을 제공합니다.
-Azure Sentinel은 서버, 네트워크, 애플리케이션 및 디바이스와 같은 다양한 소스에서 데이터를 수집하여 조직 전체의 보안 위협에 대한 통합 보기를 제공합니다.
-고급 분석 및 기계 학습 알고리즘을 사용하여 실시간으로 위협을 탐지하고 대응합니다.
+Azure Sentinel は Microsoft Azure が提供するクラウドネイティブ SIEM(セキュリティ情報およびイベント管理)サービスです。
+全社的に知能型セキュリティ分析および脅威インテリジェンスを提供し、サイバー脅威から組織の IT インフラと資産を保護する包括的なセキュリティソリューションを提供します。
+Azure Sentinel はサーバ、ネットワーク、アプリケーション、デバイスなどの様々なソースからデータを収集し、組織全体のセキュリティ脅威に対する統合ビューを提供します。
+高度な分析と機械学習アルゴリズムを使用して、リアルタイムで脅威を検出し、対応します。
 
-## 연관 리소스
+## 関連リソース
 
-### 상위 리소스
+### 上位リソース
 
 -   [**Resource Group**](https://docs.cstudio.app/docs/resource/azure/Base/ResourceGroup)
 
-### 연결 리소스
+### 接続リソース
 
 -   [**Log Analytics Workspace**](https://docs.cstudio.app/docs/resource/azure/LogAnalytics/LogAnalyticsWorkspace)
 
-## 리소스 설정 값
+## リソース設定値
 
--   `linked_workspace_name` : Sentinel을 연결할 Log Analytics Workspace의 이름
+-   `linked_workspace_name` : Sentinel を接続する Log Analytics Workspace の名前
 
--   `connect_security_center` : Sentinel에 Microsoft Defender for Cloud Data Connector를 연결할지 - `true`,`false`
--   `connect_threat_intelligence` : Sentinel에 위협 인테리전스 플랫폼(미리보기) Data Connector를 연결할지 - `true`,`false`
+-   `connect_security_center` : Sentinel に Microsoft Defender for Cloud Data Connector 接続の可否 - `true`,`false`
+-   `connect_threat_intelligence` : Sentinel に脅威インテリジェンスプラットフォーム(プレビュー)Data Connector 接続の可否 - `true`,`false`
 
--   `connect_advanced_threat_protection` : Sentinel에 Microsoft Defender for Identity Data Connector를 연결할지 - `true`,`false`
+-   `connect_advanced_threat_protection` : Sentinel に Microsoft Defender for Identity Data Connector 接続の可否 - `true`,`false`
 
--   `connect_microsoft_defender` : Sentinel에 엔드포인트 용 Microsoft Defender Data Connector를 연결할지 - `true`,`false`
+-   `connect_microsoft_defender` : Sentinel にエンドポイント用 Microsoft Defender Data Connector 接続の可否 - `true`,`false`
 
--   `connect_office_365` : Sentinel에 Office 365 Data Connector를 연결할지 - `true`,`false`
+-   `connect_office_365` : Sentinel に Office 365 Data Connector 接続の可否 - `true`,`false`
 
 -   `connect_cloud_app_security` - `true`,`false`
 
--   `fusion_rule_rule_guid` : Sentinel에 Microsoft Defender for Cloud Apps Data Connector를 연결할지
+-   `fusion_rule_rule_guid` : Sentinel に Microsoft Defender for Cloud Apps Data Connector 接続の可否
 
--   `behavior_analytics_rule_guid` : Sentinel ML Behavior Analytics Rule의 GUID list
+-   `behavior_analytics_rule_guid` : Sentinel ML Behavior Analytics Rule の GUID list
 
 -   `alert_rule_incident`
 
-    -   `display_name` : Sentinel MS Security Incident Alert Rule의 display name
-    -   `product` : 경고가 생성될 Microsoft 보안 서비스
-    -   `severity` : MS Security Incident Alert가 발생하는 심각도 수준 - `High`,`Medium`,`Low`,`Informational`
+    -   `display_name` : Sentinel MS Security Incident Alert Rule の display name
+    -   `product` : 警告が生成される Microsoft セキュリティサービス
+    -   `severity` : MS Security Incident Alert が発生する重大度レベル - `High`,`Medium`,`Low`,`Informational`
 
 -   `alert_rule_scheduled`
 
-    -   `display_name` : Sentinel Scheduled Query Rule의 display name
-    -   `severity` : Sentinel Scheduled Alert Rule의 심각도 - `High`,`Medium`,`Low`,`Informational`
-    -   `query` : Sentinel Scheduled Alert Rule의 쿼리문
+    -   `display_name` : Sentinel Scheduled Query Rule の display name
+    -   `severity` : Sentinel Scheduled Alert Rule の重大度レベル - `High`,`Medium`,`Low`,`Informational`
+    -   `query` : Sentinel Scheduled Alert Rule のクエリ
 
--   `tag` : 리소스를 카테고리로 분류하기 위한 태그 - 최대 512자, `key`:`value`
+-- `tag` : リソースをカテゴリに分類するためのタグ - 最大 512 文字, `key`:`value`
 
 ---
 
-## 참고 자료
+## 参考資料
 
 -   [Azure Sentinel(Microsoft)](https://learn.microsoft.com/ko-kr/azure/sentinel/overview)
--   [Azure Sentinel 가격](https://azure.microsoft.com/en-us/pricing/details/microsoft-sentinel/)
+-   [Azure Sentinel 価格](https://azure.microsoft.com/en-us/pricing/details/microsoft-sentinel/)
 -   [Azure Sentinel(Terraform)](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/log_analytics_solution)

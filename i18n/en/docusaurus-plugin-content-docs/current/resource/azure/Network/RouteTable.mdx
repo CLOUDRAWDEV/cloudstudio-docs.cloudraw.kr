@@ -1,13 +1,13 @@
 ---
 title: RouteTable
 sidebar_position: 11
-tags: [Azure, 리소스, Network, RouteTable]
+tags: [Azure, Resource, Network, RouteTable]
 ---
 
 <hr />
 <br />
 
-## 리소스 아이콘
+## Resource Icon
 
 <img
     src={
@@ -15,45 +15,45 @@ tags: [Azure, 리소스, Network, RouteTable]
     }
 />
 
-## 리소스 개요
+## Resource Overview
 
-Azure 경로 테이블은 VNet(가상 네트워크) 내의 서브넷 간 및 VNet 간에 네트워크 트래픽을 라우팅하는 데 도움이 되는 Microsoft Azure에서 제공하는 서비스입니다.
-경로 테이블에는 서브넷 또는 VNet에서 대상으로의 네트워크 트래픽 경로를 정의하는 경로라는 규칙 집합이 포함되어 있습니다.
-경로 테이블은 가상 네트워크의 서브넷 간 트래픽 흐름을 제어하고 가상 머신에 대한 사용자 지정 라우팅 경로를 제공하는 데 유용합니다.
-경로 테이블에서 경로를 정의하면 특정 네트워크 인터페이스, 게이트웨이 또는 서비스 엔드포인트를 통해 특정 대상으로 트래픽을 보낼 수 있습니다.
-Azure에서 경로 테이블을 서브넷과 연결할 수 있으며 해당 서브넷의 모든 리소스는 연결된 경로 테이블에 정의된 경로를 자동으로 사용합니다.
-경로 테이블을 가상 네트워크 게이트웨이와 연결하여 가상 네트워크 간의 트래픽 라우팅을 제어할 수도 있습니다.
+Azure Route Table is a Microsoft Azure service that helps route network traffic between subnets within a Virtual Network (VNet) and across VNets. 
+A route table contains a set of rules, known as routes, which define the network traffic paths to targets from subnets or VNets. 
+Route tables are useful for controlling traffic flow between subnets in a virtual network and for providing custom routing paths to virtual machines. 
+By defining routes in a route table, you can direct traffic to specific targets through particular network interfaces, gateways, or service endpoints.
+In Azure, you can associate a route table with a subnet, and all resources in that subnet will automatically use the routes defined in the associated route table. 
+Additionally, you can connect route tables to virtual network gateways to control traffic routing between virtual networks.
 
-## 연관 리소스
+## Associated Resources
 
-### 상위 리소스
+### Parent Resource
 
--   [**Resource Group**](https://docs.cstudio.app/docs/resource/azure/Base/ResourceGroup)
--   [- [**Subnet**](https://docs.cstudio.app/docs/resource/azure/Network/Subnet)](https://docs.cstudio.app/docs/resource/azure/Network/Subnet)
+-   [**Resource Group**](https://docs.cstudio.app/den/ocs/resource/azure/Base/ResourceGroup)
+-   [- [**Subnet**](https://docs.cstudio.app/en/docs/resource/azure/Network/Subnet)](https://docs.cstudio.app/docs/resource/azure/Network/Subnet)
 
-### 연결 리소스
+### Connected Resources
 
--   [**Container Registry**](https://docs.cstudio.app/docs/resource/azure/Container/ContainerRegistry)
--   [**Mysql**](https://docs.cstudio.app/docs/resource/azure/Database/Mysql)
--   [**Mssql Database**](https://docs.cstudio.app/docs/resource/azure/Database/MssqlDatabase)
--   [**Postgresql**](https://docs.cstudio.app/docs/resource/azure/Database/Postgresql)
--   [**Key Vault**](https://docs.cstudio.app/docs/resource/azure/KeyVault)
--   [**Application Gateway**](https://docs.cstudio.app/docs/resource/azure/Network/ApplicationGateway)
--   [**Redis Cache**](https://docs.cstudio.app/docs/resource/azure/RedisCache/)
--   [**Storage Account**](https://docs.cstudio.app/docs/resource/azure/Storage/StorageAccount)
+-   [**Container Registry**](https://docs.cstudio.app/en/docs/resource/azure/Container/ContainerRegistry)
+-   [**Mysql**](https://docs.cstudio.app/en/docs/resource/azure/Database/Mysql)
+-   [**Mssql Database**](https://docs.cstudio.app/en/docs/resource/azure/Database/MssqlDatabase)
+-   [**Postgresql**](https://docs.cstudio.app/en/docs/resource/azure/Database/Postgresql)
+-   [**Key Vault**](https://docs.cstudio.app/en/docs/resource/azure/KeyVault)
+-   [**Application Gateway**](https://docs.cstudio.app/en/docs/resource/azure/Network/ApplicationGateway)
+-   [**Redis Cache**](https://docs.cstudio.app/en/docs/resource/azure/RedisCache/)
+-   [**Storage Account**](https://docs.cstudio.app/en/docs/resource/azure/Storage/StorageAccount)
 
-## 리소스 설정 값
+## Resource Setting Values
 
--   `disable_bgp_route_propagation` : Subnet의 네트워크 인터페이스로 온-프레미스 경로 전파를 방지하기 위해 게이트웨이 경로 전파 비활성화 - `true`, `false`
--   `included_subnet_name` : 경로 테이블과 연결할 Subnet 이름
+-   `disable_bgp_route_propagation` : Disable route propagation to prevent on-premise route propagation to network interface of the subnet - `true`, `false`
+-   `included_subnet_names` : The IP prefix representing routes
 -   `route`
-    -   `route_address_prefix` : 경로를 나타내는 IP 접두사
-    -   `next_hop_type` : 경로의 일치하는 패킷을 처리하기 위해 다음 홉 형식 지정 - `VirtualNetworkGateway`, `VnetLocal`, `Internet`, `VirtualAppliance`, `None`
--   `tag` : 리소스를 카테고리로 분류하기 위한 태그 - 최대 512자, `key`:`value`
+    -   `route_address_prefix` : The IP prefix representing routes
+    -   `next_hop_type` : The type of next hop to handle mathing packet-`VirtualNetworkGateway`, `VnetLocal`, `Internet`, `VirtualAppliance`, `None`
+-   `tag` : Tag to categorize resources - up to 512 characters, `key`:`value`
 
 ---
 
-## 참고 자료
+## Reference Materials
 
 -   [Azure RouteTable(Microsoft)](https://learn.microsoft.com/ko-kr/azure/virtual-network/manage-route-table)
 -   [Azure RouteTable(Terraform)](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/route_table)

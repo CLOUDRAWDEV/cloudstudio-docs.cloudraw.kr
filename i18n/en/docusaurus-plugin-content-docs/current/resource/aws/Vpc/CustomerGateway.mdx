@@ -1,13 +1,13 @@
 ---
 title: Customer Gateway
 sidebar_position: 0
-tags: [AWS, 리소스, Vpc, CustomerGateway]
+tags: [AWS, Resource, Vpc, CustomerGateway]
 ---
 
 <hr />
 <br />
 
-## 리소스 아이콘
+## Resource Icon
 
 <img
     src={
@@ -15,25 +15,27 @@ tags: [AWS, 리소스, Vpc, CustomerGateway]
     }
 />
 
-## 리소스 개요
+## Resource Overview
 
-AWS Transit Gateway는 중앙 허브를 통해 Amazon Virtual Private Cloud(VPC)와 온프레미스 네트워크를 연결합니다. 이 연결은 복잡한 피어링 관계를 제거하여 네트워크를 간소화합니다. Transit Gateway는 고도로 확장 가능한 클라우드 라우터 역할을 합니다.
+AWS Transit Gateway connects Amazon Virtual Private Cloud (VPC) and on-premises networks through a central hub. 
+This connection simplifies the network by eliminating complex peering relationships. 
+Transit Gateway serves as a highly scalable cloud router.
 
-## 연관 리소스
+## Associated Resources
 
-### 상위 리소스
+### Parent Resources
 
--   [**Region**](https://docs.cstudio.app/docs/resource/aws/Base/Region)
+-   [**Region**](https://docs.cstudio.app/en/docs/resource/aws/Base/Region)
 
-## 리소스 설정 값
+## Resource Setting Values
 
--   `bgp_asn` : 게이트웨이의 BGP(Border Gateway Protocol) ASN(자율 시스템 번호)
--   `ip_address` : 게이트웨이의 인터넷 라우팅 가능한 외부 인터페이스의 IP 주소
+-   `bgp_asn` : The gateway's Border Gateway Protocol (BGP) Autonomous System Number (ASN)
+-   `ip_address` : The Static IP address of the gateway's Internet-routable external interface
 
 ---
 
-## 참고 자료
+## Reference Materials
 
 -   [AWS Transit Gateway(AWS)](https://aws.amazon.com/ko/transit-gateway/?nc2=type_a)
--   [AWS Transit Gateway 요금(AWS)](https://aws.amazon.com/ko/transit-gateway/pricing/)
+-   [AWS Transit Gateway Price(AWS)](https://aws.amazon.com/ko/transit-gateway/pricing/)
 -   [aws_customer_gateway(Terraform)](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/customer_gateway)

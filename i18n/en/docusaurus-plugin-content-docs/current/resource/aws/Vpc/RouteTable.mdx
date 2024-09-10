@@ -1,13 +1,13 @@
 ---
 title: Route Table
 sidebar_position: 0
-tags: [AWS, 리소스, Vpc, RouteTable]
+tags: [AWS, Resource, Vpc, RouteTable]
 ---
 
 <hr />
 <br />
 
-## 리소스 아이콘
+## Resource Icon
 
 <img
     src={
@@ -15,37 +15,39 @@ tags: [AWS, 리소스, Vpc, RouteTable]
     }
 />
 
-## 리소스 개요
+## Resource Overview
 
-AWS VPC(Virtual Private Cloud)의 Route Table은 VPC 내의 서브넷에 대한 트래픽을 어떤 대상으로 전달할지 정의하는 AWS 리소스입니다. VPC 내의 모든 서브넷은 하나 이상의 라우팅 테이블에 연결되어 있으며, 라우팅 테이블은 인터넷 게이트웨이, NAT 게이트웨이, VPC 엔드포인트 또는 VPN 연결과 같은 대상에 대한 라우팅 규칙을 지정합니다. 라우팅 테이블은 라우팅 규칙의 순서대로 트래픽을 전달하며, 서브넷에서 생성된 모든 트래픽은 연결된 라우팅 테이블을 통해 대상으로 전달됩니다. 이를 통해 VPC 내의 서브넷들은 안전하게 인터넷 또는 다른 VPC와 통신할 수 있습니다.
+An AWS VPC (Virtual Private Cloud) Route Table is an AWS resource that defines how traffic within subnets of the VPC should be directed to its destination. 
+Every subnet in a VPC is associated with one or more route tables, which specify routing rules for targets such as internet gateways, NAT gateways, VPC endpoints, or VPN connections. 
+The route table routes traffic based on the order of the routing rules, and all traffic originating from a subnet is directed to its destination through the associated route table. This allows subnets within the VPC to securely communicate with the internet or other VPCs.
 
-## 연관 리소스
+## Associated Resources
 
-### 상위 리소스
+### Parent Resources
 
 -   [**Vpc**](https://docs.cstudio.app/docs/resource/aws/Vpc/)
 
-### 연결 리소스
+### Connected Resources
 
--   [**Ec2 Instance**](https://docs.cstudio.app/docs/resource/aws/Ec2/Instance)
--   [**Vpc Internet Gateway**](https://docs.cstudio.app/docs/resource/aws/Vpc/InternetGateway)
--   [**Vpc Nat Gateway**](https://docs.cstudio.app/docs/resource/aws/Vpc/NatGateway)
--   [**Vpc Peering**](https://docs.cstudio.app/docs/resource/aws/Vpc/VpcPeering)
+-   [**Ec2 Instance**](https://docs.cstudio.app/en/docs/resource/aws/Ec2/Instance)
+-   [**Vpc Internet Gateway**](https://docs.cstudio.app/en/docs/resource/aws/Vpc/InternetGateway)
+-   [**Vpc Nat Gateway**](https://docs.cstudio.app/en/docs/resource/aws/Vpc/NatGateway)
+-   [**Vpc Peering**](https://docs.cstudio.app/en/docs/resource/aws/Vpc/VpcPeering)
 
-## 리소스 설정 값
+## Resource Setting Values
 
--   `included_vpc_name` : Route Table이 포함된 VPC의 이름
--   `subnet_names` : Route Table에 대한 설명
--   `linked_route` : Routeing 경로의 이름
-    -   `cidr_block` : Routeing할 Target Resource의 CIDR
-    -   `internet_gateway_name` : Routeing 경로를 지정할 Internet Gateway 이름
-    -   `ec2_instance_name` : Routeing 경로를 지정할 EC2 Instance 이름
-    -   `nat_gateway_name` : Routeing 경로를 지정할 NAT Gateway 이름
-    -   `vpc_peering_name` : Routeing 경로를 지정할 VPC Peering 이름
+-   `included_vpc_name` : The name of the VPC with the Route Table
+-   `subnet_names` : Description of Route Table
+-   `linked_route` : The name of the Route
+    -   `cidr_block` : CIDR of target resource to route
+    -   `internet_gateway_name` : Name of the Internet Gateway for the routing path
+    -   `ec2_instance_name` : Name of the EC2 Instance for the routing path
+    -   `nat_gateway_name` : Name of the NAT Gateway for the routing path
+    -   `vpc_peering_name` : Name of the VPC Peering for the routing path
 
 ---
 
-## 참고 자료
+## Reference Materials
 
--   [라우팅 테이블 구성(AWS)](https://docs.aws.amazon.com/ko_kr/vpc/latest/userguide/VPC_Route_Tables.html)
+-   [Routing Table Configuration(AWS)](https://docs.aws.amazon.com/ko_kr/vpc/latest/userguide/VPC_Route_Tables.html)
 -   [aws_default_route_table(Terraform)](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/default_route_table)

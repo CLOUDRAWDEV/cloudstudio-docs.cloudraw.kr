@@ -1,15 +1,13 @@
 ---
 title: PersistentVolumeClaim
 sidebar_position: 0
-tags: [Kubernetes, 리소스, Core, PersistentVolumeClaim]
+tags: [Kubernetes, リソース, Core, PersistentVolumeClaim]
 ---
-
 
 <hr />
 <br />
 
-
-## 리소스 아이콘
+## リソースアイコン
 
 <img
     src={
@@ -17,46 +15,42 @@ tags: [Kubernetes, 리소스, Core, PersistentVolumeClaim]
     }
 />
 
-## 리소스 개요
+## リソース概要
 
-PV를 요청하는 쿠버네티스 리소스입니다.
+PV をリクエストするクバネティスリソースです。
 
-## 연관 리소스
+## 関連リソース
 
-### 상위 리소스
+### 上位リソース
 
--   [**Cluster**](https://docs.cstudio.app/docs/resource/kubernetes/Base/Cluster)
--   [**Namespace**](https://docs.cstudio.app/docs/resource/kubernetes/Core/Namespace)
+-   [**Cluster**](https://docs.cstudio.app/ja/docs/resource/kubernetes/Base/Cluster)
+-   [**Namespace**](https://docs.cstudio.app/ja/docs/resource/kubernetes/Core/Namespace)
 
+### 接続リソース
 
-### 연결 리소스
+-   [**PersistentVolume**](https://docs.cstudio.app/ja/docs/resource/kubernetes/Core/PersistentVolume)
+-   [**Pod**](https://docs.cstudio.app/ja/docs/resource/kubernetes/Core/Pod)
+-   [**Deployment**](https://docs.cstudio.app/ja/docs/resource/kubernetes/Apps/Deployment)
+-   [**DaemonSet**](https://docs.cstudio.app/ja/docs/resource/kubernetes/Core/DaemonSet)
+-   [**StatefulSet**](https://docs.cstudio.app/ja/docs/resource/kubernetes/Apps/StatefulSet)
+-   [**Job**](https://docs.cstudio.app/ja/docs/resource/kubernetes/Batch/Job)
+-   [**CronJob**](https://docs.cstudio.app/ja/docs/resource/kubernetes/Batch/CronJob)
 
--   [**PersistentVolume**](https://docs.cstudio.app/docs/resource/kubernetes/Core/PersistentVolume)
--   [**Pod**](https://docs.cstudio.app/docs/resource/kubernetes/Core/Pod)
--   [**Deployment**](https://docs.cstudio.app/docs/resource/kubernetes/Apps/Deployment)
--   [**DaemonSet**](https://docs.cstudio.app/docs/resource/kubernetes/Core/DaemonSet)
--   [**StatefulSet**](https://docs.cstudio.app/docs/resource/kubernetes/Apps/StatefulSet)
--   [**Job**](https://docs.cstudio.app/docs/resource/kubernetes/Batch/Job)
--   [**CronJob**](https://docs.cstudio.app/docs/resource/kubernetes/Batch/CronJob)
+## リソース設定値
 
-
-## 리소스 설정 값
-
--   `service_name` : PersistentVolumeClaim 리소스 이름
--   `namespace` : PersistentVolume 리소스가 배포될 네임스페이스
--   `annotations` : 쿠버네티스 시스템에서 필요한 정보들을 표시해 주기 위해서 사용하는 key-value
--   `labels` : 객체를 구분하기 위해서 사용자가 임의로 원하는 값을 지정
--   `spec` : PVC의 구체적인 스펙을 정의
-    -   `spec.storageclass_name` : 사용할 storageclass 이름 지정
-    -   `spec.volume_name` : PVC로 연결될 PV 이름
-    -   `spec.request_storage` : PV에 요구할 스토리지 용량
-    -   `spec.access_modes` : PV에 있어야 하는 원하는 액세스 모드 - (PV의 액세스 모드를 포함하거나 일치해야 합니다.) - `ReadOnlyMany`,`ReadWriteMany`,`ReadWriteOnce`
-
-
+-   `service_name` : PersistentVolumeClaim リソース名
+-   `namespace` : PersistentVolume リソースがデプロイされるネームスペース
+-   `annotations` : クバネティスシステムで必要な情報を表示するために使用する key-value
+-   `labels` : オブジェクトを区切るためにユーザーが任意に希望する値を指定
+-   `spec` : PVC の具体的なスペックを定義
+    -   `spec.storage_class_name` : 使用する storageclass の名前指定
+    -   `spec.volume_name` : PVC に接続する PV 名
+    -   `spec.request_storage` : PV に要求するストレージ容量
+    -   `spec.access_modes` : PV にあるべきアクセスモード - (PV のアクセスモードを含むか、一致する必要があります。) - `ReadOnlyMany`,`ReadWriteMany`,`ReadWriteOnce`
 
 ---
 
-## 참고 자료
+## 参考資料
 
 -   [PersistentVolumeClaim(Kubernetes)](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#persistentvolumeclaims)
 -   [PersistentVolumeClaim(Terraform)](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/persistent_volume_claim)

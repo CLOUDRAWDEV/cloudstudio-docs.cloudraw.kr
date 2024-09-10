@@ -1,7 +1,7 @@
 ---
 title: CertManager
 sidebar_position: 0
-tags: [Kubernetes, 리소스, Helm, CertManager]
+tags: [Kubernetes, Resource, Helm, CertManager]
 ---
 
 
@@ -9,7 +9,7 @@ tags: [Kubernetes, 리소스, Helm, CertManager]
 <br />
 
 
-## 리소스 아이콘
+## Resource Icon
 
 <img
     src={
@@ -17,33 +17,33 @@ tags: [Kubernetes, 리소스, Helm, CertManager]
     }
 />
 
-## 리소스 개요
+## Resource Overview
 
-Cert-Manager를 설치하기 위한 헬름 차트입니다.
+A Helm chart for installing Cert-Manager.
 
-## 연관 리소스
+## Associated Resources
 
-### 상위 리소스
+### Parent Resource
 
--   [**Cluster**](https://docs.cstudio.app/docs/resource/kubernetes/Base/Cluster)
--   [**Namespace**](https://docs.cstudio.app/docs/resource/kubernetes/Core/Namespace)
+-   [**Cluster**](https://docs.cstudio.app/en/docs/resource/kubernetes/Base/Cluster)
+-   [**Namespace**](https://docs.cstudio.app/en/docs/resource/kubernetes/Core/Namespace)
 
-### 연결 리소스
+### Connected Resources
 
 
 
-## 리소스 설정 값
+## Resource Setting Values
 
--   `service_name` : Cert-Manager 헬름 차트 릴리즈 이름
--   `namespace` : Cert-Manager 헬름 차트가 배포될 네임스페이스
--   `version` : 사용할 CertManager 헬름 차트 버전
--   `installCRDs` : certmanager 관련 Custom Resource Definition의 설치 여부를 체크
+-   `service_name` : Cert-Manager Helm chart release name
+-   `namespace` : Namespace where the CertManager Helm Chart resource will be deployed
+-   `version` : CertManager Helm Chart version to use
+-   `installCRDs` : Check whether custom resource definition related to Cert Manager is installed
 
 
 ---
 
-## 참고 자료
+## Reference Materials
 
--   [Helm install(CertManager)](https://cert-manager.io/docs/installation/helm/)
+-   [Helm install(CertManager)](https://cert-manager.io/en/docs/installation/helm/)
 -   [Helm Provider(Terraform)](https://registry.terraform.io/providers/hashicorp/helm/latest/docs)
 
