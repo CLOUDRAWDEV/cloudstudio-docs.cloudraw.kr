@@ -1,7 +1,7 @@
 ---
 title: Job
 sidebar_position: 0
-tags: [Kubernetes, 리소스, Batch, Job]
+tags: [Kubernetes, Resource, Batch, Job]
 ---
 
 
@@ -35,59 +35,57 @@ A Kubernetes resource used to execute one-time jobs.
 
 ## Resource Setting Values
 
-Here is the translation following the previous format:
+-   `service_name` : Name of the Job resource
+-   `namespace` : Namespace where Job resources will be deployed
+-   `annotations` : Key-value pairs used to display necessary information in the Kubernetes system
+-   `labels` : User-specified values used to distinguish objects
+-   `template_labels` : Labels applied to Pods created per node
+-   `restart_policy` : Specifies how to handle container failures or job completions within the Pod
+-   `backoff_limit` : Number of retries before marking the job as failed - Default is 6
+-   `wait_for_completion` : Blocks job creation or update until the job reaches completion or failure status - Default is True
 
--   `service_name`: Name of the Job resource
--   `namespace`: Namespace where Job resources will be deployed
--   `annotations`: Key-value pairs used to display necessary information in the Kubernetes system
--   `labels`: User-specified values used to distinguish objects
--   `template_labels`: Labels applied to Pods created per node
--   `restart_policy`: Specifies how to handle container failures or job completions within the Pod
--   `backoff_limit`: Number of retries before marking the job as failed - Default is 6
--   `wait_for_completion`: Blocks job creation or update until the job reaches completion or failure status - Default is True
+-   `timeouts` : Time allowed before considering the job as failed
+    -   `create` : Time to wait for a new job to be created and successfully completed - Default is 1m    
+    -   `update` : Time to wait for an updated job to complete successfully - Default is 1m
 
--   `timeouts`: Time allowed before considering the job as failed
-    -   `create`: Time to wait for a new job to be created and successfully completed - Default is 1m    
-    -   `update`: Time to wait for an updated job to complete successfully - Default is 1m
+-   `containers` : Defines templates for containers belonging to a pod - Default values can be set and applied, after which detailed settings can be configured
+    -   `containers.name` : Defines the name of the container
+        -   `image` : Docker image name to use
+        -   `args` : Commands to be executed in the container
+        -   `command` : Commands to be executed in the container
+        -   `port` : List of ports to expose in the container
 
--   `containers`: Defines templates for containers belonging to a pod - Default values can be set and applied, after which detailed settings can be configured
-    -   `containers.name`: Defines the name of the container
-        -   `image`: Docker image name to use
-        -   `args`: Commands to be executed in the container
-        -   `command`: Commands to be executed in the container
-        -   `port`: List of ports to expose in the container
+        -   `resources` : Specifies the amount of computing resources in the container - Detailed settings
+            -   `resources.name` : Specifies the minimum/maximum amount of computing resources - `limits`, `requests`
+            -   `resources.cpu` : Specifies the amount of CPU
+            -   `resources.memory` : Specifies the amount of memory
 
-        -   `resources`: Specifies the amount of computing resources in the container - Detailed settings
-            -   `resources.name`: Specifies the minimum/maximum amount of computing resources - `limits`, `requests`
-            -   `resources.cpu`: Specifies the amount of CPU
-            -   `resources.memory`: Specifies the amount of memory
+        -   `probe` : Defines how to diagnose the health of a Pod - Detailed settings
+            -   `probe.name` : Probe method selection - `startup`, `liveness`, `readiness`
+            -   `probe.http_get_path` : Path to access the HTTP server
+            -   `probe.http_get_port` : Port number to be accessed by the container
+            -   `probe.http_header` : Custom headers to set in the request
+            -   `probe.initial_delay_seconds` : Time (in seconds) before the probe starts after the container starts
+            -   `probe.period_seconds` : Frequency of probes (in seconds)
 
-        -   `probe`: Defines how to diagnose the health of a Pod - Detailed settings
-            -   `probe.name`: Probe method selection - `startup`, `liveness`, `readiness`
-            -   `probe.http_get_path`: Path to access the HTTP server
-            -   `probe.http_get_port`: Port number to be accessed by the container
-            -   `probe.http_header`: Custom headers to set in the request
-            -   `probe.initial_delay_seconds`: Time (in seconds) before the probe starts after the container starts
-            -   `probe.period_seconds`: Frequency of probes (in seconds)
+        -   `env` : Block of key-value pairs to set in the container environment - Detailed settings
+            -   `env.name` : Name of the environment variable
+            -   `env.value` : Value for the environment variable
 
-        -   `env`: Block of key-value pairs to set in the container environment - Detailed settings
-            -   `env.name`: Name of the environment variable
-            -   `env.value`: Value for the environment variable
-
-        -   `volume_mount`: The pod volume to mount on the container's file system - Detailed settings
-            -   `volume_mount.name`: Name of the volume mount
+        -   `volume_mount` : The pod volume to mount on the container's file system - Detailed settings
+            -   `volume_mount.name` : Name of the volume mount
             -   `volume_mount.path`
-                -   `volume_mount.path.mount_path`: Path within the container where the volume should be mounted
-                -   `volume_mount.path.sub_path`: Path within the container where the volume should be mounted
+                -   `volume_mount.path.mount_path` : Path within the container where the volume should be mounted
+                -   `volume_mount.path.sub_path` : Path within the container where the volume should be mounted
 
--   `volume`: List of volumes that containers in a pod can mount
-    -   `volume.name`: Volume name
-        -   `volume.type`: Type of volume to mount - `EmptyDir`, `ConfigMap`, `PersistentVolumeClaim`
-        -   `volume.target_name`: Name of the persistent volume claim
-        -   `volume.default_mode`: Mode to use for generated files - between 0 and 0777, default is 0644
-        -   `volume.read_only`: If true, mounted read-only, otherwise read/write
+-   `volume` : List of volumes that containers in a pod can mount
+    -   `volume.name` : Volume name
+        -   `volume.type` : Type of volume to mount - `EmptyDir`, `ConfigMap`, `PersistentVolumeClaim`
+        -   `volume.target_name` : Name of the persistent volume claim
+        -   `volume.default_mode` : Mode to use for generated files - between 0 and 0777, default is 0644
+        -   `volume.read_only` : If true, mounted read-only, otherwise read/write
 
--   `image_pull_secrets`: Secret in the same namespace containing the permissions needed to pull the image used by the container
+-   `image_pull_secrets` : Secret in the same namespace containing the permissions needed to pull the image used by the container
 
 ---
 
