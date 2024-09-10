@@ -25,7 +25,7 @@ Additionally, Cosmos DB SQL supports advanced features such as stored procedures
 
 ### Parent Resource
 
--   [**Resource Group**](https://docs.cstudio.app/docs/resource/azure/Base/ResourceGroup)
+-   [**Resource Group**](https://docs.cstudio.app/en/docs/resource/azure/Base/ResourceGroup)
 
 ## Resource Setting Values
 
@@ -39,7 +39,7 @@ Additionally, Cosmos DB SQL supports advanced features such as stored procedures
 
 -   `virtual_network_filter_enabled` : Enable filters so that only certain Subnets in the Virtual network can access the account - `true`, `false`
 
--   `network_acl_bypass_for_azure_services` :Allow ACL bypass for Azure service - `true`, `false`
+-   `network_acl_bypass_for_azure_services` : Allow ACL bypass for Azure service - `true`, `false`
 
 -   `geo_location`
 
@@ -58,20 +58,22 @@ Additionally, Cosmos DB SQL supports advanced features such as stored procedures
     -   `interval_in_minutes` : The interval of backup in minutes, Between 60 and 1440 - `60`~ `1440`
     -   `retention_in_hours` : The time in hours that the backup is retained, Between 8 and 720 - `8`~`720`
 
--   `cassandra_keyspace`
+-   `sql_database`
 
     -   `throughput` : The throughput of Cassandra keyspace - `400`~ `1000000`
     -   `enable_autoscale` : Whether to apply auto scaling to Cassandra keyspace - `true`, `false`
 
--   `cassandra_table`
+-   `sql_container`
 
-    -   `throughput`: The throughput of Cassandra table - `400`~ `1000000`
-    -   `column` : List of the name and type of column, 'name:type' format
-    -   `partition_key` : The name of partition key
-    -   `cluster_key_name` : The name of cluster key to be created
-    -   `cluster_key_order` : Order of the cluster key - `Asc` , `Desc`
+    -   `partition_key_version`: The version of partition key among 1 and 2 - `400`~ `1000000`
+    -   `partition_key_path` : Define a partition key to use SQL Container
+    -   `throughput` : The throughput of the Cosmos DB SQL database
+    -   `indexing_mode` : The indexting mode
+    -   `included_path` : List of paths to include in the indexing - `Asc` , `Desc`
+    -   `excluded_path` : Whether to apply auto scaling to Cassandra keyspace - `true`, `false`
+    -   `unique_key_path` : List of paths to use for the unique key - `Asc` , `Desc`
     -   `enable_autoscale` : Whether to apply auto scaling to Cassandra keyspace - `true`, `false`
-    -   `included_cosmosdb_keyspace_name` : The name of the Cosmos DB Cassandra keyspace to create the table within
+    -   `included_sql_database_name` : The name of SQL database in which container is created
 
 -   `tag` : Tag to categorize resources - up to 512 characters, `key:value`
 
