@@ -38,10 +38,10 @@ A Kubernetes service that ensures a specified number of Pod replicas are always 
 
 -   `service_name` : Name of the Deployment resource
 -   `namespace` : Namespace where Deployment resources will be deployed
--   `annotations` : Key-value pairs used to display necessary information in the Kubernetes system
--   `labels` : User-specified values used to distinguish objects
--   `template_labels` : Labels applied to Pods created per node
--   `replicas` : Desired number of Pod replicas - default is 1
+-   `annotations` : A key-value used to display necessary information in the Kubernetes system
+-   `labels` : To distinguish objects, the user arbitrarily specifies the desired value
+-   `template_labels` : Label to be set in Pod created per node
+-   `replicas` : Desired number of Pod replicas, default is 1
 
 -   `containers` : Defines templates for containers belonging to a pod - You can set default values and apply them, and then configure detailed settings 
     -   `containers.name` : Defines the name of the container
@@ -86,5 +86,5 @@ A Kubernetes service that ensures a specified number of Pod replicas are always 
 
 ## Reference Materials
 
--   [Deployment(Kubernetes)](https://kubernetes.io/en/docs/concepts/workloads/controllers/deployment/)
--   [Deployment(Terraform)](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/en/docs/resources/deployment)
+-   [Deployment(Kubernetes)](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/)
+-   [Deployment(Terraform)](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/deployment)

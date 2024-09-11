@@ -79,7 +79,7 @@ tags: [Kubernetes, 리소스, Batch, CronJob]
             
 -   `volume` : 파드(Pod)에 속한 컨테이너가 탑재할 수 있는 볼륨 목록
     -   `volume.name` : 볼륨 이름
-        -   `volume.type` : 마운트할 볼륨의 타입 - `EmptyDir`,`ConfigMap`,`PersistentVolumeClaim`
+        -   `volume.volume_type` : 마운트할 볼륨의 타입 - `EmptyDir`,`ConfigMap`,`PersistentVolumeClaim`
         -   `volume.target_name` : 영구 볼륨 클레임의 이름
         -   `volume.default_mode` : 생성된 파일에 사용할 모드 - 0 ~ 0777 사이, 기본값은 0644
         -   `volume.read_only` : true인 경우 읽기 전용으로 마운트되고 그렇지 않은 경우 읽기/쓰기 가능

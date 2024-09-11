@@ -19,7 +19,7 @@ tags: [Kubernetes, Resource, Apps, Daemonset]
 
 ## Resource Overview
 
-A DaemonSet is a Kubernetes resource that ensures all (or some) nodes run a copy of a Pod. When a new node is added to the cluster, a Pod is automatically added to that node.
+A DaemonSet is a Kubernetes resource that ensures all(or some) nodes run a copy of a Pod. When a new node is added to the cluster, a Pod is automatically added to that node.
 
 ## Associated Resources
 
@@ -40,35 +40,35 @@ A DaemonSet is a Kubernetes resource that ensures all (or some) nodes run a copy
 
 -   `namespace` : Namespace where DaemonSet resources will be deployed
 
--   `annotations` : Key-value pairs used to display necessary information in the Kubernetes system
+-   `annotations` : A key-value used to display necessary information in the Kubernetes system
 
--   `labels` : User-specified values used to distinguish objects
+-   `labels` : To distinguish objects, the user arbitrarily specifies the desired value
 
 -   `template_labels` : Labels applied to Pods created per node
 
--   `containers` : Defines templates for containers belonging to a Pod - You can set default values and apply them, and then configure detailed settings.
+-   `containers` : Defines templates for containers belonging to a pod - You can set default values and apply them, and then configure detailed settings.
  
     -   `containers.name` : Name of the container
 
         -   `image` : Docker image name to use
 
-        -   `args` : Commands to be executed within the container
+        -   `args` : Commands to be executed in the container
 
-        -   `command` : Commands to be executed within the container
+        -   `command` : Commands to be executed in the container
 
-        -   `port` : List of ports exposed by the container
+        -   `port` : List of ports to expose in container
 
         -   `resources` : Specifies the amount of resources in the container - Detailed settings
 
-            -   `resources.name` : Specify the minimum/maximum amount of computing resources - `Limits`, `requests`
-            -   `resources.cpu` : Amount of CPU (m)
-            -   `resources.memory` : Amount of memory (Mi)
-        -   `probe` : Defines how to diagnose the health of a Pod - Detailed settings
+            -   `resources.name` : Specify minimum/maximum amount of computing resources - `Limits`, `requests`
+            -   `resources.cpu` : Specifies the amount of cpu(m)
+            -   `resources.memory` : Specifies the amount of memory(Mi)
+        -   `probe` : Define how to diagnose the health of a Pod - Detailed settings
             -   `probe.name` : Probe method selection - `startup`, `liveness`, `readiness`
             -   `probe.http_get_path` : Path to access the HTTP server
             -   `probe.http_get_port` : Port number to be accessed by the container
             -   `probe.http_header` : Custom headers to set in the request
-            -   `probe.initial_delay_seconds` : Number of seconds after the container starts before the probe begins
+            -   `probe.initial_delay_seconds` : Number of seconds after the container starts before the probe starts
             -   `probe.period_seconds` : How often to perform probes (in seconds)
         -   `env` : Block of key-value pairs to set in container environment - Detailed settings
             -   `env.name` : Name of the environment variable
@@ -80,13 +80,13 @@ A DaemonSet is a Kubernetes resource that ensures all (or some) nodes run a copy
                 -   `volume_mount.path.sub_path` : Path within the container where the volume should be mounted
 -   `volume` : List of volumes that containers in a Pod can mount
     -   `volume.name` : Volume name
-        -   `volume.type` : Type of the volume to mount - `EmptyDir`, `ConfigMap`, `PersistentVolumeClaim`
-        -   `volume.target_name` : Name of the PersistentVolumeClaim
-        -   `volume.default_mode` : Mode for created files - between 0 and 0777, default is 0644
-        -   `volume.read_only` : Mount as read-only if true, otherwise read/write
--   `image_pull_secrets` : Secret in the same namespace containing the permissions needed to pull the image used by the container
+        -   `volume.type` : Type of volume to mount - `EmptyDir`, `ConfigMap`, `PersistentVolumeClaim`
+        -   `volume.target_name` : Name of persistent volume claim
+        -   `volume.default_mode` : Mode to use for generated files - between 0 and 0777, default is 0644
+        -   `volume.read_only` : If true, mounted read-only, otherwise read/write
+-   `image_pull_secrets` : Secret in the same namespace containing the permissions needed to pull the image used by the Container
 
 ## Reference Materials
 
--   [DaemonSet(Kubernetes)](https://kubernetes.io/en/docs/concepts/workloads/controllers/daemonset/)
--   [DaemonSet(Terraform)](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/en/docs/resources/daemonset)
+-   [DaemonSet(Kubernetes)](https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/)
+-   [DaemonSet(Terraform)](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/daemonset)

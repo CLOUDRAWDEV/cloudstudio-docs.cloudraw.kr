@@ -39,7 +39,7 @@ A Kubernetes resource that manages the deployment and scaling of a set of Pods, 
 -   `service_name` : Name of the service that manages the statefulset
 -   `namespace` : Namespace where StatefulSet resources will be deployed
 -   `annotations` : A key-value used to display necessary information in the Kubernetes system
--   `labels` : Label to be set in Pod
+-   `labels` : To distinguish objects, the user arbitrarily specifies the desired value
 -   `template_labels` : Label to be set in Pod
 -   `pod_management_policy` : Control how pods are created when pods are replaced or scaled down on a node - `Parallel`,`OrderedReady`
 -   `revision_history_limit` : Maximum number of revisions to be maintained in the StatefulSet's revision history, default is 10

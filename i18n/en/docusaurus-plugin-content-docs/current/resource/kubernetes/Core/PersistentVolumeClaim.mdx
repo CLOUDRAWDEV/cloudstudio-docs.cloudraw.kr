@@ -47,7 +47,7 @@ A Kubernetes resource that requests a Persistent Volume (PV).
 -   `annotations` : A key-value used to display necessary information in the Kubernetes system
 -   `labels` : To distinguish objects, the user arbitrarily specifies the desired value
 -   `spec` : Define specific specifications of PVC
-    -   `spec.storageclass_name` : Specify the storageclass name to use
+    -   `spec.storage_class_name` : Specify the storage class name to use
     -   `spec.volume_name` : PV name to be connected to PVC
     -   `spec.request_storage` : Storage capacity to allocate to PV
     -   `spec.access_modes` : Desired access mode that the PV must have - (Must contain or match the access mode of the PV)
@@ -58,5 +58,5 @@ A Kubernetes resource that requests a Persistent Volume (PV).
 
 ## Reference Materials
 
--   [PersistentVolumeClaim(Kubernetes)](https://kubernetes.io/en/docs/concepts/storage/persistent-volumes/#persistentvolumeclaims)
--   [PersistentVolumeClaim(Terraform)](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/en/docs/resources/persistent_volume_claim)
+-   [PersistentVolumeClaim(Kubernetes)](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#persistentvolumeclaims)
+-   [PersistentVolumeClaim(Terraform)](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/persistent_volume_claim)

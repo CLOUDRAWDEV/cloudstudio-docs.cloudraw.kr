@@ -82,7 +82,7 @@ tags: [Kubernetes, リソース, Batch, CronJob]
 -   `volume` : ファッドに属するコンテナが搭載できるボリュームのリスト
 
     -   `volume.name` : volume 名
-        -   `volume.type` : マウントするボリュームのタイプ - `EmptyDir`,`ConfigMap`,`PersistentVolumeClaim`
+        -   `volume.volume_type` : マウントするボリュームのタイプ - `EmptyDir`,`ConfigMap`,`PersistentVolumeClaim`
         -   `volume.target_name` : 永久ボリュームクレームの名前
         -   `volume.default_mode` : 生成されたファイルに使用するモード - 0 ~ 0777 の間、デフォルトは 0644
         -   `volume.read_only` : true の場合は読み取り専用にマウントされ、そうでない場合は読み取り/書き込みが可能
