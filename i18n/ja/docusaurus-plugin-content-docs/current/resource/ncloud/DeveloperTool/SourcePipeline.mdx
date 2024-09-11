@@ -65,14 +65,14 @@ SourceCommit, SourceBuild, SourceDeploy サービスを統合し、迅速かつ�
     -   `name_of_repository` : Trigger に使用する repository の名前
     -   `branch_of_repository` : Trigger に使用する repository branch
 
--   `schedule` : パイパラインが自動実行されるように予約設定
+-   `trigger_schedule` : パイパラインが自動実行されるように予約設定
 
     -   `day` : デプロイ予約をする曜日
     -   `time` : デプロイ予約をする時間
     -   `timezone` : 予定日にデプロイ予約する時間の time zone
     -   `execute_only_with_change` : Sourcepipeline プロジェクト構成または Sourcecommit リポジトリが変更された場合、スケジュールトリガーが常に時間内に実行されるか、または実行されるかどうかの可否
 
--   `target_sourcepipeline_id` : Trigger 設定されたパイプラインが実行完了時に自動的に実行されるパイプライン ID リスト
+-   `trigger_target_sourcecpipeline_id` : Trigger 設定されたパイプラインが実行完了時に自動的に実行されるパイプライン ID リスト
 
 ---
 

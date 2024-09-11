@@ -31,15 +31,15 @@ SourceBuild is a service that makes it easy to build source code developed in va
 
 -   `source_type` : The target type of Build project- `SourceCommit`
 -   `source_branch`  The branch name to build
--   `linked_repository_name` : The branch name to build
--   `env` : The repository name to build
+-   `linked_repository_name` : The repository name to build
+-   `env` : Build environments
     -   `env_compute_spec` : The spec of compute to build - `2cpu-4memory`,`4cpu-8memory`,`8cpu-16memory`
     -   `env_platform_type` : Build environment image type - `SourceBuild`,`ContainerRegistry`,`PublicRegistry`
     -   `env_platform_os_spec` : The OS spec to use - `ubuntu-archiX64-16.04`
     -   `env_platform_runtime_name` : The name of runtime to build - `base`,`java`,`dotnet`,`android_java`,`python`
     -   `env_platform_runtime_version` : The version of runtime to build - `1.0-1.0.0`,`2.0-1.0.0`,`3.0-1.0.0`,`4.0-1.0.0`,`5.0-1.0.0`
     -   `env_timeout` : Build timeout in minutes, 5~540
-    -   `env_user_docker` : 도커 엔진 사용 여부 
+    -   `env_use_docker` : Whether or not to use of docker engine
     -   `env_var` : The environment variables to use for build
 -   `build_command` : Commands to execute in build
     -   `pre_build_command` : Commands before build

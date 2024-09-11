@@ -39,7 +39,7 @@ Cloud DB for Redis는 Redis 캐시를 몇 가지 설정과 클릭만으로 간�
 -   `data_storage_type` : 데이터 스토리지 종류 - `SSD`, `HDD`
 -   `shard_count` : 생성할 샤드 수. master node의 갯수 - `3~10`
 -   `shard_copy_count` : master node와 slave node로 구성되어잇는 Redis cluster의 샤드당 복제본 갯수, HA를 위해서는 slave node가 필수. 복제본 추가 시, 모든 master node에 각각 1개씩 slave node가 할당
--   `enable_high_availiability` : 고가용성 기능 사용 여부
+-   `enable_high_availability` : 고가용성 기능 사용 여부
 -   `enable_backup` : Backup 기능 사용 여부, 만약 고가용성 기능을 사용하면, backup 기능은 사용으로 고정
 -   `port` : Redis 접속포트 - `6379`
 
