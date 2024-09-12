@@ -27,20 +27,26 @@ AWS 리소스를 백업하려는 시기와 방법을 정의하는 정책 표현�
 
 ## 리소스 설정 값
 
--   `rule.rule_name` : 백업 규칙 이름
--   `rule.backup_vault_name` : 백업 저장에 사용되는 논리적 컨테이너 이름
--   `rule.frequency_type` : 백업에 대한 주기 타이밍
--   `rule.frequency_hour` : 백업 계획을 초기화할 시간 - `1 이상`
--   `rule.start_time` : 백업 계획 시작 시간
--   `rule.start_after_minutes` : 백업을 시작하기까지 총 걸리는 시간 - `60 이상`
--   `rule.complete_after_minutes` : 작업을 취소하고 오류를 반환하기 전까지 AWS Backup에서 백업을 시도하는 시간(분) - `121이상`
--   `rule.enabled_use_cold_storage` : cold storage 사용 여부
--   `rule.warm_storage_retention_days` : 생성 후 복구 지점을 콜드 스토리지로 이동할 지정 일 수 - `1 ~ 36410`
--   `rule.told_retention_days` : 생성 후 복구 지점을 삭제할 지정 일 수 - `91 ~ 36500`
+- `rule`
+  - `rule_name` : 백업 규칙 이름
+  - `backup_vault_name` : 백업 저장에 사용되는 논리적 컨테이너 이름
+  - `frequency_type` : 백업에 대한 주기 타이밍
+  - `frequency_hour` : 백업 계획을 초기화할 시간 - `1 이상`
+  - `start_time` : 백업 계획 시작 시간
+  - `start_after_minutes` : 백업을 시작하기까지 총 걸리는 시간 - `60 이상`
+  - `complete_after_minutes` : 작업을 취소하고 오류를 반환하기 전까지 AWS Backup에서 백업을 시도하는 시간(분) - `121 이상`
+  - `enabled_use_cold_storage` : cold storage 사용 여부
+  - `warm_storage_retention_days` : 생성 후 복구 지점을 콜드 스토리지로 이동할 지정 일 수 - `1 ~ 36410`
+  - `cold_retention_days` : 생성 후 복구 지점을 삭제할 지정 일 수 - `91 ~ 36500`
 
--   `resource_assignment.name`
--   `resource_assignment.iam_role_arn` : 대상 리소스를 복원 및 백업할 때 AWS 백업에서 인증하는 데 사용하는 IAM 역할의 ARN
--   `resource_assignment.enabled_contain_all` : 모든 리소스 포함 여부 - `false`,`true`
+- `resource_assignment`
+  - `name`
+  - `iam_role_arn` : 대상 리소스를 복원 및 백업할 때 AWS 백업에서 인증하는 데 사용하는 IAM 역할의 ARN
+  - `enabled_contain_all` : 모든 리소스를 포함 여부 - `false`,`true`
+
+---
+
+## 참고 자료
 
 -   [Amazon BackupPlan(AWS)](https://docs.aws.amazon.com/ko_kr/aws-backup/latest/devguide/creating-a-backup-plan.html)
 -   [Amazon BackupPlan(Terraform)](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/backup_plan)

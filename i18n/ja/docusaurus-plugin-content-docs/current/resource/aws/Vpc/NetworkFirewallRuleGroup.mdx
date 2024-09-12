@@ -37,20 +37,21 @@ tags: [AWS, リソース, Vpc, NetworkFirewallRuleGroup]
 -   `rule_evaluation_order` : `STRICT_ORDER`,`DEFAULT_ACTION_ORDER`
 -   `capacity` : ライフサイクルの間、このルールグループに含まれると予想されるルールの数 - `1-30000`
 -   `ip_set` : IP セット変数
--   `ip_set.name` : IP セット変数名
--   `ip_set.cidrs` : IP セット変数の値
+    -   `name` : IP セット変数名
+    -   `cidrs` : IP セット変数の値
 -   `port_set` : ポート変数
--   `port_set.name` : ポート変数名
--   `port_set.cidrs` : ポート変数の値
+    -   `name` : ポート変数名
+    -   `cidrs` : ポート変数の値
 -   `stateful_rule` : 標準ステートフルルール
--   `stateful_rule.name` : 標準ステートフルルールの名
--   `stateful_rule.protocol` : 検査するトランスポートプロトコル - `IP`,`TCP`,`UDP`,`ICMP`,`HTTP`
--   `stateful_rule.source_ip_or_cidr` : 検査するソース IP アドレス及びアドレス範囲
--   `stateful_rule.source_port` : 検査するソースポートまたはポートの範囲
--   `stateful_rule.target_ip_or_cidr` : 検査対象 IP アドレスおよびアドレス範囲
--   `stateful_rule.traffic_direction` : 検査するトラフィックの方向 - `ANY`,`FORWARD`
--   `stateful_rule.action` : パケットがルール設定と一致するときにネットワーク Firewall が実行するタスク - `ALERT`,`DROP`,`PASS`,`REJECT`
--   `encryption_configuration.enabled_custom_configuration` : AWS 管理型キーを使用してデータを暗号化 - `false`,`true`
+    -   `name` : 標準ステートフルルールの名
+    -   `protocol` : 検査するトランスポートプロトコル - `IP`,`TCP`,`UDP`,`ICMP`,`HTTP`
+    -   `source_ip_or_cidr` : 検査するソース IP アドレス及びアドレス範囲
+    -   `source_port` : 検査するソースポートまたはポートの範囲
+    -   `target_ip_or_cidr` : 検査対象 IP アドレスおよびアドレス範囲
+    -   `traffic_direction` : 検査するトラフィックの方向 - `ANY`,`FORWARD`
+    -   `action` : パケットがルール設定と一致するときにネットワーク Firewall が実行するタスク - `ALERT`,`DROP`,`PASS`,`REJECT`
+-   `encryption_configuration`
+    -   `enabled_custom_configuration` : AWS 管理型キーを使用してデータを暗号化 - `false`,`true`
 
 ---
 

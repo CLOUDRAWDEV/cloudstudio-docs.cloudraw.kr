@@ -32,7 +32,7 @@ This device distributes network traffic across multiple servers, taking into acc
 -   `network_type` : The type of network, Public or private - `PUBLIC`, `PRIVATE`
 -   `type` : The type of Load balancer to create, Application/network/network proxy - `NETWORK`, `NETWORK_PROXY`, `APPLICATION`
 -   `throughput_type` : The performance type of Load balancer - `SMALL`, `MEDIUM`, `LARGE`
--   `included_vpc_name` : Name of the VPC in which to create the target group
+-   `included_vpc_name` : The name of VPC to create target group
 -   `subnet_config`
     -   `cidr`
     -   `linked_nacl_name`
@@ -41,7 +41,7 @@ This device distributes network traffic across multiple servers, taking into acc
     -   `protocol` : The type of protocol to use for routing traffic - `TCP`, `PROXY_TCP`, `HTTP`, `HTTPS`
     -   `port` : The port on which targets receive traffic
     -   `algorithm_type` : The type of algorithm to use for Load balancing, RR/SIPHS/LC - `RR`, `SIPHS`, `LC`, `MH`
-    -   `health_check_protocol` : The type of algorithm to use for Load balancing, RR/SIPHS/LC - `TCP`, `HTTP`, `HTTPS`
+    -   `health_check_protocol` : The protocol to use for health checks - `TCP`, `HTTP`, `HTTPS`
     -   `health_check_http_method` : The HTTP method for the health check if using HTTP/HTTPS for the health check protocol - `HEAD`, `GET`
     -   `health_check_port` : The port to use for health checks
     -   `health_check_cycle` : The health check cycle in seconds, From 5 to 300

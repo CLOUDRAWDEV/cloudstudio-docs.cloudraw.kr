@@ -44,7 +44,7 @@ Amazon CloudFront는 .html, .css, .php, 이미지 및 미디어 파일과 같은
     -   `header_behavior` : HTTP 헤더가 캐시 키에 포함되고 CloudFront가 오리진으로 보내는 요청에 자동으로 포함되는지 여부를 결정 - `whitelist`,`none`
     -   `headers_items` : Header Items 이름 리스트
     -   `query_string_behavior` : 최종 사용자 요청의 URL 쿼리 문자열이 캐시 키에 포함되고 CloudFront가 오리진으로 보내는 요청에 자동으로 포함되는지 여부를 결정 - `whitelist`,`all`,`none`,`allExcept`
-    -   `query_string_items` : query items 이름 리스트
+    -   `query_strings_items` : query items 이름 리스트
 -   `cache_behavior`
 
     -   `path_pattern` : Cache Behavior에 적용할 요청을 지정하는 패턴
@@ -53,7 +53,7 @@ Amazon CloudFront는 .html, .css, .php, 이미지 및 미디어 파일과 같은
     -   `allowed_methods` : CloudFront에서 처리하고 Amazon S3 버킷 또는 사용자 지정 오리진으로 전달하는 HTTP 메서드를 제어 - `GET`,`HEAD`,`OPTIONS`,`PATCH`,`POST`,`PUT`,`DELETE`
     -   `cached_methods` : CloudFront에서 지정된 HTTP 메서드를 사용하여 요청에 대한 응답을 캐시할지 여부를 제어 - `GET`,`HEAD`,`OPTIONS`,`PATCH`,`POST`,`PUT`,`DELETE`
     -   `origin_name` : 경로 패턴이 일치할 때 Cloudfront에서 요청을 라우팅할 Origin 이름
-    -   `cache_policy_name` : Cache Behavior에 연결할 Cache Policy ID
+    -   `linked_cache_policy_name` : Cache Behavior에 연결할 Cache Policy ID
 
 -   `restriction`
 

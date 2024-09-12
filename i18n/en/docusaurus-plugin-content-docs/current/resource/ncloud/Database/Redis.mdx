@@ -37,10 +37,10 @@ Cloud DB for Redis allows you to easily set up a Redis cache with just a few con
 -   `target_config_group_name` : The name of Redis config group to link redis
 -   `product_code` : The product code to determine the server specifications of the Cloud DB for Redis instance to create
 -   `data_storage_type` : The data storage type - `SSD`, `HDD`
--   `shard_count` : Number of shards to be created. 3 to 10 Number of master nodes - `3~10`
+-   `shard_count` : Number of shards to be created - `3~10`
 -   `shard_copy_count` : Replicas per shard Redis Cluster consists of the master node and slave node. A slave node is necessary for HA. When adding a replica, one slave node is assigned to each master node
--   `enable_high_availiability` : Whether to enable High Availability
--   `enable_backup` : Number of shards to be created. 3 to 10 Number of master nodes
+-   `enable_high_availability` : Whether to enable High Availability
+-   `enable_backup` : Whether to enable Backup status. If the high availability status enable_high_availability is true, then the backup setting status is fixed as true
 -   `port` : Cloud Redis port - `6379`
 
     

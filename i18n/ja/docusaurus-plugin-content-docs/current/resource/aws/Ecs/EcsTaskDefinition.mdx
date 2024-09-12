@@ -31,22 +31,24 @@ tags: [AWS, リソース, Ecs, EcsTaskDefinition]
 -   `task_memory` : 作業で使用するメモリ量(MiB)
 -   `network_mode` : タスクのコンテナに使用するネットワーキング モード - `awsvpc`,`none`,`bridge`,`host`
 -   `container` : ECS Cluster で動作する Container の名前
--   `container.image_url` : ECS Cluster で動作する Container のイメージ
--   `container.essential_enabled` : Container が動作を停止した場合、container 関連の他のオブジェクトも一緒に動作を停止するか正常に動作するかの可否 - `false`,`true`
--   `container.port_mapping` : ポートマッピング名
-    -   `container.port_mapping.name`
-    -   `container.port_mapping.container_port` : Container が Host Container Instance にトラフィックを送信または受信するときに使用するポート番号
-    -   `container.port_mapping.protocoal` : ポートのマッピングに使用するプロトコル - `tcp`,`udp`
+    -   `image_url` : ECS Cluster で動作する Container のイメージ
+    -   `essential_enabled` : Container が動作を停止した場合、container 関連の他のオブジェクトも一緒に動作を停止するか正常に動作するかの可否 - `false`,`true`
+    -   `port_mapping` : ポートマッピング名
+        -   `name` : 
+        -   `container_port` : Container が Host Container Instance にトラフィックを送信または受信するときに使用するポート番号
+        -   `protocol` : ポートのマッピングに使用するプロトコル - `tcp`,`udp`
     -   `container.port_mapping.app_protocol` : サービス接続に使用するアプリケーションプロトコル - `http`,`http2`,`grpc`,`none`
--   `container.cpu` : ECS Cluster で動作する Container の CPU 容量
--   `container.memory` : ECS Cluster で動作する Container の Memory 容量
+    -   `cpu` : ECS Cluster で動作する Container の CPU 容量
+    -   `memory` : ECS Cluster で動作する Container の Memory 容量
 
--   `volume.name` : Task Definition に接続する Volume 名
--   `volume_mount.name` : Task Definition に接続する Volume 名
--   `volume_mount.container_name` : Volume をマウントする Container 名
--   `volume_mount.volume_name` : マウントする Volume 名
--   `volume_mount.container_path` : Volume をマウントするコンテナへのパス
--   `volume_mount.read_only` : Container が Volume に read-only アクセスのみ可能かどうかの可否 - `false`,`true`
+-   `volume`
+    -   `name` : Task Definition に接続する Volume 名
+-   `volume_mount`
+    -   `name` : Task Definition に接続する Volume 名
+    -   `container_name` : Volume をマウントする Container 名
+    -   `volume_name` : マウントする Volume 名
+    -   `container_path` : Volume をマウントするコンテナへのパス
+    -   `read_only` : Container が Volume に read-only アクセスのみ可能かどうかの可否 - `false`,`true`
 
 ## 参考資料
 

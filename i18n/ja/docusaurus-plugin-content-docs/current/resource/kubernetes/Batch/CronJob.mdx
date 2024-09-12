@@ -55,37 +55,37 @@ tags: [Kubernetes, リソース, Batch, CronJob]
 
         -   `resources` : コンテナのコンピューティング リソースの量を指定
 
-            -   `resources.name` : 最小/最大コンピューティングリソースの量を指定 - `Limits`, `requests`
-            -   `resources.cpu` : cpu(m)の量を指定
-            -   `resources.memory` : メモリ(Mi)の量を指定
+            -   `name` : 最小/最大コンピューティングリソースの量を指定 - `Limits`, `requests`
+            -   `cpu` : cpu(m)の量を指定
+            -   `memory` : メモリ(Mi)の量を指定
 
         -   `probe` : Pod の状態を診断する方法の定義
 
-            -   `probe.name` : Probe 方法を選択 - `startup`,`liveness`,`readiness`
-            -   `probe.http_get_path` : HTTP サーバーにアクセスするためのパス
-            -   `probe.http_get_port` : コンテナからアクセスするポート番号
-            -   `probe.http_header` : リクエストに設定するカスタム ヘッダー
-            -   `probe.initial_delay_seconds` : コンテナが始まってからプローブが始まるまでの時間(秒)
-            -   `probe.period_seconds` : プローブを行う頻度(秒)
+            -   `name` : Probe 方法を選択 - `startup`,`liveness`,`readiness`
+            -   `http_get_path` : HTTP サーバーにアクセスするためのパス
+            -   `http_get_port` : コンテナからアクセスするポート番号
+            -   `http_header` : リクエストに設定するカスタム ヘッダー
+            -   `initial_delay_seconds` : コンテナが始まってからプローブが始まるまでの時間(秒)
+            -   `period_seconds` : プローブを行う頻度(秒)
 
         -   `env` : コンテナ環境に設定する key-value ペアのブロック
 
-            -   `env.name` : env 変数名
-            -   `env.value` : env 変数で設定する値
+            -   `name` : env 変数名
+            -   `value` : env 変数で設定する値
 
         -   `volume_mount` : コンテナのファイルシステムにマウントするファッドボリューム
-            -   `volume_mount.name` : ボリュームマウント名の設定
-            -   `volume_mount.path`
-                -   `volume_mount.path.mount_path` : ボリュームをマウントする必要があるコンテナ内のパス
-                -   `volume_mount.path.sub_path` : ボリュームをマウントする必要があるコンテナ内のパス
+            -   `name` : ボリュームマウント名の設定
+            -   `path`
+                -   `mount_path` : ボリュームをマウントする必要があるコンテナ内のパス
+                -   `sub_path` : ボリュームをマウントする必要があるコンテナ内のパス
 
 -   `volume` : ファッドに属するコンテナが搭載できるボリュームのリスト
 
-    -   `volume.name` : volume 名
-        -   `volume.volume_type` : マウントするボリュームのタイプ - `EmptyDir`,`ConfigMap`,`PersistentVolumeClaim`
-        -   `volume.target_name` : 永久ボリュームクレームの名前
-        -   `volume.default_mode` : 生成されたファイルに使用するモード - 0 ~ 0777 の間、デフォルトは 0644
-        -   `volume.read_only` : true の場合は読み取り専用にマウントされ、そうでない場合は読み取り/書き込みが可能
+    -   `name` : volume 名
+        -   `volume_type` : マウントするボリュームのタイプ - `EmptyDir`,`ConfigMap`,`PersistentVolumeClaim`
+        -   `target_name` : 永久ボリュームクレームの名前
+        -   `default_mode` : 生成されたファイルに使用するモード - 0 ~ 0777 の間、デフォルトは 0644
+        -   `read_only` : true の場合は読み取り専用にマウントされ、そうでない場合は読み取り/書き込みが可能
 
 -   `image_pull_secrets` : Container で使用するイメージを取得するために必要な権限が含まれた同じネームスペースにある Secret
 

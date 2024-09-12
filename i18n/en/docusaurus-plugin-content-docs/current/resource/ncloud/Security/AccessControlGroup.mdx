@@ -39,14 +39,14 @@ This is an IP/Port-based firewall service that allows for network access control
     -   `protocol` : The protocol of inbound traffic - `TCP`, `UDP`, `ICMP`
     -   `rule_apply_method` : The method to apply inbound rule - `ip_block`, `source_name`
     -   `ip_block` : The destination of inbound traffic, The CIDR block
-    -   `port_range` : The range of ports to apply, 1 to 65535
+    -   `port_range` : The range of ports to apply, 1 to 65535 (When setting range: 100-200)
 
 -   `outbound_rule`
     -   `name` : The name of outbound rule
     -   `protocol` : The protocol of outbound traffic - `TCP`, `UDP`, `ICMP`
-    -   `rule_apply_method` : The method to apply inbound rule - `ip_block`, `source_name`
+    -   `rule_apply_method` : The method to apply outbound rule - `ip_block`, `source_name`
     -   `ip_block` : The destination of outbound traffic, The CIDR block
-    -   `port_range` : The range of ports to apply, 1 to 65535
+    -   `port_range` : The range of ports to apply, 1 to 65535 (When setting range: 100-200)
     
 ---
 

@@ -35,15 +35,16 @@ AWS Network Firewall Policy는 Network Firewall에 대한 모니터링 및 보�
 -   `description` : 방화벽 정책에 대한 설명
 -   `stream_exception_policy` : 미드스트림이 끊어진 트래픽을 처리하는 방법 - `drop`,`continue`,`reject`
 -   `stateless_default_action` : stateless_default_action 설정
--   `stateless_default_action.enabled_fragment_packet_action` : 조각 패킷 작업을 활성화 여부 - `false`,`true`
--   `stateless_default_action.default_action` : 패킷이 정책의 상태 비저장 규칙과 일치하지 않을 경우 수행할 작업 목록 - `aws:drop`,`aws:pass`,`aws:forward_to_sfe`
+    -   `enabled_fragment_packet_action` : 조각 패킷 작업을 활성화 여부 - `false`,`true`
+    -   `default_action` : 패킷이 정책의 상태 비저장 규칙과 일치하지 않을 경우 수행할 작업 목록 - `aws:drop`,`aws:pass`,`aws:forward_to_sfe`
 -   `stateless_rule_group_names` : 정책에 사용되는 상태 stateless 규칙 그룹
 -   `stateful_default_action` : stateful 기본 action의 구성
--   `stateful_default_action.rule_evaluation_order` : 정책에 대한 상태 규칙 평가 순서를 관리하는 방법
--   `stateful_default_action.default_actions` : 패킷이 정책의 상태 저장 규칙과 일치하지 않을 경우 수행할 작업 목록 - `aws:drop_strict`,`aws:drop_established`,`aws:alert_strict`,`aws:alert_established`
+    -   `rule_evaluation_order` : 정책에 대한 상태 규칙 평가 순서를 관리하는 방법
+    -   `default_actions` : 패킷이 정책의 상태 저장 규칙과 일치하지 않을 경우 수행할 작업 목록 - `aws:drop_strict`,`aws:drop_established`,`aws:alert_strict`,`aws:alert_established`
 -   `strict_stateful_rule_group_names` : 패킷이 정책의 상태 규칙과 일치하지 않을 경우 수행할 작업 목록
 -   `rule_variables` : 방화벽 정책에서 기본 수리 데이터 설정을 재정의하는 데 사용할 수 있는 변수
--   `encryption_configuration.enabled_custom_configuration` : AWS 관리형 키를 사용하여 데이터를 암호화 - `false`,`true`
+-   `encryption_configuration.
+    -   `enabled_custom_configuration` : AWS 관리형 키를 사용하여 데이터를 암호화 - `false`,`true`
 
 
 ---
