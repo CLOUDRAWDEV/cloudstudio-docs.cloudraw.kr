@@ -39,23 +39,23 @@ A Kubernetes resource that provides network-attached storage for a cluster.
 -   `annotations` : A key-value used to display necessary information in the Kubernetes system
 -   `labels` : To distinguish objects, the user arbitrarily specifies the desired value
 -   `spec` : Define specific specifications of PV
-    -   `spec.storageclass_name` : Specify the storage class name to use
-    -   `spec.storage_capacity` : Set storage capacity to use
-    -   `spec.volume_driver` : Setting the volume driver to use
-    -   `spec.volume_handle` : Identifier that links the PV to the physical storage resource
-    -   `spec.persistent_volume_reclaim_policy` : Volume policy when released from claim - `retain`,`delete`,`recycle`
-    -   `spec.read_only` : Volume mounts에서 Readonly 설정을 강제할지 여부 - `false`,`true`
-    -   `spec.volume_attributes` : Whether to force Readonly settings on volume mounts
-    -   `spec.access_modes` : Specifies how the volume can be mounted - `ReadOnlyMany`,`ReadWriteOnce`,`ReadWriteMany`
-    -   `spec.mount_options` : Specify additional mount options
+    -   `storage_class_name` : Specify the storage class name to use
+    -   `storage_capacity` : Set storage capacity to use
+    -   `volume_driver` : Setting the volume driver to use
+    -   `volume_handle` : Identifier that links the PV to the physical storage resource
+    -   `persistent_volume_reclaim_policy` : Volume policy when released from claim - `retain`,`delete`,`recycle`
+    -   `read_only` : Whether to force Readonly settings on volume mounts - `false`,`true`
+    -   `volume_attributes` : Specifies the properties of the volume to use
+    -   `access_modes` : Specifies how the volume can be mounted - `ReadOnlyMany`,`ReadWriteOnce`,`ReadWriteMany`
+    -   `mount_options` : Specify additional mount options
 -   `node_stage_secret_ref` : Specifies a Kubernetes secret that contains authentication for users who can access storage
-    -   `node_stage_secret_ref.name` : Set the secret name
-    -   `node_stage_secret_ref.namespace` : Set the namespace for the secret
+    -   `name` : Set the secret name
+    -   `namespace` : Set the namespace for the secret
 
 
 ---
 
 ## Reference Materials
 
--   [PersistentVolume(Kubernetes)](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/en/docs/resources/persistent_volume)
--   [PersistentVolume(Terraform)](https://kubernetes.io/en/docs/concepts/storage/persistent-volumes/)
+-   [PersistentVolume(Kubernetes)](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/persistent_volume)
+-   [PersistentVolume(Terraform)](https://kubernetes.io/docs/concepts/storage/persistent-volumes/)

@@ -35,16 +35,16 @@ This service provides network security management for subnets.
     -   `rule_action` : Allow or deny inbound traffic - `ALLOW`, `DROP`
     -   `ip_block` : The source of inbound traffic, the CIDR block
     -   `port_range` : The range of ports to apply, 1 to 65535
--   `outbound_rule` :
+-   `outbound_rule`
     -   `priority` : The priority of outbound rule, 0 to 199
     -   `protocol` : The protocol of outbound traffic - `TCP`, `UDP`, `ICMP`
     -   `rule_action` : Allow or deny outbound traffic - `ALLOW`, `DROP`
-    -   `ip_block` : The destination of outbound traffic, The CIDR block
-    -   `port_range` : The range of ports to apply, 1 to 65535(When setting the range: 100-200)
+    -   `ip_block` : The destination of outbound traffic, the CIDR block
+    -   `port_range` : The range of ports to apply, 1 to 65535 (When setting range: 100-200)
 
 ---
 
 ## Reference Materials
 
--   [Network ACL(Ncloud)](https://guide.ncloud-docs.com/en/docs/vpc-nacl-vpc)
--   [ncloud_network_acl(Terraform)](https://registry.terraform.io/providers/NaverCloudPlatform/ncloud/latest/en/docs/resources/network_acl)
+-   [Network ACL(Ncloud)](https://guide.ncloud-docs.com/docs/vpc-nacl-vpc)
+-   [ncloud_network_acl(Terraform)](https://registry.terraform.io/providers/NaverCloudPlatform/ncloud/latest/docs/resources/network_acl)

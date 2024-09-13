@@ -37,7 +37,7 @@ Cloud DB for Redis は Redis キャッシュをいくつかの設定とクリッ
 -   `data_storage_type` : データストレージの種類 - `SSD`, `HDD`
 -   `shard_count` : 生成するシャード数。master node の数 - `3~10`
 -   `shard_copy_count` : master node と slave node で構成されている Redis cluster のシャード当たりのレプリカの数、HA のためには slave node が必須。 レプリカを追加すると、すべての master node にそれぞれ 1 個ずつ slave node が割り当てられます
--   `enable_high_availiability` : 高可用性機能の使用有無
+-   `enable_high_availability` : 高可用性機能の使用有無
 -   `enable_backup` : バックアップ機能を使用するかどうか、もし高可用性機能を使用すると、バックアップ機能は使用によって固定
 -   `port` : Redis 接続ポート - `6379`
 

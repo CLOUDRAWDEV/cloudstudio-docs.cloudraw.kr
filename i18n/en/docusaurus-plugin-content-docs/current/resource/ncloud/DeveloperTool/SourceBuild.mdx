@@ -31,22 +31,22 @@ SourceBuild is a service that makes it easy to build source code developed in va
 
 -   `source_type` : The target type of Build project- `SourceCommit`
 -   `source_branch`  The branch name to build
--   `linked_repository_name` : The branch name to build
--   `env` : The repository name to build
+-   `linked_repository_name` : The repository name to build
+-   `env` : Build environments
     -   `env_compute_spec` : The spec of compute to build - `2cpu-4memory`,`4cpu-8memory`,`8cpu-16memory`
     -   `env_platform_type` : Build environment image type - `SourceBuild`,`ContainerRegistry`,`PublicRegistry`
     -   `env_platform_os_spec` : The OS spec to use - `ubuntu-archiX64-16.04`
     -   `env_platform_runtime_name` : The name of runtime to build - `base`,`java`,`dotnet`,`android_java`,`python`
     -   `env_platform_runtime_version` : The version of runtime to build - `1.0-1.0.0`,`2.0-1.0.0`,`3.0-1.0.0`,`4.0-1.0.0`,`5.0-1.0.0`
     -   `env_timeout` : Build timeout in minutes, 5~540
-    -   `env_user_docker` : 도커 엔진 사용 여부 
+    -   `env_use_docker` : Whether or not to use of docker engine
     -   `env_var` : The environment variables to use for build
 -   `build_command` : Commands to execute in build
     -   `pre_build_command` : Commands before build
     -   `in_build_command` : Commands during build
     -   `post_build_command` : Commands after build
 -   `enable_cloud_log_analytics` : Whether or not to save build log in the cloud log analytics
--   `enable_file_safer` : file safer 이용 안전 확인 여부
+-   `enable_file_safer` : Whether or not to check safety using file safer
 -   `artifact` : Artifact to save build results
     -   `save_build_results` : Whether or not to save build results
 -   `upload` : Set up image upload after build is complete
@@ -60,4 +60,4 @@ SourceBuild is a service that makes it easy to build source code developed in va
 ## Reference Materials
 
 -   [Source Build(Ncloud)](https://www.ncloud.com/product/devTools/sourceBuild)
--   [ncloud_source_build(Terraform)](https://registry.terraform.io/providers/NaverCloudPlatform/ncloud/latest/en/docs/resources/nks_cluster)
+-   [ncloud_source_build(Terraform)](https://registry.terraform.io/providers/NaverCloudPlatform/ncloud/latest/docs/resources/nks_cluster)

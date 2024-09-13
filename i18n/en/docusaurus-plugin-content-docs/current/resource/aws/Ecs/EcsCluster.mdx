@@ -30,24 +30,26 @@ tags: [AWS, Resource, Ecs, EcsCluster]
 
 ## Resource Setting Values
 
--   `set_container_insights`: Cluster Settings to assign to the Container Insights - `Enabled`
--   `kms_key_name`: The AWS Key Management Service key Name to encrypt the data between the local client and the container
--   `logging`: The log setting to use for redirecting logs for your execute command results - `OVERRIDE`, `NONE`, `DEFAULT`
--   `cloud_watch_encryption_enabled`: Whether or not to enable encryption on the CloudWatch logs - `false`, `true`
--   `capacity_providers`: The name of the CloudWatch log group to send logs to - `Fargate`, `Fargate_spot`
--   `service`:
-  -     `service.name`: Service's task distribution method
-  -     `service.computing_option`: Method of distributing tasks for the service - `capacity_provider_strategy`, `launch_type`
+-   `set_container_insights` : Cluster Settings to assign to the Container Insights - `Enabled`
+-   `kms_key_name` : The AWS Key Management Service key Name to encrypt the data between the local client and the container
+-   `logging` : The log setting to use for redirecting logs for your execute command results - `OVERRIDE`, `NONE`, `DEFAULT`
+-   `cloud_watch_encryption_enabled` : Whether or not to enable encryption on the CloudWatch logs - `false`, `true`
+-   `capacity_providers` : The name of the CloudWatch log group to send logs to - `Fargate`, `Fargate_spot`
+-   `service`
+    -   `name` : Service's task distribution method
+    -   `computing_option` : Method of distributing tasks for the service - `capacity_provider_strategy`, `launch_type`
 
--   `service.computing_option.capacity_provider_strategy`:
-  -     `service.computing_option.capacity_provider_strategy.capacity_provider`: `Fargate`, `Fargate_spot`
-  -     `service.computing_option.capacity_provider_strategy.base`: Minimum number of tasks to run (up to 100,000)
-  -     `service.computing_option.capacity_provider_strategy.weight`: Estimating the value of total task running (up to 1,000)
+    -   `computing_option`
+        -   `capacity_provider_strategy`
+            -   `capacity_provider` : `Fargate`, `Fargate_spot`
+            -   `base` : Minimum number of tasks to run (up to 100,000)
+            -   `weight` : Estimating the value of total task running (up to 1,000)
 
--   `service.computing_option.launch_type`: Launch type on which to run the Service
-  -     `service.computing_option.launch_type.launch_type`: `ec2`, `Fargate`, `External`
-  -     `service.computing_option.launch_type.task_definition_name`: The name of the ECS Task Definition that will use the Service
-  -     `service.computing_option.launch_type.desired_count`: Number of instances of the task definition to place and keep running
+    -   `computing_option.launch_type` : Launch type on which to run the Service
+        -   `launch_type`
+            -   `launch_type` : `ec2`, `Fargate`, `External`
+            -   `task_definition_name` : The name of the ECS Task Definition that will use the Service
+            -   `desired_count` : Number of instances of the task definition to place and keep running
   
 
 ## Reference Materials

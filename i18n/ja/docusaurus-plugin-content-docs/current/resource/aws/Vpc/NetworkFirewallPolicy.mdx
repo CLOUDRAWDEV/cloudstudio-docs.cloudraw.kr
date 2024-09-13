@@ -35,15 +35,16 @@ AWS Network Firewall Policy は Network Firewall に対するモニタリング�
 -   `description` : Firewall ポリシーの説明
 -   `stream_exception_policy` : ミッドストリームが切断されたトラフィックを処理する方法 - `drop`,`continue`,`reject`
 -   `stateless_default_action` : stateless_default_action の設定
--   `stateless_default_action.enabled_fragment_packet_action` : フラグメントパケットアクションの活性化可否 - `false`,`true`
--   `stateless_default_action.default_action` : パケットがポリシーのステータス非保存ルールと一致しない場合に実行するワークリスト - `aws:drop`,`aws:pass`,`aws:forward_to_sfe`
+    -   `enabled_fragment_packet_action` : フラグメントパケットアクションの活性化可否 - `false`,`true`
+    -   `default_action` : パケットがポリシーのステータス非保存ルールと一致しない場合に実行するワークリスト - `aws:drop`,`aws:pass`,`aws:forward_to_sfe`
 -   `stateless_rule_group_names` : ポリシーに使用されるステータス stateless ルールグループ
 -   `stateful_default_action` : stateful 基本アクションの構成
--   `stateful_default_action.rule_evaluation_order` : ポリシーのステータスルールの評価手順を管理する方法
--   `stateful_default_action.default_actions` : パケットがポリシーのステータス保存ルールと一致しない場合に実行するタスクのリスト - `aws:drop_strict`,`aws:drop_established`,`aws:alert_strict`,`aws:alert_established`
+    -   `rule_evaluation_order` : ポリシーのステータスルールの評価手順を管理する方法
+    -   `default_actions` : パケットがポリシーのステータス保存ルールと一致しない場合に実行するタスクのリスト - `aws:drop_strict`,`aws:drop_established`,`aws:alert_strict`,`aws:alert_established`
 -   `strict_stateful_rule_group_names` : パケットがポリシーのステータスルールと一致しない場合に実行するワークリスト
 -   `rule_variables` : Firewall ポリシーでデフォルトの修理データ設定を再定義するために使用できる変数
--   `encryption_configuration.enabled_custom_configuration` : AWS 管理型キーを使用してデータを暗号化 - `false`,`true`
+-   `encryption_configuration.
+    -   `enabled_custom_configuration` : AWS 管理型キーを使用してデータを暗号化 - `false`,`true`
 
 ---
 

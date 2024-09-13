@@ -39,7 +39,7 @@ A Kubernetes resource that manages the deployment and scaling of a set of Pods, 
 -   `service_name` : Name of the service that manages the statefulset
 -   `namespace` : Namespace where StatefulSet resources will be deployed
 -   `annotations` : A key-value used to display necessary information in the Kubernetes system
--   `labels` : Label to be set in Pod
+-   `labels` : To distinguish objects, the user arbitrarily specifies the desired value
 -   `template_labels` : Label to be set in Pod
 -   `pod_management_policy` : Control how pods are created when pods are replaced or scaled down on a node - `Parallel`,`OrderedReady`
 -   `revision_history_limit` : Maximum number of revisions to be maintained in the StatefulSet's revision history, default is 10
@@ -54,34 +54,34 @@ A Kubernetes resource that manages the deployment and scaling of a set of Pods, 
         -   `port` : List of ports to expose in container
 
         -   `resources` : Specifies the amount of resources in the container  - Detailed settings
-            -   `resources.name` : Specify minimum/maximum amount of computing resources   - `Limits`, `requests`     
-            -   `resources.cpu` : Specifies the amount of cpu(m)   
-            -   `resources.memory` : Specifies the amount of memory(Mi)
+            -   `name` : Specify minimum/maximum amount of computing resources   - `Limits`, `requests`     
+            -   `cpu` : Specifies the amount of cpu(m)   
+            -   `memory` : Specifies the amount of memory(Mi)
 
         -   `probe` : Define how to diagnose the health of a Pod  - Detailed settings
-            -   `probe.name` : Probe method selection - `startup`,`liveness`,`readiness`
-            -   `probe.http_get_path` : Path to access the HTTP server
-            -   `probe.http_get_port` : Port number to be accessed by the container
-            -   `probe.http_header` : Custom headers to set in the request
-            -   `probe.initial_delay_seconds` : Number of seconds after the container starts before the probe starts
-            -   `probe.period_seconds` : How often to perform probes (in seconds)
+            -   `name` : Probe method selection - `startup`,`liveness`,`readiness`
+            -   `http_get_path` : Path to access the HTTP server
+            -   `http_get_port` : Port number to be accessed by the container
+            -   `http_header` : Custom headers to set in the request
+            -   `initial_delay_seconds` : Number of seconds after the container starts before the probe starts
+            -   `period_seconds` : How often to perform probes (in seconds)
 
         -   `env` : Block of key-value pairs to set in container environment - Detailed settings
-            -   `env.name` : Name of the environment variable
-            -   `env.value` : Value for the environment variable
+            -   `name` : Name of the environment variable
+            -   `value` : Value for the environment variable
 
         -   `volume_mount` : The pod volume to mount on the container's file system - Detailed settings
-            -   `volume_mount.name` : Name of the volume mount
-            -   `volume_mount.path` 
-                -   `volume_mount.path.mount_path` : Path within the container where the volume should be mounted
-                -   `volume_mount.path.sub_path` : Path within the container where the volume should be mounted
+            -   `name` : Name of the volume mount
+            -   `path` 
+                -   `mount_path` : Path within the container where the volume should be mounted
+                -   `sub_path` : Path within the container where the volume should be mounted
             
 -   `volume` : List of volumes that containers in a pod can mount
-    - `volume.name` : Volume name
-        -   `volume.type` : Type of volume to mount - `EmptyDir`,`ConfigMap`,`PersistentVolumeClaim`
-        -   `volume.target_name` : Name of persistent volume claim
-        -   `volume.default_mode` : Mode to use for generated files - between 0 and 0777, default is 0644
-        -   `volume.read_only` : If true, mounted read-only, otherwise read/write
+    - `name` : Volume name
+        -   `type` : Type of volume to mount - `EmptyDir`,`ConfigMap`,`PersistentVolumeClaim`
+        -   `target_name` : Name of persistent volume claim
+        -   `default_mode` : Mode to use for generated files - between 0 and 0777, default is 0644
+        -   `read_only` : If true, mounted read-only, otherwise read/write
 
 -   `image_pull_secrets` : Secret in the same namespace containing the permissions needed to pull the image used by the Container
 

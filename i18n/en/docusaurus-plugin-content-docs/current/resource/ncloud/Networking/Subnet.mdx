@@ -37,16 +37,16 @@ A VPC subnet that allows for detailed segmentation based on network purposes.
 
 ## Resource Setting Values
 
--   `subnet_cidr` : VPC 주소 범위 내의 서브넷 IP 주소 범위
--   `zone` : 서브넷이 위치할 물리적 지역 - `KR-1`, `KR-2`
--   `subnet_type` : 퍼블릭 혹은 프라이빗 서브넷 설정 - `PUBLIC`, `PRIVATE`
--   `usage_type` : 로드 밸런서 사용 여부 설정 - `GEN`, `BM`
--   `included_vpc_name` : 서브넷이 위치할 VPC 이름
--   `linked_nacl_name` : 서브넷에 대한 접근 제어를 위한 Network access control list
+-   `subnet_cidr` : The subnet address ranges within the range of VPC addresses
+-   `zone` : Available zone where the Subnet will be placed physically - `KR-1`, `KR-2`
+-   `subnet_type` : Internet connectivity, public or private - `PUBLIC`, `PRIVATE`
+-   `usage_type` : Enable or disable Load balancer - `GEN`, `BM`
+-   `included_vpc_name` : The name of VPC where the Subnet will be located
+-   `linked_nacl_name` : Network access control list for controlling access to Subnet
 
 ---
 
 ## Reference Materials
 
--   [Subnet Management(Ncloud)](https://guide.ncloud-docs.com/en/docs/vpc-subnetmanage-vpc)
--   [ncloud_subnet(Terraform)](https://registry.terraform.io/providers/NaverCloudPlatform/ncloud/latest/en/docs/resources/subnet)
+-   [Subnet Management(Ncloud)](https://guide.ncloud-docs.com/docs/vpc-subnetmanage-vpc)
+-   [ncloud_subnet(Terraform)](https://registry.terraform.io/providers/NaverCloudPlatform/ncloud/latest/docs/resources/subnet)

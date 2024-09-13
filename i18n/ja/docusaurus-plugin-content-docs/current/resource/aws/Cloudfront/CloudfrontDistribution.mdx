@@ -45,7 +45,7 @@ Amazon CloudFront는 .html, .css, .php, イメージ及びメディアファイ�
     -   `header_behavior` : 指定されたヘッダーの値に基づいてオブジェクトをキャッシングするかどうかの可否 - `whitelist`,`none`
     -   `headers_items` : Header Items の名前リスト
     -   `query_string_behavior` : エンドユーザー要請の URL クエリ文字列がキャッシュキーに含まれ、CloudFront がオリジンに送る要請に自動的に含まれるかどうかを決定 - `whitelist`,`all`,`none`,`allExcept`
-    -   `query_string_items` : query items の名前リスト
+    -   `query_strings_items` : query items の名前リスト
 -   `cache_behavior`
 
     -   `path_pattern` : Cache Behavior に適用するリクエストを指定するパターン
@@ -54,7 +54,7 @@ Amazon CloudFront는 .html, .css, .php, イメージ及びメディアファイ�
     -   `allowed_methods` : CloudFront で処理し、Amazon S3 バケットまたはユーザ指定オリジンに伝達する HTTP メソッドを制御 - `GET`,`HEAD`,`OPTIONS`,`PATCH`,`POST`,`PUT`,`DELETE`
     -   `cached_methods` : CloudFront で指定された HTTP メソッドを使用してリクエストに対する応答をキャッシュするかどうかの可否を制御 - `GET`,`HEAD`,`OPTIONS`,`PATCH`,`POST`,`PUT`,`DELETE`
     -   `origin_name` : パスパターンが一致した時に Cloudfront でリクエストをルーティングする Origin 名
-    -   `cache_policy_name` : Cache Behavior に接続する Cache Policy ID
+    -   `linked_cache_policy_name` : Cache Behavior に接続する Cache Policy ID
 
 -   `restriction`
 

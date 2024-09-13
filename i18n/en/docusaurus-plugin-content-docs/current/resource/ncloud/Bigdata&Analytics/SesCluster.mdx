@@ -17,7 +17,7 @@ tags: [Ncloud, Resource, Bigdata&Analytics, SesCluster]
 
 ## Resource Overview
 
-elasticsearch 및 OpenSearch 클러스터를 편리하게 관리할 수 있는 환경을 제공하고, 다양한 서버 유형 및 스토리지 용량을 선택하여 클러스터를 구성하고 손쉽게 배포, 운영 및 확장할 수 있는 리소스입니다.
+This resource provides an environment for conveniently managing Elasticsearch and OpenSearch clusters, allowing you to configure clusters by selecting various server types and storage capacities, and enabling easy deployment, operation, and scaling.
 
 ## Associated Resources
 
@@ -35,9 +35,9 @@ elasticsearch 및 OpenSearch 클러스터를 편리하게 관리할 수 있는 �
     -   `version_code` : The Search Engine Service version to be used
     -   `user_name` : The Search Engine UserName
     -   `user_password` : The Search Engine User password
-    -   `dashboard_port` : Search Engine 대시보드의 포트 (1024 ~ 65535)
--   `manager_node` : The Search Engine Dashboard port
-    -   `enable_dual_manager` : manager node 이중화 여부
+    -   `dashboard_port` : The Search Engine Dashboard port (1024 ~ 65535)
+-   `manager_node` : The main items of manager node
+    -   `enable_dual_manager` : Whether to make redundancy of manager node
     -   `manager_node_product_code` : Whether to make redundancy of manager node
     -   `manager_node_subnet_name` : The subnet number where the manager node is to be located
 -   `data_node` : The main items of data node
@@ -53,4 +53,4 @@ elasticsearch 및 OpenSearch 클러스터를 편리하게 관리할 수 있는 �
 ## Reference Materials
 
 -   [Ses Cluster(Ncloud)](https://www.ncloud.com/product/analytics/searchEngineService)
--   [ncloud_ses_cluster(Terraform)](https://registry.terraform.io/providers/NaverCloudPlatform/ncloud/latest/en/docs/resources/ses_cluster)
+-   [ncloud_ses_cluster(Terraform)](https://registry.terraform.io/providers/NaverCloudPlatform/ncloud/latest/docs/resources/ses_cluster)

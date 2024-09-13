@@ -32,25 +32,25 @@ This is an IP/Port-based firewall service that allows for network access control
 
 ## Resource Setting Values
 
--   `included_vpc_name` : ACG를 생성할 VPC 이름
--   `acg_description` : ACG에 대한 설명
+-   `included_vpc_name` : The name of VPC to create ACG
+-   `acg_description` : Description of ACG
 -   `inbound_rule`
-    -   `name` : inbound rule에 대한 이름
-    -   `protocol` : 인바운드 트래픽의 프로토콜 - `TCP`, `UDP`, `ICMP`
-    -   `rule_apply_method` : 인바운드 규칙 적용 방법 - `ip_block`, `source_name`
-    -   `ip_block` : 인바운드 트래픽 목적지, CDIR 형식의 IP 대역
-    -   `port_range` : 인바운드 규칙을 적용할 포트 범위, 1 ~ 65535의 범위(범위 설정시: 100-200)
+    -   `name` : The name of inbound rule
+    -   `protocol` : The protocol of inbound traffic - `TCP`, `UDP`, `ICMP`
+    -   `rule_apply_method` : The method to apply inbound rule - `ip_block`, `source_name`
+    -   `ip_block` : The destination of inbound traffic, The CIDR block
+    -   `port_range` : The range of ports to apply, 1 to 65535 (When setting range: 100-200)
 
 -   `outbound_rule`
-    -   `name` : outbound rule에 대한 이름
-    -   `protocol` : 아웃바운드 트래픽의 프로토콜 - `TCP`, `UDP`, `ICMP`
-    -   `rule_apply_method` : 아웃바운드 규칙 적용 방법 - `ip_block`, `source_name`
-    -   `ip_block` : 인바운드 트래픽 목적지, CDIR 형식의 IP 대역
-    -   `port_range` : 인바운드 규칙을 적용할 포트 범위, 1 ~ 65535의 범위(범위 설정시: 100-200)
+    -   `name` : The name of outbound rule
+    -   `protocol` : The protocol of outbound traffic - `TCP`, `UDP`, `ICMP`
+    -   `rule_apply_method` : The method to apply outbound rule - `ip_block`, `source_name`
+    -   `ip_block` : The destination of outbound traffic, The CIDR block
+    -   `port_range` : The range of ports to apply, 1 to 65535 (When setting range: 100-200)
     
 ---
 
 ## Reference Materials
 
 -   [ACG(Ncloud)](https://www.ncloud.com/product/security/acg)
--   [ncloud_acg(Terraform)](https://registry.terraform.io/providers/NaverCloudPlatform/ncloud/latest/en/docs/resources/access_control_group)
+-   [ncloud_acg(Terraform)](https://registry.terraform.io/providers/NaverCloudPlatform/ncloud/latest/docs/resources/access_control_group)

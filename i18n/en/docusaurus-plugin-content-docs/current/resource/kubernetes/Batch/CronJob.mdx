@@ -37,59 +37,59 @@ A Kubernetes resource that generates jobs periodically according to a schedule.
 
 -   `service_name` : Name of the CronJob resource
 -   `namespace` : Namespace where CronJob resources will be deployed
--   `annotations` : Key-value pairs used to display necessary information in the Kubernetes system
--   `labels` : User-specified values used to distinguish objects
+-   `annotations` : A key-value used to display necessary information in the Kubernetes system
+-   `labels` : To distinguish objects, the user arbitrarily specifies the desired value
 -   `template_labels` : Labels applied to Pods created per node
--   `concurrency_policy` : Specifies how to handle concurrent job executions - `Allow`, `Forbid`, `Replace`
--   `failed_jobs_history_limit` : Specifies how many failed jobs to retain
--   `schedule` : Sets the job's execution schedule
--   `timezone` : The time zone for the specified schedule
--   `starting_deadline_seconds` : Deadline (in seconds) to start the job if the scheduled time was missed for any reason
+-   `concurrency_policy` : Specifies how to handle concurrent execution of tasks - `Allow`, `Forbid`, `Replace`
+-   `failed_jobs_history_limit` : Specify how many failed jobs to keep
+-   `schedule` : Setting the work cycle
+-   `timezone` : Time zone for the event
+-   `starting_deadline_seconds` : Deadline (in seconds) to start the task if the scheduled time is missed for any reason
 -   `successful_jobs_history_limit` : Sets how many successfully completed jobs to retain, default is 3
 
 -   `containers` : Defines templates for containers belonging to a pod - Default values can be set and applied, after which detailed settings can be configured
     -   `containers.name` : Defines the name of the container
-        -   `image` : Docker image name to use
+        -   `image` : Specify the image to use for the container
         -   `args` : Commands to be executed in the container
         -   `command` : Commands to be executed in the container
         -   `port` : List of ports to expose in the container
 
-        -   `resources` : Specifies the amount of computing resources in the container - Detailed settings
-            -   `resources.name` : Specifies the minimum/maximum amount of computing resources - `Limits`, `requests`
-            -   `resources.cpu` : Specifies the amount of CPU
-            -   `resources.memory` : Specifies the amount of memory
+        -   `resources` : Specifies the amount of resources in the container - Detailed settings
+            -   `name` : Specify minimum/maximum amount of computing resources - `Limits`, `requests`
+            -   `cpu` : Specifies the amount of cpu(m)
+            -   `memory` : Specifies the amount of memory(Mi)
 
-        -   `probe` : Defines how to diagnose the health of a Pod - Detailed settings
-            -   `probe.name` : Probe method selection - `startup`, `liveness`, `readiness`
-            -   `probe.http_get_path` : Path to access the HTTP server
-            -   `probe.http_get_port` : Port number to be accessed by the container
-            -   `probe.http_header` : Custom headers to set in the request
-            -   `probe.initial_delay_seconds` : Time (in seconds) before the probe starts after the container starts
-            -   `probe.period_seconds` : Frequency of probes (in seconds)
+        -   `probe` : Define how to diagnose the health of a Pod - Detailed settings
+            -   `name` : Probe method selection - `startup`, `liveness`, `readiness`
+            -   `http_get_path` : Path to access the HTTP server
+            -   `http_get_port` : Port number to be accessed by the container
+            -   `http_header` : Custom headers to set in the request
+            -   `initial_delay_seconds` : Number of seconds after the container starts before the probe starts
+            -   `period_seconds` : How often to perform probes (in seconds)
 
         -   `env` : Block of key-value pairs to set in the container environment - Detailed settings
-            -   `env.name` : Name of the environment variable
-            -   `env.value` : Value for the environment variable
+            -   `name` : Name of the environment variable
+            -   `value` : Value for the environment variable
 
         -   `volume_mount` : The pod volume to mount on the container's file system - Detailed settings
-            -   `volume_mount.name` : Name of the volume mount
-            -   `volume_mount.path` 
-                -   `volume_mount.path.mount_path` : Path within the container where the volume should be mounted
-                -   `volume_mount.path.sub_path` : Path within the container where the volume should be mounted
+            -   `name` : Name of the volume mount
+            -   `path` 
+                -   `mount_path` : Path within the container where the volume should be mounted
+                -   `sub_path` : Path within the container where the volume should be mounted
 
 -   `volume` : List of volumes that containers in a pod can mount
-    -   `volume.name` : Volume name
-        -   `volume.type` : Type of volume to mount - `EmptyDir`, `ConfigMap`, `PersistentVolumeClaim`
-        -   `volume.target_name` : Name of the persistent volume claim
-        -   `volume.default_mode` : Mode to use for generated files - between 0 and 0777, default is 0644
-        -   `volume.read_only` : If true, mounted read-only, otherwise read/write
+    -   `name` : Volume name
+        -   `volume_type` : Type of volume to mount - `EmptyDir`, `ConfigMap`, `PersistentVolumeClaim`
+        -   `target_name` : Name of the persistent volume claim
+        -   `default_mode` : Mode to use for generated files - between 0 and 0777, default is 0644
+        -   `read_only` : If true, mounted read-only, otherwise read/write
 
--   `image_pull_secrets` : Secret in the same namespace containing the permissions needed to pull the image used by the container
+-   `image_pull_secrets` : Secret in the same namespace containing the permissions needed to pull the image used by the Container
 
 
 ---
 
 ## Reference Materials
 
--   [CronJob(Kubernetes)](https://kubernetes.io/en/en/docs/concepts/workloads/controllers/cron-jobs/)
--   [CronJob(Terraform)](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/en/docs/resources/cron_job_v1)
+-   [CronJob(Kubernetes)](https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/)
+-   [CronJob(Terraform)](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/cron_job_v1)

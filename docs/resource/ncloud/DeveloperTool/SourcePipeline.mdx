@@ -57,18 +57,18 @@ SourceCommit, SourceBuild, SourceDeploy 서비스를 통합하여 빠르고 안�
         -  `target_source_deploy_project_scenario` : SourceDeploy의 task의 프로젝트 scenario 이름
         -  `pre_tasks` : 사전에 실행할 task 리스트
 
--   `push_repository` : 파이프라인이 동작할 트리거를 정의
+-   `trigger_push_repository` : 파이프라인이 동작할 트리거를 정의
     -   `type_of_repository` : trigger에 사용할 repository 유형 - `sourcecommit`
     -   `name_of_repository` : trigger에 사용할 repository 이름
     -   `branch_of_repository` : trigger에 사용할 repository 브랜치
 
--   `schedule` : 파이파라인이 자동 실행되도록 예약 설정
+-   `trigger_schedule` : 파이파라인이 자동 실행되도록 예약 설정
     - `day` : 배포 예약을 할 요일
     - `time` : 배포 예약을 할 시간
     - `timezone` : 예정된 날짜에 배포 예약할 시간의 timezone
     - `execute_only_with_change` : Sourcepipeline 프로젝트 구성 또는 Sourcecommit 리포지토리가 변경된 경우 일정 트리거가 항상 시간 내에 실행되는지 또는 실행되는지 여부 
 
--   `target_sourcepipeline_id` : trigger 설정된 파이프라인이 실행완료 될 때 자동으로 실행될 파이프라인 아이디 리스트
+-   `trigger_target_sourcecpipeline_id` : trigger 설정된 파이프라인이 실행완료 될 때 자동으로 실행될 파이프라인 아이디 리스트
  
 
 
