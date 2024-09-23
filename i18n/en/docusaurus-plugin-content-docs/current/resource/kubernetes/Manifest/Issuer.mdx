@@ -62,10 +62,10 @@ A Kubernetes resource that accepts certificate signing requests and generates si
         -   `name` : Name of the Route53 configuration
             -   `region` : Specifies the AWS Region in which the Route 53 service is used
             -   `access_key_id` : AWS access key ID
-            -   `access_key_secret_ref_name` : Specify a Kubernetes Secret name containing the AWS Secret access key value (can be omitted if you specified access_key_id)
-            -   `access_key_secret_ref_key` : Specifies the name of the key to use in Secret (can be omitted if access_key_id is specified)
-            -   `secret_access_key_secret_ref_name` : Specify a secret name that contains AWS Secret Access Key values
-            -   `secret_access_key_secret_ref_key` : Specify a key name for the secret that contains the AWS Secret access key value
+            -   `access_key_secret_name` : Specify a Kubernetes Secret name containing the AWS Secret access key value (can be omitted if you specified access_key_id)
+            -   `access_key_secret_key` : Specifies the name of the key to use in Secret (can be omitted if access_key_id is specified)
+            -   `secret_access_key_secret_name` : Specify a secret name that contains AWS Secret Access Key values
+            -   `secret_access_key_secret_key` : Specify a key name for the secret that contains the AWS Secret access key value
             -   `role` : Specify AWS IAM role to manage Route53 DNS
 
     ***ACMEDNS***          
@@ -94,6 +94,6 @@ A Kubernetes resource that accepts certificate signing requests and generates si
 
 ## Reference Materials
 
--   [Issuer(CertManager)](https://cert-manager.io/en/docs/concepts/issuer/)
+-   [Issuer(CertManager)](https://cert-manager.io/docs/concepts/issuer/)
 
 

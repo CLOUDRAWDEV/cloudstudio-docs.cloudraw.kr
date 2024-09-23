@@ -36,15 +36,16 @@ The AWS Network Firewall Policy defines the monitoring and protection actions fo
 -   `description` : Description of the firewall policy
 -   `stream_exception_policy` : Describes how to treat traffic which has broken midstream - `drop`, `continue`, `reject`
 -   `stateless_default_action` : stateless default action setting
--   `stateless_default_action.enabled_fragment_packet_action` : Whether to enable fragment packet action - `false`, `true`
--   `stateless_default_action.default_action` : Set of actions to take on a packet if it does not match any of the stateless rules in the policy - `aws:drop`, `aws:pass`, `aws:forward_to_sfe`
+    -   `enabled_fragment_packet_action` : Whether to enable fragment packet action - `false`, `true`
+    -   `default_action` : Set of actions to take on a packet if it does not match any of the stateless rules in the policy - `aws:drop`, `aws:pass`, `aws:forward_to_sfe`
 -   `stateless_rule_group_names` : The stateless rule groups that are used in the policy
 -   `stateful_default_action` : Configuration of stateful default action
--   `stateful_default_action.rule_evaluation_order` : Indicates how to manage the order of stateful rule evaluation for the policy
--   `stateful_default_action.default_actions` : Set of actions to take on a packet if it does not match any of the stateful rules in the policy - `aws:drop_strict`, `aws:drop_established`, `aws:alert_strict`, `aws:alert_established`
+    -   `rule_evaluation_order` : Indicates how to manage the order of stateful rule evaluation for the policy
+    -   `default_actions` : Set of actions to take on a packet if it does not match any of the stateful rules in the policy - `aws:drop_strict`, `aws:drop_established`, `aws:alert_strict`, `aws:alert_established`
 -   `strict_stateful_rule_group_names` : The strict stateful rule groups name that are used in the policy
 -   `rule_variables` : Variables that you can use to override default Suricata settings in your firewall policy
--   `encryption_configuration.enabled_custom_configuration` : Encrypt data using AWS-managed key - `false`, `true`
+-   `encryption_configuration`
+    -   `enabled_custom_configuration` : Encrypt data using AWS-managed key - `false`, `true`
 
 
 ---

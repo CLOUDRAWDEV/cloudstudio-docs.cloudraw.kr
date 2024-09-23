@@ -62,10 +62,10 @@ tags: [Kubernetes, リソース, Manifest, Issuer]
         -   `name` : Route53 設定の名前を指定
             -   `region` : Route 53 サービスが使用される AWS リージョンを指定
             -   `access_key_id` : AWS access key ID
-            -   `access_key_secret_ref_name` : AWS シークレットアクセスキーの値が含まれた Kubernetes Secret の名前指定(access_key_id を指定すれば省略可能)
-            -   `access_key_secret_ref_key` : Secret で使用する鍵の名前を指定(access_key_id を指定していれば省略可能)
-            -   `secret_access_key_secret_ref_name` : AWS シークレットアクセスキー値が含まれたシークレット名指定
-            -   `secret_access_key_secret_ref_key` : AWS シークレットアクセスキーの値が含まれたシークレットのキー名を指定
+            -   `access_key_secret_name` : AWS シークレットアクセスキーの値が含まれた Kubernetes Secret の名前指定(access_key_id を指定すれば省略可能)
+            -   `access_key_secret_key` : Secret で使用する鍵の名前を指定(access_key_id を指定していれば省略可能)
+            -   `secret_access_key_secret_name` : AWS シークレットアクセスキー値が含まれたシークレット名指定
+            -   `secret_access_key_secret_key` : AWS シークレットアクセスキーの値が含まれたシークレットのキー名を指定
             -   `role` : Route53 DNS を管理できる AWS IAM role を指定
 
     **_ACMEDNS_**

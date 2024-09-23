@@ -34,20 +34,21 @@ tags: [AWS, リソース, Ecs, EcsCluster]
 -   `logging` : 実行コマンド結果に対するログリダイレクトに使用するログ設定 - `OVERRIDE`,`NONE`,`DEFAULT`
 -   `cloud_watch_encryption_enabled` : CloudWatch ログで暗号化を有効にするかどうかの可否 - `false`,`true`
 -   `capacity_providers` : ログを送信する CloudWatch ロググループの名前 - `Fargate`,`Fargate_spot`
--   `service` :
--   `service.name` : サービス名
--   `service.computing_option` : サービスの作業ディストリビューション方式 - `capacity_provider_stratege`,`launch_type`
+-   `service`
+    -   `name`:  サービス名
+    -   `computing_option`: サービスの作業ディストリビューション方式 - `capacity_provider_stratege`,`launch_type`
 
--   `service.computing_option.capacity_provider_stratege`
+    -   `computing_option`
+        -   `capacity_provider_strategy`
+            -   `capacity_provider`: `Fargate`,`Fargate_spot`
+            -   `base`:  実行する最小作業数 (100000이하)
+            -   `weight`:  実行された総作業数の相対的なパーセンテージ (1000 이하)
 
-    -   `service.computing_option.capacity_provider_stratege.capacity_provider` : `Fargate`,`Fargate_spot`
-    -   `service.computing_option.capacity_provider_stratege.base` : 実行する最小作業数 (100000이하)
-    -   `service.computing_option.capacity_provider_stratege.weight` : 実行された総作業数の相対的なパーセンテージ (1000 이하)
-
--   `service.computing_option.launch_type` : サービスの開始タイプ
-    -   `service.computing_option.launch_type.launch_type` : `ec2`,`Fargate`,`External`
-    -   `service.computing_option.launch_type.task_definition_name` : サービスを使用する ECS Task Definition の名前
-    -   `service.computing_option.launch_type.desired_count` : サービスを実行するタスク定義のインスタンス数
+    -   `computing_option.launch_type`: サービスの開始タイプ
+        -   `launch_type`
+            -   `launch_type`: `ec2`,`Fargate`,`External`
+            -   `task_definition_name`: サービスを使用する ECS Task Definition の名前
+            -   `desired_count`: サービスを実行するタスク定義のインスタンス数
 
 ## 参考資料
 

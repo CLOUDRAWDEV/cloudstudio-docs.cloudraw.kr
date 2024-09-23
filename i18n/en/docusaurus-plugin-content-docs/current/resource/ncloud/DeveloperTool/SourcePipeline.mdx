@@ -32,7 +32,7 @@ A process automation service for fast and reliable software releases by integrat
 
 -   `default_task` : The first task that the Pipeline will do
     -   `name` : The first task that the Pipeline will do
-    -   `type` : task target_type - `SourceBuild`,`SourceDeploy`
+    -   `type` : Task type - `SourceBuild`,`SourceDeploy`
 
     - If the type is SourceBuild
         - `target_source_build_project` : Project name of a task that could be SourceBuild or SourceDeploy
@@ -58,18 +58,18 @@ A process automation service for fast and reliable software releases by integrat
         -  `target_source_deploy_project_scenario` : Scenario name of a task that could be SourceBuild or SourceDeploy
         -  `pre_tasks` : Linked tasks which has to be executed previously
 
--   `push_repository` : Push event that occurs when the set Pipeline is automatically executed
+-   `trigger_push_repository` : Push event that occurs when the set Pipeline is automatically executed
     -   `type_of_repository` : Type of repository to use for triggers - `sourcecommit`
     -   `name_of_repository` : Name of repository to use for triggers
     -   `branch_of_repository` : Name of repository branch to use for triggers
 
--   `schedule` : Set up a schedule for Pipeline to run automatically
+-   `trigger_schedule` : Set up a schedule for Pipeline to run automatically
     - `day` : List of day of week to make schedule
     - `time` : Time to trigger during schedule
     - `timezone` : Timezone to trigger during schedule
     - `execute_only_with_change` : Whether schedule trigger always execute in time or execute if Sourcepipeline project configuration or Sourcecommit repository has changed 
 
--   `target_sourcepipeline_id` : Trigger List of pipeline IDs to run automatically when the set pipeline completes execution
+-   `trigger_target_sourcecpipeline_id` : Trigger List of pipeline IDs to run automatically when the set pipeline completes execution
 
 
 
@@ -79,4 +79,4 @@ A process automation service for fast and reliable software releases by integrat
 ## Reference Materials
 
 -   [Source Pipeline(Ncloud)](https://www.ncloud.com/product/devTools/sourcePipeline)
--   [ncloud_sourcepipeline(Terraform)](https://registry.terraform.io/providers/NaverCloudPlatform/ncloud/latest/en/docs/resources/sourcepipeline_project)
+-   [ncloud_sourcepipeline(Terraform)](https://registry.terraform.io/providers/NaverCloudPlatform/ncloud/latest/docs/resources/sourcepipeline_project)

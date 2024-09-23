@@ -45,7 +45,7 @@ When a user requests content, CloudFront serves it through a network of edge loc
     -   `header_behavior` : Whether to cache objects based on the values of specified headers - `whitelist`, `none`
     -   `headers_items` : List of headers to specify when caching an object
     -   `query_string_behavior` : Whether to cache different versions of content based on query string parameter values - `whitelist`, `all`, `none`, `allExcept`
-    -   `query_string_items` : List of query string parameters
+    -   `query_strings_items` : List of query string parameters
 -   `cache_behavior`
     -   `path_pattern` : Pattern that specifies which requests you want this cache behavior to apply to
     -   `compress` : Whether you want CloudFront to automatically compress content for web requests - `true`, `false`
@@ -53,14 +53,14 @@ When a user requests content, CloudFront serves it through a network of edge loc
     -   `allowed_methods` : Controls which HTTP methods CloudFront processes and forwards to your Amazon S3 bucket or your custom origin - `GET`, `HEAD`, `OPTIONS`, `PATCH`, `POST`, `PUT`, `DELETE`
     -   `cached_methods` : Controls whether CloudFront caches the response to requests using the specified HTTP methods - `GET`, `HEAD`, `OPTIONS`, `PATCH`, `POST`, `PUT`, `DELETE`
     -   `origin_name` : The origin name that you want CloudFront to route requests to when a request matches the path pattern
-    -   `cache_policy_name` : The ID of the Cache Policy that is attached to the behavior
+    -   `linked_cache_policy_name` : The ID of the Cache Policy that is attached to the behavior
 
 -   `restriction`
     -   `type` : The method that you want to use to restrict distribution of your content by country - `whitelist`, `blacklist`, `none`
     -   `locations` : The ISO 3166-1-alpha-2 codes for which you want CloudFront either to distribute your content or not distribute your content
 
 -   `viewer_certificate`
-    -   `default_certificate_enabled` : if you want viewers to use HTTPS to request your objects and you're using the CloudFront domain name for your distribution - `true`, `false`
+    -   `default_certificate_enabled` : If you want viewers to use HTTPS to request your objects and you're using the CloudFront domain name for your distribution - `true`, `false`
 
 -   `price_class` : The price class for Cloudfront distribution - `PriceClass_100`, `PriceClass_200`, `PriceClass_All`
 -   `http_version` : The maximum HTTP version to support on the distribution - `http1.1`, `http2`

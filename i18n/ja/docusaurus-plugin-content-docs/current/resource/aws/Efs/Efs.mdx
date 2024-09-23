@@ -35,20 +35,20 @@ tags: [AWS, リソース, Efs]
 -   `provisioned_throughput_in_mibps` : ファイルシステムにプロビジョニングするスループット（MiB/s 単位） - `1-3414`
 -   `performance_mode` : ファイルシステムパフォーマンスモード - `generalPurpose`, `maxIO`
 -   `lifecycle_policy` : ライフサイクル管理、アクセスパターンの変化に応じて自動的にコストダウン
--   `lifecycle_policy.transition_to_la` : ファイルを IA ストレージクラスに切り替えるのにかかる時間" - `1`,`7`,`14`,`30`,`60`
--   `lifecycle_policy.transition_to_primary_storage_class` : ファイルをアクセスリポジトリからデフォルトリポジトリに切り替えるために使用されるポリシー - `None`,`FirstAccess`
+    -   `transition_to_ia` : ファイルを IA ストレージクラスに切り替えるのにかかる時間" - `1`,`7`,`14`,`30`,`60`
+    -   `ransition_to_primary_storage_class` : ファイルをアクセスリポジトリからデフォルトリポジトリに切り替えるために使用されるポリシー - `None`,`FirstAccess`
 -   `mount_target_subnets` : マウントターゲットを追加するサブネットのリスト
 -   `file_system_policy` : EFS ファイルシステムに対する JSON フォーマットファイルシステムポリシー
 -   `enable_backup_policy` : バックアップ ポリシーの使用可否 - `false`,`true`
 -   `enable_replica` : レプリケーション生成の可否 - `false`,`true`
 -   `access_point` : 共有データセットへのアプリケーションアクセスをより簡単に管理できるようにする EFS ファイルシステムのアプリケーションごとのエントリポイント
--   `access_point.root_directory_path` : アクセスポイントを使用して EFS ファイルシステムにアクセスする NFS クライアントにルートディレクトリで露出する EFS ファイルシステムのパス
--   `access_point.posix_user_uid` : このアクセスポイントを使用するすべてのファイルシステム作業に使用される POSIX ユーザー ID - `4294967295이하`
--   `access_point.posix_user_gid` : このアクセスポイントを使用するすべてのファイルシステム作業に使用される POSIX グループ ID - `4294967295이하`
--   `access_point.posix_user_secondary_gids` : このアクセスポイントを使用するすべてのファイルシステム作業に使用されるセカンダリー POSIX グループ ID
--   `access_point.root_owner_uid` : Root Directory に適用する POSIX ユーザー ID - `4294967295이하`
--   `access_point.root_owner_gid` : Root Directory に適用する POSIX グループ ID - `4294967295이하`
--   `access_point.root_permissions` : ファイルのモードビットを表す 8 進数形式の Root Directory に適用できる POSIX 権限
+    -   `root_directory_path` : アクセスポイントを使用して EFS ファイルシステムにアクセスする NFS クライアントにルートディレクトリで露出する EFS ファイルシステムのパス
+    -   `posix_user_uid` : このアクセスポイントを使用するすべてのファイルシステム作業に使用される POSIX ユーザー ID - `4294967295이하`
+    -   `posix_user_gid` : このアクセスポイントを使用するすべてのファイルシステム作業に使用される POSIX グループ ID - `4294967295이하`
+    -   `posix_user_secondary_gids` : このアクセスポイントを使用するすべてのファイルシステム作業に使用されるセカンダリー POSIX グループ ID
+    -   `root_owner_uid` : Root Directory に適用する POSIX ユーザー ID - `4294967295이하`
+    -   `root_owner_gid` : Root Directory に適用する POSIX グループ ID - `4294967295이하`
+    -   `root_permissions` : ファイルのモードビットを表す 8 進数形式の Root Directory に適用できる POSIX 権限
 
 ## 参考資料
 
