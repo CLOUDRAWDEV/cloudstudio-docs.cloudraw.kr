@@ -34,7 +34,7 @@
     --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
     --ifm-background-color: #1e1e1e;
     --ifm-navbar-background-color: rgba(43, 44, 46, 0.9);
-    --footerBackgroundColor: #0c0f13;
+    --footerBackgroundColor: #1e1e1e;
     --ifm-menu-color-background-hover: #353739;
     .policy_src-scss-_policy-module {
         h1 {
@@ -51,6 +51,7 @@
         }
     }
 }
+
 
 .main_sibscription {
     font-weight: 700;
@@ -69,12 +70,6 @@ hr {
     width: 100%;
     margin: 0px;
     @include dark-gray();
-}
-
-html[data-theme="dark"] {
-    .container {
-        color: #ffffff;
-    }
 }
 
 // navBar

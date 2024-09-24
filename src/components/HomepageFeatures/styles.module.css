@@ -16,16 +16,16 @@
   display: block;
   background: url("/img/cloudstudio_logo.png") no-repeat;
   background-size: contain;
-  width: 312px;
-  height:98px;
+  width: 400px;
+  height: 116px;
 }
 
 [data-theme="dark"] .mainLogo {
   display: block;
   background: url("/img/cloudstudio_logo_white.png") no-repeat;
   background-size: contain;
-  width: 312px;
-  height:98px;
+  width: 400px;
+  height: 116px;
 }
 
 .featureSvg {
