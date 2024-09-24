@@ -9,26 +9,26 @@ function RequiredPersonalInfo() {
                     <h5 style={{ fontWeight: "normal" }}>ID</h5>
                 </li>
                 <li>
-                    <h5 style={{ fontWeight: "normal" }}>비밀번호</h5>
+                    <h5 style={{ fontWeight: "normal" }}>パスワード</h5>
                 </li>
                 <li>
-                    <h5 style={{ fontWeight: "normal" }}>이메일</h5>
+                    <h5 style={{ fontWeight: "normal" }}>イーメール</h5>
                 </li>
                 <li>
-                    <h5 style={{ fontWeight: "normal" }}>서비스 이용 기록</h5>
+                    <h5 style={{ fontWeight: "normal" }}>サービス利用記録</h5>
                 </li>
                 <li>
-                    <h5 style={{ fontWeight: "normal" }}>접속로그</h5>
+                    <h5 style={{ fontWeight: "normal" }}>接続ログ</h5>
                 </li>
                 <li>
-                    <h5 style={{ fontWeight: "normal" }}>쿠키</h5>
+                    <h5 style={{ fontWeight: "normal" }}>クッキー</h5>
                 </li>
                 <li>
-                    <h5 style={{ fontWeight: "normal" }}>접속 IP 정보</h5>
+                    <h5 style={{ fontWeight: "normal" }}>接続IP情報</h5>
                 </li>
             </ul>
             <h5 style={{ color: "#868686", fontWeight: "normal" }}>
-                *세부 항목은 개인정보 처리방침 본문에서 확인
+                *詳細項目は個人情報処理方針本文にて確認
             </h5>
         </section>
     )
