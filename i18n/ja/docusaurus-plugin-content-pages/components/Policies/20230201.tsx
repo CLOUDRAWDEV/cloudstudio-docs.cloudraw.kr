@@ -1,9 +1,10 @@
 import React from "react"
 import policyStyles from "@site/src/scss/_policy.module.scss"
 import Labeling from "@site/src/pages/policy/Labeling"
-import RequiredPersonalInfo from "@site/src/pages/policy/RequiredPersonalInfo"
-import OptionalPersonalInfo from "@site/src/pages/policy/OptionalPersonalInfo"
-import Layout from "@theme/Layout"
+// import RequiredPersonalInfo from "@site/src/pages/policy/RequiredPersonalInfo"
+import RequiredPersonalInfo from "../../policy/RequiredPersonalInfo"
+// import OptionalPersonalInfo from "@site/src/pages/policy/OptionalPersonalInfo"
+import OptionalPersonalInfo from "../../policy/OptionalPersonalInfo"
 
 function Policy20240401() {
     return (
@@ -14,15 +15,9 @@ function Policy20240401() {
                 <hr />
                 <br />
                 <h4>
-                    주식회사 클라우드로(이하 "회사")는 정보주체의 자유와 권리
-                    보호를 위해 「개인정보 보호법」 및 관계 법령이 정한 바를
-                    준수하여, 적법하게 개인정보를 처리하고 안전하게 관리하고
-                    있습니다.
+                    株式会社Cloudraw(以下"会社")は情報主体の自由と権利保護のために「個人情報保護法」及び関連法令が定めるところを遵守し、適法に個人情報を処理し安全に管理しております。
                     <br />
-                    이에 「개인정보 보호법」 제30조에 따라 정보주체에게 개인정보
-                    처리에 관한 절차 및 기준을 안내하고, 이와 관련한 고충을
-                    신속하고 원활하게 처리할 수 있도록 하기 위하여 다음과 같이
-                    개인정보 처리방침을 수립·공개합니다.
+                    このため「個人情報保護法」第30条に従い、情報主体に対して個人情報処理に関する手続き及び基準を案内し、これに関連する苦情を迅速かつ円滑に処理できるように以下の通り個人情報処理方針を策定・公開します。
                 </h4>
                 <br />
                 <br />
@@ -37,7 +32,7 @@ function Policy20240401() {
                             }
                             width={24}
                             height={24}
-                            title={"필수 개인정보 수집"}
+                            title={"必須個人情報収集"}
                             contents={<RequiredPersonalInfo />}
                         />
                         <Labeling
@@ -47,7 +42,7 @@ function Policy20240401() {
                             }
                             width={24}
                             height={24}
-                            title={"선택 개인정보 수집"}
+                            title={"選択個人情報収集"}
                             contents={<OptionalPersonalInfo />}
                         />
                         <Labeling
@@ -57,15 +52,14 @@ function Policy20240401() {
                             }
                             width={24}
                             height={24}
-                            title={"개인정보의 보유 기간"}
+                            title={"個人情報の保有期間"}
                             contents={
                                 <>
                                     <h5 style={{ fontWeight: "normal" }}>
-                                        회원 탈퇴 시 까지
+                                        会員退会時まで
                                     </h5>
                                     <h5 style={{ fontWeight: "normal" }}>
-                                        단, 관계법령에 정함이 있는 경우 해당
-                                        법률에서 정한 기간동안 보유 및 이용 가능
+                                        ただし、関連法令に定めがある場合には、その法律で定められた期間中保持および利用可能
                                     </h5>
                                 </>
                             }
@@ -79,28 +73,26 @@ function Policy20240401() {
                             }
                             width={24}
                             height={24}
-                            title={"개인정보 처리목적"}
+                            title={"個人情報の処理目的"}
                             contents={
                                 <div>
                                     <h5 style={{ fontWeight: "normal" }}>
-                                        1. 서비스 이용에 따른 본인 확인 및
-                                        고지사항 전달, 서비스 관련 상담 및 불만
-                                        처리 등 원활한 의사소통 경로의 확보
+                                        1.
+                                        サービス利用に伴う本人確認および通知事項の伝達、サービス関連の相談および苦情処理など、円滑な意思疎通の確保
                                     </h5>
                                     <h5 style={{ fontWeight: "normal" }}>
-                                        2. 이용 서비스 정보 등에 대한 분석 및
-                                        세분화를 통한 이용자의 서비스 이용
-                                        선호도 분석
+                                        2.
+                                        利用サービス情報などの分析および細分化を通じた利用者のサービス利用好みの分析
                                     </h5>
                                     <h5 style={{ fontWeight: "normal" }}>
-                                        3. 서비스 이용에 따른 비용 결제
+                                        3. サービス利用に伴う費用の決済
                                     </h5>
                                     <h5 style={{ fontWeight: "normal" }}>
-                                        4. API 연동을 통한 관리 서비스 제공
+                                        4. API連携を通じた管理サービスの提供
                                     </h5>
                                     <h5 style={{ fontWeight: "normal" }}>
-                                        5. 거래 내역 확인, 부정거래 확인, 결제
-                                        취소 금액 환불
+                                        5.
+                                        取引履歴の確認、不正取引の確認、決済キャンセル金額の返金
                                     </h5>
                                     <h5
                                         style={{
@@ -108,8 +100,7 @@ function Policy20240401() {
                                             fontWeight: "normal",
                                         }}
                                     >
-                                        *세부 항목은 개인정보 처리방침 본문에서
-                                        확인
+                                        *詳細項目は個人情報処理方針本文にて確認
                                     </h5>
                                 </div>
                             }
@@ -121,18 +112,16 @@ function Policy20240401() {
                             }
                             width={24}
                             height={24}
-                            title={"개인정보 처리의 위탁"}
+                            title={"個人情報処理の委託"}
                             contents={
                                 <div>
                                     <h5 style={{ fontWeight: "normal" }}>
-                                        <strong>처리 위탁업체 : </strong>
-                                        부트페이
+                                        <strong>処理委託業者 : </strong>
+                                        ブートペイ
                                     </h5>
                                     <h5 style={{ fontWeight: "normal" }}>
-                                        <strong>
-                                            위탁업무 및 이용 목적 :{" "}
-                                        </strong>{" "}
-                                        비용 결제 대행
+                                        <strong>委託業務及び利用目的 : </strong>{" "}
+                                        費用決済代行
                                     </h5>
                                     <h5
                                         style={{
@@ -140,10 +129,10 @@ function Policy20240401() {
                                             lineHeight: "22px",
                                         }}
                                     >
-                                        <strong>보유 및 이용기간 :</strong> 회원
-                                        탈퇴 시 혹은 위탁계약 종료 시 까지 단,
-                                        관계법령에 정함이 있는 경우 해당
-                                        법률에서 정한 기간동안 보유 및 이용 가능
+                                        <strong>保有および利用期間 :</strong>{" "}
+                                        会員退会時、もしくは委託契約終了時まで
+                                        ただし、関係法令に定めがある場合は、該当します
+                                        法律で定められた期間、保有及び利用可能
                                     </h5>
                                 </div>
                             }
@@ -155,17 +144,17 @@ function Policy20240401() {
                             }
                             width={24}
                             height={24}
-                            title={"권익침해 구제방법"}
+                            title={"権益侵害の救済方法"}
                             contents={
                                 <div>
                                     <h5 style={{ fontWeight: "normal" }}>
                                         <strong>
-                                            개인정보보호책임자(CPO) :{" "}
+                                            個人情報保護責任者(CPO) :{" "}
                                         </strong>
-                                        문현배 본부장
+                                        HyunBae Moon
                                     </h5>
                                     <h5 style={{ fontWeight: "normal" }}>
-                                        <strong>이메일 :</strong>{" "}
+                                        <strong>イーメール :</strong>{" "}
                                         hbmoon@cloudraw.kr{" "}
                                     </h5>
                                     <h5
@@ -174,11 +163,8 @@ function Policy20240401() {
                                             fontWeight: "normal",
                                         }}
                                     >
-                                        *회사 정보주체의 개인정보자기결정권을
-                                        보장하고, 개인정보침해로 인한 상담 및
-                                        피해 구제를 위해 노력하고 있으며, 신고나
-                                        상담이 필요한 경우 아래의 담당부서로
-                                        연락해 주시기 바랍니다.
+                                        *会社情報主体の個人情報自己決定権を保障し、個人情報侵害による相談および被害救済のために努力しており、
+                                        申告や相談が必要な場合は下記の担当部署にご連絡お願いします。
                                     </h5>
                                 </div>
                             }
@@ -191,107 +177,99 @@ function Policy20240401() {
                 <br />
 
                 {/* 개인정보의 처리목적 및 보유기간 */}
-                <h2>개인정보의 처리목적 및 보유기간</h2>
+                <h2>個人情報の処理目的及び保有期間</h2>
                 <br />
                 <table>
                     <thead>
-                        <th>구분</th>
-                        <th>수집항목</th>
-                        <th>수집 목적</th>
-                        <th>보유 및 이용기간</th>
+                        <th>区分</th>
+                        <th>収集項目</th>
+                        <th>収集目的</th>
+                        <th>保有及び利用期間</th>
                     </thead>
                     <tbody>
                         <tr>
-                            <th rowSpan={2}>필수</th>
-                            <td>ID, 비밀번호, 이메일</td>
+                            <th rowSpan={2}>必須</th>
+                            <td>ID, パスワード, イーメール</td>
                             <td>
-                                서비스 이용에 따른 본인 확인 및 고지사항 전달,
-                                서비스 관련 상담 및 불만 처리 등 원활한 의사소통
-                                경로의 확보
+                                サービス利用に伴う本人確認及び通知事項の伝達、サービスに関連する相談及び苦情処理等の円滑なコミュニケーション経路の確保
                             </td>
                             <td rowSpan={7} style={{ textAlign: "center" }}>
-                                <strong>회원 탈퇴 시 까지</strong>
+                                <strong>会員退会時まで</strong>
                                 <br />
-                                단, 관계법령에 정함이 있는 경우 해당 법률에서
-                                정한 기간동안 보유 및 이용 가능
+                                ただし、関係法令に定めがある場合は、該当法律で定められた期間内に保有及び利用可能
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                서비스 이용 기록, 접속로그, 쿠키, 접속 IP 정보
+                                サービス利用記録、接続ログ、クッキー、接続IP情報
                             </td>
                             <td>
-                                이용 서비스 정보 등에 대한 분석 및 세분화를 통한
-                                이용자의 서비스 이용 선호도 분석
+                                利用サービス情報等に関する分析及びセグメンテーションを通じた利用者のサービス利用嗜好の分析
                             </td>
                         </tr>
                         <tr>
-                            <th rowSpan={5}>선택</th>
+                            <th rowSpan={5}>選択</th>
                             <td>
-                                신용카드 정보(카드 회사명, 카드 번호, 유효 기간)
+                                クレジットカード情報（カード会社名、カード番号、有効期限）
                             </td>
-                            <td>서비스 이용에 따른 비용 결제</td>
+                            <td>サービス利用に伴う費用の決済</td>
                         </tr>
                         <tr>
                             <td>
-                                MS Azure CSP 서비스 자격증명 정보 (Tenant ID,
-                                Subscription ID, Service Principal ID, Service
-                                Principal Key)
+                                MS Azure CSP サービスクレデンシャル情報 (Tenant
+                                ID, Subscription ID, Service Principal ID,
+                                Service Principal Key)
                             </td>
-                            <td> API 연동을 통한 관리 서비스 제공</td>
+                            <td> API連携を通じた管理サービスの提供</td>
                         </tr>
                         <tr>
                             <td>
-                                AWS CSP 서비스 자격증명 정보(Access Key, Secret
-                                Key)
+                                AWS CSP サービスクレデンシャル情報(Access Key,
+                                Secret Key)
                             </td>
-                            <td>API 연동을 통한 관리 서비스 제공</td>
+                            <td>API連携を通じた管理サービスの提供</td>
                         </tr>
                         <tr>
                             <td>
-                                Naver Cloud CSP 서비스 자격증명 정보 (Access
-                                Key, Secret Key)
+                                Naver Cloud CSP サービスクレデンシャル情報
+                                (Access Key, Secret Key)
                             </td>
-                            <td> API 연동을 통한 관리 서비스 제공</td>
+                            <td> API連携を通じた管理サービスの提供</td>
                         </tr>
                         <tr>
-                            <td>결제 기록</td>
+                            <td>決済記録</td>
                             <td>
-                                거래 내역 확인, 부정거래 확인, 결제 취소 금액
-                                환불
+                                取引履歴の確認、不正取引の確認、決済取消額の返金
                             </td>
                         </tr>
                     </tbody>
                 </table>
                 <br />
                 <h4>
-                    클라우드로는 회원가입을 위해 필요한 최소한의 개인정보를
-                    수집합니다. 개인정보 수집에 동의하지 않을 수 있으나 이 경우
-                    회원가입이 제한될 수 있습니다.
+                    Cloudrawは、会員登録のために必要最小限の個人情報を収集します。個人情報の収集に同意しないことも可能ですが、その場合は会員登録が制限されることがあります。
                 </h4>
                 <br />
                 <br />
                 <br />
                 {/* 개인정보 처리의 위탁 */}
-                <h2>개인정보 처리의 위탁</h2>
+                <h2>個人情報処理の委託</h2>
                 <br />
                 <table>
                     <thead>
-                        <th>처리 위탁업체</th>
-                        <th>위탁업무 및 이용 목적</th>
-                        <th>보유 및 이용기간</th>
+                        <th>処理委託業者</th>
+                        <th>委託業務及び利用目的</th>
+                        <th>保有及び利用期間</th>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>부트페이</td>
-                            <td>비용 결제 대행</td>
+                            <td>ブートペイ</td>
+                            <td>費用決済代行</td>
                             <td style={{ textAlign: "center" }}>
                                 <strong>
-                                    회원 탈퇴 시 혹은 위탁계약 종료 시 까지
+                                    会員退会時または委託契約終了時まで
                                 </strong>
                                 <br />
-                                단, 관계법령에 정함이 있는 경우 해당 법률에서
-                                정한 기간동안 보유 및 이용 가능
+                                ただし、関係法令に定めがある場合は、当該法律で定められた期間中保持および利用可能
                             </td>
                         </tr>
                     </tbody>
@@ -300,68 +278,68 @@ function Policy20240401() {
                 <br />
                 <br />
                 {/* 권익침해 구제방법 */}
-                <h2>권익침해 구제방법</h2>
+                <h2>権益侵害の救済方法</h2>
                 <h4>
-                    회사 정보주체의 개인정보자기결정권을 보장하고,
-                    개인정보침해로 인한 상담 및 피해 구제를 위해 노력하고
-                    있으며, 신고나 상담이 필요한 경우 아래의 담당부서로 연락해
-                    주시기 바랍니다.
+                    会社は情報主体の個人情報自己決定権を保証し、
+                    個人情報侵害による相談及び被害救済に努めており、
+                    通報や相談が必要な場合は、以下の担当部門にご連絡ください。
                 </h4>
                 <br />
                 <table>
                     <thead>
                         <th style={{ width: "100vh" }} colSpan={2}>
-                            개인정보보호책임자(CPO)
+                            個人情報保護責任者(CPO)
                         </th>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>이름</td>
-                            <td>문현배</td>
+                            <td>名前</td>
+                            <td>HyunBae Moon</td>
                         </tr>
                         <tr>
-                            <td>직책</td>
-                            <td>본부장</td>
+                            <td>職責</td>
+                            <td>本部長</td>
                         </tr>
                         <tr>
-                            <td>이메일</td>
+                            <td>イーメール</td>
                             <td>hbmoon@cloudraw.kr</td>
                         </tr>
                     </tbody>
                 </table>
                 <br />
                 <h4>
-                    정보주체는 개인정보침해로 인한 구제를 받기 위하여
-                    개인정보분쟁조정위원회, 한국인터넷진흥원
-                    개인정보침해신고센터 등에 분쟁해결이나 상담 등을 신청할 수
-                    있습니다. 이 밖에 기타 개인정보침해의 신고, 상담에 대하여는
-                    아래의 기관에 문의하시기 바랍니다.
+                    情報主体は個人情報侵害による救済を受けるために、
+                    個人情報紛争調整委員会、韓国インターネット振興院
+                    個人情報侵害通報センターなどに紛争解決や相談などを申請することができます。
+                    これ以外にも、その他の個人情報侵害の通報や相談については、
+                    以下の機関にお問い合わせください。
                 </h4>
                 <br />
                 <ul>
                     <li>
-                        개인정보분쟁조정위원회 : (국번없이) 1833-6972
+                        個人情報紛争調整委員会 : (市外局番なし) 1833-6972
                         (www.kopico.go.kr)
                     </li>
                     <li>
-                        개인정보침해신고센터 : (국번없이) 118
+                        個人情報侵害通報センター : (市外局番なし) 118
                         (privacy.kisa.or.kr)
                     </li>
-                    <li>대검찰청 : (국번없이) 1301 (www.spo.go.kr)</li>
-                    <li>경찰청 : (국번없이) 182 (ecrm.cyber.go.kr)</li>
+                    <li>大検察庁 : (市外局番なし) 1301 (www.spo.go.kr)</li>
+                    <li>警察庁 : (市外局番なし) 182 (ecrm.cyber.go.kr)</li>
                 </ul>
                 <br />
                 <br />
                 <h4>
-                    「개인정보 보호법」 제35조(개인정보의 열람),
-                    제36조(개인정보의 정정·삭제), 제37조(개인정보의 처리정지
-                    등)의 규정에 의한 요구에 대 하여 공공기관의 장이 행한 처분
-                    또는 부작위로 인하여 권리 또는 이익의 침해를 받은 자는
-                    행정심판법이 정하는 바에 따라 행정심판을 청구할 수 있습니다.
+                    「個人情報保護法」第35条(個人情報の閲覧)、
+                    第36条(個人情報の訂正・削除)、第37条(個人情報の処理停止
+                    など)の規定に基づく要求に対し、公的機関の長が行った処分
+                    または不作為により権利または利益の侵害を受けた者は、
+                    行政審判法が定めるところにより行政審判を請求することができます。
                 </h4>
                 <ul>
                     <li>
-                        중앙행정심판위원회 : (국번없이) 110 (www.simpan.go.kr)
+                        中央行政審判委員会 : (市外局番なし) 110
+                        (www.simpan.go.kr)
                     </li>
                 </ul>
 
@@ -369,8 +347,8 @@ function Policy20240401() {
                 <br />
                 <br />
                 {/* 개인정보 처리방침의 변경 */}
-                <h2>개인정보 처리방침의 변경</h2>
-                <h4>이 개인정보 처리방침은 2023. 2. 1부터 적용됩니다.</h4>
+                <h2>個人情報処理方針の変更</h2>
+                <h4>この個人情報処理方針は2023年2月1日から適用されます。</h4>
                 <br />
             </section>
         </>
