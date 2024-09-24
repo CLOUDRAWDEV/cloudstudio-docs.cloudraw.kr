@@ -9,7 +9,7 @@ export default function HomepageFeatures(): JSX.Element {
                     <div className={styles.mainLogo} />
                     <img
                         style={{ width: "80%", height: "auto" }}
-                        src={"/img/cloudstudio_img_ko.png"}
+                        src={"./img/cloudstudio_img_ja.png"}
                         alt={"landing"}
                     />
                     <div style={{ height: "24px" }} />
