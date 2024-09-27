@@ -1,31 +1,28 @@
 ---
 title: Kubernetes
 sidebar_position: 4
-tags: [security, 보안 진단, 캔버스]
+tags: [security, セキュリティ診断, キャンバス]
 ---
 
 import styles from "/src/scss/_markdown.module.scss"
-import security01 from "/docs/canvas/img/security01.gif"
-import security02 from "/docs/canvas/img/security-result01.png"
-import security03 from "/docs/canvas/img/security-result02.png"
-import { kubernetesRules } from "/src/resource/kubernetesRules"
-import { iso, csap, isms, evaluation } from "/src/resource/rules"
+import { kubernetesRules } from "../resource/kubernetesRules"
+import { iso, csap, isms, evaluation } from "../resource/rules"
 
 <hr />
 <br />
 
-## Kubernetes 진단 항목
+## Kubernetes 診断項目
 
 <div className={styles.securityTable}>
     <table>
         <thead>
             <tr>
-                <th>카테고리</th>
-                <th>리소스</th>
-                <th>옵션</th>
-                <th>항목</th>
-                <th>설명</th>
-                <th>위험도</th>
+                <th>カテゴリ</th>
+                <th>リソース</th>
+                <th>オプション</th>
+                <th>項目</th>
+                <th>説明</th>
+                <th>危険度</th>
             </tr>
         </thead>
         <tbody>

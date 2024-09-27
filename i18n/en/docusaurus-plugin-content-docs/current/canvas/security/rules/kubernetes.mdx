@@ -5,11 +5,8 @@ tags: [security, Security Diagnosis, Canvas]
 ---
 
 import styles from "/src/scss/_markdown.module.scss"
-import security01 from "/docs/canvas/img/security01.gif"
-import security02 from "/docs/canvas/img/security-result01.png"
-import security03 from "/docs/canvas/img/security-result02.png"
-import { kubernetesRules } from "/src/resource/kubernetesRules"
-import { iso, csap, isms, evaluation } from "/src/resource/rules"
+import { kubernetesRules } from "../resource/kubernetesRules"
+import { iso, csap, isms, evaluation } from "../resource/rules"
 
 <hr />
 <br />
@@ -33,19 +30,33 @@ import { iso, csap, isms, evaluation } from "/src/resource/rules"
             </tr>
         </thead>
         <tbody>
-            {kubernetesRules.map((item)=>{
-                return (<tr>
-                            <td>{item.category}</td>
-                            <td>{item.resource}</td>
-                            <td>{item.option}</td>
-                            <td>{item.type}</td>
-                            <td>{item.description}</td>
-                            <td><div className={styles.tag} data-type={item.risk}>{item.risk.toUpperCase()}</div></td>
-                            <td>{item.iso} {iso[item.iso]}</td>
-                            <td>{item.csap} {csap[item.csap]}</td>
-                            <td>{item.isms} {isms[item.isms]}</td>
-                            <td>{item.evaluation} {evaluation[item.evaluation]}</td>
-                        </tr>)
+            {kubernetesRules.map((item) => {
+                return (
+                    <tr>
+                        <td>{item.category}</td>
+                        <td>{item.resource}</td>
+                        <td>{item.option}</td>
+                        <td>{item.type}</td>
+                        <td>{item.description}</td>
+                        <td>
+                            <div className={styles.tag} data-type={item.risk}>
+                                {item.risk.toUpperCase()}
+                            </div>
+                        </td>
+                        <td>
+                            {item.iso} {iso[item.iso]}
+                        </td>
+                        <td>
+                            {item.csap} {csap[item.csap]}
+                        </td>
+                        <td>
+                            {item.isms} {isms[item.isms]}
+                        </td>
+                        <td>
+                            {item.evaluation} {evaluation[item.evaluation]}
+                        </td>
+                    </tr>
+                )
             })}
         </tbody>
     </table>
