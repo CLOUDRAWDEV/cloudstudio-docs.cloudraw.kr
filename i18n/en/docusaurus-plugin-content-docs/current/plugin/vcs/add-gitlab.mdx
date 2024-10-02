@@ -1,5 +1,5 @@
 ---
-title: Gitlab 등록하기
+title: Register with GitLab
 sidebar_position: 1
 tags: [플러그인, plugin, git, gitlab]
 last_update:
@@ -22,12 +22,11 @@ import styles from "/src/scss/_markdown.module.scss"
 <hr />
 <br />
 
-## Gitlab 등록하기
+## Register with GitLab
 
-클라우드 스튜디오에서 캔버스의 버전 관리를 하기 위해서는 VCS(Version Control System) 연동이 필요합니다.<br/>
-또한 프로젝트의 유효성 검사와 배포를 하기 위한 Terraform Cloud 계정 연동을
-위해서는 VCS 계정 연동이 선행되어야 합니다.<br/>
-이 페이지에서는 VCS 중 GitLab 계정과 연동하는 방법을 설명합니다.
+To manage the version of your canvas in Cloud Studio, integration with a Version Control System (VCS) is required.<br/>
+Additionally, VCS account integration must precede the linking of a Terraform Cloud account for project validation and deployment.<br/>
+This page explains how to register your GitLab account as a VCS.
 
 <br />
 
@@ -41,26 +40,25 @@ import styles from "/src/scss/_markdown.module.scss"
 
 <p>&nbsp;</p>
 
-1. [Gitlab](https://gitlab.com/) 회원가입 및 로그인 후, 좌측상단의 `프로필 아이콘 - Preferences`를 클릭합니다.
+1. [Gitlab](https://gitlab.com/) After signing up and logging into GitLab, click on the `Profile Icon - Preferences`in the top left corner.
 
 <img width="100%" src={gitlab01} alt="otp img" />
 
 <p>&nbsp;</p>
 
-2. 좌측 사이드바에서 `Access tokens`를 클릭하고 우측에서 `Add new token`버튼을 클릭합니다.
+2. In the left sidebar, click on `Access tokens`, then click the `Add new token` button on the right.
 
 <img width="100%" src={gitlab02} alt="otp img" />
 
 <p>&nbsp;</p>
 
-3. `토큰 이름`과 `토큰 유효기간`을 입력한 후, Gitlab 토큰이 접근할 수 있는 권한을 선택하는 옵션인 Select scopes에서
-   `api`, `read_repository`, `write_repository`를 선택하고 하단에 `Create personal access token` 버튼을 클릭하여 토큰을 생성합니다.
+3. Enter the `Token Name` and `Token Expiration`, then select the permissions for the GitLab token in the Select scopes options by choosing `api`, `read_repository`, and `write_repository`. Finally, click the `Create personal access token` button to generate the token.
 
 <img width="100%" src={gitlab03} alt="otp img" />
 
 <p>&nbsp;</p>
 
-4. 발급된 토큰을 확인합니다.
+4. Verify the issued token.
 
 <img width="100%" src={gitlab04} alt="otp img" />
 
@@ -68,25 +66,25 @@ import styles from "/src/scss/_markdown.module.scss"
 
 :::caution
 
-발급된 토큰은 다시 확인할 수 없으니, 반드시 따로 저장해두도록 합니다.
+The issued token cannot be verified again, so make sure to save it separately.
 
 :::
 
 <p>&nbsp;</p>
 
-5. 클라우드 스튜디오에서 `내 정보 - 플러그인 관리` 를 클릭한 후, VCS 계정연동 `+` 버튼을 클릭합니다.
+5. In Cloud Studio, click on `My Information - Plugin Management`, then click the `+` button to link your VCS account.
 
 <img width="100%" src={github05} alt="otp img" />
 
 <p>&nbsp;</p>
 
-6. VCS를 `Gitlab`으로 선택한 후, Gitlab 계정의 `UserName` 과 발급받은 `Token` 을 입력한 후, `등록하기` 버튼을 클릭합니다.
+6. Select `GitLab` as the VCS, enter the `Username` of your GitLab account and the issued `Token`, then click the `Register` button.
 
 <img width="100%" src={gitlab05} alt="otp img" />
 
 <p>&nbsp;</p>
 
-7. 유효한 Gitlab 계정의 `UserName` 과 발급받은 `Token` 의 입력이 완료되면, 정상적으로 Gitlab 연동이 완료됩니다.
+7. Once you have entered a valid GitLab account `Username` and the issued `Token`, the GitLab integration will be successfully completed.
 
 <img width="100%" src={gitlab06} alt="otp img" />
 
@@ -94,6 +92,6 @@ import styles from "/src/scss/_markdown.module.scss"
 
 :::caution
 
-Gitlab Community, Gitlab Enterprise 버전의 연동을 위해서는 호스팅 중인 `Http Url`과 `API Url`의 추가 입력이 필요합니다.
+To integrate with GitLab Community and GitLab Enterprise versions, additional inputs for the hosted `HTTP URL` and `API URL` are required.
 
 :::
