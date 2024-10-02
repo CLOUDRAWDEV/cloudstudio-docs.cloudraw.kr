@@ -3,7 +3,7 @@ title: Register with Github
 sidebar_position: 1
 tags: [Plugin, plugin, git, github]
 last_update:
-    date: 08/27/2024
+    date: 09/30/2024
 ---
 
 import github01 from "../img/github01.png"
@@ -16,31 +16,31 @@ import github07 from "../img/github07.png"
 import styles from "/src/scss/_markdown.module.scss"
 
 <span className="theme-doc-version-badge badge badge--secondary">
-    last update: 2024.08.27
+    last update: 2024.09.30
 </span>
 
 <hr />
 <br />
 
-## Register with GitHub
+## Register with Github
 
 To manage the version of your canvas in Cloud Studio, integration with a Version Control System (VCS) is required.<br/>
 Additionally, VCS account integration must precede the linking of a Terraform Cloud account for project validation and deployment.<br/>
-This page explains how to register your GitHub account as a VCS
+This page explains how to register your Github account as a VCS
 
 <br />
 
 <details>
     <summary>What is Github?</summary>
     <h5>
-        GitHub is a platform for hosting and managing software development
+        Github is a platform for hosting and managing software development
         projects.
     </h5>
 </details>
 
 <p>&nbsp;</p>
 
-1. After signing up and logging into [GitHub](https://github.com/), click on the Profile Icon - Settings in the top right corner.
+1. After signing up and logging into [Github](https://github.com/), click on the Profile Icon - Settings in the top right corner.
 
 <img width="100%" src={github01} alt="otp img" />
 
@@ -59,7 +59,7 @@ This page explains how to register your GitHub account as a VCS
 
 <p>&nbsp;</p>
 
-4. In the `Select scopes` section at the bottom, choose the `repo` option to select the permissions for the GitHub token,
+4. In the `Select scopes` section at the bottom, choose the `repo` option to select the permissions for the Github token,
    and then click the `Generate token` button at the bottom to create the token.
 
 <img width="100%" src={github04} alt="otp img" />
@@ -74,24 +74,24 @@ The issued token cannot be viewed again, so make sure to save it separately.
 
 <p>&nbsp;</p>
 
-5. In Cloud Studio, click on `My Info - Plugin Management`, then click the `+` button to link your GitHub account.
+5. In Cloud Studio, click on `My Info - Plugin Management`, then click the `+` button to link your Github account.
 
 <img width="100%" src={github05} alt="otp img" />
 
 <p>&nbsp;</p>
 
-6. Enter your GitHub `Username` and the issued `Token`, then click the `Register` button.
+6. Enter your Github `Username` and the issued `Token`, then click the `Register` button.
 
 <img width="100%" src={github06} alt="otp img" />
 
 <p>&nbsp;</p>
 
-7. Once you have entered a valid GitHub `Username` and the issued `Token`, the GitHub integration will be successfully completed.
+7. Once you have entered a valid Github `Username` and the issued `Token`, the Github integration will be successfully completed.
 
 <img width="100%" src={github07} alt="otp img" /><br />
 
 :::caution
 
-To integrate with the GitHub Enterprise version, additional inputs for the hosted `HTTP URL` and `API URL` are required.
+To integrate with the Github Enterprise version, additional inputs for the hosted `HTTP URL` and `API URL` are required.
 
 :::
