@@ -3,10 +3,9 @@ title: Register with Terraform Cloud
 sidebar_position: 2
 tags: [Terraform Cloud]
 last_update:
-    date: 08/27/2024
+    date: 09/30/2024
 ---
 
-import github07 from "./img/github07.png"
 import terraformcloud01 from "./img/terraformcloud01.png"
 import terraformcloud02 from "./img/terraformcloud02.png"
 import terraformcloud03 from "./img/terraformcloud03.png"
@@ -15,10 +14,11 @@ import terraformcloud05 from "./img/terraformcloud05.png"
 import terraformcloud06 from "./img/terraformcloud06.png"
 import terraformcloud07 from "./img/terraformcloud07.png"
 import terraformcloud08 from "./img/terraformcloud08.png"
+import terraformcloud09 from "./img/terraformcloud09.png"
 import styles from "/src/scss/_markdown.module.scss"
 
 <span className="theme-doc-version-badge badge badge--secondary">
-    last update: 2024.08.27
+    last update: 2024.09.30
 </span>
 
 <hr />
@@ -26,20 +26,23 @@ import styles from "/src/scss/_markdown.module.scss"
 
 ## Register with Terraform Cloud
 
-To validate or deploy the infrastructure drawn in the Cloud Studio canvas, integration with a Terraform Cloud account is required. Additionally, integration with a Terraform Cloud account must be preceded by linking either a [GitHub account](/docs/plugin/vcs/add-github) or a [GitLab account](/docs/plugin/vcs/add-gitlab).
+To validate or deploy the infrastructure drawn in the Cloud Studio canvas, integration with a Terraform Cloud account is required. Additionally, integration with a Terraform Cloud account must be preceded by linking either a [Github account](/docs/plugin/vcs/add-github) or a [Gitlab account](/docs/plugin/vcs/add-gitlab).
+
 <br />
 
 <details>
     <summary>What is Terraform Cloud?</summary>
     <h5>
-    Terraform Cloud is a managed service for Terraform that supports infrastructure automation and collaboration. 
-    It centralizes the management of remote state storage, planning, and applying changes, while facilitating teamwork.
+        Terraform Cloud is a managed service for Terraform that supports
+        infrastructure automation and collaboration. It centralizes the
+        management of remote state storage, planning, and applying changes,
+        while facilitating teamwork.
     </h5>
 </details>
 
 <p>&nbsp;</p>
 
-After signing up and logging into [Terraform Cloud](https://app.terraform.io/session), click on the Profile Icon - 
+After signing up and logging into [Terraform Cloud](https://app.terraform.io/session), click on the Profile Icon -
 Account settings in the left sidebar.
 
 <img width="100%" src={terraformcloud01} alt="otp img" />
@@ -92,28 +95,28 @@ The `Organization name` must be unique globally.
 
 <p>&nbsp;</p>
 
-7. In Cloud Studio, click on `My Info - Plugin Management`, then click the `+` button to link your Terraform Cloud account.
-
-<img width="100%" src={github07} alt="otp img" />
-
-<p>&nbsp;</p>
-
-:::caution
-
-Integration with a Terraform Cloud account can only be done after linking either a GitHub account or a GitLab account in advance.
-
-:::
-
-<p>&nbsp;</p>
-
-8. Enter the issued Terraform Cloud `Token`, then click the `Register` button.
+7. In Cloud Studio, click on `My Page - Plugin`, then click the `+` button to link your Terraform Cloud account.
 
 <img width="100%" src={terraformcloud07} alt="otp img" />
 
 <p>&nbsp;</p>
 
-9. After integration, select the `Organization` created in Terraform Cloud, and all tasks will be completed.
+:::caution
+
+Integration with a Terraform Cloud account can only be done after linking either a Github account or a Gitlab account in advance.
+
+:::
+
+<p>&nbsp;</p>
+
+8. Enter the issued Terraform Cloud `Token`, then click the `Add` button.
 
 <img width="100%" src={terraformcloud08} alt="otp img" />
+
+<p>&nbsp;</p>
+
+9. After integration, select the `Organization` created in Terraform Cloud, and all tasks will be completed.
+
+<img width="100%" src={terraformcloud09} alt="otp img" />
 
 <p>&nbsp;</p>
