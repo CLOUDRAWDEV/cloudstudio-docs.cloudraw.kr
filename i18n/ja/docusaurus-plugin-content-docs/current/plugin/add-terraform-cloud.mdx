@@ -3,10 +3,9 @@ title: Terraform Cloud 登録
 sidebar_position: 2
 tags: [Terraform Cloud, テラフォームクラウド]
 last_update:
-    date: 08/27/2024
+    date: 09/30/2024
 ---
 
-import github07 from "./img/github07.png"
 import terraformcloud01 from "./img/terraformcloud01.png"
 import terraformcloud02 from "./img/terraformcloud02.png"
 import terraformcloud03 from "./img/terraformcloud03.png"
@@ -15,10 +14,11 @@ import terraformcloud05 from "./img/terraformcloud05.png"
 import terraformcloud06 from "./img/terraformcloud06.png"
 import terraformcloud07 from "./img/terraformcloud07.png"
 import terraformcloud08 from "./img/terraformcloud08.png"
+import terraformcloud09 from "./img/terraformcloud09.png"
 import styles from "/src/scss/_markdown.module.scss"
 
 <span className="theme-doc-version-badge badge badge--secondary">
-    last update: 2024.08.27
+    last update: 2024.09.30
 </span>
 
 <hr />
@@ -27,7 +27,7 @@ import styles from "/src/scss/_markdown.module.scss"
 ## Terraform Cloud 登録
 
 CloudStudio のキャンバスに描いたインフラの有効性検査とデプロイを行うためには Terraform Cloud アカウントの連動が必要です。
-また、Terraform Cloud アカウントを連携するには[Github アカウントを連携](/docs/plugin/add-github)が先行されなければなりません。
+また、Terraform Cloud アカウントを連携するには[Github アカウントを連携](/docs/plugin/vcs/add-github)または[Gitlab アカウントを連携](/docs/plugin/vcs/add-gitlab)が先行されなければなりません。
 
 <br />
 
@@ -97,7 +97,7 @@ CloudStudio のキャンバスに描いたインフラの有効性検査とデ�
 
 7. CloudStudio で `マイページ - プラグイン管理`をクリックして、 Terraform Cloud アカウント連動 `+` ボタンをクリックします。
 
-<img width="100%" src={github07} alt="otp img" />
+<img width="100%" src={terraformcloud07} alt="otp img" />
 
 <p>&nbsp;</p>
 
@@ -111,12 +111,12 @@ CloudStudio のキャンバスに描いたインフラの有効性検査とデ�
 
 8. 発行された Terraform Cloud `Token` を入力し、`登録する` ボタンをクリックします。
 
-<img width="100%" src={terraformcloud07} alt="otp img" />
+<img width="100%" src={terraformcloud08} alt="otp img" />
 
 <p>&nbsp;</p>
 
 9. 連動後、Terraform Cloud で生成した`Organization`を選択すると、すべての作業が完了します。
 
-<img width="100%" src={terraformcloud08} alt="otp img" />
+<img width="100%" src={terraformcloud09} alt="otp img" />
 
 <p>&nbsp;</p>
