@@ -3,10 +3,9 @@ title: Terraform Cloud 등록하기
 sidebar_position: 2
 tags: [Terraform Cloud, 테라폼 클라우드]
 last_update:
-    date: 08/27/2024
+    date: 09/30/2024
 ---
 
-import github07 from "./img/github07.png"
 import terraformcloud01 from "./img/terraformcloud01.png"
 import terraformcloud02 from "./img/terraformcloud02.png"
 import terraformcloud03 from "./img/terraformcloud03.png"
@@ -15,10 +14,11 @@ import terraformcloud05 from "./img/terraformcloud05.png"
 import terraformcloud06 from "./img/terraformcloud06.png"
 import terraformcloud07 from "./img/terraformcloud07.png"
 import terraformcloud08 from "./img/terraformcloud08.png"
+import terraformcloud09 from "./img/terraformcloud09.png"
 import styles from "/src/scss/_markdown.module.scss"
 
 <span className="theme-doc-version-badge badge badge--secondary">
-    last update: 2024.08.27
+    last update: 2024.09.30
 </span>
 
 <hr />
@@ -27,7 +27,7 @@ import styles from "/src/scss/_markdown.module.scss"
 ## Terraform Cloud 등록하기
 
 클라우드 스튜디오 캔버스에 그린 인프라의 유효성 검사나 배포를 하기 위해서는 Terraform Cloud 계정 연동이 필요합니다.
-또한 Terraform Cloud 계정 연동을 하기 위해서는 [Github 계정 연동](/docs/plugin/add-github)이 선행되어야 합니다.
+또한 Terraform Cloud 계정 연동을 하기 위해서는 [Github 계정 연동](/docs/plugin/vcs/add-github) 또는 [Gitlab 계정 연동](/docs/plugin/vcs/add-gitlab)이 선행되어야 합니다.
 
 <br />
 
@@ -96,13 +96,13 @@ import styles from "/src/scss/_markdown.module.scss"
 
 7. 클라우드 스튜디오에서 `내 정보 - 플러그인 관리` 를 클릭한 후, Terraform Cloud 계정연동 `+` 버튼을 클릭합니다.
 
-<img width="100%" src={github07} alt="otp img" />
+<img width="100%" src={terraformcloud07} alt="otp img" />
 
 <p>&nbsp;</p>
 
 :::caution
 
-사전에 [Github 계정 연동](/docs/plugin/add-github)이 선행되어야 Terraform Cloud 계정 연동이 가능합니다.
+사전에 [Github 계정 연동](/docs/plugin/vcs/add-github) 또는 [Gitlab 계정 연동](/docs/plugin/vcs/add-gitlab)이 선행되어야 Terraform Cloud 계정 연동이 가능합니다.
 
 :::
 
@@ -110,12 +110,12 @@ import styles from "/src/scss/_markdown.module.scss"
 
 8. 발급받은 Terraform Cloud `Token` 을 입력한 후, `등록하기` 버튼을 클릭합니다.
 
-<img width="100%" src={terraformcloud07} alt="otp img" />
+<img width="100%" src={terraformcloud08} alt="otp img" />
 
 <p>&nbsp;</p>
 
 9. 연동 후 Terraform Cloud에서 생성한 `Organization`을 선택하면 모든 작업이 완료됩니다.
 
-<img width="100%" src={terraformcloud08} alt="otp img" />
+<img width="100%" src={terraformcloud09} alt="otp img" />
 
 <p>&nbsp;</p>

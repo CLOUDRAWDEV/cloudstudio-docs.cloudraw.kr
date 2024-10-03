@@ -3,20 +3,20 @@ title: Github 登録
 sidebar_position: 1
 tags: [プラグイン, plugin, git, github]
 last_update:
-    date: 08/27/2024
+    date: 09/30/2024
 ---
 
-import github01 from "./img/github01.png"
-import github02 from "./img/github02.png"
-import github03 from "./img/github03.png"
-import github04 from "./img/github04.png"
-import github05 from "./img/github05.png"
-import github06 from "./img/github06.png"
-import github07 from "./img/github07.png"
+import github01 from "../img/github01.png"
+import github02 from "../img/github02.png"
+import github03 from "../img/github03.png"
+import github04 from "../img/github04.png"
+import github05 from "../img/github05.png"
+import github06 from "../img/github06.png"
+import github07 from "../img/github07.png"
 import styles from "/src/scss/_markdown.module.scss"
 
 <span className="theme-doc-version-badge badge badge--secondary">
-    last update: 2024.08.27
+    last update: 2024.09.30
 </span>
 
 <hr />
@@ -24,15 +24,16 @@ import styles from "/src/scss/_markdown.module.scss"
 
 ## Github 登録
 
-CloudStudio でキャンバスのバージョン管理をするためには Github アカウントの連動が必要です。
-また、プロジェクトの有効性検査とデプロイのための Terraform Cloud アカウントの連動のためには Github アカウントの連動が先行されなければなりません。
+CloudStudio でキャンバスのバージョン管理をするためには VCS(Version Control System) の連動が必要です。<br/>
+また、プロジェクトの有効性検査とデプロイのための Terraform Cloud アカウントの連動のためには VCS アカウントの連動が先行されなければなりません。<br/>
+このページでは VCS のうち Github アカウントと連動する方法を説明します。
 
 <br />
 
 <details>
     <summary>Githubとは?</summary>
     <h5>
-        GitHubはソフトウェア開発プロジェクトをホスティングし、管理できるプラットフォームです。
+        Githubはソフトウェア開発プロジェクトをホスティングし、管理できるプラットフォームです。
     </h5>
 </details>
 
@@ -71,13 +72,13 @@ CloudStudio でキャンバスのバージョン管理をするためには Gith
 
 <p>&nbsp;</p>
 
-5. CloudStudio で `マイページ - プラグイン管理`をクリックして、Github アカウント連動 `+` ボタンをクリックします。
+5. CloudStudio で `マイページ - プラグイン管理`をクリックして、VCS アカウント連動 `+` ボタンをクリックします。
 
 <img width="100%" src={github05} alt="otp img" />
 
 <p>&nbsp;</p>
 
-6. Github アカウントの`UserName`と発行された`Token`を入力して, `登録する` ボタンをクリックします。
+6. VCS を`Github`に選択した後、Github アカウントの`UserName`と発行された`Token`を入力して, `登録する` ボタンをクリックします。
 
 <img width="100%" src={github06} alt="otp img" />
 
@@ -86,3 +87,11 @@ CloudStudio でキャンバスのバージョン管理をするためには Gith
 7. 有効な Github アカウントの`UserName`と発行された`Token`の入力が完了すると、正常に Github 動が完了します。
 
 <img width="100%" src={github07} alt="otp img" />
+
+<p>&nbsp;</p>
+
+:::caution
+
+Github Enterprise バージョンの連動のためにはホスティング中の`Http Url`と `API Url`の追加入力が必要です。
+
+:::

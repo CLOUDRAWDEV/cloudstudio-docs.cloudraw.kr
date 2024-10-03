@@ -1,0 +1,97 @@
+---
+title: Gitlab 登録
+sidebar_position: 1
+tags: [プラグイン, plugin, git, gitlab]
+last_update:
+    date: 09/30/2024
+---
+
+import gitlab01 from "../img/gitlab01.png"
+import gitlab02 from "../img/gitlab02.png"
+import gitlab03 from "../img/gitlab03.png"
+import gitlab04 from "../img/gitlab04.png"
+import github05 from "../img/github05.png"
+import gitlab05 from "../img/gitlab05.png"
+import gitlab06 from "../img/gitlab06.png"
+import styles from "/src/scss/_markdown.module.scss"
+
+<span className="theme-doc-version-badge badge badge--secondary">
+    last update: 2024.09.30
+</span>
+
+<hr />
+<br />
+
+## Gitlab 登録
+
+CloudStudio でキャンバスのバージョン管理をするためには VCS(Version Control System) の連動が必要です。<br/>
+また、プロジェクトの有効性検査とデプロイのための Terraform Cloud アカウントの連動のためには VCS アカウントの連動が先行されなければなりません。<br/>
+このページでは VCS のうち Gitlab アカウントと連動する方法を説明します。
+
+<br />
+
+<details>
+    <summary>Gitlabとは?</summary>
+    <h5>
+        Gitlabはソフトウェア開発プロジェクトをホスティングし、管理できるプラットフォームです。
+    </h5>
+</details>
+
+<p>&nbsp;</p>
+
+1. [Gitlab](https://gitlab.com/) 会員登録及びログイン後、右上の`プロフィールアイコン - Preferences`をクリックします。
+
+<img width="100%" src={gitlab01} alt="otp img" />
+
+<p>&nbsp;</p>
+
+2. 左側のサイドバーで `Access tokens`をクリックし、右側で `Add new token`ボタンをクリックします。
+
+<img width="100%" src={gitlab02} alt="otp img" />
+
+<p>&nbsp;</p>
+
+3. `トークン名`と `トークン有効期限`を入力し、Gitlab トークンがアクセスできる権限を選択するオプションである Select scopes で
+   `api`, `read_repository`, `write_repository`を選択し、 下段の`Create personal access token` ボタンをクリックしてトークンを生成します。
+
+<img width="100%" src={gitlab03} alt="otp img" />
+
+<p>&nbsp;</p>
+
+4. 発行されたトークンを確認します。
+
+<img width="100%" src={gitlab04} alt="otp img" />
+
+<p>&nbsp;</p>
+
+:::caution
+
+発行されたトークンは再確認できないので、必ず別に保存しておくようにします。
+
+:::
+
+<p>&nbsp;</p>
+
+5. CloudStudio で `マイページ - プラグイン管理`をクリックして、VCS アカウント連動 `+` ボタンをクリックします。
+
+<img width="100%" src={github05} alt="otp img" />
+
+<p>&nbsp;</p>
+
+6. VCS を`Gitlab`に選択した後、Gitlab アカウントの`UserName`と発行された`Token`を入力して, `登録する` ボタンをクリックします。
+
+<img width="100%" src={gitlab05} alt="otp img" />
+
+<p>&nbsp;</p>
+
+7. 有効な Gitlab アカウントの`UserName`と発行された`Token`の入力が完了すると、正常に Gitlab 動が完了します。
+
+<img width="100%" src={gitlab06} alt="otp img" />
+
+<p>&nbsp;</p>
+
+:::caution
+
+Gitlab Community, Gitlab Enterprise バージョンの連動のためにはホスティング中の `Http Url`と `API Url`の追加入力が必要です。
+
+:::
