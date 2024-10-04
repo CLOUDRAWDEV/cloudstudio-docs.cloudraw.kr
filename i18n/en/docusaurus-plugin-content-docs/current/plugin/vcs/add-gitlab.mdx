@@ -1,5 +1,5 @@
 ---
-title: Register with GitLab
+title: Register with Gitlab
 sidebar_position: 1
 tags: [Plugin, plugin, git, gitlab]
 last_update:
@@ -22,16 +22,16 @@ import styles from "/src/scss/_markdown.module.scss"
 <hr />
 <br />
 
-## Register with GitLab
+## Register with Gitlab
 
 To manage the version of your canvas in Cloud Studio, integration with a Version Control System (VCS) is required.<br/>
 Additionally, VCS account integration must precede the linking of a Terraform Cloud account for project validation and deployment.<br/>
-This page explains how to register your GitLab account as a VCS.
+This page explains how to register your Gitlab account as a VCS.
 
 <br />
 
 <details>
-    <summary>Gitlab ?</summary>
+    <summary>What is Gitlab?</summary>
     <h5>
        GitLab is a platform for hosting and managing software development projects.
     </h5>
@@ -39,7 +39,7 @@ This page explains how to register your GitLab account as a VCS.
 
 <p>&nbsp;</p>
 
-1. [Gitlab](https://gitlab.com/) After signing up and logging into GitLab, click on the `Profile Icon - Preferences`in the top left corner.
+1. [Gitlab](https://gitlab.com/) After signing up and logging into Gitlab, click on the `Profile Icon - Preferences`in the top left corner.
 
 <img width="100%" src={gitlab01} alt="otp img" />
 
@@ -51,7 +51,7 @@ This page explains how to register your GitLab account as a VCS.
 
 <p>&nbsp;</p>
 
-3. Enter the `Token Name` and `Token Expiration`, then select the permissions for the GitLab token in the Select scopes options by choosing `api`, `read_repository`, and `write_repository`. Finally, click the `Create personal access token` button to generate the token.
+3. Enter the `Token Name` and `Token Expiration`, then select the permissions for the Gitlab token in the Select scopes options by choosing `api`, `read_repository`, and `write_repository`. Finally, click the `Create personal access token` button to generate the token.
 
 <img width="100%" src={gitlab03} alt="otp img" />
 
@@ -71,19 +71,19 @@ The issued token cannot be verified again, so make sure to save it separately.
 
 <p>&nbsp;</p>
 
-5. In Cloud Studio, click on `My Information - Plugin Management`, then click the `+` button to link your VCS account.
+5. In Cloud Studio, click on `My Page - Plugin`, then click the `+` button to link your VCS account.
 
 <img width="100%" src={github05} alt="otp img" />
 
 <p>&nbsp;</p>
 
-6. Select `GitLab` as the VCS, enter the `Username` of your GitLab account and the issued `Token`, then click the `Register` button.
+6. Select `Gitlab` as the VCS, enter the `Username` of your Gitlab account and the issued `Token`, then click the `Add` button.
 
 <img width="100%" src={gitlab05} alt="otp img" />
 
 <p>&nbsp;</p>
 
-7. Once you have entered a valid GitLab account `Username` and the issued `Token`, the GitLab integration will be successfully completed.
+7. Once you have entered a valid Gitlab account `Username` and the issued `Token`, the Gitlab integration will be successfully completed.
 
 <img width="100%" src={gitlab06} alt="otp img" />
 
@@ -91,6 +91,6 @@ The issued token cannot be verified again, so make sure to save it separately.
 
 :::caution
 
-To integrate with GitLab Community and GitLab Enterprise versions, additional inputs for the hosted `HTTP URL` and `API URL` are required.
+To integrate with Gitlab Community and Gitlab Enterprise versions, additional inputs for the hosted `HTTP URL` and `API URL` are required.
 
 :::
