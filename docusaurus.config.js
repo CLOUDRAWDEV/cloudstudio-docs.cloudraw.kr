@@ -63,7 +63,7 @@ const config = {
                 routeBasePath: "docs-faq",
                 sidebarPath: require.resolve("./sidebars.js"),
             },
-        ],
+        ]
     ],
 
     themes: [
