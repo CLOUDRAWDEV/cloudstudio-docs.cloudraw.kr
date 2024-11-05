@@ -50,66 +50,67 @@ export default function Footer(props) {
 
     const currentTexts = texts[currentLocale] || texts.ko // 기본적으로 영어 사용
     return (
-        <footer className={footerStyles.footer}>
-            <section className={footerStyles.footer__nav}>
-                <section className={footerStyles.footer__nav__menu}>
-                    <div>
-                        <h3>Company</h3>
-                        <ul>
-                            <li>
-                                <Link to="https://www.cloudraw.kr/">
-                                    <h4>About</h4>
-                                </Link>
-                            </li>
-                            {/*<li><Link to="https://cstudio.app/payments"><h4>Pricing</h4></Link></li>*/}
-                            <li>
-                                <Link to="/policy/service">
-                                    <h4>{currentTexts.terms}</h4>
-                                </Link>
-                            </li>
-                            <li>
-                                <Link to="/policy/personal">
-                                    <h4 style={{ fontWeight: "800" }}>
-                                        {currentTexts.privacy}
-                                    </h4>
-                                </Link>
-                            </li>
-                            <li>
-                                <Link to="/policy/refund">
-                                    <h4>{currentTexts.refund}</h4>
-                                </Link>
-                            </li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h3>Community</h3>
-                        <ul>
-                            <li>
-                                <Link to="https://blog.cloudraw.kr">
-                                    <h4>Blog</h4>
-                                </Link>
-                            </li>
-                            <li>
-                                <Link to="https://www.youtube.com/channel/UCHoqm5luu1MvzPQRHVSwH9w">
-                                    <h4>Youtube</h4>
-                                </Link>
-                            </li>
-                        </ul>
-                    </div>
-                </section>
-                <h1>
-                    Draw<p>Your Cloud Infra.</p>
-                </h1>
-            </section>
-            <section className={footerStyles.footer__address}>
-                <h5>
-                    {currentTexts.companyName} | {currentTexts.brn} |{" "}
-                    {currentTexts.ceo} | {currentTexts.address}
-                </h5>
-                <h5 className={footerStyles.footer__address__copy}>
-                    Copyright ⓒ 2021 Cloudraw. Inc.
-                </h5>
-            </section>
-        </footer>
+        <></>
+        // <footer className={footerStyles.footer}>
+        //     {/*<section className={footerStyles.footer__nav}>*/}
+        //     {/*    <section className={footerStyles.footer__nav__menu}>*/}
+        //     {/*        <div>*/}
+        //     {/*            <h3>Company</h3>*/}
+        //     {/*            <ul>*/}
+        //     {/*                <li>*/}
+        //     {/*                    <Link to="https://www.cloudraw.kr/">*/}
+        //     {/*                        <h4>About</h4>*/}
+        //     {/*                    </Link>*/}
+        //     {/*                </li>*/}
+        //     {/*                /!*<li><Link to="https://cstudio.app/payments"><h4>Pricing</h4></Link></li>*!/*/}
+        //     {/*                <li>*/}
+        //     {/*                    <Link to="/policy/service">*/}
+        //     {/*                        <h4>{currentTexts.terms}</h4>*/}
+        //     {/*                    </Link>*/}
+        //     {/*                </li>*/}
+        //     {/*                <li>*/}
+        //     {/*                    <Link to="/policy/personal">*/}
+        //     {/*                        <h4 style={{ fontWeight: "800" }}>*/}
+        //     {/*                            {currentTexts.privacy}*/}
+        //     {/*                        </h4>*/}
+        //     {/*                    </Link>*/}
+        //     {/*                </li>*/}
+        //     {/*                <li>*/}
+        //     {/*                    <Link to="/policy/refund">*/}
+        //     {/*                        <h4>{currentTexts.refund}</h4>*/}
+        //     {/*                    </Link>*/}
+        //     {/*                </li>*/}
+        //     {/*            </ul>*/}
+        //     {/*        </div>*/}
+        //     {/*        <div>*/}
+        //     {/*            <h3>Community</h3>*/}
+        //     {/*            <ul>*/}
+        //     {/*                <li>*/}
+        //     {/*                    <Link to="https://blog.cloudraw.kr">*/}
+        //     {/*                        <h4>Blog</h4>*/}
+        //     {/*                    </Link>*/}
+        //     {/*                </li>*/}
+        //     {/*                <li>*/}
+        //     {/*                    <Link to="https://www.youtube.com/channel/UCHoqm5luu1MvzPQRHVSwH9w">*/}
+        //     {/*                        <h4>Youtube</h4>*/}
+        //     {/*                    </Link>*/}
+        //     {/*                </li>*/}
+        //     {/*            </ul>*/}
+        //     {/*        </div>*/}
+        //     {/*    </section>*/}
+        //     {/*    <h1>*/}
+        //     {/*        Draw<p>Your Cloud Infra.</p>*/}
+        //     {/*    </h1>*/}
+        //     {/*</section>*/}
+        //     {/*<section className={footerStyles.footer__address}>*/}
+        //     {/*    <h5>*/}
+        //     {/*        {currentTexts.companyName} | {currentTexts.brn} |{" "}*/}
+        //     {/*        {currentTexts.ceo} | {currentTexts.address}*/}
+        //     {/*    </h5>*/}
+        //     {/*    <h5 className={footerStyles.footer__address__copy}>*/}
+        //     {/*        Copyright ⓒ 2021 Cloudraw. Inc.*/}
+        //     {/*    </h5>*/}
+        //     {/*</section>*/}
+        // </footer>
     )
 }
