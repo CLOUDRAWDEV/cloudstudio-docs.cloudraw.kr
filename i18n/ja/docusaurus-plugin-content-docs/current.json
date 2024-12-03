@@ -35,6 +35,10 @@
         "message": "リソース",
         "description": "The label for category 리소스 in sidebar mySidebar"
     },
+    "sidebar.mySidebar.category.생성형 AI": {
+        "message": "生成 AI",
+        "description": "The label for category 생성형 AI in sidebar mySidebar"
+    },
     "sidebar.mySidebar.category.Azure": {
         "message": "Azure",
         "description": "The label for category Azure in sidebar mySidebar"
