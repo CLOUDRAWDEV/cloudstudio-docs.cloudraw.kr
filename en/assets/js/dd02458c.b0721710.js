@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[17503],{10652:e=>{e.exports=JSON.parse('{"label":"Redis","permalink":"/en/docs/tags/redis","allTagsPath":"/en/docs/tags","count":1,"items":[{"id":"resource/ncloud/Database/Redis","title":"Redis","description":"Resource Icon","permalink":"/en/docs/resource/ncloud/Database/Redis"}]}')}}]);

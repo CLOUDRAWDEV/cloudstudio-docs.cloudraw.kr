@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[8754],{54989:e=>{e.exports=JSON.parse('{"label":"VpnGateway","permalink":"/en/docs/tags/vpn-gateway","allTagsPath":"/en/docs/tags","count":1,"items":[{"id":"resource/aws/Vpc/VpnGateway","title":"Vpn Gateway","description":"Resource Icon","permalink":"/en/docs/resource/aws/Vpc/VpnGateway"}]}')}}]);

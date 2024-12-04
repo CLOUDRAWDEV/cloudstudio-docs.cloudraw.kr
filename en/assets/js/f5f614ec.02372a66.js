@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[73483],{31545:e=>{e.exports=JSON.parse('{"title":"Eks","slug":"/category/eks","permalink":"/en/docs/category/eks","navigation":{"previous":{"title":"Efs","permalink":"/en/docs/resource/aws/Efs/"},"next":{"title":"Eks Cluster","permalink":"/en/docs/resource/aws/Eks/EksCluster"}}}')}}]);

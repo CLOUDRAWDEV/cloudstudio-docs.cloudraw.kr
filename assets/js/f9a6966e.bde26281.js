@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[19699],{68226:e=>{e.exports=JSON.parse('{"title":"Efs","slug":"/category/efs","permalink":"/docs/category/efs","navigation":{"previous":{"title":"EcsTaskDefinition","permalink":"/docs/resource/aws/Ecs/EcsTaskDefinition"},"next":{"title":"Efs","permalink":"/docs/resource/aws/Efs/"}}}')}}]);

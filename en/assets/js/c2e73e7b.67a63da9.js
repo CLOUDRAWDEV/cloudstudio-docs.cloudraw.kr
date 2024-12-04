@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[39419],{47771:e=>{e.exports=JSON.parse('{"label":"Cluster","permalink":"/en/docs/tags/cluster","allTagsPath":"/en/docs/tags","count":1,"items":[{"id":"resource/kubernetes/Base/Cluster","title":"Cluster","description":"Resource Icon","permalink":"/en/docs/resource/kubernetes/Base/Cluster"}]}')}}]);

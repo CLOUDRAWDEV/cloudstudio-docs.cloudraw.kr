@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[8091],{65423:e=>{e.exports=JSON.parse('{"label":"Inspection Results","permalink":"/en/docs/tags/inspection-results","allTagsPath":"/en/docs/tags","count":1,"items":[{"id":"start/deploy","title":"Deploy","description":"last update: 2024.09.01","permalink":"/en/docs/start/deploy"}]}')}}]);

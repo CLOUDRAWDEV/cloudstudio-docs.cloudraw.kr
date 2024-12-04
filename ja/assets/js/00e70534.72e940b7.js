@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[52291],{15124:e=>{e.exports=JSON.parse('{"title":"S3","slug":"/category/s3","permalink":"/ja/docs/category/s3","navigation":{"previous":{"title":"Route53","permalink":"/ja/docs/resource/aws/Route53/"},"next":{"title":"S3 Bucket","permalink":"/ja/docs/resource/aws/S3/S3Bucket"}}}')}}]);

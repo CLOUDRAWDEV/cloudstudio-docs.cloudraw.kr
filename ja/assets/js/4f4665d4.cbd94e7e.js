@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[72340],{29413:e=>{e.exports=JSON.parse('{"title":"Rds","slug":"/category/rds","permalink":"/ja/docs/category/rds","navigation":{"previous":{"title":"LbTargetGroup","permalink":"/ja/docs/resource/aws/Lb/LbTargetGroup"},"next":{"title":"Aurora","permalink":"/ja/docs/resource/aws/Rds/Aurora"}}}')}}]);

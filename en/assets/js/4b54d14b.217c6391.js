@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[55037],{91998:e=>{e.exports=JSON.parse('{"label":"S3","permalink":"/en/docs/tags/s-3","allTagsPath":"/en/docs/tags","count":1,"items":[{"id":"resource/aws/S3/S3Bucket","title":"S3 Bucket","description":"Resource Icon","permalink":"/en/docs/resource/aws/S3/S3Bucket"}]}')}}]);

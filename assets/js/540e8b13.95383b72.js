@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[64019],{92171:e=>{e.exports=JSON.parse('{"title":"Core","slug":"/category/core","permalink":"/docs/category/core","navigation":{"previous":{"title":"Job","permalink":"/docs/resource/kubernetes/Batch/Job"},"next":{"title":"ConfigMap","permalink":"/docs/resource/kubernetes/Core/ConfigMap"}}}')}}]);

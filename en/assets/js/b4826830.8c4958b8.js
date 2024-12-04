@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[94388],{12744:e=>{e.exports=JSON.parse('{"label":"WafIpset","permalink":"/en/docs/tags/waf-ipset","allTagsPath":"/en/docs/tags","count":1,"items":[{"id":"resource/aws/Waf/WafIpset","title":"Waf Ipset","description":"Resource Icon","permalink":"/en/docs/resource/aws/Waf/WafIpset"}]}')}}]);

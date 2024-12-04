@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[16586],{90858:e=>{e.exports=JSON.parse('{"label":"Firewall","permalink":"/en/docs/tags/firewall","allTagsPath":"/en/docs/tags","count":1,"items":[{"id":"resource/azure/Network/Firewall","title":"Firewall","description":"Resource Icon","permalink":"/en/docs/resource/azure/Network/Firewall"}]}')}}]);

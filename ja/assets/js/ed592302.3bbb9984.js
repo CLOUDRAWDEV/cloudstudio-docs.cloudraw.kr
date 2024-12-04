@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[42557],{2311:e=>{e.exports=JSON.parse('{"title":"Ncloud","slug":"/category/ncloud","permalink":"/ja/docs/category/ncloud","navigation":{"previous":{"title":"Waf Web Acl","permalink":"/ja/docs/resource/aws/Waf/WafWebAcl"},"next":{"title":"Base","permalink":"/ja/docs/category/base-2"}}}')}}]);

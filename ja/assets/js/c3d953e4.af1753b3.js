@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[34307],{10921:s=>{s.exports=JSON.parse('{"label":"Efs","permalink":"/ja/docs/tags/efs","allTagsPath":"/ja/docs/tags","count":1,"items":[{"id":"resource/aws/Efs/Efs","title":"Efs","description":"\u30ea\u30bd\u30fc\u30b9\u30a2\u30a4\u30b3\u30f3","permalink":"/ja/docs/resource/aws/Efs/"}]}')}}]);

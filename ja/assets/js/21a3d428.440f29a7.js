@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[8314],{58486:e=>{e.exports=JSON.parse('{"title":"Ec2","slug":"/category/ec2","permalink":"/ja/docs/category/ec2","navigation":{"previous":{"title":"Dynamodb","permalink":"/ja/docs/resource/aws/Dynamodb/"},"next":{"title":"Eip","permalink":"/ja/docs/resource/aws/Ec2/Eip"}}}')}}]);

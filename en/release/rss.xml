@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>CloudStudio Documents Blog</title>
+        <link>https://docs.cloudraw.kr/en/release</link>
+        <description>CloudStudio Documents Blog</description>
+        <lastBuildDate>Sun, 01 Dec 2024 00:00:00 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <language>en</language>
+        <item>
+            <title><![CDATA[v1.5.0]]></title>
+            <link>https://docs.cloudraw.kr/en/release/150</link>
+            <guid>/150</guid>
+            <pubDate>Sun, 01 Dec 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[The AI service has been added.]]></description>
+            <content:encoded><![CDATA[<hr><h4 class="anchor anchorWithStickyNavbar_LWe7" id="the-ai-service-has-been-added">The AI service has been added.<a class="hash-link" href="#the-ai-service-has-been-added" title="Direct link to heading">​</a></h4><p><a href="https://docs.cstudio.app/en/docs/ai/text-to-infra" target="_blank" rel="noopener noreferrer"><strong>Go to AI Docs</strong></a></p><div class="releaseWrap_EdcT"><div class="tag_PSRA" data-type="feature">Feature</div><ol><li>The AI service has been added.<ul><li>Text to Infrastructure: You can create infrastructure through text using generative AI when creating a project.</li><li>AI Infrastructure Review: Easily understand the current state and areas for improvement of the configured infrastructure.</li><li>AI Chatbot: You can inquire about how to use CloudStudio and ways to improve infrastructure through the chatbot.</li></ul></li></ol></div>]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[v1.4.1]]></title>
+            <link>https://docs.cloudraw.kr/en/release/141</link>
+            <guid>/141</guid>
+            <pubDate>Mon, 23 Sep 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[The VCS Integration features for Github and Gitlab have been updated.]]></description>
+            <content:encoded><![CDATA[<hr><h4 class="anchor anchorWithStickyNavbar_LWe7" id="the-vcs-integration-features-for-github-and-gitlab-have-been-updated">The VCS Integration features for Github and Gitlab have been updated.<a class="hash-link" href="#the-vcs-integration-features-for-github-and-gitlab-have-been-updated" title="Direct link to heading">​</a></h4><p><a href="https://docs.cstudio.app/en/docs/plugin/vcs/add-github" target="_blank" rel="noopener noreferrer"><strong>Go to VCS Integration</strong></a></p><div class="releaseWrap_EdcT"><div class="tag_PSRA" data-type="changed">Update</div><ol><li>VCS Integration<ul><li>The integration features for Github and Gitlab have been updated.</li></ul></li></ol></div>]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[v1.4.0]]></title>
+            <link>https://docs.cloudraw.kr/en/release/140</link>
+            <guid>/140</guid>
+            <pubDate>Fri, 19 Jul 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Monitoring functionality has been added.]]></description>
+            <content:encoded><![CDATA[<hr><h4 class="anchor anchorWithStickyNavbar_LWe7" id="monitoring-functionality-has-been-added">Monitoring functionality has been added.<a class="hash-link" href="#monitoring-functionality-has-been-added" title="Direct link to heading">​</a></h4><h4 class="anchor anchorWithStickyNavbar_LWe7" id="additional-supported-service-languages-have-been-added">Additional supported service languages have been added.<a class="hash-link" href="#additional-supported-service-languages-have-been-added" title="Direct link to heading">​</a></h4><div class="releaseWrap_EdcT"><div class="tag_PSRA" data-type="feature">Feature</div><ol><li>Metric monitoring for deployed resources has been added.  <ul><li>Supported CSPs: Azure, AWS, Ncloud</li></ul></li><li>Japanese language support has been added.</li></ol></div><br><div class="releaseWrap_EdcT"><div class="tag_PSRA" data-type="changed">Update</div><ol><li>UI Update<ul><li>The detailed UI for validation has been updated.</li><li>The detailed UI for deployment history has been updated under Deployment &gt; Deployment History.</li></ul></li></ol></div>]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[v1.3.1]]></title>
+            <link>https://docs.cloudraw.kr/en/release/131</link>
+            <guid>/131</guid>
+            <pubDate>Fri, 28 Jun 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Support for AWS shared account credentials is available.]]></description>
+            <content:encoded><![CDATA[<hr><h4 class="anchor anchorWithStickyNavbar_LWe7" id="support-for-aws-shared-account-credentials-is-available">Support for AWS shared account credentials is available.<a class="hash-link" href="#support-for-aws-shared-account-credentials-is-available" title="Direct link to heading">​</a></h4><div class="releaseWrap_EdcT"><div class="tag_PSRA" data-type="feature">Feature</div><ol><li>Support for AWS Shared Accounts<ul><li>When registering AWS credentials, you can select between the owner account and shared accounts.</li><li>When selecting a shared account, you can enter a Session Token.</li></ul></li></ol></div><br><div class="releaseWrap_EdcT"><div class="tag_PSRA" data-type="fixed">Fixed</div><ol><li>Import Infrastructure<ul><li>The import error for some AWS resources has been fixed.</li><li>The import logic has been updated.</li></ul></li></ol></div>]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[v1.3.0]]></title>
+            <link>https://docs.cloudraw.kr/en/release/130</link>
+            <guid>/130</guid>
+            <pubDate>Tue, 18 Jun 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[A new CSP has been added.]]></description>
+            <content:encoded><![CDATA[<hr><h4 class="anchor anchorWithStickyNavbar_LWe7" id="a-new-csp-has-been-added">A new CSP has been added.<a class="hash-link" href="#a-new-csp-has-been-added" title="Direct link to heading">​</a></h4><div class="releaseWrap_EdcT"><div class="tag_PSRA" data-type="feature">Feature</div><ol><li>NHN Cloud Service Offering<ul><li>Supports NHN Cloud.</li><li>Provides limited functionality for diagrams, version control, vulnerability assessments, and deployment management.</li></ul></li></ol></div><br><div class="releaseWrap_EdcT"><div class="tag_PSRA" data-type="fixed">Fixed</div><ol><li>Export<ul><li>The export feature has been modified to allow pre-deployment exports after deployment.</li></ul></li><li>Resources<ul><li>Ncloud: When modifying the Network Interface name, the priority on the server has been adjusted to remain unchanged.</li></ul></li><li>Vulnerability Assessment<ul><li>The items for vulnerability assessment compliance mapping have been updated.</li></ul></li></ol></div>]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[v1.2.0]]></title>
+            <link>https://docs.cloudraw.kr/en/release/120</link>
+            <guid>/120</guid>
+            <pubDate>Sat, 01 Jun 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[A new feature has been added.]]></description>
+            <content:encoded><![CDATA[<hr><h4 class="anchor anchorWithStickyNavbar_LWe7" id="a-new-feature-has-been-added">A new feature has been added.<a class="hash-link" href="#a-new-feature-has-been-added" title="Direct link to heading">​</a></h4><div class="releaseWrap_EdcT"><div class="tag_PSRA" data-type="feature">Feature</div><ol><li>Vulnerability Assessment Compliance Mapping<ul><li>During vulnerability assessments, it displays control items for ISO 27001, ISMS-P, CSAP, and CSP stability evaluations.</li><li>The speed of vulnerability assessments has been improved.</li></ul></li><li>Cost Calculation with Traffic Application<ul><li>In addition to maintenance costs, you can input traffic for each resource and calculate the associated costs.</li></ul></li></ol></div>]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[v1.1.0]]></title>
+            <link>https://docs.cloudraw.kr/en/release/110</link>
+            <guid>/110</guid>
+            <pubDate>Wed, 01 May 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[A new feature has been added.]]></description>
+            <content:encoded><![CDATA[<hr><h4 class="anchor anchorWithStickyNavbar_LWe7" id="a-new-feature-has-been-added">A new feature has been added.<a class="hash-link" href="#a-new-feature-has-been-added" title="Direct link to heading">​</a></h4><div class="releaseWrap_EdcT"><div class="tag_PSRA" data-type="feature">Feature</div><ol><li>Import Infrastructure<ul><li>You can visualize already deployed infrastructure by retrieving it.</li><li>Existing infrastructure can be converted into IaC and its state values can be generated for reuse. </li></ul></li><li>Infrastructure Migration<ul><li>You can migrate the configured infrastructure diagram to a different CSP (Cloud Service Provider).</li><li>During migration, it compares the mapped resources and costs.</li></ul></li></ol></div>]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[v1.0.0]]></title>
+            <link>https://docs.cloudraw.kr/en/release/100</link>
+            <guid>/100</guid>
+            <pubDate>Mon, 01 Apr 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Services are offered for Azure, AWS, Naver Cloud, and Kubernetes.]]></description>
+            <content:encoded><![CDATA[<hr><h4 class="anchor anchorWithStickyNavbar_LWe7" id="services-are-offered-for-azure-aws-naver-cloud-and-kubernetes">Services are offered for Azure, AWS, Naver Cloud, and Kubernetes.<a class="hash-link" href="#services-are-offered-for-azure-aws-naver-cloud-and-kubernetes" title="Direct link to heading">​</a></h4><div class="releaseWrap_EdcT"><div class="tag_PSRA" data-type="new">New</div><div><ol><li>Cloud Infrastructure Diagram<ul><li>You can design cloud infrastructure with drag-and-drop functionality.</li><li>It provides real-time error feedback for incorrect configurations during infrastructure design.</li><li>Converts the designed infrastructure into Infrastructure as Code (IaC).</li></ul></li><li>Version Control<ul><li>Provides version control for IaC-based infrastructure, allowing you to revert to a specified version.</li></ul></li><li>Cost Estimation<ul><li>Offers monthly, daily, and hourly maintenance cost estimates for the designed infrastructure (in KRW, USD).</li></ul></li><li>Vulnerability Assessment<ul><li>Provides vulnerability assessments for the designed infrastructure, along with guides for addressing vulnerabilities.</li></ul></li><li>Deployment Management<ul><li>Validates the designed infrastructure through pre-deployment tests and integrates with cloud service providers' credentials to deploy the actual infrastructure.</li></ul></li></ol></div></div>]]></content:encoded>
+        </item>
+    </channel>
+</rss>

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[89795],{45511:e=>{e.exports=JSON.parse('{"label":"KeyPair","permalink":"/docs/tags/key-pair","allTagsPath":"/docs/tags","count":1,"items":[{"id":"resource/aws/Ec2/KeyPair","title":"KeyPair","description":"\ub9ac\uc18c\uc2a4 \uc544\uc774\ucf58","permalink":"/docs/resource/aws/Ec2/KeyPair"}]}')}}]);

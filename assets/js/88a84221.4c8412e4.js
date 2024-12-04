@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[67509],{43963:e=>{e.exports=JSON.parse('{"title":"Kubernetes","slug":"/category/kubernetes","permalink":"/docs/category/kubernetes","navigation":{"previous":{"title":"Nas Volume","permalink":"/docs/resource/ncloud/Storage/NasVolume"},"next":{"title":"Apps","permalink":"/docs/category/apps"}}}')}}]);

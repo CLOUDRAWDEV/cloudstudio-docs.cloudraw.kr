@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[81482],{82288:s=>{s.exports=JSON.parse('{"label":"github","permalink":"/ja/docs/tags/github","allTagsPath":"/ja/docs/tags","count":1,"items":[{"id":"plugin/vcs/add-github","title":"Github \u767b\u9332","description":"last update: 2024.09.30","permalink":"/ja/docs/plugin/vcs/add-github"}]}')}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[93812],{69023:e=>{e.exports=JSON.parse('{"title":"Lb","slug":"/category/lb","permalink":"/docs/category/lb","navigation":{"previous":{"title":"Lambda Function","permalink":"/docs/resource/aws/Lambda/LambdaFunction"},"next":{"title":"Lb","permalink":"/docs/resource/aws/Lb/"}}}')}}]);

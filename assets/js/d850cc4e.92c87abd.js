@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[86831],{82512:e=>{e.exports=JSON.parse('{"title":"Acm","slug":"/category/acm","permalink":"/docs/category/acm","navigation":{"previous":{"title":"AWS","permalink":"/docs/category/aws"},"next":{"title":"AcmCertificate","permalink":"/docs/resource/aws/Acm/AcmCertificate"}}}')}}]);

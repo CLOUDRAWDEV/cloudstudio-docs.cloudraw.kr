@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[66851],{92827:e=>{e.exports=JSON.parse('{"title":"Waf","slug":"/category/waf","permalink":"/en/docs/category/waf","navigation":{"previous":{"title":"Vpn Gateway","permalink":"/en/docs/resource/aws/Vpc/VpnGateway"},"next":{"title":"Waf Ipset","permalink":"/en/docs/resource/aws/Waf/WafIpset"}}}')}}]);

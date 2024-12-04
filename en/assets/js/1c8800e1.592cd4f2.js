@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[47345],{77321:e=>{e.exports=JSON.parse('{"label":"Secret","permalink":"/en/docs/tags/secret","allTagsPath":"/en/docs/tags","count":1,"items":[{"id":"resource/kubernetes/Core/Secret","title":"Secret","description":"Resource Icon","permalink":"/en/docs/resource/kubernetes/Core/Secret"}]}')}}]);

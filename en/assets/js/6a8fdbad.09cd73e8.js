@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[58783],{55100:s=>{s.exports=JSON.parse('{"label":"Efs","permalink":"/en/docs/tags/efs","allTagsPath":"/en/docs/tags","count":1,"items":[{"id":"resource/aws/Efs/Efs","title":"Efs","description":"Resource Icon","permalink":"/en/docs/resource/aws/Efs/"}]}')}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[8088],{2634:e=>{e.exports=JSON.parse('{"label":"Save Version","permalink":"/en/docs/tags/save-version","allTagsPath":"/en/docs/tags","count":1,"items":[{"id":"start/save","title":"Save","description":"last update: 2023.02.01","permalink":"/en/docs/start/save"}]}')}}]);

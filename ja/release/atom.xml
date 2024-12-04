@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://docs.cloudraw.kr/ja/release</id>
+    <title>CloudStudio Documents Blog</title>
+    <updated>2024-12-01T00:00:00.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://docs.cloudraw.kr/ja/release"/>
+    <subtitle>CloudStudio Documents Blog</subtitle>
+    <icon>https://docs.cloudraw.kr/ja/img/simbol3.png</icon>
+    <entry>
+        <title type="html"><![CDATA[v1.5.0]]></title>
+        <id>/150</id>
+        <link href="https://docs.cloudraw.kr/ja/release/150"/>
+        <updated>2024-12-01T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[AI サービスが追加されました。]]></summary>
+        <content type="html"><![CDATA[<hr><h4 class="anchor anchorWithStickyNavbar_LWe7" id="ai-サービスが追加されました">AI サービスが追加されました。<a class="hash-link" href="#ai-サービスが追加されました" title="見出しへの直接リンク">​</a></h4><p><a href="https://docs.cstudio.app/ja/docs/ai/text-to-infra" target="_blank" rel="noopener noreferrer"><strong>AI ドキュメントに移動</strong></a></p><div class="releaseWrap_EdcT"><div class="tag_PSRA" data-type="feature">Feature</div><ol><li>AI サービスが追加されました。<ul><li>Text to Infrastructure: プロジェクト作成時に、生成 AI を活用してテキストでインフラを作成することができます。</li><li>AI インフラレビュー: 構築されたインフラの現状と改善点を簡単に把握できます。</li><li>AI チャットボット: CloudStudio の使用方法やインフラの改善方法について、チャットボットを通じて問い合わせることができます。</li></ul></li></ol></div>]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[v1.4.1]]></title>
+        <id>/141</id>
+        <link href="https://docs.cloudraw.kr/ja/release/141"/>
+        <updated>2024-09-23T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[VCS 連動(Github, Gitlab)機能がアップデートされました。]]></summary>
+        <content type="html"><![CDATA[<hr><h4 class="anchor anchorWithStickyNavbar_LWe7" id="vcs-連動github-gitlab機能がアップデートされました">VCS 連動(Github, Gitlab)機能がアップデートされました。<a class="hash-link" href="#vcs-連動github-gitlab機能がアップデートされました" title="見出しへの直接リンク">​</a></h4><p><a href="https://docs.cstudio.app/ja/docs/plugin/vcs/add-github" target="_blank" rel="noopener noreferrer"><strong>VCS 連動 ドキュメントに移動</strong></a></p><div class="releaseWrap_EdcT"><div class="tag_PSRA" data-type="changed">Update</div><ol><li>VCS 連動<ul><li>Github 及び Gitlab 連動機能が機能がアップデートされました。</li></ul></li></ol></div>]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[v1.4.0]]></title>
+        <id>/140</id>
+        <link href="https://docs.cloudraw.kr/ja/release/140"/>
+        <updated>2024-07-19T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[モニタリング機能が追加されました。]]></summary>
+        <content type="html"><![CDATA[<hr><h4 class="anchor anchorWithStickyNavbar_LWe7" id="モニタリング機能が追加されました">モニタリング機能が追加されました。<a class="hash-link" href="#モニタリング機能が追加されました" title="見出しへの直接リンク">​</a></h4><h4 class="anchor anchorWithStickyNavbar_LWe7" id="サービスサポート言語が追加されました">サービスサポート言語が追加されました。<a class="hash-link" href="#サービスサポート言語が追加されました" title="見出しへの直接リンク">​</a></h4><div class="releaseWrap_EdcT"><div class="tag_PSRA" data-type="feature">Feature</div><ol><li>デプロイされたリソースの Metric モニタリングが追加されました。<ul><li>対象 CSP: Azure, AWS, Ncloud</li></ul></li><li>日本語が対応できます。</li></ol></div><br><div class="releaseWrap_EdcT"><div class="tag_PSRA" data-type="changed">Update</div><ol><li>UI アップデート<ul><li>有効性検査の詳細 UI が更新されました。</li><li>デプロイ &gt; デプロイ履歴詳細 UI がアップデートされました。</li></ul></li></ol></div>]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[v1.3.1]]></title>
+        <id>/131</id>
+        <link href="https://docs.cloudraw.kr/ja/release/131"/>
+        <updated>2024-06-28T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[AWS 共有アカウントのクレデンシャルをサポートします。]]></summary>
+        <content type="html"><![CDATA[<hr><h4 class="anchor anchorWithStickyNavbar_LWe7" id="aws-共有アカウントのクレデンシャルをサポートします">AWS 共有アカウントのクレデンシャルをサポートします。<a class="hash-link" href="#aws-共有アカウントのクレデンシャルをサポートします" title="見出しへの直接リンク">​</a></h4><div class="releaseWrap_EdcT"><div class="tag_PSRA" data-type="feature">Feature</div><ol><li>AWS 共有アカウントサポート<ul><li>AWS クレデンシャル登録時、所有アカウントと共有アカウントを選択することができます。</li><li>共有アカウントを選択すると、Session Token を入力することができます。</li></ul></li></ol></div><br><div class="releaseWrap_EdcT"><div class="tag_PSRA" data-type="fixed">Fixed</div><ol><li>インフラインポート<ul><li>AWS の一部リソースのインポートエラーが修正されました。</li><li>インポートロジックが修正されました。</li></ul></li></ol></div>]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[v1.3.0]]></title>
+        <id>/130</id>
+        <link href="https://docs.cloudraw.kr/ja/release/130"/>
+        <updated>2024-06-18T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[CSP が追加されました。]]></summary>
+        <content type="html"><![CDATA[<hr><h4 class="anchor anchorWithStickyNavbar_LWe7" id="csp-が追加されました">CSP が追加されました。<a class="hash-link" href="#csp-が追加されました" title="見出しへの直接リンク">​</a></h4><div class="releaseWrap_EdcT"><div class="tag_PSRA" data-type="feature">Feature</div><ol><li>NHN Cloud サービス提供<ul><li>NHN Cloud をサポートします。</li><li>ダイアグラム、バージョン管理、脆弱性診断、デプロイ管理に対する限られた機能を提供します。</li></ul></li></ol></div><br><div class="releaseWrap_EdcT"><div class="tag_PSRA" data-type="fixed">Fixed</div><ol><li>エクスポート<ul><li>デプロイ後のエクスポートでデプロイ前のエクスポートができるように修正されました。</li></ul></li><li>リソース<ul><li>Ncloud : Network Interface の名前を修正すると、サーバーで優先順位が変更されないように修正されました。</li></ul></li><li>脆弱性診断<ul><li>脆弱性診断コンプライアンスマッピングエントリが修正されました。</li></ul></li></ol></div>]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[v1.2.0]]></title>
+        <id>/120</id>
+        <link href="https://docs.cloudraw.kr/ja/release/120"/>
+        <updated>2024-06-01T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[機能がアップデートされました。]]></summary>
+        <content type="html"><![CDATA[<hr><h4 class="anchor anchorWithStickyNavbar_LWe7" id="機能がアップデートされました">機能がアップデートされました。<a class="hash-link" href="#機能がアップデートされました" title="見出しへの直接リンク">​</a></h4><div class="releaseWrap_EdcT"><div class="tag_PSRA" data-type="feature">Feature</div><ol><li>脆弱性診断コンプライアンスマッピング<ul><li>脆弱性診断時に ISO 27001, ISMS-P, CSAP, CSP 安定性評価統制項目を表示します。</li><li>脆弱性の診断速度が改善されました。</li></ul></li><li>コスト計算トラフィック適用<ul><li>維持コストに加えて、リソースごとのトラフィックを入力し、それに対するコストを算出することができます。</li></ul></li></ol></div>]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[v1.1.0]]></title>
+        <id>/110</id>
+        <link href="https://docs.cloudraw.kr/ja/release/110"/>
+        <updated>2024-05-01T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[機能が追加されました。]]></summary>
+        <content type="html"><![CDATA[<hr><h4 class="anchor anchorWithStickyNavbar_LWe7" id="機能が追加されました">機能が追加されました。<a class="hash-link" href="#機能が追加されました" title="見出しへの直接リンク">​</a></h4><div class="releaseWrap_EdcT"><div class="tag_PSRA" data-type="feature">Feature</div><ol><li>インフラインポート<ul><li>既にデプロイされたインフラを照会して視覚化することができます。</li><li>既存のインフラ IaC 変換および状態値を生成して再利用することができます。</li></ul></li><li>インフラ転換<ul><li>構成されたインフラダイアグラムを別の CSP に切り替えることができます。</li><li>切り替え時にマッピングされるリソースとコストを比較します。</li></ul></li></ol></div>]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[v1.0.0]]></title>
+        <id>/100</id>
+        <link href="https://docs.cloudraw.kr/ja/release/100"/>
+        <updated>2024-04-01T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Azure, AWS, Naver Cloud, Kubernetes に対するサービスを提供します。]]></summary>
+        <content type="html"><![CDATA[<hr><h4 class="anchor anchorWithStickyNavbar_LWe7" id="azure-aws-naver-cloud-kubernetes-に対するサービスを提供します">Azure, AWS, Naver Cloud, Kubernetes に対するサービスを提供します。<a class="hash-link" href="#azure-aws-naver-cloud-kubernetes-に対するサービスを提供します" title="見出しへの直接リンク">​</a></h4><div class="releaseWrap_EdcT"><div class="tag_PSRA" data-type="new">New</div><div><ol><li>クラウドインフラダイアグラム<ul><li>Drag &amp; Drop でクラウドインフラを設計できます。</li><li>インフラの設計時に間違った構成のエラーをリアルタイムで表示します。</li><li>描かれたインフラを IaC に変換してくれます。</li></ul></li><li>バージョン管理<ul><li>IaC ベースのインフラに対するバージョン保存機能を提供し、指定したバージョンに戻ることができます。</li></ul></li><li>コストの計算<ul><li>描かれたインフラに対する月間、日間、1 時間当たりの維持費用を提供します。(KRW、USD)</li></ul></li><li>脆弱性診断<ul><li>描かれたインフラの脆弱性診断を提供し、脆弱性対策ガイドを提供します。</li></ul></li><li>デプロイ管理<ul><li>描かれたインフラを事前にデプロイテストを通じて有効性を確認し、CSP 別クレデンシャルと連動して実際のインフラを構成することができます。</li></ul></li></ol></div></div>]]></content>
+    </entry>
+</feed>

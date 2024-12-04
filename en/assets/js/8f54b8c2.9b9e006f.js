@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[39451],{96192:e=>{e.exports=JSON.parse('{"label":"FlowLog","permalink":"/en/docs/tags/flow-log","allTagsPath":"/en/docs/tags","count":1,"items":[{"id":"resource/aws/Vpc/FlowLog","title":"Flow Log","description":"Resource Icon","permalink":"/en/docs/resource/aws/Vpc/FlowLog"}]}')}}]);

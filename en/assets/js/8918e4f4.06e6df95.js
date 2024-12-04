@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[77744],{89892:e=>{e.exports=JSON.parse('{"label":"Sentinel","permalink":"/en/docs/tags/sentinel","allTagsPath":"/en/docs/tags","count":1,"items":[{"id":"resource/azure/Sentinel/Sentinel","title":"Sentinel","description":"Resource Icon","permalink":"/en/docs/resource/azure/Sentinel/"}]}')}}]);

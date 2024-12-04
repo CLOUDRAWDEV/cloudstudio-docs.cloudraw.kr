@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[5910],{74933:e=>{e.exports=JSON.parse('{"title":"Cdn","slug":"/category/cdn","permalink":"/en/docs/category/cdn","navigation":{"previous":{"title":"Subscription","permalink":"/en/docs/resource/azure/Base/Subscription"},"next":{"title":"Cdn","permalink":"/en/docs/resource/azure/Cdn/"}}}')}}]);

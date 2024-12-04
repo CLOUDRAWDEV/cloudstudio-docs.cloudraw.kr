@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[73614],{11899:e=>{e.exports=JSON.parse('{"title":"Base","slug":"/category/base-2","permalink":"/en/docs/category/base-2","navigation":{"previous":{"title":"Ncloud","permalink":"/en/docs/category/ncloud"},"next":{"title":"Base","permalink":"/en/docs/resource/ncloud/Base/"}}}')}}]);
